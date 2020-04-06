@@ -1,11 +1,10 @@
+import os
+import re
 import subprocess
 from os import path
 
-import yaml
 import pandas as pd
-import re
-import os
-
+import yaml
 from IPython.core.display import display
 
 trailing_zero_rx = re.compile('(\d+)\.0(?!\d)')
@@ -26,7 +25,6 @@ def save_df(structure, df):
         fd.write(output)
 
 
-# %%
 def validate_numbers_in_range(definition, field):
     def range_filter(value):
         if pd.isna(value):
@@ -54,7 +52,6 @@ def validate_numbers_in_range(definition, field):
 
 
 def validate_integer(definition, field):
-    #             field_series = field_series.astype('Int64',errors='ignore')
     field = pd.to_numeric(field, 'coerce')
     if field.dtype == 'Float64':
         field = field.round().astype('Int64')
@@ -62,12 +59,8 @@ def validate_integer(definition, field):
     return field
 
 
-# %%
-
 def validate_float(definition, field):
     field = pd.to_numeric(field, 'coerce')
-    #             if field.dtype == 'Float64':
-    #                 field = field.round().astype('Int64')
     field = validate_numbers_in_range(definition, field)
     return field
 
@@ -101,11 +94,14 @@ def validate_string_matches_range(definition, field):
 def validate_string(definition, field):
     # fillna("") is necessary else NaN will get converted to the string "nan" rather than blank strings
     field = field.fillna("").astype(str)
+
+    # check specified length is long enough
     max_length = definition.get('length')
     actual_length = field.str.len().max()
     if actual_length > max_length:
         print(f'Field "{field.name}" has a max length of {max_length}, but has data of length up to {actual_length}')
 
+    # check range
     field = validate_string_matches_range(definition, field)
 
     return field

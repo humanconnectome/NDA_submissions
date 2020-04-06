@@ -36,8 +36,6 @@ def in_range_str(value_range):
         for rng in value_range:
             if str(rng) == value:
                 return True
-            elif rng == 'NDAR*' and value.startswith('NDAR'):
-                return True
         return False
 
     return closure_fn
@@ -78,17 +76,28 @@ def validate_float(definition, field):
 
 
 def validate_string(definition, field):
+    # fillna("") is necessary else NaN will get converted to the string "nan" rather than blank strings
     field = field.fillna("").astype(str)
     max_length = definition.get('length')
     actual_length = field.str.len().max()
     if actual_length > max_length:
         print(f'Field "{field.name}" has a max length of {max_length}, but has data of length up to {actual_length}')
 
+    if 'range' in definition:
+        valid = field.map(in_range_str(definition['range']))
+
+        if (~valid).any():
+            print(f'Field "{field.name}" has the following invalid values:', set(field[~valid]))
+
     return field
 
 
 def validate_guid(definition, field):
-    return field
+    valid = field.map(lambda value: value.startswith('NDAR'))
+    if (~valid).any():
+        print(f'Field "{field.name}" has incorrectly formatted GUID values:', set(field[~valid]))
+
+    return field.where(valid)
 
 
 def validate_date(definition, field):
@@ -147,7 +156,7 @@ class NDAWriter:
                 dd = nda_defs[name]
                 fieldtype = dd['type']
                 if 'range' in dd:
-                    if fieldtype in ['String', 'GUID']:
+                    if fieldtype in ['String']:
                         valid = field_series.map(in_range_str(dd['range']))
                     else:
                         valid = field_series.map(in_range_num(dd['range']))

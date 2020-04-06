@@ -27,20 +27,6 @@ def save_df(structure, df):
 
 
 # %%
-def in_range_str(value_range):
-    def closure_fn(value):
-        if value == '' or pd.isna(value):
-            return True
-        if type(value) is not str:
-            value = str(value)
-        for rng in value_range:
-            if str(rng) == value:
-                return True
-        return False
-
-    return closure_fn
-
-
 def in_range_num(value_range):
     def closure_fn(value):
         if pd.isna(value):
@@ -75,6 +61,32 @@ def validate_float(definition, field):
     return field
 
 
+def validate_string_matches_range(definition, field):
+    def range_filter(value):
+        if value == '' or pd.isna(value):
+            return True
+        if type(value) is not str:
+            value = str(value)
+        for rng in value_range:
+            if str(rng) == value:
+                return True
+        return False
+
+    if 'range' not in definition:
+        # return all values, no range check needed
+        return field
+
+    value_range = definition['range']
+    valid = field.map(range_filter)
+    if (~valid).any():
+        print(f'Field "{field.name}" has the following invalid values:', set(field[~valid]))
+
+        print(f'Dropping {(~valid).sum()} values.')
+        field = field.where(valid)
+
+    return field
+
+
 def validate_string(definition, field):
     # fillna("") is necessary else NaN will get converted to the string "nan" rather than blank strings
     field = field.fillna("").astype(str)
@@ -83,11 +95,7 @@ def validate_string(definition, field):
     if actual_length > max_length:
         print(f'Field "{field.name}" has a max length of {max_length}, but has data of length up to {actual_length}')
 
-    if 'range' in definition:
-        valid = field.map(in_range_str(definition['range']))
-
-        if (~valid).any():
-            print(f'Field "{field.name}" has the following invalid values:', set(field[~valid]))
+    field = validate_string_matches_range(definition, field)
 
     return field
 
@@ -156,9 +164,7 @@ class NDAWriter:
                 dd = nda_defs[name]
                 fieldtype = dd['type']
                 if 'range' in dd:
-                    if fieldtype in ['String']:
-                        valid = field_series.map(in_range_str(dd['range']))
-                    else:
+                    if fieldtype not in ['String']:
                         valid = field_series.map(in_range_num(dd['range']))
 
                     if (~valid).any():

@@ -164,24 +164,28 @@ class NDAWriter:
         if missing:
             print(f"{struct} is missing the fields: ", missing)
 
+    def validate_struct(self, struct, df):
+        self.has_required_fields(struct, df)
+        df = df.copy()
+        nda_defs = self.nda(struct)
+        for name, field in df.iteritems():
+            if name not in nda_defs:
+                print(f"Field '{name}' not pre-defined, skipping validation.")
+            else:
+                definition = nda_defs[name]
+                field_type = definition['type']
+
+                # validate by field type
+                df[name] = validations[field_type](definition, field)
+        return df
+
     def write(self, db):
         for struct, struct_elements in self.nda_elements.items():
-            nda_defs = {x['name']: x for x in struct_elements}
             if struct not in db:
                 continue
             df = db[struct]
             print('Entering ', struct)
-
-            self.has_required_fields(struct, df)
-
-            for name, field_series in df.iteritems():
-                if name not in nda_defs:
-                    print('Skipping', name)
-                    continue
-                dd = nda_defs[name]
-                fieldtype = dd['type']
-                #     print(name, s)
-                df[name] = validations[fieldtype](dd, field_series)
+            df = self.validate_struct(struct, df)
             save_df(struct, df)
 
     def validate(self, filename):

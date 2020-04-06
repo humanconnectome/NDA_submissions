@@ -152,8 +152,11 @@ class NDAWriter:
             self.load_struct(struct)
         return self
 
-    def nda(self):
-        return {struct: {x['name']: x for x in struct_elements} for struct, struct_elements in self.nda_elements.items()}
+    def nda(self, struct):
+        if struct not in self.nda_elements:
+            raise Exception(f"{struct} is not defined in NDA definitions.")
+        elements = self.nda_elements[struct]
+        return {x['name']: x for x in elements}
 
     def has_required_fields(self, struct, df):
         missing = [name for name, v in self.nda(struct) \

@@ -1,4 +1,5 @@
 import subprocess
+from os import path
 
 import yaml
 import pandas as pd
@@ -60,16 +61,21 @@ def in_range_num(value_range):
 class NDAWriter:
     def __init__(self):
         self.nda_elements = {}
-        self.reload_nda()
+        self.reload_definitions()
+        self.directory = './nda/'
 
-    def reload_nda(self):
-        nda = {}
-        for filename in os.listdir('./nda/'):
+    def load_struct(self, struct):
+        filename = path.join(self.directory, struct + '.yaml')
+        if path.exists(filename):
+            with open(filename, 'r') as fd:
+                self.nda_elements[struct] = yaml.load(fd, yaml.SafeLoader)
+        return self
+
+    def reload_definitions(self):
+        for filename in os.listdir(self.directory):
             struct = filename[:-5]
-            with open('./nda/' + filename, 'r') as fd:
-                nda[struct] = yaml.load(fd, yaml.SafeLoader)
-        self.nda_elements = nda
-        return nda
+            self.load_struct(struct)
+        return self
 
     def nda(self):
         return {struct: {x['name']: x for x in struct_elements} for struct, struct_elements in self.nda_elements.items()}
@@ -86,8 +92,6 @@ class NDAWriter:
             missing_fields = [k for k, v in required_fields.items() if k not in df]
             if missing_fields:
                 print('Missing fields: ', missing_fields)
-
-
 
             for name, field_series in df.iteritems():
                 if name not in nda_defs:

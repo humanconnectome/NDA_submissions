@@ -12,6 +12,8 @@ trailing_zero_rx = re.compile('(\d+)\.0(?!\d)')
 pattern = re.compile('Validation report output to: (.+?csv)\n')
 
 pathstructuresout = "./prepped_structures"
+
+
 def save_df(structure, df):
     #     filepath = f'{pathstructuresout}/HCPD_{structure}_{snapshotdate}.csv'
     filepath = f'{pathstructuresout}/HCPD_{structure}.csv'
@@ -37,6 +39,7 @@ def in_range_str(value_range):
             elif rng == 'NDAR*' and value.startswith('NDAR'):
                 return True
         return False
+
     return closure_fn
 
 
@@ -53,13 +56,56 @@ def in_range_num(value_range):
             elif rng == value:
                 return True
         return False
+
     return closure_fn
 
 
 # %%
 
+def validate_integer(definition, field):
+    #             field_series = field_series.astype('Int64',errors='ignore')
+    field = pd.to_numeric(field, 'coerce')
+    if field.dtype == 'Float64':
+        field = field.round().astype('Int64')
+    return field
+
+
+def validate_float(definition, field):
+    field = pd.to_numeric(field, 'coerce')
+    #             if field.dtype == 'Float64':
+    #                 field = field.round().astype('Int64')
+    return field
+
+
+def validate_string(definition, field):
+    field = field.fillna("").astype(str)
+    max_length = definition.get('length')
+    actual_length = field.str.len().max()
+    if actual_length > max_length:
+        print(f'Field "{field.name}" has a max length of {max_length}, but has data of length up to {actual_length}')
+
+    return field
+
+
+def validate_guid(definition, field):
+    return field
+
+
+def validate_date(definition, field):
+    return field
+
+
+validations = {
+    'Integer': validate_integer,
+    'Float': validate_float,
+    'String': validate_string,
+    'GUID': validate_guid,
+    'Date': validate_date
+}
+
+
 class NDAWriter:
-    def __init__(self, validator = "/home/m/.virtualenvs/ccf/bin/vtcmd"):
+    def __init__(self, validator="/home/m/.virtualenvs/ccf/bin/vtcmd"):
         self.validate_exec = validator
         self.nda_elements = {}
         self.reload_definitions()
@@ -99,8 +145,9 @@ class NDAWriter:
                     print('Skipping', name)
                     continue
                 dd = nda_defs[name]
+                fieldtype = dd['type']
                 if 'range' in dd:
-                    if dd['type'] in ['String', 'GUID']:
+                    if fieldtype in ['String', 'GUID']:
                         valid = field_series.map(in_range_str(dd['range']))
                     else:
                         valid = field_series.map(in_range_num(dd['range']))
@@ -108,33 +155,7 @@ class NDAWriter:
                     if (~valid).any():
                         print(f'Field "{name}" has the following invalid values:', set(field_series[~valid]))
                 #     print(name, s)
-                if dd['type'] == 'String':
-                    field_series = field_series.fillna("").astype(str)
-                    df[name] = field_series
-                    if field_series.dtype != 'O':
-                        print('%s should be String, but is listed as %s' % (name, field_series.dtype))
-                        continue
-                    max_length = dd.get('length')
-                    length = field_series.str.len().max()
-                    if length > max_length:
-                        print(f'Field "{name}" has a max length of {max_length}, but has data of length up to {length}')
-                    pass
-                elif dd['type'] == 'Integer':
-                    #             field_series = field_series.astype('Int64',errors='ignore')
-                    field_series = pd.to_numeric(field_series, 'coerce')
-                    if field_series.dtype == 'Float64':
-                        field_series = field_series.round().astype('Int64')
-                    df[name] = field_series
-                elif dd['type'] == 'Float':
-                    field_series = pd.to_numeric(field_series, 'coerce')
-                    #             if field_series.dtype == 'Float64':
-                    #                 field_series = field_series.round().astype('Int64')
-                    df[name] = field_series
-                elif dd['type'] == 'GUID':
-                    pass
-                elif dd['type'] == 'Date':
-                    pass
-            #     break
+                df[name] = validations[fieldtype](dd, field_series)
             save_df(struct, df)
 
     def validate(self, filename):

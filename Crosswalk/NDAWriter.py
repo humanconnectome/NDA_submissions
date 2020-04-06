@@ -27,8 +27,8 @@ def save_df(structure, df):
 
 
 # %%
-def in_range_num(value_range):
-    def closure_fn(value):
+def validate_numbers_in_range(definition, field):
+    def range_filter(value):
         if pd.isna(value):
             return True
         value = pd.to_numeric(value)
@@ -41,23 +41,34 @@ def in_range_num(value_range):
                 return True
         return False
 
-    return closure_fn
+    if 'range' not in definition:
+        return field
 
+    value_range = definition['range']
+    valid = field.map(range_filter)
+    if (~valid).any():
+        print(f'Field "{field.name}" has the following invalid values:', set(field[~valid]))
+        print(f"Dropping {(~valid).sum()} values.")
+        field = field.where(valid)
+    return field
 
-# %%
 
 def validate_integer(definition, field):
     #             field_series = field_series.astype('Int64',errors='ignore')
     field = pd.to_numeric(field, 'coerce')
     if field.dtype == 'Float64':
         field = field.round().astype('Int64')
+    field = validate_numbers_in_range(definition, field)
     return field
 
+
+# %%
 
 def validate_float(definition, field):
     field = pd.to_numeric(field, 'coerce')
     #             if field.dtype == 'Float64':
     #                 field = field.round().astype('Int64')
+    field = validate_numbers_in_range(definition, field)
     return field
 
 
@@ -163,12 +174,6 @@ class NDAWriter:
                     continue
                 dd = nda_defs[name]
                 fieldtype = dd['type']
-                if 'range' in dd:
-                    if fieldtype not in ['String']:
-                        valid = field_series.map(in_range_num(dd['range']))
-
-                    if (~valid).any():
-                        print(f'Field "{name}" has the following invalid values:', set(field_series[~valid]))
                 #     print(name, s)
                 df[name] = validations[fieldtype](dd, field_series)
             save_df(struct, df)

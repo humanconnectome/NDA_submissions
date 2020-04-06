@@ -59,7 +59,8 @@ def in_range_num(value_range):
 # %%
 
 class NDAWriter:
-    def __init__(self):
+    def __init__(self, validator = "/home/m/.virtualenvs/ccf/bin/vtcmd"):
+        self.validate_exec = validator
         self.nda_elements = {}
         self.reload_definitions()
         self.directory = './nda/'
@@ -136,12 +137,11 @@ class NDAWriter:
             #     break
             save_df(struct, df)
 
-
     def validate(self, filename):
         if '/' not in filename:
             filename = f'{pathstructuresout}/HCPD_{filename}.csv'
 
-        output = subprocess.check_output(f'/home/m/.virtualenvs/ccf/bin/vtcmd {filename}', shell=True).decode()
+        output = subprocess.check_output(f'{self.validate_exec} {filename}', shell=True).decode()
         filename = pattern.search(output)
         if filename:
             filename = filename.groups()[0]

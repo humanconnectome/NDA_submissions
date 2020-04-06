@@ -155,6 +155,12 @@ class NDAWriter:
     def nda(self):
         return {struct: {x['name']: x for x in struct_elements} for struct, struct_elements in self.nda_elements.items()}
 
+    def has_required_fields(self, struct, df):
+        missing = [name for name, v in self.nda(struct) \
+                   if v.get('required') and name not in df]
+        if missing:
+            print(f"{struct} is missing the fields: ", missing)
+
     def write(self, db):
         for struct, struct_elements in self.nda_elements.items():
             nda_defs = {x['name']: x for x in struct_elements}
@@ -163,10 +169,7 @@ class NDAWriter:
             df = db[struct]
             print('Entering ', struct)
 
-            required_fields = {k:v for k,v in nda_defs.items() if v.get('required')}
-            missing_fields = [k for k, v in required_fields.items() if k not in df]
-            if missing_fields:
-                print('Missing fields: ', missing_fields)
+            self.has_required_fields(struct, df)
 
             for name, field_series in df.iteritems():
                 if name not in nda_defs:

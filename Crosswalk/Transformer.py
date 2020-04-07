@@ -3,6 +3,7 @@ import yaml
 from collections import defaultdict
 import pandas as pd
 
+
 def aslist(item):
     if not item:
         return []
@@ -11,29 +12,34 @@ def aslist(item):
     else:
         return [item]
 
+
 def xyz(body, n=1):
-    args = ', '.join(list('xXyYzZ')[:n*2])
+    args = ', '.join(list('xXyYzZ')[:n * 2])
     code = 'def func(%s):\n    ' % args
     code += body.replace('\n', '\n    ')
     new_local = {}
     exec(code, None, new_local)
     return new_local['func']
 
+
 def passthrough(x, X, y=None, Y=None, z=None, Z=None):
     return x, y, z
 
+
 class Transformer:
-    def __init__(self):
-        self.elements = self.load_maps()
+    def __init__(self, map_dir='./map/'):
         self.funcs = {}
         self.writer = None
+        self.map_dir = map_dir
+        self.elements = self.load_maps()
 
     def load_maps(self):
         mappings = {}
-        for filename in os.listdir('./map/'):
-            with open('./map/'+filename, 'r') as fd:
+        for filename in os.listdir(self.map_dir):
+            filepath = os.path.join(self.map_dir, filename)
+            with open(filepath, 'r') as fd:
                 x = yaml.load(fd.read(), yaml.SafeLoader)
-                mappings[filename[:-5]]  = x['elements']
+                mappings[filename[:-5]] = x['elements']
 
         elements = []
         for struct, els in mappings.items():
@@ -81,7 +87,8 @@ class Transformer:
     def transform(self):
         db = defaultdict(lambda: defaultdict(dict))
         for e in self.elements:
-            struct, source, names, renames, recode, code, func = e['struct'], e['source'], e.get('name'), e.get('rename'), e.get('recode'), e.get('code'), e.get('func')
+            struct, source, names, renames, recode, code, func = e['struct'], e['source'], e.get('name'), e.get(
+                'rename'), e.get('recode'), e.get('code'), e.get('func')
             n = db[struct][source]
             renames = aslist(renames)
             names = aslist(names)
@@ -102,7 +109,7 @@ class Transformer:
                     func = passthrough
             elif code:
                 func = xyz(code, len(names))
-        #         print(names, code)
+            #         print(names, code)
             else:
                 func = passthrough
 

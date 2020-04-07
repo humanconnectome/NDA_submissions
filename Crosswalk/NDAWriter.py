@@ -10,8 +10,6 @@ from IPython.core.display import display
 trailing_zero_rx = re.compile('(\d+)\.0(?!\d)')
 pattern = re.compile('Validation report output to: (.+?csv)\n')
 
-pathstructuresout = "./prepped_structures"
-
 
 def validate_numbers_in_range(definition, field):
     def range_filter(value):
@@ -117,12 +115,13 @@ validations = {
 
 
 class NDAWriter:
-    def __init__(self, validator="/home/m/.virtualenvs/ccf/bin/vtcmd", completed_path='./prepped_structures/'):
-        self.validate_exec = validator
+    def __init__(self, definitions_dir="./nda", completed_dir='./prepped_structures/',
+                 validator="/home/m/.virtualenvs/ccf/bin/vtcmd"):
         self.nda_elements = {}
+        self.validate_exec = validator
+        self.directory = definitions_dir
         self.reload_definitions()
-        self.directory = './nda/'
-        self.completed_path = completed_path
+        self.completed_path = completed_dir
 
     def load_struct(self, struct):
         filename = path.join(self.directory, struct + '.yaml')

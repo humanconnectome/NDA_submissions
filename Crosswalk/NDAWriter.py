@@ -13,18 +13,6 @@ pattern = re.compile('Validation report output to: (.+?csv)\n')
 pathstructuresout = "./prepped_structures"
 
 
-def save_df(structure, df):
-    #     filepath = f'{pathstructuresout}/HCPD_{structure}_{snapshotdate}.csv'
-    filepath = f'{pathstructuresout}/HCPD_{structure}.csv'
-    root, num = structure[:-2], structure[-2:]
-
-    with open(filepath, 'w') as fd:
-        fd.write('{},{:d}\n'.format(root, int(num)))
-        output = df.to_csv(index=False)
-        #         output = trailing_zero_rx.sub('\\1', output)
-        fd.write(output)
-
-
 def validate_numbers_in_range(definition, field):
     def range_filter(value):
         if pd.isna(value):
@@ -129,11 +117,12 @@ validations = {
 
 
 class NDAWriter:
-    def __init__(self, validator="/home/m/.virtualenvs/ccf/bin/vtcmd"):
+    def __init__(self, validator="/home/m/.virtualenvs/ccf/bin/vtcmd", completed_path='./prepped_structures/'):
         self.validate_exec = validator
         self.nda_elements = {}
         self.reload_definitions()
         self.directory = './nda/'
+        self.completed_path = completed_path
 
     def load_struct(self, struct):
         filename = path.join(self.directory, struct + '.yaml')
@@ -175,18 +164,29 @@ class NDAWriter:
                 df[name] = validations[field_type](definition, field)
         return df
 
-    def write(self, db):
+    def write(self, struct, df):
+        print('Entering ', struct)
+        df = self.validate_struct(struct, df)
+
+        filepath = path.join(self.completed_path, struct + '.csv')
+        root, num = struct[:-2], struct[-2:]
+        with open(filepath, 'w') as fd:
+            fd.write('{},{:d}\n'.format(root, int(num)))
+            output = df.to_csv(index=False)
+            fd.write(output)
+
+    def write_all(self, db):
         for struct, struct_elements in self.nda_elements.items():
             if struct not in db:
                 continue
             df = db[struct]
-            print('Entering ', struct)
-            df = self.validate_struct(struct, df)
-            save_df(struct, df)
+            self.write(struct, df)
 
-    def validate(self, filename):
-        if '/' not in filename:
-            filename = f'{pathstructuresout}/HCPD_{filename}.csv'
+    def validate(self, struct):
+        filename = path.join(self.completed_path, struct + '.csv')
+        if not path.exists(filename):
+            print("File does not exist. Aborting.")
+            return
 
         output = subprocess.check_output(f'{self.validate_exec} {filename}', shell=True).decode()
         filename = pattern.search(output)

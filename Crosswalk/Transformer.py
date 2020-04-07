@@ -31,32 +31,40 @@ class Transformer:
         self.funcs = funcs
         self.writer = None
         self.map_dir = map_dir
-        self.elements = self.load_maps()
+        self.elements = []
+        self.mappings = {}
+        self.load_maps()
 
-    def load_maps(self):
-        mappings = {}
-        for filename in os.listdir(self.map_dir):
-            filepath = os.path.join(self.map_dir, filename)
-            with open(filepath, 'r') as fd:
-                x = yaml.load(fd.read(), yaml.SafeLoader)
-                mappings[filename[:-5]] = x['elements']
+    def load_map(self, struct):
+        filepath = os.path.join(self.map_dir, struct + '.yaml')
+        if not os.path.exists(filepath):
+            return []
+
+        with open(filepath, 'r') as fd:
+            contents = yaml.load(fd, yaml.SafeLoader)
+            element_list = contents['elements']
 
         elements = []
-        for struct, els in mappings.items():
-            outermost = {'struct': struct}
-            for e in els:
-                inner = outermost.copy()
-                inner.update(e)
-                sources = inner.pop('source')
-                for source in sources:
-                    x = inner.copy()
-                    if type(source) is str:
-                        x['source'] = source
-                    else:
-                        x['source'], innermost = source.popitem()
-                        x.update(innermost)
-                    elements.append(x)
+        for item in element_list:
+            item['struct'] = struct
+            sources_list = item.pop('source')
+            for source in sources_list:
+                new_element = item.copy()
+                elements.append(new_element)
+
+                if type(source) is str:
+                    new_element['source'] = source
+                else:
+                    new_element['source'], additional_detail = source.popitem()
+                    new_element.update(additional_detail)
+        self.elements.extend(elements)
         return elements
+
+    def load_maps(self, path=None):
+        path = path if path else self.map_dir
+        for filename in os.listdir(path):
+            if filename.endswith('.yaml'):
+                self.load_map(filename[:-5])
 
     def get_unique_variables(self):
         unique = set()

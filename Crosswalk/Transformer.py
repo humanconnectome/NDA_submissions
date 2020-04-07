@@ -79,9 +79,9 @@ class Transformer:
                 unique.update([(source, name) for name in names])
         return unique
 
-    def transform(self):
+    def transform(self, datacache, filter_fn=None):
         db = defaultdict(lambda: defaultdict(dict))
-        for e in self.elements:
+        for e in filter(filter_fn, self.elements):
             struct, source, names, renames, recode, code, func = e['struct'], e['source'], e.get('name'), e.get(
                 'rename'), e.get('recode'), e.get('code'), e.get('func')
             n = db[struct][source]

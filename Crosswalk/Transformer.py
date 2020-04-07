@@ -27,8 +27,8 @@ def passthrough(x, X, y=None, Y=None, z=None, Z=None):
 
 
 class Transformer:
-    def __init__(self, map_dir='./map/'):
-        self.funcs = {}
+    def __init__(self, map_dir='./map/', funcs={}):
+        self.funcs = funcs
         self.writer = None
         self.map_dir = map_dir
         self.elements = self.load_maps()
@@ -70,19 +70,6 @@ class Transformer:
             elif type(names) is list:
                 unique.update([(source, name) for name in names])
         return unique
-
-    def set_data_cache(self, datacache):
-        self.dc = datacache
-        datacache.preload(self.get_unique_variables())
-
-    def set_funcs(self, funcs):
-        self.funcs = funcs
-
-    def set_writer(self, writer):
-        self.writer = writer
-
-    def write(self, struct):
-        pass
 
     def transform(self):
         db = defaultdict(lambda: defaultdict(dict))

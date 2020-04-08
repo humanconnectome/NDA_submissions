@@ -29,3 +29,10 @@ class DataCache:
             )
         else:
             raise Exception('Field not in source', source, field)
+
+    def get_fields(self, source, names):
+        data = []
+        for name in names:
+            data.extend(self.get(source, name))
+
+        return data

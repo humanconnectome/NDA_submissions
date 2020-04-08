@@ -84,14 +84,10 @@ class Transformer:
         for e in filter(filter_fn, self.elements):
             struct, source, names, renames, recode, code, func = e['struct'], e['source'], e.get('name'), e.get(
                 'rename'), e.get('recode'), e.get('code'), e.get('func')
-            n = db[struct][source]
+            column = db[struct][source]
             renames = aslist(renames)
             names = aslist(names)
-
-            # this makes data contain x, X, y, Y, z, Z
-            data = []
-            for name in names:
-                data.extend(self.dc.get(source, name))
+            data = datacache.get_fields(source, names)
 
             if recode:
                 data[0].replace(recode, inplace=True)
@@ -112,8 +108,8 @@ class Transformer:
             if type(result) is not tuple:
                 result = (result,)
 
-            for i in range(len(renames)):
-                n[renames[i]] = result[i]
+            for i in range(max(len(result), len(renames))):
+                column[renames[i]] = result[i]
 
         result = {}
         for struct, v1 in db.items():

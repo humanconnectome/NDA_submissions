@@ -79,31 +79,33 @@ class Transformer:
                 unique.update([(source, name) for name in names])
         return unique
 
+    def get_executable(self, element, nargs):
+        code, func = element.get('code'), element.get('func')
+        if func:
+            if func in self.funcs:
+                executable = self.funcs[func]
+            else:
+                print('There is no function of that name so just passing through.', func)
+                executable = passthrough
+        elif code:
+            executable = xyz(code, nargs)
+        else:
+            executable = passthrough
+        return executable
+
     def transform(self, datacache, filter_fn=None):
         db = defaultdict(lambda: defaultdict(dict))
         for e in filter(filter_fn, self.elements):
-            struct, source, names, renames, recode, code, func = e['struct'], e['source'], e.get('name'), e.get(
-                'rename'), e.get('recode'), e.get('code'), e.get('func')
+            struct, source, = e['struct'], e['source']
             column = db[struct][source]
-            renames = aslist(renames)
-            names = aslist(names)
+            renames = aslist(e.get('rename'))
+            names = aslist(e.get('name'))
             data = datacache.get_fields(source, names)
 
-            if recode:
-                data[0].replace(recode, inplace=True)
+            if 'recode' in e:
+                data[0].replace(e['recode'], inplace=True)
 
-            if func:
-                if func in self.funcs:
-                    func = self.funcs[func]
-                else:
-                    print('There is no function of that name so just passing through.', func)
-                    func = passthrough
-            elif code:
-                func = xyz(code, len(names))
-            #         print(names, code)
-            else:
-                func = passthrough
-
+            func = self.get_executable(e, len(names))
             result = func(*data)
             if type(result) is not tuple:
                 result = (result,)

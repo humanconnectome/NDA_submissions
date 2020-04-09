@@ -143,7 +143,7 @@ class NDAWriter:
         return {x['name']: x for x in elements}
 
     def has_required_fields(self, struct, df):
-        missing = [name for name, v in self.nda(struct) \
+        missing = [name for name, v in self.nda(struct).items() \
                    if v.get('required') and name not in df]
         if missing:
             print(f"{struct} is missing the fields: ", missing)
@@ -195,7 +195,7 @@ class NDAWriter:
             df = pd.read_csv(filename)
             df = df.drop(columns=['FILE', 'ID', 'STATUS', 'EXPIRATION_DATE'])
 
-            if df.ERRORS == 'None':
+            if len(df) == 1 and df.ERRORS.iloc[0] == 'None':
                 print('No errors!')
                 return True
             else:

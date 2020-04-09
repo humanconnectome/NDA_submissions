@@ -110,7 +110,7 @@ class Transformer:
             if type(result) is not tuple:
                 result = (result,)
 
-            for i in range(max(len(result), len(renames))):
+            for i in range(min(len(result), len(renames))):
                 column[renames[i]] = result[i]
 
         result = {}

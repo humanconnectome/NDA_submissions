@@ -9,7 +9,9 @@ class Manager:
         self.data.preload(unique)
 
     def run(self, struct):
-        df = self.transformer.transform()
+        self.transformer.load_map(struct)
+        df = self.transformer.transform(self.data, lambda x: x['struct'] == struct)
+        df = df[struct]
         self.writer.write(struct, df)
         self.writer.validate(struct)
 

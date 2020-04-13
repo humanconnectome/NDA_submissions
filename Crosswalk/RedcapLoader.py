@@ -1,11 +1,25 @@
 import pandas as pd
 import pickle
 
+from libs.redcap import get_behavioral
+
 source_map = {
     'child': 'hc.pkl',
     'parent': 'hp.pkl',
     'teen': 'ht.pkl'
 }
+
+def parent2child(df, keep_withdrawn=False):
+    df = df \
+        .drop(columns=['subjectid']) \
+        .rename(columns={'child_id': 'subjectid'})
+
+    df[['subject','flagged']] = df.subjectid.str.split('_', 1, expand=True)
+
+    if not keep_withdrawn:
+        df = df[df.flagged.isna()]
+
+    return df
 
 
 class RedcapLoader:
@@ -31,16 +45,27 @@ class RedcapLoader:
         return result
 
     def load(self, fields):
+        to_get = list(fields)
         to_get = self.add_checkbox(fields)
-        to_get.append('interview_age')
-        df = pd.read_pickle('redcap/combined/' + source_map[self.name])
+        fields = list(fields)
+        # to_get.append('interview_age')
+        if self.get_source_name() == 'parent':
+            fields += ['child_id']
+        df = get_behavioral(self.get_source_name(), fields)
+        if self.get_source_name() == 'parent':
+            df = parent2child(df)
+
+        rosetta = pd.read_csv('UnrelatedHCAHCD_w_STG_Image_and_pseudo_GUID09_27_2019.csv')
+        rosetta = rosetta[['subjectped', 'nda_guid']]
+        rosetta.columns = ['subject', 'subjectkey']
+        df = rosetta.merge(df, on='subject')
         diff = set(to_get).difference(df.columns)
         if diff:
             print(self.name, 'Some columns were unavailable: ', diff)
             for x in diff:
                 to_get.remove(x)
 
-        df = df[set(to_get)]
+        # df = df[set(to_get)]
 
         # df = df[df.columns[df.columns.isin(fields)]]
         df['source'] = self.name

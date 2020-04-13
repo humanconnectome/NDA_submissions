@@ -3,6 +3,8 @@ import yaml
 from collections import defaultdict
 import pandas as pd
 
+from libs.YamlCache import YamlCache
+
 
 def aslist(item):
     if not item:
@@ -28,6 +30,7 @@ def passthrough(x, X, y=None, Y=None, z=None, Z=None):
 
 class Transformer:
     def __init__(self, map_dir='./map/', funcs={}):
+        self.y = YamlCache()
         self.funcs = funcs
         self.writer = None
         self.map_dir = map_dir
@@ -37,12 +40,8 @@ class Transformer:
 
     def load_map(self, struct):
         filepath = os.path.join(self.map_dir, struct + '.yaml')
-        if not os.path.exists(filepath):
-            return []
-
-        with open(filepath, 'r') as fd:
-            contents = yaml.load(fd, yaml.SafeLoader)
-            element_list = contents['elements']
+        contents = self.y.load(filepath)
+        element_list = contents['elements']
 
         elements = []
         for item in element_list:

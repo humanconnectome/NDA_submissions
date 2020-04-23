@@ -33,7 +33,7 @@ def validate_numbers_in_range(definition, field):
     value_range = definition['range']
     valid = field.map(range_filter)
     if (~valid).any():
-        print(f'Field "{field.name}" has the following invalid values:', set(field[~valid]))
+        print(f'{field.name}: Invalid values ', set(field[~valid]))
         print(f"Dropping {(~valid).sum()} values.")
         field = field.where(valid)
     return field
@@ -71,7 +71,7 @@ def validate_string_matches_range(definition, field):
     value_range = definition['range']
     valid = field.map(range_filter)
     if (~valid).any():
-        print(f'Field "{field.name}" has the following invalid values:', set(field[~valid]))
+        print(f'{field.name}: Invalid values ', set(field[~valid]))
 
         print(f'Dropping {(~valid).sum()} values.')
         field = field.where(valid)
@@ -87,7 +87,7 @@ def validate_string(definition, field):
     max_length = definition.get('length')
     actual_length = field.str.len().max()
     if actual_length > max_length:
-        print(f'Field "{field.name}" has a max length of {max_length}, but has data of length up to {actual_length}')
+        print(f'{field.name}: Increase length from {max_length} --> {actual_length} ')
 
     # check range
     field = validate_string_matches_range(definition, field)
@@ -98,7 +98,7 @@ def validate_string(definition, field):
 def validate_guid(definition, field):
     valid = field.map(lambda value: value.startswith('NDAR'))
     if (~valid).any():
-        print(f'Field "{field.name}" has incorrectly formatted GUID values:', set(field[~valid]))
+        print(f'{field.name}: Incorrectly formatted GUID values:', set(field[~valid]))
 
     return field.where(valid)
 
@@ -161,7 +161,7 @@ class NDAWriter:
         nda_defs = self.nda(struct)
         for name, field in df.iteritems():
             if name not in nda_defs:
-                print(f"Field '{name}' not pre-defined, skipping validation.")
+                print(f"{name}: Field not pre-defined, skipping validation.")
             else:
                 definition = nda_defs[name]
                 field_type = definition['type']
@@ -171,7 +171,7 @@ class NDAWriter:
         return df
 
     def write(self, struct, df):
-        print('Entering ', struct)
+        print(f'For struct "{struct}": ')
         df = self.validate_struct(struct, df)
 
         filepath = path.join(self.completed_path, struct + '.csv')

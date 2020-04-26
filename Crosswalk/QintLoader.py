@@ -1,6 +1,6 @@
 import pandas as pd
 
-from libs.redcap import RedcapTable
+from ccf.redcap import RedcapTable
 
 
 class QintLoader:

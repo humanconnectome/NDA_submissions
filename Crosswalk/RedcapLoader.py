@@ -1,7 +1,7 @@
+from os import path
 import pandas as pd
-import pickle
-
-from libs.redcap import get_behavioral
+from ccf.easy_yaml import EasyYaml
+from ccf.redcap import get_behavioral
 
 source_map = {
     'child': 'hc.pkl',
@@ -24,12 +24,20 @@ def parent2child(df, keep_withdrawn=False):
 
 class RedcapLoader:
 
-    def __init__(self, name):
+    def __init__(self, name, definitions_dir="./dd"):
         self.name = name
+        self.Y = EasyYaml()
+        self.directory = definitions_dir
+        self.dd = {}
+        self.load_definitions()
 
         # load data dictionary
-        with open('redcap/redcap.pkl', 'rb') as fd:
-            self.dd = pickle.load(fd)[self.name]
+        # with open('redcap/redcap.pkl', 'rb') as fd:
+        #     self.dd = pickle.load(fd)[self.name]
+
+    def load_definitions(self):
+        filename = path.join(self.directory, self.name + '.yaml')
+        self.dd = self.Y(filename)
 
     def get_source_name(self):
         return self.name

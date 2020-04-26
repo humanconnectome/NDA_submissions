@@ -1,9 +1,7 @@
 import os
-import yaml
 from collections import defaultdict
 import pandas as pd
-
-from libs.YamlCache import YamlCache
+from ccf.easy_yaml import EasyYaml
 
 
 def aslist(item):
@@ -30,7 +28,7 @@ def passthrough(x, X, y=None, Y=None, z=None, Z=None):
 
 class Transformer:
     def __init__(self, map_dir='./map/', funcs={}):
-        self.y = YamlCache()
+        self.Y = EasyYaml()
         self.funcs = funcs
         self.writer = None
         self.map_dir = map_dir
@@ -40,13 +38,13 @@ class Transformer:
 
     def load_map(self, struct):
         filepath = os.path.join(self.map_dir, struct + '.yaml')
-        contents = self.y.load(filepath)
+        contents = self.Y(filepath)
         element_list = contents['elements']
 
         elements = []
         for item in element_list:
             item['struct'] = struct
-            sources_list = item.pop('source')
+            sources_list = aslist(item.pop('source'))
             for source in sources_list:
                 new_element = item.copy()
                 elements.append(new_element)

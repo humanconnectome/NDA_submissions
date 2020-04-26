@@ -4,10 +4,9 @@ import subprocess
 from os import path
 
 import pandas as pd
-import yaml
 from IPython.core.display import display
+from ccf.easy_yaml import EasyYaml
 
-from libs.YamlCache import YamlCache
 
 trailing_zero_rx = re.compile('(\d+)\.0(?!\d)')
 pattern = re.compile('Validation report output to: (.+?csv)\n')
@@ -119,7 +118,7 @@ validations = {
 class NDAWriter:
     def __init__(self, definitions_dir="./nda", completed_dir='./prepped_structures/',
                  validator="/home/m/.virtualenvs/ccf/bin/vtcmd"):
-        self.y = YamlCache()
+        self.Y = EasyYaml()
         self.nda_elements = {}
         self.validate_exec = validator
         self.directory = definitions_dir
@@ -128,13 +127,7 @@ class NDAWriter:
 
     def load_struct(self, struct):
         filename = path.join(self.directory, struct + '.yaml')
-        elements = self.y.load(filename)
-        self.nda_elements[struct] = elements
-        return self
-
-        if path.exists(filename):
-            with open(filename, 'r') as fd:
-                self.nda_elements[struct] = yaml.load(fd, yaml.SafeLoader)
+        self.nda_elements[struct] = self.Y(filename)
         return self
 
     def reload_definitions(self):
@@ -147,6 +140,7 @@ class NDAWriter:
         if struct not in self.nda_elements:
             raise Exception(f"{struct} is not defined in NDA definitions.")
         elements = self.nda_elements[struct]
+        return elements
         return {x['name']: x for x in elements}
 
     def has_required_fields(self, struct, df):

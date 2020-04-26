@@ -1,6 +1,6 @@
 import pandas as pd
 
-from libs.box import LifespanBox
+from ccf.box import LifespanBox
 
 
 class BoxLoader:

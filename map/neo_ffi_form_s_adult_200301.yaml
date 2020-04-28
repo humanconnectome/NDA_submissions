@@ -1,0 +1,877 @@
+struct: neo_ffi_form_s_adult_200301
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - teen
+  - child
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - teen
+  - child
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - teen
+  - child
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - teen
+  - child
+
+- name: gender
+  rename: sex
+  source:
+  - teen
+  - child
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo1
+  rename: neo_q1
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo2
+  rename: neo_q2
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 4
+    2: 3
+    3: 2
+    4: 1
+    5: 0
+  name: neo3
+  rename: neo_q3
+  request: Please decrement your 1::5 scale to a 0::4 scale, reverse-coding where
+    the manual calls for it, and recalculating scores accordingly.
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo4
+  rename: neo_q4
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo5
+  rename: neo_q5
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo6
+  rename: neo_q6
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo7
+  rename: neo_q7
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 4
+    2: 3
+    3: 2
+    4: 1
+    5: 0
+  name: neo8
+  rename: neo_q8
+  request: Please decrement your 1::5 scale to a 0::4 scale, reverse-coding where
+    the manual calls for it, and recalculating scores accordingly.
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo9
+  rename: neo_q9
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo10
+  rename: neo_q10
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo11
+  rename: neo_q11
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo12
+  rename: neo_q12
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo13
+  rename: neo_q13
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo14
+  rename: neo_q14
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo15
+  rename: neo_q15
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo16
+  rename: neo_q16
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo17
+  rename: neo_q17
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo18
+  rename: neo_q18
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo19
+  rename: neo_q19
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo20
+  rename: neo_q20
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo21
+  rename: neo_q21
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo22
+  rename: neo_q22
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo23
+  rename: neo_q23
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo24
+  rename: neo_q24
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo25
+  rename: neo_q25
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo26
+  rename: neo_q26
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo27
+  rename: neo_q27
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo28
+  rename: neo_q28
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 4
+    2: 3
+    3: 2
+    4: 1
+    5: 0
+  name: neo29
+  rename: neo_q29
+  request: Please decrement your 1::5 scale to a 0::4 scale, reverse-coding where
+    the manual calls for it, and recalculating scores accordingly.
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo30
+  rename: neo_q30
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo31
+  rename: neo_q31
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo32
+  rename: neo_q32
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo33
+  rename: neo_q33
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo34
+  rename: neo_q34
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo35
+  rename: neo_q35
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo36
+  rename: neo_q36
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo37
+  rename: neo_q37
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 4
+    2: 3
+    3: 2
+    4: 1
+    5: 0
+  name: neo38
+  rename: neo_q38
+  request: Please decrement your 1::5 scale to a 0::4 scale, reverse-coding where
+    the manual calls for it, and recalculating scores accordingly.
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo39
+  rename: neo_q39
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo40
+  rename: neo_q40
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo41
+  rename: neo_q41
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo42
+  rename: neo_q42
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo43
+  rename: neo_q43
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo44
+  rename: neo_q44
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo45
+  rename: neo_q45
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo46
+  rename: neo_q46
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo47
+  rename: neo_q47
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo48
+  rename: neo_q48
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo49
+  rename: neo_q49
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo50
+  rename: neo_q50
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo51
+  rename: neo_q51
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo52
+  rename: neo_q52
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo53
+  rename: neo_q53
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo54
+  rename: neo_q54
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo55
+  rename: neo_q55
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo56
+  rename: neo_q56
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo57
+  rename: neo_q57
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo58
+  rename: neo_q58
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo59
+  rename: neo_q59
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+  name: neo60
+  rename: neo_q60
+  request: Please decrement your 1::5 scale to a 0::4 scale
+  source:
+  - child
+  - teen
+
+- rename: neo_n
+  name: neo_n
+  source:
+    - child
+    - teen
+
+- rename: neo_e
+  name: neo_e
+  source:
+    - child
+    - teen
+
+- rename: neo_o
+  name: neo_o
+  source:
+    - child
+    - teen
+
+- rename: neo_a
+  name: neo_a
+  source:
+    - child
+    - teen
+
+- rename: neo_c
+  name: neo_c
+  source:
+    - child
+    - teen
+
+- rename: neo_n_t
+  code: return 999
+  source:
+    - child
+    - teen
+
+- rename: neo_e_t
+  code: return 999
+  source:
+    - child
+    - teen
+
+- rename: neo_o_t
+  code: return 999
+  source:
+    - child
+    - teen
+
+- rename: neo_a_t
+  code: return 999
+  source:
+    - child
+    - teen
+
+- rename: neo_c_t
+  code: return 999
+  source:
+    - child
+    - teen

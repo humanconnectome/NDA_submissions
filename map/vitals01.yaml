@@ -1,0 +1,58 @@
+instrument: 'External Measures: Vitals'
+struct: vitals01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - child
+  - teen
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - child
+  - teen
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - child
+  - teen
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - child
+  - teen
+
+- name: gender
+  rename: sex
+  source:
+  - child
+  - teen
+
+- name: height
+  rename: vtl007
+  request: Please convert heights to inches.
+  code: |-
+    h = x.str.extract("^(?P<feet>[0-9.]+)(?:[^0-9.]+(?P<inches>[0-9.]+))?")
+    h = 12 * h.feet.astype(float) + h.inches.astype(float)
+    return h.fillna(0)
+  source:
+  - child
+  - teen
+
+- name: weight
+  rename: weight_std
+  source:
+  - child
+  - teen
+
+- name: bpressure
+  rename: bp
+  code: return x.str.replace("_", "")
+  source:
+  - child
+  - teen

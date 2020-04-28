@@ -1,0 +1,870 @@
+instrument: CBCL_1-5
+struct: cbcl1_501
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - parent
+
+- name: cbclpre1
+  rename: cbcl56a
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre2
+  rename: cbcl1
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre3
+  rename: cbcl_nt
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre4
+  rename: cbcl_eye
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre5
+  rename: cbcl8
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre6
+  rename: cbcl10
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre7
+  rename: cbcl_out
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre8
+  rename: cbcl_wait
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre9
+  rename: cbcl_chew
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre10
+  rename: cbcl11
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre11
+  rename: cbcl_help
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre12
+  rename: cbcl49
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre13
+  rename: cbcl14
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre14
+  rename: cbcl15
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre15
+  rename: cbcl_defiant
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre16
+  rename: cbcl_dem
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre17
+  rename: cbcl20
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre18
+  rename: cbcl21
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre19
+  rename: cbcl_diar
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre20
+  rename: cbcl_disob
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre21
+  rename: cbcl_dist
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre22
+  rename: cbcl_alonsleep
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre23
+  rename: cbcl_answer
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre24
+  rename: cbcl24
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre24_des
+  rename: cbcl24b_text
+  source:
+  - parent
+
+- name: cbclpre25
+  rename: cbcl25
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre26
+  rename: cbcl_fun
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre27
+  rename: cbcl26
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre28
+  rename: cbcl_home
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre29
+  rename: cbcl_frust
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre30
+  rename: cbcl27
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre31
+  rename: cbcl_eat
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre31_des
+  rename: cbcl31b_text
+  source:
+  - parent
+
+- name: cbclpre32
+  rename: cbcl29
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre32_des
+  rename: cbcl5_2_text
+  source:
+  - parent
+
+- name: cbclpre33
+  rename: cbcl_feel
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre34
+  rename: cbcl36
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre35
+  rename: cbcl37
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre35_start
+  rename: cbclpre35_start
+  source:
+  - parent
+
+- name: cbclpre36
+  rename: cbcl_every
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre37
+  rename: cbcl_upset
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre38
+  rename: cbcl_troubsleep
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre39
+  rename: cbcl56b
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre40
+  rename: cbcl_hit
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre41
+  rename: cbcl_breath
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre42
+  rename: cbcl_hurt
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre43
+  rename: cbcl_unhap
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre44
+  rename: cbcl_angry
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre45
+  rename: cbcl56c
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre46
+  rename: cbcl46
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre46_des
+  rename: cbcl7_3_text
+  source:
+  - parent
+
+- name: cbclpre47
+  rename: cbcl45
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre48
+  rename: cbcl47
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre49
+  rename: cbcl53
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre50
+  rename: cbcl54
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre51
+  rename: cbcl_panic
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre52
+  rename: cbcl_bow
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre53
+  rename: cbcl57
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre54
+  rename: cbcl58
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre54_des
+  rename: cbcl10_1_text
+  source:
+  - parent
+
+- name: cbclpre55
+  rename: cbcl60
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre56
+  rename: cbcl62
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre57
+  rename: cbcl56d
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre57_des
+  rename: cbcl57b_text
+  source:
+  - parent
+
+- name: cbclpre58
+  rename: cbcl_punish
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre59
+  rename: cbcl_shift
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre60
+  rename: cbcl56e
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre61
+  rename: cbcl_reat
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre62
+  rename: cbcl_play
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre63
+  rename: cbcl_rock
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre64
+  rename: cbcl_bed
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre65
+  rename: cbcl_toil
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre65_des
+  rename: cbcl65b_text
+  source:
+  - parent
+
+- name: cbclpre66
+  rename: cbcl68
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre67
+  rename: cbcl_aff
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre68
+  rename: cbcl71
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre69
+  rename: cbcl_selfish
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre70
+  rename: cbcl_littleaf
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre71
+  rename: cbcl_inter
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre72
+  rename: cbcl_fear
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre73
+  rename: cbcl75
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre74
+  rename: cbcl76
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre74_des
+  rename: cbcl74b_text
+  source:
+  - parent
+
+- name: cbclpre75
+  rename: cbcl_smear
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre76
+  rename: cbcl79
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre76_des
+  rename: cbcl13_1_text
+  source:
+  - parent
+
+- name: cbclpre77
+  rename: cbcl_stares
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre78
+  rename: cbcl56f
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre79
+  rename: cbcl_sad
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre80
+  rename: cbcl84
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre80_des
+  rename: cbcl13_6_text
+  source:
+  - parent
+
+- name: cbclpre81
+  rename: cbcl86
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre82
+  rename: cbcl87
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre83
+  rename: cbcl88
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre84
+  rename: cbcl_crie
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre85
+  rename: cbcl95
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre86
+  rename: cbcl_clean
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre87
+  rename: cbcl50
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre88
+  rename: cbcl_uncoop
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre89
+  rename: cbcl102
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre90
+  rename: cbcl103
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre91
+  rename: cbcl104
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre92
+  rename: cbcl_people
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre92_des
+  rename: cbcl92b_text
+  source:
+  - parent
+
+- name: cbclpre93
+  rename: cbcl56g
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre94
+  rename: cbcl_wake
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre95
+  rename: cbcl_wand
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre96
+  rename: cbcl19
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre97
+  rename: cbcl109
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre98
+  rename: cbcl_withdr
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre99
+  rename: cbcl112
+  code: return 999
+  source:
+  - parent
+
+- name: cbclpre100
+  rename: cbclpre100
+  source:
+  - parent
+
+- name: cbclpre100_1
+  rename: cbcl113a_des
+  source:
+  - parent
+
+- name: cbclpre100_1_rating
+  rename: cbcl113a
+  source:
+  - parent
+
+- name: cbclpre100_2
+  rename: cbcl113b_des
+  source:
+  - parent
+
+- name: cbclpre100_2_rating
+  rename: cbcl113b
+  source:
+  - parent
+
+- name: cbclpre100_3
+  rename: cbcl113c_des
+  source:
+  - parent
+
+- name: cbclpre100_3_rating
+  rename: cbcl113c
+  source:
+  - parent
+
+- name: cbclpre101
+  rename: cbp_4
+  source:
+  - parent
+
+- name: cbclpre101_des
+  rename: cbclpre101_des
+  source:
+  - parent
+
+- name: cbclpre102
+  rename: adis_concern_what
+  source:
+  - parent
+
+- name: cbclpre103
+  rename: trf_best
+  source:
+  - parent
+
+- rename: cbcl_emotional_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_emotional
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_anxious_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_anxious
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_somatic_c_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_somatic_c
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_withdrawn_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_withdrawn
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_sleep_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_sleep
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_attention_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_attention
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_aggressive_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_aggressive
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_internal_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_internal
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_external_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_external
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_total_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_total
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_affective_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_affective
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_anxiety_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_anxiety
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_pervasive_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_pervasive
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_adhd_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_adhd
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_oppositional_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_oppositional
+  source: ["parent"]
+  code: return 999
+
+- rename: phenotype
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_depresspr
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_depresspr_raw
+  source: ["parent"]
+  code: return 999

@@ -1,0 +1,242 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - qint
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - qint
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - qint
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - qint
+
+- name: gender
+  rename: sex
+  source:
+  - qint
+
+- name: wisc_matrixreason_score
+  rename: matrixreason_score
+  source:
+  - qint
+
+- name: wisc_scaled_matrix
+  rename: scaled_matrix
+  source:
+  - qint
+
+- name: wisc_subtesttypedk
+  rename: subtesttypedk
+  source:
+  - qint
+
+- name: wisc_subtesttypenr
+  rename: subtesttypenr
+  source:
+  - qint
+
+- name: wisc_subtesttypesc
+  rename: subtesttypesc
+  source:
+  - qint
+
+- name: wisc_subtesttypesv
+  rename: subtesttypesv
+  source:
+  - qint
+
+- name: wisc_matrix_completion
+  rename: matrix_completion
+  source:
+  - qint
+
+- name: wisc_discontinue
+  rename: discontinue
+  source:
+  - qint
+
+- name: wisc_reverse
+  rename: reverse
+  source:
+  - qint
+
+- name: wisc_pea_wiscv_item_a_rs
+  rename: pea_wiscv_item_a_rs
+  source:
+  - qint
+
+- name: wisc_pea_wiscv_item_b_rs
+  rename: pea_wiscv_item_b_rs
+  source:
+  - qint
+
+- name: wisc_matrixreason_item1
+  rename: matrixreason_item1
+  source:
+  - qint
+
+- name: wisc_matrixreason_item2
+  rename: matrixreason_item2
+  source:
+  - qint
+
+- name: wisc_matrixreason_item3
+  rename: matrixreason_item3
+  source:
+  - qint
+
+- name: wisc_matrixreason_item4
+  rename: matrixreason_item4
+  source:
+  - qint
+
+- name: wisc_matrixreason_item5
+  rename: matrixreason_item5
+  source:
+  - qint
+
+- name: wisc_matrixreason_item6
+  rename: matrixreason_item6
+  source:
+  - qint
+
+- name: wisc_matrixreason_item7
+  rename: matrixreason_item7
+  source:
+  - qint
+
+- name: wisc_matrixreason_item8
+  rename: matrixreason_item8
+  source:
+  - qint
+
+- name: wisc_matrixreason_item9
+  rename: matrixreason_item9
+  source:
+  - qint
+
+- name: wisc_matrixreason_item10
+  rename: matrixreason_item10
+  source:
+  - qint
+
+- name: wisc_matrixreason_item11
+  rename: matrixreason_item11
+  source:
+  - qint
+
+- name: wisc_matrixreason_item12
+  rename: matrixreason_item12
+  source:
+  - qint
+
+- name: wisc_matrixreason_item13
+  rename: matrixreason_item13
+  source:
+  - qint
+
+- name: wisc_matrixreason_item14
+  rename: matrixreason_item14
+  source:
+  - qint
+
+- name: wisc_matrixreason_item15
+  rename: matrixreason_item15
+  source:
+  - qint
+
+- name: wisc_matrixreason_item16
+  rename: matrixreason_item16
+  source:
+  - qint
+
+- name: wisc_matrixreason_item17
+  rename: matrixreason_item17
+  source:
+  - qint
+
+- name: wisc_matrixreason_item18
+  rename: matrixreason_item18
+  source:
+  - qint
+
+- name: wisc_matrixreason_item19
+  rename: matrixreason_item19
+  source:
+  - qint
+
+- name: wisc_matrixreason_item20
+  rename: matrixreason_item20
+  source:
+  - qint
+
+- name: wisc_matrixreason_item21
+  rename: matrixreason_item21
+  source:
+  - qint
+
+- name: wisc_matrixreason_item22
+  rename: matrixreason_item22
+  source:
+  - qint
+
+- name: wisc_matrixreason_item23
+  rename: matrixreason_item23
+  source:
+  - qint
+
+- name: wisc_matrixreason_item24
+  rename: matrixreason_item24
+  source:
+  - qint
+
+- name: wisc_matrixreason_item25
+  rename: matrixreason_item25
+  source:
+  - qint
+
+- name: wisc_matrixreason_item26
+  rename: matrixreason_item26
+  source:
+  - qint
+
+- name: wisc_matrixreason_item27
+  rename: matrixreason_item27
+  source:
+  - qint
+
+- name: wisc_matrixreason_item28
+  rename: matrixreason_item28
+  source:
+  - qint
+
+- name: wisc_matrixreason_item29
+  rename: matrixreason_item29
+  source:
+  - qint
+
+- name: wisc_matrixreason_item30
+  rename: matrixreason_item30
+  source:
+  - qint
+
+- name: wisc_matrixreason_item31
+  rename: matrixreason_item31
+  source:
+  - qint
+
+- name: wisc_matrixreason_item32
+  rename: matrixreason_item32
+  source:
+  - qint

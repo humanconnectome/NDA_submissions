@@ -1,0 +1,84 @@
+struct: vision_tests01
+elements:
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - child
+  - teen
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - child
+  - teen
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - child
+  - teen
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - child
+  - teen
+
+- name: gender
+  rename: sex
+  source:
+  - child
+  - teen
+
+- name: colorvsn1
+  rename: psysoc_64
+  recode:
+    0: No correction
+    99: Don't know
+  request: Please convert numeric codes of 0 and 99 to the text strings they represent.
+  source:
+  - child
+  - teen
+
+- name: colorvsn2
+  rename: colorvsn2
+  source:
+  - child
+  - teen
+
+- name: colorvsn_add
+  rename: colorvsn_add
+  source:
+  - child
+  - teen
+
+- name: colorvsn3
+  rename: colorvsn3
+  source:
+  - child
+  - teen
+
+- name: colorvsn4
+  rename: colorvsn4
+  source:
+  - child
+  - teen
+
+- name: contrastvsn1
+  rename: contrastvsn1
+  source:
+  - child
+  - teen
+
+- name: contrastvsn2
+  rename: contrastvsn2
+  source:
+  - child
+  - teen
+
+- name: contrastvsn3
+  rename: contrastvsn3
+  source:
+  - child
+  - teen

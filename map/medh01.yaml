@@ -1,0 +1,799 @@
+instrument: ''
+struct: medh01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - teen
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - teen
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - teen
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - teen
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - teen
+  - parent
+
+- name: dental1
+  rename: dental1
+  source:
+  - teen
+  - parent
+
+- name: dental2
+  rename: dental2
+  source:
+  - teen
+  - parent
+
+- name: dental2_1
+  rename: dental2_1
+  source:
+  - teen
+  - parent
+
+- name: dental3
+  rename: dental3
+  source:
+  - teen
+  - parent
+
+- name: dental3_1
+  rename: dental3_1
+  source:
+  - teen
+  - parent
+
+- name: dental3_2
+  rename: dental3_2
+  source:
+  - teen
+  - parent
+
+- name: dental4
+  rename: dental4
+  source:
+  - teen
+  - parent
+
+- name: dental4_1
+  rename: dental4_1
+  source:
+  - teen
+  - parent
+
+- name: dental4_2
+  rename: dental4_2
+  source:
+  - teen
+  - parent
+
+- name: dental5
+  rename: dental5
+  source:
+  - teen
+  - parent
+
+- name: dental5_1
+  rename: dental5_1
+  source:
+  - teen
+  - parent
+
+- name: dental5_2
+  rename: dental5_2
+  source:
+  - teen
+  - parent
+
+- name: dental6
+  rename: dental6
+  source:
+  - teen
+  - parent
+
+- name: dental6_1
+  rename: dental6_1
+  source:
+  - teen
+  - parent
+
+- name: dental6_2
+  rename: dental6_2
+  source:
+  - teen
+  - parent
+
+- code: pass
+  name: medhx_1a
+  rename: medhis_1a
+  request: Please keep data for these columns in their own rows, with 'version_form'
+    labeling them ''''Past Year''''.
+  source:
+  - parent
+
+- code: pass
+  name: medhx_1a_other
+  rename: medhis_1a_other
+  request: Please keep data for these columns in their own rows, with 'version_form'
+    labeling them ''''Past Year''''.
+  source:
+  - parent
+
+- name: medhx_2a
+  rename: wk_asthma
+  source:
+  - parent
+
+- name: medhx_2b
+  rename: wk_allergies
+  source:
+  - parent
+
+- name: medhx_2c
+  rename: seq1c_2
+  recode:
+    0: 2
+  source:
+  - parent
+
+- name: medhx_2d
+  rename: medhis_2d
+  source:
+  - parent
+
+- name: medhx_2e
+  rename: medhis_2e
+  source:
+  - parent
+
+- name: medhx_2f
+  rename: cfmh_chd_cerpalsy
+  source:
+  - parent
+
+- name: medhx_2g
+  rename: baseline_k_005
+  source:
+  - parent
+
+- name: medhx_2h
+  rename: cfmh_chd_seizure
+  source:
+  - parent
+
+- name: medhx_2i
+  rename: w1_m_cu_hrng
+  source:
+  - parent
+
+- name: medhx_2j
+  rename: strconkidney
+  func: convert_all_to_text
+  source:
+  - parent
+
+- name: medhx_2k
+  rename: medhis_2k
+  source:
+  - parent
+
+- name: medhx_2l
+  rename: ex_vd2_dev_muscular_dystrophy
+  recode:
+    0: 'Y'
+    1: 'N'
+  source:
+  - parent
+
+- name: medhx_2m
+  rename: ms
+  source:
+  - parent
+
+- name: medhx_2n
+  rename: medhis_2n
+  source:
+  - parent
+
+- name: medhx_2o
+  rename: q17_b14
+  source:
+  - parent
+
+- name: medhx_2p
+  rename: medhis_2p
+  source:
+  - parent
+
+- name: medhx_2q
+  rename: medhis_2q
+  source:
+  - parent
+
+- name: medhx_2r
+  rename: medhis_2r
+  source:
+  - parent
+
+- name: medhx_2s
+  rename: medhis_2s
+  source:
+  - parent
+
+- name: medhx_2_notes
+  rename: medhis_2_notes
+  source:
+  - parent
+
+- name: medhx_2_notes2
+  rename: medhis_2_notes2
+  source:
+  - parent
+
+- name: medhx_4a
+  rename: ph_119
+  source:
+  - parent
+
+- name: medhx_4b
+  rename: medhis_4b
+  source:
+  - parent
+
+- name: medhx_6a
+  rename: medhx_brokenbones
+  source:
+  - parent
+
+- code: return x.mask(x.notna(), x.astype(str) + " times" )
+  name: medhx_6a_notes
+  rename: medhx_brokenbones_specify
+  request: Please append " times" to each number.
+  source:
+  - parent
+
+- name: medhx_6b
+  rename: medhis_6b
+  source:
+  - parent
+
+- name: medhx_6b_notes
+  rename: medhis_6b_notes
+  source:
+  - parent
+
+- name: medhx_6c
+  rename: medhis_6c
+  source:
+  - parent
+
+- name: medhx_6c_times
+  rename: medhis_6c_times
+  source:
+  - parent
+
+- name: medhx_6d
+  rename: medhis_6d
+  source:
+  - parent
+
+- name: medhx_6d_notes
+  rename: medhis_6d_notes
+  source:
+  - parent
+
+- name: medhx_6e
+  rename: medhis_6e
+  source:
+  - parent
+
+- name: medhx_6e_describe
+  rename: medhis_6e_describe
+  source:
+  - parent
+
+- name: medhx_6e_times
+  rename: medhis_6e_times
+  source:
+  - parent
+
+- name: medhx_6f
+  rename: medhis_6f
+  source:
+  - parent
+
+- name: medhx_6f_notes
+  rename: medhis_6f_notes
+  source:
+  - parent
+
+- name: medhx_6g
+  rename: ch_17_00
+  source:
+  - parent
+
+- name: medhx_6g_times
+  rename: medhis_6g_times
+  source:
+  - parent
+
+- name: medhx_6h
+  rename: medhis_6h
+  source:
+  - parent
+
+- name: medhx_6h_times
+  rename: medhis_6h_times
+  source:
+  - parent
+
+- name: medhx_6i
+  rename: ph_neuro9
+  source:
+  - parent
+
+- name: medhx_6i_times
+  rename: medhis_6i_times
+  source:
+  - parent
+
+- name: medhx_6j
+  rename: medhis_6j
+  source:
+  - parent
+
+- name: medhx_6j_times
+  rename: medhis_6j_times
+  source:
+  - parent
+
+- name: medhx_6k
+  rename: medhis_6k
+  source:
+  - parent
+
+- name: medhx_6k_times
+  rename: medhis_6k_times
+  source:
+  - parent
+
+- name: medhx_6l
+  rename: medhis_6l
+  source:
+  - parent
+
+- name: medhx_6l_notes
+  rename: medhis_6l_notes
+  source:
+  - parent
+
+- name: medhx_6m
+  rename: medhis_6m
+  source:
+  - parent
+
+- name: medhx_6m_times
+  rename: medhis_6m_times
+  source:
+  - parent
+
+- name: medhx_6n
+  rename: medhis_6n
+  source:
+  - parent
+
+- name: medhx_6n_notes
+  rename: medhis_6n_notes
+  source:
+  - parent
+
+- name: medhx_6o
+  rename: medhis_6o
+  source:
+  - parent
+
+- name: medhx_6o_notes
+  rename: medhis_6o_notes
+  source:
+  - parent
+
+- name: medhx_6o_drug1
+  rename: medhis_6o_drug1
+  source:
+  - parent
+
+- name: medhx_6o_drug2
+  rename: medhis_6o_drug2
+  source:
+  - parent
+
+- name: medhx_6o_drug3
+  rename: medhis_6o_drug3
+  source:
+  - parent
+
+- name: medhx_6o_drug4
+  rename: medhis_6o_drug4
+  source:
+  - parent
+
+- name: medhx_6o_drug5
+  rename: medhis_6o_drug5
+  source:
+  - parent
+
+- name: medhx_6o_drug6
+  rename: medhis_6o_drug6
+  source:
+  - parent
+
+- name: medhx_6o_drug7
+  rename: medhis_6o_drug7
+  source:
+  - parent
+
+- name: medhx_6o_drug8
+  rename: medhis_6o_drug8
+  source:
+  - parent
+
+- name: medhx_6o_drug9
+  rename: medhis_6o_drug9
+  source:
+  - parent
+
+- name: medhx_6o_drug10
+  rename: medhis_6o_drug10
+  source:
+  - parent
+
+- name: medhx_6o_drug11
+  rename: medhis_6o_drug11
+  source:
+  - parent
+
+- name: medhx_6o_drug12
+  rename: medhis_6o_drug12
+  source:
+  - parent
+
+- name: medhx_6o_drug13
+  rename: medhis_6o_drug13
+  source:
+  - parent
+
+- name: medhx_6o_drug14
+  rename: medhis_6o_drug14
+  source:
+  - parent
+
+- name: medhx_6o_drug15
+  rename: medhis_6o_drug15
+  source:
+  - parent
+
+- name: medhx_6o_drug16
+  rename: medhis_6o_drug16
+  source:
+  - parent
+
+- name: medhx_6o_drug17
+  rename: medhis_6o_drug17
+  source:
+  - parent
+
+- name: medhx_6o_drug18
+  rename: medhis_6o_drug18
+  source:
+  - parent
+
+- name: medhx_6o_drug19
+  rename: medhis_6o_drug19
+  source:
+  - parent
+
+- name: medhx_6o_drug20
+  rename: medhis_6o_drug20
+  source:
+  - parent
+
+- name: medhx_6o_drug21
+  rename: medhis_6o_drug21
+  source:
+  - parent
+
+- name: medhx_6o_drug22
+  rename: medhis_6o_drug22
+  source:
+  - parent
+
+- name: medhx_6o_drug23
+  rename: medhis_6o_drug23
+  source:
+  - parent
+
+- name: medhx_6o_drug24
+  rename: medhis_6o_drug24
+  source:
+  - parent
+
+- name: medhx_6o_drug25
+  rename: medhis_6o_drug25
+  source:
+  - parent
+
+- name: medhx_6o_drug26
+  rename: medhis_6o_drug26
+  source:
+  - parent
+
+- name: medhx_6o_drug27
+  rename: medhis_6o_drug27
+  source:
+  - parent
+
+- name: medhx_6o_drug28
+  rename: medhis_6o_drug28
+  source:
+  - parent
+
+- name: medhx_6o_drug29
+  rename: medhis_6o_drug29
+  source:
+  - parent
+
+- name: medhx_6o_drug30
+  rename: medhis_6o_drug30
+  source:
+  - parent
+
+- name: medhx_6p
+  rename: ph_9
+  source:
+  - parent
+
+- name: medhx_6p_notes
+  rename: ph_9a
+  source:
+  - parent
+
+- name: medhx_6q
+  rename: medhis_6q
+  source:
+  - parent
+
+- name: medhx_6q_notes
+  rename: medhis_6q_notes
+  source:
+  - parent
+
+- name: medhx_6q_drug1
+  rename: medhis_6q_drug1
+  source:
+  - parent
+
+- name: medhx_6q_drug2
+  rename: medhis_6q_drug2
+  source:
+  - parent
+
+- name: medhx_6q_drug3
+  rename: medhis_6q_drug3
+  source:
+  - parent
+
+- name: medhx_6q_drug4
+  rename: medhis_6q_drug4
+  source:
+  - parent
+
+- name: medhx_6q_drug5
+  rename: medhis_6q_drug5
+  source:
+  - parent
+
+- name: medhx_6q_drug6
+  rename: medhis_6q_drug6
+  source:
+  - parent
+
+- name: medhx_6q_drug7
+  rename: medhis_6q_drug7
+  source:
+  - parent
+
+- name: medhx_6q_drug8
+  rename: medhis_6q_drug8
+  source:
+  - parent
+
+- name: medhx_6q_drug9
+  rename: medhis_6q_drug9
+  source:
+  - parent
+
+- name: medhx_6q_drug10
+  rename: medhis_6q_drug10
+  source:
+  - parent
+
+- name: medhx_6q_drug11
+  rename: medhis_6q_drug11
+  source:
+  - parent
+
+- name: medhx_6q_drug12
+  rename: medhis_6q_drug12
+  source:
+  - parent
+
+- name: medhx_6q_drug13
+  rename: medhis_6q_drug13
+  source:
+  - parent
+
+- name: medhx_6q_drug14
+  rename: medhis_6q_drug14
+  source:
+  - parent
+
+- name: medhx_6q_drug15
+  rename: medhis_6q_drug15
+  source:
+  - parent
+
+- name: medhx_6q_drug16
+  rename: medhis_6q_drug16
+  source:
+  - parent
+
+- name: medhx_6q_drug17
+  rename: medhis_6q_drug17
+  source:
+  - parent
+
+- name: medhx_6q_drug18
+  rename: medhis_6q_drug18
+  source:
+  - parent
+
+- name: medhx_6q_drug19
+  rename: medhis_6q_drug19
+  source:
+  - parent
+
+- name: medhx_6q_drug20
+  rename: medhis_6q_drug20
+  source:
+  - parent
+
+- name: medhx_6q_drug21
+  rename: medhis_6q_drug21
+  source:
+  - parent
+
+- name: medhx_6q_drug22
+  rename: medhis_6q_drug22
+  source:
+  - parent
+
+- name: medhx_6q_drug23
+  rename: medhis_6q_drug23
+  source:
+  - parent
+
+- name: medhx_6q_drug24
+  rename: medhis_6q_drug24
+  source:
+  - parent
+
+- name: medhx_6q_drug25
+  rename: medhis_6q_drug25
+  source:
+  - parent
+
+- name: medhx_6q_drug26
+  rename: medhis_6q_drug26
+  source:
+  - parent
+
+- name: medhx_6q_drug27
+  rename: medhis_6q_drug27
+  source:
+  - parent
+
+- name: medhx_6q_drug28
+  rename: medhis_6q_drug28
+  source:
+  - parent
+
+- name: medhx_6q_drug29
+  rename: medhis_6q_drug29
+  source:
+  - parent
+
+- name: medhx_6q_drug30
+  rename: medhis_6q_drug30
+  source:
+  - parent
+
+- name: medhx_6r
+  rename: medhis_6r
+  source:
+  - parent
+
+- name: medhx_6r_notes
+  rename: medhis_6r_notes
+  source:
+  - parent
+
+- name: medhx_6s
+  rename: medhis_6s
+  source:
+  - parent
+
+- name: medhx_6s_times
+  rename: medhis_6s_times
+  source:
+  - parent
+
+- name: medhx_6t
+  rename: medhis_6t
+  source:
+  - parent
+
+- name: medhx_6t_describe
+  rename: medhis_6t_describe
+  source:
+  - parent
+
+- name: medhx_6t_times
+  rename: medhis_6t_times
+  source:
+  - parent
+
+- name: medhx_8a
+  rename: childhospital
+  source:
+  - parent
+
+- name: medhx_8b_describe
+  rename: medhis_8b_describe
+  source:
+  - parent
+
+- name: medhx_9a
+  rename: medhis_9a
+  source:
+  - parent
+
+- name: medhx_9b
+  rename: medhis_9b
+  source:
+  - parent
+
+- name: medhx_9c
+  rename: medhis_9c
+  source:
+  - parent
+

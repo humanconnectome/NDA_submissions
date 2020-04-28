@@ -1,0 +1,1573 @@
+struct: asr01
+instrument: Adult Self Report
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - child
+  - teen
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - child
+  - teen
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - child
+  - teen
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - child
+  - teen
+
+- name: gender
+  rename: sex
+  source:
+  - child
+  - teen
+
+- name: asr1
+  rename: asr1_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr2
+  rename: asr1_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr3
+  rename: asr1_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr4
+  rename: asr1_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr5
+  rename: asr1_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr6
+  rename: asr1_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr6des
+  rename: asr1_6_text
+  source:
+  - child
+  - teen
+
+- name: asr7
+  rename: asr2_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr8
+  rename: asr2_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr9
+  rename: asr2_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr9des
+  rename: asr2_3_text
+  source:
+  - child
+  - teen
+
+- name: asr10
+  rename: asr2_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr11
+  rename: asr2_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr12
+  rename: asr2_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr13
+  rename: asr3_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr14
+  rename: asr3_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr15
+  rename: asr3_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr16
+  rename: asr3_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr17
+  rename: asr3_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr18
+  rename: asr3_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr19
+  rename: asr4_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr20
+  rename: asr4_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr21
+  rename: asr4_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr22
+  rename: asr4_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr23
+  rename: asr4_5
+  request:
+  - Please rename this column 'asr4_5' to avoid a naming conflict in our database.
+  - Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr24
+  rename: asr4_6
+  request:
+  - Please rename this column 'asr4_6' to avoid a naming conflict in our database.
+  - Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr25
+  rename: asr5_1
+  request:
+  - Please rename this column 'asr5_1' to avoid a naming conflict in our database.
+  - Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr26
+  rename: asr5_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr27
+  rename: asr5_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr28
+  rename: asr5_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr29
+  rename: asr5_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr29des
+  rename: asr5_5_text
+  source:
+  - child
+  - teen
+
+- name: asr30
+  rename: asr5_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr31
+  rename: asr6_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr32
+  rename: asr6_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr33
+  rename: asr6_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr34
+  rename: asr6_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr35
+  rename: asr6_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr36
+  rename: asr6_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr37
+  rename: asr7_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr38
+  rename: asr7_2
+  request:
+  - Please rename this column 'asr7_2' to avoid a naming conflict in our database.
+  - Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr39
+  rename: asr7_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr40
+  rename: asr7_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr40des
+  rename: asr7_4_text
+  source:
+  - child
+  - teen
+
+- name: asr41
+  rename: asr7_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr42
+  rename: asr7_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr43
+  rename: asr8_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr44
+  rename: asr8_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr45
+  rename: asr8_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr46
+  rename: asr8_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr46des
+  rename: asr8_4_text
+  source:
+  - child
+  - teen
+
+- name: asr47
+  rename: asr8_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr48
+  rename: asr8_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr49
+  rename: asr9_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr50
+  rename: asr9_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr51
+  rename: asr9_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr52
+  rename: asr9_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr53
+  rename: asr9_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr54
+  rename: asr9_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr55
+  rename: asr10_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr56a
+  rename: asr10_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr56b
+  rename: asr10_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr56c
+  rename: asr10_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr56d
+  rename: asr10_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr56ddes
+  rename: asr10_6_text
+  source:
+  - child
+  - teen
+
+- name: asr56e
+  rename: asr11_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr56f
+  rename: asr11_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr56g
+  rename: asr11_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr56h
+  rename: asr11_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr56i
+  rename: asr11_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr57
+  rename: asr11_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr58
+  rename: asr12_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr58des
+  rename: asr12_1_text
+  source:
+  - child
+  - teen
+
+- name: asr59
+  rename: asr12_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr60
+  rename: asr12_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr61
+  rename: asr12_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr62
+  rename: asr12_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr63
+  rename: asr12_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr64
+  rename: asr13_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr65
+  rename: asr13_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr66
+  rename: asr13_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr66des
+  rename: asr13_3_text
+  source:
+  - child
+  - teen
+
+- name: asr67
+  rename: asr13_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr68
+  rename: asr13_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr69
+  rename: asr13_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr70
+  rename: asr14_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr70des
+  rename: asr14_1_text
+  source:
+  - child
+  - teen
+
+- name: asr71
+  rename: asr14_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr72
+  rename: asr14_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr73
+  rename: asr14_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr74
+  rename: asr14_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr75
+  rename: asr14_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr76
+  rename: asr15_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr77
+  rename: asr15_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr77des
+  rename: asr15_2_text
+  source:
+  - child
+  - teen
+
+- name: asr78
+  rename: asr15_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr79
+  rename: asr15_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr79des
+  rename: asr15_4_text
+  source:
+  - child
+  - teen
+
+- name: asr80
+  rename: asr15_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr81
+  rename: asr15_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr82
+  rename: asr16_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr83
+  rename: asr16_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr84
+  rename: asr16_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr84des
+  rename: asr16_3_text
+  source:
+  - child
+  - teen
+
+- name: asr85
+  rename: asr16_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr85des
+  rename: asr16_4_text
+  source:
+  - child
+  - teen
+
+- name: asr86
+  rename: asr16_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr87
+  rename: asr16_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr88
+  rename: asr17_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr89
+  rename: asr17_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr90
+  rename: asr17_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr91
+  rename: asr17_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr92
+  rename: asr17_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr92des
+  rename: asr17_5_text
+  source:
+  - child
+  - teen
+
+- name: asr93
+  rename: asr17_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr94
+  rename: asr18_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr95
+  rename: asr18_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr96
+  rename: asr18_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr97
+  rename: asr18_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr98
+  rename: asr18_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr99
+  rename: asr18_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr100
+  rename: asr19_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr100des
+  rename: asr19_1_text
+  source:
+  - child
+  - teen
+
+- name: asr101
+  rename: asr19_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr102
+  rename: asr19_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr103
+  rename: asr19_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr104
+  rename: asr19_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr105
+  rename: asr19_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr106
+  rename: asr20_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr107
+  rename: asr20_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr108
+  rename: asr20_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr109
+  rename: asr20_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr110
+  rename: asr20_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr111
+  rename: asr20_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr112
+  rename: asr21_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr113
+  rename: asr21_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr114
+  rename: asr21_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr115
+  rename: asr21_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr116
+  rename: asr21_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr117
+  rename: asr21_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr118
+  rename: asr22_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr119
+  rename: asr22_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr120
+  rename: asr22_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr121
+  rename: asr22_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr122
+  rename: asr22_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen
+
+- name: asr123
+  rename: asr22_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source:
+  - child
+  - teen

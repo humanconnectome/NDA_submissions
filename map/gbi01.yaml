@@ -1,0 +1,130 @@
+instrument: ''
+struct: gbi01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - child
+  - teen
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - child
+  - teen
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - child
+  - teen
+  - parent
+
+- rename: version_form
+  code: return "S7up Self Report"
+  source:
+    - child
+    - teen
+    - parent:
+        code: return "Parent Report"
+
+- rename: gbi4
+  name: s7upchildself1
+  source:
+  - child
+  - teen
+  - parent:
+      name: gbi_p4
+
+- rename: s7upchildself2
+  name: s7upchildself2
+  source:
+  - child
+  - teen
+
+- rename: gbi6
+  name: s7upchildself3
+  source:
+  - child
+  - teen
+  - parent:
+      name: gbi_p6
+
+- rename: s7upchildself4
+  name: s7upchildself4
+  source:
+  - child
+  - teen
+
+- rename: s7upchildself5
+  name: s7upchildself5
+  source:
+  - child
+  - teen
+
+- rename: s7upchildself6
+  name: s7upchildself6
+  source:
+  - child
+  - teen
+
+- rename: gbi10
+  name: s7upchildself7
+  source:
+  - child
+  - teen
+  - parent:
+      name: gbi_p10
+
+- rename: gbi1
+  name: gbi_p1
+  source:
+  - parent
+
+- rename: gbi2
+  name: gbi_p2
+  source:
+  - parent
+
+- rename: gbi3
+  name: gbi_p3
+  source:
+  - parent
+
+- rename: gbi5
+  name: gbi_p5
+  source:
+  - parent
+
+- rename: gbi7
+  name: gbi_p7
+  source:
+  - parent
+
+- rename: gbi8
+  name: gbi_p8
+  source:
+  - parent
+
+- rename: gbi9
+  name: gbi_p9
+  source:
+  - parent

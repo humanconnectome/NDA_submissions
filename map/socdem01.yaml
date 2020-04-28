@@ -1,0 +1,478 @@
+instrument: ''
+struct: socdem01
+funcs:
+  if_18: |-
+    return x.where(z >= 18, y)
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - teen
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - teen
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - teen
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - teen
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - teen
+  - parent
+
+- name: sub_adopt
+  rename: dembadpt
+  recode:
+    2: 0
+  source:
+  - teen
+  - parent:
+      name: p_c_adopt
+
+- rename: sub_adopt_1
+  name:
+  - sub_adopt_1
+  - sub_adopt_1unit
+  code: return X + " " + Y
+  old_code: |-
+    return column.astype("Int64").astype(str) + studydata.sub_adopt_1unit.replace({1: " Months", 2: " Years"})
+  request: Age at adoption is a free-text field. Please concatenate responses from
+    'sub_adopt_1' and 'sub_adopt_1unit' in the 'sub_adopt_1' column.
+  source:
+  - teen
+
+- func: convert_all_to_text
+  name: sub_country
+  rename: country_origin
+  request: Please convert numeric codes to the text strings they represent.
+  source:
+  - teen
+  - parent:
+      name: p_country
+
+- name: sub_yrs_in_usa
+  rename: ustime_coded
+  source:
+  - teen
+
+- rename: fspgod
+  code: return X + Y
+  old_code: return column.replace(CONST['gender']) + studydata.sub_gender_different.fillna('')
+  request:
+  - Gender identity is a free-text field.
+  - Please concatenate responses from "sub_gender" and "sub_gender_different"
+    in the "sub_gender" column.
+  source:
+  - teen:
+      name:
+        - sub_gender
+        - sub_gender_different
+  - parent:
+      name:
+        - p_gender
+        - p_gender_different
+
+
+- func: convert_all_to_text
+  name: sub_marriage
+  rename: das1ms
+  request: Please convert numeric codes to the text strings they represent.
+  source:
+  - teen
+  - parent:
+      name: p_marriage
+
+- func: convert_all_to_text
+  name: sub_grade
+  rename: bkgrnd_education
+  request: Please convert numeric codes to the text strings they represent.
+  source:
+  - teen
+  - parent:
+      name: p_grade
+
+- old_code: |-
+    return column.replace(CONST["working_status"]) + studydata.sub_job8_1.fillna("")
+  name:
+  - sub_job
+  - sub_job8_1
+  rename: area4_explain
+  code: return X + Y
+  request:
+  - Please convert numeric codes to the text strings they represent.
+  - Because "sub_job" is a free-text field, please concatenate subjects' specified
+    answers ("sub_job8_1") with "sub_job" answers.
+  source:
+  - teen
+  - parent:
+      name:
+        - p_job
+        - p_job8_1
+
+- name: sub_job1_1
+  rename: employcur
+  source:
+  - teen
+  - parent:
+      name: p_job1_1
+
+- name: sub_job7_1
+  rename: paofwork5
+  source:
+  - teen
+  - parent:
+      name: p_job7_1
+
+- name: sub_business
+  rename: ind_type
+  source:
+  - teen
+  - parent:
+      name: p_business
+
+- name: sub_work
+  rename: jobh
+  source:
+  - teen
+  - parent:
+      name: p_work
+
+- name: sub_income_num
+  rename: calm_inc1
+  recode:
+    999999: 98
+  request: Please us 98 as the missing code, rather than 999999.
+  source:
+  - teen
+
+- rename: sub_income
+  source:
+  - teen:
+      name: sub_income
+  - parent:
+      name: p_income
+
+- rename: annual_fam_inc
+  name: family_income
+  recode:
+    999999: -999999
+  request: Please convert the code of 999999 to -999999, as 999999 could be an actual
+    value.
+  source:
+  - teen:
+      func: if_18
+      name:
+        - sub_income_fam
+        - family_income
+        - age
+  - parent
+
+- rename: sub_income_famcode
+  name: family_income_question
+  source:
+  - teen:
+      func: if_18
+      name:
+        - sub_income_famcode
+        - family_income_question
+        - age
+  - parent
+
+- name: sub_income_fampl
+  rename: household_number_in_house
+  source:
+  - teen
+  - parent:
+      name: family_size
+
+- name: sub_momage
+  rename: preg_age_mom
+  source:
+  - teen
+
+- name: sub_dadage
+  rename: preg_age_dad
+  source:
+  - teen
+
+- func: convert_all_to_text
+  name: sub_bio_f_country
+  rename: birthcountry_dad
+  request: Please convert numeric codes to the text strings they represent.
+  source:
+  - teen
+  - parent:
+      name: p_bio_f_country
+
+- func: convert_all_to_text
+  name: sub_bio_m_county
+  rename: birthcountry_mom
+  request: Please convert numeric codes to the text strings they represent.
+  source:
+  - teen
+  - parent:
+      name: p_bio_m_county
+
+- name: sub_mgrade
+  rename: mother_edu_cat
+  recode:
+    13: 14
+    14: 13
+    15: 16
+    16: 17
+    17: 18
+    18: 20
+    19: 22
+    20: 23
+    21: 24
+    77: 98
+    99: 26
+  request: >-
+    Please recode 13 as 14 (for "High school graduate"), 14 as 13
+    (for "GED or equivalent"), 15 as 16 (for "Some college, no degree"),
+    16 as 17 (for "Associate degree: occupational/technical/vocational program"),
+    17 as 18 (for ...
+  source:
+  - teen
+
+- name: sub_fgrade
+  rename: father_edu_cat
+  recode:
+    13: 14
+    14: 13
+    15: 16
+    16: 17
+    17: 18
+    18: 20
+    19: 22
+    20: 23
+    21: 24
+    77: 98
+    99: 26
+  source:
+  - teen
+
+- name: family_income_dfct1
+  rename: family_income_dfct1
+  recode:
+    2: 0
+  source:
+  - teen
+  - parent
+
+- name: family_income_dfct2
+  rename: family_income_dfct2
+  recode:
+    2: 0
+  source:
+  - teen
+  - parent
+
+- name: family_income_dfct3
+  rename: family_income_dfct3
+  recode:
+    2: 0
+  source:
+  - teen
+  - parent
+
+- name: family_income_dfct4
+  rename: family_income_dfct4
+  recode:
+    2: 0
+  source:
+  - teen
+  - parent
+
+- name: family_income_dfct5
+  rename: family_income_dfct5
+  recode:
+    2: 0
+  source:
+  - teen
+  - parent
+
+- name: family_income_dfct6
+  rename: family_income_dfct6
+  recode:
+    2: 0
+  source:
+  - teen
+  - parent
+
+- name: family_income_dfct7
+  rename: family_income_dfct7
+  recode:
+    2: 0
+  source:
+  - teen
+  - parent
+
+- name: bio_mother
+  rename: bio_mother
+  recode:
+    2: 0
+  source:
+  - parent
+
+- name: bio_father
+  rename: bio_father
+  recode:
+    2: 0
+  source:
+  - parent
+
+- name: cust_parent
+  rename: cust_parent
+  recode:
+    2: 0
+  source:
+  - parent
+
+- name: other_parent
+  rename: comqother
+  source:
+  - parent
+
+- name: p_c_grade
+  rename: p_c_grade
+  func: convert_all_to_text
+  source:
+  - parent
+
+- name: p_c_adopt_when
+  rename: demo_adopt_age
+  source:
+  - parent
+
+- name: p_c_adopt_when_unit
+  rename: p_c_adopt_when_unit
+  source:
+  - parent
+
+- rename: nimh_rv_dem_03
+  name: p_c_gender
+  recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+    6: 5
+  request: Please decrement values 1::6 to 0::5. Values of 7 and 8 can remain the
+    same.
+  source:
+  - parent
+
+- name: p_c_gender_different
+  rename: p_c_gender_different
+  source:
+  - parent
+
+- func: convert_all_to_text
+  name: p_c_country
+  rename: p_c_country
+  request: Please convert numeric codes to the text strings they represent.
+  source:
+  - parent
+
+- name: p_c_yrs_in_usa
+  rename: p_c_yrs_in_usa
+  source:
+  - parent
+
+- func: convert_all_to_text
+  name: p_race
+  rename: fsprg
+  request: Please convert numeric codes to the text strings they represent.
+  source:
+  - parent
+
+- name: p_latino
+  rename: ethnicity
+  recode:
+    0: Not Hispanic or Latino
+    1: Hispanic or Latino
+    9: Unknown
+  source:
+  - parent
+  - teen:
+      name: sub_latino
+
+- name: p_yrs_in_usa
+  rename: ustime
+  source:
+  - parent
+
+- name: ptner_yn
+  rename: ptner_yn
+  recode:
+    2: 0
+  source:
+  - parent
+
+- name: ptner_bio_parent
+  rename: p_partnerbio
+  recode:
+    2: 0
+  source:
+  - parent
+
+- rename: ptner_grade
+  name: ptner_grade
+  func: convert_all_to_text
+  request: Please convert numeric codes to the text strings they represent.
+  source:
+  - parent
+
+- name: ptner_job
+  rename: ptner_job
+  source:
+  - parent
+
+- name: ptner_job1_1
+  rename: ptner_job1_1
+  source:
+  - parent
+
+- name: ptner_job7_1
+  rename: ptner_job7_1
+  source:
+  - parent
+
+- name: ptner_job8_1
+  rename: ptner_job8_1
+  source:
+  - parent
+
+- name: ptner_business
+  rename: ptner_business
+  source:
+  - parent
+
+- name: ptner_work
+  rename: ptner_work
+  source:
+  - parent
+
+- name: ptner_income
+  rename: ptner_income
+  source:
+  - parent
+

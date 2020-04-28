@@ -1,0 +1,207 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - qint
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - qint
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - qint
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - qint
+
+- name: gender
+  rename: sex
+  source:
+  - qint
+
+- name: wais_scoring_matrixreasoning_raw
+  rename: scoring_matrixreasoning_raw
+  source:
+  - qint
+
+- name: wais_scoring_matrixreasoning_scaled
+  rename: scoring_matrixreasoning_scaled
+  source:
+  - qint
+
+- name: wais_wais_dk
+  rename: subtesttypedk
+  source:
+  - qint
+
+- name: wais_wais_nr
+  rename: subtesttypenr
+  source:
+  - qint
+
+- name: wais_wais_p
+  rename: wais_p
+  source:
+  - qint
+
+- name: wais_matrix_completion
+  rename: matrix_completion
+  source:
+  - qint
+
+- name: wais_discontinue
+  rename: discontinue
+  source:
+  - qint
+
+- name: wais_reverse
+  rename: reverse
+  source:
+  - qint
+
+- name: wais_matrixreasoning_a_resp
+  rename: matrixreasoning_sample_a_resp
+  source:
+  - qint
+
+- name: wais_matrixreasoning_b_resp
+  rename: matrixreasoning_sample_b_resp
+  source:
+  - qint
+
+- name: wais_matrixreasoning_1_score
+  rename: matrixreasoning_1_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_2_score
+  rename: matrixreasoning_2_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_3_score
+  rename: matrixreasoning_3_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_4_score
+  rename: matrixreasoning_4_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_5_score
+  rename: matrixreasoning_5_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_6_score
+  rename: matrixreasoning_6_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_7_score
+  rename: matrixreasoning_7_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_8_score
+  rename: matrixreasoning_8_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_9_score
+  rename: matrixreasoning_9_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_10_score
+  rename: matrixreasoning_10_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_11_score
+  rename: matrixreasoning_11_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_12_score
+  rename: matrixreasoning_12_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_13_score
+  rename: matrixreasoning_13_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_14_score
+  rename: matrixreasoning_14_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_15_score
+  rename: matrixreasoning_15_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_16_score
+  rename: matrixreasoning_16_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_17_score
+  rename: matrixreasoning_17_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_18_score
+  rename: matrixreasoning_18_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_19_score
+  rename: matrixreasoning_19_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_20_score
+  rename: matrixreasoning_20_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_21_score
+  rename: matrixreasoning_21_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_22_score
+  rename: matrixreasoning_22_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_23_score
+  rename: matrixreasoning_23_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_24_score
+  rename: matrixreasoning_24_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_25_score
+  rename: matrixreasoning_25_score
+  source:
+  - qint
+
+- name: wais_matrixreasoning_26_score
+  rename: matrixreasoning_26_score
+  source:
+  - qint

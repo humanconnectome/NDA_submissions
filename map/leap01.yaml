@@ -1,0 +1,364 @@
+instrument: ''
+struct: leap01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - teen
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - teen
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - teen
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - teen
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - teen
+  - parent
+
+- name: lan_know
+  rename: lan_know
+  source:
+  - teen
+  - parent
+
+- name: lan11
+  rename: lan11
+  source:
+  - teen
+  - parent
+
+- name: lan12
+  rename: lan12
+  source:
+  - teen
+  - parent
+
+- name: lan13
+  rename: lan13
+  source:
+  - teen
+  - parent
+
+- name: lan14
+  rename: lan14
+  source:
+  - teen
+  - parent
+
+- name: lan21
+  rename: lan21
+  source:
+  - teen
+  - parent
+
+- name: lan22
+  rename: lan22
+  source:
+  - teen
+  - parent
+
+- name: lan23
+  rename: lan23
+  source:
+  - teen
+  - parent
+
+- name: lan24
+  rename: lan24
+  source:
+  - teen
+  - parent
+
+- name: lan31
+  rename: lan31
+  source:
+  - teen
+  - parent
+
+- name: lan32
+  rename: lan32
+  source:
+  - teen
+  - parent
+
+- name: lan33
+  rename: lan33
+  source:
+  - teen
+  - parent
+
+- name: lan34
+  rename: lan34
+  source:
+  - teen
+  - parent
+
+- name: lan3err
+  rename: lan3err
+  source:
+  - teen
+  - parent
+
+- name: lan41
+  rename: lan41
+  source:
+  - teen
+  - parent
+
+- name: lan42
+  rename: lan42
+  source:
+  - teen
+  - parent
+
+- name: lan43
+  rename: lan43
+  source:
+  - teen
+  - parent
+
+- name: lan44
+  rename: lan44
+  source:
+  - teen
+  - parent
+
+- name: lan4err
+  rename: lan4err
+  source:
+  - teen
+  - parent
+
+- name: lan511
+  rename: lan511
+  source:
+  - teen
+  - parent
+
+- name: lan512
+  rename: lan512
+  source:
+  - teen
+  - parent
+
+- name: lan513
+  rename: lan513
+  source:
+  - teen
+  - parent
+
+- name: lan514
+  rename: lan514
+  source:
+  - teen
+  - parent
+
+- name: lan521
+  rename: lan521
+  source:
+  - teen
+  - parent
+
+- name: lan522
+  rename: lan522
+  source:
+  - teen
+  - parent
+
+- name: lan523
+  rename: lan523
+  source:
+  - teen
+  - parent
+
+- name: lan524
+  rename: lan524
+  source:
+  - teen
+  - parent
+
+- name: lan531
+  rename: lan531
+  source:
+  - teen
+  - parent
+
+- name: lan532
+  rename: lan532
+  source:
+  - teen
+  - parent
+
+- name: lan533
+  rename: lan533
+  source:
+  - teen
+  - parent
+
+- name: lan534
+  rename: lan534
+  source:
+  - teen
+  - parent
+
+- name: lan541
+  rename: lan541
+  source:
+  - teen
+  - parent
+
+- name: lan542
+  rename: lan542
+  source:
+  - teen
+  - parent
+
+- name: lan543
+  rename: lan543
+  source:
+  - teen
+  - parent
+
+- name: lan544
+  rename: lan544
+  source:
+  - teen
+  - parent
+
+- name: lan611
+  rename: lan611
+  source:
+  - teen
+  - parent
+
+- name: lan612
+  rename: lan612
+  source:
+  - teen
+  - parent
+
+- name: lan613
+  rename: lan613
+  source:
+  - teen
+  - parent
+
+- name: lan621
+  rename: lan621
+  source:
+  - teen
+  - parent
+
+- name: lan622
+  rename: lan622
+  source:
+  - teen
+  - parent
+
+- name: lan623
+  rename: lan623
+  source:
+  - teen
+  - parent
+
+- name: lan631
+  rename: lan631
+  source:
+  - teen
+  - parent
+
+- name: lan632
+  rename: lan632
+  source:
+  - teen
+  - parent
+
+- name: lan633
+  rename: lan633
+  source:
+  - teen
+  - parent
+
+- name: lan641
+  rename: lan641
+  source:
+  - teen
+  - parent
+
+- name: lan642
+  rename: lan642
+  source:
+  - teen
+  - parent
+
+- name: lan643
+  rename: lan643
+  source:
+  - teen
+  - parent
+
+- name: lan71
+  rename: lan71
+  source:
+  - teen
+  - parent
+
+- name: lan72
+  rename: lan72
+  source:
+  - teen
+  - parent
+
+- name: lan73
+  rename: lan73
+  source:
+  - teen
+  - parent
+
+- name: lan74
+  rename: lan74
+  source:
+  - teen
+  - parent
+
+- name: lan81
+  rename: lan81
+  source:
+  - teen
+  - parent
+
+- name: lan82
+  rename: lan82
+  source:
+  - teen
+  - parent
+
+- name: lan83
+  rename: lan83
+  source:
+  - teen
+  - parent
+
+- name: lan84
+  rename: lan84
+  source:
+  - teen
+  - parent

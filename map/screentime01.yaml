@@ -1,0 +1,169 @@
+struct: screentime01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - child
+  - teen
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - child
+  - teen
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - child
+  - teen
+  - parent
+
+
+- name: screen1_wkdy_y
+  rename: screentime1_wkdy_y
+  recode:
+    25: 0.25
+    5: 0.5
+  source:
+  - child
+  - teen
+
+- name: screen2_wkdy_y
+  rename: screentime2_wkdy_y
+  recode:
+    25: 0.25
+    5: 0.5
+  source:
+  - child
+  - teen
+
+- name: screen3_wkdy_y
+  rename: screentime3_wkdy_y
+  recode:
+    25: 0.25
+    5: 0.5
+  source:
+  - child
+  - teen
+
+- name: screen4_wkdy_y
+  rename: screentime4_wkdy_y
+  recode:
+    25: 0.25
+    5: 0.5
+  source:
+  - child
+  - teen
+
+- name: screen5_wkdy_y
+  rename: screentime5_wkdy_y
+  recode:
+    25: 0.25
+    5: 0.5
+  source:
+  - child
+  - teen
+
+- name: screen6_wkdy_y
+  rename: screentime6_wkdy_y
+  recode:
+    25: 0.25
+    5: 0.5
+  source:
+  - child
+  - teen
+
+- name: screen7_wknd_y
+  rename: screentime7_wknd_y
+  recode:
+    25: 0.25
+    5: 0.5
+  source:
+  - child
+  - teen
+
+- name: screen8_wknd_y
+  rename: screentime8_wknd_y
+  recode:
+    25: 0.25
+    5: 0.5
+  source:
+  - child
+  - teen
+
+- name: screen9_wknd_y
+  rename: screentime9_wknd_y
+  recode:
+    25: 0.25
+    5: 0.5
+  source:
+  - child
+  - teen
+
+- name: screen10_wknd_y
+  rename: screentime10_wknd_y
+  recode:
+    25: 0.25
+    5: 0.5
+  source:
+  - child
+  - teen
+
+- name: screen11_wknd_y
+  rename: screentime11_wknd_y
+  recode:
+    25: 0.25
+    5: 0.5
+  source:
+  - child
+  - teen
+
+- name: screen12_wknd_y
+  rename: screentime12_wknd_y
+  recode:
+    25: 0.25
+    5: 0.5
+  source:
+  - child
+  - teen
+
+- name: screen13_y
+  rename: screentime13_y
+  source:
+  - child
+  - teen
+
+- name: screen14_y
+  rename: screentime14_y
+  source:
+  - child
+  - teen
+
+- name: screentime1_p
+  rename: screentime1_p
+  source:
+  - parent
+
+- name: screentime2_p
+  rename: screentime2_p
+  source:
+  - parent

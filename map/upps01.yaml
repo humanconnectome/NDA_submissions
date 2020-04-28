@@ -1,0 +1,560 @@
+instrument: ''
+name: upps01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - child
+  - teen
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - child
+  - teen
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - child
+  - teen
+  - parent
+
+
+- rename: upps_p4
+  name: upps3_y
+  source:
+  - child
+  - teen
+  - parent:
+      name: upps_p3
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "upps_p4" to avoid a naming conflict.
+
+- rename: upps_p14
+  name: upps5_y
+  source:
+  - child
+  - teen
+  - parent:
+      name: upps_p5
+      request: Please rename this column "upps_p14" to avoid a naming conflict.
+
+- rename: upps_p16
+  name: upps6_y
+  source:
+  - child
+  - teen
+  - parent:
+      name: upps_p6
+      request: Please rename this column "upps_p16" to avoid a naming conflict.
+
+- rename: upps_p17
+  name: upps7_y
+  source:
+  - child
+  - teen
+
+- rename: upps_p19
+  name: upps9_y
+  source:
+  - child
+  - teen
+  - parent:
+      name: upps_p9
+      request: Please rename this column "upps_p19" to avoid a naming conflict.
+
+- rename: upps_p22
+  name: upps11_y
+  source:
+  - child
+  - teen
+
+- rename: upps_p23
+  name: upps12_y
+  source:
+  - child
+  - teen
+  - parent:
+      name: upps_p12
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "upps_p23" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: upps_p27
+  name: upps15_y
+  source:
+  - child
+  - teen
+  - parent:
+      name: upps_p15
+      request: Please rename this column "upps_p27" to avoid a naming conflict.
+
+- rename: upps_p28
+  name: upps16_y
+  source:
+  - child
+  - teen
+  - parent:
+      name: upps_p16
+      request: Please rename this column "upps_p28" to avoid a naming conflict.
+
+- rename: upps_p29
+  name: upps17_y
+  source:
+  - child
+  - teen
+
+- rename: upps_p31
+  name: upps18_y
+  source:
+  - child
+  - teen
+
+- rename: upps_p32
+  name: upps19_y
+  source:
+  - child
+  - teen
+  - parent:
+      name: upps_p19
+      request: Please rename this column "upps_p32" to avoid a naming conflict.
+
+- rename: upps_p34
+  name: upps20_y
+  source:
+  - child
+  - teen
+
+- rename: upps_p36
+  name: upps21_y
+  source:
+  - child
+  - teen
+
+- rename: upps_p37
+  name: upps22_y
+  source:
+  - child
+  - teen
+  - parent:
+      name: upps_p22
+      request: Please rename this column "upps_p37" to avoid a naming conflict.
+
+- rename: upps_p38
+  name: upps23_y
+  source:
+  - child
+  - teen
+  - parent:
+      name: upps_p23
+      request: Please rename this column "upps_p38" to avoid a naming conflict.
+
+- rename: upps_p42
+  name: upps24_y
+  source:
+  - child
+  - teen
+  - parent:
+      name: upps_p24
+      request: Please rename this column "upps_p42" to avoid a naming conflict.
+
+- rename: upps_p46
+  name: upps27_y
+  source:
+  - child
+  - teen
+
+- rename: upps_p48
+  name: upps28_y
+  source:
+  - child
+  - teen
+
+- rename: upps_p10
+  name: upps35_y
+  source:
+  - child
+  - teen
+
+- rename: upps_p57
+  name: upps36_y
+  source:
+  - child
+  - teen
+
+- rename: upps_p5
+  name: upps37_y
+  source:
+  - child
+  - teen
+
+- rename: upps_p20
+  name: upps39_y
+  source:
+  - child
+  - teen
+
+- rename: upps_negu
+  name: upps_neg
+  source:
+  - child
+  - teen
+
+- rename: premed_score
+  name: upps_plan
+  source:
+  - child
+  - teen
+
+- rename: senseek_score
+  name: upps_sens
+  source:
+  - child
+  - teen
+
+- rename: upps_posu
+  name: upps_pos
+  source:
+  - child
+  - teen
+
+- rename: persev_score
+  name: upps_prsv
+  source:
+  - child
+  - teen
+
+- rename: phenx_upps_p_1
+  source:
+  - parent:
+      name: upps_p1
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_1" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_2
+  source:
+  - parent:
+      name: upps_p2
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_2" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_4
+  source:
+  - parent:
+      name: upps_p4
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_4" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_7
+  source:
+  - parent:
+      name: upps_p7
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_7" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: upps_p18
+  source:
+  - parent:
+      name: upps_p8
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "upps_p18" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: upps_p21
+  source:
+  - parent:
+      name: upps_p10
+      request: Please rename this column "upps_p21" to avoid a naming conflict.
+
+- rename: phenx_upps_p_11
+  source:
+  - parent:
+      name: upps_p11
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_11" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_13
+  source:
+  - parent:
+      name: upps_p13
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_13" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_14
+  source:
+  - parent:
+      name: upps_p14
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_14" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_17
+  source:
+  - parent:
+      name: upps_p17
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_17" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_18
+  source:
+  - parent:
+      name: upps_p18
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_18" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_20
+  source:
+  - parent:
+      name: upps_p20
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_20" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_21
+  source:
+  - parent:
+      name: upps_p21
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_21" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: upps_p43
+  source:
+  - parent:
+      name: upps_p25
+      request: Please rename this column "upps_p43" to avoid a naming conflict.
+
+- rename: phenx_upps_p_26
+  source:
+  - parent:
+      name: upps_p26
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_26" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_27
+  source:
+  - parent:
+      name: upps_p27
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_27" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_28
+  source:
+  - parent:
+      name: upps_p28
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_28" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_29
+  source:
+  - parent:
+      name: upps_p29
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_29" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_30
+  source:
+  - parent:
+      name: upps_p30
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_30" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_31
+  source:
+  - parent:
+      name: upps_p31
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_31" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_32
+  source:
+  - parent:
+      name: upps_p32
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_32" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_33
+  source:
+  - parent:
+      name: upps_p33
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_33" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_34
+  source:
+  - parent:
+      name: upps_p34
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_34" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_35
+  source:
+  - parent:
+      name: upps_p35
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_35" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_36
+  source:
+  - parent:
+      name: upps_p36
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_36" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_37
+  source:
+  - parent:
+      name: upps_p37
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_37" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_38
+  source:
+  - parent:
+      name: upps_p38
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_38" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_39
+  source:
+  - parent:
+      name: upps_p39
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_39" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: phenx_upps_p_40
+  source:
+  - parent:
+      name: upps_p40
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+      request: Please rename this column "phenx_upps_p_40" to avoid a naming conflict. Also, please reverse code this column.

@@ -1,0 +1,262 @@
+instrument: ParentReport_SDQ
+struct: sdq01
+funcs:
+  value_by_age:
+    return x.where(z < 11, y)
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - parent
+
+- rename: version_form
+  source:
+    - parent:
+        code: return "Parent report"
+
+- rename: p_c_sdq_1
+  name:
+  - sdq510_1
+  - sdq1112_1
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_2
+  name:
+  - sdq510_2
+  - sdq1112_2
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_3
+  name:
+  - sdq510_3
+  - sdq1112_3
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_4
+  name:
+  - sdq510_4
+  - sdq1112_4
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_5
+  name:
+  - sdq510_5
+  - sdq1112_5
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_6
+  name:
+  - sdq510_6
+  - sdq1112_6
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_7
+  name:
+  - sdq510_7
+  - sdq1112_7
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_8
+  name:
+  - sdq510_8
+  - sdq1112_8
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_9
+  name:
+  - sdq510_9
+  - sdq1112_9
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_10
+  name:
+  - sdq510_10
+  - sdq1112_10
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_11
+  name:
+  - sdq510_11
+  - sdq1112_11
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_12
+  name:
+  - sdq510_12
+  - sdq1112_12
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_13
+  name:
+  - sdq510_13
+  - sdq1112_13
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_14
+  name:
+  - sdq510_14
+  - sdq1112_14
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_15
+  name:
+  - sdq510_15
+  - sdq1112_15
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_16
+  name:
+  - sdq510_16
+  - sdq1112_16
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_17
+  name:
+  - sdq510_17
+  - sdq1112_17
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_18
+  name:
+  - sdq510_18
+  - sdq1112_18
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_19
+  name:
+  - sdq510_19
+  - sdq1112_19
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_20
+  name:
+  - sdq510_20
+  - sdq1112_20
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_21
+  name:
+  - sdq510_21
+  - sdq1112_21
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_22
+  name:
+  - sdq510_22
+  - sdq1112_22
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_23
+  name:
+  - sdq510_23
+  - sdq1112_23
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_24
+  name:
+  - sdq510_24
+  - sdq1112_24
+  - age
+  func: value_by_age
+  source:
+  - parent
+
+- rename: p_c_sdq_25
+  name:
+  - sdq510_25
+  - sdq1112_25
+  - age
+  func: value_by_age
+  source:
+  - parent

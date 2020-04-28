@@ -1,0 +1,612 @@
+instrument: ''
+struct: srs02
+funcs:
+  split_by_gender: |-
+    return (x.where(y=="F"), x.where(y=="M"))
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - child
+  - teen
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - child
+  - teen
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - child
+  - teen
+  - parent
+
+- rename: respond
+  code: return 3
+  source:
+    - child
+    - teen
+    - parent:
+        code: return 1
+
+- rename: respond_detail
+  code: return 999
+  source:
+    - child
+    - teen
+    - parent
+
+- rename: parentreport_1
+  name: srsa1
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y1
+
+- rename: parentreport_2
+  name: srsa2
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y2
+
+- rename: parentreport_3
+  name: srsa3
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y3
+
+- rename: parentreport_4
+  name: srsa4
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y4
+
+- rename: parentreport_5
+  name: srsa5
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y5
+
+- rename: parentreport_6
+  name: srsa6
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y6
+
+- rename: parentreport_7
+  name: srsa7
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y7
+
+- rename: parentreport_8
+  name: srsa8
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y8
+
+- rename: parentreport_9
+  name: srsa9
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y9
+
+- rename: parentreport_10
+  name: srsa10
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y10
+
+- rename: parentreport_11
+  name: srsa11
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y11
+
+- rename: parentreport_12
+  name: srsa12
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y12
+
+- rename: parentreport_13
+  name: srsa13
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y13
+
+- rename: parentreport_14
+  name: srsa14
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y14
+
+- rename: parentreport_15
+  name: srsa15
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y15
+
+- rename: parentreport_16
+  name: srsa16
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y16
+
+- rename: parentreport_17
+  name: srsa17
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y17
+
+- rename: parentreport_18
+  name: srsa18
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y18
+
+- rename: parentreport_19
+  name: srsa19
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y19
+
+- rename: parentreport_20
+  name: srsa20
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y20
+
+- rename: parentreport_21
+  name: srsa21
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y21
+
+- rename: parentreport_22
+  name: srsa22
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y22
+
+- rename: parentreport_23
+  name: srsa23
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y23
+
+- rename: parentreport_24
+  name: srsa24
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y24
+
+- rename: parentreport_25
+  name: srsa25
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y25
+
+- rename: parentreport_26
+  name: srsa26
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y26
+
+- rename: parentreport_27
+  name: srsa27
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y27
+
+- rename: parentreport_28
+  name: srsa28
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y28
+
+- rename: parentreport_29
+  name: srsa29
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y29
+
+- rename: parentreport_30
+  name: srsa30
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y30
+
+- rename: parentreport_31
+  name: srsa31
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y31
+
+- rename: parentreport_32
+  name: srsa32
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y32
+
+- rename: parentreport_33
+  name: srsa33
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y33
+
+- rename: parentreport_34
+  name: srsa34
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y34
+
+- rename: parentreport_35
+  name: srsa35
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y35
+
+- rename: parentreport_36
+  name: srsa36
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y36
+
+- rename: parentreport_37
+  name: srsa37
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y37
+
+- rename: parentreport_38
+  name: srsa38
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y38
+
+- rename: parentreport_39
+  name: srsa39
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y39
+
+- rename: parentreport_40
+  name: srsa40
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y40
+
+- rename: parentreport_41
+  name: srsa41
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y41
+
+- rename: parentreport_42
+  name: srsa42
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y42
+
+- rename: parentreport_43
+  name: srsa43
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y43
+
+- rename: parentreport_44
+  name: srsa44
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y44
+
+- rename: parentreport_45
+  name: srsa45
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y45
+
+- rename: parentreport_46
+  name: srsa46
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y46
+
+- rename: parentreport_47
+  name: srsa47
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y47
+
+- rename: parentreport_48
+  name: srsa48
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y48
+
+- rename: parentreport_49
+  name: srsa49
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y49
+
+- rename: parentreport_50
+  name: srsa50
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y50
+
+- rename: parentreport_51
+  name: srsa51
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y51
+
+- rename: srsa52
+  name: srsa52
+  source:
+  - child
+  - teen
+
+- rename: parentreport_53
+  name: srsa53
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y53
+
+- rename: parentreport_54
+  name: srsa54
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y54
+
+- rename: parentreport_55
+  name: srsa55
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y55
+
+- rename: parentreport_56
+  name: srsa56
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y56
+
+- rename: parentreport_57
+  name: srsa57
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y57
+
+- rename: parentreport_58
+  name: srsa58
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y58
+
+- rename: parentreport_59
+  name: srsa59
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y59
+
+- rename: parentreport_60
+  name: srsa60
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y60
+
+- rename: parentreport_61
+  name: srsa61
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y61
+
+- rename: parentreport_62
+  name: srsa62
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y62
+
+- rename: parentreport_63
+  name: srsa63
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y63
+
+- rename: parentreport_64
+  name: srsa64
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y64
+
+- rename: parentreport_65
+  name: srsa65
+  source:
+  - child
+  - teen
+  - parent:
+      name: srs_y65
+
+- func: split_by_gender
+  rename:
+  - female_rawscoreall
+  - male_rawscoreall
+  name:
+  - srsa_total_raw
+  - gender
+  request:
+  - Please split total raw scores by sex.
+  - Females' scores can go in "female_rawscoreall".
+  - Males' scores can go in "male_rawscoreall".
+  source:
+  - child
+  - teen
+
+- func: split_by_gender
+  rename:
+  - female_tscoreall
+  - male_tscoreall
+  name:
+  - srsa_total_tscore
+  - gender
+  request:
+  - Please split total T-scores by sex.
+  - Males' scores can go in "male_tscoreall".
+  - Females' scores can go in "female_tscoreall".
+  source:
+  - child
+  - teen
+
+- rename: phenotype
+  code: return "Healthy Subject"
+  source:
+    - child
+    - teen
+    - parent

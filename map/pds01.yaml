@@ -1,0 +1,310 @@
+struct: pds01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - child
+  - teen
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - child
+  - teen
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - child
+  - teen
+  - parent
+
+
+- name: pds_sub_1
+  rename: pds_1
+  source:
+  - child
+  - teen
+  - parent:
+      name: pds_p_1
+
+- name: pds_sub_2
+  rename: pds_2
+  source:
+  - child
+  - teen
+  - parent:
+      name: pds_p_2
+
+- name: pds_sub_3
+  rename: pds_3
+  source:
+  - child
+  - teen
+  - parent:
+      name: pds_p_3
+
+- name: pds_sub_b4
+  rename: pds_4
+  source:
+  - child
+  - teen
+  - parent:
+      name: pds_p_b4
+
+- name: pds_sub_b5
+  rename: pds_5
+  source:
+  - child
+  - teen
+  - parent:
+      name: pds_p_b5
+
+- name: pds_sub_g4
+  rename: pds_6
+  source:
+  - child
+  - teen
+  - parent:
+      name: pds_p_g4
+
+- name: pds_sub_g5a
+  rename: pds_7
+  source:
+  - child
+  - teen
+
+- name: pds_sub_mss_date
+  rename: pubertyg_15
+  source:
+  - child
+  - teen
+  - parent:
+      name: pds_p_mss_date
+
+- name: pds_sub_mss_last
+  rename: menstrualcycle1_y
+  source:
+  - child
+  - teen
+  - parent:
+      name: pds_p_mss_last
+
+- name: pds_sub_mss_average
+  rename: pufe_005bt
+  source:
+  - child
+  - teen
+  - parent:
+      name: pds_p_mss_average
+
+- name: pds_sub_mss_regular
+  rename: gynecological_hist_6
+  recode:
+    2: 0
+  source:
+  - child
+  - teen
+  - parent:
+      name: pds_p_mss_regular
+
+- name: pds_sub_mss_bcontrol
+  rename: menstrualcycle4_y
+  request: Please recode 2 as 0 (for ''''No'''').
+  recode:
+    2: 0
+  source:
+  - child
+  - teen
+  - parent:
+      name: pds_p_mss_bcontrol
+
+- name: pds_sub_mss_premenstrual
+  rename: menstrualcycle5_y
+  source:
+  - child
+  - teen
+  - parent:
+      name: pds_p_mss_premenstrual
+
+- name: pds_sub_mss_relation
+  rename: menstrualcycle6_y
+  source:
+  - child
+  - teen
+  - parent:
+      name: pds_p_mss_relation
+
+- name: pds_sub_10
+  rename: pds_7b_pv
+  source:
+  - child
+  - teen
+  - parent:
+      name: pds_p_10
+
+- old_code: |-
+    studydata[''pds_pv_girl_tanner''] = column.where(studydata.gender==''F'')
+    studydata[''pds_pv_boy_tanner''] = column.where(studydata.gender==''M'')
+  func: split_by_gender
+  name:
+  - pds_sub_score
+  - gender
+  rename:
+  - pds_pv_girl_tanner
+  - pds_pv_boy_tanner
+  request:
+  - Please split this column into two separate columns.
+  - Male participants' data can go to "pds_pv_boy_tanner".
+  - Female participants' data belong in "pds_pv_girl_tanner".
+  source:
+  - child
+  - teen
+  - parent:
+      name:
+      - pds_p_score
+      - gender
+
+- name: pubertal_sub_fb
+  rename: pubertyg_19
+  source:
+  - child
+  - teen
+  - parent:
+      name: pubertal_p_fb
+
+- name: pubertal_sub_fp
+  rename: pubertyg_20
+  source:
+  - child
+  - teen
+  - parent:
+      name: pubertal_p_fp
+
+- recode:
+    1: Hypothyroidism
+    2: No Hypothyroidism
+  name: mstrl_sub1a
+  rename: midihist_029a
+  request: Please change numeric codes to the text strings they represent.
+  source:
+  - child
+  - teen
+  - parent:
+      name: mstrl_p1a
+
+- name: mstrl_sub1b
+  rename: midihist_030a
+  request: Please change numeric codes to the text strings they represent.
+  recode:
+    1: Hyperthyroidism
+    2: No Hyperthyroidism
+  source:
+  - child
+  - teen
+  - parent:
+      name: mstrl_p1b
+
+- name: mstrl_sub1c
+  rename: scq_24_a
+  recode:
+    2: 0
+  source:
+  - child
+  - teen
+  - parent:
+      name: mstrl_p1c
+
+- name: mstrl_sub1a_age
+  rename: hypoage
+  source:
+  - child
+  - teen
+  - parent:
+      name: mstrl_p1a_age
+
+- name: mstrl_sub1b_age
+  rename: hyperage
+  source:
+  - child
+  - teen
+  - parent:
+      name: mstrl_p1b_age
+
+- func: prepend_age_at_onset
+  name: mstrl_sub1c_age
+  rename: cirsg_13_endocrine_condn
+  request:
+  - 'Please prepend "Age at onset: " to ages.'
+  source:
+  - child
+  - teen
+
+- name: pubertal_sub_mp
+  rename: pubertyb_17
+  source:
+  - child
+  - teen
+  - parent:
+      name: pubertal_p_mp
+
+- name: pubertal_sub_mh
+  rename: pubertyb_18
+  source:
+  - child
+  - teen
+  - parent:
+      name: pubertal_p_mh
+
+- rename: respond
+  code: return 3
+  source:
+    - child
+    - teen
+    - parent:
+        code: return 1
+
+- name: pds_p_g5a
+  rename: pds_8_pv
+  recode:
+    1: 2
+    4: 1
+  request: Please recode 1 as 2 (for "No").
+  source:
+  - parent
+
+- rename: mhx016b
+  name: mstrl_p1c_age
+  func: prepend_age_at_onset
+  request: |-
+    Please prepend "Onset: " to ages.
+  source:
+  - parent
+
+- rename: pds_boy_rs
+  source:
+    - parent
+  code: return 999
+
+- rename: pds_girl_rs
+  source:
+    - parent
+  code: return 999

@@ -1,0 +1,1115 @@
+instrument: ''
+struct: phenx_su01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - child
+  - teen
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - child
+  - teen
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - child
+  - teen
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - child
+  - teen
+
+- name: gender
+  rename: sex
+  source:
+  - child
+  - teen
+
+- rename: version_form
+  code: return "Past year"
+  request: Please use the "version_form" column to label each row "Past year".
+  source:
+    - child
+    - teen
+
+- name: ale1
+  rename: fam_mem_died
+  source:
+  - child
+  - teen
+
+- name: ale1_1
+  rename: fam_mem_died_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale1_2
+  rename: fam_mem_died_aff
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  source:
+  - child
+  - teen
+
+- name: ale2
+  rename: fam_mem_injured
+  source:
+  - child
+  - teen
+
+- name: ale2_1
+  rename: fam_mem_injured_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale2_2
+  rename: fam_mem_injured_aff
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  source:
+  - child
+  - teen
+
+- name: ale3
+  rename: saw_crime_accident
+  source:
+  - child
+  - teen
+
+- name: ale3_1
+  rename: saw_crime_accident_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale3_2
+  rename: saw_crime_accident_aff
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  source:
+  - child
+  - teen
+
+- name: ale4
+  rename: lost_close_friend
+  source:
+  - child
+  - teen
+
+- name: ale4_1
+  rename: lost_close_friend_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale4_2
+  rename: lost_close_friend_aff
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  source:
+  - child
+  - teen
+
+- name: ale5
+  rename: close_friend_sick_injured
+  source:
+  - child
+  - teen
+
+- name: ale5_1
+  rename: close_friend_sick_injured_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale5_2
+  rename: close_friend_sick_injured_aff
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  source:
+  - child
+  - teen
+
+- name: ale6
+  rename: parents_fin_situation
+  source:
+  - child
+  - teen
+
+- name: ale6_1
+  rename: parents_fin_situation_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale6_2
+  rename: parents_fin_situation_aff
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  source:
+  - child
+  - teen
+
+- name: ale7
+  rename: fam_mem_drug_alc
+  source:
+  - child
+  - teen
+
+- name: ale7_1
+  rename: fam_mem_drug_alc_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale7_2
+  rename: fam_mem_drug_alc_aff
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  source:
+  - child
+  - teen
+
+- name: ale8
+  rename: sick_injured
+  source:
+  - child
+  - teen
+
+- name: ale8_1
+  rename: sick_injured_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale8_2
+  rename: sick_injured_aff
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  source:
+  - child
+  - teen
+
+- name: ale9
+  rename: parents_argue
+  source:
+  - child
+  - teen
+
+- name: ale9_1
+  rename: parents_argue_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale9_2
+  rename: parents_argue_aff
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  source:
+  - child
+  - teen
+
+- name: ale10
+  rename: mother_father_lostjob
+  source:
+  - child
+  - teen
+
+- name: ale10_1
+  rename: mother_father_lostjob_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale10_2
+  rename: mother_father_lostjob_aff
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  source:
+  - child
+  - teen
+
+- name: ale11
+  rename: parent_away_home
+  source:
+  - child
+  - teen
+
+- name: ale11_1
+  rename: parent_away_home_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale11_2
+  rename: parent_away_home_aff
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  source:
+  - child
+  - teen
+
+- name: ale12
+  rename: fam_mem_arrest
+  source:
+  - child
+  - teen
+
+- name: ale12_1
+  rename: fam_mem_arrest_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale12_2
+  rename: fam_mem_arrest_aff
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  source:
+  - child
+  - teen
+
+- name: ale13
+  rename: close_friend_died
+  source:
+  - child
+  - teen
+
+- name: ale13_1
+  rename: close_friend_died_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale13_2
+  rename: close_friend_died_aff
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  source:
+  - child
+  - teen
+
+- name: ale14
+  rename: fam_mem_emo_mental
+  source:
+  - child
+  - teen
+
+- name: ale14_1
+  rename: fam_mem_emo_mental_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale14_2
+  rename: fam_mem_emo_mental_aff
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  source:
+  - child
+  - teen
+
+- name: ale15
+  rename: sibling_left_home
+  source:
+  - child
+  - teen
+
+- name: ale15_1
+  rename: sibling_left_home_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale15_2
+  rename: sibling_left_home_aff
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  source:
+  - child
+  - teen
+
+- name: ale16
+  rename: victim_crime_assualt
+  source:
+  - child
+  - teen
+
+- name: ale16_1
+  rename: victim_crime_assualt_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale16_2
+  rename: victim_crime_assualt_aff
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  source:
+  - child
+  - teen
+
+- name: ale17
+  rename: parents_sep_12mons
+  source:
+  - child
+  - teen
+
+- name: ale17_1
+  rename: parents_sep_12mons_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale17_2
+  rename: parents_sep_12mons_aff
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  source:
+  - child
+  - teen
+
+- name: ale18
+  rename: parents_trouble_law
+  source:
+  - child
+  - teen
+
+- name: ale18_1
+  rename: parents_trouble_law_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale18_2
+  rename: parents_trouble_law_aff
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  source:
+  - child
+  - teen
+
+- name: ale19
+  rename: attended_new_school
+  source:
+  - child
+  - teen
+
+- name: ale19_1
+  rename: attended_new_school_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale19_2
+  rename: attended_new_school_aff
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  source:
+  - child
+  - teen
+
+- name: ale20
+  rename: family_moved
+  source:
+  - child
+  - teen
+
+- name: ale20_1
+  rename: family_moved_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale20_2
+  rename: family_moved_aff
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  source:
+  - child
+  - teen
+
+- name: ale21
+  rename: parents_divorced
+  source:
+  - child
+  - teen
+
+- name: ale21_1
+  rename: parents_divorced_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale21_2
+  rename: parents_divorced_aff
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  source:
+  - child
+  - teen
+
+- name: ale22
+  rename: parent_went_to_jail
+  source:
+  - child
+  - teen
+
+- name: ale22_1
+  rename: parent_went_to_jail_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale22_2
+  rename: parent_went_to_jail_aff
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  source:
+  - child
+  - teen
+
+- name: ale23
+  rename: new_stepparent
+  source:
+  - child
+  - teen
+
+- name: ale23_1
+  rename: new_stepparent_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale23_2
+  rename: new_stepparent_aff
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  source:
+  - child
+  - teen
+
+- name: ale24
+  rename: parent_new_job
+  source:
+  - child
+  - teen
+
+- name: ale24_1
+  rename: parent_new_job_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale24_2
+  rename: parent_new_job_aff
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  source:
+  - child
+  - teen
+
+- name: ale25
+  rename: new_sibling
+  source:
+  - child
+  - teen
+
+- name: ale25_1
+  rename: new_sibling_exp
+  recode:
+    0: 2
+    999: 3
+    9: 4
+  source:
+  - child
+  - teen
+
+- name: ale25_2
+  rename: new_sibling_aff
+  request: Please increment codes of 0, 1, and 2, but leave code 4 as it is.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    999: 5
+    9: 6
+  source:
+  - child
+  - teen
+
+- name: nida_y_alclife1
+  rename: alc_lifetime_use
+  recode:
+    0: 2
+  source:
+  - child
+  - teen
+
+- name: nida_y_alclife2
+  rename: alc_first_use_age
+  source:
+  - child
+  - teen
+
+- name: nida_y_alclife3
+  rename: alc_30day_freq
+  source:
+  - child
+  - teen
+
+- name: nida_y_alclife4
+  rename: alc_30day_quantity
+  source:
+  - child
+  - teen
+
+- name: nida_y_tobaco
+  rename: cig_smoking
+  recode:
+    0: 2
+    999: 97
+  source:
+  - child
+  - teen
+
+- name: nida_y_tobaco1
+  rename: cig_smoking1_100
+  recode:
+    0: 2
+    999: 97
+  source:
+  - child
+  - teen
+
+- name: nida_y_tobaco2
+  rename: cig_smoking1_current
+  recode:
+    999: 4
+  source:
+  - child
+  - teen
+
+- name: nida_y_tobaco3
+  rename: cig_smoking_evryday_1mon
+  recode:
+    0: 2
+    999: 97
+  request: Please recode 999 as 97.
+  source:
+  - child
+  - teen
+
+- name: nida_y_tobaco_type
+  rename: nida_y_tobaco_type
+  source:
+  - child
+  - teen
+
+- name: nida_y_tobaco4
+  rename: first_cig_smoke_evryday_age1
+  source:
+  - child
+  - teen
+
+- name: nida_y_tobaco5
+  rename: first_cig_smoke_reg_age
+  source:
+  - child
+  - teen
+
+- name: nida_y_tobaco6
+  rename: cigarette_30day_smoking
+  recode:
+    0: 2
+  source:
+  - child
+  - teen
+
+- name: nida_y_tobaco6a
+  rename: freq_30day_count
+  source:
+  - child
+  - teen
+
+- name: nida_y_tobaco6b
+  rename: freq_30day_estimate
+  recode:
+    3: 2
+    6: 3
+    10: 4
+    20: 5
+    30: 6
+  request: Please recode 3 as 2 and 6 as 3.
+  source:
+  - child
+  - teen
+
+- name: nida_y_tobaco7
+  rename: quantity_30day
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    6: 4
+    16: 5
+    26: 6
+    35: 7
+    999: 8
+  request: Please recode 1 as 2, 2 as 3, and 6 as 4.
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug1
+  rename: lifetime_use_sedatives
+  func: convert_all_to_text
+  request: Please recode 1 as Yes and 2 as No.
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug1a
+  rename: first_use_age_sedatives
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug1b
+  rename: frquency_sedatives_code
+  recode:
+    999: 99
+  source:
+  - child
+  - teen
+
+- func: convert_all_to_text
+  name: nida_y_drug2
+  rename: lifetime_use_tranq
+  request: Please recode 1 as Yes and 2 as No.
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug2a
+  rename: first_use_age_tranq
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug2b
+  rename: frquency_tranquilzers_code
+  recode:
+    999: 99
+  source:
+  - child
+  - teen
+
+- func: convert_all_to_text
+  name: nida_y_drug3
+  rename: lifetime_use_painkillers
+  request: Please recode 1 as Yes and 2 as No.
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug3a
+  rename: first_use_age_painkillers
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug3b
+  rename: frquency_painkillers_code
+  recode:
+    999: 99
+  source:
+  - child
+  - teen
+
+- func: convert_all_to_text
+  name: nida_y_drug4
+  rename: lifetime_use_stimulants
+  request: Please recode 1 as Yes and 2 as No.
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug4a
+  rename: first_use_age_stimulants
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug4b
+  rename: frquency_stimulants_code
+  recode:
+    999: 99
+  source:
+  - child
+  - teen
+
+- func: convert_all_to_text
+  name: nida_y_drug5
+  rename: lifetime_use_marijuana
+  request: Please recode 1 as Yes and 2 as No.
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug5a
+  rename: first_use_age_marijuana
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug5b
+  rename: frquency_marijuana_code
+  recode:
+    999: 99
+  source:
+  - child
+  - teen
+
+- func: convert_all_to_text
+  name: nida_y_drug6
+  rename: lifetime_use_cocaine
+  request: Please recode 1 as Yes and 2 as No.
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug6a
+  rename: first_use_age_cocaine
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug6b
+  rename: frquency_cocaine_code
+  recode:
+    999: 99
+  source:
+  - child
+  - teen
+
+- func: convert_all_to_text
+  name: nida_y_drug7
+  rename: lifetime_use_halluc
+  request: Please recode 1 as Yes and 2 as No.
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug7a
+  rename: first_use_age_halluc
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug7b
+  rename: frquency_hallucinogens_code
+  recode:
+    999: 99
+  source:
+  - child
+  - teen
+
+- func: convert_all_to_text
+  name: nida_y_drug8
+  rename: lifetime_use_inhalant
+  request: Please recode 1 as Yes and 2 as No.
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug8a
+  rename: first_use_age_inhalant
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug8b
+  rename: frquency_inhalant_code
+  recode:
+    999: 99
+  source:
+  - child
+  - teen
+
+- func: convert_all_to_text
+  name: nida_y_drug9
+  rename: lifetime_use_heroin
+  request: Please recode 1 as Yes and 2 as No.
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug9a
+  rename: first_use_age_heroin
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug9b
+  rename: frquency_heroin_code
+  recode:
+    999: 99
+  source:
+  - child
+  - teen
+
+- func: convert_all_to_text
+  name: nida_y_drug10
+  rename: llifetime_use_other
+  request: Please recode 1 as Yes and 2 as No.
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug10other
+  rename: otdrug
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug10a
+  rename: first_use_age_other
+  source:
+  - child
+  - teen
+
+- name: nida_y_drug10b
+  rename: frquency_other_code
+  recode:
+    999: 99
+  source:
+  - child
+  - teen

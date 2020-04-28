@@ -1,0 +1,553 @@
+instrument: Early Adolescent Temperament Questionnaire
+struct: eatq01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - child
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - child
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - child
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - child
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - child
+  - parent
+
+- rename: respond
+  source:
+    - child:
+        code: return 3
+    - parent:
+        code: return 1
+
+- rename: eatq1_1
+  source:
+  - child:
+      name: eatq_y1
+  - parent:
+      name: eatq_p15
+
+- rename: eatq1_2
+  source:
+  - child:
+      name: eatq_y2
+
+- rename: eatq1_3
+  source:
+  - child:
+      name: eatq_y3
+  - parent:
+      name: eatq_p16
+
+- rename: eatq1_4
+  source:
+  - child:
+      name: eatq_y4
+
+- rename: eatq1_5
+  source:
+  - child:
+      name: eatq_y5
+  - parent:
+      name: eatq_p2
+
+- rename: eatq1_6
+  source:
+  - child:
+      name: eatq_y6
+
+- rename: eatq1_7
+  source:
+  - child:
+      name: eatq_y7
+  - parent:
+      name: eatq_p3
+
+- rename: eatq2_1
+  source:
+  - child:
+      name: eatq_y8
+
+- rename: eatq2_2
+  source:
+  - child:
+      name: eatq_y9
+  - parent:
+      name: eatq_p32
+
+- rename: eatq2_3
+  source:
+  - child:
+      name: eatq_y10
+  - parent:
+      name: eatq_p8
+
+- rename: eatq2_4
+  source:
+  - child:
+      name: eatq_y11
+  - parent:
+      name: eatq_p7
+
+- rename: eatq2_5
+  source:
+  - child:
+      name: eatq_y12
+
+- rename: eatq2_6
+  source:
+  - child:
+      name: eatq_y13
+  - parent:
+      name: eatq_p11
+
+- rename: eatq2_7
+  source:
+  - child:
+      name: eatq_y14
+
+- rename: eatq3_1
+  source:
+  - child:
+      name: eatq_y15
+  - parent:
+      name: eatq_p62
+
+- rename: eatq3_2
+  source:
+  - child:
+      name: eatq_y16
+
+- rename: eatq3_3
+  source:
+  - child:
+      name: eatq_y17
+  - parent:
+      name: eatq_p13
+
+- rename: eatq3_4
+  source:
+  - child:
+      name: eatq_y18
+  - parent:
+      name: eatq_p14
+
+- rename: eatq3_5
+  source:
+  - child:
+      name: eatq_y19
+
+- rename: eatq3_6
+  source:
+  - child:
+      name: eatq_y20
+  - parent:
+      name: eatq_p10
+
+- rename: eatq3_7
+  source:
+  - child:
+      name: eatq_y21
+
+- rename: eatq4_1
+  source:
+  - child:
+      name: eatq_y22
+  - parent:
+      name: eatq_p19
+
+- rename: eatq4_2
+  source:
+  - child:
+      name: eatq_y23
+
+- rename: eatq4_3
+  source:
+  - child:
+      name: eatq_y24
+
+- rename: eatq4_4
+  source:
+  - child:
+      name: eatq_y25
+
+- rename: eatq4_5
+  source:
+  - child:
+      name: eatq_y26
+  - parent:
+      name: eatq_p23
+
+- rename: eatq4_6
+  source:
+  - child:
+      name: eatq_y27
+  - parent:
+      name: eatq_p24
+
+- rename: eatq4_7
+  source:
+  - child:
+      name: eatq_y28
+  - parent:
+      name: eatq_p9
+
+- rename: eatq5_1
+  source:
+  - child:
+      name: eatq_y29
+  - parent:
+      name: eatq_p26
+
+- rename: eatq5_2
+  source:
+  - child:
+      name: eatq_y30
+  - parent:
+      name: eatq_p38
+
+- rename: eatq5_3
+  source:
+  - child:
+      name: eatq_y31
+  - parent:
+      name: eatq_p12
+
+- rename: eatq5_4
+  source:
+  - child:
+      name: eatq_y32
+  - parent:
+      name: eatq_p56
+
+- rename: eatq5_5
+  source:
+  - child:
+      name: eatq_y33
+
+- rename: eatq5_6
+  source:
+  - child:
+      name: eatq_y34
+
+- rename: eatq5_7
+  source:
+  - child:
+      name: eatq_y35
+  - parent:
+      name: eatq_p30
+
+- rename: eatq6_1
+  source:
+  - child:
+      name: eatq_y36
+  - parent:
+      name: eatq_p31
+
+- rename: eatq6_2
+  source:
+  - child:
+      name: eatq_y37
+
+- rename: eatq6_3
+  source:
+  - child:
+      name: eatq_y38
+  - parent:
+      name: eatq_p35
+
+- rename: eatq6_4
+  source:
+  - child:
+      name: eatq_y39
+  - parent:
+      name: eatq_p36
+
+- rename: eatq6_5
+  source:
+  - child:
+      name: eatq_y40
+  - parent:
+      name: eatq_p1
+
+- rename: eatq6_6
+  source:
+  - child:
+      name: eatq_y41
+  - parent:
+      name: eatq_p39
+
+- rename: eatq6_7
+  source:
+  - child:
+      name: eatq_y42
+  - parent:
+      name: eatq_p28
+
+- rename: eatq7_1
+  source:
+  - child:
+      name: eatq_y43
+
+- rename: eatq7_2
+  source:
+  - child:
+      name: eatq_y44
+  - parent:
+      name: eatq_p43
+
+- rename: eatq7_3
+  source:
+  - child:
+      name: eatq_y45
+  - parent:
+      name: eatq_p44
+
+- rename: eatq7_4
+  source:
+  - child:
+      name: eatq_y46
+
+- rename: eatq7_5
+  source:
+  - child:
+      name: eatq_y47
+  - parent:
+      name: eatq_p45
+
+- rename: eatq7_6
+  source:
+  - child:
+      name: eatq_y48
+
+- rename: eatq7_7
+  source:
+  - child:
+      name: eatq_y49
+  - parent:
+      name: eatq_p46
+
+- rename: eatq8_1
+  source:
+  - child:
+      name: eatq_y50
+
+- rename: eatq8_2
+  source:
+  - child:
+      name: eatq_y51
+  - parent:
+      name: eatq_p48
+
+- rename: eatq8_3
+  source:
+  - child:
+      name: eatq_y52
+  - parent:
+      name: eatq_p40
+
+- rename: eatq8_4
+  source:
+  - child:
+      name: eatq_y53
+  - parent:
+      name: eatq_p50
+
+- rename: eatq8_5
+  source:
+  - child:
+      name: eatq_y54
+  - parent:
+      name: eatq_p51
+
+- rename: eatq8_6
+  source:
+  - child:
+      name: eatq_y55
+  - parent:
+      name: eatq_p52
+
+- rename: eatq8_7
+  source:
+  - child:
+      name: eatq_y56
+
+- rename: eatq9_1
+  source:
+  - child:
+      name: eatq_y57
+  - parent:
+      name: eatq_p55
+
+- rename: eatq9_2
+  source:
+  - child:
+      name: eatq_y58
+
+- rename: eatq9_3
+  source:
+  - child:
+      name: eatq_y59
+  - parent:
+      name: eatq_p60
+
+- rename: eatq9_4
+  source:
+  - child:
+      name: eatq_y60
+  - parent:
+      name: eatq_p58
+
+- rename: eatq9_5
+  source:
+  - child:
+      name: eatq_y61
+  - parent:
+      name: eatq_p49
+
+- rename: eatq10_1
+  source:
+  - child:
+      name: eatq_y62
+
+- rename: eatq10_2
+  source:
+  - child:
+      name: eatq_y63
+  - parent:
+      name: eatq_p59
+
+- rename: eatq10_3
+  source:
+  - child:
+      name: eatq_y64
+
+- rename: eatq10_4
+  source:
+  - child:
+      name: eatq_y65
+
+- rename: epsgbb_004m_a
+  source:
+  - parent:
+      name: eatq_p4
+
+- rename: epacbb_005m_a
+  source:
+  - parent:
+      name: eatq_p5
+
+- rename: epicbb_006m_a
+  source:
+  - parent:
+      name: eatq_p6
+
+- rename: epacbb_017m_a
+  source:
+  - parent:
+      name: eatq_p17
+
+- rename: epafbb_018m_a
+  source:
+  - parent:
+      name: eatq_p18
+
+- rename: epfsbb_020m_a
+  source:
+  - parent:
+      name: eatq_p20
+
+- rename: epfsbb_021m_a
+  source:
+  - parent:
+      name: eatq_p21
+
+- rename: epatbb_022m_a
+  source:
+  - parent:
+      name: eatq_p22
+
+- rename: epagbb_025m_a
+  source:
+  - parent:
+      name: eatq_p25
+
+- rename: epshbb_027m_a
+  source:
+  - parent:
+      name: eatq_p27
+
+- rename: epsgbb_029m_a
+  source:
+  - parent:
+      name: eatq_p29
+
+- rename: epdmbb_033m_a
+  source:
+  - parent:
+      name: eatq_p33
+
+- rename: epsgbb_034m_a
+  source:
+  - parent:
+      name: eatq_p34
+
+- rename: epsgbb_069m_a
+  source:
+  - parent:
+      name: eatq_p37
+
+- rename: epagbb_041m_a
+  source:
+  - parent:
+      name: eatq_p41
+
+- rename: epagbb_042m_a
+  source:
+  - parent:
+      name: eatq_p42
+
+- rename: epicbb_047m_a
+  source:
+  - parent:
+      name: eatq_p47
+
+- rename: epfebb_053m_a
+  source:
+  - parent:
+      name: eatq_p53
+
+- rename: epshbb_054m_a
+  source:
+  - parent:
+      name: eatq_p54
+
+- rename: epfsbb_057m_a
+  source:
+  - parent:
+      name: eatq_p57
+
+- rename: epfebb_061m_a
+  source:
+  - parent:
+      name: eatq_p61

@@ -1,0 +1,268 @@
+instrument: CBQ_5-8
+struct: cbq01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - parent
+
+- name: cbq1
+  rename: cbq01
+  recode: {0: -9}
+  source:
+  - parent
+
+- name: cbq2
+  rename: cbq31
+  recode: {0: -9}
+  request: Please rename this column "cbq31" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq3
+  rename: cbq59
+  recode: {0: -9}
+  source:
+  - parent
+
+- name: cbq4
+  rename: cbq02
+  recode: {0: -9}
+  source:
+  - parent
+
+- name: cbq5
+  rename: cbq_29
+  recode: {0: -9}
+  source:
+  - parent
+
+- name: cbq6
+  rename: cbq133
+  recode: {0: -9}
+  source:
+  - parent
+
+- name: cbq7
+  rename: cbq_28
+  recode: {0: -9}
+  source:
+  - parent
+
+- name: cbq8
+  rename: cbq124
+  recode: {0: -9}
+  source:
+  - parent
+
+- name: cbq9
+  rename: cbq11
+  recode: {0: -9}
+  request: Please rename this column "cbq11" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq10
+  rename: cbq09
+  recode: {0: -9}
+  request: Please rename this column "cbq09" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq11
+  rename: cbq_17
+  recode: {0: -9}
+  request: Please rename this column "cbq_17" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq12
+  rename: cbq49
+  recode: {0: -9}
+  request: Please rename this column "cbq49" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq13
+  rename: cbq48
+  recode: {0: -9, 1: 7, 2: 6, 3: 5, 4: 4, 5: 3, 6: 2, 7: 1}
+  source:
+  - parent
+
+- name: cbq14
+  rename: cbq77
+  recode: {0: -9}
+  request: Please rename this column "cbq77" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq15
+  rename: cbq71
+  recode: {0: -9}
+  request: Please rename this column "cbq71" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq16
+  rename: cbq62
+  recode: {0: -9}
+  request: Please rename this column "cbq62" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq17
+  rename: cbq127
+  recode: {0: -9}
+  request: Please rename this column "cbq127" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq18
+  rename: cbq69
+  recode: {0: -9}
+  request: Please rename this column "cbq69" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq19
+  rename: cbq135
+  recode: {0: -9, 1: 7, 2: 6, 3: 5, 4: 4, 5: 3, 6: 2, 7: 1}
+  source:
+  - parent
+
+- name: cbq20
+  rename: cbq194
+  recode: {0: -9, 1: 7, 2: 6, 3: 5, 4: 4, 5: 3, 6: 2, 7: 1}
+  source:
+  - parent
+
+- name: cbq21
+  rename: cbq03
+  recode: {0: -9}
+  request: Please rename this column "cbq03" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq22
+  rename: cbq137
+  recode: {0: -9, 1: 7, 2: 6, 3: 5, 4: 4, 5: 3, 6: 2, 7: 1}
+  source:
+  - parent
+
+- name: cbq23
+  rename: cbq65
+  recode: {0: -9}
+  request: Please rename this column "cbq65" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq24
+  rename: cbq54
+  recode: {0: -9}
+  request: Please rename this column "cbq54" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq25
+  rename: cbq84
+  recode: {0: -9}
+  request: Please rename this column "cbq84" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq26
+  rename: cbq34
+  recode: {0: -9}
+  request: Please rename this column "cbq34" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq27
+  rename: cbq191
+  recode: {0: -9}
+  request: Please rename this column "cbq191" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq28
+  rename: cbq028
+  recode: {0: -9}
+  request: Please rename this column "cbq028" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq29
+  rename: cbq_49
+  recode: {0: -9, 1: 7, 2: 6, 3: 5, 4: 4, 5: 3, 6: 2, 7: 1}
+  source:
+  - parent
+
+- name: cbq30
+  rename: cbq170
+  recode: {0: -9}
+  request: Please rename this column "cbq170" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq31
+  rename: cbq147
+  recode: {0: -9, 1: 7, 2: 6, 3: 5, 4: 4, 5: 3, 6: 2, 7: 1}
+  request: Please rename this column "cbq147" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq32
+  rename: cbq39
+  recode: {0: -9}
+  request: Please rename this column "cbq39" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq33
+  rename: cbq_94
+  recode: {0: -9}
+  request: Please rename this column "cbq_94" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq34
+  rename: cbq168
+  recode: {0: -9, 1: 7, 2: 6, 3: 5, 4: 4, 5: 3, 6: 2, 7: 1}
+  request: Please rename this column "cbq168" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq35
+  rename: cbq33
+  recode: {0: -9}
+  request: Please rename this column "cbq33" to avoid a naming conflict.
+  source:
+  - parent
+
+- name: cbq36
+  rename: cbq36
+  recode: {0: -9}
+  source:
+  - parent

@@ -1,0 +1,157 @@
+struct: fenvs01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - child
+  - teen
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - child
+  - teen
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - child
+  - teen
+  - parent
+
+- rename: version_form
+  code: return "Self-Reported"
+  source:
+    - child
+    - teen
+    - parent:
+        code: return "Parent Report"
+
+- name: conflict_y1
+  rename: conflict_y1
+  source:
+  - child
+  - teen
+
+- name: conflict_y2
+  rename: conflict_y2
+  source:
+  - child
+  - teen
+
+- name: conflict_y3
+  rename: conflict_y3
+  source:
+  - child
+  - teen
+
+- name: conflict_y4
+  rename: conflict_y4
+  source:
+  - child
+  - teen
+
+- name: conflict_y5
+  rename: conflict_y5
+  source:
+  - child
+  - teen
+
+- name: conflict_y6
+  rename: conflict_y6
+  source:
+  - child
+  - teen
+
+- name: conflict_y7
+  rename: conflict_y7
+  source:
+  - child
+  - teen
+
+- name: conflict_y8
+  rename: conflict_y8
+  source:
+  - child
+  - teen
+
+- name: conflict_y9
+  rename: conflict_y9
+  source:
+  - child
+  - teen
+
+- name: fpnh_mom
+  rename: fpnh_mom
+  source:
+  - teen
+  - parent
+
+- name: fpnh_dad
+  rename: fpnh_dad
+  source:
+  - teen
+  - parent
+
+- name: conflict_p1
+  rename: famenv_1
+  source:
+  - parent
+
+- name: conflict_p2
+  rename: famenv_2
+  source:
+  - parent
+
+- name: conflict_p3
+  rename: famenv_3
+  source:
+  - parent
+
+- name: conflict_p4
+  rename: famenv_4
+  source:
+  - parent
+
+- name: conflict_p5
+  rename: famenv_5
+  source:
+  - parent
+
+- name: conflict_p6
+  rename: famenv_6
+  source:
+  - parent
+
+- name: conflict_p7
+  rename: famenv_7
+  source:
+  - parent
+
+- name: conflict_p8
+  rename: famenv_8
+  source:
+  - parent
+
+- name: conflict_p9
+  rename: famenv_9
+  source:
+  - parent

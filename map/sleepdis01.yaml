@@ -1,0 +1,159 @@
+instrument: SleepScale
+struct: sleepdis01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - parent
+
+- name: sleepdisturb_p1
+  rename: sleepdisturb_p1
+  source:
+  - parent
+
+- name: sleepdisturb_p2
+  rename: sleepdisturb_p2
+  source:
+  - parent
+
+- name: sleepdisturb_p3
+  rename: sleepdisturb_p3
+  source:
+  - parent
+
+- name: sleepdisturb_p4
+  rename: sleepdisturb_p4
+  source:
+  - parent
+
+- name: sleepdisturb_p5
+  rename: sleepdisturb_p5
+  source:
+  - parent
+
+- name: sleepdisturb_p6
+  rename: sleepdisturb_p6
+  source:
+  - parent
+
+- name: sleepdisturb_p7
+  rename: sleepdisturb_p7
+  source:
+  - parent
+
+- name: sleepdisturb_p8
+  rename: sleepdisturb_p8
+  source:
+  - parent
+
+- name: sleepdisturb_p9
+  rename: sleepdisturb_p9
+  source:
+  - parent
+
+- name: sleepdisturb_p10
+  rename: sleepdisturb_p10
+  source:
+  - parent
+
+- name: sleepdisturb_p11
+  rename: sleepdisturb_p11
+  source:
+  - parent
+
+- name: sleepdisturb_p12
+  rename: sleepdisturb_p12
+  source:
+  - parent
+
+- name: sleepdisturb_p13
+  rename: sleepdisturb_p13
+  source:
+  - parent
+
+- name: sleepdisturb_p14
+  rename: sleepdisturb_p14
+  source:
+  - parent
+
+- name: sleepdisturb_p15
+  rename: sleepdisturb_p15
+  source:
+  - parent
+
+- name: sleepdisturb_p16
+  rename: sleepdisturb_p16
+  source:
+  - parent
+
+- name: sleepdisturb_p17
+  rename: sleepdisturb_p17
+  source:
+  - parent
+
+- name: sleepdisturb_p18
+  rename: sleepdisturb_p18
+  source:
+  - parent
+
+- name: sleepdisturb_p19
+  rename: sleepdisturb_p19
+  source:
+  - parent
+
+- name: sleepdisturb_p20
+  rename: sleepdisturb_p20
+  source:
+  - parent
+
+- name: sleepdisturb_p21
+  rename: sleepdisturb_p21
+  source:
+  - parent
+
+- name: sleepdisturb_p22
+  rename: sleepdisturb_p22
+  source:
+  - parent
+
+- name: sleepdisturb_p23
+  rename: sleepdisturb_p23
+  source:
+  - parent
+
+- name: sleepdisturb_p24
+  rename: sleepdisturb_p24
+  source:
+  - parent
+
+- name: sleepdisturb_p25
+  rename: sleepdisturb_p25
+  source:
+  - parent
+
+- name: sleepdisturb_p26
+  rename: sleepdisturb_p26
+  source:
+  - parent

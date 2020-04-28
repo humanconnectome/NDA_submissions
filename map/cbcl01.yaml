@@ -1,0 +1,1152 @@
+instrument: CBCL_6-18
+struct: cbcl01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - parent
+
+- name: cbclschitem1
+  rename: cbcl1
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem2_1
+  rename: cbcl2
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem2_2
+  rename: cbcl1_2_text
+  source:
+  - parent
+
+- name: cbclschitem3
+  rename: cbcl3
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem4
+  rename: cbcl4
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem5
+  rename: cbcl5
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem6
+  rename: cbcl6
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem7
+  rename: cbcl7
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem8
+  rename: cbcl8
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem9_1
+  rename: cbcl9
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem9_2
+  rename: cbcl2_3_text
+  source:
+  - parent
+
+- name: cbclschitem10
+  rename: cbcl10
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem11
+  rename: cbcl11
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem12
+  rename: cbcl12
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem13
+  rename: cbcl13
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem14
+  rename: cbcl14
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem15
+  rename: cbcl15
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem16
+  rename: cbcl16
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem17
+  rename: cbcl17
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem18
+  rename: cbcl18
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem19
+  rename: cbcl19
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem20
+  rename: cbcl20
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem21
+  rename: cbcl21
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem22
+  rename: cbcl22
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem23
+  rename: cbcl23
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem24
+  rename: cbcl24
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem25
+  rename: cbcl25
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem26
+  rename: cbcl26
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem27
+  rename: cbcl27
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem28
+  rename: cbcl28
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem29_1
+  rename: cbcl29
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem29_2
+  rename: cbcl5_2_text
+  source:
+  - parent
+
+- name: cbclschitem30
+  rename: cbcl30
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem31
+  rename: cbcl31
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem32
+  rename: cbcl32
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem33
+  rename: cbcl33
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem34
+  rename: cbcl34
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem35
+  rename: cbcl35
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem36
+  rename: cbcl36
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem37
+  rename: cbcl37
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem37_start
+  rename: cbclpre35_start
+  source:
+  - parent
+
+- name: cbclschitem38
+  rename: cbcl38
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem39
+  rename: cbcl39
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem40_1
+  rename: cbcl40
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem40_2
+  rename: cbcl6_6_text
+  source:
+  - parent
+
+- name: cbclschitem41
+  rename: cbcl41
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem42
+  rename: cbcl42
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem43
+  rename: cbcl43
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem44
+  rename: cbcl44
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem45
+  rename: cbcl45
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem46_1
+  rename: cbcl46
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem46_2
+  rename: cbcl7_3_text
+  source:
+  - parent
+
+- name: cbclschitem47
+  rename: cbcl47
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem48
+  rename: cbcl48
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem49
+  rename: cbcl49
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem50
+  rename: cbcl50
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem51
+  rename: cbcl51
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem52
+  rename: cbcl52
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem53
+  rename: cbcl53
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem54
+  rename: cbcl54
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem55
+  rename: cbcl55
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem56_1
+  rename: cbcl56a
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem56_2
+  rename: cbcl56b
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem56_3
+  rename: cbcl56c
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem56_4_1
+  rename: cbcl56d
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem56_4_2
+  rename: cbcl9_2_text
+  source:
+  - parent
+
+- name: cbclschitem56_5
+  rename: cbcl56e
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem56_6
+  rename: cbcl56f
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem56_7
+  rename: cbcl56g
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem56_8_1
+  rename: cbcl56h
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem56_8_2
+  rename: cbcl56h_des
+  source:
+  - parent
+
+- name: cbclschitem57
+  rename: cbcl57
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem58_1
+  rename: cbcl58
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem58_2
+  rename: cbcl10_1_text
+  source:
+  - parent
+
+- name: cbclschitem59
+  rename: cbcl59
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem60
+  rename: cbcl60
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem61
+  rename: cbcl61
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem62
+  rename: cbcl62
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem63
+  rename: cbcl63
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem64
+  rename: cbcl64
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem65
+  rename: cbcl65
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem66_1
+  rename: cbcl66
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem66_2
+  rename: cbcl11_2_text
+  source:
+  - parent
+
+- name: cbclschitem67
+  rename: cbcl67
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem68
+  rename: cbcl68
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem69
+  rename: cbcl69
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem70_1
+  rename: cbcl70
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem70_2
+  rename: cbcl11_6_text
+  source:
+  - parent
+
+- name: cbclschitem71
+  rename: cbcl71
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem72
+  rename: cbcl72
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem73_1
+  rename: cbcl73
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem73_2
+  rename: cbcl12_2_text
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem74
+  rename: cbcl74
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem75
+  rename: cbcl75
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem76
+  rename: cbcl76
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem77_1
+  rename: cbcl77
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem77_2
+  rename: cbcl12_6_text
+  source:
+  - parent
+
+- name: cbclschitem78
+  rename: cbcl78
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem79_1
+  rename: cbcl79
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem79_2
+  rename: cbcl13_1_text
+  source:
+  - parent
+
+- name: cbclschitem80
+  rename: cbcl80
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem81
+  rename: cbcl81
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem82
+  rename: cbcl82
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem83_1
+  rename: cbcl83
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem83_2
+  rename: cbcl13_5_text
+  source:
+  - parent
+
+- name: cbclschitem84_1
+  rename: cbcl84
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem84_2
+  rename: cbcl13_6_text
+  source:
+  - parent
+
+- name: cbclschitem85_1
+  rename: cbcl85
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem85_2
+  rename: cbcl13_7_text
+  source:
+  - parent
+
+- name: cbclschitem86
+  rename: cbcl86
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem87
+  rename: cbcl87
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem88
+  rename: cbcl88
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem89
+  rename: cbcl89
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem90
+  rename: cbcl90
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem91
+  rename: cbcl91
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem92_1
+  rename: cbcl92
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem92_2
+  rename: cbcl14_7_text
+  source:
+  - parent
+
+- name: cbclschitem93
+  rename: cbcl93
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem94
+  rename: cbcl94
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem95
+  rename: cbcl95
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem96
+  rename: cbcl96
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem97
+  rename: cbcl97
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem98
+  rename: cbcl98
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem99
+  rename: cbcl99
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem100_1
+  rename: cbcl100
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem100_2
+  rename: cbcl16_1_text
+  source:
+  - parent
+
+- name: cbclschitem101
+  rename: cbcl101
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem102
+  rename: cbcl102
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem103
+  rename: cbcl103
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem104
+  rename: cbcl104
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem105_1
+  rename: cbcl105
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem105_2
+  rename: cbcl16_6_text
+  source:
+  - parent
+
+- name: cbclschitem106
+  rename: cbcl106
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem107
+  rename: cbcl107
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem108
+  rename: cbcl108
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem109
+  rename: cbcl109
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem110
+  rename: cbcl110
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem111
+  rename: cbcl111
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem112
+  rename: cbcl112
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- name: cbclschitem113
+  rename: cbclpre100
+  source:
+  - parent
+
+- name: cbclschitem113_1
+  rename: cbcl113a_des
+  source:
+  - parent
+
+- name: cbclschitem113_2
+  rename: cbcl113a
+  source:
+  - parent
+
+- name: cbclschitem114_1
+  rename: cbcl113b_des
+  source:
+  - parent
+
+- name: cbclschitem114_2
+  rename: cbcl113b
+  source:
+  - parent
+
+- name: cbclschitem115_1
+  rename: cbcl113c_des
+  source:
+  - parent
+
+- name: cbclschitem115_2
+  rename: cbcl113c
+  source:
+  - parent
+
+- rename: sports_time1
+  source:
+  - parent
+  code: return 999
+
+- rename: sports_well1
+  source:
+  - parent
+  code: return 999
+
+- rename: sports_time2
+  source:
+  - parent
+  code: return 999
+
+- rename: sports_well2
+  source:
+  - parent
+  code: return 999
+
+- rename: sports_time3
+  source:
+  - parent
+  code: return 999
+
+- rename: sports_well3
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_emotional
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_anxious_raw
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_anxious
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_somatic_c_raw
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_somatic_c
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_withdrawn_raw
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_withdrawn
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_sleep_raw
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_sleep
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_attention_raw
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_attention
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_aggressive_raw
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_aggressive
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_internal_raw
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_internal
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_external
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_external_raw
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_total_raw
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_total
+  source:
+  - parent
+  code: return 999
+
+- rename: cbcl_emotional_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_affective_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_affective
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_anxiety_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_anxiety
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_pervasive_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_pervasive
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_adhd_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_adhd
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_oppositional_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_oppositional
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_social_p_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_social_p
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_thought_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_thought
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_rulebreak_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_rulebreak
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_activities_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_activities
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_social_c_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_social_c
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_school_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_school
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_total_c_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_total_c
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_somatic_p_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_somatic_p
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_conduct_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_conduct
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_sct_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_sct
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_ocd_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_ocd
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_ptsd_raw
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_ptsd
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_depresspr
+  source: ["parent"]
+  code: return 999
+
+- rename: cbcl_depresspr_raw
+  source: ["parent"]
+  code: return 999

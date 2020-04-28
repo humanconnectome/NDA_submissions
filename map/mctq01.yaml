@@ -1,0 +1,134 @@
+instrument: ''
+struct: mctq01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - child
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - child
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - child
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - child
+
+- name: gender
+  rename: sex
+  source:
+  - child
+
+- rename: version_form
+  code: return "Past 4 weeks"
+  source:
+  - child
+
+- name: mctq_school_yn
+  rename: regsch
+  recode:
+    2: 0
+  source:
+  - child
+
+- name: mctq_school_days
+  rename: eo20
+  source:
+  - child
+
+- name: mctq_school1
+  rename: wkbed
+  source:
+  - child
+
+- name: mctq_school3
+  rename: wkslp
+  source:
+  - child
+
+- name: mctq_school4
+  rename: wkmnslp
+  source:
+  - child
+
+- name: mctq_school5
+  rename: wkwakup
+  source:
+  - child
+
+- name: mctq_school6
+  rename: wkmnup
+  source:
+  - child
+
+- name: mctq_school7
+  rename: wkalarm
+  source:
+  - child
+
+- name: mctq_school8
+  rename: mctq_school8
+  recode:
+    2: 0
+  source:
+  - child
+
+- name: mctq_free1
+  rename: frbed
+  source:
+  - child
+
+- name: mctq_free3
+  rename: frslp
+  source:
+  - child
+
+- name: mctq_free4
+  rename: frmnslp
+  source:
+  - child
+
+- name: mctq_free5
+  rename: frwakup
+  source:
+  - child
+
+- name: mctq_free6
+  rename: frmnup
+  source:
+  - child
+
+- name: mctq_free7
+  rename: fralarm
+  source:
+  - child
+
+- name: mctq_free8
+  rename: frprntslp
+  recode:
+    2: 0
+  source:
+  - child
+
+- old_code: "return column.replace({\n  1: 'Familymembers/pet(s)',\n  2: 'Hobbies',\n\
+    \  3: 'Other: ',\n}) + studydata.mctq_free10.fillna(\"\")\n"
+  code: return X + " " + Y
+  name:
+  - mctq_free9
+  - mctq_free10
+  rename: frprnts
+  request:
+  - Please combine mctq_free9 and mctq_free10 under one column (either name would
+    be fine).
+  - Please also convert mctq_free9's numeric codes to the text strings they represent.
+  source:
+  - child

@@ -1,0 +1,505 @@
+instrument: Bisbas_3versions
+struct: bisbas01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - child
+  - teen
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - child
+  - teen
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - child
+  - teen
+  - parent
+
+- rename: version_form
+  code: return "Self-reported"
+  source:
+    - child
+    - teen
+    - parent:
+        code: return "Parent report"
+
+- rename: bissc_total
+  name: bis_sum
+  code: return x.fillna(999)
+  source:
+  - child
+  - teen:
+      name: bis
+  - parent:
+      name: bisbas_bistotal
+
+- rename: bas_drive
+  name: bas_drive
+  code: return x.fillna(99)
+  source:
+  - child
+  - teen
+  - parent:
+      name: bisbas_drive
+
+- rename: bas_fs
+  name: bas_fs
+  code: return x.fillna(99)
+  source:
+  - child
+  - teen:
+      name: bas_fun
+  - parent:
+      name: bisbas_dfun
+
+- rename: bas_rr
+  name: bas_rr
+  code: return x.fillna(99)
+  source:
+  - child
+  - teen:
+      name: bas_reward
+  - parent:
+      name: bisbas_reward
+
+- name: bisbas_pac1
+  rename: bisbas_pac1
+  source:
+  - parent
+
+- name: bisbas_pac2
+  rename: bisbas_pac2
+  source:
+  - parent
+
+- name: bisbas_pac3
+  rename: bisbas_pac3
+  source:
+  - parent
+
+- name: bisbas_pac4
+  rename: bisbas_pac4
+  source:
+  - parent
+
+- name: bisbas_pac5
+  rename: bisbas_pac5
+  source:
+  - parent
+
+- name: bisbas_pac6
+  rename: bisbas_pac6
+  source:
+  - parent
+
+- name: bisbas_pac7
+  rename: bisbas_pac7
+  source:
+  - parent
+
+- name: bisbas_pac8
+  rename: bisbas_pac8
+  source:
+  - parent
+
+- name: bisbas_pac9
+  rename: bisbas_pac9
+  source:
+  - parent
+
+- name: bisbas_pac10
+  rename: bisbas_pac10
+  source:
+  - parent
+
+- name: bisbas_pac11
+  rename: bisbas_pac11
+  source:
+  - parent
+
+- name: bisbas_pac12
+  rename: bisbas_pac12
+  source:
+  - parent
+
+- name: bisbas_pac13
+  rename: bisbas_pac13
+  source:
+  - parent
+
+- name: bisbas_pac14
+  rename: bisbas_pac14
+  source:
+  - parent
+
+- name: bisbas_pac15
+  rename: bisbas_pac15
+  source:
+  - parent
+
+- name: bisbas_pac16
+  rename: bisbas_pac16
+  source:
+  - parent
+
+- name: bisbas_pac17
+  rename: bisbas_pac17
+  source:
+  - parent
+
+- name: bisbas_pac18
+  rename: bisbas_pac18
+  source:
+  - parent
+
+- name: bisbas_pac19
+  rename: bisbas_pac19
+  source:
+  - parent
+
+- name: bisbas_pac20
+  rename: bisbas_pac20
+  source:
+  - parent
+
+- name: bisbas1
+  rename: bisbas1
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - teen
+
+- name: bisbas2
+  rename: bisbas2
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - child:
+      name: bisbas5
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas2".
+  - teen
+
+- name: bisbas3
+  rename: bisbas3
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - child:
+      name: bisbas14
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas3".
+  - teen
+
+- name: bisbas4
+  rename: bisbas4
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - child:
+      name: bisbas9
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas4".
+  - teen
+
+- name: bisbas5
+  rename: bisbas5
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - child:
+      name: bisbas19
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas5".
+  - teen
+
+- name: bisbas6
+  rename: bisbas6
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - teen
+
+- name: bisbas7
+  rename: bisbas7
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - child:
+      name: bisbas8
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas7".
+  - teen
+
+- name: bisbas8
+  rename: bisbas8
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - child:
+      name: bisbas3
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas8".
+  - teen
+
+- name: bisbas9
+  rename: bisbas9
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - child:
+      name: bisbas13
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas9".
+  - teen
+
+- name: bisbas10
+  rename: bisbas10
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - child:
+      name: bisbas17
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas10".
+  - teen
+
+- name: bisbas11
+  rename: bisbas11
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - teen
+
+- name: bisbas12
+  rename: bisbas12
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - child:
+      name: bisbas15
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas12".
+  - teen
+
+- name: bisbas13
+  rename: bisbas13
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - child:
+      name: bisbas4
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas13".
+  - teen
+
+- name: bisbas14
+  rename: bisbas14
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - teen
+  - child:
+      name: bisbas12
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas_19a".
+
+- name: bisbas15
+  rename: bisbas15
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - child:
+      name: bisbas20
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas15".
+  - teen
+
+- name: bisbas16
+  rename: bisbas16
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - child:
+      name: bisbas1
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas16".
+  - teen
+
+- name: bisbas17
+  rename: bisbas17
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - teen
+
+- name: bisbas18
+  rename: bisbas18
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - child:
+      name: bisbas10
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas18".
+  - teen
+
+- name: bisbas19
+  rename: bisbas19
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - child:
+      name: bisbas6
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas19".
+  - teen
+
+- name: bisbas20
+  rename: bisbas20
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - child:
+      name: bisbas18
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas20".
+  - teen
+
+- name: bisbas21
+  rename: bisbas21
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - teen
+
+- name: bisbas22
+  rename: bisbas22
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - teen
+
+- name: bisbas23
+  rename: bisbas23
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - child:
+      name: bisbas11
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas23".
+  - teen
+
+- name: bisbas24
+  rename: bisbas24
+  recode: {4: 1, 3: 2, 2: 3, 1: 4}
+  request:
+  - Please reverse-code this column.
+  source:
+  - child:
+      name: bisbas2
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas24".
+  - teen
+
+- rename: bisbas_20i
+  source:
+  - child:
+      name: bisbas7
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas_20i".
+
+- rename: bisbas_16a
+  source:
+  - child:
+      name: bisbas16
+      recode: {0: 1, 1: 2, 2: 3, 3: 4}
+      request:
+      - Please shift your 0::3 scale to a 1::4 scale.
+      - Rename this column to "bisbas_16a".
+

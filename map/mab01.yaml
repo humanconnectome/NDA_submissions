@@ -1,0 +1,1500 @@
+instrument: DevelopmentalHx
+struct: mab01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - parent
+
+- name: devhx_1_p
+  rename: bio_mother
+  source:
+  - parent
+
+- name: devhx_2_p
+  rename: birth_weight_lbs
+  source:
+  - parent
+
+- name: devhx_2b_p
+  rename: birth_weight_oz
+  source:
+  - parent
+
+- name: devhx_3_p
+  rename: devhis_3_p
+  source:
+  - parent
+
+- name: devhx_4_p
+  rename: devhis_4_p
+  source:
+  - parent
+
+- name: devhx_5_p
+  rename: child_twin
+  recode:
+    0: 2
+    999: 99
+  source:
+  - parent
+
+- name: devhx_6_p
+  rename: devhis_6_p
+  source:
+  - parent
+
+- name: devhx_7_p
+  rename: how_long_pregnant
+  source:
+  - parent
+
+- name: devhx_8_prescript_medyn
+  rename: devhis_8_prescript_medyn
+  source:
+  - parent
+
+- name: devhx_8_prescript_med
+  rename: devhis_8_prescript_med
+  request: Please recode 0 as 999 (for "Don't Know").
+  recode:
+    0: 999
+  source:
+  - parent
+
+- name: devhx_8_med1
+  rename: devhis_8_med1
+  source:
+  - parent
+
+- name: devhx_8_med1_dose
+  rename: devhis_8_med1_dose
+  source:
+  - parent
+
+- name: devhx_8_med1_frqcy
+  rename: devhis_8_med1_frqcy
+  source:
+  - parent
+
+- name: devhx_8_med2
+  rename: devhis_8_med2
+  source:
+  - parent
+
+- name: devhx_8_med2_dose
+  rename: devhis_8_med2_dose
+  source:
+  - parent
+
+- name: devhx_8_med2_frqcy
+  rename: devhis_8_med2_frqcy
+  source:
+  - parent
+
+- name: devhx_8_med3
+  rename: devhis_8_med3
+  source:
+  - parent
+
+- name: devhx_8_med3_dose
+  rename: devhis_8_med3_dose
+  source:
+  - parent
+
+- name: devhx_8_med3_frqcy
+  rename: devhis_8_med3_frqcy
+  source:
+  - parent
+
+- name: devhx_8_med4
+  rename: devhis_8_med4
+  source:
+  - parent
+
+- name: devhx_8_med4_dose
+  rename: devhis_8_med4_dose
+  source:
+  - parent
+
+- name: devhx_8_med4_frqcy
+  rename: devhis_8_med4_frqcy
+  source:
+  - parent
+
+- name: devhx_8_med5
+  rename: devhis_8_med5
+  source:
+  - parent
+
+- name: devhx_8_med5_dose
+  rename: devhis_8_med5_dose
+  source:
+  - parent
+
+- name: devhx_8_med5_frqcy
+  rename: devhis_8_med5_frqcy
+  source:
+  - parent
+
+- name: devhx_8_med6
+  rename: devhis_8_med6
+  source:
+  - parent
+
+- name: devhx_8_med6_dose
+  rename: devhis_8_med6_dose
+  source:
+  - parent
+
+- name: devhx_8_med6_frqcy
+  rename: devhis_8_med6_frqcy
+  source:
+  - parent
+
+- name: devhx_8_med7
+  rename: devhis_8_med7
+  source:
+  - parent
+
+- name: devhx_8_med7_dose
+  rename: devhis_8_med7_dose
+  source:
+  - parent
+
+- name: devhx_8_med7_frqcy
+  rename: devhis_8_med7_frqcy
+  source:
+  - parent
+
+- name: devhx_8_med8
+  rename: devhis_8_med8
+  source:
+  - parent
+
+- name: devhx_8_med8_dose
+  rename: devhis_8_med8_dose
+  source:
+  - parent
+
+- name: devhx_8_med8_frqcy
+  rename: devhis_8_med8_frqcy
+  source:
+  - parent
+
+- name: devhx_8_med9
+  rename: devhis_8_med9
+  source:
+  - parent
+
+- name: devhx_8_med9_dose
+  rename: devhis_8_med9_dose
+  source:
+  - parent
+
+- name: devhx_8_med9_frqcy
+  rename: devhis_8_med9_frqcy
+  source:
+  - parent
+
+- name: devhx_8_med10
+  rename: devhis_8_med10
+  source:
+  - parent
+
+- name: devhx_8_med10_dose
+  rename: devhis_8_med10_dose
+  source:
+  - parent
+
+- name: devhx_8_med10_frqcy
+  rename: devhis_8_med10_frqcy
+  source:
+  - parent
+
+- name: devhx_8_med11
+  rename: devhis_8_med11
+  source:
+  - parent
+
+- name: devhx_8_med11_dose
+  rename: devhis_8_med11_dose
+  source:
+  - parent
+
+- name: devhx_8_med11_frqcy
+  rename: devhis_8_med11_frqcy
+  source:
+  - parent
+
+- name: devhx_8_med12
+  rename: devhis_8_med12
+  source:
+  - parent
+
+- name: devhx_8_med12_dose
+  rename: devhis_8_med12_dose
+  source:
+  - parent
+
+- name: devhx_8_med12_frqcy
+  rename: devhis_8_med12_frqcy
+  source:
+  - parent
+
+- name: devhx_8_med13
+  rename: devhis_8_med13
+  source:
+  - parent
+
+- name: devhx_8_med13_dose
+  rename: devhis_8_med13_dose
+  source:
+  - parent
+
+- name: devhx_8_med13_frqcy
+  rename: devhis_8_med13_frqcy
+  source:
+  - parent
+
+- name: devhx_8_med14
+  rename: devhis_8_med14
+  source:
+  - parent
+
+- name: devhx_8_med14_dose
+  rename: devhis_8_med14_dose
+  source:
+  - parent
+
+- name: devhx_8_med14_frqcy
+  rename: devhis_8_med14_frqcy
+  source:
+  - parent
+
+- name: devhx_8_med15
+  rename: devhis_8_med15
+  source:
+  - parent
+
+- name: devhx_8_med15_dose
+  rename: devhis_8_med15_dose
+  source:
+  - parent
+
+- name: devhx_8_med15_frqcy
+  rename: devhis_8_med15_frqcy
+  source:
+  - parent
+
+- name: devhx_8_tobacco
+  rename: devhis_8_tobacco
+  source:
+  - parent
+
+- name: devhx_8_cigs_per_day
+  rename: devhis_8_cigs_per_day
+  source:
+  - parent
+
+- name: devhx_8_alcohol
+  rename: devhis_8_alcohol
+  source:
+  - parent
+
+- name: devhx_8_alchohol_max
+  rename: devhis_8_alchohol_max
+  source:
+  - parent
+
+- name: devhx_8_alchohol_avg
+  rename: devhis_8_alchohol_avg
+  source:
+  - parent
+
+- name: devhx_8_alcohol_effects
+  rename: devhis_8_alcohol_effects
+  source:
+  - parent
+
+- name: devhx_8_marijuana
+  rename: devhis_8_marijuana
+  source:
+  - parent
+
+- name: devhx_8_marijuana_amt
+  rename: devhis_8_marijuana_amt
+  source:
+  - parent
+
+- name: devhx_8_marijuana_tmswk
+  rename: devhis_8_marijuana_tmswk
+  source:
+  - parent
+
+- name: devhx_8_coc_crack
+  rename: devhis_8_coc_crack
+  source:
+  - parent
+
+- name: devhx_8_coc_crack_amt
+  rename: devhis_8_coc_crack_amt
+  source:
+  - parent
+
+- name: devhx_8_coc_crack_tmswk
+  rename: devhis_8_coc_crack_tmswk
+  source:
+  - parent
+
+- name: devhx_8_her_morph
+  rename: devhis_8_her_morph
+  source:
+  - parent
+
+- name: devhx_8_her_morph_amt
+  rename: devhis_8_her_morph_amt
+  source:
+  - parent
+
+- name: devhx_8_her_morph_tmswk
+  rename: devhis_8_her_morph_tmswk
+  source:
+  - parent
+
+- name: devhx_8_oxycont
+  rename: devhis_8_oxycont
+  source:
+  - parent
+
+- name: devhx_8_oxycont_amt
+  rename: devhis_8_oxycont_amt
+  source:
+  - parent
+
+- name: devhx_8_oxycont_tmswk
+  rename: devhis_8_oxycont_tmswk
+  source:
+  - parent
+
+- name: devhx_8_other_drugs
+  rename: devhis_8_other_drugs
+  source:
+  - parent
+
+- name: devhx_8_other_drugs_amt
+  rename: devhis_8_other_drugs_amt
+  source:
+  - parent
+
+- name: devhx_8_other1_name
+  rename: devhis_8_other1_name
+  source:
+  - parent
+
+- name: devhx_8_other1_amt
+  rename: devhis_8_other1_amt
+  source:
+  - parent
+
+- name: devhx_8_other1_tmswk
+  rename: devhis_8_other1_tmswk
+  source:
+  - parent
+
+- name: devhx_8_other2_name
+  rename: devhis_8_other2_name
+  source:
+  - parent
+
+- name: devhx_8_other2_amt
+  rename: devhis_8_other2_amt
+  source:
+  - parent
+
+- name: devhx_8_other2_tmswk
+  rename: devhis_8_other2_tmswk
+  source:
+  - parent
+
+- name: devhx_8_other3_name
+  rename: devhis_8_other3_name
+  source:
+  - parent
+
+- name: devhx_8_other3_amt
+  rename: devhis_8_other3_amt
+  source:
+  - parent
+
+- name: devhx_8_other3_tmswk
+  rename: devhis_8_other3_tmswk
+  source:
+  - parent
+
+- name: devhx_8_other4_name
+  rename: devhis_8_other4_name
+  source:
+  - parent
+
+- name: devhx_8_other4_amt
+  rename: devhis_8_other4_amt
+  source:
+  - parent
+
+- name: devhx_8_other4_tmswk
+  rename: devhis_8_other4_tmswk
+  source:
+  - parent
+
+- name: devhx_8_other5_name
+  rename: devhis_8_other5_name
+  source:
+  - parent
+
+- name: devhx_8_other5_amt
+  rename: devhis_8_other5_amt
+  source:
+  - parent
+
+- name: devhx_8_other5_tmswk
+  rename: devhis_8_other5_tmswk
+  source:
+  - parent
+
+- name: devhx_8_other6_name
+  rename: devhis_8_other6_name
+  source:
+  - parent
+
+- name: devhx_8_other6_amt
+  rename: devhis_8_other6_amt
+  source:
+  - parent
+
+- name: devhx_8_other6_tmswk
+  rename: devhis_8_other6_tmswk
+  source:
+  - parent
+
+- name: devhx_8_other7_name
+  rename: devhis_8_other7_name
+  source:
+  - parent
+
+- name: devhx_8_other7_amt
+  rename: devhis_8_other7_amt
+  source:
+  - parent
+
+- name: devhx_8_other7_tmswk
+  rename: devhis_8_other7_tmswk
+  source:
+  - parent
+
+- name: devhx_8_other8_name
+  rename: devhis_8_other8_name
+  source:
+  - parent
+
+- name: devhx_8_other8_amt
+  rename: devhis_8_other8_amt
+  source:
+  - parent
+
+- name: devhx_8_other8_tmswk
+  rename: devhis_8_other8_tmswk
+  source:
+  - parent
+
+- name: devhx_8_other9_name
+  rename: devhis_8_other9_name
+  source:
+  - parent
+
+- name: devhx_8_other9_amt
+  rename: devhis_8_other9_amt
+  source:
+  - parent
+
+- name: devhx_8_other9_tmswk
+  rename: devhis_8_other9_tmswk
+  source:
+  - parent
+
+- name: devhx_8_other10_name
+  rename: devhis_8_other10_name
+  source:
+  - parent
+
+- name: devhx_8_other10_amt
+  rename: devhis_8_other10_amt
+  source:
+  - parent
+
+- name: devhx_8_other10_tmswk
+  rename: devhis_8_other10_tmswk
+  source:
+  - parent
+
+- name: devhx_8_other11_name
+  rename: devhis_8_other11_name
+  source:
+  - parent
+
+- name: devhx_8_other11_amt
+  rename: devhis_8_other11_amt
+  source:
+  - parent
+
+- name: devhx_8_other11_tmswk
+  rename: devhis_8_other11_tmswk
+  source:
+  - parent
+
+- name: devhx_8_other12_name
+  rename: devhis_8_other12_name
+  source:
+  - parent
+
+- name: devhx_8_other12_amt
+  rename: devhis_8_other12_amt
+  source:
+  - parent
+
+- name: devhx_8_other12_tmswk
+  rename: devhis_8_other12_tmswk
+  source:
+  - parent
+
+- name: devhx_8_other13_name
+  rename: devhis_8_other13_name
+  source:
+  - parent
+
+- name: devhx_8_other13_amt
+  rename: devhis_8_other13_amt
+  source:
+  - parent
+
+- name: devhx_8_other13_tmswk
+  rename: devhis_8_other13_tmswk
+  source:
+  - parent
+
+- name: devhx_8_other14_name
+  rename: devhis_8_other14_name
+  source:
+  - parent
+
+- name: devhx_8_other14_amt
+  rename: devhis_8_other14_amt
+  source:
+  - parent
+
+- name: devhx_8_other14_tmswk
+  rename: devhis_8_other14_tmswk
+  source:
+  - parent
+
+- name: devhx_8_other15_name
+  rename: devhis_8_other15_name
+  source:
+  - parent
+
+- name: devhx_8_other15_amt
+  rename: devhis_8_other15_amt
+  source:
+  - parent
+
+- name: devhx_8_other15_tmswk
+  rename: devhis_8_other15_tmswk
+  source:
+  - parent
+
+- name: devhx_9_prescript_medyn
+  rename: demo_preg_meds
+  recode:
+    999: 3
+  source:
+  - parent
+
+- rename: devhis_9_prescript_med
+  name: devhx_9_prescript_med
+  request: Please recode 0 as 999 (for "Don't Know").
+  recode:
+    0: 999
+  source:
+  - parent
+
+- name: devhx_9_med1
+  rename: devhis_9_med1
+  source:
+  - parent
+
+- name: devhx_9_med1_dose
+  rename: devhis_9_med1_dose
+  source:
+  - parent
+
+- name: devhx_9_med1_frqcy
+  rename: devhis_9_med1_frqcy
+  source:
+  - parent
+
+- name: devhx_9_med2
+  rename: devhis_9_med2
+  source:
+  - parent
+
+- name: devhx_9_med2_dose
+  rename: devhis_9_med2_dose
+  source:
+  - parent
+
+- name: devhx_9_med2_frqcy
+  rename: devhis_9_med2_frqcy
+  source:
+  - parent
+
+- name: devhx_9_med3
+  rename: devhis_9_med3
+  source:
+  - parent
+
+- name: devhx_9_med3_dose
+  rename: devhis_9_med3_dose
+  source:
+  - parent
+
+- name: devhx_9_med3_frqcy
+  rename: devhis_9_med3_frqcy
+  source:
+  - parent
+
+- name: devhx_9_med4
+  rename: devhis_9_med4
+  source:
+  - parent
+
+- name: devhx_9_med4_dose
+  rename: devhis_9_med4_dose
+  source:
+  - parent
+
+- name: devhx_9_med4_frqcy
+  rename: devhis_9_med4_frqcy
+  source:
+  - parent
+
+- name: devhx_9_med5
+  rename: devhis_9_med5
+  source:
+  - parent
+
+- name: devhx_9_med5_dose
+  rename: devhis_9_med5_dose
+  source:
+  - parent
+
+- name: devhx_9_med5_frqcy
+  rename: devhis_9_med5_frqcy
+  source:
+  - parent
+
+- name: devhx_9_med6
+  rename: devhis_9_med6
+  source:
+  - parent
+
+- name: devhx_9_med6_dose
+  rename: devhis_9_med6_dose
+  source:
+  - parent
+
+- name: devhx_9_med6_frqcy
+  rename: devhis_9_med6_frqcy
+  source:
+  - parent
+
+- name: devhx_9_med7
+  rename: devhis_9_med7
+  source:
+  - parent
+
+- name: devhx_9_med7_dose
+  rename: devhis_9_med7_dose
+  source:
+  - parent
+
+- name: devhx_9_med7_frqcy
+  rename: devhis_9_med7_frqcy
+  source:
+  - parent
+
+- name: devhx_9_med8
+  rename: devhis_9_med8
+  source:
+  - parent
+
+- name: devhx_9_med8_dose
+  rename: devhis_9_med8_dose
+  source:
+  - parent
+
+- name: devhx_9_med8_frqcy
+  rename: devhis_9_med8_frqcy
+  source:
+  - parent
+
+- name: devhx_9_med9
+  rename: devhis_9_med9
+  source:
+  - parent
+
+- name: devhx_9_med9_dose
+  rename: devhis_9_med9_dose
+  source:
+  - parent
+
+- name: devhx_9_med9_frqcy
+  rename: devhis_9_med9_frqcy
+  source:
+  - parent
+
+- name: devhx_9_med10
+  rename: devhis_9_med10
+  source:
+  - parent
+
+- name: devhx_9_med10_dose
+  rename: devhis_9_med10_dose
+  source:
+  - parent
+
+- name: devhx_9_med10_frqcy
+  rename: devhis_9_med10_frqcy
+  source:
+  - parent
+
+- name: devhx_9_med11
+  rename: devhis_9_med11
+  source:
+  - parent
+
+- name: devhx_9_med11_dose
+  rename: devhis_9_med11_dose
+  source:
+  - parent
+
+- name: devhx_9_med11_frqcy
+  rename: devhis_9_med11_frqcy
+  source:
+  - parent
+
+- name: devhx_9_med12
+  rename: devhis_9_med12
+  source:
+  - parent
+
+- name: devhx_9_med12_dose
+  rename: devhis_9_med12_dose
+  source:
+  - parent
+
+- name: devhx_9_med12_frqcy
+  rename: devhis_9_med12_frqcy
+  source:
+  - parent
+
+- name: devhx_9_med13
+  rename: devhis_9_med13
+  source:
+  - parent
+
+- name: devhx_9_med13_dose
+  rename: devhis_9_med13_dose
+  source:
+  - parent
+
+- name: devhx_9_med13_frqcy
+  rename: devhis_9_med13_frqcy
+  source:
+  - parent
+
+- name: devhx_9_med14
+  rename: devhis_9_med14
+  source:
+  - parent
+
+- name: devhx_9_med14_dose
+  rename: devhis_9_med14_dose
+  source:
+  - parent
+
+- name: devhx_9_med14_frqcy
+  rename: devhis_9_med14_frqcy
+  source:
+  - parent
+
+- name: devhx_9_med15
+  rename: devhis_9_med15
+  source:
+  - parent
+
+- name: devhx_9_med15_dose
+  rename: devhis_9_med15_dose
+  source:
+  - parent
+
+- name: devhx_9_med15_frqcy
+  rename: devhis_9_med15_frqcy
+  source:
+  - parent
+
+- name: devhx_9_tobacco
+  rename: presmed_smoke
+  recode:
+    0: "No"
+    1: "Yes"
+    999: "999"
+  source:
+  - parent
+
+- name: devhx_9_cigs_per_day
+  rename: devhis_9_cigs_per_day
+  source:
+  - parent
+
+- name: devhx_9_alcohol
+  rename: presmed_alcohol
+  recode:
+    0: "No"
+    1: "Yes"
+    999: "999"
+  source:
+  - parent
+
+- name: devhx_9_alchohol_max
+  rename: devhis_9_alchohol_max
+  source:
+  - parent
+
+- name: devhx_9_alchohol_avg
+  rename: devhis_9_alchohol_avg
+  source:
+  - parent
+
+- name: devhx_9_alcohol_effects
+  rename: devhis_9_alcohol_effects
+  source:
+  - parent
+
+- name: devhx_9_marijuana
+  rename: marijuan
+  recode:
+    0: "No"
+    1: "Yes"
+    999: "999"
+  source:
+  - parent
+
+- name: devhx_9_marijuana_amt
+  rename: devhis_9_marijuana_amt
+  source:
+  - parent
+
+- name: devhx_9_marijuana_tmswk
+  rename: devhis_9_marijuana_tmswk
+  source:
+  - parent
+
+- name: devhx_9_coc_crack
+  rename: cocaine_gestation
+  recode:
+    0: "No"
+    1: "Yes"
+    999: "999"
+  source:
+  - parent
+
+- name: devhx_9_coc_crack_amt
+  rename: devhis_9_coc_crack_amt
+  source:
+  - parent
+
+- name: devhx_9_coc_crack_tmswk
+  rename: devhis_9_coc_crack_tmswk
+  source:
+  - parent
+
+- name: devhx_9_her_morph
+  rename: heroin_gestation
+  recode:
+    0: "No"
+    1: "Yes"
+    999: "999"
+  source:
+  - parent
+
+- name: devhx_9_her_morph_amt
+  rename: devhis_9_her_morph_amt
+  source:
+  - parent
+
+- name: devhx_9_her_morph_tmswk
+  rename: devhis_9_her_morph_tmswk
+  source:
+  - parent
+
+- name: devhx_9_oxycont
+  rename: devhis_9_oxycont
+  source:
+  - parent
+
+- name: devhx_9_oxycont_amt
+  rename: devhis_9_oxycont_amt
+  source:
+  - parent
+
+- name: devhx_9_oxycont_tmswk
+  rename: devhis_9_oxycont_tmswk
+  source:
+  - parent
+
+- name: devhx_9_other_drugs
+  rename: devhis_9_other_drugs
+  source:
+  - parent
+
+- name: devhx_9_other_drugs_amt
+  rename: devhis_9_other_drugs_amt
+  source:
+  - parent
+
+- name: devhx_9_other1_name
+  rename: devhis_9_other1_name
+  source:
+  - parent
+
+- name: devhx_9_other1_amt
+  rename: devhis_9_other1_amt
+  source:
+  - parent
+
+- name: devhx_9_other1_tmswk
+  rename: devhis_9_other1_tmswk
+  source:
+  - parent
+
+- name: devhx_9_other2_name
+  rename: devhis_9_other2_name
+  source:
+  - parent
+
+- name: devhx_9_other2_amt
+  rename: devhis_9_other2_amt
+  source:
+  - parent
+
+- name: devhx_9_other2_tmswk
+  rename: devhis_9_other2_tmswk
+  source:
+  - parent
+
+- name: devhx_9_other3_name
+  rename: devhis_9_other3_name
+  source:
+  - parent
+
+- name: devhx_9_other3_amt
+  rename: devhis_9_other3_amt
+  source:
+  - parent
+
+- name: devhx_9_other3_tmswk
+  rename: devhis_9_other3_tmswk
+  source:
+  - parent
+
+- name: devhx_9_other4_name
+  rename: devhis_9_other4_name
+  source:
+  - parent
+
+- name: devhx_9_other4_amt
+  rename: devhis_9_other4_amt
+  source:
+  - parent
+
+- name: devhx_9_other4_tmswk
+  rename: devhis_9_other4_tmswk
+  source:
+  - parent
+
+- name: devhx_9_other5_name
+  rename: devhis_9_other5_name
+  source:
+  - parent
+
+- name: devhx_9_other5_amt
+  rename: devhis_9_other5_amt
+  source:
+  - parent
+
+- name: devhx_9_other5_tmswk
+  rename: devhis_9_other5_tmswk
+  source:
+  - parent
+
+- name: devhx_9_other6_name
+  rename: devhis_9_other6_name
+  source:
+  - parent
+
+- name: devhx_9_other6_amt
+  rename: devhis_9_other6_amt
+  source:
+  - parent
+
+- name: devhx_9_other6_tmswk
+  rename: devhis_9_other6_tmswk
+  source:
+  - parent
+
+- name: devhx_9_other7_name
+  rename: devhis_9_other7_name
+  source:
+  - parent
+
+- name: devhx_9_other7_amt
+  rename: devhis_9_other7_amt
+  source:
+  - parent
+
+- name: devhx_9_other7_tmswk
+  rename: devhis_9_other7_tmswk
+  source:
+  - parent
+
+- name: devhx_9_other8_name
+  rename: devhis_9_other8_name
+  source:
+  - parent
+
+- name: devhx_9_other8_amt
+  rename: devhis_9_other8_amt
+  source:
+  - parent
+
+- name: devhx_9_other8_tmswk
+  rename: devhis_9_other8_tmswk
+  source:
+  - parent
+
+- name: devhx_9_other9_name
+  rename: devhis_9_other9_name
+  source:
+  - parent
+
+- name: devhx_9_other9_amt
+  rename: devhis_9_other9_amt
+  source:
+  - parent
+
+- name: devhx_9_other9_tmswk
+  rename: devhis_9_other9_tmswk
+  source:
+  - parent
+
+- name: devhx_9_other10_name
+  rename: devhis_9_other10_name
+  source:
+  - parent
+
+- name: devhx_9_other10_amt
+  rename: devhis_9_other10_amt
+  source:
+  - parent
+
+- name: devhx_9_other10_tmswk
+  rename: devhis_9_other10_tmswk
+  source:
+  - parent
+
+- name: devhx_9_other11_name
+  rename: devhis_9_other11_name
+  source:
+  - parent
+
+- name: devhx_9_other11_amt
+  rename: devhis_9_other11_amt
+  source:
+  - parent
+
+- name: devhx_9_other11_tmswk
+  rename: devhis_9_other11_tmswk
+  source:
+  - parent
+
+- name: devhx_9_other12_name
+  rename: devhis_9_other12_name
+  source:
+  - parent
+
+- name: devhx_9_other12_amt
+  rename: devhis_9_other12_amt
+  source:
+  - parent
+
+- name: devhx_9_other12_tmswk
+  rename: devhis_9_other12_tmswk
+  source:
+  - parent
+
+- name: devhx_9_other13_name
+  rename: devhis_9_other13_name
+  source:
+  - parent
+
+- name: devhx_9_other13_amt
+  rename: devhis_9_other13_amt
+  source:
+  - parent
+
+- name: devhx_9_other13_tmswk
+  rename: devhis_9_other13_tmswk
+  source:
+  - parent
+
+- name: devhx_9_other14_name
+  rename: devhis_9_other14_name
+  source:
+  - parent
+
+- name: devhx_9_other14_amt
+  rename: devhis_9_other14_amt
+  source:
+  - parent
+
+- name: devhx_9_other14_tmswk
+  rename: devhis_9_other14_tmswk
+  source:
+  - parent
+
+- name: devhx_9_other15_name
+  rename: devhis_9_other15_name
+  source:
+  - parent
+
+- name: devhx_9_other15_amt
+  rename: devhis_9_other15_amt
+  source:
+  - parent
+
+- name: devhx_9_other15_tmswk
+  rename: devhis_9_other15_tmswk
+  source:
+  - parent
+
+- name: devhx_10
+  rename: quesmoth_momvit
+  recode:
+    1: "Yes"
+    0: "No"
+    999: "Don't Know"
+    -1.0: "No"
+  source:
+  - parent
+
+- name: devhx_caffeine_11
+  rename: devhis_caffeine_11
+  recode:
+    -1: -888
+  source:
+  - parent
+
+- name: devhx_caffeine_amt
+  rename: devhis_caffeine_amt
+  source:
+  - parent
+
+- name: devhx_10a_p
+  rename: devhis_10a_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_10b_p
+  rename: devhis_10b_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_10c_p
+  rename: preg4_2
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_10d_p
+  rename: devhis_10d_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_10e_p
+  rename: devhis_10e_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_10f_p
+  rename: devhis_10f_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_10g_p
+  rename: quesmoth_probanemia
+  recode:
+    1: "Yes"
+    2: "No"
+    6: "Don't Know"
+  source:
+  - parent
+
+- name: devhx_10_p
+  rename: devhis_10_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_10i_p
+  rename: devhis_10i_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_10j_p
+  rename: devhis_10j_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_10k_p
+  rename: devhis_10k_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_10l_p
+  rename: devhis_10l_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_10m_p
+  rename: devhis_10m_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_11_p
+  rename: devhis_11_p
+  source:
+  - parent
+
+- name: devhx_12a_p
+  rename: ph_11
+  source:
+  - parent
+
+- name: devhx_12_p
+  rename: devhis_12_p
+  source:
+  - parent
+
+- name: devhx_13_p
+  rename: fs_v1_q39_c_section_birth
+  recode:
+    1: "Y"
+    2: "N"
+    6: "DK"
+  source:
+  - parent
+
+- name: devhx_14a_p
+  rename: neo_cyanosis
+  recode:
+    1: "Yes"
+    2: "No"
+    6: "999"
+  source:
+  - parent
+
+- name: devhx_14b_p
+  rename: devhis_14b_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_14c_p
+  rename: devhis_14c_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_14d_p
+  rename: devhis_14d_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_14e_p
+  rename: devhis_14e_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_14f_p
+  rename: devhis_14f_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_14g_p
+  rename: devhis_14g_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_14h_p
+  rename: devhis_14h_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_15
+  rename: devhis_15
+  source:
+  - parent
+
+- name: devhx_16_p
+  rename: devhis_16_p
+  source:
+  - parent
+
+- name: devhx_17_p
+  rename: devhis_17_p
+  source:
+  - parent
+
+- name: devhx_18_p
+  rename: devhis_18_p
+  source:
+  - parent
+
+- name: devhx_19a_p
+  rename: devhis_19a_p
+  source:
+  - parent
+
+- name: devhx_19b_p
+  rename: devhis_19b_p
+  source:
+  - parent
+
+- name: devhx_19c_p
+  rename: devhis_19c_p
+  source:
+  - parent
+
+- name: devhx_19d_p
+  rename: devhis_19d_p
+  source:
+  - parent
+
+- name: devhx_20_p
+  rename: devhis_20_p
+  source:
+  - parent
+
+- name: devhx_21_p
+  rename: devhis_21_p
+  source:
+  - parent
+
+- name: devhx_22_p
+  rename: devhis_22_p
+  recode:
+    2: 0
+    6: 999
+  source:
+  - parent
+
+- name: devhx_23_p
+  rename: devhis_23_p
+  source:
+  - parent
+

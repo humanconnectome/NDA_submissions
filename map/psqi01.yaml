@@ -1,0 +1,203 @@
+instrument: psqi_HCPD
+struct: psqi01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - teen
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - teen
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - teen
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - teen
+
+- name: gender
+  rename: sex
+  source:
+  - teen
+
+- name: psqi1
+  rename: psqip1
+  source:
+  - teen
+
+- name: psqi10
+  rename: parent_sleep20
+  request: Please rename this column 'parent_sleep20'.
+  source:
+  - teen
+
+- name: psqi2
+  rename: psqip2
+  source:
+  - teen
+
+- name: psqi3
+  rename: psqip3
+  request: Please rename this column 'psqip3'.
+  source:
+  - teen
+
+- name: psqi4
+  rename: psqip4
+  request: Please rename this column 'psqip4'.
+  source:
+  - teen
+
+- name: psqi5a
+  rename: psqip6a_1
+  request: Please increment your 0::3 scale to a 1::4 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  source:
+  - teen
+
+- name: psqi5b
+  rename: psqip6a_2
+  request: Please increment your 0::3 scale to a 1::4 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  source:
+  - teen
+
+- name: psqi5c
+  rename: psqip6a_3
+  request: Please increment your 0::3 scale to a 1::4 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  source:
+  - teen
+
+- name: psqi5d
+  rename: psqip6a_4
+  request: Please increment your 0::3 scale to a 1::4 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  source:
+  - teen
+
+- name: psqi5e
+  rename: psqip6a_5
+  request: Please increment your 0::3 scale to a 1::4 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  source:
+  - teen
+
+- name: psqi5f
+  rename: psqip6b_1
+  request: Please increment your 0::3 scale to a 1::4 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  source:
+  - teen
+
+- name: psqi5g
+  rename: psqip6b_2
+  request: Please increment your 0::3 scale to a 1::4 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  source:
+  - teen
+
+- name: psqi5h
+  rename: psqip6b_3
+  request: Please increment your 0::3 scale to a 1::4 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  source:
+  - teen
+
+- name: psqi5i
+  rename: psqip6b_4
+  request: Please increment your 0::3 scale to a 1::4 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  source:
+  - teen
+
+- name: psqi5j
+  rename: psqi5j
+  source:
+  - teen
+
+- name: psqi5j_2
+  rename: psqip6b_5
+  request: Please increment your 0::3 scale to a 1::4 scale and rename this column
+    'psqi6b_5'.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  source:
+  - teen
+
+- name: psqi6
+  rename: psqpi8
+  source:
+  - teen
+
+- name: psqi7
+  rename: psqpi7_1
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  source:
+  - teen
+
+- name: psqi8
+  rename: psqpi7_2
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  source:
+  - teen
+
+- name: psqi9
+  rename: psqi_9
+  source:
+  - teen

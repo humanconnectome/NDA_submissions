@@ -1,0 +1,709 @@
+struct: ysr01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - child
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - child
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - child
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - child
+
+- name: gender
+  rename: sex
+  source:
+  - child
+
+
+- rename: ysr_1
+  name: ysra_item1
+  source:
+  - child
+
+- rename: ysr2
+  name: ysra_item2_1
+  source:
+  - child
+
+- rename: cbcl1_2_text
+  name: ysra_item2_2
+  source:
+  - child
+
+- rename: ysr_3
+  name: ysra_item3
+  source:
+  - child
+
+- rename: tr04
+  name: ysra_item4
+  source:
+  - child
+
+- rename: ysr5
+  name: ysra_item5
+  source:
+  - child
+
+- rename: ysr_6
+  name: ysra_item6
+  source:
+  - child
+
+- rename: ysr_7
+  name: ysra_item7
+  source:
+  - child
+
+- rename: ysr_8
+  name: ysra_item8
+  source:
+  - child
+
+- rename: ysr_9
+  name: ysra_item9_1
+  source:
+  - child
+
+- rename: cbcl2_3_text
+  name: ysra_item9_2
+  source:
+  - child
+
+- rename: ysr_10
+  name: ysra_item10
+  source:
+  - child
+
+- rename: ysr_11
+  name: ysra_item11
+  source:
+  - child
+
+- rename: ysr_12
+  name: ysra_item12
+  source:
+  - child
+
+- rename: ysr_13
+  name: ysra_item13
+  source:
+  - child
+
+- rename: ysr_14
+  name: ysra_item14
+  source:
+  - child
+
+- rename: ysr_15
+  name: ysra_item15
+  source:
+  - child
+
+- rename: ysr_16
+  name: ysra_item16
+  source:
+  - child
+
+- rename: ysr_17
+  name: ysra_item17
+  source:
+  - child
+
+- rename: ysr_18
+  name: ysra_item18
+  source:
+  - child
+
+- rename: ysr_19
+  name: ysra_item19
+  source:
+  - child
+
+- rename: ysr_20
+  name: ysra_item20
+  source:
+  - child
+
+- rename: ysr_21
+  name: ysra_item21
+  source:
+  - child
+
+- rename: ysr_22
+  name: ysra_item22
+  source:
+  - child
+
+- rename: ysr_23
+  name: ysra_item23
+  source:
+  - child
+
+- rename: ysr_24
+  name: ysra_item24
+  source:
+  - child
+
+- rename: ysr_25
+  name: ysra_item25
+  source:
+  - child
+
+- rename: ysr_26
+  name: ysra_item26
+  source:
+  - child
+
+- rename: ysr_27
+  name: ysra_item27
+  source:
+  - child
+
+- rename: ysr28
+  name: ysra_item28
+  source:
+  - child
+
+- rename: ysr_29
+  name: ysra_item29_1
+  source:
+  - child
+
+- rename: cbcl5_2_text
+  name: ysra_item29_2
+  source:
+  - child
+
+- rename: ysr_30
+  name: ysra_item30
+  source:
+  - child
+
+- rename: ysr_31
+  name: ysra_item31
+  source:
+  - child
+
+- rename: ysr_32
+  name: ysra_item32
+  source:
+  - child
+
+- rename: ysr_33
+  name: ysra_item33
+  source:
+  - child
+
+- rename: ysr_34
+  name: ysra_item34
+  source:
+  - child
+
+- rename: ysr_35
+  name: ysra_item35
+  source:
+  - child
+
+- rename: ysr_36
+  name: ysra_item36
+  source:
+  - child
+
+- rename: ysr_37
+  name: ysra_item37
+  source:
+  - child
+
+- rename: ysr_38
+  name: ysra_item38
+  source:
+  - child
+
+- rename: ysr_39
+  name: ysra_item39
+  source:
+  - child
+
+- rename: ysr_40
+  name: ysra_item40_1
+  source:
+  - child
+
+- rename: cbcl6_6_text
+  name: ysra_item40_2
+  source:
+  - child
+
+- rename: ysr_41
+  name: ysra_item41
+  source:
+  - child
+
+- rename: ysr_42
+  name: ysra_item42
+  source:
+  - child
+
+- rename: ysr_43
+  name: ysra_item43
+  source:
+  - child
+
+- rename: ysr_44
+  name: ysra_item44
+  source:
+  - child
+
+- rename: ysr_45
+  name: ysra_item45
+  source:
+  - child
+
+- rename: ysr_46
+  name: ysra_item46_1
+  source:
+  - child
+
+- rename: cbcl7_3_text
+  name: ysra_item46_2
+  source:
+  - child
+
+- rename: ysr_47
+  name: ysra_item47
+  source:
+  - child
+
+- rename: ysr_48
+  name: ysra_item48
+  source:
+  - child
+
+- rename: ysr_49
+  name: ysra_item49
+  source:
+  - child
+
+- rename: ysr_50
+  name: ysra_item50
+  source:
+  - child
+
+- rename: ysr_51
+  name: ysra_item51
+  source:
+  - child
+
+- rename: ysr_52
+  name: ysra_item52
+  source:
+  - child
+
+- rename: ysr_53
+  name: ysra_item53
+  source:
+  - child
+
+- rename: ysr_54
+  name: ysra_item54
+  source:
+  - child
+
+- rename: ysr_55
+  name: ysra_item55
+  source:
+  - child
+
+- rename: ysr_56
+  name: ysra_item56_1
+  source:
+  - child
+
+- rename: ysr_57
+  name: ysra_item56_2
+  source:
+  - child
+
+- rename: ysr_58
+  name: ysra_item56_3
+  source:
+  - child
+
+- rename: ysr_59
+  name: ysra_item56_4_1
+  source:
+  - child
+
+- rename: cbcl9_2_text
+  name: ysra_item56_4_2
+  source:
+  - child
+
+- rename: ysr_60
+  name: ysra_item56_5
+  source:
+  - child
+
+- rename: ysr_61
+  name: ysra_item56_6
+  source:
+  - child
+
+- rename: ysr_62
+  name: ysra_item56_7
+  source:
+  - child
+
+- rename: ysr_63
+  name: ysra_item56_8_1
+  source:
+  - child
+
+- rename: cbcl56h_des
+  name: ysra_item56_8_2
+  source:
+  - child
+
+- rename: ysr_64
+  name: ysra_item57
+  source:
+  - child
+
+- rename: ysr_65
+  name: ysra_item58_1
+  source:
+  - child
+
+- rename: cbcl10_1_text
+  name: ysra_item58_2
+  source:
+  - child
+
+- rename: ysr_66
+  name: ysra_item59
+  source:
+  - child
+
+- rename: ysr_67
+  name: ysra_item60
+  source:
+  - child
+
+- rename: ysr_68
+  name: ysra_item61
+  source:
+  - child
+
+- rename: ysr_69
+  name: ysra_item62
+  source:
+  - child
+
+- rename: ysr_70
+  name: ysra_item63
+  source:
+  - child
+
+- rename: ysr_71
+  name: ysra_item64
+  source:
+  - child
+
+- rename: ysr_72
+  name: ysra_item65
+  source:
+  - child
+
+- rename: ysr_73
+  name: ysra_item66_1
+  source:
+  - child
+
+- rename: cbcl11_2_text
+  name: ysra_item66_2
+  source:
+  - child
+
+- rename: ysr_74
+  name: ysra_item67
+  source:
+  - child
+
+- rename: ysr_75
+  name: ysra_item68
+  source:
+  - child
+
+- rename: ysr_76
+  name: ysra_item69
+  source:
+  - child
+
+- rename: ysr_77
+  name: ysra_item70_1
+  source:
+  - child
+
+- rename: cbcl11_6_text
+  name: ysra_item70_2
+  source:
+  - child
+
+- rename: ysr_78
+  name: ysra_item71
+  source:
+  - child
+
+- rename: ysr_79
+  name: ysra_item72
+  source:
+  - child
+
+- rename: ysr_80
+  name: ysra_item73_1
+  source:
+  - child
+
+- rename: ysr_81
+  name: ysra_item74
+  source:
+  - child
+
+- rename: ysr_82
+  name: ysra_item75
+  source:
+  - child
+
+- rename: ysr_83
+  name: ysra_item76
+  source:
+  - child
+
+- rename: ysr_84
+  name: ysra_item77_1
+  source:
+  - child
+
+- rename: cbcl12_6_text
+  name: ysra_item77_2
+  source:
+  - child
+
+- rename: tr78
+  name: ysra_item78
+  source:
+  - child
+
+- rename: ysr_86
+  name: ysra_item79_1
+  source:
+  - child
+
+- rename: cbcl13_1_text
+  name: ysra_item79_2
+  source:
+  - child
+
+- rename: ysr_87
+  name: ysra_item80
+  source:
+  - child
+
+- rename: ysr_88
+  name: ysra_item81
+  source:
+  - child
+
+- rename: ysr_89
+  name: ysra_item82
+  source:
+  - child
+
+- rename: ysr_90
+  name: ysra_item83_1
+  source:
+  - child
+
+- rename: cbcl13_5_text
+  name: ysra_item83_2
+  source:
+  - child
+
+- rename: ysr_91
+  name: ysra_item84_1
+  source:
+  - child
+
+- rename: cbcl13_6_text
+  name: ysra_item84_2
+  source:
+  - child
+
+- rename: ysr_92
+  name: ysra_item85_1
+  source:
+  - child
+
+- rename: cbcl13_7_text
+  name: ysra_item85_2
+  source:
+  - child
+
+- rename: ysr_93
+  name: ysra_item86
+  source:
+  - child
+
+- rename: ysr_94
+  name: ysra_item87
+  source:
+  - child
+
+- rename: ysr_95
+  name: ysra_item88
+  source:
+  - child
+
+- rename: ysr_96
+  name: ysra_item89
+  source:
+  - child
+
+- rename: ysr_97
+  name: ysra_item90
+  source:
+  - child
+
+- rename: ysr_98
+  name: ysra_item91
+  source:
+  - child
+
+- rename: ysr_99
+  name: ysra_item92_1
+  source:
+  - child
+
+- rename: ysr_100
+  name: ysra_item93
+  source:
+  - child
+
+- rename: ysr_101
+  name: ysra_item94
+  source:
+  - child
+
+- rename: ysr_102
+  name: ysra_item95
+  source:
+  - child
+
+- rename: ysr_103
+  name: ysra_item96
+  source:
+  - child
+
+- rename: ysr_104
+  name: ysra_item97
+  source:
+  - child
+
+- rename: ysr_105
+  name: ysra_item98
+  source:
+  - child
+
+- rename: cbcl99
+  name: ysra_item99
+  source:
+  - child
+
+- rename: ysr_107
+  name: ysra_item100_1
+  source:
+  - child
+
+- rename: cbcl16_1_text
+  name: ysra_item100_2
+  source:
+  - child
+
+- rename: ysr_108
+  name: ysra_item101
+  source:
+  - child
+
+- rename: ysr_109
+  name: ysra_item102
+  source:
+  - child
+
+- rename: ysr_110
+  name: ysra_item103
+  source:
+  - child
+
+- rename: ysr_111
+  name: ysra_item104
+  source:
+  - child
+
+- rename: ysr_112
+  name: ysra_item105_1
+  source:
+  - child
+
+- rename: cbcl16_6_text
+  name: ysra_item105_2
+  source:
+  - child
+
+- rename: ysr_113
+  name: ysra_item106
+  source:
+  - child
+
+- rename: ysr_114
+  name: ysra_item107
+  source:
+  - child
+
+- rename: ysr_115
+  name: ysra_item108
+  source:
+  - child
+
+- rename: ysr_116
+  name: ysra_item109
+  source:
+  - child
+
+- rename: ysr_117
+  name: ysra_item110
+  source:
+  - child
+
+- rename: ysr_118
+  name: ysra_item111
+  source:
+  - child
+
+- rename: ysr_119
+  name: ysra_item112
+  source:
+  - child

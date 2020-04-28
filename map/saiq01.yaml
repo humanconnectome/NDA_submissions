@@ -1,0 +1,1375 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - parent
+
+- name: sai_p_activities
+  rename: ccf_sai_p_activities
+  source:
+  - parent
+
+- name: sai_p_dance_school
+  rename: ccf_sai_p_dance_school
+  source:
+  - parent
+
+- name: sai_p_dance_outside
+  rename: ccf_sai_p_dance_outside
+  source:
+  - parent
+
+- name: sai_p_dance_private
+  rename: ccf_sai_p_dance_private
+  source:
+  - parent
+
+- name: sai_p_dance_self
+  rename: ccf_sai_p_dance_self
+  source:
+  - parent
+
+- name: sai_p_dance_nyr
+  rename: ccf_sai_p_dance_nyr
+  source:
+  - parent
+
+- name: sai_p_dance_nmonth
+  rename: ccf_sai_p_dance_nmonth
+  source:
+  - parent
+
+- name: sai_p_dance_perwk
+  rename: ccf_sai_p_dance_perwk
+  source:
+  - parent
+
+- name: sai_p_dance_tspent
+  rename: ccf_sai_p_dance_tspent
+  source:
+  - parent
+
+- name: sai_p_dance_p12
+  rename: ccf_sai_p_dance_p12
+  source:
+  - parent
+
+- name: sai_p_base_school
+  rename: ccf_sai_p_base_school
+  source:
+  - parent
+
+- name: sai_p_base_outside
+  rename: ccf_sai_p_base_outside
+  source:
+  - parent
+
+- name: sai_p_base_private
+  rename: ccf_sai_p_base_private
+  source:
+  - parent
+
+- name: sai_p_base_self
+  rename: ccf_sai_p_base_self
+  source:
+  - parent
+
+- name: sai_p_base_nyr
+  rename: ccf_sai_p_base_nyr
+  source:
+  - parent
+
+- name: sai_p_base_nmonth
+  rename: ccf_sai_p_base_nmonth
+  source:
+  - parent
+
+- name: sai_p_base_perwk
+  rename: ccf_sai_p_base_perwk
+  source:
+  - parent
+
+- name: sai_p_base_tspent
+  rename: ccf_sai_p_base_tspent
+  source:
+  - parent
+
+- name: sai_p_base_p12
+  rename: ccf_sai_p_base_p12
+  source:
+  - parent
+
+- name: sai_p_basket_school
+  rename: ccf_sai_p_basket_school
+  source:
+  - parent
+
+- name: sai_p_basket_outside
+  rename: ccf_sai_p_basket_outside
+  source:
+  - parent
+
+- name: sai_p_basket_private
+  rename: ccf_sai_p_basket_private
+  source:
+  - parent
+
+- name: sai_p_basket_self
+  rename: ccf_sai_p_basket_self
+  source:
+  - parent
+
+- name: sai_p_basket_nyr
+  rename: ccf_sai_p_basket_nyr
+  source:
+  - parent
+
+- name: sai_p_basket_nmonth
+  rename: ccf_sai_p_basket_nmonth
+  source:
+  - parent
+
+- name: sai_p_basket_perwk
+  rename: ccf_sai_p_basket_perwk
+  source:
+  - parent
+
+- name: sai_p_basket_tspent
+  rename: ccf_sai_p_basket_tspent
+  source:
+  - parent
+
+- name: sai_p_basket_p12
+  rename: ccf_sai_p_basket_p12
+  source:
+  - parent
+
+- name: sai_p_climb_school
+  rename: ccf_sai_p_climb_school
+  source:
+  - parent
+
+- name: sai_p_climb_outside
+  rename: ccf_sai_p_climb_outside
+  source:
+  - parent
+
+- name: sai_p_climb_private
+  rename: ccf_sai_p_climb_private
+  source:
+  - parent
+
+- name: sai_p_climb_self
+  rename: ccf_sai_p_climb_self
+  source:
+  - parent
+
+- name: sai_p_climb_nyr
+  rename: ccf_sai_p_climb_nyr
+  source:
+  - parent
+
+- name: sai_p_climb_nmonth
+  rename: ccf_sai_p_climb_nmonth
+  source:
+  - parent
+
+- name: sai_p_climb_perwk
+  rename: ccf_sai_p_climb_perwk
+  source:
+  - parent
+
+- name: sai_p_climb_tspent
+  rename: ccf_sai_p_climb_tspent
+  source:
+  - parent
+
+- name: sai_p_climb_p12
+  rename: ccf_sai_p_climb_p12
+  source:
+  - parent
+
+- name: sai_p_fhock_school
+  rename: ccf_sai_p_fhock_school
+  source:
+  - parent
+
+- name: sai_p_fhock_outside
+  rename: ccf_sai_p_fhock_outside
+  source:
+  - parent
+
+- name: sai_p_fhock_private
+  rename: ccf_sai_p_fhock_private
+  source:
+  - parent
+
+- name: sai_p_fhock_self
+  rename: ccf_sai_p_fhock_self
+  source:
+  - parent
+
+- name: sai_p_fhock_nyr
+  rename: ccf_sai_p_fhock_nyr
+  source:
+  - parent
+
+- name: sai_p_fhock_nmonth
+  rename: ccf_sai_p_fhock_nmonth
+  source:
+  - parent
+
+- name: sai_p_fhock_perwk
+  rename: ccf_sai_p_fhock_perwk
+  source:
+  - parent
+
+- name: sai_p_fhock_tspent
+  rename: ccf_sai_p_fhock_tspent
+  source:
+  - parent
+
+- name: sai_p_fhock_p12
+  rename: ccf_sai_p_fhock_p12
+  source:
+  - parent
+
+- name: sai_p_fball_school
+  rename: ccf_sai_p_fball_school
+  source:
+  - parent
+
+- name: sai_p_fball_outside
+  rename: ccf_sai_p_fball_outside
+  source:
+  - parent
+
+- name: sai_p_fball_private
+  rename: ccf_sai_p_fball_private
+  source:
+  - parent
+
+- name: sai_p_fball_self
+  rename: ccf_sai_p_fball_self
+  source:
+  - parent
+
+- name: sai_p_fball_nyr
+  rename: ccf_sai_p_fball_nyr
+  source:
+  - parent
+
+- name: sai_p_fball_nmonth
+  rename: ccf_sai_p_fball_nmonth
+  source:
+  - parent
+
+- name: sai_p_fball_perwk
+  rename: ccf_sai_p_fball_perwk
+  source:
+  - parent
+
+- name: sai_p_fball_tspent
+  rename: ccf_sai_p_fball_tspent
+  source:
+  - parent
+
+- name: sai_p_fball_p12
+  rename: ccf_sai_p_fball_p12
+  source:
+  - parent
+
+- name: sai_p_gym_school
+  rename: ccf_sai_p_gym_school
+  source:
+  - parent
+
+- name: sai_p_gym_outside
+  rename: ccf_sai_p_gym_outside
+  source:
+  - parent
+
+- name: sai_p_gym_private
+  rename: ccf_sai_p_gym_private
+  source:
+  - parent
+
+- name: sai_p_gym_self
+  rename: ccf_sai_p_gym_self
+  source:
+  - parent
+
+- name: sai_p_gym_nyr
+  rename: ccf_sai_p_gym_nyr
+  source:
+  - parent
+
+- name: sai_p_gym_nmonth
+  rename: ccf_sai_p_gym_nmonth
+  source:
+  - parent
+
+- name: sai_p_gym_perwk
+  rename: ccf_sai_p_gym_perwk
+  source:
+  - parent
+
+- name: sai_p_gym_tspent
+  rename: ccf_sai_p_gym_tspent
+  source:
+  - parent
+
+- name: sai_p_gym_p12
+  rename: ccf_sai_p_gym_p12
+  source:
+  - parent
+
+- name: sai_p_ihock_school
+  rename: ccf_sai_p_ihock_school
+  source:
+  - parent
+
+- name: sai_p_ihock_outside
+  rename: ccf_sai_p_ihock_outside
+  source:
+  - parent
+
+- name: sai_p_ihock_private
+  rename: ccf_sai_p_ihock_private
+  source:
+  - parent
+
+- name: sai_p_ihock_self
+  rename: ccf_sai_p_ihock_self
+  source:
+  - parent
+
+- name: sai_p_ihock_nyr
+  rename: ccf_sai_p_ihock_nyr
+  source:
+  - parent
+
+- name: sai_p_ihock_nmonth
+  rename: ccf_sai_p_ihock_nmonth
+  source:
+  - parent
+
+- name: sai_p_ihock_perwk
+  rename: ccf_sai_p_ihock_perwk
+  source:
+  - parent
+
+- name: sai_p_ihock_tspent
+  rename: ccf_sai_p_ihock_tspent
+  source:
+  - parent
+
+- name: sai_p_ihock_p12
+  rename: ccf_sai_p_ihock_p12
+  source:
+  - parent
+
+- name: sai_p_polo_school
+  rename: ccf_sai_p_polo_school
+  source:
+  - parent
+
+- name: sai_p_polo_outside
+  rename: ccf_sai_p_polo_outside
+  source:
+  - parent
+
+- name: sai_p_polo_private
+  rename: ccf_sai_p_polo_private
+  source:
+  - parent
+
+- name: sai_p_polo_self
+  rename: ccf_sai_p_polo_self
+  source:
+  - parent
+
+- name: sai_p_polo_nyr
+  rename: ccf_sai_p_polo_nyr
+  source:
+  - parent
+
+- name: sai_p_polo_nmonth
+  rename: ccf_sai_p_polo_nmonth
+  source:
+  - parent
+
+- name: sai_p_polo_perwk
+  rename: ccf_sai_p_polo_perwk
+  source:
+  - parent
+
+- name: sai_p_polo_tspent
+  rename: ccf_sai_p_polo_tspent
+  source:
+  - parent
+
+- name: sai_p_polo_p12
+  rename: ccf_sai_p_polo_p12
+  source:
+  - parent
+
+- name: sai_p_iskate_school
+  rename: ccf_sai_p_iskate_school
+  source:
+  - parent
+
+- name: sai_p_iskate_outside
+  rename: ccf_sai_p_iskate_outside
+  source:
+  - parent
+
+- name: sai_p_iskate_private
+  rename: ccf_sai_p_iskate_private
+  source:
+  - parent
+
+- name: sai_p_iskate_self
+  rename: ccf_sai_p_iskate_self
+  source:
+  - parent
+
+- name: sai_p_iskate_nyr
+  rename: ccf_sai_p_iskate_nyr
+  source:
+  - parent
+
+- name: sai_p_iskate_nmonth
+  rename: ccf_sai_p_iskate_nmonth
+  source:
+  - parent
+
+- name: sai_p_iskate_perwk
+  rename: ccf_sai_p_iskate_perwk
+  source:
+  - parent
+
+- name: sai_p_iskate_tspent
+  rename: ccf_sai_p_iskate_tspent
+  source:
+  - parent
+
+- name: sai_p_iskate_p12
+  rename: ccf_sai_p_iskate_p12
+  source:
+  - parent
+
+- name: sai_p_m_arts_school
+  rename: ccf_sai_p_m_arts_school
+  source:
+  - parent
+
+- name: sai_p_m_arts_outside
+  rename: ccf_sai_p_m_arts_outside
+  source:
+  - parent
+
+- name: sai_p_m_arts_private
+  rename: ccf_sai_p_m_arts_private
+  source:
+  - parent
+
+- name: sai_p_m_arts_self
+  rename: ccf_sai_p_m_arts_self
+  source:
+  - parent
+
+- name: sai_p_m_arts_nyr
+  rename: ccf_sai_p_m_arts_nyr
+  source:
+  - parent
+
+- name: sai_p_m_arts_nmonth
+  rename: ccf_sai_p_m_arts_nmonth
+  source:
+  - parent
+
+- name: sai_p_m_arts_perwk
+  rename: ccf_sai_p_m_arts_perwk
+  source:
+  - parent
+
+- name: sai_p_m_arts_tspent
+  rename: ccf_sai_p_m_arts_tspent
+  source:
+  - parent
+
+- name: sai_p_m_arts_p12
+  rename: ccf_sai_p_m_arts_p12
+  source:
+  - parent
+
+- name: sai_p_lax_school
+  rename: ccf_sai_p_lax_school
+  source:
+  - parent
+
+- name: sai_p_lax_outside
+  rename: ccf_sai_p_lax_outside
+  source:
+  - parent
+
+- name: sai_p_lax_private
+  rename: ccf_sai_p_lax_private
+  source:
+  - parent
+
+- name: sai_p_lax_self
+  rename: ccf_sai_p_lax_self
+  source:
+  - parent
+
+- name: sai_p_lax_nyr
+  rename: ccf_sai_p_lax_nyr
+  source:
+  - parent
+
+- name: sai_p_lax_nmonth
+  rename: ccf_sai_p_lax_nmonth
+  source:
+  - parent
+
+- name: sai_p_lax_perwk
+  rename: ccf_sai_p_lax_perwk
+  source:
+  - parent
+
+- name: sai_p_lax_tspent
+  rename: ccf_sai_p_lax_tspent
+  source:
+  - parent
+
+- name: sai_p_lax_p12
+  rename: ccf_sai_p_lax_p12
+  source:
+  - parent
+
+- name: sai_p_rugby_school
+  rename: ccf_sai_p_rugby_school
+  source:
+  - parent
+
+- name: sai_p_rugby_outside
+  rename: ccf_sai_p_rugby_outside
+  source:
+  - parent
+
+- name: sai_p_rugby_private
+  rename: ccf_sai_p_rugby_private
+  source:
+  - parent
+
+- name: sai_p_rugby_self
+  rename: ccf_sai_p_rugby_self
+  source:
+  - parent
+
+- name: sai_p_rugby_nyr
+  rename: ccf_sai_p_rugby_nyr
+  source:
+  - parent
+
+- name: sai_p_rugby_nmonth
+  rename: ccf_sai_p_rugby_nmonth
+  source:
+  - parent
+
+- name: sai_p_rugby_perwk
+  rename: ccf_sai_p_rugby_perwk
+  source:
+  - parent
+
+- name: sai_p_rugby_tspent
+  rename: ccf_sai_p_rugby_tspent
+  source:
+  - parent
+
+- name: sai_p_rugby_p12
+  rename: ccf_sai_p_rugby_p12
+  source:
+  - parent
+
+- name: sai_p_skate_school
+  rename: ccf_sai_p_skate_school
+  source:
+  - parent
+
+- name: sai_p_skate_outside
+  rename: ccf_sai_p_skate_outside
+  source:
+  - parent
+
+- name: sai_p_skate_private
+  rename: ccf_sai_p_skate_private
+  source:
+  - parent
+
+- name: sai_p_skate_self
+  rename: ccf_sai_p_skate_self
+  source:
+  - parent
+
+- name: sai_p_skate_nyr
+  rename: ccf_sai_p_skate_nyr
+  source:
+  - parent
+
+- name: sai_p_skate_nmonth
+  rename: ccf_sai_p_skate_nmonth
+  source:
+  - parent
+
+- name: sai_p_skate_perwk
+  rename: ccf_sai_p_skate_perwk
+  source:
+  - parent
+
+- name: sai_p_skate_tspent
+  rename: ccf_sai_p_skate_tspent
+  source:
+  - parent
+
+- name: sai_p_skate_p12
+  rename: ccf_sai_p_skate_p12
+  source:
+  - parent
+
+- name: sai_p_sboard_school
+  rename: ccf_sai_p_sboard_school
+  source:
+  - parent
+
+- name: sai_p_sboard_outside
+  rename: ccf_sai_p_sboard_outside
+  source:
+  - parent
+
+- name: sai_p_sboard_private
+  rename: ccf_sai_p_sboard_private
+  source:
+  - parent
+
+- name: sai_p_sboard_self
+  rename: ccf_sai_p_sboard_self
+  source:
+  - parent
+
+- name: sai_p_sboard_nyr
+  rename: ccf_sai_p_sboard_nyr
+  source:
+  - parent
+
+- name: sai_p_sboard_nmonth
+  rename: ccf_sai_p_sboard_nmonth
+  source:
+  - parent
+
+- name: sai_p_sboard_perwk
+  rename: ccf_sai_p_sboard_perwk
+  source:
+  - parent
+
+- name: sai_p_sboard_tspent
+  rename: ccf_sai_p_sboard_tspent
+  source:
+  - parent
+
+- name: sai_p_sboard_p12
+  rename: ccf_sai_p_sboard_p12
+  source:
+  - parent
+
+- name: sai_p_soc_school
+  rename: ccf_sai_p_soc_school
+  source:
+  - parent
+
+- name: sai_p_soc_outside
+  rename: ccf_sai_p_soc_outside
+  source:
+  - parent
+
+- name: sai_p_soc_private
+  rename: ccf_sai_p_soc_private
+  source:
+  - parent
+
+- name: sai_p_soc_self
+  rename: ccf_sai_p_soc_self
+  source:
+  - parent
+
+- name: sai_p_soc_nyr
+  rename: ccf_sai_p_soc_nyr
+  source:
+  - parent
+
+- name: sai_p_soc_nmonth
+  rename: ccf_sai_p_soc_nmonth
+  source:
+  - parent
+
+- name: sai_p_soc_perwk
+  rename: ccf_sai_p_soc_perwk
+  source:
+  - parent
+
+- name: sai_p_soc_tspent
+  rename: ccf_sai_p_soc_tspent
+  source:
+  - parent
+
+- name: sai_p_soc_p12
+  rename: ccf_sai_p_soc_p12
+  source:
+  - parent
+
+- name: sai_p_surf_school
+  rename: ccf_sai_p_surf_school
+  source:
+  - parent
+
+- name: sai_p_surf_outside
+  rename: ccf_sai_p_surf_outside
+  source:
+  - parent
+
+- name: sai_p_surf_private
+  rename: ccf_sai_p_surf_private
+  source:
+  - parent
+
+- name: sai_p_surf_self
+  rename: ccf_sai_p_surf_self
+  source:
+  - parent
+
+- name: sai_p_surf_nyr
+  rename: ccf_sai_p_surf_nyr
+  source:
+  - parent
+
+- name: sai_p_surf_nmonth
+  rename: ccf_sai_p_surf_nmonth
+  source:
+  - parent
+
+- name: sai_p_surf_perwk
+  rename: ccf_sai_p_surf_perwk
+  source:
+  - parent
+
+- name: sai_p_surf_tspent
+  rename: ccf_sai_p_surf_tspent
+  source:
+  - parent
+
+- name: sai_p_surf_p12
+  rename: ccf_sai_p_surf_p12
+  source:
+  - parent
+
+- name: sai_p_wpolo_school
+  rename: ccf_sai_p_wpolo_school
+  source:
+  - parent
+
+- name: sai_p_wpolo_outside
+  rename: ccf_sai_p_wpolo_outside
+  source:
+  - parent
+
+- name: sai_p_wpolo_private
+  rename: ccf_sai_p_wpolo_private
+  source:
+  - parent
+
+- name: sai_p_wpolo_self
+  rename: ccf_sai_p_wpolo_self
+  source:
+  - parent
+
+- name: sai_p_wpolo_nyr
+  rename: ccf_sai_p_wpolo_nyr
+  source:
+  - parent
+
+- name: sai_p_wpolo_nmonth
+  rename: ccf_sai_p_wpolo_nmonth
+  source:
+  - parent
+
+- name: sai_p_wpolo_perwk
+  rename: ccf_sai_p_wpolo_perwk
+  source:
+  - parent
+
+- name: sai_p_wpolo_tspent
+  rename: ccf_sai_p_wpolo_tspent
+  source:
+  - parent
+
+- name: sai_p_wpolo_p12
+  rename: ccf_sai_p_wpolo_p12
+  source:
+  - parent
+
+- name: sai_p_tennis_school
+  rename: ccf_sai_p_tennis_school
+  source:
+  - parent
+
+- name: sai_p_tennis_outside
+  rename: ccf_sai_p_tennis_outside
+  source:
+  - parent
+
+- name: sai_p_tennis_private
+  rename: ccf_sai_p_tennis_private
+  source:
+  - parent
+
+- name: sai_p_tennis_self
+  rename: ccf_sai_p_tennis_self
+  source:
+  - parent
+
+- name: sai_p_tennis_nyr
+  rename: ccf_sai_p_tennis_nyr
+  source:
+  - parent
+
+- name: sai_p_tennis_nmonth
+  rename: ccf_sai_p_tennis_nmonth
+  source:
+  - parent
+
+- name: sai_p_tennis_perwk
+  rename: ccf_sai_p_tennis_perwk
+  source:
+  - parent
+
+- name: sai_p_tennis_tspent
+  rename: ccf_sai_p_tennis_tspent
+  source:
+  - parent
+
+- name: sai_p_tennis_p12
+  rename: ccf_sai_p_tennis_p12
+  source:
+  - parent
+
+- name: sai_p_run_school
+  rename: ccf_sai_p_run_school
+  source:
+  - parent
+
+- name: sai_p_run_outside
+  rename: ccf_sai_p_run_outside
+  source:
+  - parent
+
+- name: sai_p_run_private
+  rename: ccf_sai_p_run_private
+  source:
+  - parent
+
+- name: sai_p_run_self
+  rename: ccf_sai_p_run_self
+  source:
+  - parent
+
+- name: sai_p_run_nyr
+  rename: ccf_sai_p_run_nyr
+  source:
+  - parent
+
+- name: sai_p_run_nmonth
+  rename: ccf_sai_p_run_nmonth
+  source:
+  - parent
+
+- name: sai_p_run_perwk
+  rename: ccf_sai_p_run_perwk
+  source:
+  - parent
+
+- name: sai_p_run_tspent
+  rename: ccf_sai_p_run_tspent
+  source:
+  - parent
+
+- name: sai_p_run_p12
+  rename: ccf_sai_p_run_p12
+  source:
+  - parent
+
+- name: sai_p_mma_school
+  rename: ccf_sai_p_mma_school
+  source:
+  - parent
+
+- name: sai_p_mma_outside
+  rename: ccf_sai_p_mma_outside
+  source:
+  - parent
+
+- name: sai_p_mma_private
+  rename: ccf_sai_p_mma_private
+  source:
+  - parent
+
+- name: sai_p_mma_self
+  rename: ccf_sai_p_mma_self
+  source:
+  - parent
+
+- name: sai_p_mma_nyr
+  rename: ccf_sai_p_mma_nyr
+  source:
+  - parent
+
+- name: sai_p_mma_nmonth
+  rename: ccf_sai_p_mma_nmonth
+  source:
+  - parent
+
+- name: sai_p_mma_perwk
+  rename: ccf_sai_p_mma_perwk
+  source:
+  - parent
+
+- name: sai_p_mma_tspent
+  rename: ccf_sai_p_mma_tspent
+  recode:
+    30: 2
+    45: 3
+    60: 4
+    90: 5
+    120: 6
+    150: 7
+    180: 8
+  source:
+  - parent
+
+- name: sai_p_mma_p12
+  rename: ccf_sai_p_mma_p12
+  source:
+  - parent
+
+- name: sai_p_vball_school
+  rename: ccf_sai_p_vball_school
+  source:
+  - parent
+
+- name: sai_p_vball_outside
+  rename: ccf_sai_p_vball_outside
+  source:
+  - parent
+
+- name: sai_p_vball_private
+  rename: ccf_sai_p_vball_private
+  source:
+  - parent
+
+- name: sai_p_vball_self
+  rename: ccf_sai_p_vball_self
+  source:
+  - parent
+
+- name: sai_p_vball_nyr
+  rename: ccf_sai_p_vball_nyr
+  source:
+  - parent
+
+- name: sai_p_vball_nmonth
+  rename: ccf_sai_p_vball_nmonth
+  source:
+  - parent
+
+- name: sai_p_vball_perwk
+  rename: ccf_sai_p_vball_perwk
+  source:
+  - parent
+
+- name: sai_p_vball_tspent
+  rename: ccf_sai_p_vball_tspent
+  source:
+  - parent
+
+- name: sai_p_vball_p12
+  rename: ccf_sai_p_vball_p12
+  source:
+  - parent
+
+- name: sai_p_yoga_school
+  rename: ccf_sai_p_yoga_school
+  source:
+  - parent
+
+- name: sai_p_yoga_outside
+  rename: ccf_sai_p_yoga_outside
+  source:
+  - parent
+
+- name: sai_p_yoga_private
+  rename: ccf_sai_p_yoga_private
+  source:
+  - parent
+
+- name: sai_p_yoga_self
+  rename: ccf_sai_p_yoga_self
+  source:
+  - parent
+
+- name: sai_p_yoga_nyr
+  rename: ccf_sai_p_yoga_nyr
+  source:
+  - parent
+
+- name: sai_p_yoga_nmonth
+  rename: ccf_sai_p_yoga_nmonth
+  source:
+  - parent
+
+- name: sai_p_yoga_perwk
+  rename: ccf_sai_p_yoga_perwk
+  source:
+  - parent
+
+- name: sai_p_yoga_tspent
+  rename: ccf_sai_p_yoga_tspent
+  source:
+  - parent
+
+- name: sai_p_yoga_p12
+  rename: ccf_sai_p_yoga_p12
+  source:
+  - parent
+
+- name: sai_p_music_school
+  rename: ccf_sai_p_music_school
+  source:
+  - parent
+
+- name: sai_p_music_outside
+  rename: ccf_sai_p_music_outside
+  source:
+  - parent
+
+- name: sai_p_music_private
+  rename: ccf_sai_p_music_private
+  source:
+  - parent
+
+- name: sai_p_music_self
+  rename: ccf_sai_p_music_self
+  source:
+  - parent
+
+- name: sai_p_music_nyr
+  rename: ccf_sai_p_music_nyr
+  source:
+  - parent
+
+- name: sai_p_music_nmonth
+  rename: ccf_sai_p_music_nmonth
+  source:
+  - parent
+
+- name: sai_p_music_perwk
+  rename: ccf_sai_p_music_perwk
+  source:
+  - parent
+
+- name: sai_p_music_tspent
+  rename: ccf_sai_p_music_tspent
+  source:
+  - parent
+
+- name: sai_p_music_p12
+  rename: ccf_sai_p_music_p12
+  source:
+  - parent
+
+- name: sai_p_art_school
+  rename: ccf_sai_p_art_school
+  source:
+  - parent
+
+- name: sai_p_art_outside
+  rename: ccf_sai_p_art_outside
+  source:
+  - parent
+
+- name: sai_p_art_private
+  rename: ccf_sai_p_art_private
+  source:
+  - parent
+
+- name: sai_p_art_self
+  rename: ccf_sai_p_art_self
+  source:
+  - parent
+
+- name: sai_p_art_nyr
+  rename: ccf_sai_p_art_nyr
+  source:
+  - parent
+
+- name: sai_p_art_nmonth
+  rename: ccf_sai_p_art_nmonth
+  source:
+  - parent
+
+- name: sai_p_art_perwk
+  rename: ccf_sai_p_art_perwk
+  source:
+  - parent
+
+- name: sai_p_art_tspent
+  rename: ccf_sai_p_art_tspent
+  source:
+  - parent
+
+- name: sai_p_art_p12
+  rename: ccf_sai_p_art_p12
+  source:
+  - parent
+
+- name: sai_p_drama_school
+  rename: ccf_sai_p_drama_school
+  source:
+  - parent
+
+- name: sai_p_drama_outside
+  rename: ccf_sai_p_drama_outside
+  source:
+  - parent
+
+- name: sai_p_drama_private
+  rename: ccf_sai_p_drama_private
+  source:
+  - parent
+
+- name: sai_p_drama_self
+  rename: ccf_sai_p_drama_self
+  source:
+  - parent
+
+- name: sai_p_drama_nyr
+  rename: ccf_sai_p_drama_nyr
+  source:
+  - parent
+
+- name: sai_p_drama_nmonth
+  rename: ccf_sai_p_drama_nmonth
+  source:
+  - parent
+
+- name: sai_p_drama_perwk
+  rename: ccf_sai_p_drama_perwk
+  source:
+  - parent
+
+- name: sai_p_drama_tspent
+  rename: ccf_sai_p_drama_tspent
+  source:
+  - parent
+
+- name: sai_p_drama_p12
+  rename: ccf_sai_p_drama_p12
+  source:
+  - parent
+
+- name: sai_p_crafts_school
+  rename: ccf_sai_p_crafts_school
+  source:
+  - parent
+
+- name: sai_p_crafts_outside
+  rename: ccf_sai_p_crafts_outside
+  source:
+  - parent
+
+- name: sai_p_crafts_private
+  rename: ccf_sai_p_crafts_private
+  source:
+  - parent
+
+- name: sai_p_crafts_self
+  rename: ccf_sai_p_crafts_self
+  source:
+  - parent
+
+- name: sai_p_crafts_nyr
+  rename: ccf_sai_p_crafts_nyr
+  source:
+  - parent
+
+- name: sai_p_crafts_nmonth
+  rename: ccf_sai_p_crafts_nmonth
+  source:
+  - parent
+
+- name: sai_p_crafts_perwk
+  rename: ccf_sai_p_crafts_perwk
+  source:
+  - parent
+
+- name: sai_p_crafts_tspent
+  rename: ccf_sai_p_crafts_tspent
+  source:
+  - parent
+
+- name: sai_p_crafts_p12
+  rename: ccf_sai_p_crafts_p12
+  source:
+  - parent
+
+- name: sai_p_chess_school
+  rename: ccf_sai_p_chess_school
+  source:
+  - parent
+
+- name: sai_p_chess_outside
+  rename: ccf_sai_p_chess_outside
+  source:
+  - parent
+
+- name: sai_p_chess_private
+  rename: ccf_sai_p_chess_private
+  source:
+  - parent
+
+- name: sai_p_chess_self
+  rename: ccf_sai_p_chess_self
+  source:
+  - parent
+
+- name: sai_p_chess_nyr
+  rename: ccf_sai_p_chess_nyr
+  source:
+  - parent
+
+- name: sai_p_chess_nmonth
+  rename: ccf_sai_p_chess_nmonth
+  source:
+  - parent
+
+- name: sai_p_chess_perwk
+  rename: ccf_sai_p_chess_perwk
+  source:
+  - parent
+
+- name: sai_p_chess_tspent
+  rename: ccf_sai_p_chess_tspent
+  source:
+  - parent
+
+- name: sai_p_chess_p12
+  rename: ccf_sai_p_chess_p12
+  source:
+  - parent
+
+- name: sai_p_collect_school
+  rename: ccf_sai_p_collect_school
+  source:
+  - parent
+
+- name: sai_p_collect_outside
+  rename: ccf_sai_p_collect_outside
+  source:
+  - parent
+
+- name: sai_p_collect_private
+  rename: ccf_sai_p_collect_private
+  source:
+  - parent
+
+- name: sai_p_collect_self
+  rename: ccf_sai_p_collect_self
+  source:
+  - parent
+
+- name: sai_p_collect_nyr
+  rename: ccf_sai_p_collect_nyr
+  source:
+  - parent
+
+- name: sai_p_collect_nmonth
+  rename: ccf_sai_p_collect_nmonth
+  source:
+  - parent
+
+- name: sai_p_collect_perwk
+  rename: ccf_sai_p_collect_perwk
+  source:
+  - parent
+
+- name: sai_p_collect_tspent
+  rename: ccf_sai_p_collect_tspent
+  source:
+  - parent
+
+- name: sai_p_collect_p12
+  rename: ccf_sai_p_collect_p12
+  source:
+  - parent
+
+- name: sai_p_lmusic
+  rename: ccf_sai_p_lmusic
+  source:
+  - parent
+
+- name: sai_p_lmusic_2
+  rename: ccf_sai_p_lmusic_2
+  source:
+  - parent
+
+- name: sai_p_lmusic_hours
+  rename: ccf_sai_p_lmusic_hours
+  source:
+  - parent
+
+- name: sai_p_read
+  rename: ccf_sai_p_read
+  source:
+  - parent
+
+- name: sai_p_read_years
+  rename: ccf_sai_p_read_years
+  source:
+  - parent
+
+- name: sai_p_read_hours
+  rename: ccf_sai_p_read_hours
+  source:
+  - parent

@@ -1,0 +1,254 @@
+instrument: Blood_Samples_and_Labs_HCPD
+struct: bsc01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - child
+  - teen
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - child
+  - teen
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - child
+  - teen
+  - parent
+
+- name: bld_core
+  rename: bld_core
+  source:
+  - child
+  - teen
+
+- name: bld_core_d2ph
+  rename: bld_core_d2ph
+  request: Please split this column into 'bld_core_d2ph' for hours and 'bld_core_d2pm'
+    for minutes.
+  source:
+  - child
+  - teen
+
+- name: bld_core_d2pm
+  rename: bld_core_d2pm
+  request: Please split this column into 'bld_core_d2ph' for hours and 'bld_core_d2pm'
+    for minutes.
+  source:
+  - child
+  - teen
+
+- name: bld_core_des_
+  rename: bld_core_des_
+  source:
+  - child
+  - teen
+
+- name: bld_draw
+  rename: ed1_blood
+  source:
+  - child
+  - teen
+
+- name: bld_rucdr
+  rename: bld_rucdr
+  source:
+  - child
+  - teen
+
+- name: bld_rucdr_des
+  rename: bld_rucdr_des
+  source:
+  - child
+  - teen:
+      name: bld_rucdr_des_
+
+- name: hba1c
+  rename: a1crs
+  request: When the quantity was not sufficient, please leave the cells blank rather
+    than use a missing code.
+  recode:
+    99999: null
+  source:
+  - teen
+
+- name: hair_collect
+  rename: hair_collect
+  source:
+  - child
+  - teen
+
+- name: hair1
+  rename: p_col_nat_o
+  source:
+  - child
+  - teen
+
+- name: hair2
+  rename: hair2
+  source:
+  - child
+  - teen
+
+- name: hair3
+  rename: hair3
+  source:
+  - child
+  - teen
+
+- name: hair4
+  rename: hair4
+  source:
+  - child
+  - teen
+
+- name: hair4_1
+  rename: hair4_1
+  source:
+  - child
+  - teen
+
+- name: hair4_2
+  rename: hair4_2
+  source:
+  - child
+  - teen
+
+- name: hair4_3
+  rename: hair4_3
+  source:
+  - child
+  - teen
+
+- name: hair4_4
+  rename: hair4_4
+  source:
+  - child
+  - teen
+
+- name: hair5
+  rename: hair5
+  source:
+  - child
+  - teen
+
+- name: hair5y
+  rename: hair5y
+  source:
+  - child
+  - teen
+
+- name: hair6
+  rename: hair6
+  source:
+  - child
+  - teen
+
+- name: hair6y
+  rename: hair6y
+  source:
+  - child
+  - teen
+
+- name: hair7
+  rename: hair7
+  source:
+  - child
+  - teen
+
+- name: rucdrsaliva
+  rename: rucdrsaliva
+  source:
+  - child
+
+- name: salisaliva_1st
+  rename: salisaliva_1st
+  func: convert_all_to_text
+  source:
+  - child
+  - teen
+
+- name: salisaliva_collecttime
+  rename: saliva_collection1_time
+  source:
+  - child
+  - teen
+
+- name: salisaliva_collecttime1
+  rename: salisaliva_collecttime1
+  source:
+  - child
+  - teen
+
+- name: salisaliva_collecttime1_1
+  rename: salisaliva_collecttime1_1
+  source:
+  - child
+  - teen
+
+- name: salisaliva_collecttime2
+  rename: salisaliva_collecttime2
+  source:
+  - child
+  - teen
+
+- name: salisaliva_collecttime2_1
+  rename: salisaliva_collecttime2_1
+  source:
+  - child
+  - teen
+
+- name: salisaliva_frozen
+  rename: salisaliva_frozen
+  source:
+  - child
+  - teen
+
+- name: salisaliva_mestrual
+  rename: salisaliva_mestrual
+  source:
+  - child
+  - teen
+
+- name: salisaliva_notes
+  rename: comments
+  source:
+  - child
+  - teen
+
+- name: salisaliva_timetofrz
+  rename: salisaliva_timetofrz
+  source:
+  - child
+  - teen
+
+- name: salisaliva_yn
+  rename: urine_saliva_data_entry_status
+  recode:
+    1: Complete
+    0: Incomplete
+  source:
+  - child
+  - teen

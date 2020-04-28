@@ -1,0 +1,318 @@
+instrument: Medications and Treatments Form
+struct: mendt01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - teen
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - teen
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - teen
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - teen
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - teen
+  - parent
+
+- name: med1_dose
+  rename: medication1_dosage
+  source:
+  - teen
+  - parent
+
+- name: med2_dose
+  rename: medication2_dosage
+  source:
+  - teen
+  - parent
+
+- name: med3_dose
+  rename: medication3_dosage
+  source:
+  - teen
+  - parent
+
+- name: med4_dose
+  rename: medication4_dosage
+  source:
+  - teen
+  - parent
+
+- name: med5_dose
+  rename: medication5_dosage
+  source:
+  - teen
+  - parent
+
+- name: med6_dose
+  rename: medication6_dosage
+  source:
+  - teen
+  - parent
+
+- name: med7_dose
+  rename: medication7_dosage
+  source:
+  - teen
+  - parent
+
+- name: med8_dose
+  rename: medication8_dosage
+  source:
+  - teen
+  - parent
+
+- name: med9_dose
+  rename: medication9_dosage
+  source:
+  - teen
+  - parent
+
+- name: med10_dose
+  rename: medication10_dose
+  source:
+  - teen
+  - parent
+
+- name: med11_dose
+  rename: medication11_dosage
+  source:
+  - teen
+  - parent
+
+- name: med12_dose
+  rename: medication12_dosage
+  source:
+  - teen
+  - parent
+
+- name: med13_dose
+  rename: medication13_dosage
+  source:
+  - teen
+  - parent
+
+- name: med14_dose
+  rename: medication14_dosage
+  source:
+  - teen
+  - parent
+
+- name: med15_dose
+  rename: medication15_dosage
+  source:
+  - teen
+  - parent
+
+- name: med_yn
+  rename: othmed0a
+  recode:
+    2: 0
+  source:
+  - teen
+  - parent
+
+- name: med_num
+  rename: num_meds
+  source:
+  - teen
+  - parent
+
+- name: med1_frqcy
+  rename: medication1_frequency
+  source:
+  - teen
+  - parent
+
+- name: med10_frqcy
+  rename: medication10_frequency
+  source:
+  - teen
+  - parent
+
+- name: med11_frqcy
+  rename: phi217
+  source:
+  - teen
+  - parent
+
+- name: med12_frqcy
+  rename: med12_frqcy
+  source:
+  - teen
+  - parent
+
+- name: med13_frqcy
+  rename: med13_frqcy
+  source:
+  - teen
+  - parent
+
+- name: med14_frqcy
+  rename: med14_frqcy
+  source:
+  - teen
+  - parent
+
+- name: med15_frqcy
+  rename: med15_frqcy
+  source:
+  - teen
+  - parent
+
+- name: med2_frqcy
+  rename: medication2_frequency
+  source:
+  - teen
+  - parent
+
+- name: med3_frqcy
+  rename: medication3_frequency
+  source:
+  - teen
+  - parent
+
+- name: med4_frqcy
+  rename: medication4_frequency
+  source:
+  - teen
+  - parent
+
+- name: med5_frqcy
+  rename: medication5_frequency
+  source:
+  - teen
+  - parent
+
+- name: med6_frqcy
+  rename: medication6_frequency
+  source:
+  - teen
+  - parent
+
+- name: med7_frqcy
+  rename: medication7_frequency
+  source:
+  - teen
+  - parent
+
+- name: med8_frqcy
+  rename: medication8_frequency
+  source:
+  - teen
+  - parent
+
+- name: med9_frqcy
+  rename: medication9_frequency
+  source:
+  - teen
+  - parent
+
+- name: med1
+  rename: medication1_name
+  source:
+  - teen
+  - parent
+
+- name: med10
+  rename: medication_10_name
+  source:
+  - teen
+  - parent
+
+- name: med11
+  rename: medication11_name
+  source:
+  - teen
+  - parent
+
+- name: med12
+  rename: medication12_name
+  source:
+  - teen
+  - parent
+
+- name: med13
+  rename: medication13_name
+  source:
+  - teen
+  - parent
+
+- name: med14
+  rename: medication14_name
+  source:
+  - teen
+  - parent
+
+- name: med15
+  rename: medication15_name
+  source:
+  - teen
+  - parent
+
+- name: med2
+  rename: medication2_name
+  source:
+  - teen
+  - parent
+
+- name: med3
+  rename: medication3_name
+  source:
+  - teen
+  - parent
+
+- name: med4
+  rename: medication4_name
+  source:
+  - teen
+  - parent
+
+- name: med5
+  rename: medication5_name
+  source:
+  - teen
+  - parent
+
+- name: med6
+  rename: medication6_name
+  source:
+  - teen
+  - parent
+
+- name: med7
+  rename: medication7_name
+  source:
+  - teen
+  - parent
+
+- name: med8
+  rename: medication8_name
+  source:
+  - teen
+  - parent
+
+- name: med9
+  rename: medication9_name
+  source:
+  - teen
+  - parent

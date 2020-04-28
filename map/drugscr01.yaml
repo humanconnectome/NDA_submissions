@@ -1,0 +1,1210 @@
+name: drugscr01
+source: REDCap
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - child
+  - teen
+  - parent
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - child
+  - teen
+  - parent
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - child
+  - teen
+  - parent
+
+- name: gender
+  rename: sex
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_session
+  nda_name: caffeine_session
+  rename: caffeine_session
+  source:
+  - child
+  - teen
+  - parent
+  specialty_code: parent has caffeine vars, but not including parent about self at
+    this time
+
+- name: caffeine_s1yn
+  nda_name: caffeine_s1yn
+  rename: caffeine_s1yn
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s1
+  nda_name: caffeine_s1
+  rename: caffeine_s1
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s1pretype
+  nda_name: caffeine_s1pretype
+  rename: caffeine_s1pretype
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s1pretime
+  nda_name: caffeine_s1pretime
+  rename: caffeine_s1pretime
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s1preday
+  nda_name: caffeine_s1preday
+  rename: caffeine_s1preday
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s1vsttype1
+  nda_name: caffeine_s1vsttype1
+  rename: caffeine_s1vsttype1
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s1vsttime1
+  nda_name: caffeine_s1vsttime1
+  rename: caffeine_s1vsttime1
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s1vsttype2
+  nda_name: caffeine_s1vsttype2
+  rename: caffeine_s1vsttype2
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s1vsttime2
+  nda_name: caffeine_s1vsttime2
+  rename: caffeine_s1vsttime2
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s2yn
+  nda_name: caffeine_s1yn
+  rename: caffeine_s2yn
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s2
+  nda_name: caffeine_s1
+  rename: caffeine_s2
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s2pretype
+  nda_name: caffeine_s1pretype
+  rename: caffeine_s2pretype
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s2pretime
+  nda_name: caffeine_s1pretime
+  rename: caffeine_s2pretime
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s2preday
+  nda_name: caffeine_s1preday
+  rename: caffeine_s2preday
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s2vsttype1
+  nda_name: caffeine_s1vsttype1
+  rename: caffeine_s2vsttype1
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s2vsttime1
+  nda_name: caffeine_s1vsttime1
+  rename: caffeine_s2vsttime1
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s2vsttype2
+  nda_name: caffeine_s1vsttype2
+  rename: caffeine_s2vsttype2
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s2vsttime2
+  nda_name: caffeine_s1vsttime2
+  rename: caffeine_s2vsttime2
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s3yn
+  nda_name: caffeine_s1yn
+  rename: caffeine_s3yn
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s3
+  nda_name: caffeine_s1
+  rename: caffeine_s3
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s3pretype
+  nda_name: caffeine_s1pretype
+  rename: caffeine_s3pretype
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s3pretime
+  nda_name: caffeine_s1pretime
+  rename: caffeine_s3pretime
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s3preday
+  nda_name: caffeine_s1preday
+  rename: caffeine_s3preday
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s3vsttype1
+  nda_name: caffeine_s1vsttype1
+  rename: caffeine_s3vsttype1
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s3vsttime1
+  nda_name: caffeine_s1vsttime1
+  rename: caffeine_s3vsttime1
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s3vsttype2
+  nda_name: caffeine_s1vsttype2
+  rename: caffeine_s3vsttype2
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s3vsttime2
+  nda_name: caffeine_s1vsttime2
+  rename: caffeine_s3vsttime2
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s4yn
+  nda_name: caffeine_s1yn
+  rename: caffeine_s4yn
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s4
+  nda_name: caffeine_s1
+  rename: caffeine_s4
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s4pretype
+  nda_name: caffeine_s1pretype
+  rename: caffeine_s4pretype
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s4pretime
+  nda_name: caffeine_s1pretime
+  rename: caffeine_s4pretime
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s4preday
+  nda_name: caffeine_s1preday
+  rename: caffeine_s4preday
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s4vsttype1
+  nda_name: caffeine_s1vsttype1
+  rename: caffeine_s4vsttype1
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s4vsttime1
+  nda_name: caffeine_s1vsttime1
+  rename: caffeine_s4vsttime1
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s4vsttype2
+  nda_name: caffeine_s1vsttype2
+  rename: caffeine_s4vsttype2
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s4vsttime2
+  nda_name: caffeine_s1vsttime2
+  rename: caffeine_s4vsttime2
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s5yn
+  nda_name: caffeine_s1yn
+  rename: caffeine_s5yn
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s5
+  nda_name: caffeine_s1
+  rename: caffeine_s5
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s5pretype
+  nda_name: caffeine_s1pretype
+  rename: caffeine_s5pretype
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s5pretime
+  nda_name: caffeine_s1pretime
+  rename: caffeine_s5pretime
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s5preday
+  nda_name: caffeine_s1preday
+  rename: caffeine_s5preday
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s5vsttype1
+  nda_name: caffeine_s1vsttype1
+  rename: caffeine_s5vsttype1
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s5vsttime1
+  nda_name: caffeine_s1vsttime1
+  rename: caffeine_s5vsttime1
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s5vsttype2
+  nda_name: caffeine_s1vsttype2
+  rename: caffeine_s5vsttype2
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s5vsttime2
+  nda_name: caffeine_s1vsttime2
+  rename: caffeine_s5vsttime2
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s6yn
+  nda_name: caffeine_s1yn
+  rename: caffeine_s6yn
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s6
+  nda_name: caffeine_s1
+  rename: caffeine_s6
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s6pretype
+  nda_name: caffeine_s1pretype
+  rename: caffeine_s6pretype
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s6pretime
+  nda_name: caffeine_s1pretime
+  rename: caffeine_s6pretime
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s6preday
+  nda_name: caffeine_s1preday
+  rename: caffeine_s6preday
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s6vsttype1
+  nda_name: caffeine_s1vsttype1
+  rename: caffeine_s6vsttype1
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s6vsttime1
+  nda_name: caffeine_s1vsttime1
+  rename: caffeine_s6vsttime1
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s6vsttype2
+  nda_name: caffeine_s1vsttype2
+  rename: caffeine_s6vsttype2
+  source:
+  - child
+  - teen
+  - parent
+
+- name: caffeine_s6vsttime2
+  nda_name: caffeine_s1vsttime2
+  rename: caffeine_s6vsttime2
+  source:
+  - child
+  - teen
+  - parent
+
+- name: nicotine_session
+  nda_name: nicotine_session
+  rename: nicotine_session
+  source:
+  - child
+  - teen
+
+- name: nicotine_s1yn
+  nda_name: nicotine_s1yn
+  rename: nicotine_s1yn
+  source:
+  - child
+  - teen
+
+- name: nicotine_s1
+  nda_name: nicotine_s1
+  rename: nicotine_s1
+  source:
+  - child
+  - teen
+
+- name: nicotine_s1pretype
+  nda_name: nicotine_s1pretype
+  rename: nicotine_s1pretype
+  source:
+  - child
+  - teen
+
+- name: nicotine_s1pretime
+  nda_name: nicotine_s1pretime
+  rename: nicotine_s1pretime
+  source:
+  - child
+  - teen
+
+- name: nicotine_s1preday
+  nda_name: nicotine_s1preday
+  rename: nicotine_s1preday
+  source:
+  - child
+  - teen
+
+- name: nicotine_s1vsttype1
+  nda_name: nicotine_s1vsttype1
+  rename: nicotine_s1vsttype1
+  source:
+  - child
+  - teen
+
+- name: nicotine_s1vsttime1
+  nda_name: nicotine_s1vsttime1
+  rename: nicotine_s1vsttime1
+  source:
+  - child
+  - teen
+
+- name: nicotine_s1vsttype2
+  nda_name: nicotine_s1vsttype2
+  rename: nicotine_s1vsttype2
+  source:
+  - child
+  - teen
+
+- name: nicotine_s1vsttime2
+  nda_name: nicotine_s1vsttime2
+  rename: nicotine_s1vsttime2
+  source:
+  - child
+  - teen
+
+- name: nicotine_s2yn
+  nda_name: nicotine_s1yn
+  rename: nicotine_s2yn
+  source:
+  - child
+  - teen
+
+- name: nicotine_s2
+  nda_name: nicotine_s1
+  rename: nicotine_s2
+  source:
+  - child
+  - teen
+
+- name: nicotine_s2pretype
+  nda_name: nicotine_s1pretype
+  rename: nicotine_s2pretype
+  source:
+  - child
+  - teen
+
+- name: nicotine_s2pretime
+  nda_name: nicotine_s1pretime
+  rename: nicotine_s2pretime
+  source:
+  - child
+  - teen
+
+- name: nicotine_s2preday
+  nda_name: nicotine_s1preday
+  rename: nicotine_s2preday
+  source:
+  - child
+  - teen
+
+- name: nicotine_s2vsttype1
+  nda_name: nicotine_s1vsttype1
+  rename: nicotine_s2vsttype1
+  source:
+  - child
+  - teen
+
+- name: nicotine_s2vsttime1
+  nda_name: nicotine_s1vsttime1
+  rename: nicotine_s2vsttime1
+  source:
+  - child
+  - teen
+
+- name: nicotine_s2vsttype2
+  nda_name: nicotine_s1vsttype2
+  rename: nicotine_s2vsttype2
+  source:
+  - child
+  - teen
+
+- name: nicotine_s2vsttime2
+  nda_name: nicotine_s1vsttime2
+  rename: nicotine_s2vsttime2
+  source:
+  - child
+  - teen
+
+- name: nicotine_s3yn
+  nda_name: nicotine_s1yn
+  rename: nicotine_s3yn
+  source:
+  - child
+  - teen
+
+- name: nicotine_s3
+  nda_name: nicotine_s1
+  rename: nicotine_s3
+  source:
+  - child
+  - teen
+
+- name: nicotine_s3pretype
+  nda_name: nicotine_s1pretype
+  rename: nicotine_s3pretype
+  source:
+  - child
+  - teen
+
+- name: nicotine_s3pretime
+  nda_name: nicotine_s1pretime
+  rename: nicotine_s3pretime
+  source:
+  - child
+  - teen
+
+- name: nicotine_s3preday
+  nda_name: nicotine_s1preday
+  rename: nicotine_s3preday
+  source:
+  - child
+  - teen
+
+- name: nicotine_s3vsttype1
+  nda_name: nicotine_s1vsttype1
+  rename: nicotine_s3vsttype1
+  source:
+  - child
+  - teen
+
+- name: nicotine_s3vsttime1
+  nda_name: nicotine_s1vsttime1
+  rename: nicotine_s3vsttime1
+  source:
+  - child
+  - teen
+
+- name: nicotine_s3vsttype2
+  nda_name: nicotine_s1vsttype2
+  rename: nicotine_s3vsttype2
+  source:
+  - child
+  - teen
+
+- name: nicotine_s3vsttime2
+  nda_name: nicotine_s1vsttime2
+  rename: nicotine_s3vsttime2
+  source:
+  - child
+  - teen
+
+- name: nicotine_s4yn
+  nda_name: nicotine_s1yn
+  rename: nicotine_s4yn
+  source:
+  - child
+  - teen
+
+- name: nicotine_s4
+  nda_name: nicotine_s1
+  rename: nicotine_s4
+  source:
+  - child
+  - teen
+
+- name: nicotine_s4pretype
+  nda_name: nicotine_s1pretype
+  rename: nicotine_s4pretype
+  source:
+  - child
+  - teen
+
+- name: nicotine_s4pretime
+  nda_name: nicotine_s1pretime
+  rename: nicotine_s4pretime
+  source:
+  - child
+  - teen
+
+- name: nicotine_s4preday
+  nda_name: nicotine_s1preday
+  rename: nicotine_s4preday
+  source:
+  - child
+  - teen
+
+- name: nicotine_s4vsttype1
+  nda_name: nicotine_s1vsttype1
+  rename: nicotine_s4vsttype1
+  source:
+  - child
+  - teen
+
+- name: nicotine_s4vsttime1
+  nda_name: nicotine_s1vsttime1
+  rename: nicotine_s4vsttime1
+  source:
+  - child
+  - teen
+
+- name: nicotine_s4vsttype2
+  nda_name: nicotine_s1vsttype2
+  rename: nicotine_s4vsttype2
+  source:
+  - child
+  - teen
+
+- name: nicotine_s4vsttime2
+  nda_name: nicotine_s1vsttime2
+  rename: nicotine_s4vsttime2
+  source:
+  - child
+  - teen
+
+- name: nicotine_s5yn
+  nda_name: nicotine_s1yn
+  rename: nicotine_s5yn
+  source:
+  - child
+  - teen
+
+- name: nicotine_s5
+  nda_name: nicotine_s1
+  rename: nicotine_s5
+  source:
+  - child
+  - teen
+
+- name: nicotine_s5pretype
+  nda_name: nicotine_s1pretype
+  rename: nicotine_s5pretype
+  source:
+  - child
+  - teen
+
+- name: nicotine_s5pretime
+  nda_name: nicotine_s1pretime
+  rename: nicotine_s5pretime
+  source:
+  - child
+  - teen
+
+- name: nicotine_s5preday
+  nda_name: nicotine_s1preday
+  rename: nicotine_s5preday
+  source:
+  - child
+  - teen
+
+- name: nicotine_s5vsttype1
+  nda_name: nicotine_s1vsttype1
+  rename: nicotine_s5vsttype1
+  source:
+  - child
+  - teen
+
+- name: nicotine_s5vsttime1
+  nda_name: nicotine_s1vsttime1
+  rename: nicotine_s5vsttime1
+  source:
+  - child
+  - teen
+
+- name: nicotine_s5vsttype2
+  nda_name: nicotine_s1vsttype2
+  rename: nicotine_s5vsttype2
+  source:
+  - child
+  - teen
+
+- name: nicotine_s5vsttime2
+  nda_name: nicotine_s1vsttime2
+  rename: nicotine_s5vsttime2
+  source:
+  - child
+  - teen
+
+- name: nicotine_s6yn
+  nda_name: nicotine_s1yn
+  rename: nicotine_s6yn
+  source:
+  - child
+  - teen
+
+- name: nicotine_s6
+  nda_name: nicotine_s1
+  rename: nicotine_s6
+  source:
+  - child
+  - teen
+
+- name: nicotine_s6pretype
+  nda_name: nicotine_s1pretype
+  rename: nicotine_s6pretype
+  source:
+  - child
+  - teen
+
+- name: nicotine_s6pretime
+  nda_name: nicotine_s1pretime
+  rename: nicotine_s6pretime
+  source:
+  - child
+  - teen
+
+- name: nicotine_s6preday
+  nda_name: nicotine_s1preday
+  rename: nicotine_s6preday
+  source:
+  - child
+  - teen
+
+- name: nicotine_s6vsttype1
+  nda_name: nicotine_s1vsttype1
+  rename: nicotine_s6vsttype1
+  source:
+  - child
+  - teen
+
+- name: nicotine_s6vsttime1
+  nda_name: nicotine_s1vsttime1
+  rename: nicotine_s6vsttime1
+  source:
+  - child
+  - teen
+
+- name: nicotine_s6vsttype2
+  nda_name: nicotine_s1vsttype2
+  rename: nicotine_s6vsttype2
+  source:
+  - child
+  - teen
+
+- name: nicotine_s6vsttime2
+  nda_name: nicotine_s1vsttime2
+  rename: nicotine_s6vsttime2
+  source:
+  - child
+  - teen
+
+- name: alc
+  nda_name: alc
+  rename: alc
+  source:
+  - child
+  - teen
+
+- name: alc_breath1
+  nda_name: alc_breath1
+  rename: alc_breath1
+  source:
+  - child
+  - teen
+
+- name: alc_breath2
+  nda_name: alc_breath2
+  rename: alc_breath2
+  source:
+  - child
+  - teen
+
+- name: alc_breath3
+  nda_name: alc_breath3
+  rename: alc_breath3
+  source:
+  - child
+  - teen
+
+- name: alc_breath4
+  nda_name: alc_breath4
+  rename: alc_breath4
+  source:
+  - child
+  - teen
+
+- name: alc_breath5
+  nda_name: alc_breath5
+  rename: alc_breath5
+  source:
+  - child
+  - teen
+
+- name: alc_breath6
+  nda_name: alc_breath6
+  rename: alc_breath6
+  source:
+  - child
+  - teen
+
+- name: drug
+  nda_name: drug
+  rename: drug
+  source:
+  - child
+  - teen
+
+- name: drug1_1
+  recode: {2: 0}
+  nda_name: drug1_1
+  rename: drug1_1
+  source:
+  - child
+  - teen
+
+- name: drug1_2
+  nda_name: drug1_2
+  rename: drug1_2
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug1_3
+  nda_name: drug1_3
+  rename: drug1_3
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug1_4
+  nda_name: drug1_4
+  rename: drug1_4
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug1_5
+  nda_name: drug1_5
+  rename: drug1_5
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug1_6
+  nda_name: drug1_6
+  rename: drug1_6
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug2_1
+  nda_name: drug1_1
+  rename: drug2_1
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug2_2
+  nda_name: drug1_2
+  rename: drug2_2
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug2_3
+  nda_name: drug1_3
+  rename: drug2_3
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug2_4
+  nda_name: drug1_4
+  rename: drug2_4
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug2_5
+  nda_name: drug1_5
+  rename: drug2_5
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug2_6
+  nda_name: drug1_6
+  rename: drug2_6
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug3_1
+  nda_name: drug1_1
+  rename: drug3_1
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug3_2
+  nda_name: drug1_2
+  rename: drug3_2
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug3_3
+  nda_name: drug1_3
+  rename: drug3_3
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug3_4
+  nda_name: drug1_4
+  rename: drug3_4
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug3_5
+  nda_name: drug1_5
+  rename: drug3_5
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug3_6
+  nda_name: drug1_6
+  rename: drug3_6
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug4_1
+  nda_name: drug1_1
+  rename: drug4_1
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug4_2
+  nda_name: drug1_2
+  rename: drug4_2
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug4_3
+  nda_name: drug1_3
+  rename: drug4_3
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug4_4
+  nda_name: drug1_4
+  rename: drug4_4
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug4_5
+  nda_name: drug1_5
+  rename: drug4_5
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug4_6
+  nda_name: drug1_6
+  rename: drug4_6
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug5_1
+  nda_name: drug1_1
+  rename: drug5_1
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug5_2
+  nda_name: drug1_2
+  rename: drug5_2
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug5_3
+  nda_name: drug1_3
+  rename: drug5_3
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug5_4
+  nda_name: drug1_4
+  rename: drug5_4
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug5_5
+  nda_name: drug1_5
+  rename: drug5_5
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug5_6
+  nda_name: drug1_6
+  rename: drug5_6
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug6_1
+  nda_name: drug1_1
+  rename: drug6_1
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug6_2
+  nda_name: drug1_2
+  rename: drug6_2
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug6_3
+  nda_name: drug1_3
+  rename: drug6_3
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug6_4
+  nda_name: drug1_4
+  rename: drug6_4
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug6_5
+  nda_name: drug1_5
+  rename: drug6_5
+  recode: {2: 0}
+  source:
+  - child
+  - teen
+
+- name: drug6_6
+  nda_name: drug1_6
+  rename: drug6_6
+  recode: {2: 0}
+  source:
+  - child
+  - teen

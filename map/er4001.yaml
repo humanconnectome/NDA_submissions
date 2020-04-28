@@ -1,0 +1,162 @@
+elements:
+- name: subjectkey
+  rename: subjectkey
+  source:
+    - PennCNP
+
+- name: subject
+  rename: src_subject_id
+  source:
+    - PennCNP
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+    - PennCNP
+
+- name: interview_age
+  rename: interview_age
+  source:
+    - PennCNP
+
+- name: gender
+  rename: sex
+  source:
+    - PennCNP
+
+- name: K_ER40D.valid_code
+  rename: version_form
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40_CR
+  rename: er40_c_cr
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40_CRT
+  rename: er40_c_rtcr
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40ANG
+  rename: er40_c_ang
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40FEAR
+  rename: er40_c_fear
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40HAP
+  rename: er40_c_hap
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40NOE
+  rename: er40_c_noe
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40SAD
+  rename: er40_c_sad
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40ANGRT
+  rename: er40_d_angrt
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40FEARRT
+  rename: er40_d_fearrt
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40HAPRT
+  rename: er40_d_haprt
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40NOERT
+  rename: er40_d_noert
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40SADRT
+  rename: er40_d_sadrt
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40_FPA
+  rename: er40_c_fpa
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40_FPF
+  rename: er40_c_fpf
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40_FPH
+  rename: er40_c_fph
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40_FPN
+  rename: er40_c_fpn
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40_FPS
+  rename: er40_c_fps
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40_FPART
+  rename: er40_c_fpart
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40_FPFRT
+  rename: er40_c_fpfrt
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40_FPHRT
+  rename: er40_c_fphrt
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40_FPNRT
+  rename: er40_c_fpnrt
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40_FPSRT
+  rename: er40_c_fpsrt
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40_FC
+  rename: er40_d_fc
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40_MC
+  rename: er40_d_mc
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40FCRT
+  rename: er40_c_fcrt
+  source:
+  - PennCNP
+
+- name: K_ER40D.ER40MCRT
+  rename: er40_c_mcrt
+  source:
+  - PennCNP
+

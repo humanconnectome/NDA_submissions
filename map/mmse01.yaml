@@ -1,0 +1,274 @@
+instrument: ''
+struct: mmse01
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - child
+  - teen
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - child
+  - teen
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - child
+  - teen
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - child
+  - teen
+
+- name: gender
+  rename: sex
+  source:
+  - child
+  - teen
+
+- name: mmse1_1
+  rename: mmse01
+  source:
+  - child
+  - teen
+
+- name: mmse1_2
+  rename: mmse02
+  source:
+  - child
+  - teen
+
+- name: mmse1_3
+  rename: mmse03
+  source:
+  - child
+  - teen
+
+- name: mmse1_4
+  rename: mmse04
+  source:
+  - child
+  - teen
+
+- name: mmse1_5
+  rename: mmse05
+  source:
+  - child
+  - teen
+
+- name: mmse1_6
+  rename: mmse06
+  source:
+  - child
+  - teen
+
+- name: mmse1_7
+  rename: mmse07
+  source:
+  - child
+  - teen
+
+- name: mmse1_8
+  rename: mmse08
+  source:
+  - child
+  - teen
+
+- name: mmse1_9
+  rename: mmse09
+  source:
+  - child
+  - teen
+
+- name: mmse1_10
+  rename: mmse10
+  source:
+  - child
+  - teen
+
+- name: mmse2_1
+  rename: mmse11
+  source:
+  - child
+  - teen
+
+- name: mmse2_2
+  rename: mmse12
+  source:
+  - child
+  - teen
+
+- name: mmse2_3
+  rename: mmse13
+  source:
+  - child
+  - teen
+
+- name: mmse2_trials
+  rename: mmse13a
+  source:
+  - child
+  - teen
+
+- name: mmse3a_1
+  rename: mms14
+  source:
+  - child
+  - teen
+
+- name: mmse3a_2
+  rename: mms15
+  source:
+  - child
+  - teen
+
+- name: mmse3a_3
+  rename: mms16
+  source:
+  - child
+  - teen
+
+- name: mmse3a_4
+  rename: mms17
+  source:
+  - child
+  - teen
+
+- name: mmse3a_5
+  rename: mms18
+  source:
+  - child
+  - teen
+
+- name: mmse3b_1
+  rename: mmse14
+  source:
+  - child
+  - teen
+
+- name: mmse3b_2
+  rename: mmse15
+  source:
+  - child
+  - teen
+
+- name: mmse3b_3
+  rename: mmse16
+  source:
+  - child
+  - teen
+
+- name: mmse3b_4
+  rename: mmse17
+  source:
+  - child
+  - teen
+
+- name: mmse3b_5
+  rename: mmse18
+  source:
+  - child
+  - teen
+
+- name: mmse3a_sum
+  rename: att_calc_tot
+  source:
+  - child
+  - teen
+
+- name: mmse3b_sum
+  rename: alt_tot
+  source:
+  - child
+  - teen
+
+- name: mmse3c
+  rename: mmses4
+  source:
+  - child
+  - teen
+
+- name: mmse4_1
+  rename: mmse19
+  source:
+  - child
+  - teen
+
+- name: mmse4_2
+  rename: mmse20
+  source:
+  - child
+  - teen
+
+- name: mmse4_3
+  rename: mmse21
+  source:
+  - child
+  - teen
+
+- name: mmse5a_1
+  rename: mmse22
+  source:
+  - child
+  - teen
+
+- name: mmse5a_2
+  rename: mmse23
+  source:
+  - child
+  - teen
+
+- name: mmse5b
+  rename: mmse24
+  source:
+  - child
+  - teen
+
+- name: mmse5c_1
+  rename: mmse25
+  source:
+  - child
+  - teen
+
+- name: mmse5c_2
+  rename: mmse26
+  source:
+  - child
+  - teen
+
+- name: mmse5c_3
+  rename: mmse27
+  source:
+  - child
+  - teen
+
+- name: mmse5d
+  rename: mmse28
+  source:
+  - child
+  - teen
+
+- name: mmse5e
+  rename: mmse29
+  source:
+  - child
+  - teen
+
+- name: mmse5f
+  rename: mmse30
+  source:
+  - child
+  - teen
+
+- name: mmse_total
+  rename: mmse_ts
+  source:
+  - child
+  - teen

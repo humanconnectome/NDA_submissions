@@ -1203,7 +1203,7 @@ psqi5jalt:
 
 psqi5j_1:
   type: String
-  length: 100
+  length: 115
   description: 'Are there any other reasons you have had trouble sleeping in the past
     month? If YES, please describe:'
 

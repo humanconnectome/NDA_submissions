@@ -3156,7 +3156,7 @@ othmed0a:
 
 med12_frqcy:
   type: String
-  length: 10
+  length: 15
   description: How often do you take [med12]?
   notes: Time(s)/(Day, Week, Month)
 
@@ -3168,7 +3168,7 @@ med13_frqcy:
 
 med14_frqcy:
   type: String
-  length: 10
+  length: 15
   description: How often do you take [med14]?
   notes: Time(s)/(Day, Week, Month)
 

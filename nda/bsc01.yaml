@@ -1110,3 +1110,75 @@ hair2:
   codes:
     1: 'Yes'
     0: 'No'
+
+chloride:
+  type: Integer
+  description: Chloride
+  range:
+  - 0::999
+  - -7
+  - -8
+  - -9
+  notes: In mmol/L. -7 = Don't know; -8 = Refused to answer; -9 = Does not apply
+  codes:
+    -7: Don't know
+    -8: Refused to answer
+    -9: Does not apply
+
+creatinine:
+  type: Float
+  description: Creatinine
+  range:
+  - 0::9.9
+  - -7
+  - -8
+  - -9
+  - 999
+  notes: In mg/dL. -7 = Don't know; -8 = Refused to answer; -9 = Does not apply
+  codes:
+    -7: Don't know
+    -8: Refused to answer
+    -9: Does not apply
+
+glucose:
+  type: Integer
+  description: Glucose
+  range:
+  - 0::999
+  - -7
+  - -8
+  - -9
+  notes: In mg/dL. -7 = Don't know; -8 = Refused to answer; -9 = Does not apply
+  codes:
+    -7: Don't know
+    -8: Refused to answer
+    -9: Does not apply
+
+potassium:
+  type: Float
+  description: Potassium
+  range:
+  - 0::9.9
+  - -7
+  - -8
+  - -9
+  - 999
+  notes: In mmol/L. -7 = Don't know; -8 = Refused to answer; -9 = Does not apply
+  codes:
+    -7: Don't know
+    -8: Refused to answer
+    -9: Does not apply
+
+sodium:
+  type: Integer
+  description: Sodium
+  range:
+  - 0::999
+  - -7
+  - -8
+  - -9
+  notes: In mmol/L. -7 = Don't know; -8 = Refused to answer; -9 = Does not apply
+  codes:
+    -7: Don't know
+    -8: Refused to answer
+    -9: Does not apply

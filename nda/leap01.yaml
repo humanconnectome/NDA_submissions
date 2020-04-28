@@ -61,7 +61,7 @@ lan11:
 
 lan12:
   type: String
-  length: 25
+  length: 30
   description: 'Please list all the languages you know in order of dominance: Language
     2:'
 

@@ -578,7 +578,7 @@ satisfaction1:
 
 satisfaction1more:
   type: String
-  length: 250
+  length: 385
   description: Was there any way we could have done more to make you comfortable?
 
 satisfaction2:
@@ -596,7 +596,7 @@ satisfaction2:
 
 satisfaction2more:
   type: String
-  length: 250
+  length: 280
   description: Was there any way we could have informed you better about the scan?
 
 satisfaction3:
@@ -630,18 +630,18 @@ satisfaction4:
 
 satisfaction4more:
   type: String
-  length: 250
+  length: 1050
   description: Do you have any ideas about how we could be better?
 
 satisfaction5:
   type: String
-  length: 250
+  length: 445
   description: What part of your visit did you enjoy most? What did you like about
     it?
 
 satisfaction6:
   type: String
-  length: 250
+  length: 835
   description: What part of your visit didn't you like? Could we do anything to make
     it better?
 

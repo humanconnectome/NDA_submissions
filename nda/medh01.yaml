@@ -695,7 +695,7 @@ dental6:
 
 dental6_1:
   type: String
-  length: 60
+  length: 65
   description: Any other metal posts, implants or anything else? If Yes, What?
 
 dental6_2:

@@ -993,7 +993,7 @@ straw1b:
 
 straw1b_other:
   type: String
-  length: 100
+  length: 115
   description: 'If other reason you think your periods stopped, fill in: '
 
 straw2:

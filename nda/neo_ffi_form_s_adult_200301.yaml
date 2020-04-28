@@ -954,6 +954,7 @@ neo_n:
   description: Neuroticism raw score
   range:
   - 0::192
+  - 999
   alias: neo2_score_ne,neocnx,neopnx
 
 neo_e:
@@ -962,6 +963,7 @@ neo_e:
   description: Extraversion raw score
   range:
   - 0::192
+  - 999
   alias: neo2_score_ex,neocex,neopex
 
 neo_o:
@@ -970,6 +972,7 @@ neo_o:
   description: Openness to Experience raw score
   range:
   - 0::192
+  - 999
   alias: neo2_score_op,neocox,neopox
 
 neo_a:
@@ -978,6 +981,7 @@ neo_a:
   description: Agreeableness raw score
   range:
   - 0::192
+  - 999
   alias: neo2_score_ag,neocax,neopax
 
 neo_c:
@@ -986,6 +990,7 @@ neo_c:
   description: Conscientiousness raw score
   range:
   - 0::192
+  - 999
   alias: neo2_score_co,neoccx,neopcx
 
 neo_n_t:

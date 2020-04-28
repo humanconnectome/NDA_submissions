@@ -128,7 +128,7 @@ moca_total:
   type: Integer
   description: Montreal Cognitive Assessment Total Score
   range:
-  - 0::30
+  - 0::31
   alias: moca_sum
 
 attention_digit:

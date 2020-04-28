@@ -13,4 +13,4 @@ My implementation of the NDA crosswalk
 
 First run the [Setup_Definitions](./Setup_Definitions.ipynb) notebook. This will download the latest data dictionaries from redcap and the NDA.
 
-...
+Then run the notebooks [HCD](./HCD.ipynb) and [HCA](./HCD.ipynb). They will download the data, transform it, and validate it against the NDA servers. Note any actionable errors.

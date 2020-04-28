@@ -1,0 +1,726 @@
+id:
+  form: common
+  type: text
+  label: Record ID
+
+subjectid:
+  form: common
+  type: text
+  label: Subject ID
+  required: y
+
+fileid:
+  form: common
+  type: text
+  label: Box File ID
+
+filename:
+  form: common
+  type: text
+  label: Filename
+
+sha1:
+  form: common
+  type: text
+  label: SHA1
+
+created:
+  form: common
+  type: text
+  label: Created
+
+assessment:
+  form: common
+  type: text
+  label: Assessment
+
+visit:
+  form: common
+  type: text
+  label: Visit
+
+ravlt_two:
+  form: ravlt
+  type: truefalse
+  label: Is RAVLT2?
+  note: Was the alternative list used?
+
+ravlt_pea_ravlt_sd_tc:
+  form: ravlt
+  type: text
+  label: pea_ravlt_sd_tc
+
+ravlt_delay_scaled:
+  form: ravlt
+  type: text
+  label: delay_scaled
+
+ravlt_delay_completion:
+  form: ravlt
+  type: text
+  label: delay_completion
+
+ravlt_discontinue:
+  form: ravlt
+  type: text
+  label: discontinue
+
+ravlt_reverse:
+  form: ravlt
+  type: text
+  label: reverse
+
+ravlt_pea_ravlt_sd_trial_i_tc:
+  form: ravlt
+  type: text
+  label: pea_ravlt_sd_trial_i_tc
+
+ravlt_pea_ravlt_sd_trial_ii_tc:
+  form: ravlt
+  type: text
+  label: pea_ravlt_sd_trial_ii_tc
+
+ravlt_pea_ravlt_sd_trial_iii_tc:
+  form: ravlt
+  type: text
+  label: pea_ravlt_sd_trial_iii_tc
+
+ravlt_pea_ravlt_sd_trial_iv_tc:
+  form: ravlt
+  type: text
+  label: pea_ravlt_sd_trial_iv_tc
+
+ravlt_pea_ravlt_sd_trial_v_tc:
+  form: ravlt
+  type: text
+  label: pea_ravlt_sd_trial_v_tc
+
+ravlt_pea_ravlt_sd_listb_tc:
+  form: ravlt
+  type: text
+  label: pea_ravlt_sd_listb_tc
+
+ravlt_pea_ravlt_sd_trial_vi_tc:
+  form: ravlt
+  type: text
+  label: pea_ravlt_sd_trial_vi_tc
+
+ravlt_recall_correct_trial1:
+  form: ravlt
+  type: text
+  label: recall_correct_trial1
+
+ravlt_recall_correct_trial2:
+  form: ravlt
+  type: text
+  label: recall_correct_trial2
+
+ravlt_recall_correct_trial3:
+  form: ravlt
+  type: text
+  label: recall_correct_trial3
+
+ravlt_recall_correct_trial4:
+  form: ravlt
+  type: text
+  label: recall_correct_trial4
+
+ravlt_delay_recall_correct:
+  form: ravlt
+  type: text
+  label: delay_recall_correct
+
+ravlt_delay_recall_intrusion:
+  form: ravlt
+  type: text
+  label: delay_recall_intrusion
+
+ravlt_delay_total_intrusion:
+  form: ravlt
+  type: text
+  label: delay_total_intrusion
+
+ravlt_delay_total_repetitions:
+  form: ravlt
+  type: text
+  label: delay_total_repetitions
+
+wais_scoring_matrixreasoning_raw:
+  form: wais
+  type: text
+  label: scoring_matrixreasoning_raw
+
+wais_scoring_matrixreasoning_scaled:
+  form: wais
+  type: text
+  label: scoring_matrixreasoning_scaled
+
+wais_wais_dk:
+  form: wais
+  type: text
+  label: wais_dk
+
+wais_wais_nr:
+  form: wais
+  type: text
+  label: wais_nr
+
+wais_wais_p:
+  form: wais
+  type: text
+  label: wais_p
+
+wais_matrix_completion:
+  form: wais
+  type: text
+  label: matrix_completion
+
+wais_discontinue:
+  form: wais
+  type: text
+  label: discontinue
+
+wais_reverse:
+  form: wais
+  type: text
+  label: reverse
+
+wais_matrixreasoning_a_resp:
+  form: wais
+  type: text
+  label: matrixreasoning_a_resp
+
+wais_matrixreasoning_b_resp:
+  form: wais
+  type: text
+  label: matrixreasoning_b_resp
+
+wais_matrixreasoning_1_score:
+  form: wais
+  type: text
+  label: matrixreasoning_1_score
+
+wais_matrixreasoning_2_score:
+  form: wais
+  type: text
+  label: matrixreasoning_2_score
+
+wais_matrixreasoning_3_score:
+  form: wais
+  type: text
+  label: matrixreasoning_3_score
+
+wais_matrixreasoning_4_score:
+  form: wais
+  type: text
+  label: matrixreasoning_4_score
+
+wais_matrixreasoning_5_score:
+  form: wais
+  type: text
+  label: matrixreasoning_5_score
+
+wais_matrixreasoning_6_score:
+  form: wais
+  type: text
+  label: matrixreasoning_6_score
+
+wais_matrixreasoning_7_score:
+  form: wais
+  type: text
+  label: matrixreasoning_7_score
+
+wais_matrixreasoning_8_score:
+  form: wais
+  type: text
+  label: matrixreasoning_8_score
+
+wais_matrixreasoning_9_score:
+  form: wais
+  type: text
+  label: matrixreasoning_9_score
+
+wais_matrixreasoning_10_score:
+  form: wais
+  type: text
+  label: matrixreasoning_10_score
+
+wais_matrixreasoning_11_score:
+  form: wais
+  type: text
+  label: matrixreasoning_11_score
+
+wais_matrixreasoning_12_score:
+  form: wais
+  type: text
+  label: matrixreasoning_12_score
+
+wais_matrixreasoning_13_score:
+  form: wais
+  type: text
+  label: matrixreasoning_13_score
+
+wais_matrixreasoning_14_score:
+  form: wais
+  type: text
+  label: matrixreasoning_14_score
+
+wais_matrixreasoning_15_score:
+  form: wais
+  type: text
+  label: matrixreasoning_15_score
+
+wais_matrixreasoning_16_score:
+  form: wais
+  type: text
+  label: matrixreasoning_16_score
+
+wais_matrixreasoning_17_score:
+  form: wais
+  type: text
+  label: matrixreasoning_17_score
+
+wais_matrixreasoning_18_score:
+  form: wais
+  type: text
+  label: matrixreasoning_18_score
+
+wais_matrixreasoning_19_score:
+  form: wais
+  type: text
+  label: matrixreasoning_19_score
+
+wais_matrixreasoning_20_score:
+  form: wais
+  type: text
+  label: matrixreasoning_20_score
+
+wais_matrixreasoning_21_score:
+  form: wais
+  type: text
+  label: matrixreasoning_21_score
+
+wais_matrixreasoning_22_score:
+  form: wais
+  type: text
+  label: matrixreasoning_22_score
+
+wais_matrixreasoning_23_score:
+  form: wais
+  type: text
+  label: matrixreasoning_23_score
+
+wais_matrixreasoning_24_score:
+  form: wais
+  type: text
+  label: matrixreasoning_24_score
+
+wais_matrixreasoning_25_score:
+  form: wais
+  type: text
+  label: matrixreasoning_25_score
+
+wais_matrixreasoning_26_score:
+  form: wais
+  type: text
+  label: matrixreasoning_26_score
+
+wisc_matrixreason_score:
+  form: wisc
+  type: text
+  label: matrixreason_score
+
+wisc_scaled_matrix:
+  form: wisc
+  type: text
+  label: scaled_matrix
+
+wisc_subtesttypedk:
+  form: wisc
+  type: text
+  label: subtesttypedk
+
+wisc_subtesttypenr:
+  form: wisc
+  type: text
+  label: subtesttypenr
+
+wisc_subtesttypesc:
+  form: wisc
+  type: text
+  label: subtesttypesc
+
+wisc_subtesttypesv:
+  form: wisc
+  type: text
+  label: subtesttypesv
+
+wisc_matrix_completion:
+  form: wisc
+  type: text
+  label: matrix_completion
+
+wisc_discontinue:
+  form: wisc
+  type: text
+  label: discontinue
+
+wisc_reverse:
+  form: wisc
+  type: text
+  label: reverse
+
+wisc_pea_wiscv_item_a_rs:
+  form: wisc
+  type: text
+  label: pea_wiscv_item_a_rs
+
+wisc_pea_wiscv_item_b_rs:
+  form: wisc
+  type: text
+  label: pea_wiscv_item_b_rs
+
+wisc_matrixreason_item1:
+  form: wisc
+  type: text
+  label: matrixreason_item1
+
+wisc_matrixreason_item2:
+  form: wisc
+  type: text
+  label: matrixreason_item2
+
+wisc_matrixreason_item3:
+  form: wisc
+  type: text
+  label: matrixreason_item3
+
+wisc_matrixreason_item4:
+  form: wisc
+  type: text
+  label: matrixreason_item4
+
+wisc_matrixreason_item5:
+  form: wisc
+  type: text
+  label: matrixreason_item5
+
+wisc_matrixreason_item6:
+  form: wisc
+  type: text
+  label: matrixreason_item6
+
+wisc_matrixreason_item7:
+  form: wisc
+  type: text
+  label: matrixreason_item7
+
+wisc_matrixreason_item8:
+  form: wisc
+  type: text
+  label: matrixreason_item8
+
+wisc_matrixreason_item9:
+  form: wisc
+  type: text
+  label: matrixreason_item9
+
+wisc_matrixreason_item10:
+  form: wisc
+  type: text
+  label: matrixreason_item10
+
+wisc_matrixreason_item11:
+  form: wisc
+  type: text
+  label: matrixreason_item11
+
+wisc_matrixreason_item12:
+  form: wisc
+  type: text
+  label: matrixreason_item12
+
+wisc_matrixreason_item13:
+  form: wisc
+  type: text
+  label: matrixreason_item13
+
+wisc_matrixreason_item14:
+  form: wisc
+  type: text
+  label: matrixreason_item14
+
+wisc_matrixreason_item15:
+  form: wisc
+  type: text
+  label: matrixreason_item15
+
+wisc_matrixreason_item16:
+  form: wisc
+  type: text
+  label: matrixreason_item16
+
+wisc_matrixreason_item17:
+  form: wisc
+  type: text
+  label: matrixreason_item17
+
+wisc_matrixreason_item18:
+  form: wisc
+  type: text
+  label: matrixreason_item18
+
+wisc_matrixreason_item19:
+  form: wisc
+  type: text
+  label: matrixreason_item19
+
+wisc_matrixreason_item20:
+  form: wisc
+  type: text
+  label: matrixreason_item20
+
+wisc_matrixreason_item21:
+  form: wisc
+  type: text
+  label: matrixreason_item21
+
+wisc_matrixreason_item22:
+  form: wisc
+  type: text
+  label: matrixreason_item22
+
+wisc_matrixreason_item23:
+  form: wisc
+  type: text
+  label: matrixreason_item23
+
+wisc_matrixreason_item24:
+  form: wisc
+  type: text
+  label: matrixreason_item24
+
+wisc_matrixreason_item25:
+  form: wisc
+  type: text
+  label: matrixreason_item25
+
+wisc_matrixreason_item26:
+  form: wisc
+  type: text
+  label: matrixreason_item26
+
+wisc_matrixreason_item27:
+  form: wisc
+  type: text
+  label: matrixreason_item27
+
+wisc_matrixreason_item28:
+  form: wisc
+  type: text
+  label: matrixreason_item28
+
+wisc_matrixreason_item29:
+  form: wisc
+  type: text
+  label: matrixreason_item29
+
+wisc_matrixreason_item30:
+  form: wisc
+  type: text
+  label: matrixreason_item30
+
+wisc_matrixreason_item31:
+  form: wisc
+  type: text
+  label: matrixreason_item31
+
+wisc_matrixreason_item32:
+  form: wisc
+  type: text
+  label: matrixreason_item32
+
+wppsi_wppsi_mxr_rawscre:
+  form: wppsi
+  type: text
+  label: wppsi_mxr_rawscre
+
+wppsi_wppsi_mxr_scldscre:
+  form: wppsi
+  type: text
+  label: wppsi_mxr_scldscre
+
+wppsi_wppsi_mxr_dk:
+  form: wppsi
+  type: text
+  label: wppsi_mxr_dk
+
+wppsi_wppsi_mxr_nr:
+  form: wppsi
+  type: text
+  label: wppsi_mxr_nr
+
+wppsi_wppsi_mxr_p:
+  form: wppsi
+  type: text
+  label: wppsi_mxr_p
+
+wppsi_matrix_completion:
+  form: wppsi
+  type: text
+  label: matrix_completion
+
+wppsi_discontinue:
+  form: wppsi
+  type: text
+  label: discontinue
+
+wppsi_reverse:
+  form: wppsi
+  type: text
+  label: reverse
+
+wppsi_pea_wppsi_item_a_rs:
+  form: wppsi
+  type: text
+  label: pea_wppsi_item_a_rs
+
+wppsi_pea_wppsi_item_b_rs:
+  form: wppsi
+  type: text
+  label: pea_wppsi_item_b_rs
+
+wppsi_pea_wppsi_item_c_rs:
+  form: wppsi
+  type: text
+  label: pea_wppsi_item_c_rs
+
+wppsi_matrixreason_item1:
+  form: wppsi
+  type: text
+  label: matrixreason_item1
+
+wppsi_matrixreason_item2:
+  form: wppsi
+  type: text
+  label: matrixreason_item2
+
+wppsi_matrixreason_item3:
+  form: wppsi
+  type: text
+  label: matrixreason_item3
+
+wppsi_matrixreason_item4:
+  form: wppsi
+  type: text
+  label: matrixreason_item4
+
+wppsi_matrixreason_item5:
+  form: wppsi
+  type: text
+  label: matrixreason_item5
+
+wppsi_matrixreason_item6:
+  form: wppsi
+  type: text
+  label: matrixreason_item6
+
+wppsi_matrixreason_item7:
+  form: wppsi
+  type: text
+  label: matrixreason_item7
+
+wppsi_matrixreason_item8:
+  form: wppsi
+  type: text
+  label: matrixreason_item8
+
+wppsi_matrixreason_item9:
+  form: wppsi
+  type: text
+  label: matrixreason_item9
+
+wppsi_matrixreason_item10:
+  form: wppsi
+  type: text
+  label: matrixreason_item10
+
+wppsi_matrixreason_item11:
+  form: wppsi
+  type: text
+  label: matrixreason_item11
+
+wppsi_matrixreason_item12:
+  form: wppsi
+  type: text
+  label: matrixreason_item12
+
+wppsi_matrixreason_item13:
+  form: wppsi
+  type: text
+  label: matrixreason_item13
+
+wppsi_matrixreason_item14:
+  form: wppsi
+  type: text
+  label: matrixreason_item14
+
+wppsi_matrixreason_item15:
+  form: wppsi
+  type: text
+  label: matrixreason_item15
+
+wppsi_matrixreason_item16:
+  form: wppsi
+  type: text
+  label: matrixreason_item16
+
+wppsi_matrixreason_item17:
+  form: wppsi
+  type: text
+  label: matrixreason_item17
+
+wppsi_matrixreason_item18:
+  form: wppsi
+  type: text
+  label: matrixreason_item18
+
+wppsi_matrixreason_item19:
+  form: wppsi
+  type: text
+  label: matrixreason_item19
+
+wppsi_matrixreason_item20:
+  form: wppsi
+  type: text
+  label: matrixreason_item20
+
+wppsi_matrixreason_item21:
+  form: wppsi
+  type: text
+  label: matrixreason_item21
+
+wppsi_matrixreason_item22:
+  form: wppsi
+  type: text
+  label: matrixreason_item22
+
+wppsi_matrixreason_item23:
+  form: wppsi
+  type: text
+  label: matrixreason_item23
+
+wppsi_matrixreason_item24:
+  form: wppsi
+  type: text
+  label: matrixreason_item24
+
+wppsi_matrixreason_item25:
+  form: wppsi
+  type: text
+  label: matrixreason_item25
+
+wppsi_matrixreason_item26:
+  form: wppsi
+  type: text
+  label: matrixreason_item26

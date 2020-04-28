@@ -26,4777 +26,1172 @@ elements:
   source:
   - hcpa
 
-
 - rename: batlq1
   name: batlq1
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: In a car crash?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 1 In a car crash?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq1_lc
   name: batlq1_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: In a car crash? If
-      yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>1.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq1]=''1'' '
 
 - rename: batlq1_lct
   name: batlq1_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: In a car crash? If
-      yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>1.1 For how long:</p>'
-    branching: '[batlq1_lc]=''1'' '
 
 - rename: batlq1_dz
   name: batlq1_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: In a car crash? If
-      yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>1.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq1]=''1'' '
 
 - rename: batlq1_dzt
   name: batlq1_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: In a car crash? If
-      yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>1.2 For how long:</p>'
-    branching: '[batlq1_dz]=''1'' '
 
 - rename: batlq1_age
   name: batlq1_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: In a car crash? If
-      yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>1. Age:</p>'
-    branching: ([batlq1_lc]='1' or [batlq1_dz]='1')
 
 - rename: batlq2
   name: batlq2
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: In a motorcycle crash?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 2 In a motorcycle crash?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq2_lc
   name: batlq2_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: In a motorcycle crash?
-      If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>2.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq2]=''1'' '
 
 - rename: batlq2_lct
   name: batlq2_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: In a motorcycle crash?
-      If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>2.1 For how long:</p>'
-    branching: '[batlq2_lc]=''1'' '
 
 - rename: batlq2_dz
   name: batlq2_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: In a motorcycle crash?
-      If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>2.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq2]=''1'' '
 
 - rename: batlq2_dzt
   name: batlq2_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: In a motorcycle crash?
-      If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>2.2 For how long:</p>'
-    branching: '[batlq2_dz]=''1'' '
 
 - rename: batlq2_age
   name: batlq2_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: In a motorcycle crash?
-      If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>2. Age:</p>'
-    branching: ([batlq2_lc]='1' or [batlq2_dz]='1')
 
 - rename: batlq3
   name: batlq3
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: In an all-terrain
-      vehicle crash?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '3 In an all-terrain vehicle crash? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq3_lc
   name: batlq3_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: In an all-terrain
-      vehicle crash? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>3.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq3]=''1'' '
 
 - rename: batlq3_lct
   name: batlq3_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: In an all-terrain
-      vehicle crash? If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>3.1 For how long:</p>'
-    branching: '[batlq3_lc]=''1'' '
 
 - rename: batlq3_dz
   name: batlq3_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: In an all-terrain
-      vehicle crash? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>3.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq3]=''1'' '
 
 - rename: batlq3_dzt
   name: batlq3_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: In an all-terrain
-      vehicle crash? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>3.2 For how long:</p>'
-    branching: '[batlq3_dz]=''1'' '
 
 - rename: batlq3_age
   name: batlq3_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: In an all-terrain
-      vehicle crash? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>3. Age:</p>'
-    branching: ([batlq3_lc]='1' or [batlq3_dz]='1')
 
 - rename: batlq4
   name: batlq4
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: As a pedestrian hit
-      by a vehicle?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 4 As a pedestrian hit by a vehicle?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq4_lc
   name: batlq4_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: As a pedestrian hit
-      by a vehicle? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>4.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq4]=''1'' '
 
 - rename: batlq4_lct
   name: batlq4_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: As a pedestrian hit
-      by a vehicle? If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>4.1 For how long:</p>'
-    branching: '[batlq4_lc]=''1'' '
 
 - rename: batlq4_dz
   name: batlq4_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: As a pedestrian hit
-      by a vehicle? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>4.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq4]=''1'' '
 
 - rename: batlq4_dzt
   name: batlq4_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: As a pedestrian hit
-      by a vehicle? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>4.2 For how long:</p>'
-    branching: '[batlq4_dz]=''1'' '
 
 - rename: batlq4_age
   name: batlq4_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: As a pedestrian hit
-      by a vehicle? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>4. Age:</p>'
-    branching: ([batlq4_lc]='1' or [batlq4_dz]='1')
 
 - rename: batlq5
   name: batlq5
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Being hit by a falling
-      object?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '5 Being hit by a falling object? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq5_lc
   name: batlq5_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Being hit by a falling
-      object? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>5.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq5]=''1'' '
 
 - rename: batlq5_lct
   name: batlq5_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Being hit by a falling
-      object? If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>5.1 For how long:</p>'
-    branching: '[batlq5_lc]=''1'' '
 
 - rename: batlq5_dz
   name: batlq5_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Being hit by a falling
-      object? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>5.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq5]=''1'' '
 
 - rename: batlq5_dzt
   name: batlq5_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Being hit by a falling
-      object? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>5.2 For how long:</p>'
-    branching: '[batlq5_dz]=''1'' '
 
 - rename: batlq5_age
   name: batlq5_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Being hit by a falling
-      object? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>5. Age:</p>'
-    branching: ([batlq5_lc]='1' or [batlq5_dz]='1')
 
 - rename: batlq6
   name: batlq6
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Being hit by equipment?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 6 Being hit by equipment?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq6_lc
   name: batlq6_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Being hit by equipment?
-      If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>6.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq6]=''1'' '
 
 - rename: batlq6_lct
   name: batlq6_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Being hit by equipment?
-      If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>6.1 For how long:</p>'
-    branching: '[batlq6_lc]=''1'' '
 
 - rename: batlq6_dz
   name: batlq6_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Being hit by equipment?
-      If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>6.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq6]=''1'' '
 
 - rename: batlq6_dzt
   name: batlq6_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Being hit by equipment?
-      If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>6.2 For how long:</p>'
-    branching: '[batlq6_dz]=''1'' '
 
 - rename: batlq6_age
   name: batlq6_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Being hit by equipment?
-      If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>6. Age:</p>'
-    branching: ([batlq6_lc]='1' or [batlq6_dz]='1')
 
 - rename: batlq7
   name: batlq7
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Falling down stairs?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '7 Falling down stairs? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq7_lc
   name: batlq7_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Falling down stairs?
-      If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>7.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq7]=''1'' '
 
 - rename: batlq7_lct
   name: batlq7_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Falling down stairs?
-      If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>7.1 For how long:</p>'
-    branching: '[batlq7_lc]=''1'' '
 
 - rename: batlq7_dz
   name: batlq7_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Falling down stairs?
-      If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>7.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq7]=''1'' '
 
 - rename: batlq7_dzt
   name: batlq7_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Falling down stairs?
-      If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>7.2 For how long:</p>'
-    branching: '[batlq7_dz]=''1'' '
 
 - rename: batlq7_age
   name: batlq7_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Falling down stairs?
-      If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>7. Age:</p>'
-    branching: ([batlq7_lc]='1' or [batlq7_dz]='1')
 
 - rename: batlq8
   name: batlq8
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Falling from a high
-      place?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 8 Falling from a high place?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq8_lc
   name: batlq8_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Falling from a high
-      place? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>8.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq8]=''1'' '
 
 - rename: batlq8_lct
   name: batlq8_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Falling from a high
-      place? If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>8.1 For how long:</p>'
-    branching: '[batlq8_lc]=''1'' '
 
 - rename: batlq8_dz
   name: batlq8_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Falling from a high
-      place? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>8.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq8]=''1'' '
 
 - rename: batlq8_dzt
   name: batlq8_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Falling from a high
-      place? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>8.2 For how long:</p>'
-    branching: '[batlq8_dz]=''1'' '
 
 - rename: batlq8_age
   name: batlq8_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Falling from a high
-      place? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>8. Age:</p>'
-    branching: ([batlq8_lc]='1' or [batlq8_dz]='1')
 
 - rename: batlq9
   name: batlq9
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: During a fainting
-      spell?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '9 During a fainting spell? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq9_lc
   name: batlq9_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: During a fainting
-      spell? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>9.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq9]=''1'' '
 
 - rename: batlq9_lct
   name: batlq9_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: During a fainting
-      spell? If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>9.1 For how long:</p>'
-    branching: '[batlq9_lc]=''1'' '
 
 - rename: batlq9_dz
   name: batlq9_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: During a fainting
-      spell? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>9.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq9]=''1'' '
 
 - rename: batlq9_dzt
   name: batlq9_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: During a fainting
-      spell? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>9.2 For how long:</p>'
-    branching: '[batlq9_dz]=''1'' '
 
 - rename: batlq9_age
   name: batlq9_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: During a fainting
-      spell? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>9. Age:</p>'
-    branching: ([batlq9_lc]='1' or [batlq9_dz]='1')
 
 - rename: batlq10
   name: batlq10
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: During a drug or alcohol
-      blackout?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 10 During a drug or alcohol blackout?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq10_lc
   name: batlq10_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: During a drug or alcohol
-      blackout? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>10.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq10]=''1'' '
 
 - rename: batlq10_lct
   name: batlq10_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: During a drug or alcohol
-      blackout? If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>10.1 For how long:</p>'
-    branching: '[batlq10_lc]=''1'' '
 
 - rename: batlq10_dz
   name: batlq10_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: During a drug or alcohol
-      blackout? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>10.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq10]=''1'' '
 
 - rename: batlq10_dzt
   name: batlq10_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: During a drug or alcohol
-      blackout? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>10.2 For how long:</p>'
-    branching: '[batlq10_dz]=''1'' '
 
 - rename: batlq10_age
   name: batlq10_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: During a drug or alcohol
-      blackout? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>10. Age:</p>'
-    branching: ([batlq10_lc]='1' or [batlq10_dz]='1')
 
 - rename: batlq11
   name: batlq11
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While biking?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '11 While biking? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq11_lc
   name: batlq11_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While biking? If yes:
-      Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>11.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq11]=''1'' '
 
 - rename: batlq11_lct
   name: batlq11_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While biking? If yes:
-      Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>11.1 For how long:</p>'
-    branching: '[batlq11_lc]=''1'' '
 
 - rename: batlq11_dz
   name: batlq11_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While biking? If yes:
-      Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>11.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq11]=''1'' '
 
 - rename: batlq11_dzt
   name: batlq11_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While biking? If yes:
-      Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>11.2 For how long:</p>'
-    branching: '[batlq11_dz]=''1'' '
 
 - rename: batlq11_age
   name: batlq11_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While biking? If yes:
-      Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>11. Age:</p>'
-    branching: ([batlq11_lc]='1' or [batlq11_dz]='1')
 
 - rename: batlq12
   name: batlq12
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While roller blading/skateboarding?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 12 While roller blading/skateboarding?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq12_lc
   name: batlq12_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While roller blading/skateboarding?
-      If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>12.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq12]=''1'' '
 
 - rename: batlq12_lct
   name: batlq12_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While roller blading/skateboarding?
-      If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>12.1 For how long:</p>'
-    branching: '[batlq12_lc]=''1'' '
 
 - rename: batlq12_dz
   name: batlq12_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While roller blading/skateboarding?
-      If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>12.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq12]=''1'' '
 
 - rename: batlq12_dzt
   name: batlq12_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While roller blading/skateboarding?
-      If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>12.2 For how long:</p>'
-    branching: '[batlq12_dz]=''1'' '
 
 - rename: batlq12_age
   name: batlq12_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While roller blading/skateboarding?
-      If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>12. Age:</p>'
-    branching: ([batlq12_lc]='1' or [batlq12_dz]='1')
 
 - rename: batlq13
   name: batlq13
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While horseback riding?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '13 While horseback riding? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq13_lc
   name: batlq13_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While horseback riding?
-      If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>13.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq13]=''1'' '
 
 - rename: batlq13_lct
   name: batlq13_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While horseback riding?
-      If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>13.1 For how long:</p>'
-    branching: '[batlq13_lc]=''1'' '
 
 - rename: batlq13_dz
   name: batlq13_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While horseback riding?
-      If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>13.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq13]=''1'' '
 
 - rename: batlq13_dzt
   name: batlq13_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While horseback riding?
-      If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>13.2 For how long:</p>'
-    branching: '[batlq13_dz]=''1'' '
 
 - rename: batlq13_age
   name: batlq13_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While horseback riding?
-      If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>13. Age:</p>'
-    branching: ([batlq13_lc]='1' or [batlq13_dz]='1')
 
 - rename: batlq14
   name: batlq14
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While skiing/snowboarding?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 14 While skiing?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq14_lc
   name: batlq14_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While skiing/snowboarding?
-      If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>14.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq14]=''1'' '
 
 - rename: batlq14_lct
   name: batlq14_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While skiing/snowboarding?
-      If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>14.1 For how long:</p>'
-    branching: '[batlq14_lc]=''1'' '
 
 - rename: batlq14_dz
   name: batlq14_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While skiing/snowboarding?
-      If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>14.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq14]=''1'' '
 
 - rename: batlq14_dzt
   name: batlq14_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While skiing/snowboarding?
-      If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>14.2 For how long:</p>'
-    branching: '[batlq14_dz]=''1'' '
 
 - rename: batlq14_age
   name: batlq14_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While skiing/snowboarding?
-      If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>14. Age:</p>'
-    branching: ([batlq14_lc]='1' or [batlq14_dz]='1')
 
 - rename: batlq15
   name: batlq15
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While skydiving?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '15 While skydiving? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq15_lc
   name: batlq15_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While skydiving? If
-      yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>15.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq15]=''1'' '
 
 - rename: batlq15_lct
   name: batlq15_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While skydiving? If
-      yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>15.1 For how long:</p>'
-    branching: '[batlq15_lc]=''1'' '
 
 - rename: batlq15_dz
   name: batlq15_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While skydiving? If
-      yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>15.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq15]=''1'' '
 
 - rename: batlq15_dzt
   name: batlq15_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While skydiving? If
-      yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>15.2 For how long:</p>'
-    branching: '[batlq15_dz]=''1'' '
 
 - rename: batlq15_age
   name: batlq15_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While skydiving? If
-      yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>15. Age:</p>'
-    branching: ([batlq15_lc]='1' or [batlq15_dz]='1')
 
 - rename: batlq16
   name: batlq16
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While participating
-      in other sports? Ex: football, hockey, baseball, basketball, soccer, lacrosse,
-      boxing, wrestling, martial arts, etc.'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '16 While participating in other sports? Ex: football, hockey, baseball,
-      basketball, soccer, lacrosse, boxing, wrestling, martial arts, etc.'
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq16_lc
   name: batlq16_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While participating
-      in other sports? Ex: football, hockey, baseball, basketball, soccer, lacrosse,
-      boxing, wrestling, martial arts, etc. If yes: Loss of consciousness/knocked
-      out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>16.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq16]=''1'' '
 
 - rename: batlq16_lct
   name: batlq16_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While participating
-      in other sports? Ex: football, hockey, baseball, basketball, soccer, lacrosse,
-      boxing, wrestling, martial arts, etc. If yes: Loss of consciousness/knocked
-      out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>16.1 For how long:</p>'
-    branching: '[batlq16_lc]=''1'' '
 
 - rename: batlq16_dz
   name: batlq16_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While participating
-      in other sports? Ex: football, hockey, baseball, basketball, soccer, lacrosse,
-      boxing, wrestling, martial arts, etc. If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>16.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq16]=''1'' '
 
 - rename: batlq16_dzt
   name: batlq16_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While participating
-      in other sports? Ex: football, hockey, baseball, basketball, soccer, lacrosse,
-      boxing, wrestling, martial arts, etc. If yes: Dazed and/or Memory Gap for how
-      long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>16.2 For how long:</p>'
-    branching: '[batlq16_dz]=''1'' '
 
 - rename: batlq16_age
   name: batlq16_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While participating
-      in other sports? Ex: football, hockey, baseball, basketball, soccer, lacrosse,
-      boxing, wrestling, martial arts, etc. If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>16. Age:</p>'
-    branching: ([batlq16_lc]='1' or [batlq16_dz]='1')
 
 - rename: batlq17
   name: batlq17
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While on the playground?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '17 While on the playground? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq17_lc
   name: batlq17_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While on the playground?
-      If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>17.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq17]=''1'' '
 
 - rename: batlq17_lct
   name: batlq17_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While on the playground?
-      If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>17.1 For how long:</p>'
-    branching: '[batlq17_lc]=''1'' '
 
 - rename: batlq17_dz
   name: batlq17_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While on the playground?
-      If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>17.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq17]=''1'' '
 
 - rename: batlq17_dzt
   name: batlq17_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While on the playground?
-      If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>17.2 For how long:</p>'
-    branching: '[batlq17_dz]=''1'' '
 
 - rename: batlq17_age
   name: batlq17_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While on the playground?
-      If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>17. Age:</p>'
-    branching: ([batlq17_lc]='1' or [batlq17_dz]='1')
 
 - rename: batlq18
   name: batlq18
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While diving into
-      water?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 18 While diving into water?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq18_lc
   name: batlq18_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While diving into
-      water? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>18.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq18]=''1'' '
 
 - rename: batlq18_lct
   name: batlq18_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While diving into
-      water? If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>18.1 For how long:</p>'
-    branching: '[batlq18_lc]=''1'' '
 
 - rename: batlq18_dz
   name: batlq18_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While diving into
-      water? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>18.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq18]=''1'' '
 
 - rename: batlq18_dzt
   name: batlq18_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While diving into
-      water? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>18.2 For how long:</p>'
-    branching: '[batlq18_dz]=''1'' '
 
 - rename: batlq18_age
   name: batlq18_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While diving into
-      water? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>18. Age:</p>'
-    branching: ([batlq18_lc]='1' or [batlq18_dz]='1')
 
 - rename: batlq19
   name: batlq19
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Being physically abused?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '19 Being physically abused? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq19_lc
   name: batlq19_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Being physically abused?
-      If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>19.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq19]=''1'' '
 
 - rename: batlq19_lct
   name: batlq19_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Being physically abused?
-      If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>19.1 For how long:</p>'
-    branching: '[batlq19_lc]=''1'' '
 
 - rename: batlq19_dz
   name: batlq19_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Being physically abused?
-      If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>19.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq19]=''1'' '
 
 - rename: batlq19_dzt
   name: batlq19_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Being physically abused?
-      If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>19.2 For how long:</p>'
-    branching: '[batlq19_dz]=''1'' '
 
 - rename: batlq19_age
   name: batlq19_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Being physically abused?
-      If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>19. Age:</p>'
-    branching: ([batlq19_lc]='1' or [batlq19_dz]='1')
 
 - rename: batlq20
   name: batlq20
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While being assaulted
-      or mugged?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 20 While being assaulted or mugged?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq20_lc
   name: batlq20_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While being assaulted
-      or mugged? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>20.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq20]=''1'' '
 
 - rename: batlq20_lct
   name: batlq20_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While being assaulted
-      or mugged? If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>20.1 For how long:</p>'
-    branching: '[batlq20_lc]=''1'' '
 
 - rename: batlq20_dz
   name: batlq20_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: While being assaulted
-      or mugged? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>20.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq20]=''1'' '
 
 - rename: batlq20_dzt
   name: batlq20_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While being assaulted
-      or mugged? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>20.2 For how long:</p>'
-    branching: '[batlq20_dz]=''1'' '
 
 - rename: batlq20_age
   name: batlq20_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: While being assaulted
-      or mugged? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>20. Age:</p>'
-    branching: ([batlq20_lc]='1' or [batlq20_dz]='1')
 
 - rename: batlq21
   name: batlq21
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: During a military
-      or other training exercise?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '21 During a military or other training exercise? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq21_lc
   name: batlq21_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: During a military
-      or other training exercise? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>21.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq21]=''1'' '
 
 - rename: batlq21_lct
   name: batlq21_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: During a military
-      or other training exercise? If yes: Loss of consciousness/knocked out for how
-      long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>21.1 For how long:</p>'
-    branching: '[batlq21_lc]=''1'' '
 
 - rename: batlq21_dz
   name: batlq21_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: During a military
-      or other training exercise? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>21.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq21]=''1'' '
 
 - rename: batlq21_dzt
   name: batlq21_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: During a military
-      or other training exercise? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>21.2 For how long:</p>'
-    branching: '[batlq21_dz]=''1'' '
 
 - rename: batlq21_age
   name: batlq21_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: During a military
-      or other training exercise? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>21. Age:</p>'
-    branching: ([batlq21_lc]='1' or [batlq21_dz]='1')
 
 - rename: batlq22
   name: batlq22
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: During combat?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 22 During combat?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq22_lc
   name: batlq22_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: During combat? If
-      yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>22.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq22]=''1'' '
 
 - rename: batlq22_lct
   name: batlq22_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: During combat? If
-      yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>22.1 For how long:</p>'
-    branching: '[batlq22_lc]=''1'' '
 
 - rename: batlq22_dz
   name: batlq22_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: During combat? If
-      yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>22.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq22]=''1'' '
 
 - rename: batlq22_dzt
   name: batlq22_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: During combat? If
-      yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>22.2 For how long:</p>'
-    branching: '[batlq22_dz]=''1'' '
 
 - rename: batlq22_age
   name: batlq22_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: During combat? If
-      yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>22. Age:</p>'
-    branching: ([batlq22_lc]='1' or [batlq22_dz]='1')
 
 - rename: batlq23
   name: batlq23
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Other activity?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '23 Other? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq23_lc
   name: batlq23_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Other activity? If
-      yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>23.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq23]=''1'' '
 
 - rename: batlq23_lct
   name: batlq23_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Other activity? If
-      yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>23.1 For how long:</p>'
-    branching: '[batlq23_lc]=''1'' '
 
 - rename: batlq23_dz
   name: batlq23_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever experienced a blow to the head: Other activity? If
-      yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>23.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq23]=''1'' '
 
 - rename: batlq23_dzt
   name: batlq23_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Other activity? If
-      yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>23.2 For how long:</p>'
-    branching: '[batlq23_dz]=''1'' '
 
 - rename: batlq23_age
   name: batlq23_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever experienced a blow to the head: Other activity? If
-      yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>23. Age:</p>'
-    branching: ([batlq23_lc]='1' or [batlq23_dz]='1')
 
 - rename: batlq24
   name: batlq24
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Concussion?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 24 Concussion?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq24_lc
   name: batlq24_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Concussion? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>24.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq24]=''1'' '
 
 - rename: batlq24_lct
   name: batlq24_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Concussion? If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>24.1 For how long:</p>'
-    branching: '[batlq24_lc]=''1'' '
 
 - rename: batlq24_dz
   name: batlq24_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Concussion? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>24.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq24]=''1'' '
 
 - rename: batlq24_dzt
   name: batlq24_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Concussion? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>24.2 For how long:</p>'
-    branching: '[batlq24_dz]=''1'' '
 
 - rename: batlq24_age
   name: batlq24_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Concussion? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>24. Age:</p>'
-    branching: ([batlq24_lc]='1' or [batlq24_dz]='1')
 
 - rename: batlq25
   name: batlq25
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Fracture of the head, neck, or face?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '25 Fracture of the head, neck, or face? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq25_lc
   name: batlq25_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Fracture of the head, neck, or face? If yes: Loss of consciousness/knocked
-      out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>25.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq25]=''1'' '
 
 - rename: batlq25_lct
   name: batlq25_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Fracture of the head, neck, or face? If yes: Loss of consciousness/knocked
-      out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>25.1 For how long:</p>'
-    branching: '[batlq25_lc]=''1'' '
 
 - rename: batlq25_dz
   name: batlq25_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Fracture of the head, neck, or face? If yes: Dazed and/or Memory
-      Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>25.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq25]=''1'' '
 
 - rename: batlq25_dzt
   name: batlq25_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Fracture of the head, neck, or face? If yes: Dazed and/or Memory
-      Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>25.2 For how long:</p>'
-    branching: '[batlq25_dz]=''1'' '
 
 - rename: batlq25_age
   name: batlq25_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Fracture of the head, neck, or face? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>25. Age:</p>'
-    branching: ([batlq25_lc]='1' or [batlq25_dz]='1')
 
 - rename: batlq26
   name: batlq26
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Seizures?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 26 Seizures?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq26_lc
   name: batlq26_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Seizures? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>26.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq26]=''1'' '
 
 - rename: batlq26_lct
   name: batlq26_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Seizures? If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>26.1 For how long:</p>'
-    branching: '[batlq26_lc]=''1'' '
 
 - rename: batlq26_dz
   name: batlq26_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Seizures? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>26.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq26]=''1'' '
 
 - rename: batlq26_dzt
   name: batlq26_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Seizures? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>26.2 For how long:</p>'
-    branching: '[batlq26_dz]=''1'' '
 
 - rename: batlq26_age
   name: batlq26_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Seizures? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>26. Age:</p>'
-    branching: ([batlq26_lc]='1' or [batlq26_dz]='1')
 
 - rename: batlq27
   name: batlq27
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: High fever?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '27 High fever? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq27_lc
   name: batlq27_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: High fever? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>27.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq27]=''1'' '
 
 - rename: batlq27_lct
   name: batlq27_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: High fever? If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>27.1 For how long:</p>'
-    branching: '[batlq27_lc]=''1'' '
 
 - rename: batlq27_dz
   name: batlq27_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: High fever? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>27.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq27]=''1'' '
 
 - rename: batlq27_dzt
   name: batlq27_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: High fever? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>27.2 For how long:</p>'
-    branching: '[batlq27_dz]=''1'' '
 
 - rename: batlq27_age
   name: batlq27_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: High fever? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>27. Age:</p>'
-    branching: ([batlq27_lc]='1' or [batlq27_dz]='1')
 
 - rename: batlq28
   name: batlq28
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Heart attack?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 28 Heart attack?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq28_lc
   name: batlq28_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Heart attack? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>28.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq28]=''1'' '
 
 - rename: batlq28_lct
   name: batlq28_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Heart attack? If yes: Loss of consciousness/knocked out for how
-      long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>28.1 For how long:</p>'
-    branching: '[batlq28_lc]=''1'' '
 
 - rename: batlq28_dz
   name: batlq28_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Heart attack? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>28.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq28]=''1'''
 
 - rename: batlq28_dzt
   name: batlq28_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Heart attack? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>28.2 For how long:</p>'
-    branching: '[batlq28_dz]=''1'''
 
 - rename: batlq28_age
   name: batlq28_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Heart attack? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>28. Age:</p>'
-    branching: ([batlq28_lc]='1' or [batlq28_dz]='1')
 
 - rename: batlq29
   name: batlq29
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Near drowning?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '29 Near drowning? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq29_lc
   name: batlq29_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Near drowning? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>29.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq29]=''1'''
 
 - rename: batlq29_lct
   name: batlq29_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Near drowning? If yes: Loss of consciousness/knocked out for how
-      long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>29.1 For how long:</p>'
-    branching: '[batlq29_lc]=''1'''
 
 - rename: batlq29_dz
   name: batlq29_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Near drowning? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>29.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq29]=''1'''
 
 - rename: batlq29_dzt
   name: batlq29_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Near drowning? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>29.2 For how long:</p>'
-    branching: '[batlq29_dz]=''1'''
 
 - rename: batlq29_age
   name: batlq29_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Near drowning? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>29. Age:</p>'
-    branching: ([batlq29_lc]='1' or [batlq29_dz]='1')
 
 - rename: batlq30
   name: batlq30
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Drug overdose?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 30 Drug overdose?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq30_lc
   name: batlq30_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Drug overdose? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>30.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq30]=''1'''
 
 - rename: batlq30_lct
   name: batlq30_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Drug overdose? If yes: Loss of consciousness/knocked out for how
-      long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>30.1 For how long:</p>'
-    branching: '[batlq30_lc]=''1'''
 
 - rename: batlq30_dz
   name: batlq30_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Drug overdose? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>30.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq30]=''1'''
 
 - rename: batlq30_dzt
   name: batlq30_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Drug overdose? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>30.2 For how long:</p>'
-    branching: '[batlq30_dz]=''1'''
 
 - rename: batlq30_age
   name: batlq30_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Drug overdose? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>30. Age:</p>'
-    branching: ([batlq30_lc]='1' or [batlq30_dz]='1')
 
 - rename: batlq31
   name: batlq31
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Poisoning?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '31 Poisoning? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq31_lc
   name: batlq31_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Poisoning? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>31.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq31]=''1'''
 
 - rename: batlq31_lct
   name: batlq31_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Poisoning? If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>31.1 For how long:</p>'
-    branching: '[batlq31_lc]=''1'''
 
 - rename: batlq31_dz
   name: batlq31_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Poisoning? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>31.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq31]=''1'''
 
 - rename: batlq31_dzt
   name: batlq31_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Poisoning? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>31.2 For how long:</p>'
-    branching: '[batlq31_dz]=''1'''
 
 - rename: batlq31_age
   name: batlq31_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Poisoning? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>31. Age:</p>'
-    branching: ([batlq31_lc]='1' or [batlq31_dz]='1')
 
 - rename: batlq32
   name: batlq32
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Hit by lightning?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 32 Hit by lightning?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq32_lc
   name: batlq32_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Hit by lightning? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>32.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq32]=''1'''
 
 - rename: batlq32_lct
   name: batlq32_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Hit by lightning? If yes: Loss of consciousness/knocked out for
-      how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>32.1 For how long:</p>'
-    branching: '[batlq32_lc]=''1'''
 
 - rename: batlq32_dz
   name: batlq32_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Hit by lightning? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>32.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq32]=''1'''
 
 - rename: batlq32_dzt
   name: batlq32_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Hit by lightning? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>32.2 For how long:</p>'
-    branching: '[batlq32_dz]=''1'''
 
 - rename: batlq32_age
   name: batlq32_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Hit by lightning? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>32. Age:</p>'
-    branching: ([batlq32_lc]='1' or [batlq32_dz]='1')
 
 - rename: batlq33
   name: batlq33
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Electrical power injury?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '33 Electrical power injury? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq33_lc
   name: batlq33_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Electrical power injury? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>33.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq33]=''1'''
 
 - rename: batlq33_lct
   name: batlq33_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Electrical power injury? If yes: Loss of consciousness/knocked out
-      for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>33.1 For how long:</p>'
-    branching: '[batlq33_lc]=''1'''
 
 - rename: batlq33_dz
   name: batlq33_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Electrical power injury? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>33.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq33]=''1'''
 
 - rename: batlq33_dzt
   name: batlq33_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Electrical power injury? If yes: Dazed and/or Memory Gap for how
-      long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>33.2 For how long:</p>'
-    branching: '[batlq33_dz]=''1'''
 
 - rename: batlq33_age
   name: batlq33_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Electrical power injury? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>33. Age:</p>'
-    branching: ([batlq33_lc]='1' or [batlq33_dz]='1')
 
 - rename: batlq34
   name: batlq34
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Gun shot injury?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 34 Gun shot injury?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq34_lc
   name: batlq34_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Gun shot injury? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>34.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq34]=''1'''
 
 - rename: batlq34_lct
   name: batlq34_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Gun shot injury? If yes: Loss of consciousness/knocked out for how
-      long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>34.1 For how long:</p>'
-    branching: '[batlq34_lc]=''1'''
 
 - rename: batlq34_dz
   name: batlq34_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Gun shot injury? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>34.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq34]=''1'''
 
 - rename: batlq34_dzt
   name: batlq34_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Gun shot injury? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>34.2 For how long:</p>'
-    branching: '[batlq34_dz]=''1'''
 
 - rename: batlq34_age
   name: batlq34_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Gun shot injury? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>34. Age:</p>'
-    branching: ([batlq34_lc]='1' or [batlq34_dz]='1')
 
 - rename: batlq35
   name: batlq35
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Stroke/brain hemorrhage?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '35 Stroke/brain hemorrhage? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq35_lc
   name: batlq35_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Stroke/brain hemorrhage? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>35.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq35]=''1'''
 
 - rename: batlq35_lct
   name: batlq35_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Stroke/brain hemorrhage? If yes: Loss of consciousness/knocked out
-      for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>35.1 For how long:</p>'
-    branching: '[batlq35_lc]=''1'''
 
 - rename: batlq35_dz
   name: batlq35_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Stroke/brain hemorrhage? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>35.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq35]=''1'''
 
 - rename: batlq35_dzt
   name: batlq35_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Stroke/brain hemorrhage? If yes: Dazed and/or Memory Gap for how
-      long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>35.2 For how long:</p>'
-    branching: '[batlq35_dz]=''1'''
 
 - rename: batlq35_age
   name: batlq35_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Stroke/brain hemorrhage? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>35. Age:</p>'
-    branching: ([batlq35_lc]='1' or [batlq35_dz]='1')
 
 - rename: batlq36
   name: batlq36
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Brain infection?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 36 Brain infection?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq36_lc
   name: batlq36_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Brain infection? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>36.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq36]=''1'''
 
 - rename: batlq36_lct
   name: batlq36_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Brain infection? If yes: Loss of consciousness/knocked out for how
-      long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>36.1 For how long:</p>'
-    branching: '[batlq36_lc]=''1'''
 
 - rename: batlq36_dz
   name: batlq36_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Brain infection? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>36.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq36]=''1'''
 
 - rename: batlq36_dzt
   name: batlq36_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Brain infection? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>36.2 For how long:</p>'
-    branching: '[batlq36_dz]=''1'''
 
 - rename: batlq36_age
   name: batlq36_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Brain infection? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>36. Age:</p>'
-    branching: ([batlq36_lc]='1' or [batlq36_dz]='1')
 
 - rename: batlq37
   name: batlq37
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Brain tumor?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '37 Brain tumor? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq37_lc
   name: batlq37_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Brain tumor? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>37.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq37]=''1'''
 
 - rename: batlq37_lct
   name: batlq37_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Brain tumor? If yes: Loss of consciousness/knocked out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>37.1 For how long:</p>'
-    branching: '[batlq37_lc]=''1'''
 
 - rename: batlq37_dz
   name: batlq37_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Brain tumor? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>37.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq37]=''1'''
 
 - rename: batlq37_dzt
   name: batlq37_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Brain tumor? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>37.2 For how long:</p>'
-    branching: '[batlq37_dz]=''1'''
 
 - rename: batlq37_age
   name: batlq37_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Brain tumor? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>37. Age:</p>'
-    branching: ([batlq37_lc]='1' or [batlq37_dz]='1')
 
 - rename: batlq38
   name: batlq38
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Choking where you passed out?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 38 Choking where you passed out?
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq38_lc
   name: batlq38_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Choking where you passed out? If yes: Loss of consciousness/knocked
-      out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>38.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq38]=''1'''
 
 - rename: batlq38_lct
   name: batlq38_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Choking where you passed out? If yes: Loss of consciousness/knocked
-      out for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>38.1 For how long:</p>'
-    branching: '[batlq38_lc]=''1'''
 
 - rename: batlq38_dz
   name: batlq38_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Choking where you passed out? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>38.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq38]=''1'''
 
 - rename: batlq38_dzt
   name: batlq38_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Choking where you passed out? If yes: Dazed and/or Memory Gap for
-      how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>38.2 For how long:</p>'
-    branching: '[batlq38_dz]=''1'''
 
 - rename: batlq38_age
   name: batlq38_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Choking where you passed out? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>38. Age:</p>'
-    branching: ([batlq38_lc]='1' or [batlq38_dz]='1')
 
 - rename: batlq39
   name: batlq39
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Other injury?'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '39 Other injury? '
-    choices:
-      1: 'Yes'
-      2: 'No'
 
 - rename: batlq39_lc
   name: batlq39_lc
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Other injury? If yes: Loss of consciousness/knocked out'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>39.1 Loss of consciousness/knocked out:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq39]=''1'''
 
 - rename: batlq39_lct
   name: batlq39_lct
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Other injury? If yes: Loss of consciousness/knocked out for how
-      long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>39.1 For how long:</p>'
-    branching: '[batlq39_lc]=''1'''
 
 - rename: batlq39_dz
   name: batlq39_dz
   source: hcpa
   recode:
     2: 0
-  nda:
-    type: Integer
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Other injury? If yes: Dazed and/or Memory Gap'
-    range:
-    - 0
-    - 1
-    - 97
-    notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
-    codes:
-      0: 'No'
-      1: 'Yes'
-      97: Unsure/Don't Know
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: '<p style=''margin-left: 40px''>39.2 Dazed and/or Memory Gap:</p>'
-    choices:
-      1: 'Yes'
-      2: 'No'
-    branching: '[batlq39]=''1'''
 
 - rename: batlq39_dzt
   name: batlq39_dzt
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Other injury? If yes: Dazed and/or Memory Gap for how long?'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 80px''>39.2 For how long:</p>'
-    branching: '[batlq39_dz]=''1'''
 
 - rename: batlq39_age
   name: batlq39_age
   source: hcpa
-  nda:
-    type: String
-    length: 100
-    description: 'Have you ever been hospitalized or seen in an emergency room for
-      because of: Other injury? If yes: Age'
-  redcap:
-    form: hcpa_block_1
-    type: text
-    label: '<p style=''margin-left: 40px''>39. Age:</p>'
-    branching: ([batlq39_lc]='1' or [batlq39_dz]='1')

@@ -26,692 +26,178 @@ elements:
   source:
   - hcpa
 
-
 - rename: ed1_blood
   name: bld_draw
   source: hcpa
-  nda:
-    type: Integer
-    description: BLOOD SAMPLES COLLECTED
-    range:
-    - 0
-    - 1
-    - -5
-    - -7
-    - -8
-    notes: 0=No; 1=Yes -8=DON'T KNOW; -7=REFUSED; -5=Presented, not answered
-    alias: bld_draw
-    codes:
-      0: 'No'
-      1: Yes -8=DON'T KNOW
-      -7: REFUSED
-      -5: Presented, not answered
-  redcap:
-    form: external_measures
-    section: <font size='+0.05'><center>Blood</center></font>
-    type: radio
-    label: <font size=2.5>Blood Draw:</font>
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: bld_core
   name: bld_core
   source: hcpa
-  nda:
-    type: Integer
-    description: CORE Blood Collected?
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: external_measures
-    type: radio
-    label: <font size=2.5>CORE Blood:</font>
-    choices:
-      1: 'Yes'
-      0: 'No'
-    branching: '[bld_draw]=''1'' '
-    alignment: RH
 
 - rename: bld_core_grn
   name: bld_core_grn
   source: hcpa
-  nda:
-    type: Integer
-    description: 'CORE: Number of Tubes Collected: Green Tubes'
-  redcap:
-    form: external_measures
-    type: radio
-    label: '<p style=''margin-left: 40px''>#Green Tubes</p>'
-    choices:
-      0: '0'
-      1: '1'
-      2: '2'
-    branching: '[bld_draw]=''1'' and ([bld_core]=''1'')'
-    alignment: RH
 
 - rename: biospc_8
   name: bld_core_ppl
   source: hcpa
-  nda:
-    type: Integer
-    description: Number of Purple tubes collected
-    alias: bld_core_ppl
-  redcap:
-    form: external_measures
-    type: radio
-    label: '<p style=''margin-left: 40px''>#Purple Tubes</p>'
-    choices:
-      0: '0'
-      1: '1'
-    branching: '[bld_draw]=''1'' and ([bld_core]=''1'')'
-    alignment: RH
 
 - rename: fasting
   name: bld_core_fast
   source: hcpa
-  nda:
-    type: Integer
-    description: fasting blood draw y/n
-    range:
-    - 0
-    - 1
-    - -7
-    notes: 0=No; 1=Yes; -7=Refused
-    alias: bld_core_fast
-    codes:
-      0: 'No'
-      1: 'Yes'
-      -7: Refused
-  redcap:
-    form: external_measures
-    type: radio
-    label: '<p style=''margin-left: 40px''>Fasting</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    branching: '[bld_draw]=''1'' and ([bld_core]=''1'')'
-    alignment: RH
 
 - rename: bld_core_snack
   name: bld_core_snack
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Fasting: Time of last meal/snack'
-    range:
-    - 0
-    - 1
-    notes: 1 = Same day ; 0 = Prior day
-    codes:
-      1: Same day
-      0: Prior day
-  redcap:
-    form: external_measures
-    type: radio
-    label: '<p style=''margin-left: 40px''>Time of last meal/snack</p>'
-    choices:
-      1: Same day
-      0: Prior day
-    branching: '[bld_draw]=''1'' and ([bld_core]=''1'')'
-    alignment: RH
 
 - rename: lmealtm
   name: bld_core_snacktime
   source: hcpa
-  nda:
-    type: String
-    length: 10
-    description: Time of last meal
-    alias: bld_core_snacktime,bsc_q05,mealtime
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>What time</p>'
-    validation: time
-    branching: '[bld_draw]=''1'' and ([bld_core]=''1'')'
 
 - rename: bld_core_spin
   name: bld_core_spin
   source: hcpa
-  nda:
-    type: Integer
-    description: Spin at 1000 - 1300G for 10 mins
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: external_measures
-    type: radio
-    label: '<p style=''margin-left: 40px''>Spin @ 1000 - 1300G for 10 mins</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    branching: '[bld_draw]=''1'' and ([bld_core]=''1'')'
-    alignment: RH
 
 - rename: bld_core_d2ph
   name: bld_core_d2ph
   source: hcpa
-  nda:
-    type: Integer
-    description: 'All Tubes Time from Draw to Processing: Hour(s):'
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 240px''>Hour(s):</p>'
-    validation: number
-    branching: '[bld_draw]=''1'' and ([bld_core]=''1'')'
 
 - rename: bld_core_d2pm
   name: bld_core_d2pm
   source: hcpa
-  nda:
-    type: Integer
-    description: 'All Tubes Time from Draw to Processing: Minute(s):'
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 240px''>Minute(s):</p>'
-    validation: number
-    branching: '[bld_draw]=''1'' and ([bld_core]=''1'')'
 
 - rename: bld_core_p2fh
   name: bld_core_p2fh
   source: hcpa
-  nda:
-    type: Integer
-    description: 'All Tubes Time from Processing to Freezing: Hour(s):'
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 240px''>Hour(s):</p>'
-    validation: number
-    branching: '[bld_draw]=''1'' and ([bld_core]=''1'')'
 
 - rename: bld_core_p2fm
   name: bld_core_p2fm
   source: hcpa
-  nda:
-    type: Integer
-    description: 'All Tubes Time from Processing to Freezing: Minute(s):'
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 240px''>Minute(s):</p>'
-    validation: number
-    branching: '[bld_draw]=''1'' and ([bld_core]=''1'')'
 
 - rename: bld_rucdr
   name: bld_rucdr
   source: hcpa
-  nda:
-    type: Integer
-    description: 'RUCDR Blood Collected?:'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: external_measures
-    type: radio
-    label: <font size=2.5>RUCDR Blood:</font>
-    choices:
-      1: 'Yes'
-      0: 'No'
-    branching: '[bld_draw]=''1'' '
-    alignment: RH
 
 - rename: biospc_6
   name: bld_rucdr_grn
   source: hcpa
-  nda:
-    type: Integer
-    description: Number of Yellow tubes collected
-    alias: bld_rucdr_grn,bld_rucdr_ylw
-  redcap:
-    form: external_measures
-    type: radio
-    label: '<p style=''margin-left: 40px''>#Yellow Tubes</p>'
-    choices:
-      0: '0'
-      1: '1'
-      2: '2'
-    branching: '[bld_draw]=''1'' and ([bld_rucdr]=''1'')'
-    alignment: RH
 
 - rename: biospc2_purple_tubes
   name: bld_rucdr_ppl
   source: hcpa
-  nda:
-    type: Float
-    description: num of purple tubes collected sample 2
-    alias: bld_rucdr_ppl
-  redcap:
-    form: external_measures
-    type: radio
-    label: '<p style=''margin-left: 40px''>#Purple Tubes</p>'
-    choices:
-      0: '0'
-      1: '1'
-    branching: '[bld_draw]=''1'' and ([bld_rucdr]=''1'')'
-    alignment: RH
 
 - rename: a1crs
   name: hba1c
   source: hcpa
-  nda:
-    type: Float
-    description: HbA1c Results
-    alias: hba1c
-  redcap:
-    form: external_measures
-    type: text
-    label: <font size=2.5>HbA1c:</font>
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=%'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: laba8
   name: hscrp
   source: hcpa
-  nda:
-    type: Float
-    description: Hscrp
-    alias: hscrp
-  redcap:
-    form: external_measures
-    type: text
-    label: <font size=2.5>hsCRP:</font>
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=mg/L'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: insomm
   name: insulin
   request: Please append "uU/mL" to insulin readings.
-  old_code: >-
-    studydata['insulin_num']=pd.to_numeric(studydata.insulin,errors='coerce');
-    studydata.loc[(studydata.insulin!='') & (studydata.insulin_num < 99999), 'insulin_new']=" uU/mL";
-    studydata.loc[studydata.insulin!='','insulin2']=studydata.insulin+studydata.insulin_new;
-    studydata.loc[studydata.insulin_num>99998,'insulin2']=studydata.insulin;
-    studydata=studydata.drop(columns=['insulin','insulin_num','insulin_new']).rename(columns={'insulin2':'insulin'});
+  old_code: studydata['insulin_num']=pd.to_numeric(studydata.insulin,errors='coerce');
+    studydata.loc[(studydata.insulin!='') & (studydata.insulin_num < 99999), 'insulin_new']="
+    uU/mL"; studydata.loc[studydata.insulin!='','insulin2']=studydata.insulin+studydata.insulin_new;
+    studydata.loc[studydata.insulin_num>99998,'insulin2']=studydata.insulin; studydata=studydata.drop(columns=['insulin','insulin_num','insulin_new']).rename(columns={'insulin2':'insulin'});
     studydata.insulin=studydata.insulin.astype(str).str.replace('nan','')
-  code: >-
-    return x.mask(x.notna(), X + ' uU/mL')
+  code: return x.mask(x.notna(), X + ' uU/mL')
   source: hcpa
-  nda:
-    type: String
-    length: 250
-    description: 'Insulin: Comments'
-    alias: insulin
-  redcap:
-    form: external_measures
-    type: text
-    label: <font size=2.5>Insulin:</font>
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=uU/mL'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: vitdlev
   name: vitamind
   source: hcpa
-  nda:
-    type: Integer
-    description: 25- vitamin D level (ng/mL)
-    alias: vitamind
-  redcap:
-    form: external_measures
-    type: text
-    label: <font size=2.5>Vitamin D:</font>
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=ng/mL'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: ls_albumin
   name: albumin
   source: hcpa
   recode:
     99999: -9
-  nda:
-    type: Float
-    description: 12. Albumin(g/dL)
-    range:
-    - 0::20.0
-    - -9
-    notes: -9=Unknown
-    alias: albumin
-    codes:
-      -9: Unknown
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Albumin:</p>'
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=g/dL'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: bp1_alk
   name: alkphos_total
   source: hcpa
   recode:
     99999: -9
-  nda:
-    type: Float
-    description: Liver ALK Phos
-    notes: -9=Unknown
-    alias: alkphos_total
-    codes:
-      -9: Unknown
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Alk Phos, Total:</p>'
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=IU/L'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: ls_alt
   name: alt_sgpt
   source: hcpa
   recode:
     99999: -9
-  nda:
-    type: Integer
-    description: 16. ALT(SGPT)(U/L)
-    notes: ' -9=Unknown;  -1=Normal; -2= <15'
-    alias: alt_sgpt
-    codes:
-      -9: Unknown
-      -1: Normal
-      -2: <15
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>ALT (SGPT):</p>'
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=IU/L'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: ls_ast
   name: ast_sgot
   source: hcpa
   recode:
     99999: -9
-  nda:
-    type: Integer
-    description: 15. AST(SGOT)(U/L)
-    notes: ' -9=Unknown;  -1=Normal'
-    alias: ast_sgot
-    codes:
-      -9: Unknown
-      -1: Normal
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>AST (SGOT):</p>'
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=IU/L'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: ls_calcium
   name: calcium
   source: hcpa
   recode:
     99999: -9
-  nda:
-    type: Float
-    description: 17. Calcium(mg/dL)
-    range:
-    - 0::100.0
-    - -9
-    notes: ' -9=Unknown'
-    alias: calcium
-    codes:
-      -9: Unknown
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Calcium:</p>'
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=mg/dL'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: chloride
   name: chloride
   source: hcpa
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Chloride:</p>'
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=mmol/L'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: ls_co2
   name: co2content
   source: hcpa
   recode:
     99999: -9
-  nda:
-    type: Float
-    description: 7. CO2 Content(mmol/L)
-    range:
-    - 0::50
-    - -9
-    notes: -9=Unknown
-    alias: co2content
-    codes:
-      -9: Unknown
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>CO2 Content:</p>'
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=mmol/L'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: creatinine
   name: creatinine
   source: hcpa
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Creatinine:</p>'
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=mg/dL'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: glucose
   name: glucose
   source: hcpa
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Glucose:</p>'
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=mg/dL'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: potassium
   name: potassium
   source: hcpa
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Potassium:</p>'
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=mmol/L'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: sodium
   name: sodium
   source: hcpa
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Sodium:</p>'
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=mmol/L'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: ls_bilirubin
   name: totalbilirubin
   source: hcpa
   recode:
     99999: -9
-  nda:
-    type: Float
-    description: 13. Bilirubin, Total(mg/dL)
-    range:
-    - 0::9.9
-    - -9
-    notes: ' -9=Unknown'
-    alias: totalbilirubin
-    codes:
-      -9: Unknown
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Total Bilirubin:</p>'
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=mg/dL'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: ls_totprotein
   name: totalprotein
   source: hcpa
   recode:
     99999: -9
-  nda:
-    type: Float
-    description: 11. Total Protein(g/dL)
-    range:
-    - 0::20.0
-    - -9
-    notes: ' -9=Unknown'
-    alias: totalprotein
-    codes:
-      -9: Unknown
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Total Protein:</p>'
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=g/dL'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: ls_ureanitrogen
   name: ureanitrogen
   source: hcpa
   recode:
     99999: -9
-  nda:
-    type: Float
-    description: 10. Urea Nitrogen(mg/dL)
-    range:
-    - 0::70
-    - -9
-    notes: ' -9=unknown'
-    alias: ureanitrogen
-    codes:
-      -9: unknown
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Urea Nitrogen:</p>'
-    note: ' ###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity
-      not sufficient); Units=mg/dL'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: friedewald_ldl
   name: friedewald_ldl
   source: hcpa
-  nda:
-    type: Float
-    description: 'Friedewald LDL Cholesterol: '
-    notes: 99999 for QNS(quantity not sufficient); Units=mg/dL
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Friedewald LDL Cholesterol: </p>'
-    note: '###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity not
-      sufficient); Units=mg/dL'
-    validation: number
-    branching: '[bld_draw]=''1'' '
 
 - rename: laba5
   name: hdl
   source: hcpa
   recode:
     99999: -9
-  nda:
-    type: Float
-    description: Hdl Cholesterol (Mg/Dl)
-    notes: ' -9=Unknown'
-    alias: hdl
-    codes:
-      -9: Unknown
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Direct HDL Cholesterol:</p>'
-    note: '###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity not
-      sufficient); Units=mg/dL'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: rsptc_no
   name: cholesterol
   source: hcpa
   recode:
     99999: -9
-  nda:
-    type: Float
-    description: Blood value - Total Cholesterol (mg/dL)
-    notes: ' -9=Unknown'
-    alias: cholesterol
-    codes:
-      -9: Unknown
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Total Cholesterol:</p>'
-    note: '###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity not
-      sufficient); Units=mg/dL'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: rsptrig_no
   name: triglyceride
@@ -719,201 +205,62 @@ elements:
   source: hcpa
   recode:
     99999: -9
-  nda:
-    type: Float
-    description: Blood value - Triglycerides (mg/dL)
-    notes: ' -9=Unknown'
-    alias: triglyceride
-    codes:
-      -9: Unknown
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Triglyceride:</p>'
-    note: '###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity not
-      sufficient); Units=mg/dL'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: laba6
   name: ldl
   source: hcpa
   recode:
     99999: -9
-  nda:
-    type: Integer
-    description: Ldl Cholesterol (Mg/Dl)
-    notes: ' -9=Unknown;  -1=Normal'
-    alias: ldl
-    codes:
-      -9: Unknown
-      -1: Normal
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Direct LDL Cholesterol
-
-      (collected only if Friedewald LDL invalid):</p>'
-    note: '###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity not
-      sufficient); Units=mg/dL'
-    validation: number_2dp
-    branching: '[friedewald_ldl]=''99999'''
 
 - rename: comments
   name: ldl_notes
   request: Please combine 'ldl_notes' and 'blood_notes' in one column using either
     name. Please also label which response within this column was which.
   source: hcpa
-  nda:
-    type: String
-    length: 4000
-    description: Comments about assessment
-    alias: blood_notes,ldl_notes,notes,salisaliva_notes
-  redcap:
-    form: external_measures
-    type: notes
-    label: '<p style=''margin-left: 40px''>Direct LDL Cholesterol Notes:</p>'
-    branching: '[friedewald_ldl]=''99999'''
 
 - rename: comments
   name: blood_notes
   request: Please combine 'ldl_notes' and 'blood_notes' in one column using either
     name. Please also label which response within this column was which.
   source: hcpa
-  nda:
-    type: String
-    length: 4000
-    description: Comments about assessment
-    alias: blood_notes,ldl_notes,notes,salisaliva_notes
-  redcap:
-    form: external_measures
-    type: notes
-    label: <font size=2.5>Notes:</font>
 
 - rename: festrs
   name: estradiol
   source: hcpa
-  nda:
-    type: Float
-    description: Hormonal Measures Female Estradiol Results
-    alias: estradiol
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Estradiol:</p>'
-    note: '###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity not
-      sufficient); units=pg/ml'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: estradiol_unit
   name: estradiol
-  request: >-
-    Please add the "estradiol_unit" column and fill each cell with "pg/ml"
+  request: Please add the "estradiol_unit" column and fill each cell with "pg/ml"
     where data exist for "estradiol".
   source: hcpa
-  code: >-
-    return x.mask(x.notna(), "pg/ml")
-  nda:
-    type: String
-    length: 10
-    description: Unit for the Estradiol blood test result
+  code: return x.mask(x.notna(), "pg/ml")
 
 - rename: rsptest_no
   name: testosterone
   source: hcpa
-  nda:
-    type: Float
-    description: Blood value - Testosterone (ng/dL)
-    alias: testosterone
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Testosterone:</p>'
-    note: '###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity not
-      sufficient); units=ng/ml'
-    validation: number_3dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: lh
   name: lh
   source: hcpa
-  nda:
-    type: Float
-    description: LH blood test result
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Lh:</p>'
-    note: '###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity not
-      sufficient); units=miu/ml'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: lh_unit
   name: lh
   request: Please add the column 'lh_unit' and fill each cell with "miu/ml" where
     data exist for 'lh'.
   source: hcpa
-  code: >-
-    return x.mask(x.notna(), "miu/ml")
-  nda:
-    type: String
-    length: 10
-    description: Unit for the LH blood test result
+  code: return x.mask(x.notna(), "miu/ml")
 
 - rename: fsh
   name: fsh
   source: hcpa
-  nda:
-    type: Float
-    description: FSH blood test result
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 40px''>Fsh:</p>'
-    note: '###.## (to the hundreds and 2 decimal places); 99999 for QNS(quantity not
-      sufficient); units=miu/ml'
-    validation: number_2dp
-    branching: '[bld_draw]=''1'' '
 
 - rename: fsh_unit
   name: fsh
   request: Please add the column 'fsh_unit' and fill each cell with "miu/ml" where
     data exist for 'fsh'.
   source: hcpa
-  code: >-
-    return x.mask(x.notna(), "miu/ml")
-  nda:
-    type: String
-    length: 10
-    description: Unit for the FSH blood test result
+  code: return x.mask(x.notna(), "miu/ml")
 
 - rename: ed1_saliva
   name: bld_rucdr_saliva
   source: hcpa
-  nda:
-    type: Integer
-    description: SALIVA SAMPLE COLLECTED
-    range:
-    - 0
-    - 1
-    - -5
-    - -7
-    - -8
-    notes: 0=No; 1=Yes -8=DON'T KNOW; -7=REFUSED; -5=Presented, not answered
-    alias: bld_rucdr_saliva
-    codes:
-      0: 'No'
-      1: 'Yes'
-      -8: DON'T KNOW
-      -7: REFUSED
-      -5: Presented, not answered
-  redcap:
-    form: external_measures
-    type: radio
-    label: <font size=2.5>Saliva</font>
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH

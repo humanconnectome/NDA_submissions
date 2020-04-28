@@ -31,127 +31,29 @@ elements:
   - hcpa
   - ssaga
 
-
 - rename: sf1
   name: mh1
   source: ssaga
-  nda:
-    type: Integer
-    description: 'In general, would you say your health is:'
-    range:
-    - 1::5
-    notes: 1= Excellent; 2= Very Good; 3= Good; 4= Fair; 5= Poor
-    alias: mh1
-    codes:
-      1: Excellent
-      2: Very Good
-      3: Good
-      4: Fair
-      5: Poor
-  redcap:
-    form: ssaga
-    section: <font size="+0.5"><center>MEDICAL HISTORY</center></font>
-    type: radio
-    label: "<p>MH1 \nNow I have some questions about your physical health and medical\
-      \ history.  First, at the present time, would you say your health is excellent,\
-      \ very good, good, fair, or poor?</p>"
-    choices:
-      1: EXCELLENT
-      2: VERY GOOD
-      3: GOOD
-      4: FAIR
-      5: POOR
 
 - rename: mh2
   name: mh2
   source: ssaga
-  nda:
-    type: Integer
-    description: Has your health always been at the current rating, or has it been
-      better or worse?
-    range:
-    - 1
-    - 2
-    - 5
-    - 6
-    notes: 1 = NO, WORSE ; 2 = NO, BETTER ; 5 = YES, SAME ; 6 = BOTH BETTER & WORSE
-    codes:
-      1: NO, WORSE
-      2: NO, BETTER
-      5: YES, SAME
-      6: BOTH BETTER & WORSE
-  redcap:
-    form: ssaga
-    type: radio
-    label: "<p>MH2 \nHas your health always been [mh1], or has it been better or worse?</p>"
-    choices:
-      1: NO, WORSE
-      2: NO, BETTER
-      5: YES, SAME
-      6: BOTH BETTER & WORSE
 
 - rename: mh4a
   name: mh4a
   source: ssaga
-  nda:
-    type: Integer
-    description: How many times have you been in a hospital overnight (including surgery
-      and pregnancy), excluding psychiatric or substance abuse treatment?
-  redcap:
-    form: ssaga
-    type: text
-    label: '<p style="margin-left: 40px">A. How many times have you been in a hospital
-      overnight (including surgery and pregnancy), <u>excluding</u> psychiatric or
-      substance abuse treatment?</p>'
-    note: number of times
-    validation: number
 
 - rename: tosurg
   name: mh4b
   source: ssaga
-  nda:
-    type: Integer
-    description: Number of outpatient surgery
-    alias: mh4b
-  redcap:
-    form: ssaga
-    type: text
-    label: '<p style="margin-left: 40px">B. How many times have you had surgery when
-      you did <u>not</u> have to stay in a hospital overnight (that is, outpatient
-      surgery)?</p>'
-    note: number of times
-    validation: number
 
 - rename: baseline_m_008
   name: mh4c
   source: ssaga
-  nda:
-    type: Integer
-    description: In the past six months, how many emergency room visits were for medical
-      problems not related to a psychiatric or mental health problem?
-    alias: mh4c
-  redcap:
-    form: ssaga
-    type: text
-    label: '<p style="margin-left: 40px">C. How many times have you been examined
-      or treated in the emergency room because of an accident or injury?</p>'
-    note: number of times
-    validation: number
 
 - rename: mh5
   name: mh5
   source: ssaga
-  nda:
-    type: Integer
-    description: In the last 6 months, how many visits have you made to a doctor,
-      clinic, or emergency room for your physical health?  DO NOT COUNT CHIROPRACTORS.
-  redcap:
-    form: ssaga
-    type: text
-    label: "<p>MH5 \nIn the last 6 months, how many visits have you made to a doctor,\
-      \ clinic, or emergency room for your physical health? \nDO NOT COUNT CHIROPRACTORS.</p>"
-    note: number of visits
-    validation: number
 
 - rename: mh6a1
   name: mh6a1
@@ -160,26 +62,6 @@ elements:
     5: 1
     1: 0
   source: ssaga
-  nda:
-    type: Integer
-    description: 'Have you ever taken any medications prescribed to you by a doctor
-      for 12 months or longer for the following reasons: DO NOT COUNT OTC. - To make
-      you feel less nervous?'
-    range:
-    - 0
-    - 1
-    notes: 0 = No; 1 = Yes
-    codes:
-      0: 'No'
-      1: 'Yes'
-  redcap:
-    form: ssaga
-    type: radio
-    label: '<p style="margin-left: 80px">1. To make you feel less nervous?</p>'
-    choices:
-      1: 'No'
-      5: 'Yes'
-    alignment: RH
 
 - rename: mh6a2
   name: mh6a2
@@ -188,26 +70,6 @@ elements:
     5: 1
     1: 0
   source: ssaga
-  nda:
-    type: Integer
-    description: 'Have you ever taken any medications prescribed to you by a doctor
-      for 12 months or longer for the following reasons: DO NOT COUNT OTC. - To help
-      you sleep?'
-    range:
-    - 0
-    - 1
-    notes: 0 = No; 1 = Yes
-    codes:
-      0: 'No'
-      1: 'Yes'
-  redcap:
-    form: ssaga
-    type: radio
-    label: '<p style="margin-left: 80px">2. To help you sleep?</p>'
-    choices:
-      1: 'No'
-      5: 'Yes'
-    alignment: RH
 
 - rename: mh6a3
   name: mh6a3
@@ -216,26 +78,6 @@ elements:
     5: 1
     1: 0
   source: ssaga
-  nda:
-    type: Integer
-    description: 'Have you ever taken any medications prescribed to you by a doctor
-      for 12 months or longer for the following reasons: DO NOT COUNT OTC. - To feel
-      less depressed?'
-    range:
-    - 0
-    - 1
-    notes: 0 = No; 1 = Yes
-    codes:
-      0: 'No'
-      1: 'Yes'
-  redcap:
-    form: ssaga
-    type: radio
-    label: '<p style="margin-left: 80px">3. To feel less depressed?</p>'
-    choices:
-      1: 'No'
-      5: 'Yes'
-    alignment: RH
 
 - rename: mh6a4
   name: mh6a4
@@ -244,25 +86,6 @@ elements:
     5: 1
     1: 0
   source: ssaga
-  nda:
-    type: Integer
-    description: 'Have you ever taken any medications prescribed to you by a doctor
-      for 12 months or longer for the following reasons: DO NOT COUNT OTC. - For headaches?'
-    range:
-    - 0
-    - 1
-    notes: 0 = No; 1 = Yes
-    codes:
-      0: 'No'
-      1: 'Yes'
-  redcap:
-    form: ssaga
-    type: radio
-    label: '<p style="margin-left: 80px">4. For headaches?</p>'
-    choices:
-      1: 'No'
-      5: 'Yes'
-    alignment: RH
 
 - rename: mh6a5
   name: mh6a5
@@ -271,26 +94,6 @@ elements:
     5: 1
     1: 0
   source: ssaga
-  nda:
-    type: Integer
-    description: 'Have you ever taken any medications prescribed to you by a doctor
-      for 12 months or longer for the following reasons: DO NOT COUNT OTC. - To have
-      more energy?'
-    range:
-    - 0
-    - 1
-    notes: 0 = No; 1 = Yes
-    codes:
-      0: 'No'
-      1: 'Yes'
-  redcap:
-    form: ssaga
-    type: radio
-    label: '<p style="margin-left: 80px">5. To have more energy?</p>'
-    choices:
-      1: 'No'
-      5: 'Yes'
-    alignment: RH
 
 - rename: mh6a6
   name: mh6a6
@@ -299,27 +102,6 @@ elements:
     5: 1
     1: 0
   source: ssaga
-  nda:
-    type: Integer
-    description: 'Have you ever taken any medications prescribed to you by a doctor
-      for 12 months or longer for the following reasons: DO NOT COUNT OTC. - Women
-      Only: For birth control?'
-    range:
-    - 0
-    - 1
-    notes: 0 = No; 1 = Yes
-    codes:
-      0: 'No'
-      1: 'Yes'
-  redcap:
-    form: ssaga
-    type: radio
-    label: '<p style="margin-left: 80px">6. Women Only: For birth control?</p>'
-    choices:
-      1: 'No'
-      5: 'Yes'
-    branching: '[dm1]=''2'''
-    alignment: RH
 
 - rename: mh6a7
   name: mh6a7
@@ -328,300 +110,67 @@ elements:
     5: 1
     1: 0
   source: ssaga
-  nda:
-    type: Integer
-    description: 'Have you ever taken any medications prescribed to you by a doctor
-      for 12 months or longer for the following reasons: DO NOT COUNT OTC. - Containing
-      steroids?'
-    range:
-    - 0
-    - 1
-    notes: 0 = No; 1 = Yes
-    codes:
-      0: 'No'
-      1: 'Yes'
-  redcap:
-    form: ssaga
-    type: radio
-    label: '<p style="margin-left: 80px">7. Containing steroids?</p>'
-    choices:
-      1: 'No'
-      5: 'Yes'
-    alignment: RH
 
 - rename: comments_misc
   name: mh_notes
   source: ssaga
-  nda:
-    type: String
-    length: 4000
-    description: Miscellaneous comments on study, interview, methodology relevant
-      to this form data
-    alias: comments,mh_notes
-  redcap:
-    form: ssaga
-    type: notes
-    label: <p>MEDICAL HISTORY NOTES:</p>
 
 - rename: dental1
   name: dental1
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Do you currently have any of the following dental hardware?: Lower
-      Retainer'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: external_measures
-    type: radio
-    label: '<p style=''margin-left: 40px''>Lower Retainer: </p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: dental2
   name: dental2
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Do you currently have any of the following dental hardware?: Lower
-      Spacer'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: external_measures
-    type: radio
-    label: '<p style=''margin-left: 40px''>Lower Spacer: </p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: dental2_1
   name: dental2_1
   source: hcpa
-  nda:
-    type: String
-    length: 30
-    description: 'Lower Spacer: If yes: How many?'
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 80px''>If yes: How many?</p>'
-    validation: number
-    branching: '[dental2]=''1'''
 
 - rename: dental3
   name: dental3
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Do you currently have any of the following dental hardware?: Metal
-      fillings (amalgam, silver, gold)? '
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: external_measures
-    type: radio
-    label: '<p style=''margin-left: 40px''>Metal fillings (amalgam, silver, gold)?
-      </p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: dental3_1
   name: dental3_1
   source: hcpa
-  nda:
-    type: String
-    length: 30
-    description: Metal fillings (amalgam, silver, gold)? If Yes, How many on top?
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 80px''>If Yes, How many on top?</p>'
-    validation: number
-    branching: '[dental3]=''1'''
 
 - rename: dental3_2
   name: dental3_2
   source: hcpa
-  nda:
-    type: String
-    length: 30
-    description: Metal fillings (amalgam, silver, gold)? If Yes, How many on bottom?
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 80px''>If Yes, How many on bottom?</p>'
-    validation: number
-    branching: '[dental3]=''1'''
 
 - rename: dental4
   name: dental4
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Do you currently have any of the following dental hardware?: Crowns? '
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: external_measures
-    type: radio
-    label: '<p style=''margin-left: 40px''>Crowns? </p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: dental4_1
   name: dental4_1
   source: hcpa
-  nda:
-    type: String
-    length: 30
-    description: Crowns? If Yes, How many on top?
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 80px''>If Yes, How many on top?</p>'
-    validation: number
-    branching: '[dental4]=''1'''
 
 - rename: dental4_2
   name: dental4_2
   source: hcpa
-  nda:
-    type: String
-    length: 30
-    description: Crowns? If Yes, How many on bottom?
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 80px''>If Yes, How many on bottom?</p>'
-    validation: number
-    branching: '[dental4]=''1'''
 
 - rename: dental5
   name: dental5
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Do you currently have any of the following dental hardware?: Gold
-      teeth? '
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: external_measures
-    type: radio
-    label: '<p style=''margin-left: 40px''>Gold teeth? </p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: dental5_1
   name: dental5_1
   source: hcpa
-  nda:
-    type: String
-    length: 30
-    description: Gold teeth? If Yes, How many on top?
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 80px''>If Yes, How many on top?</p>'
-    validation: number
-    branching: '[dental5]=''1'''
 
 - rename: dental5_2
   name: dental5_2
   source: hcpa
-  nda:
-    type: String
-    length: 30
-    description: Gold teeth? If Yes, How many on bottom?
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 80px''>If Yes, How many on bottom?</p>'
-    validation: number
-    branching: '[dental5]=''1'''
 
 - rename: dental6
   name: dental6
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Do you currently have any of the following dental hardware?: Any
-      other metal posts, implants or anything else? '
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: external_measures
-    type: radio
-    label: '<p style=''margin-left: 40px''>Any other metal posts, implants or anything
-      else? </p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: dental6_1
   name: dental6_1
   source: hcpa
-  nda:
-    type: String
-    length: 60
-    description: Any other metal posts, implants or anything else? If Yes, What?
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 80px''>If Yes, What?</p>'
-    branching: '[dental6]=''1'''
 
 - rename: dental6_2
   name: dental6_2
   source: hcpa
-  nda:
-    type: String
-    length: 50
-    description: Any other metal posts, implants or anything else? If Yes, Where?
-  redcap:
-    form: external_measures
-    type: text
-    label: '<p style=''margin-left: 80px''>If Yes, Where?</p>'
-    branching: '[dental6]=''1'''

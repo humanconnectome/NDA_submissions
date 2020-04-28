@@ -32,35 +32,11 @@ elements:
   code: >-
     return "Older Adult (60 and above): Past 2 months"
   source: hcpa
-  nda:
-    type: String
-    length: 121
-    description: Form used/assessment name
 
 - rename: oasr_ppl3
   name: oasr_ppl3
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: I have difficulty getting things done
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: 3. I have difficulty getting things done
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr2_2
   name: oasr_ppl7
@@ -74,33 +50,6 @@ elements:
   code: >-
     return x.fillna(-99);
     raise Exception("Programmatically check for null: -99")
-  nda:
-    type: Integer
-    description: ASR 8 I have trouble concentrating or paying attention for long
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr2_8,asr8,asr_q08_p,oasr_ppl7,q8
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: 7. I have trouble concentrating or paying attention
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr2_3
   name: oasr_ppl8
@@ -112,48 +61,10 @@ elements:
     2: 3
     null: -99
   code: return x.fillna(-99)
-  nda:
-    type: Integer
-    description: ASR 9 I can't get my mind off of certain thoughts
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr2_9,asr9,asr_q09_p,oasr_ppl8,q9
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: 8. I can't get my mind off certain thoughts
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr2_3_text
   name: oasr_ppl8_des
   source: hcpa
-  nda:
-    type: String
-    length: 500
-    description: 'ASR 9 Describe thoughts:'
-    alias: asr2_9_text,asr9des,oasr_ppl8_des
-  redcap:
-    form: hcpa_block_2
-    type: notes
-    label: '<p style=''margin-left: 40px''>8. Describe:</p>'
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
-      and ([oasr_ppl8] = '1' or [oasr_ppl8] = '2' )
 
 - rename: asr2_4
   name: oasr_ppl9
@@ -164,47 +75,10 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 10 I have trouble sitting still
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr10,asr2_10,asr_q10_p,oasr_ppl9,q10
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: 9. I have trouble sitting still
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: oasr_ppl9_des
   name: oasr_ppl9_des
   source: hcpa
-  nda:
-    type: String
-    length: 250
-    description: 'I have difficulty getting things done: Describe:'
-  redcap:
-    form: hcpa_block_2
-    type: notes
-    label: '<p style=''margin-left: 40px''>9. Describe:</p>'
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
-      and ([oasr_ppl9] = '1' or [oasr_ppl9] = '2' )
 
 - rename: asr3_1
   name: oasr_ppl12
@@ -215,33 +89,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 13 I feel confused or in a fog
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr13,asr3_13,asr_q13_p,oasr_ppl12,q13
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '12. I feel confused or in a fog '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr3_2
   name: oasr_ppl13
@@ -252,33 +99,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 14 I cry a lot
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr14,asr3_14,asr_q14_p,oasr_ppl13,q14
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '13. I cry a lot '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr3_4
   name: oasr_ppl15
@@ -289,58 +109,11 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 16 I am mean to others
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr16,asr3_16,asr_q16_p,oasr_ppl15,q16
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '15. I am mean to others '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: oasr_ppl16
   name: oasr_ppl16
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: 'I sit around and don''t do much '
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '16. I sit around and don''t do much '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr3_6
   name: oasr_ppl17
@@ -351,83 +124,16 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 18 I deliberately try to hurt or kill myself
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr18,asr3_18,asr_q18_p,oasr_ppl17,q18
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '17. I deliberately try to hurt or kill myself '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: oasr_ppl19
   name: oasr_ppl19
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: 'I damage or destroy things '
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '19. I damage or destroy things '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: oasr_ppl20
   name: oasr_ppl20
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: 'I forget people''s names '
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '20. I forget people''s names '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr9_4
   name: oasr_ppl23
@@ -438,33 +144,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 52 I feel too guilty
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr52,asr9_52,asr_q52_p,oasr_ppl23,q52
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '23. I feel too guilty '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr5_5
   name: oasr_ppl26
@@ -475,48 +154,10 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 29 I am afraid of certain animals, situations, or places
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr29,asr5_29,asr_q29_p,oasr_ppl26,q29
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '26. I am afraid of certain situations or places: '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr5_5_text
   name: oasr_ppl26_des
   source: hcpa
-  nda:
-    type: String
-    length: 500
-    description: 'ASR 29 Describe:'
-    alias: asr29des,asr5_29_text,oasr_ppl26_des
-  redcap:
-    form: hcpa_block_2
-    type: notes
-    label: '<p style=''margin-left: 40px''>26. Describe:</p>'
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
-      and ([oasr_ppl26] = '1' or [oasr_ppl26] = '2')
 
 - rename: asr6_4
   name: oasr_ppl31
@@ -527,33 +168,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 34 I feel that others are out to get me
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr34,asr6_34,asr_q34_p,oasr_ppl31,q34
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '31. I feel that others are out to get me '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr6_5
   name: oasr_ppl32
@@ -564,58 +178,11 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 35 I feel worthless or inferior
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr35,asr6_35,asr_q35_p,oasr_ppl32,q35
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '32. I feel worthless or inferior '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: oasr_ppl33
   name: oasr_ppl33
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: 'I feel sick a lot of the time '
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '33. I feel sick a lot of the time '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr21_4
   name: oasr_ppl34
@@ -626,58 +193,11 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 115 I feel restless or fidgety
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr115,asr21_124,asr_q115_p,oasr_ppl34,q115
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '34. I feel restless or fidgety '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: oasr_ppl35
   name: oasr_ppl35
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: I like to have things my own way
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: 35. I like to have things my own way
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr7_4
   name: oasr_ppl36
@@ -688,48 +208,10 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 40 I hear sounds or voices that other people think aren't there
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr40,asr7_40,asr_q40_p,oasr_ppl36,q40
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '36. I hear sounds or voices that others think are not there '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr7_4_text
   name: oasr_ppl36_des
   source: hcpa
-  nda:
-    type: String
-    length: 500
-    description: 'ASR 40 Describe:'
-    alias: asr40des,asr7_40_text,oasr_ppl36_des
-  redcap:
-    form: hcpa_block_2
-    type: notes
-    label: '<p style=''margin-left: 40px''>36. Describe:</p>'
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
-      and ([oasr_ppl36] = '1' or [oasr_ppl36] = '2' )
 
 - rename: asr7_5
   name: oasr_ppl37
@@ -740,58 +222,11 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 41 I am impulsive or act without thinking
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr41,asr7_41,asr_q41_p,oasr_ppl37,q41
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '37. I act without thinking '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: oasr_ppl39
   name: oasr_ppl39
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: 'I do things that others don''t like '
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '39. I do things that others don''t like '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr8_3
   name: oasr_ppl40
@@ -802,33 +237,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 45 I am nervous or tense
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr45,asr8_45,asr_q45_p,oasr_ppl40,q45
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '40. I am nervous or tense '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr8_6
   name: oasr_ppl43
@@ -839,33 +247,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 48 I am not liked by others
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr48,asr8_48,asr_q48_p,oasr_ppl43,q48
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '43. I am not liked by others '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr9_2
   name: oasr_ppl45
@@ -876,58 +257,11 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 50 I am too fearful or anxious
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr50,asr9_50,asr_q50_p,oasr_ppl45,q50
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '45. I am fearful or anxious '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: oasr_ppl47
   name: oasr_ppl47
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: 'I am bothered by a guilty conscience '
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '47. I am bothered by a guilty conscience '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr9_6
   name: oasr_ppl48
@@ -938,33 +272,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 54 I feel tired without good reason
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr54,asr9_54,asr_q54_p,oasr_ppl48,q54
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '48. I feel tired without good reason '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr10_3
   name: oasr_ppl49_1
@@ -975,34 +282,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 56 a. Aches and pains (not stomach or headaches)
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr10_57,asr56a,asr_q56a_p,oasr_ppl49_1,q56a
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>49a. I have aches or pains (not stomach
-      or headaches) </p>'
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr10_4
   name: oasr_ppl49_2
@@ -1013,33 +292,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 56 b. Headaches
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr10_58,asr56b,asr_q56b_p,oasr_ppl49_2,q56b
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>49b. I have headaches</p> '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr10_5
   name: oasr_ppl49_3
@@ -1050,33 +302,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 56 c. Nausea, feel sick
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr10_59,asr56c,asr_q56c_p,oasr_ppl49_3,q56c
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>49c. I feel nauseous or sick</p> '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr10_6
   name: oasr_ppl49_4
@@ -1087,48 +312,10 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 56 d. Problems with eyes (not if corrected by glasses)
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr10_60,asr56d,asr_q56d_p,oasr_ppl49_4,q56d
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>49d. I can''t see well, even with glasses</p>'
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr10_6_text
   name: oasr_ppl49_4_des
   source: hcpa
-  nda:
-    type: String
-    length: 500
-    description: ASR 56 dd. Describe
-    alias: asr10_60_text,asr56ddes,oasr_ppl49_4_des
-  redcap:
-    form: hcpa_block_2
-    type: notes
-    label: '<p style=''margin-left: 60px''>49d. Describe:</p>'
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
-      and ([oasr_ppl49_4] = '1' or [oasr_ppl49_4] = '2' )
 
 - rename: asr11_1
   name: oasr_ppl49_5
@@ -1139,33 +326,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 56 e. Rashes or other skin problems
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr11_61,asr56e,asr_q56e_p,oasr_ppl49_5,q56e
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>49e. I have itching or rashes </p>'
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr11_2
   name: oasr_ppl49_6
@@ -1176,33 +336,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 56 f. Stomachaches
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr11_62,asr56f,asr_q56f_p,oasr_ppl49_6,q56f
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>49f. I have stomachaches or cramps </p>'
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr11_3
   name: oasr_ppl49_7
@@ -1213,33 +346,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 56 g. Vomiting, throwing up
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr11_63,asr56g,asr_q56g_p,oasr_ppl49_7,q56g
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>49g. I vomit or throw up </p>'
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr11_4
   name: oasr_ppl49_8
@@ -1250,33 +356,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 56 h. Heart pounding or racing
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr11_64,asr56h,asr_q56h_p,oasr_ppl49_8,q56h
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>49h. My heart pounds or races</p> '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr11_5
   name: oasr_ppl49_9
@@ -1287,100 +366,20 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 56 i. Numbness or tingling in body parts
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr11_65,asr56i,asr_q56i_p,oasr_ppl49_9,q56i
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>49i. Parts of my body tingle or feel numb
-      </p>'
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: oasr_ppl49_10
   name: oasr_ppl49_10
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: 'I am short of breath or I breathe hard '
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>49j. I am short of breath or I breathe
-      hard </p>'
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: oasr_ppl49_11
   name: oasr_ppl49_11
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: Other physical problems not listed
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>49k. Other physical problems not listed</p>'
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: cbcl56h_des
   name: oasr_ppl49_11_des
   source: hcpa
-  nda:
-    type: String
-    length: 500
-    description: 'Physical problems without known medical cause: Other (describe)'
-    alias: oasr_ppl49_11_des
-  redcap:
-    form: hcpa_block_2
-    type: notes
-    label: '<p style=''margin-left: 60px''>49k. Describe:</p>'
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
-      and ([oasr_ppl49_11] = '1' or [oasr_ppl49_11] = '2' )
 
 - rename: asr12_3
   name: oasr_ppl53
@@ -1391,58 +390,11 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 60 There is very little that I enjoy
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr12_69,asr60,asr_q60_p,oasr_ppl53,q60
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: 53. There is very little that I enjoy
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: oasr_ppl54
   name: oasr_ppl54
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: My performance at tasks is poor
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: 54. My performance at tasks is poor
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr14_1
   name: oasr_ppl61
@@ -1453,48 +405,10 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 70 I see things that other people think aren't there
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr14_79,asr70,asr_q70_p,oasr_ppl61,q70
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: 61. I see things other people think are not there.
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr14_1_text
   name: oasr_ppl61_des
   source: hcpa
-  nda:
-    type: String
-    length: 500
-    description: 'ASR 70 describe:'
-    alias: asr14_79_text,asr70des,oasr_ppl61_des
-  redcap:
-    form: hcpa_block_2
-    type: notes
-    label: '<p style=''margin-left: 40px''>61. Describe:</p>'
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
-      and ([oasr_ppl61] = '1' or [oasr_ppl61] = '2' )
 
 - rename: asr15_1
   name: oasr_ppl67
@@ -1505,33 +419,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 76 My behavior is irresponsible
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr15_85,asr76,asr_q76_p,oasr_ppl67,q76
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '67. My behavior is irresponsible '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr15_3
   name: oasr_ppl69
@@ -1542,33 +429,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 78 I have trouble making decisions
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr15_87,asr78,asr_q78_p,oasr_ppl69,q78
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '69. I have trouble making decisions '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr16_1
   name: oasr_ppl73
@@ -1579,33 +439,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 82 I steal
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr16_91,asr82,asr_q82_p,oasr_ppl73,q82
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '73. I steal things '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr16_3
   name: oasr_ppl74
@@ -1616,48 +449,10 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 84 I do things that other people think are strange
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr16_93,asr84,asr_q84_p,oasr_ppl74,q84
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: 74. I do things that other people think are strange
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr16_3_text
   name: oasr_ppl74_des
   source: hcpa
-  nda:
-    type: String
-    length: 500
-    description: 'ASR 84 describe:'
-    alias: asr16_93_text,asr84des,oasr_ppl74_des
-  redcap:
-    form: hcpa_block_2
-    type: notes
-    label: '<p style=''margin-left: 40px''>74. Describe:</p>'
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
-      and ([oasr_ppl74] = '1' or [oasr_ppl74] = '2' )
 
 - rename: asr16_4
   name: oasr_ppl75
@@ -1668,73 +463,15 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 85 I have thoughts that other people think are strange
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr16_94,asr85,asr_q85_p,oasr_ppl75,q85
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: 75. I have thoughts that other people would think are strange
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr16_4_text
   name: oasr_ppl75_des
   source: hcpa
-  nda:
-    type: String
-    length: 500
-    description: 'ASR 85 describe:'
-    alias: asr16_94_text,asr85des,oasr_ppl75_des
-  redcap:
-    form: hcpa_block_2
-    type: notes
-    label: '<p style=''margin-left: 40px''>75. Describe:</p>'
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
-      and ([oasr_ppl75] = '1' or [oasr_ppl75] = '2' )
 
 - rename: oasr_ppl79
   name: oasr_ppl79
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: 'I am suspicious '
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '79. I am suspicious '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr17_4
   name: oasr_ppl81
@@ -1745,33 +482,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 91 I think about killing myself
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr17_100,asr91,asr_q91_p,oasr_ppl81,q91
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '81. I think about killing myself '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr17_5
   name: oasr_ppl82
@@ -1782,48 +492,10 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 92 I do things that may cause me trouble with the law
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr17_101,asr92,asr_q92_p,oasr_ppl82,q92
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '82. I do things that may cause trouble with the law '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr17_5_text
   name: oasr_ppl82_des
   source: hcpa
-  nda:
-    type: String
-    length: 500
-    description: 'ASR 92 describe:'
-    alias: asr17_101_text,asr92des,oasr_ppl82_des
-  redcap:
-    form: hcpa_block_2
-    type: notes
-    label: '<p style=''margin-left: 40px''>82. Describe:</p>'
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
-      and ([oasr_ppl82] = '1' or [oasr_ppl82] = '2' )
 
 - rename: asr18_2
   name: oasr_ppl85
@@ -1834,33 +506,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 95 I have a hot temper
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr18_104,asr95,asr_q95_p,oasr_ppl85,q95
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: 85. I lose my temper
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr18_4
   name: oasr_ppl87
@@ -1871,33 +516,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 97 I threaten to hurt people
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr18_106,asr97,asr_q97_p,oasr_ppl87,q97
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '87. I threaten to hurt people '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr19_1
   name: oasr_ppl90
@@ -1908,33 +526,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 100 I have trouble sleeping
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr100,asr19_109,asr_q100_p,oasr_ppl90,q100
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '90. I have trouble sleeping '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr19_3
   name: oasr_ppl92
@@ -1945,33 +536,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 102 I don't have much energy
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr102,asr19_111,asr_q102_p,oasr_ppl92,q102
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '92. I don''t have much energy '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr19_4
   name: oasr_ppl93
@@ -1982,33 +546,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 103 I am unhappy, sad, or depressed
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr103,asr19_112,asr_q103_p,oasr_ppl93,q103
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '93. I am unhappy, sad, or depressed '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr20_2
   name: oasr_ppl97
@@ -2019,33 +556,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 107 I feel that I can't succeed
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr107,asr20_116,asr_q107_p,oasr_ppl97,q107
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '97. I feel that I can''t succeed at things '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr20_6
   name: oasr_ppl99
@@ -2056,33 +566,6 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 111 I keep from getting involved with others
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr111,asr20_120,asr_q111_p,oasr_ppl99,q111
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '99. I keep from getting involved with others '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: asr21_1
   name: oasr_ppl100
@@ -2093,180 +576,33 @@ elements:
     1: 2
     2: 3
     null: -99
-  nda:
-    type: Integer
-    description: ASR 112 I worry a lot
-    range:
-    - 1::3
-    - -99
-    - 77
-    - 88
-    notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True
-      ; -99= N/A ; 77= Refused ; 88= Missing
-    alias: asr112,asr21_121,asr_q112_p,oasr_ppl100,q112
-    codes:
-      1: Not True
-      2: Somewhat or Sometimes True
-      3: Very True or Often True
-      -99: N/A
-      77: Refused
-      88: Missing
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '100. I worry a lot '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: oasr_ppl101
   name: oasr_ppl101
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: 'I wake up too early '
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '101. I wake up too early '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: oasr_ppl102
   name: oasr_ppl102
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: 'I worry too much about my health '
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '102. I worry too much about my health '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: oasr_ppl109
   name: oasr_ppl109
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: 'I am too concerned about death '
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '109. I am too concerned about death '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: oasr_ppl110
   name: oasr_ppl110
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: 'I have trouble remembering things I am told '
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '110. I have trouble remembering things I am told '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: oasr_ppl114
   name: oasr_ppl114
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: 'If I don''t write things down, I forget them '
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '114. If I don''t write things down, I forget them '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))
 
 - rename: oasr_ppl121
   name: oasr_ppl121
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  nda:
-    type: Integer
-    description: 'I feel that I am a burden on others '
-    range:
-    - 0::2
-    notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often
-      True
-    codes:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '121. I feel that I am a burden on others '
-    choices:
-      0: Not True
-      1: Somewhat or Sometimes True
-      2: Very True or Often True
-    branching: (([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60))

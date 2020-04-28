@@ -26,7 +26,6 @@ elements:
   source:
   - hcpa
 
-
 - rename: adlnow8
   name: iadl1
   request: Please decrement your 1::4 scale to 0::3.
@@ -36,35 +35,6 @@ elements:
     2: 1
     3: 2
     4: 3
-  nda:
-    type: Integer
-    description: Telephone current ability
-    range:
-    - 0::3
-    - 8
-    notes: 0 = I handle using the telephone without difficulty; 1 = I only dial a
-      few well-known numbers; 2 = I answer the telephone but do not dial; 3 = I do
-      not use the telephone at all; 8 = I do not have access to a telephone
-    alias: iadl1
-    codes:
-      0: I handle using the telephone without difficulty
-      1: I only dial a few well-known numbers
-      2: I answer the telephone but do not dial
-      3: I do not use the telephone at all
-      8: I do not have access to a telephone
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 'A. Which ONE of the following statements best applies to your current
-      ability to use the <font size=2.5>telephone</font>:'
-    choices:
-      1: 1) I can operate the telephone on my own initiative, looking up and dialling
-        numbers
-      2: 2) I can dial only a few well-known numbers
-      3: 3) I can answer the telephone, but I do not dial
-      4: 4) I do not use the telephone at all
-    branching: ([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60)
-      or ([visit3]='3' and [follow_up_1_arm_1][age_v3]>=60)
 
 - rename: adlnow12
   name: iadl2
@@ -75,34 +45,6 @@ elements:
     2: 1
     3: 2
     4: 3
-  nda:
-    type: Integer
-    description: Shopping current ability
-    range:
-    - 0::3
-    - 8
-    notes: 0 = I take care of all of my shopping needs; 1 = I only make small purchases;
-      2 = I need someone to go with me on any shopping trip; 3 = I am unable to shop;
-      8 = I am able to shop but choose to have someone else do my shopping for me
-    alias: iadl2
-    codes:
-      0: I take care of all of my shopping needs
-      1: I only make small purchases
-      2: I need someone to go with me on any shopping trip
-      3: I am unable to shop
-      8: I am able to shop but choose to have someone else do my shopping for me
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 'B. Which ONE of the following statements best applies to your current
-      ability to do <font size=2.5>shopping</font>:'
-    choices:
-      1: 1)  I can take care of all my shopping needs independently
-      2: 2) I can shop independently for small purchases
-      3: 3) I need to be accompanied on any shopping trip
-      4: 4) I am completely unable to shop
-    branching: ([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60)
-      or ([visit3]='3' and [follow_up_1_arm_1][age_v3]>=60)
 
 - rename: adlnow4
   name: iadl3
@@ -113,37 +55,6 @@ elements:
     2: 1
     3: 2
     4: 3
-  nda:
-    type: Integer
-    description: Cooking current ability
-    range:
-    - 0::3
-    - 8
-    notes: 0 = I plan; prepare; and serve many of my own meals; 1 = I prepare meals
-      if someone else provides me with the right ingredients; 2 = I heat and serve
-      meals provided by others; 3 = I need to have meals prepared and served to me;
-      8 = I am able to plan; prepare; and serve my own meals but someone else does
-      it for me
-    alias: iadl3
-    codes:
-      0: I plan
-      1: I prepare meals if someone else provides me with the right ingredients
-      2: I heat and serve meals provided by others
-      3: I need to have meals prepared and served to me
-      8: I am able to plan
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 'C. Which ONE of the following statements best applies to your current
-      ability to <font size=2.5>prepare food</font>:'
-    choices:
-      1: 1)  I can plan, prepare, and serve adequate meals independently
-      2: 2) I can prepare adequate meals if I am supplied with ingredients
-      3: 3) I can heat and serve prepared meals or, I can prepare meals but I do not
-        maintain an adequate diet
-      4: 4) I need to have my meals prepared and served
-    branching: ([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60)
-      or ([visit3]='3' and [follow_up_1_arm_1][age_v3]>=60)
 
 - rename: adlnow1
   name: iadl4
@@ -155,107 +66,16 @@ elements:
     3: 2
     4: 3
     5: 4
-  nda:
-    type: Integer
-    description: Housekeeping current ability
-    range:
-    - 0::4
-    - 8
-    notes: 0 = I maintain my house/apartment by myself or only need occasional help
-      for larger jobs; 1 = I only perform light daily tasks (wash dishes; make bed);
-      2 = I perform some light tasks; but have difficulty keeping my place clean;
-      3 = I need help with all housekeeping tasks; 4 = I do not participate in any
-      housekeeping tasks; 8 = I am fully able to do housekeeping; but choose not to
-      do so
-    alias: iadl4
-    codes:
-      0: I maintain my house/apartment by myself or only need occasional help for
-        larger jobs
-      1: I only perform light daily tasks (wash dishes
-      2: I perform some light tasks
-      3: I need help with all housekeeping tasks
-      4: I do not participate in any housekeeping tasks
-      8: I am fully able to do housekeeping
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 'D. Which ONE of the following statements best applies to your current
-      ability to perform <font size=2.5>housekeeping</font> abilities:'
-    choices:
-      1: 1)  I can maintain house alone with occasional assistance (heavy work)
-      2: 2) I can perform light daily tasks such as dish washing, bed making
-      3: 3) I can perform light daily tasks, but cannot maintain an acceptable level
-        of cleanliness
-      4: 4) I need help with all home maintenance tasks
-      5: 5) I do not participate in any housekeeping tasks
-    branching: ([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60)
-      or ([visit3]='3' and [follow_up_1_arm_1][age_v3]>=60)
 
 - rename: iadl05
   name: iadl5
   request: Please rename this column 'iadl05' to resolve a naming conflict in our
     database.
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Which ONE of the following statements best applies to your current
-      ability to do laundry:'
-    range:
-    - 1::3
-    notes: 1 = I can do my personal laundry completely ; 2 = I can launder small items,
-      rinse socks, stockings, etc. ; 3 = All my laundry must be done by others
-    alias: iadl5
-    codes:
-      1: I can do my personal laundry completely
-      2: I can launder small items, rinse socks, stockings, etc.
-      3: All my laundry must be done by others
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 'E. Which ONE of the following statements best applies to your current
-      ability to do <font size=2.5>laundry</font>:'
-    choices:
-      1: 1)  I can do my personal laundry completely
-      2: 2) I can launder small items, rinse socks, stockings, etc.
-      3: 3) All my laundry must be done by others
-    branching: ([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60)
-      or ([visit3]='3' and [follow_up_1_arm_1][age_v3]>=60)
 
 - rename: iadl6
   name: iadl6
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Which ONE of the following statements best applies to your current
-      ability to use transportation:'
-    range:
-    - 1::5
-    notes: 1 = I can travel independently on public transportation or drive my own
-      car ; 2 = I can arrange my own travel via taxis, but cannot otherwise use public
-      transportation ; 3 = I can travel on public transportation when assisted or
-      accompanied by another ; 4 = My travel is limited to taxi or automobile with
-      the assistance of another ; 5 = I do not travel at all
-    codes:
-      1: I can travel independently on public transportation or drive my own car
-      2: I can arrange my own travel via taxis, but cannot otherwise use public transportation
-      3: I can travel on public transportation when assisted or accompanied by another
-      4: My travel is limited to taxi or automobile with the assistance of another
-      5: I do not travel at all
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 'F. Which ONE of the following statements best applies to your current
-      ability to use <font size=2.5>transportation</font>:'
-    choices:
-      1: 1)  I can travel independently on public transportation or drive my own car
-      2: 2) I can arrange my own travel via taxis, but cannot otherwise use public
-        transportation
-      3: 3) I can travel on public transportation when assisted or accompanied by
-        another
-      4: 4) My travel is limited to taxi or automobile with the assistance of another
-      5: 5) I do not travel at all
-    branching: ([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60)
-      or ([visit3]='3' and [follow_up_1_arm_1][age_v3]>=60)
 
 - rename: adlnow14
   name: iadl7
@@ -265,36 +85,6 @@ elements:
     1: 0
     2: 1
     3: 2
-  nda:
-    type: Integer
-    description: Medication current ability
-    range:
-    - 0::2
-    - 8
-    notes: 0 = I take sole responsibility for taking medications in correct dosages
-      at the correct time; 1 = I take medications that are prepared in individual
-      doses by someone else; 2 = I am unable to track my own medications; 8 = I am
-      able to take care of my own medications but choose to have someone else do it
-      for me
-    alias: iadl7
-    codes:
-      0: I take sole responsibility for taking medications in correct dosages at the
-        correct time
-      1: I take medications that are prepared in individual doses by someone else
-      2: I am unable to track my own medications
-      8: I am able to take care of my own medications but choose to have someone else
-        do it for me
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 'G. Which ONE of the following statements best applies to your current
-      ability to take your own <font size=2.5>medications</font>:'
-    choices:
-      1: 1)  I can take medication in the correct dosages at the correct time
-      2: 2) I can take medication if it is prepared in advance in separate dosages
-      3: 3) I cannot dispense my own medication
-    branching: ([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60)
-      or ([visit3]='3' and [follow_up_1_arm_1][age_v3]>=60)
 
 - rename: adlnow2
   name: iadl8
@@ -304,76 +94,7 @@ elements:
     1: 0
     2: 1
     3: 2
-  nda:
-    type: Integer
-    description: Managing finances current ability
-    range:
-    - 0::2
-    - 8
-    notes: 0 = I manage all of my finances (check cashing; banking; handling money)
-      by myself; 1 = I manage routine small purchases; but need help with banking;
-      checking; and balancing accounts; 2 = I am not able to handle money accurately;
-      8 = I am able to handle my own finances; but someone else does them for me
-    alias: iadl8
-    codes:
-      0: I manage all of my finances (check cashing
-      1: I manage routine small purchases
-      2: I am not able to handle money accurately
-      8: I am able to handle my own finances
-  redcap:
-    form: hcpa_block_1
-    type: radio
-    label: 'H. Which ONE of the following statements best applies to your current
-      ability to handle <font size=2.5>finances</font>:'
-    choices:
-      1: 1)  I can manage my financial matters independently (budget, write checks,
-        pay rent and bills, go to bank)
-      2: 2) I can manage my day-to-day purchases, but need help with banking, major
-        purchases, etc.
-      3: 3) I am incapable of handing money
-    branching: ([visit]='1' and [visit_1_arm_1][age]>=60) or ([visit2]='2' and [visit_2_arm_1][age_v2]>=60)
-      or ([visit3]='3' and [follow_up_1_arm_1][age_v3]>=60)
 
 - rename: lbadl_currtot
   name: iadl_score
   source: hcpa
-  nda:
-    type: Integer
-    description: L & B Activities of Daily Living Scale total of current items
-    alias: iadl_score
-  redcap:
-    form: hcpa_block_1
-    type: calc
-    label: IADL Score
-    choices: 'sum(if([iadl1]=1, 1, ''NaN''),
-      if([iadl1]=2, 1, ''NaN''),
-      if([iadl1]=3, 1, ''NaN''),
-      if([iadl1]=4, 0, ''NaN''),
-      if([iadl2]=1, 1, ''NaN''),
-      if([iadl2]=2, 0, ''NaN''),
-      if([iadl2]=3, 0, ''NaN''),
-      if([iadl2]=4, 0, ''NaN''),
-      if([iadl3]=1, 1, ''NaN''),
-      if([iadl3]=2, 0, ''NaN''),
-      if([iadl3]=3, 0, ''NaN''),
-      if([iadl3]=4, 0, ''NaN''),
-      if([iadl4]=1, 1, ''NaN''),
-      if([iadl4]=2, 1, ''NaN''),
-      if([iadl4]=3, 1, ''NaN''),
-      if([iadl4]=4, 1, ''NaN''),
-      if([iadl4]=5, 0, ''NaN''),
-      if([iadl5]=1, 1, ''NaN''),
-      if([iadl5]=2, 1, ''NaN''),
-      if([iadl5]=3, 0, ''NaN''),
-      if([iadl6]=1, 1, ''NaN''),
-      if([iadl6]=2, 1, ''NaN''),
-      if([iadl6]=3, 1, ''NaN''),
-      if([iadl6]=4, 0, ''NaN''),
-      if([iadl6]=5, 0, ''NaN''),
-      if([iadl7]=1, 1, ''NaN''),
-      if([iadl7]=2, 0, ''NaN''),
-      if([iadl7]=3, 0, ''NaN''),
-      if([iadl8]=1, 1, ''NaN''),
-      if([iadl8]=2, 1, ''NaN''),
-      if([iadl8]=3, 0, ''NaN''))'
-    annotation: '@HIDDEN'

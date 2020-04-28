@@ -26,2075 +26,318 @@ elements:
   source:
   - hcpa
 
-
 - rename: gales1
   name: gales1
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Financial/Work Difficulties - Major financial difficulties'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: 'Financial/Work Difficulties
-
-      <p style=''margin-left: 20px''>1) Major financial difficulties</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales1b
   name: gales1b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Financial/Work Difficulties - Major financial difficulties
-      - How stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>1B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales1]=''1'''
-    alignment: RV
 
 - rename: gales1c
   name: gales1c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Financial/Work Difficulties - Major financial difficulties
-      - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>1C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales1]=''1'''
-    alignment: RV
 
 - rename: gales2
   name: gales2
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Financial/Work Difficulties - Retirement'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>2) Retirement</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales2b
   name: gales2b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Financial/Work Difficulties - Retirement - How stressful
-      did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>2B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales2]=''1'''
-    alignment: RV
 
 - rename: gales2c
   name: gales2c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Financial/Work Difficulties - Retirement - Did it make
-      you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>2C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales2]=''1'''
-    alignment: RV
 
 - rename: gales3
   name: gales3
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Financial/Work Difficulties - Sudden loss of employment'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>3) Sudden loss of employment</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales3b
   name: gales3b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Financial/Work Difficulties - Sudden loss of employment
-      - How stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>3B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales3]=''1'''
-    alignment: RV
 
 - rename: gales3c
   name: gales3c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Financial/Work Difficulties - Sudden loss of employment
-      - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>3C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales3]=''1'''
-    alignment: RV
 
 - rename: gales4
   name: gales4
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Physical Illness/Accident - New major physical illness'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: 'Physical Illness/Accident
-
-      <p style=''margin-left: 20px''>4) New major physical illness</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales4b
   name: gales4b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Physical Illness/Accident - New major physical illness
-      - How stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>4B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales4]=''1'''
-    alignment: RV
 
 - rename: gales4c
   name: gales4c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Physical Illness/Accident - New major physical illness
-      - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>4C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales4]=''1'''
-    alignment: RV
 
 - rename: gales5
   name: gales5
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Physical Illness/Accident - Other long-standing major
-      physical illness'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>5) Other major physical illness</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales5b
   name: gales5b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Physical Illness/Accident - Other major physical illness
-      - How stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>5B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales5]=''1'''
-    alignment: RV
 
 - rename: gales5c
   name: gales5c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Physical Illness/Accident - Other major physical illness
-      - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>5C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales5]=''1'''
-    alignment: RV
 
 - rename: gales6
   name: gales6
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Physical Illness/Accident - Major physical illness of
-      a close family member'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>6) Major physical illness of a close family
-      member</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales6b
   name: gales6b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Physical Illness/Accident - Major physical illness of
-      a close family member - How stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>6B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales6]=''1'''
-    alignment: RV
 
 - rename: gales6c
   name: gales6c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Physical Illness/Accident - Major physical illness of
-      a close family member - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>6C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales6]=''1'''
-    alignment: RV
 
 - rename: gales7
   name: gales7
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Physical Illness/Accident - Accident or injury'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>7) Accident or injury</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales7b
   name: gales7b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Physical Illness/Accident - Accident or injury - How
-      stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>7B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales7]=''1'''
-    alignment: RV
 
 - rename: gales7c
   name: gales7c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Physical Illness/Accident - Accident or injury - Did
-      it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>7C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales7]=''1'''
-    alignment: RV
 
 - rename: gales8
   name: gales8
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Marital separation or divorce'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: 'Interpersonal Conflicts
-
-      <p style=''margin-left: 20px''>8) Marital separation or divorce</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales8b
   name: gales8b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Marital separation or divorce
-      - How stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>8B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales8]=''1'''
-    alignment: RV
 
 - rename: gales8c
   name: gales8c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Marital separation or divorce
-      - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>8C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales8]=''1'''
-    alignment: RV
 
 - rename: gales9
   name: gales9
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Other marital difficulties'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>9) Other marital difficulties</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales9b
   name: gales9b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Other marital difficulties
-      - How stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>9B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales9]=''1'''
-    alignment: RV
 
 - rename: gales9c
   name: gales9c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Other marital difficulties
-      - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>9C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales9]=''1'''
-    alignment: RV
 
 - rename: gales10
   name: gales10
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Major family problems/conflicts
-      other than with spouse'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>10) Major family problems/conflicts other
-      than with spouse</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales10b
   name: gales10b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Major family problems/conflicts
-      other than with spouse - How stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>10B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales10]=''1'''
-    alignment: RV
 
 - rename: gales10c
   name: gales10c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Major family problems/conflicts
-      other than with spouse - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>10C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales10]=''1'''
-    alignment: RV
 
 - rename: gales11
   name: gales11
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Major problems/conflicts with
-      friends or neighbors'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>11) Major problems/conflicts with friends
-      or neighbors</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales11b
   name: gales11b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Major problems/conflicts with
-      friends or neighbors - How stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>11B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales11]=''1'''
-    alignment: RV
 
 - rename: gales11c
   name: gales11c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Major problems/conflicts with
-      friends or neighbors - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>11C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales11]=''1'''
-    alignment: RV
 
 - rename: gales12
   name: gales12
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Break-up of a long-term relationship
-      other than marriage'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>12) Break-up-of a long-term relationship
-      other than marriage</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales12b
   name: gales12b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Break-up of a long-term relationship
-      other than marriage - How stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>12B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales12]=''1'''
-    alignment: RV
 
 - rename: gales12c
   name: gales12c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Break-up of a long-term relationship
-      other than marriage - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>12C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales12]=''1'''
-    alignment: RV
 
 - rename: gales13
   name: gales13
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Separation from any other close
-      friend or relative'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>13) Separation from any other close friend
-      or relative</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales13b
   name: gales13b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Separation from any other close
-      friend or relative - How stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>13B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales13]=''1'''
-    alignment: RV
 
 - rename: gales13c
   name: gales13c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Conflicts - Separation from any other close
-      friend or relative - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>13C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales13]=''1'''
-    alignment: RV
 
 - rename: gales14
   name: gales14
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of spouse'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: 'Interpersonal Loss
-
-      <p style=''margin-left: 20px''>14) Death of spouse</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales14b
   name: gales14b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of spouse - How stressful
-      did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>14B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales14]=''1'''
 
 - rename: gales14c
   name: gales14c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of spouse - Did it make you
-      feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>14C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales14]=''1'''
 
 - rename: gales15
   name: gales15
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of child'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>15) Death of child</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales15b
   name: gales15b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of child - How stressful did
-      you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>15B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales15]=''1'''
 
 - rename: gales15c
   name: gales15c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of child - Did it make you
-      feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>15C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales15]=''1'''
 
 - rename: gales16
   name: gales16
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of parent'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>16) Death of parent</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales16b
   name: gales16b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of parent - How stressful
-      did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>16B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales16]=''1'''
 
 - rename: gales16c
   name: gales16c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of parent - Did it make you
-      feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>16C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales16]=''1'''
 
 - rename: gales17
   name: gales17
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of brother or sister'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>17) Death of brother or sister</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales17b
   name: gales17b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of brother or sister - How
-      stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>17B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales17]=''1'''
 
 - rename: gales17c
   name: gales17c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of brother or sister - Did
-      it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>17C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales17]=''1'''
 
 - rename: gales18
   name: gales18
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of other relative or close
-      friend'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>18) Death of other relative or close friend</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales18b
   name: gales18b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of other relative or close
-      friend - How stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>18B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales18]=''1'''
 
 - rename: gales18c
   name: gales18c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of other relative or close
-      friend - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>18C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales18]=''1'''
 
 - rename: gales19
   name: gales19
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of pet'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>19) Death of pet</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales19b
   name: gales19b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of pet - How stressful did
-      you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>19B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales19]=''1'''
 
 - rename: gales19c
   name: gales19c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Interpersonal Loss - Death of pet - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>19C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales19]=''1'''
 
 - rename: gales20
   name: gales20
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Disruption in Living Situation - Forced to leave or lose
-      home, for example, eviction'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: 'Disruption in Living Situation
-
-      <p style=''margin-left: 20px''>20) Forced to leave or lose home (e.g., eviction)</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales20b
   name: gales20b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Disruption in Living Situation - Forced to leave or lose
-      home (e.g., eviction) - How stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>20B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales20]=''1'''
 
 - rename: gales20c
   name: gales20c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Disruption in Living Situation - Forced to leave or lose
-      home (e.g., eviction) - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>20C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales20]=''1'''
 
 - rename: gales21
   name: gales21
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Disruption in Living Situation - Voluntarily changed
-      place of residence'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>21) Voluntarily changed place of residence</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales21b
   name: gales21b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Disruption in Living Situation - Voluntarily changed
-      place of residence - How stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>21B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales21]=''1'''
 
 - rename: gales21c
   name: gales21c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Disruption in Living Situation - Voluntarily changed
-      place of residence - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>21C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales21]=''1'''
 
 - rename: gales22
   name: gales22
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Disruption in Living Situation - Individual moved out
-      of house - excluding marriage/relationship break-up'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>22) Individual moved out of house (excluding
-      marriage/relationship break-up)</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales22b
   name: gales22b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Disruption in Living Situation - Individual moved out
-      of house (excluding marriage/relationship break-up) - How stressful did you
-      find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>22B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales22]=''1'''
 
 - rename: gales22c
   name: gales22c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Disruption in Living Situation - Individual moved out
-      of house (excluding marriage/relationship break-up) - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>22C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales22]=''1'''
 
 - rename: gales23
   name: gales23
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Disruption in Living Situation - Individual moved into
-      house'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>23) Individual moved into house</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales23b
   name: gales23b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Disruption in Living Situation - Individual moved into
-      house - How stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>23B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales23]=''1'''
 
 - rename: gales23c
   name: gales23c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Disruption in Living Situation - Individual moved into
-      house - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>23C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales23]=''1'''
 
 - rename: gales24
   name: gales24
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Other Life Events - Difficulty getting adequate professional
-      services'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: 'Other Life Events
-
-      <p style=''margin-left: 20px''>24) Difficulty getting adequate professional
-      services</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales24b
   name: gales24b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Other Life Events - Difficulty getting adequate professional
-      services - How stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>24B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales24]=''1'''
 
 - rename: gales24c
   name: gales24c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Other Life Events - Difficulty getting adequate professional
-      services - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>24C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales24]=''1'''
 
 - rename: gales25
   name: gales25
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Other Life Events - Victim of crime'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>25) Victim of crime</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales25b
   name: gales25b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Other Life Events - Victim of crime - How stressful did
-      you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>25B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales25]=''1'''
 
 - rename: gales25c
   name: gales25c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Other Life Events - Victim of crime - Did it make you
-      feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>25C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales25]=''1'''
 
 - rename: gales26
   name: gales26
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Other Life Events - Became caretaker for relative or
-      friend'
-    range:
-    - 0
-    - 1
-    notes: 1 = Yes ; 0 = No
-    codes:
-      1: 'Yes'
-      0: 'No'
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 20px''>26) Became caretaker for relative or friend</p>'
-    choices:
-      1: 'Yes'
-      0: 'No'
-    alignment: RH
 
 - rename: gales26b
   name: gales26b
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Other Life Events - Became caretaker for relative or
-      friend - How stressful did you find the event?'
-    range:
-    - 1::3
-    notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
-    codes:
-      1: Not at all stressful
-      2: Somewhat stressful
-      3: Very stressful
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>26B) How stressful did you find (the event)?</p>'
-    choices:
-      1: 1 Not at all stressful
-      2: 2 Somewhat stressful
-      3: 3 Very stressful
-    branching: '[gales26]=''1'''
 
 - rename: gales26c
   name: gales26c
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Other Life Events - Became caretaker for relative or
-      friend - Did it make you feel'
-    range:
-    - 1::5
-    notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
-    codes:
-      1: Much better
-      2: Better
-      3: No effect
-      4: Worse
-      5: Much worse
-  redcap:
-    form: hcpa_block_2
-    type: radio
-    label: '<p style=''margin-left: 40px''>26C) Did it make you feel</p>'
-    choices:
-      1: 1 Much better
-      2: 2 Better
-      3: 3 No effect
-      4: 4 Worse
-      5: 5 Much worse
-    branching: '[gales26]=''1'''
 
 - rename: gales_worst
   name: gales_worst
   source: hcpa
-  nda:
-    type: Integer
-    description: 'Past Year: Of all the items for which you checked YES, which one
-      affected you the most?'
-    range:
-    - 1::26
-    notes: 1 = Major financial difficulties ; 2 = Retirement ; 3 = Sudden loss of
-      employment ; 4 = New major physical illness ; 5 = Other major physical illness
-      ; 6 = Major physical illness of a close family member ; 7 = Accident or injury
-      ; 8 = Marital separation or divorce ; 9 = Other marital difficulties ; 10 =
-      Major family problems/conflicts other than with spouse ; 11 = Major problems/conflicts
-      with friends or neighbors ; 12 = Break-up-of a long-term relationship other
-      than marriage ; 13 = Separation from any other close friend or relative ; 14
-      = Death of spouse ; 15 = Death of child ; 16 = Death of parent ; 17 = Death
-      of brother or sister ; 18 = Death of other relative or close friend ; 19 = Death
-      of pet ; 20 = Forced to leave or lose home (e.g. = eviction) ; 21 = Voluntarily
-      changed place of residence ; 22 = Individual moved out of house (excluding marriage/relationship
-      break-up) ; 23 = Individual moved into house ; 24 = Difficulty getting adequate
-      professional services ; 25 = Victim of crime ; 26 = Became caretaker for relative
-      or friend
-    codes:
-      1: Major financial difficulties
-      2: Retirement
-      3: Sudden loss of employment
-      4: New major physical illness
-      5: Other major physical illness
-      6: Major physical illness of a close family member
-      7: Accident or injury
-      8: Marital separation or divorce
-      9: Other marital difficulties
-      10: Major family problems/conflicts other than with spouse
-      11: Major problems/conflicts with friends or neighbors
-      12: Break-up-of a long-term relationship other than marriage
-      13: Separation from any other close friend or relative
-      14: Death of spouse
-      15: Death of child
-      16: Death of parent
-      17: Death of brother or sister
-      18: Death of other relative or close friend
-      19: Death of pet
-      20: Forced to leave or lose home (e.g. = eviction)
-      21: Voluntarily changed place of residence
-      22: Individual moved out of house (excluding marriage/relationship break-up)
-      23: Individual moved into house
-      24: Difficulty getting adequate professional services
-      25: Victim of crime
-      26: Became caretaker for relative or friend
-  redcap:
-    form: hcpa_block_2
-    type: dropdown
-    label: Of all the items for which you checked YES, which one affected you the
-      most?
-    choices:
-      1: 1) Major financial difficulties
-      2: 2) Retirement
-      3: 3) Sudden loss of employment
-      4: 4) New major physical illness
-      5: 5) Other major physical illness
-      6: 6) Major physical illness of a close family member
-      7: 7) Accident or injury
-      8: 8) Marital separation or divorce
-      9: 9) Other marital difficulties
-      10: 10) Major family problems/conflicts other than with spouse
-      11: 11) Major problems/conflicts with friends or neighbors
-      12: 12) Break-up-of a long-term relationship other than marriage
-      13: 13) Separation from any other close friend or relative
-      14: 14) Death of spouse
-      15: 15) Death of child
-      16: 16) Death of parent
-      17: 17) Death of brother or sister
-      18: 18) Death of other relative or close friend
-      19: 19) Death of pet
-      20: 20) Forced to leave or lose home (e.g., eviction)
-      21: 21) Voluntarily changed place of residence
-      22: 22) Individual moved out of house (excluding marriage/relationship break-up)
-      23: 23) Individual moved into house
-      24: 24) Difficulty getting adequate professional services
-      25: 25) Victim of crime
-      26: 26) Became caretaker for relative or friend
-    branching: ([gales1]='1' or [gales2]='1' or [gales3]='1' or [gales4]='1' or [gales5]='1'
-      or [gales6]='1' or [gales7]='1' or [gales8]='1' or [gales9]='1' or [gales10]='1'
-      or [gales11]='1' or [gales12]='1' or [gales13]='1' or [gales14]='1' or [gales15]='1'
-      or [gales16]='1' or [gales17]='1' or [gales18]='1' or [gales19]='1' or [gales20]='1'
-      or [gales21]='1' or [gales22]='1' or [gales23]='1' or [gales24]='1' or [gales25]='1'
-      or [gales26]='1')
-    alignment: LV

@@ -41,98 +41,56 @@ elements:
 - rename: pea_ravlt_sd_tc
   name: ravlt_pea_ravlt_sd_tc
   source: qint
-  nda:
-    type: Integer
-    description: RAVLT Short Delay Total Correct
 
 - rename: delay_completion
   name: ravlt_delay_completion
   old_code: ravlt.loc[ravlt.delay_completion>1800,'delay_completion']=''
   source: qint
-  nda:
-    type: Float
-    description: RAVLT Short Delay Completion time (seconds)
 
 - rename: discontinue
   name: ravlt_discontinue
   source: qint
-  nda:
-    type: Integer
-    description: Rules Triggered, Discontinue
 
 - rename: reverse
   name: ravlt_reverse
   source: qint
-  nda:
-    type: Integer
-    description: Rules Triggered, Reverse
 
 - rename: pea_ravlt_sd_trial_i_tc
   name: ravlt_pea_ravlt_sd_trial_i_tc
   source: qint
-  nda:
-    type: Integer
-    description: RAVLT Short Delay Trial I Total Correct
 
 - rename: pea_ravlt_sd_trial_ii_tc
   name: ravlt_pea_ravlt_sd_trial_ii_tc
   source: qint
-  nda:
-    type: Integer
-    description: RAVLT Short Delay Trial II Total Correct
 
 - rename: pea_ravlt_sd_trial_iii_tc
   name: ravlt_pea_ravlt_sd_trial_iii_tc
   source: qint
-  nda:
-    type: Integer
-    description: RAVLT Short Delay Trial III Total Correct
 
 - rename: pea_ravlt_sd_trial_iv_tc
   name: ravlt_pea_ravlt_sd_trial_iv_tc
   source: qint
-  nda:
-    type: Integer
-    description: RAVLT Short Delay Trial IV Total Correct
 
 - rename: pea_ravlt_sd_trial_v_tc
   name: ravlt_pea_ravlt_sd_trial_v_tc
   source: qint
-  nda:
-    type: Integer
-    description: RAVLT Short Delay Trial V Total Correct
 
 - rename: pea_ravlt_sd_listb_tc
   name: ravlt_pea_ravlt_sd_listb_tc
   source: qint
-  nda:
-    type: Integer
-    description: RAVLT Short Delay List B Total Correct
 
 - rename: pea_ravlt_sd_trial_vi_tc
   name: ravlt_pea_ravlt_sd_trial_vi_tc
   source: qint
-  nda:
-    type: Integer
-    description: RAVLT Short Delay Trial VI Total Correct
 
 - rename: delay_recall_intrusion
   name: ravlt_delay_recall_intrusion
   source: qint
-  nda:
-    type: Integer
-    description: Short Delay Free-Recall Intrusions
 
 - rename: delay_total_intrusion
   name: ravlt_delay_total_intrusion
   source: qint
-  nda:
-    type: Integer
-    description: Short Delay Total Intrusions
 
 - rename: delay_total_repetitions
   name: ravlt_delay_total_repetitions
   source: qint
-  nda:
-    type: Integer
-    description: Short Delay Total Repetitions

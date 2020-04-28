@@ -1,0 +1,5092 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: candidateguid,guid,pseudo_guid,subject_key
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: case_id,child_id,child_id_full,clinical_barcode,dash_subject_id,demo_study_id,hcpa_id,ibisid,participant_id,participantid,patno,pid,record_id,subject,subject_id
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: assess_date,assessment_date,assessment_dt,bl_visit_date,consentdate,consented_study,date_demographics,date_interview_ses,date_taken,demo_date,demo_rpt_date,interviewdate,intvdate,pds_date,pp_date,profile_date,testing_date,visit_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: age,age_months,bslage,ch_age,childs_age,pubc1,pubp1,test_age,total_age_in_months
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: cbcl_informant_gender,ch_sex,demo_sex,dm1,gender,pds_sex_y,sex,sex_at_brith,sexdesc
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+study_id:
+  type: Integer
+  description: Study ID number
+  notes: 46=Acute Phase; 47=Stabilization Phase
+  codes:
+    46: Acute Phase
+    47: Stabilization Phase
+
+groups:
+  type: Integer
+  description: Group
+  range:
+  - 0
+  - 1
+  notes: 0=Control; 1=Case
+  alias: arm,condition,group
+  codes:
+    0: Control
+    1: Case
+
+matched_pair:
+  type: String
+  length: 30
+  description: Matched Pair
+
+record_ses_f:
+  type: Integer
+  description: Record Status
+  range:
+  - 1::7
+  notes: 1= Done ; 2= Not Done ; 3= Withdrawn ; 4= Skipped/Missing ; 5= Deceased ;
+    6= Site could not reach subject ; 7= Refused
+  alias: record_status_a
+  codes:
+    1: Done
+    2: Not Done
+    3: Withdrawn
+    4: Skipped/Missing
+    5: Deceased
+    6: Site could not reach subject
+    7: Refused
+
+ethnicity:
+  type: String
+  length: 30
+  description: Ethnicity of participant
+  range:
+  - Hispanic or Latino
+  - Not Hispanic or Latino
+  - Unknown
+  alias: de05am,demo2,demo_ethnicity,ethn,ethnic,ethnic_category,hispanic,p_latino
+
+race:
+  type: String
+  length: 30
+  description: Race of study subject
+  range:
+  - American Indian/Alaska Native
+  - Asian
+  - Hawaiian or Pacific Islander
+  - Black or African American
+  - White
+  - More than one race
+  - Unknown or not reported
+  alias: demo3,demo_race,demog_04,race_category,race_ethnicity
+
+ethnic_group:
+  type: String
+  length: 255
+  description: Ethnic group
+  alias: other_race
+
+bio_parent:
+  type: Integer
+  description: Are you a biological parent to the child
+  range:
+  - 0
+  - 1
+  - -99
+  - 88
+  - 77
+  notes: 0=No; 1=Yes; -99= N/A ; 88= Missing ; 77= Refused
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -99: N/A
+    88: Missing
+    77: Refused
+
+bio_parent2:
+  type: Integer
+  description: 6.a. If yes= which parent are you?
+  range:
+  - 1
+  - 2
+  - -999
+  notes: 1= Mother ; 2= Father; -999= Missing
+  codes:
+    1: Mother
+    2: Father
+    -999: Missing
+
+relationship:
+  type: Integer
+  description: Relationship of respondent to individual
+  range:
+  - 1::93
+  - -999
+  notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
+    (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
+    Speech and language therapist; 8 = Behavioral therapist; 9 = Paraprofessional;
+    10 = Aide; 11 = Principal; 12 = Administrator; 13 = 90=Other; 14 = Content teacher;
+    15 = Parent center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father;
+    19=Foster mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother;
+    24 = Step-father; 25=Aunt; 26=Uncle; 27=Missing Data; 28=Both parents;31= Grandmother
+    from mother side; 32= Grandfather from mother side; 33= Grandmother from father
+    side; 34= Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39=
+    female caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
+    44=Friend; 45=Parent; 46=Significant other; 47=Sibling; 48=Son/Daughter; 49=Son-in-law/Daughter-in
+    law; 50=Other Relative; 51=Paid caregiver; 52=Friends; 53=Roommate; 54=Supervisor;
+    55=mother's boyfriend; 56=other parental figure; 57=Summary; 58=counselor ; 59
+    = other female relative; 60 = other male relative; 61 = non-relative ; 62=Maternal
+    Aunt; 63=Maternal Uncle; 64=Maternal Cousin; 65 = Paternal Aunt; 66=Paternal Uncle;
+    67=Paternal Cousin ; 68=Biological/Adoptive Mother and Grandmother; 69=Biological/Adoptive
+    Mother and Stepmother and Grandmother; 70=Biological/Adoptive Mother and Grandmother
+    and Foster Father; 71=Biological/Adoptive Mother and Stepmother and Foster Mother;
+    72=Biological/Adoptive Mother and Foster Mother; 73=Biological/Adoptive Mother
+    and Biological/Adoptive Father; 74=Biological/Adoptive Mother and Stepmother and
+    Biological/Adoptive Father; 75=Biological/Adoptive Mother and Other; 76=Biological/Adoptive
+    Mother and Stepmother and Stepfather; 77=Biological/Adoptive Mother and Stepfather;
+    78=Biological/Adoptive Mother and Grandfather; 79=Biological/Adoptive Mother and
+    Stepmother and Foster Father; 80=Biological/Adoptive Mother and Stepmother; 81=Guardian,
+    female; 82=Other female; 83=Guardian, male; 84=Other male; 85=Other/Grandparent/Nanny;
+    86 = Mother, Father, Guardian; 87 = Daughter, son, grandchild; 88 = Professional
+    (e.g., social worker, nurse, therapist, psychiatrist, or group home staff);  -999=Missing;
+    89 = Biological parent; 91 = Stepparent; 92 = Adoptive parent; 93 = Foster parent
+  codes:
+    1: Biological mom
+    2: Biological dad
+    3: Grandparent
+    4: Special education (sped) teacher
+    5: General education teacher
+    6: Occupational therapist
+    7: Speech and language therapist
+    8: Behavioral therapist
+    9: Paraprofessional
+    10: Aide
+    11: Principal
+    12: Administrator
+    13: 90=Other
+    14: Content teacher
+    15: Parent center director
+    16: Self
+    17: Adoptive mother
+    18: Adoptive father
+    19: Foster mother
+    20: Foster father
+    21: Grandmother
+    22: Grandfather
+    23: Step-mother
+    24: Step-father
+    25: Aunt
+    26: Uncle
+    27: Missing Data
+    28: Both parents
+    31: Grandmother from mother side
+    32: Grandfather from mother side
+    33: Grandmother from father side
+    34: Grandfather from father side
+    36: Brother
+    37: Sister
+    38: Cousin
+    39: female caregiver
+    40: male caregiver
+    41: Female child
+    42: Male child
+    43: Spouse/Mate
+    44: Friend
+    45: Parent
+    46: Significant other
+    47: Sibling
+    48: Son/Daughter
+    49: Son-in-law/Daughter-in law
+    50: Other Relative
+    51: Paid caregiver
+    52: Friends
+    53: Roommate
+    54: Supervisor
+    55: mother's boyfriend
+    56: other parental figure
+    57: Summary
+    58: counselor
+    59: other female relative
+    60: other male relative
+    61: non-relative
+    62: Maternal Aunt
+    63: Maternal Uncle
+    64: Maternal Cousin
+    65: Paternal Aunt
+    66: Paternal Uncle
+    67: Paternal Cousin
+    68: Biological/Adoptive Mother and Grandmother
+    69: Biological/Adoptive Mother and Stepmother and Grandmother
+    70: Biological/Adoptive Mother and Grandmother and Foster Father
+    71: Biological/Adoptive Mother and Stepmother and Foster Mother
+    72: Biological/Adoptive Mother and Foster Mother
+    73: Biological/Adoptive Mother and Biological/Adoptive Father
+    74: Biological/Adoptive Mother and Stepmother and Biological/Adoptive Father
+    75: Biological/Adoptive Mother and Other
+    76: Biological/Adoptive Mother and Stepmother and Stepfather
+    77: Biological/Adoptive Mother and Stepfather
+    78: Biological/Adoptive Mother and Grandfather
+    79: Biological/Adoptive Mother and Stepmother and Foster Father
+    80: Biological/Adoptive Mother and Stepmother
+    81: Guardian, female
+    82: Other female
+    83: Guardian, male
+    84: Other male
+    85: Other/Grandparent/Nanny
+    86: Mother, Father, Guardian
+    87: Daughter, son, grandchild
+    88: Professional (e.g., social worker, nurse, therapist, psychiatrist, or group
+      home staff)
+    -999: Missing
+    89: Biological parent
+    91: Stepparent
+    92: Adoptive parent
+    93: Foster parent
+
+relation_specify:
+  type: String
+  length: 20
+  description: Relation Other Specify
+  alias: cbcl_informant_relation,demo_completed_by,parent_relationship,parstatus_5_text
+
+length_time:
+  type: Integer
+  description: 6.b.1. How long have you been the main caregiver for this child?
+  range:
+  - 1::4
+  - -999
+  notes: 1= Less than 1 year ; 2= 1-2 years ; 3= 3 - 4 years ; 4= 5 years or more;
+    -999= Missing
+  codes:
+    1: Less than 1 year
+    2: 1-2 years
+    3: 3 - 4 years
+    4: 5 years or more
+    -999: Missing
+
+record_status_b:
+  type: Integer
+  description: Record Status Section B
+  range:
+  - 1::7
+  notes: 1= Done ; 2= Not Done ; 3= Withdrawn ; 4= Skipped/Missing ; 5= Deceased ;
+    6= Site could not reach subject ; 7= Refused
+  codes:
+    1: Done
+    2: Not Done
+    3: Withdrawn
+    4: Skipped/Missing
+    5: Deceased
+    6: Site could not reach subject
+    7: Refused
+
+bio_mother_ethnicity:
+  type: String
+  length: 50
+  description: Biological Mother Ethnicity
+  range:
+  - Hispanic or Latino
+  - Not Hispanic or Latino
+  - No Answer
+  alias: de01am,mother_ethnicity
+
+bio_mother_race:
+  type: String
+  length: 150
+  description: Biological Mother Race
+  range:
+  - American Indian/Alaska Native
+  - Asian
+  - Hawaiian or Pacific Islander
+  - Black or African American
+  - White
+  - More than one race
+  - Unknown or not reported
+  alias: mother_race
+
+mother_other_race:
+  type: String
+  length: 50
+  description: 'Mother Other race (please specify):'
+  alias: de01bm
+
+acting_mother:
+  type: Integer
+  description: 5. Who is the person now acting as (child)'s mother?
+  range:
+  - 1::7
+  - 90
+  - -999
+  notes: 1= Biological mother ; 2= Grandmother ; 3= Stepmother ; 4= Aunt ; 5= Sister
+    ; 6= Cousin ; 7= Friend ; 90= Other= specify; -999= Missing
+  codes:
+    1: Biological mother
+    2: Grandmother
+    3: Stepmother
+    4: Aunt
+    5: Sister
+    6: Cousin
+    7: Friend
+    90: Other= specify
+    -999: Missing
+
+act_mother_specify:
+  type: String
+  length: 30
+  description: Acting Mother Other= specify
+
+bio_mother_education:
+  type: String
+  length: 75
+  description: Biological Mother Highest level of education
+  range:
+  - Less than High School
+  - High School Degree
+  - GED
+  - Less than 7th Grade
+  - Jr. High School
+  - Some High School
+  - Some College
+  - Associates Degree
+  - Bachelors Degree
+  - Some Graduate Work
+  - Graduate Degree
+  - Never attended school
+  - Primary/all age/ Jnr. Secondary
+  - Secondary/High/Technical
+  - H.E.A.R.T/ Vocational
+  - Tertiary College/University
+  - Other tertiary- specify
+  - Other education-specify
+  - 99
+  - 77
+  - -999?
+  alias: mother_edu1
+
+mothertert_specify1:
+  type: String
+  length: 30
+  description: Mother Other tertiary= specify
+
+motheredu_specify1:
+  type: String
+  length: 100
+  description: Mother Other education= specify
+  alias: de010m,demo_mat_edu,educ_m
+
+mother_edu2:
+  type: Integer
+  description: 7. What is the highest level of school completed or highest degree
+    completed of the person now acting as the child?s mother? (child) was born?
+  range:
+  - 1::7
+  - 77
+  - 99
+  - -999
+  notes: 1= Never attended school ; 2= Primary/all age/ Jnr. Secondary ; 3= Secondary/High/Technical
+    ; 4= H.E.A.R.T/ Vocational ; 5= Tertiary College/University ; 6= Other tertiary=
+    specify ; 7= Other education= specify ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: Never attended school
+    2: Primary/all age/ Jnr. Secondary
+    3: Secondary/High/Technical
+    4: H.E.A.R.T/ Vocational
+    5: Tertiary College/University
+    6: Other tertiary= specify
+    7: Other education= specify
+    99: D/K
+    77: N/A
+    -999: Missing
+
+mothertert_specify2:
+  type: String
+  length: 20
+  description: Mother Other tertiary= specify
+
+motheredu_specify2:
+  type: String
+  length: 20
+  description: Mother Other education= specify
+
+bio_father_ethnicity:
+  type: String
+  length: 50
+  description: '"Biological Father ethnicity (Hispanic or Latino, Not Hispanic or
+    Latino, No Answer)"'
+  range:
+  - Hispanic or Latino
+  - Not Hispanic or Latino
+  - No Answer
+  alias: de03am,father_ethnicity
+
+bio_father_race:
+  type: String
+  length: 150
+  description: Biological Father Race
+  range:
+  - American Indian/Alaska Native
+  - Asian
+  - Hawaiian or Pacific Islander
+  - Black or African American
+  - White
+  - More than one race
+  - Unknown or not reported
+  alias: father_race
+
+father_other_race:
+  type: String
+  length: 35
+  description: 'Father Other race (please specify):'
+  alias: de03bm
+
+bio_father_education:
+  type: String
+  length: 75
+  description: Biological Father Highest level of education
+  range:
+  - Less than High School
+  - High School Degree
+  - GED
+  - Less than 7th Grade
+  - Jr. High School
+  - Some High School
+  - Some College
+  - Associates Degree
+  - Bachelors Degree
+  - Some Graduate Work
+  - Graduate Degree
+  - Never attended school
+  - Primary/all age/ Jnr. Secondary
+  - Secondary/High/Technical
+  - H.E.A.R.T/ Vocational
+  - Tertiary College/University
+  - Other tertiary- specify
+  - Other education-specify
+  - 99
+  - 77
+  - -999?
+  notes: 99= D/K ; 77= N/A; 999= Missing
+  alias: father_edu1
+  codes:
+    99: D/K
+    77: N/A
+    999: Missing
+
+fathertert_specify1:
+  type: String
+  length: 20
+  description: Father Other tertiary= specify
+
+fatheredu_specify1:
+  type: String
+  length: 200
+  description: Father Other education= specify
+  alias: de011m,demo_pat_edu,educ_f
+
+father_edu2:
+  type: Integer
+  description: 13. What is the highest level of school completed or highest degree
+    completed of the person now acting as the child?s Father? (child) was born?
+  range:
+  - 1::7
+  - 77
+  - 99
+  - -999
+  notes: 1= Never attended school ; 2= Primary/all age/ Jnr. Secondary ; 3= Secondary/High/Technical
+    ; 4= H.E.A.R.T/ Vocational ; 5= Tertiary College/University ; 6= Other tertiary=
+    specify ; 7= Other education= specify ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: Never attended school
+    2: Primary/all age/ Jnr. Secondary
+    3: Secondary/High/Technical
+    4: H.E.A.R.T/ Vocational
+    5: Tertiary College/University
+    6: Other tertiary= specify
+    7: Other education= specify
+    99: D/K
+    77: N/A
+    -999: Missing
+
+fathertert_specify2:
+  type: String
+  length: 20
+  description: Father Other tertiary= specify
+
+fatheredu_specify2:
+  type: String
+  length: 20
+  description: Father Other education= specify
+
+maritals_p:
+  type: Integer
+  description: '14. Parents'' Marital Status:'
+  range:
+  - 1::7
+  - 77
+  - 90
+  - -999
+  notes: 1= Visiting relationship ; 2= Common law union ; 3= Married ; 4= Divorced
+    ; 5= Separated ; 6= No relationship ; 7= Widow/widower ; 90= Other= specify ;
+    77= N/A; -999= Missing
+  codes:
+    1: Visiting relationship
+    2: Common law union
+    3: Married
+    4: Divorced
+    5: Separated
+    6: No relationship
+    7: Widow/widower
+    90: Other= specify
+    77: N/A
+    -999: Missing
+
+other_marital_specify:
+  type: String
+  length: 150
+  description: Parents' Marital Status Other specify
+
+motherfigures:
+  type: Integer
+  description: 15. How many mother figures has the (child) had since birth?
+  range:
+  - 1::4
+  - 77
+  - 99
+  - -999
+  notes: 1= 1 ; 2= 2 ; 3= 3 ; 4= >3 ; 99= D/K ; 77= N/A ; -999= Missing
+  codes:
+    1: '1'
+    2: '2'
+    3: '3'
+    4: '>3'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+fatherfigures:
+  type: Integer
+  description: 16. How many father figures has the (child) had since birth?
+  range:
+  - 1::4
+  - 77
+  - 99
+  - -999
+  notes: 1= 1 ; 2= 2 ; 3= 3 ; 4= >3 ; 99= D/K ; 77= N/A ; -999= Missing
+  codes:
+    1: '1'
+    2: '2'
+    3: '3'
+    4: '>3'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+under18_household:
+  type: Integer
+  description: 17. How many people living in (child)'s household are under 18 years
+    old?
+  range:
+  - 1
+  - 99
+  - 77
+  - -999
+  notes: 1= Number of people ; 99= D/K ; 77= N/A; -999= Missing
+  alias: childhome
+  codes:
+    1: Number of people
+    99: D/K
+    77: N/A
+    -999: Missing
+
+children_household:
+  type: Integer
+  description: Number children household
+  alias: children,demog_05,dependent_num
+
+older18_household:
+  type: Integer
+  description: 18.How many people living in (child)'s household are older than 18
+    years?
+  range:
+  - 1
+  - 99
+  - 77
+  - -999
+  notes: 1= Number of people ; 99= D/K ; 77= N/A; -999= Missing
+  alias: adulthome
+  codes:
+    1: Number of people
+    99: D/K
+    77: N/A
+    -999: Missing
+
+adults_household:
+  type: Integer
+  description: Number adults in household
+
+major_earner:
+  type: Integer
+  description: 19. What is the relationship of the head of the household (major earner)
+    to (child)?
+  range:
+  - 1::8
+  - 90
+  - -999
+  notes: 1= Mother ; 2= Father ; 3= Grandparent ; 4= Stepparent ; 5= Aunt/ Uncle ;
+    6= Sibling ; 7= Cousin ; 8 = Partner; 90= Other= specify; -999= Missing
+  codes:
+    1: Mother
+    2: Father
+    3: Grandparent
+    4: Stepparent
+    5: Aunt/ Uncle
+    6: Sibling
+    7: Cousin
+    8: Partner
+    90: Other= specify
+    -999: Missing
+
+major_earn_other_sp:
+  type: String
+  length: 20
+  description: Major earner Other= specify
+  alias: major_earner_other_specify
+
+tv:
+  type: Integer
+  description: 20.1. Television set
+  range:
+  - 0
+  - 1
+  - 77
+  - 99
+  - -999
+  notes: 1= Yes ; 0= No ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: 'Yes'
+    0: 'No'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+cable:
+  type: Integer
+  description: 20.2. Cable/Satellite connection
+  range:
+  - 0
+  - 1
+  - 77
+  - 99
+  - -999
+  notes: 1= Yes ; 0= No ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: 'Yes'
+    0: 'No'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+refrig:
+  type: Integer
+  description: 20.3. Refrigerator
+  range:
+  - 0
+  - 1
+  - 77
+  - 99
+  - -999
+  notes: 1= Yes ; 0= No ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: 'Yes'
+    0: 'No'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+freezer:
+  type: Integer
+  description: 20.4. Freezer
+  range:
+  - 0
+  - 1
+  - 77
+  - 99
+  - -999
+  notes: 1= Yes ; 0= No ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: 'Yes'
+    0: 'No'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+livingroomset:
+  type: Integer
+  description: 20.5. Living room set
+  range:
+  - 0
+  - 1
+  - 77
+  - 99
+  - -999
+  notes: 1= Yes ; 0= No ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: 'Yes'
+    0: 'No'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+radio:
+  type: Integer
+  description: 20.6. Radio
+  range:
+  - 0
+  - 1
+  - 77
+  - 99
+  - -999
+  notes: 1= Yes ; 0= No ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: 'Yes'
+    0: 'No'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+stereo:
+  type: Integer
+  description: Stereotyped/Idiosyncratic Use of Words or Phrases
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 8
+  notes: '"0=rarely or never uses stereotyped or idiosyncratic words or phrases.;1=use
+    of words or phrases tends to be more repetitive than most children at the same
+    level of complexity, but not obviously odd.  OR occasional stereotyped utterances
+    or use of odd words or use of phrases in an unusual way, with other flexible spontaneous
+    language as well.;2=often uses stereotyped utterances or odd words or phrases
+    with some other language.;3=phrases almost exclusively odd or stereotyped utterances.;8=N/A,
+    no phrase speech."'
+  codes:
+    0: rarely or never uses stereotyped or idiosyncratic words or phrases.
+    1: use of words or phrases tends to be more repetitive than most children at the
+      same level of complexity, but not obviously odd.  OR occasional stereotyped
+      utterances or use of odd words or use of phrases in an unusual way, with other
+      flexible spontaneous language as well.
+    2: often uses stereotyped utterances or odd words or phrases with some other language.
+    3: phrases almost exclusively odd or stereotyped utterances.
+    8: N/A, no phrase speech."
+
+washingmachine:
+  type: Integer
+  description: 20.8. Washing machine
+  range:
+  - 0
+  - 1
+  - 77
+  - 99
+  - -999
+  notes: 1= Yes ; 0= No ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: 'Yes'
+    0: 'No'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+cars:
+  type: Integer
+  description: 20.9. Cars or other vehicles
+  range:
+  - 0
+  - 1
+  - 77
+  - 99
+  - -999
+  notes: 1= Yes ; 0= No ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: 'Yes'
+    0: 'No'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+telephone:
+  type: Integer
+  description: 20.10. Telephone/Cell-phone
+  range:
+  - 0
+  - 1
+  - 77
+  - 99
+  - -999
+  notes: 1= Yes ; 0= No ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: 'Yes'
+    0: 'No'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+generator:
+  type: Integer
+  description: 20.11. Generator
+  range:
+  - 0
+  - 1
+  - 77
+  - 99
+  - -999
+  notes: 1= Yes ; 0= No ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: 'Yes'
+    0: 'No'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+water_heater_electric:
+  type: Integer
+  description: 20.12. Water heater (electric)
+  range:
+  - 0
+  - 1
+  - 77
+  - 99
+  - -999
+  notes: 1= Yes ; 0= No ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: 'Yes'
+    0: 'No'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+water_heater_solar:
+  type: Integer
+  description: 20.13. Water heater (solar)
+  range:
+  - 0
+  - 1
+  - 77
+  - 99
+  - -999
+  notes: 1= Yes ; 0= No ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: 'Yes'
+    0: 'No'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+water_tank:
+  type: Integer
+  description: 20.14. Water tank
+  range:
+  - 0
+  - 1
+  - 77
+  - 99
+  - -999
+  notes: 1= Yes ; 0= No ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: 'Yes'
+    0: 'No'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+airconditioners:
+  type: Integer
+  description: 20.15. Air conditioners
+  range:
+  - 0
+  - 1
+  - 77
+  - 99
+  - -999
+  notes: 1= Yes ; 0= No ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: 'Yes'
+    0: 'No'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+internet_connection:
+  type: Integer
+  description: 20.16. Internet connection
+  range:
+  - 0
+  - 1
+  - 77
+  - 99
+  - -999
+  notes: 1= Yes ; 0= No ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: 'Yes'
+    0: 'No'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+computers:
+  type: Integer
+  description: 20.17. Computers/Tablets
+  range:
+  - 0
+  - 1
+  - 77
+  - 99
+  - -999
+  notes: 1= Yes ; 0= No ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: 'Yes'
+    0: 'No'
+    99: D/K
+    77: N/A
+    -999: Missing
+
+home_owned:
+  type: Integer
+  description: 21.a. House - It is owned by you (or someone in the household)
+  range:
+  - 1
+  - 2
+  - 99
+  - -999
+  notes: 1= Yes ; 2= No ; 99= D/K; -999= Missing
+  codes:
+    1: 'Yes'
+    2: 'No'
+    99: D/K
+    -999: Missing
+
+home_rented:
+  type: Integer
+  description: 21.b. House - It is rented by you (or someone in the household)
+  range:
+  - 1
+  - 2
+  - 99
+  - -999
+  notes: 1= Yes ; 2= No ; 99= D/K; -999= Missing
+  codes:
+    1: 'Yes'
+    2: 'No'
+    99: D/K
+    -999: Missing
+
+home_occupied:
+  type: Integer
+  description: 21.c. House - It is occupied without any payments
+  range:
+  - 1
+  - 2
+  - 99
+  - -999
+  notes: 1= Yes ; 2= No ; 99= D/K; -999= Missing
+  codes:
+    1: 'Yes'
+    2: 'No'
+    99: D/K
+    -999: Missing
+
+toilet:
+  type: Integer
+  description: 22. What type of toilet facilities does (child)'s family use at home?
+  range:
+  - 1::5
+  - 90
+  - 77
+  notes: 1= Pit latrine= shared ; 2= Pit latrine (unshared) in yard ; 3= Water closet
+    (flush type)= shared ; 4= Water closet (flush type)= unshared ; 5= None ; 90=
+    Other= specify ; 77= N/A
+  codes:
+    1: Pit latrine= shared
+    2: Pit latrine (unshared) in yard
+    3: Water closet (flush type)= shared
+    4: Water closet (flush type)= unshared
+    5: None
+    90: Other= specify
+    77: N/A
+
+toiletother_specify:
+  type: String
+  length: 20
+  description: Toilet facilities- Other= specify
+
+cookingfuel:
+  type: Integer
+  description: 23. What is the main source of cooking fuel at (child)'s house?
+  range:
+  - 1::5
+  - 90
+  - 99
+  - 77
+  - -999
+  notes: 1= Wood ; 2= Coal ; 3= Kerosene ; 4= Gas ; 5= Electric ; 90= Other= specify
+    ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: Wood
+    2: Coal
+    3: Kerosene
+    4: Gas
+    5: Electric
+    90: Other= specify
+    99: D/K
+    77: N/A
+    -999: Missing
+
+cookfuelother_specify:
+  type: String
+  length: 20
+  description: Cooking fuel - Other= specify
+
+house_water_piped:
+  type: Integer
+  description: 24. Is water piped into the house?
+  range:
+  - 1
+  - 2
+  - -999
+  notes: 1= Yes ; 2= No; -999= Missing
+  codes:
+    1: 'Yes'
+    2: 'No'
+    -999: Missing
+
+house_rooms:
+  type: Integer
+  description: 25. How many rooms in (child)'s house are used for sleeping?
+  range:
+  - 1
+  - 99
+  - 77
+  - -999
+  notes: 1= Number of rooms ; 99= D/K ; 77= N/A; -999= Missing
+  codes:
+    1: Number of rooms
+    99: D/K
+    77: N/A
+    -999: Missing
+
+rooms:
+  type: Integer
+  description: Number Rooms
+
+sd27d:
+  type: Integer
+  description: 'Use of psychoactive substances in past 3 months: Methamphetamine'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd27g:
+  type: Integer
+  description: 'Use of psychoactive substances in past 3 months: Hallucinogens'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd27h:
+  type: Integer
+  description: 'Use of psychoactive substances in past 3 months: Street opioids'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd27i:
+  type: Integer
+  description: 'Use of psychoactive substances in past 3 months: Prescription opioids'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd29:
+  type: Integer
+  description: Do you have a smartphone?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd30:
+  type: Integer
+  description: Do you use the Internet
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+nsmos27:
+  type: String
+  length: 100
+  description: Where was patient hospitalized, in what institution?
+
+fsprg:
+  type: String
+  length: 150
+  description: In your own words, to which race(s) or racial group(s) do you belong?
+  alias: de05bm,p_race
+
+bkgrnd_education:
+  type: String
+  length: 1020
+  description: Subject's education (school and preschool)
+  alias: b5,cbcl_grade_in_school,demo_childs_edu,demog_07,dm15,education,education_status,p_grade,participant_education,sub_grade
+
+area4_explain:
+  type: String
+  length: 255
+  description: Employment situation? Explain briefly
+  alias: demog_08,employment,occstat_7_text,occup_other,p_job,sub_job
+
+jobh:
+  type: String
+  length: 150
+  description: job title
+  alias: occup,p_work,sub_work
+
+thous:
+  type: Integer
+  description: Total number of persons in household
+  notes: 0=Does not apply (e.g., in institution), 99=unknown
+  codes:
+    0: Does not apply (e.g., in institution), 99=unknown
+
+das1ms:
+  type: String
+  length: 200
+  description: Marital status
+  alias: b3,dm9,marital_stat,marital_status,p_marriage,sub_marriage
+
+aut_prebasic_insure99:
+  type: String
+  length: 255
+  description: What type(s) of health insurance do you have?
+
+epino:
+  type: Integer
+  description: Number of MDEs
+
+cmed_antidepressant:
+  type: Integer
+  description: 'Current med: antidepressant'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+asap10c:
+  type: Integer
+  description: 'outside clinicians/services: Outside psychotherapy for patient'
+  range:
+  - 0
+  - 1
+  notes: 0 = No;1 = Yes
+  alias: child_out_psych_cur
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+mb_21:
+  type: String
+  length: 10
+  description: Any self-help group like Alcoholics Anonymous or peer counseling
+  range:
+  - 'Yes'
+  - 'No'
+  notes: Outpatient services
+
+alcohol_medication:
+  type: Integer
+  description: 'Alcohol Abuse/Dependence: Medication for symptoms'
+  range:
+  - 0
+  - 1
+  - -7
+  - -8
+  - -9
+  notes: 0 = No; 1 = Yes; -7 = Don't know; -8 = Refused to answer; -9 = Does not apply
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -7: Don't know
+    -8: Refused to answer
+    -9: Does not apply
+
+ksads_21_134_p:
+  type: String
+  length: 30
+  description: Symptom - History of traumatic event Present
+
+ksads_ptsd_totalt_1b:
+  type: Integer
+  description: Number of traumas reported
+
+dawba_e1:
+  type: Integer
+  description: Post-Traumatic Stress - has this ever happened?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+demo_fam_depression:
+  type: Integer
+  description: Family Member Depression
+  range:
+  - 0
+  - 1
+  notes: 1=Yes; 0=No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+deppar:
+  type: Integer
+  description: Parent history depression
+  range:
+  - 0
+  - 1
+  notes: 0=Not checked; 1=Checked
+  codes:
+    0: Not checked
+    1: Checked
+
+depsib:
+  type: Integer
+  description: Sibling history depression
+  range:
+  - 0
+  - 1
+  notes: 0=Not checked; 1=Checked
+  codes:
+    0: Not checked
+    1: Checked
+
+major_depression_diagnosis:
+  type: String
+  length: 10
+  description: 'FIGS Y1: Major depressive disorder (N=no diagnosis for any first degree
+    relative; Y=positive lifetime diagnosis for one or more first degree relatives)'
+  range:
+  - N
+  - Y
+  notes: N = No diagnosis for any first degree relative; Y = Positive lifetime diagnosis
+    for one or more first degree relatives
+  codes:
+    N: No diagnosis for any first degree relative
+    Y: Positive lifetime diagnosis for one or more first degree relatives
+
+mental_ill:
+  type: Integer
+  description: Do you have a family history of mental illness?
+  range:
+  - 0
+  - 1
+  notes: 0 = No;  1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+fhi_df_panc_any:
+  type: Integer
+  description: 'Family History: Panic or Anxiety Disorder Any'
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1= Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+mini_manic1:
+  type: Integer
+  description: 'Manic and Hypomanic: family history of manic depressive illness or
+    bipolar disorder or any member who had mood swigs treated with medication'
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+quesmoth_probhighbp:
+  type: String
+  length: 50
+  description: Hypertension (High blood pressure)
+  range:
+  - 'Yes'
+  - 'No'
+  - Don't Know
+
+diab:
+  type: Integer
+  description: 'Charlson Comorbidity: have diabetes (high blood sugar)'
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+mhxa7b:
+  type: Integer
+  description: Other pulmonary disease
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+wk_arthritis:
+  type: Integer
+  description: 3. Arthritis
+  range:
+  - 0
+  - 1
+  notes: No = 0; Yes = 1;
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+baseline_k_007:
+  type: Integer
+  description: Chronic pain, like headaches, joint pain, neck pain, or back pain that
+    you experience frequently
+  range:
+  - 0
+  - 1
+  - -888
+  - -999
+  notes: 0=No; 1=Yes; -888=Not Applicable; -999=Missing;
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -888: Not Applicable
+    -999: Missing
+
+asdos:
+  type: String
+  length: 100
+  description: 'Specify comorbid other '
+
+smq3:
+  type: Integer
+  description: Smoking or tobacco use history
+  range:
+  - 1::8
+  notes: 1 = Never used, not even a single puff2 = Smoked once or twice, but not in
+    the last month3 = Do not smoke, but in the past I was a regular smoker4 = Smoked
+    regularly but no more than once a month5 = Smoked regularly but no more than once
+    a week6 = Smoked regularly and more than once a week; 7 = current smoker; 8 =
+    Past Smoker
+  codes:
+    1: Never used, not even a single puff2 = Smoked once or twice, but not in the
+      last month3 = Do not smoke, but in the past I was a regular smoker4 = Smoked
+      regularly but no more than once a month5 = Smoked regularly but no more than
+      once a week6 = Smoked regularly and more than once a week
+    7: current smoker
+    8: Past Smoker
+
+pesq25b:
+  type: Integer
+  description: 'Question 25 Subquestion. Indicate whether you have used the drug at
+    least once during the past three months: cocaine?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+pesq25i:
+  type: Integer
+  description: 'Question 25 Subquestion. Indicate whether you have used the drug at
+    least once during the past three months: inhalants?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+pesq25f:
+  type: Integer
+  description: 'Question 25 Subquestion. Indicate whether you have used the drug at
+    least once during the past three months: tranquilizers?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+behavobs_referralreason:
+  type: String
+  length: 255
+  description: Reason for Referral/Presenting Complaint(s)
+
+phq:
+  type: Float
+  description: Sum Of PHQ 1-9
+  notes: (Patient Health Questionnaire) 1-9
+
+alcq:
+  type: Integer
+  description: Sum of Alcohol Use Items
+
+ec36:
+  type: Integer
+  description: 'Exclusion criteria EC36: Does the patient have a past or current diagnosis
+    of psychotic disorder, including schizophrenia-spectrum disorder, psychotic major
+    depression, or an organic psychotic disorder?'
+  range:
+  - 0::2
+  notes: 0 = No; 1 = Yes; 2 = Not Assessed
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Not Assessed
+
+scid5_dis1_other_icd10:
+  type: String
+  length: 10
+  description: ICD10 code
+
+ad42:
+  type: Integer
+  description: 'ALCOHOL DEPENDENCE. Withdrawal, as manifested by either of the following:
+    1) The characteristic withdrawal syndrome for alcohol (Criteria A and B). 2) Alcohol
+    or sedatives taken to relieve or avoid withdrawal symptoms.'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1 = Yes
+  codes:
+    0: 'no'
+    1: 'Yes'
+
+sd08:
+  type: String
+  length: 10
+  description: What is your official strata (as present in your electric/water service
+    bill)?
+
+sd14:
+  type: String
+  length: 25
+  description: Travel time to interview location
+
+sd15:
+  type: Integer
+  description: In the past 12 months did cost keep you from going to this health center?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd16:
+  type: Integer
+  description: How confident are you filling out medical forms?
+  range:
+  - 1::5
+  notes: 1 = Extremely ; 2 = Quite a bit ; 3 = Somewhat ; 4 = A little ; 5 = Not at
+    all
+  codes:
+    1: Extremely
+    2: Quite a bit
+    3: Somewhat
+    4: A little
+    5: Not at all
+
+sd17:
+  type: Integer
+  description: How often do you have problems learning about your medical conditions
+    because of difficulty understanding written information?
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Rarely ; 3 = Sometimes ; 4 = Often ; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+sd18:
+  type: Integer
+  description: How often do you have someone help you read materials at the clinic,
+    doctor's office, or hospital?
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Rarely ; 3 = Sometimes ; 4 = Often ; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+sd21c:
+  type: Integer
+  description: Displacement due to violence
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd23:
+  type: Integer
+  description: Family history of alcohol use disorder (general)
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd23a:
+  type: Integer
+  description: 'Family history of alcohol use disorder: Parents'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd23b:
+  type: Integer
+  description: 'Family history of alcohol use disorder: Siblings'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd23c:
+  type: Integer
+  description: 'Family history of alcohol use disorder: 1st-degree relatives'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd24d:
+  type: Integer
+  description: 'Family history of mental illness: Schizophrenia'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd25a:
+  type: Integer
+  description: 'Comorbidity: General'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd25c:
+  type: Integer
+  description: 'Comorbidity: Cardiac disease'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd25f:
+  type: Integer
+  description: 'Comorbidity: Migraine'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd25g:
+  type: Integer
+  description: 'Comorbidity: Obesity'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd25h:
+  type: Integer
+  description: 'Comorbidity: Epilepsy'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd27a:
+  type: Integer
+  description: 'Use of psychoactive substances in past 3 months: Cannabis'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sd27c:
+  type: Integer
+  description: 'Use of psychoactive substances in past 3 months: Prescription stimulants'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ca243:
+  type: Integer
+  description: What handedness do you consider yourself?
+  range:
+  - 1::3
+  notes: 1=Right; 2=Left; 3=Mixed
+  alias: handedness
+  codes:
+    1: Right
+    2: Left
+    3: Mixed
+
+language:
+  type: String
+  length: 50
+  description: Language Spoken at Home
+  alias: demo_prim_lang
+
+dem_2lang_other:
+  type: String
+  length: 50
+  description: 'Second Language: Other, Specify'
+  alias: demo_secondary_language
+
+bio_mother_marital_status:
+  type: String
+  length: 50
+  description: Biological Mother Marital Status
+  range:
+  - Single
+  - Married
+  - Divorced
+  - Divorced and Remarried
+  - Widowed
+  - Separated
+  - Never Married
+  - Other
+  alias: demo_maternal_mari
+
+bio_father_marital_status:
+  type: String
+  length: 50
+  description: Biological Father Marital Status
+  range:
+  - Single
+  - Married
+  - Divorced
+  - Divorced and Remarried
+  - Widowed
+  - Separated
+  - Never Married
+  - Other
+  alias: demo_patern_mari
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+
+fspgod:
+  type: String
+  length: 70
+  description: Subject's gender OTHER describe
+  alias: dm2,p_gender,p_gender_different,sub_gender
+
+ch_race:
+  type: String
+  length: 55
+  description: Child's/study subject  Race specify
+  alias: cbcl_race,race_multipleraces
+
+currgradelevel:
+  type: String
+  length: 50
+  description: Current grade level
+  alias: particpant_grade_level
+
+eversped:
+  type: Integer
+  description: 'Ever: Any other special education class?'
+  range:
+  - 1
+  - 2
+  notes: 1=No; 2=Yes
+  codes:
+    1: 'No'
+    2: 'Yes'
+
+asisped:
+  type: String
+  length: 200
+  description: Specify special education services
+
+chf_07:
+  type: String
+  length: 250
+  description: Type of psychotherapy
+
+medication1_name:
+  type: String
+  length: 500
+  description: Name first medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication2_name:
+  type: String
+  length: 200
+  description: Name second medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication3_name:
+  type: String
+  length: 150
+  description: Name third medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication4_name:
+  type: String
+  length: 100
+  description: Name fourth medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication5_name:
+  type: String
+  length: 500
+  description: Name fifth medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication6_name:
+  type: String
+  length: 500
+  description: Name sixth medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+stdate1:
+  type: String
+  length: 20
+  description: Medication start date 1
+  notes: mm/dd/yyyy or write out month year
+
+stdate2:
+  type: String
+  length: 20
+  description: Medication start date 2
+  notes: mm/dd/yyyy or write out month year
+
+stdate3:
+  type: String
+  length: 20
+  description: Medication start date 3
+  notes: mm/dd/yyyy or write out month year
+
+stdate4:
+  type: String
+  length: 20
+  description: Medication start date 4
+  notes: mm/dd/yyyy or write out month year
+
+stdate5:
+  type: String
+  length: 20
+  description: Medication start date 5
+  notes: mm/dd/yyyy or write out month year
+
+stdate6:
+  type: String
+  length: 20
+  description: Medication start date 6
+  notes: mm/dd/yyyy or write out month year
+
+medication1_dosage:
+  type: String
+  length: 150
+  description: First medication dosage
+  notes: 0 = No medication; 999 = Missing
+  codes:
+    0: No medication
+    999: Missing
+
+medication2_dosage:
+  type: String
+  length: 100
+  description: Second medication dosage
+  notes: 0 = No medication; 999 = Missing
+  codes:
+    0: No medication
+    999: Missing
+
+medication3_dosage:
+  type: String
+  length: 100
+  description: Third medication dosage
+  notes: 0 = No medication; 999 = Missing
+  codes:
+    0: No medication
+    999: Missing
+
+medication4_dosage:
+  type: String
+  length: 100
+  description: Fourth  medication dosage
+  notes: 0 = No medication; 999 = Missing
+  codes:
+    0: No medication
+    999: Missing
+
+medication5_dosage:
+  type: String
+  length: 100
+  description: Fifth medication dosage
+  notes: 0 = No medication; 999 = Missing
+  codes:
+    0: No medication
+    999: Missing
+
+medication6_dosage:
+  type: String
+  length: 100
+  description: Sixth medication dosage
+  notes: 0 = No medication; 999 = Missing
+  codes:
+    0: No medication
+    999: Missing
+
+dem_39_emo_hosp:
+  type: Integer
+  description: Has this child ever been hospitalized due to an emotional or psychological
+    problem?
+  range:
+  - 0
+  - 1
+  notes: 1=Yes; 0=No
+  alias: hospitalized,inpatient_psych
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+hspage:
+  type: Integer
+  description: 'Has your child ever been hospitalized because of a behavioral, emotional,
+    or psychiatric problem? If yes, Child''s age:'
+  notes: months
+  alias: inpatient_treat_age
+
+insurance:
+  type: String
+  length: 50
+  description: child's primary health insurance provider
+
+cg1_age:
+  type: Integer
+  description: Parent/Caregiver 1 Age, months
+  range:
+  - 0::1200
+
+cg1_occupation:
+  type: String
+  length: 100
+  description: Caregiver/Parent 1's Occupation
+  alias: person1_occ_lvl
+
+cg1_relationship_specify:
+  type: String
+  length: 100
+  description: Caregiver/Parent 1's Relationship to Participant Other Specify
+  alias: parent_relationship_1
+
+cg1_race:
+  type: String
+  length: 100
+  description: Race of the Caregiver/Parent 1
+  range:
+  - American Indian/Alaska Native
+  - Asian
+  - Hawaiian or Pacific Islander
+  - Black or African American
+  - White
+  - More than one race
+  - Unknown or not reported
+
+cg1_race_specify:
+  type: String
+  length: 100
+  description: Race of the Caregiver/Parent 1 Other Specify
+  alias: race_6_text
+
+cg1_ethnicity:
+  type: String
+  length: 30
+  description: Caregiver/Parent 1's ethnicity
+  range:
+  - Hispanic or Latino
+  - Not Hispanic or Latino
+  alias: hispanic
+
+cg2_age:
+  type: Integer
+  description: Parent/Caregiver 2 Age, months
+  range:
+  - 0::1200
+
+cg2_occupation:
+  type: String
+  length: 100
+  description: Caregiver/Parent 2's Occupation
+  alias: person2_occ_lvl
+
+cg2_relationship_specify:
+  type: String
+  length: 100
+  description: Caregiver/Parent 2's Relationship to Participant Other Specify
+  alias: parent_relationship_2
+
+cg2_race:
+  type: String
+  length: 100
+  description: Race of the Caregiver/Parent 2
+  range:
+  - American Indian/Alaska Native
+  - Asian
+  - Hawaiian or Pacific Islander
+  - Black or African American
+  - White
+  - More than one race
+  - Unknown or not reported
+
+cg2_race_specify:
+  type: String
+  length: 50
+  description: 'Caregiver2: Specify Other Race'
+
+cg2_ethnicity:
+  type: String
+  length: 30
+  description: Caregiver/Parent 2's ethnicity
+  range:
+  - Hispanic or Latino
+  - Not Hispanic or Latino
+
+educational_setting:
+  type: String
+  length: 50
+  description: Which of the following best describes [name of child]s most recent
+    school or educational setting?
+  notes: Public school; Charter school; Private school; Home school program; Early
+    childhood intervention program; Other (specify); Does not currently attend school;
+    Don't Know
+
+cg1_relationship:
+  type: String
+  length: 100
+  description: Caregiver/Parent 1's Relationship to Participant
+  notes: Parent;Step-parent;Foster parent;Grandparent;Other family member;Other; Biological
+    Mother; Biological Father; Biological Parent; Adoptive Parent; Adoptive/Foster
+    Parent; I do not wish to disclose; Step-father; Step-mother
+  alias: person1_id
+
+cg1_education:
+  type: String
+  length: 100
+  description: Caregiver/Prent 1's Highest Level of Education
+  range:
+  - Some primary school
+  - Some high school
+  - High school diploma
+  - GED
+  - Some college or technical school
+  - Associate degree
+  - Baccalaureate degree
+  - Graduate or professional degree
+  - did not graduate from high school
+  - college graduate
+  - No formal schooling completed
+  - Nursery school to 4th grade
+  - 5th or 6th grade
+  - 7th or 8th grade
+  - 9th grade
+  - 10th grade
+  - 11th grade
+  - 12th grade, no diploma
+  - High School Graduate/GED or equivalent
+  - Some college credit, but less than 1 year
+  - Technical college/vocational school
+  - Associate degree
+  - Bachelors's degree
+  - Master's degree
+  - Professional degree
+  - Doctorate degree
+  - Refused
+  - Some elementary
+  - Elementary
+  - Some Middle School
+  - Middle School
+  - Some High School
+  - GED
+  - High School
+  - Trade School/Certification Program
+  - Undergraduate Degree
+  - Some Graduate School
+  - Less than 7th grade
+  - Junior High
+  - High School Graduate
+  - Some College
+  - Special Training After High School
+  - Graduate/Professional Training
+  - Some Grade School
+  alias: educ,person1_education
+
+cg2_relationship:
+  type: String
+  length: 100
+  description: Caregiver/Parent 2's Relationship to Participant
+  notes: Parent;Step-parent;Foster parent;Grandparent;Other family member;Other; Biological
+    Mother; Biological Father; Biological Parent; Adoptive Parent; Adoptive/Foster
+    Parent; I do not wish to disclose; Step-father; Step-mother
+  alias: person2_id
+
+cg2_education:
+  type: String
+  length: 100
+  description: Caregiver/Parent 2's Highest Level of Education
+  range:
+  - Some primary school
+  - Some high school
+  - High school diploma
+  - GED
+  - Some college or technical school
+  - Associate degree
+  - Baccalaureate degree
+  - Graduate or professional degree
+  - did not graduate from high school
+  - college graduate
+  - Middle School
+  alias: person2_education
+
+qaet1:
+  type: Integer
+  description: Has your child ever received exposure therapy for mental health concerns?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+qaet2:
+  type: String
+  length: 300
+  description: If your child has ever received exposure therapy, then describe
+
+qaet3:
+  type: Integer
+  description: Has your child ever taken medication for mental health concerns?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+qaet4:
+  type: Integer
+  description: Is your child currently taking any medication for mental health concerns?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+qaet7:
+  type: String
+  length: 300
+  description: If your child has ever been hospitalized because of a behavioral, emotional,
+    or psychiatric problem, specify the reason
+
+qaet8:
+  type: String
+  length: 20
+  description: Does your child have biological family members with a history of any
+    of the following conditions?
+  notes: 1 = OCD  ; 2 = Tics/Tourette's  ; 3 = Anxiety  ; 4 = Depression  ; 5 = Drugs/Alcohol  ;
+    6 = Schizophrenia  ; 7 = Bipolar Disorder
+  codes:
+    1: OCD
+    2: Tics/Tourette's
+    3: Anxiety
+    4: Depression
+    5: Drugs/Alcohol
+    6: Schizophrenia
+    7: Bipolar Disorder
+
+qaet10:
+  type: String
+  length: 100
+  description: Child's Secondary Insurance Provider
+
+qaet11:
+  type: Integer
+  description: Would you say your family is financially better or worse off than other
+    families?
+  range:
+  - 1::5
+  notes: 1 = Much better; 2 = Better; 3 = Same; 4 = Worse/A little worse; 5 = A lot
+    worse
+  codes:
+    1: Much better
+    2: Better
+    3: Same
+    4: Worse/A little worse
+    5: A lot worse
+
+qaet12:
+  type: Integer
+  description: Which of these phrases describes best your family's economic status?
+  range:
+  - 1::5
+  notes: 1 = We live very well; 2 = We live comfortably; 3 = We live from check to
+    check; 4 = Almost poor; 5 = Poor
+  codes:
+    1: We live very well
+    2: We live comfortably
+    3: We live from check to check
+    4: Almost poor
+    5: Poor
+
+qaet13:
+  type: Integer
+  description: Child lives with Caregiver 1
+  range:
+  - 1::3
+  notes: 1 = Full-time; 2 = Part-time; 3 = Do not live together
+  codes:
+    1: Full-time
+    2: Part-time
+    3: Do not live together
+
+qaet14:
+  type: Integer
+  description: Child lives with Caregiver 2
+  range:
+  - 1::3
+  notes: 1 = Full-time; 2 = Part-time; 3 = Do not live together
+  codes:
+    1: Full-time
+    2: Part-time
+    3: Do not live together
+
+demog_01:
+  type: Integer
+  description: Country of family origin
+  range:
+  - 1::6
+  notes: 1 = Somalia; 2 = Ethiopia; 3 = Sudan; 4 = Eritrea; 5 = Kenya; 6 = Other
+  alias: family_origin
+  codes:
+    1: Somalia
+    2: Ethiopia
+    3: Sudan
+    4: Eritrea
+    5: Kenya
+    6: Other
+
+demog_02:
+  type: Integer
+  description: Where subject was born
+  range:
+  - 1::7
+  notes: 1 = Somalia; 2 = Ethiopia; 3 = Sudan; 4 = Eritrea; 5 = Kenya; 6 = United
+    States; 7 = Other
+  alias: birth_country
+  codes:
+    1: Somalia
+    2: Ethiopia
+    3: Sudan
+    4: Eritrea
+    5: Kenya
+    6: United States
+    7: Other
+
+demog_09:
+  type: Integer
+  description: Total current household income per year
+  range:
+  - 1::8
+  notes: 1 = $50,000 and up; 2 = $40,001 - 50,000; 3 = $30,001 - 40,000; 4 = $20,001
+    - 30,000; 5 = $15,001 - 20,000; 6 = $10,001 - 15,000; 7 = $5,001 - 10,000; 8 =
+    $5,000 and less
+  alias: income
+  codes:
+    1: $50,000 and up
+    2: $40,001 - 50,000
+    3: $30,001 - 40,000
+    4: $20,001 - 30,000
+    5: $15,001 - 20,000
+    6: $10,001 - 15,000
+    7: $5,001 - 10,000
+    8: $5,000 and less
+
+fsprels:
+  type: Integer
+  description: Which category best describes your current relationship status?
+  range:
+  - 1::9
+  notes: 1= Single/never married; 2= Married; 3= Living together; 4= Domestic partnership;
+    5= Separated; 6= Divorced; 7= Widowed; 8= Engaged; 9=Other
+  alias: demog_03,rel_status
+  codes:
+    1: Single/never married
+    2: Married
+    3: Living together
+    4: Domestic partnership
+    5: Separated
+    6: Divorced
+    7: Widowed
+    8: Engaged
+    9: Other
+
+household_number_in_house:
+  type: Integer
+  description: Number of people living in primary residence for subject (proband)
+  alias: de019m,demog_06,dm17c,family_size,house_size,sub_income_fampl
+
+pubertal_sex_p:
+  type: Integer
+  description: What sex was your child assigned at birth? ?Qu? sexo le fue asignado
+    a su ni?o(a) al nacer?
+  range:
+  - 1
+  - 2
+  notes: 1 = Male Masculino; 2 = Female Femenino
+  alias: childsex
+  codes:
+    1: Male Masculino
+    2: Female Femenino
+
+birth_premature:
+  type: String
+  length: 20
+  description: Was birth premature?
+  range:
+  - 'Yes'
+  - 'No'
+  alias: term
+
+fsnumsib:
+  type: Integer
+  description: How many siblings does your child have?
+  alias: sibling
+
+pad010f:
+  type: String
+  length: 100
+  description: What kind of hearing problem did [he/ she] have? (DESCRIBE:)
+  alias: deschear
+
+daycare_yn:
+  type: Integer
+  description: Does your child attend daycare or some type of child care?
+  range:
+  - 0::1
+  notes: 0 = No; 1 = Yes
+  alias: carestat
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+premat:
+  type: String
+  length: 200
+  description: 'If child was born prematurely, please note how early:'
+
+brthord:
+  type: Integer
+  description: Is your child the first-born, second-born, etc? - Selected Choice
+  range:
+  - 0::5
+  notes: '0= first-born; 1= second-born; 2= third-born; 3= fourth-born; 4= fifth-born;
+    5= other  '
+  codes:
+    0: first-born
+    1: second-born
+    2: third-born
+    3: fourth-born
+    4: fifth-born
+    5: other
+
+brthord_6_text:
+  type: String
+  length: 100
+  description: Is your child the first-born, second-born, etc? - other - Text
+
+hear:
+  type: Integer
+  description: Does your child have known hearing loss or difficulties?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1= Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+earinf:
+  type: Integer
+  description: Has your child had an ear infection in the last six months?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1= Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+desear:
+  type: String
+  length: 300
+  description: If your child has had an ear infection in the last six months, please
+    describe (how many, how severe, treatment).
+
+careloc_6_text:
+  type: String
+  length: 200
+  description: 'If your child attends child care, which best describes the location
+    where he/she spends the most time (please pick only one): - Other (please describe)
+    - Text'
+
+carehrs:
+  type: String
+  length: 200
+  description: On average, how many hours per week is your child cared for at this
+    location?
+
+numchild:
+  type: Integer
+  description: number of children
+
+othcare:
+  type: Integer
+  description: Many families use multiple types of child care. Does your child attend
+    child care other than the one - Selected Choice
+  range:
+  - 0::5
+  notes: 0= Formal child care center (e.g., stand-alone center, or school, or church,
+    etc.); 1= Home-based child care in a non-family member's home; 2= Home-based child
+    care in a family member's home; 3= Caregiver in your own home who is a family
+    member (e.g., older sibling, grandparent, aunt, cousin, etc.);  4= Caregiver in
+    your own home who is not a family member (e.g., nanny, babysitter); 5= Other (please
+    describe)
+  codes:
+    0: Formal child care center (e.g., stand-alone center, or school, or church, etc.)
+    1: Home-based child care in a non-family member's home
+    2: Home-based child care in a family member's home
+    3: Caregiver in your own home who is a family member (e.g., older sibling, grandparent,
+      aunt, cousin, etc.)
+    4: Caregiver in your own home who is not a family member (e.g., nanny, babysitter)
+    5: Other (please describe)
+
+othcare_6_text:
+  type: String
+  length: 200
+  description: Many families use multiple types of child care. Does your child attend
+    child care other than the one - Other (please describe) - Text
+
+othcarhr:
+  type: String
+  length: 100
+  description: On average, how many hours per week is your child cared for at this
+    location?
+
+othchnum:
+  type: Integer
+  description: 'Approximately how many children (other than your own) also attend
+    care at this location (e.g., # cared for in childcare home, # cared for in your
+    own home, etc.)?'
+  range:
+  - 0::4
+  notes: '0= My child is the only one; 1= 1-5 children; 2= 6-10 children; 3= 10-15
+    children; 4= 16 or more children  '
+  codes:
+    0: My child is the only one
+    1: 1-5 children
+    2: 6-10 children
+    3: 10-15 children
+    4: 16 or more children
+
+employcur:
+  type: Integer
+  description: current employment status
+  range:
+  - 1::12
+  - -7
+  notes: 1=Full time; 2=Part time for pay; 3=Homemaker; 4=Incarcerated; 5=Disabled;
+    6=Leave of absence; 7=Unemployed; 8=Retired; 9=Other; 10=Student; 11=Volunteer;
+    -7=Refused; 12 = Maternity leave
+  alias: occstat,p_job1_1,sub_job1_1
+  codes:
+    1: Full time
+    2: Part time for pay
+    3: Homemaker
+    4: Incarcerated
+    5: Disabled
+    6: Leave of absence
+    7: Unemployed
+    8: Retired
+    9: Other
+    10: Student
+    11: Volunteer
+    -7: Refused
+    12: Maternity leave
+
+child_nursery_location:
+  type: String
+  length: 110
+  description: Where is this child cared for?
+  alias: careloc
+
+custody_other:
+  type: String
+  length: 250
+  description: Describe 'other' legal custody
+  alias: custpar
+
+hworked:
+  type: Integer
+  description: About how many hours a week do/did you usually work?
+  notes: 999 = Missing
+  alias: workhrs
+  codes:
+    999: Missing
+
+neur1:
+  type: Integer
+  description: Is English the patient's first language?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: natengl
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+phne_sc_1:
+  type: String
+  length: 200
+  description: 1. What is your native language?
+  alias: natlang
+
+nonenglish:
+  type: String
+  length: 20
+  description: Non-English language spoken at home
+  notes: 0 = No; 1 = Yes
+  alias: langhome
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+language_specify:
+  type: String
+  length: 255
+  description: Language in the home - Specify if other than standard english
+  alias: lang_otherlanguages,othlang
+
+annual_fam_inc:
+  type: String
+  length: 200
+  description: What was your best estimate of the total income of all family members
+    from all sources, before taxes, in last year? PX011101_Annual_Family_Income
+  notes: -999999 =  Don't know or don't want to say
+  alias: ann_fam_income,de015m,dm17b,family_income,household_income,income,salary,sub_income_fam
+  codes:
+    -999999: Don't know or don't want to say
+
+q19_a3:
+  type: Integer
+  description: Tanner Stage
+  range:
+  - 1::5
+  notes: 1=pre puberty, 2=early puberty, 3=mid puberty, 4=late puberty, 5=post puberty
+  alias: tannerstage
+  codes:
+    1: pre puberty, 2=early puberty, 3=mid puberty, 4=late puberty, 5=post puberty
+
+edu_other:
+  type: String
+  length: 50
+  description: 'Degrees and credentials earned: other'
+  notes: 0 = Not applicable
+  alias: education_degree
+  codes:
+    0: Not applicable
+
+sh_s1b:
+  type: Float
+  description: Cumulative GPA - School 1
+  alias: education_gpa
+
+dem_18b:
+  type: Integer
+  description: LD dyslexia or learning problems
+  range:
+  - 0
+  - 1
+  notes: 1=Yes 0=No
+  alias: learning_problem
+  codes:
+    1: Yes 0=No
+
+psy_health:
+  type: Integer
+  description: Physical health (current)
+  range:
+  - 1::4
+  notes: 1=Excellent (no chronic illness); 2=Good (chronic illness with few or no
+    restrictions); 3=Fair (chronic illness with some restrictions - e.g. epilepsy/can't
+    drive car); 4=Poor (chronic illness with restriction - e.g. exercise intolerance/need
+    to move to Arizona for allergies)
+  alias: health_overall
+  codes:
+    1: Excellent (no chronic illness)
+    2: Good (chronic illness with few or no restrictions)
+    3: Fair (chronic illness with some restrictions - e.g. epilepsy/can't drive car)
+    4: Poor (chronic illness with restriction - e.g. exercise intolerance/need to
+      move to Arizona for allergies)
+
+pre_demo8a:
+  type: String
+  length: 50
+  description: 'Current Residence. Please specify '
+  alias: residence
+
+psysoc_92:
+  type: Integer
+  description: Months in Military
+  range:
+  - 0::9999
+  alias: service_length
+
+branchofservice:
+  type: Integer
+  description: Branch of Service
+  range:
+  - 1::7
+  notes: 1=Army; 2=Navy; 3=Air Force; 4=Marines; 5=Coast Guard; 6=Nat. Guard; 7 =
+    Reserves
+  alias: military_branch
+  codes:
+    1: Army
+    2: Navy
+    3: Air Force
+    4: Marines
+    5: Coast Guard
+    6: Nat. Guard
+    7: Reserves
+
+blast_injury:
+  type: String
+  length: 30
+  description: History of blast exposure or head injury
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: head_trauma
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+treatments:
+  type: Integer
+  description: Number of current treatments
+  range:
+  - 0::20
+
+military_rank_start:
+  type: String
+  length: 30
+  description: Starting military rank
+
+military_rank_end:
+  type: String
+  length: 30
+  description: Ending military rank
+
+service_era:
+  type: Integer
+  description: Era of military service
+  range:
+  - 1::8
+  notes: '1=Vietnam theater; 2=Vietnam era; 3=Post-Vietnam era; 4=Desert Storm/Persian
+    Gulf theater; 5=Persian Gulf era; 6=post-Persian Gulf era; 7=OEF/OIF theater;
+    8=OEF/OIF era ; Afghanistan: Operation Enduring Freedom (OEF) / Iraq: Operation
+    Iraqi Freedom (OIF)'
+  codes:
+    1: Vietnam theater
+    2: Vietnam era
+    3: Post-Vietnam era
+    4: Desert Storm/Persian Gulf theater
+    5: Persian Gulf era
+    6: post-Persian Gulf era
+    7: OEF/OIF theater
+    8: OEF/OIF era
+
+service_location:
+  type: Integer
+  description: Location of military service
+  range:
+  - 1::4
+  notes: 1=CONUS (Contiguous United States) only; 2=Afghanistan; 3=Iraq; 4=Other
+  codes:
+    1: CONUS (Contiguous United States) only
+    2: Afghanistan
+    3: Iraq
+    4: Other
+
+ethnicity_describe_child:
+  type: String
+  length: 50
+  description: How would you describe your child's ethnicity (E.g. Haitian, Jewish,
+    Irish, etc)?
+  alias: cbcl_ethnicity
+
+pre_7:
+  type: Integer
+  description: Is the child currently attending school or organized group daycare?
+  range:
+  - 0
+  - 1
+  - -7
+  - -9
+  notes: 0=No; 1=Yes; -7=Refused; -9=Unknown
+  alias: cbcl_attending_school,student
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -7: Refused
+    -9: Unknown
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+
+sc_q2:
+  type: Integer
+  description: Did the subject withdraw before the end of the study (early withdrawal)?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: withdrawn_from_study
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+cmp004:
+  type: String
+  length: 500
+  description: Describe reason for early termination
+  alias: withdrawal_cause
+
+currestx:
+  type: String
+  length: 100
+  description: Other living situation, describe
+  alias: de16am,living_situation
+
+fdi_q29___2:
+  type: Integer
+  description: Spanish is spoken in the home
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: lang_spanish
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+eo4:
+  type: Integer
+  description: Are you currently working at a job or business for pay
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=No; 1=Yes; 9 = Missing
+  alias: dm17,work
+  codes:
+    0: 'No'
+    1: 'Yes'
+    9: Missing
+
+job_ptcu:
+  type: Integer
+  description: Level of Occupation. Patient current
+  range:
+  - 1::9
+  - 99
+  notes: 1=Higher executive, proprietor of large concern, major professional; 2=Business
+    manager or large concern, proprietor of medium-sized business, lesser professiona;l
+    3=Administrative personnel, owner of small independent business, minor professional;
+    4=Clerical or sales worker, technician, owner of little business;5=Skilled manual
+    employee; 6=Machine operator, semi-skilled employee; 7=Unskilled employee; 8=farm
+    laborers, menial service workers, students, housewives, (dependent on welfare,
+    no regular occupation); 99=Not ascertained; 9 = Not in household
+  alias: occup
+  codes:
+    1: Higher executive, proprietor of large concern, major professional
+    2: Business manager or large concern, proprietor of medium-sized business, lesser
+      professiona
+    3: Administrative personnel, owner of small independent business, minor professional
+    4: Clerical or sales worker, technician, owner of little business
+    5: Skilled manual employee
+    6: Machine operator, semi-skilled employee
+    7: Unskilled employee
+    8: farm laborers, menial service workers, students, housewives, (dependent on
+      welfare, no regular occupation)
+    99: Not ascertained
+    9: Not in household
+
+momoccuc:
+  type: String
+  length: 100
+  description: mother's current occupation
+  alias: occup_m_other
+
+fatherocup:
+  type: String
+  length: 100
+  description: Father' occupation
+  alias: occup_f_other
+
+lang_english:
+  type: Integer
+  description: English spoken at home
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+occup_m:
+  type: Integer
+  description: Mother's Occupational status
+  range:
+  - 1::8
+  notes: 1=higher executive, owner of large business, major professional; 2=administrator,
+    owner of medium-sized business (e.g., nurse, pharmacists, teacher); 3=administrative
+    personnel, owner of small business; 4=clerical and sales personnel, technicians;
+    5=skilled manual laborers (e.g., electrician, mechanic); 6=machine operators,
+    semi-skilled (e.g., bus driver, waiter); 7=unskilled personnel (e.g., construction
+    worker, janitor); 8=other/student
+  codes:
+    1: higher executive, owner of large business, major professional
+    2: administrator, owner of medium-sized business (e.g., nurse, pharmacists, teacher)
+    3: administrative personnel, owner of small business
+    4: clerical and sales personnel, technicians
+    5: skilled manual laborers (e.g., electrician, mechanic)
+    6: machine operators, semi-skilled (e.g., bus driver, waiter)
+    7: unskilled personnel (e.g., construction worker, janitor)
+    8: other/student
+
+occup_f:
+  type: Integer
+  description: Father's Occupational status
+  range:
+  - 1::8
+  notes: 1=higher executive, owner of large business, major professional; 2=administrator,
+    owner of medium-sized business (e.g., nurse, pharmacists, teacher); 3=administrative
+    personnel, owner of small business; 4=clerical and sales personnel, technicians;
+    5=skilled manual laborers (e.g., electrician, mechanic); 6=machine operators,
+    semi-skilled (e.g., bus driver, waiter); 7=unskilled personnel (e.g., construction
+    worker, janitor); 8=other/student
+  codes:
+    1: higher executive, owner of large business, major professional
+    2: administrator, owner of medium-sized business (e.g., nurse, pharmacists, teacher)
+    3: administrative personnel, owner of small business
+    4: clerical and sales personnel, technicians
+    5: skilled manual laborers (e.g., electrician, mechanic)
+    6: machine operators, semi-skilled (e.g., bus driver, waiter)
+    7: unskilled personnel (e.g., construction worker, janitor)
+    8: other/student
+
+treatment_name:
+  type: String
+  length: 200
+  description: treatment name
+  alias: alc_drug_treatments,rx
+
+au1:
+  type: Integer
+  description: Thinking about the past 6 months, how often do you have a drink containing
+    alcohol?
+  range:
+  - 0::4
+  notes: 0 = never; 1 = monthly or less; 2 = 2 to 4 times a month; 3 = 2 or 3 times
+    a week; 4 = 4 or more times a week
+  codes:
+    0: never
+    1: monthly or less
+    2: 2 to 4 times a month
+    3: 2 or 3 times a week
+    4: 4 or more times a week
+
+audit12_02a:
+  type: Integer
+  description: On a day when you drink alcohol or use other drugs, how many drinks
+    (alcohol) do you have?
+  range:
+  - 1::6
+  notes: 1= None; 2= 1 or 2; 3= 3 or 4; 4= 5 or 6; 5= 7 or 9; 6= 10 or more
+  alias: alcohol_quantity
+  codes:
+    1: None
+    2: 1 or 2
+    3: 3 or 4
+    4: 5 or 6
+    5: 7 or 9
+    6: 10 or more
+
+baseline_j_003:
+  type: Integer
+  description: How often do you have four (six for male) or more drinks on one occasion?
+  range:
+  - 0::7
+  - -888
+  - -999
+  notes: 0=Never; 1=Less than monthly; 2=Monthly; 3=Weekly; 4=2-3 times a week; 5=4-6
+    times a week; 6=daily; -888=Not Applicable; -999=Missing;7 = daily or almost daily
+  alias: alcohol_4_drinks
+  codes:
+    0: Never
+    1: Less than monthly
+    2: Monthly
+    3: Weekly
+    4: 2-3 times a week
+    5: 4-6 times a week
+    6: daily
+    -888: Not Applicable
+    -999: Missing
+    7: daily or almost daily
+
+psqb20d:
+  type: String
+  length: 1000
+  description: Which tobacco products and how often
+  alias: tobacco_use
+
+cig_smoke:
+  type: String
+  length: 200
+  description: The amount of cigarettes you smoke and ages you have smoked
+  alias: cigarettes_daily
+
+mht:
+  type: Integer
+  description: Have you received any mental health treatment?
+  range:
+  - 0
+  - 1
+  - 2
+  - 888
+  notes: 0= No; 1= Yes; 2 = Not Sure; 888 = non applicable
+  alias: treatment_mental
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Not Sure
+    888: non applicable
+
+hc_util6a_t2:
+  type: Integer
+  description: Are you currently receiving mental health treatment either through
+    VA or in the community?
+  notes: 0 = No; 1= Yes
+  alias: treatment_mental_now
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+atrq_02ect:
+  type: Integer
+  description: Electro-convulsive treatment  (ECT)
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: ect
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+equest30:
+  type: String
+  length: 15
+  description: What is your height? (Please give your best estimate.)
+  alias: height
+
+anthro_weight_calc:
+  type: Float
+  description: Average Measured Weight (lbs)
+  alias: weight
+
+charc23:
+  type: Integer
+  description: 'CCI question 23: Ever been told has problem with thyroid;0=No,1=Yes'
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=No; 1=Yes; 9=Missing
+  alias: thyroid_condition
+  codes:
+    0: 'No'
+    1: 'Yes'
+    9: Missing
+
+charc23a:
+  type: Integer
+  description: 'CCI question 23a: If CharC23=1, thyroid was underactive or overactive;1=Underactive,2=Overactive'
+  range:
+  - 1
+  - 2
+  - 9
+  notes: 1=Underactive; 2=Overactive; 9=Missing
+  alias: over_under_thyroid
+  codes:
+    1: Underactive
+    2: Overactive
+    9: Missing
+
+scq_37_sp:
+  type: String
+  length: 300
+  description: Specify any other medical condition
+  alias: other_med_con_descrip
+
+drug_alcohol_use:
+  type: String
+  length: 200
+  description: 'Drug/Alcohol use: describe and include year of diagnosis'
+
+alcohol_consumption_more:
+  type: Integer
+  description: Was there ever a time when you drank more than you do now?
+  range:
+  - 0::1
+  notes: 0= No; 1= Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+alcohol_consumption_most:
+  type: Integer
+  description: How much/often did you drink at the time you drank the most?
+  range:
+  - 1::5
+  notes: 1= Not applicable, I have never drank; 2= Monthly or less; 3= 2-4 times per
+    month; 4= 2-3 times per week; 5= Daily or almost daily
+  codes:
+    1: Not applicable, I have never drank
+    2: Monthly or less
+    3: 2-4 times per month
+    4: 2-3 times per week
+    5: Daily or almost daily
+
+smoked_more:
+  type: Integer
+  description: Was there ever a time when you smoked more than you do now?
+  range:
+  - 0::1
+  notes: 0= No; 1= Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+smoked_most:
+  type: Integer
+  description: How much/often did you smoke at the time you smoked the most?
+  range:
+  - 1::5
+  notes: 1= Not applicable, I have never smoked; 2= Monthly or less; 3= 2-4 times
+    per month; 4= 2-3 times per week; 5= Daily or almost daily
+  codes:
+    1: Not applicable, I have never smoked
+    2: Monthly or less
+    3: 2-4 times per month
+    4: 2-3 times per week
+    5: Daily or almost daily
+
+marijuana_hashish:
+  type: Integer
+  description: 'When did you last use: Marijuana / Hashish'
+  range:
+  - 1::6
+  notes: 1= Never; 2= Prior to the Past Year; 3= Past Year; 4= Past Month; 5= Past
+    Week; 6= Prefer not to answer
+  codes:
+    1: Never
+    2: Prior to the Past Year
+    3: Past Year
+    4: Past Month
+    5: Past Week
+    6: Prefer not to answer
+
+crack_cocaine:
+  type: Integer
+  description: 'When did you last use: Crack-Cocaine'
+  range:
+  - 1::6
+  notes: 1= Never; 2= Prior to the Past Year; 3= Past Year; 4= Past Month; 5= Past
+    Week; 6= Prefer not to answer
+  codes:
+    1: Never
+    2: Prior to the Past Year
+    3: Past Year
+    4: Past Month
+    5: Past Week
+    6: Prefer not to answer
+
+powder_cocaine:
+  type: Integer
+  description: 'When did you last use: Powder Cocaine'
+  range:
+  - 1::6
+  notes: 1= Never; 2= Prior to the Past Year; 3= Past Year; 4= Past Month; 5= Past
+    Week; 6= Prefer not to answer
+  codes:
+    1: Never
+    2: Prior to the Past Year
+    3: Past Year
+    4: Past Month
+    5: Past Week
+    6: Prefer not to answer
+
+amphetamine:
+  type: Integer
+  description: 'When did you last use: Amphetamine'
+  range:
+  - 1::6
+  notes: 1= Never; 2= Prior to the Past Year; 3= Past Year; 4= Past Month; 5= Past
+    Week; 6= Prefer not to answer
+  codes:
+    1: Never
+    2: Prior to the Past Year
+    3: Past Year
+    4: Past Month
+    5: Past Week
+    6: Prefer not to answer
+
+methamphetamine:
+  type: Integer
+  description: 'When did you last use: Methamphetamine'
+  range:
+  - 1::6
+  notes: 1= Never; 2= Prior to the Past Year; 3= Past Year; 4= Past Month; 5= Past
+    Week; 6= Prefer not to answer
+  codes:
+    1: Never
+    2: Prior to the Past Year
+    3: Past Year
+    4: Past Month
+    5: Past Week
+    6: Prefer not to answer
+
+ecstasy_molly:
+  type: Integer
+  description: 'When did you last use: Ecstasy / Molly'
+  range:
+  - 1::6
+  notes: 1= Never; 2= Prior to the Past Year; 3= Past Year; 4= Past Month; 5= Past
+    Week; 6= Prefer not to answer
+  codes:
+    1: Never
+    2: Prior to the Past Year
+    3: Past Year
+    4: Past Month
+    5: Past Week
+    6: Prefer not to answer
+
+ketamine_specialk:
+  type: Integer
+  description: 'When did you last use: Ketamine / ''Special K'''
+  range:
+  - 1::6
+  notes: 1= Never; 2= Prior to the Past Year; 3= Past Year; 4= Past Month; 5= Past
+    Week; 6= Prefer not to answer
+  codes:
+    1: Never
+    2: Prior to the Past Year
+    3: Past Year
+    4: Past Month
+    5: Past Week
+    6: Prefer not to answer
+
+synthetic_drugs:
+  type: Integer
+  description: 'When did you last use: Synthetic Drugs (e.g., K2, Spice, Bath Salts)'
+  range:
+  - 1::6
+  notes: 1= Never; 2= Prior to the Past Year; 3= Past Year; 4= Past Month; 5= Past
+    Week; 6= Prefer not to answer
+  codes:
+    1: Never
+    2: Prior to the Past Year
+    3: Past Year
+    4: Past Month
+    5: Past Week
+    6: Prefer not to answer
+
+rx_stimulants:
+  type: Integer
+  description: 'When did you last use: Rx Stimulants (e.g., Adderall, Ritalin)'
+  range:
+  - 1::6
+  notes: 1= Never; 2= Prior to the Past Year; 3= Past Year; 4= Past Month; 5= Past
+    Week; 6= Prefer not to answer
+  codes:
+    1: Never
+    2: Prior to the Past Year
+    3: Past Year
+    4: Past Month
+    5: Past Week
+    6: Prefer not to answer
+
+rx_sedatives:
+  type: Integer
+  description: 'When did you last use: Rx Sedatives (e.g., Xanax, Ativan)'
+  range:
+  - 1::6
+  notes: 1= Never; 2= Prior to the Past Year; 3= Past Year; 4= Past Month; 5= Past
+    Week; 6= Prefer not to answer
+  codes:
+    1: Never
+    2: Prior to the Past Year
+    3: Past Year
+    4: Past Month
+    5: Past Week
+    6: Prefer not to answer
+
+rx_opiates:
+  type: Integer
+  description: 'When did you last use: Rx Opiates (e.g., Vicodin, Percocet)'
+  range:
+  - 1::6
+  notes: 1= Never; 2= Prior to the Past Year; 3= Past Year; 4= Past Month; 5= Past
+    Week; 6= Prefer not to answer
+  codes:
+    1: Never
+    2: Prior to the Past Year
+    3: Past Year
+    4: Past Month
+    5: Past Week
+    6: Prefer not to answer
+
+treatment_past_types:
+  type: Integer
+  description: If you have ever received treatment for a mental health or psychiatric
+    condition, then what kind(s) did you receive?
+  range:
+  - 1::3
+  notes: 1= Talk therapy / counseling; 2= Medications; 3= Both
+  codes:
+    1: Talk therapy / counseling
+    2: Medications
+    3: Both
+
+treatment_type_now:
+  type: Integer
+  description: If you are currently receiving treatment for your mental health or
+    a psychiatric condition, then what kind(s)?
+  range:
+  - 1::3
+  notes: 1= Talk therapy / counseling; 2= Medications; 3= Both
+  codes:
+    1: Talk therapy / counseling
+    2: Medications
+    3: Both
+
+inflammatory_condition:
+  type: Integer
+  description: Do you currently have a fever, infection, or other inflammatory condition?
+  range:
+  - 0::1
+  notes: 0= No; 1= Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+headtrauma_consciousness:
+  type: Integer
+  description: If you have suffered head trauma, did you lose consciousness?
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 1= Yes; 0= No; 3= Not applicable, I have never suffered head trauma
+  codes:
+    1: 'Yes'
+    0: 'No'
+    3: Not applicable, I have never suffered head trauma
+
+patient_seizure:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Seizure Disorder'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_stroke:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Stroke'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_cancer:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Cancer'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_heartcondition:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Heart Condition'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_bloodpressure:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Hypertension / High Blood Pressure'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_cholesterol:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: High Cholesterol'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_diabetes:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Diabetes'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_endocrine:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Endocrine Problem'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_liver:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Liver Problems (e.g., hepatitis)'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_stoma_intestinal:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Stomach / Intestinal Problems'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_chronic_pain:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Chronic Pain'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_chronic_fatigue:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Chronic Fatigue'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_genit_gynec:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Genitourinary / Gynecological'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_blood:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Blood Condition (e.g., anemia)'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_lung_resp:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Lung or Respiratory Condition (e.g., asthma, bronchitis, emphysema)'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_kidney_urinary:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Kidney or Urinary Condition'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_joint_muscle:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Joint or Muscle problems (e.g., arthritis, lower back pain)'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_chronic_headaches:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Chronic Headaches'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+patient_ear_nose_throat:
+  type: Integer
+  description: 'Please indicate whether you have suffered from any of the following
+    conditions: Ear/Nose/Throat Condition (e.g., sinusitis)'
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+other_med_condition:
+  type: Integer
+  description: Have you experienced any medical condition that we have not asked about?
+  range:
+  - 1::4
+  notes: 1= Never; 2= Past; 3= Current; 4= Prefer not to answer
+  codes:
+    1: Never
+    2: Past
+    3: Current
+    4: Prefer not to answer
+
+hallucinogens_lastused:
+  type: Integer
+  description: 'When did you last use: Hallucinogens (e.g., LSD, Mushrooms)'
+  range:
+  - 1::6
+  notes: 1= Never; 2= Prior to the Past Year; 3= Past Year; 4= Past Month; 5= Past
+    Week; 6= Prefer not to answer
+  alias: hallucinogens
+  codes:
+    1: Never
+    2: Prior to the Past Year
+    3: Past Year
+    4: Past Month
+    5: Past Week
+    6: Prefer not to answer
+
+heroin_lastused:
+  type: Integer
+  description: 'When did you last use: Heroin'
+  range:
+  - 1::6
+  notes: 1= Never; 2= Prior to the Past Year; 3= Past Year; 4= Past Month; 5= Past
+    Week; 6= Prefer not to answer
+  alias: heroin
+  codes:
+    1: Never
+    2: Prior to the Past Year
+    3: Past Year
+    4: Past Month
+    5: Past Week
+    6: Prefer not to answer
+
+drug_alcohol_treatment:
+  type: Integer
+  description: Have you ever been in treatment for drug or alcohol use?
+  range:
+  - 0::1
+  notes: 0= No; 1= Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+audit1:
+  type: Integer
+  description: How often do you have a drink containing alcohol?
+  range:
+  - 0::6
+  notes: 0= Never; 1= Monthly; 2= 2-4 times a month; 3= 2-3 times a week; 4= 4 or
+    more times a week; 5= NA; 6=Monthly or less
+  alias: alcohol_consumption
+  codes:
+    0: Never
+    1: Monthly
+    2: 2-4 times a month
+    3: 2-3 times a week
+    4: 4 or more times a week
+    5: NA
+    6: Monthly or less
+
+dembfbro:
+  type: Integer
+  description: Number of full or half brothers
+  alias: de08am
+
+dembfsis:
+  type: Integer
+  description: Number of full or half sisters
+  alias: de08bm
+
+a2d_yn:
+  type: Integer
+  description: Do you do any of the following kinds of work? Self-employed?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: de14am
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+live2:
+  type: Integer
+  description: Live with romantic partner
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: de16bm
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+family_bio_coi_born_in_hosp:
+  type: String
+  length: 2
+  description: '"Family Biographical History Form (0:0 to 4:5 y:m) Question IIB1a
+    Was Child of Interest (COI) born in a hospital? (Yes, No, No Answer)"'
+  range:
+  - Y
+  - N
+  - NA
+  notes: Y = Yes; N = No; NA = No answer
+  alias: de09am
+  codes:
+    Y: 'Yes'
+    N: 'No'
+    NA: No answer
+
+de04bm:
+  type: Integer
+  description: Are any of the twins' biological mother or father's parents Hispanic
+    or Latino?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+de04dm:
+  type: Integer
+  description: Maternal grandmother ethnicity Hispanic or Latino?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+de04fm:
+  type: Integer
+  description: Maternal grandfather ethnicity Hispanic or Latino?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+de04hm:
+  type: Integer
+  description: Paternal grandmother ethnicity Hispanic or Latino?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+de04jm:
+  type: Integer
+  description: Paternal grandfather ethnicity Hispanic or Latino?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+de06am:
+  type: Integer
+  description: Is (Name) the biological mother of the twins?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+de07am:
+  type: Integer
+  description: Is (Name) the biological father of the twins?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+de12am:
+  type: Integer
+  description: Is the twins' mother currently working for pay or profit?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+de12bm:
+  type: Float
+  description: If twins' mother currently working for pay or profit, How many hours
+    per week does the twins' mother work for pay or profit?
+
+de12cm:
+  type: Float
+  description: If twins' mother currently working for pay or profit, How many of these
+    hours does the twins' mother work inside of the home?
+
+de12hm:
+  type: Integer
+  description: If twins' mother is not currently working for pay or profit, Which
+    of the following best describes why the twins' mother is not working?
+  range:
+  - 1::4
+  notes: 1 = Looking for work; 2 = Homemaker; 3 = Unable to work; 4 = Other
+  codes:
+    1: Looking for work
+    2: Homemaker
+    3: Unable to work
+    4: Other
+
+de13am:
+  type: Integer
+  description: Is the twins' father currently working for pay or profit?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+de13bm:
+  type: Float
+  description: 'If twins'' father currently working for pay or profit, How many hours
+    per week does the twins'' father work for pay or profit?   '
+
+de13cm:
+  type: Float
+  description: 'If twins'' father currently working for pay or profit, How many of
+    these hours does the twins'' father work inside of the home? '
+
+de13hm:
+  type: Integer
+  description: If twins' father is not currently working for pay or profit, Which
+    of the following best describes why the twins' father is not working?
+  range:
+  - 1::4
+  notes: 1 = Looking for work; 2 = Homemaker; 3 = Unable to work; 4 = Other
+  codes:
+    1: Looking for work
+    2: Homemaker
+    3: Unable to work
+    4: Other
+
+de14bm:
+  type: Integer
+  description: If you own your own business/farm, What is the estimated value (that
+    is what would it be worth if you were to sell the business)?
+  range:
+  - 4::9
+  notes: 4 = less than $80,000; 5 = $80,001 to $160,000; 6 = $160,001 to $240,000;
+    7 = $240,001 to $320,000; 8 = $320,001 to $810,000; 9 = over $810,001
+  codes:
+    4: less than $80,000
+    5: $80,001 to $160,000
+    6: $160,001 to $240,000
+    7: $240,001 to $320,000
+    8: $320,001 to $810,000
+    9: over $810,001
+
+de16cm:
+  type: Integer
+  description: If you live with a partner, Do you live with the twins' biological
+    parent or another partner?
+  range:
+  - 1
+  - 2
+  notes: 1 = twins' biological parent; 2 = another partner
+  codes:
+    1: twins' biological parent
+    2: another partner
+
+de17am:
+  type: Integer
+  description: Has the mother's marital status changed during the twins' lives?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+de17cm:
+  type: Integer
+  description: If mother's marital status changed during the twins' lives, How old
+    were the twins when this change occurred? ______ years
+
+de18am:
+  type: Integer
+  description: If twins' biological parents are not living together, Do the twins
+    live primarily with their biological mother, their biological father, or with
+    another caregiver?
+  range:
+  - 1::3
+  notes: 1 = biological mother; 2 = biological father; 3 = another caregiver
+  codes:
+    1: biological mother
+    2: biological father
+    3: another caregiver
+
+de18cm:
+  type: Float
+  description: If twins currently have any contact with their non-residential biological
+    parent, On average, how many hours per week does Twin A spend with him/her?
+
+de18dm:
+  type: Float
+  description: If twins currently have any contact with their non-residential biological
+    parent, On average, how many hours per week does Twin B spend with him/her?
+
+de21am:
+  type: Integer
+  description: How many times has Twin A moved since they were born?
+
+de21bm:
+  type: Integer
+  description: How many times has Twin B moved since they were born?
+  alias: income_source_other
+
+de22am:
+  type: Integer
+  description: How many times has Twin A changed schools in their lives (including
+    transitions to next level school)?
+
+de22bm:
+  type: Integer
+  description: How many times has Twin B changed schools in their lives (including
+    transitions to next level school)?
+
+de18bm:
+  type: Integer
+  description: If twins' biological parents are not living together, Do the twins
+    currently have any contact with their non-residential biological parent?
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 1 = yes; 0 = no; 3 = one twin does while the other twin does not
+  codes:
+    1: 'yes'
+    0: 'no'
+    3: one twin does while the other twin does not
+
+de04em:
+  type: String
+  length: 35
+  description: Maternal grandmother race
+
+de04gm:
+  type: String
+  length: 35
+  description: Maternal grandfather race
+
+de04im:
+  type: String
+  length: 35
+  description: Paternal grandmother race
+
+de04km:
+  type: String
+  length: 35
+  description: Paternal grandfather race
+
+mentalt_diag:
+  type: String
+  length: 150
+  description: What is the diagnosis?
+  alias: confirmed_primary_dx
+
+pls4_measure:
+  type: String
+  length: 100
+  description: Measure Used
+  range:
+  - PLS-4
+  alias: primarydx_measure
+
+qa18:
+  type: Integer
+  description: Section A - Demographics. A18. How many times have you been legally
+    married?
+  notes: '#=TIMES'
+  alias: dm11
+
+qa19:
+  type: Integer
+  description: Section A - Demographics. A19. How many times have you been divorced?
+  alias: dm12
+
+pregnancy_no:
+  type: Integer
+  description: 1. How many times have you/ (child)'s mother been pregnant?
+  alias: dm14
+
+qa22:
+  type: Integer
+  description: Section A - Demographics. A22. How many children have you (fathered/given
+    birth to)?  That is, not including adopted, foster, or step children.
+  notes: '#=# CHILDREN'
+  alias: dm14_kidnum
+
+test_ged:
+  type: Integer
+  description: Did you pass a high school equivalency test?
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0 = No; 1 = Yes; 9 = Missing
+  alias: dm15b
+  codes:
+    0: 'No'
+    1: 'Yes'
+    9: Missing
+
+ed_1_y:
+  type: Integer
+  description: Are you currently in school?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1= Yes
+  alias: dm15e
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+a2b_yn:
+  type: Integer
+  description: Do you do any of the following kinds of work? Working a full-time paying
+    job?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: dm17a
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+  alias: dm_notes
+
+sh_hs:
+  type: Integer
+  description: Subject has a High School Diploma
+  range:
+  - 0
+  - 1
+  notes: 1=Yes; 0=No
+  alias: dm15a
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+dm9_wyr:
+  type: String
+  length: 10
+  description: What year were you widowed?
+
+dm15f:
+  type: Integer
+  description: What is the highest grade in school your mother completed?
+  range:
+  - 0::17
+  - 9999
+  notes: '0 = Unschooled ; 1 = 1ST ; 2 = 2ND ; 3 = 3RD ; 4 = 4TH ; 5 = 5TH ; 6 = 6TH
+    ; 7 = 7TH ; 8 = 8TH ; 9 = 9TH ; 10 = 10TH ; 11 = 11TH ; 12 = 12TH ; 13 = TECHNICAL
+    SCHOOL OR 1 YR COLLEGE ; 14 = 2 YRS COLLEGE ; 15 = 3 YRS COLLEGE ; 16 = 4 YRS
+    COLLEGE: B.A., B.S ; 17 = GRADUATE SCHOOL: M.A., M.S., J.D., M.D., Ph.D ; 9999
+    = Don''t know'
+  codes:
+    0: Unschooled
+    1: 1ST
+    2: 2ND
+    3: 3RD
+    4: 4TH
+    5: 5TH
+    6: 6TH
+    7: 7TH
+    8: 8TH
+    9: 9TH
+    10: 10TH
+    11: 11TH
+    12: 12TH
+    13: TECHNICAL SCHOOL OR 1 YR COLLEGE
+    14: 2 YRS COLLEGE
+    15: 3 YRS COLLEGE
+    16: '4 YRS COLLEGE: B.A., B.S'
+    17: 'GRADUATE SCHOOL: M.A., M.S., J.D., M.D., Ph.D'
+    9999: Don't know
+
+dm15g:
+  type: Integer
+  description: What is the highest grade in school your father completed?
+  range:
+  - 0::17
+  - 9999
+  notes: '0 = Unschooled ; 1 = 1ST ; 2 = 2ND ; 3 = 3RD ; 4 = 4TH ; 5 = 5TH ; 6 = 6TH
+    ; 7 = 7TH ; 8 = 8TH ; 9 = 9TH ; 10 = 10TH ; 11 = 11TH ; 12 = 12TH ; 13 = TECHNICAL
+    SCHOOL OR 1 YR COLLEGE ; 14 = 2 YRS COLLEGE ; 15 = 3 YRS COLLEGE ; 16 = 4 YRS
+    COLLEGE: B.A., B.S ; 17 = GRADUATE SCHOOL: M.A., M.S., J.D., M.D., Ph.D ; 9999
+    = Don''t know'
+  codes:
+    0: Unschooled
+    1: 1ST
+    2: 2ND
+    3: 3RD
+    4: 4TH
+    5: 5TH
+    6: 6TH
+    7: 7TH
+    8: 8TH
+    9: 9TH
+    10: 10TH
+    11: 11TH
+    12: 12TH
+    13: TECHNICAL SCHOOL OR 1 YR COLLEGE
+    14: 2 YRS COLLEGE
+    15: 3 YRS COLLEGE
+    16: '4 YRS COLLEGE: B.A., B.S'
+    17: 'GRADUATE SCHOOL: M.A., M.S., J.D., M.D., Ph.D'
+    9999: Don't know
+
+dm__16:
+  type: Float
+  description: Now I want to ask you about work for pay.  In the past twelve months,
+    how many months have you been employed? COUNT SELF-EMPLOYMENT OR SALARIED. IF
+    NONE, CODE 0. IF LESS THAN 1 MONTH, CODE 1.
+  alias: dm16
+
+paofwork5:
+  type: Integer
+  description: 39. Are you a student
+  range:
+  - 1::3
+  - -9
+  notes: 1 = Yes, Full-time; 2 = Yes, Part-time; 3 = No, -9 = Missing Data
+  alias: p_job7_1,sub_job7_1
+  codes:
+    1: Yes, Full-time
+    2: Yes, Part-time
+    3: No, -9 = Missing Data
+
+ind_type:
+  type: String
+  length: 65
+  description: Industry/Type of Business (Subject)
+  alias: p_business,sub_business
+
+preg_age_mom:
+  type: Integer
+  description: Age of mother at the time of birth
+  notes: In years; 999=Unknown
+  alias: sub_momage
+  codes:
+    999: Unknown
+
+preg_age_dad:
+  type: Integer
+  description: Age of father at the time of birth
+  notes: In years; 999=Unknown
+  alias: sub_dadage
+  codes:
+    999: Unknown
+
+dembadpt:
+  type: Integer
+  description: Is the child/teen adopted?
+  range:
+  - 0
+  - 1
+  notes: 0 = No 1 = Yes
+  alias: sub_adopt
+  codes:
+    0: No 1 = Yes
+
+birthcountry_dad:
+  type: String
+  length: 100
+  description: What is the country of birth of the child's father?
+  alias: p_bio_f_country,sub_bio_f_country
+
+birthcountry_mom:
+  type: String
+  length: 100
+  description: What is the country of birth of the child's mother?
+  alias: p_bio_m_county,sub_bio_m_county
+
+country_origin:
+  type: String
+  length: 100
+  description: Country of Origin
+  alias: p_country,sub_country
+
+calm_inc1:
+  type: Integer
+  description: How much income did you earn from work in the last year
+  notes: 98 = Refused to answer
+  alias: sub_income_num
+  codes:
+    98: Refused to answer
+
+mother_edu_cat:
+  type: Integer
+  description: Mother's highest educational level category completed
+  range:
+  - 0::26
+  - 98
+  notes: '0 = Never attended or Kindergarten only; 1-11 = Grades 1=11; 12 = High school
+    No diploma; 13 = GED or equivalent; 14 = High school graduate; 15 = Completed
+    12 years of school (but unable to determine if code 12, 13, or 14); 16 = Some
+    college, no degree; 17 = Associate degree: occupational/technical/vocational program;
+    18 = Associate degree: academic program (includes non-US post high school/pre
+    college levels); 19 = Associate degree (but unable to determine if code 16 or
+    17); 20 = Bachelor degree (e.g., BA, AB, BS, BBA); 21 = Completed 16 years of
+    school (but unable to determine if code 16-20); 22 = Master?s degree (e.g., MA,
+    MS, MEng, MEd, MBA); 23 = Professional school degree (e.g., MD, DDS, DVM, JD);
+    24 = Doctoral degree (e.g., PhD, EdD); 25 = Post Master degree (but unable to
+    determine if code 20 or 21); 26 = Unknown/Missing; 98 = Refused to answer'
+  alias: sub_mgrade
+  codes:
+    0: Never attended or Kindergarten only
+    1-11: Grades 1=11
+    12: High school No diploma
+    13: GED or equivalent
+    14: High school graduate
+    15: Completed 12 years of school (but unable to determine if code 12, 13, or 14)
+    16: Some college, no degree
+    17: 'Associate degree: occupational/technical/vocational program'
+    18: 'Associate degree: academic program (includes non-US post high school/pre
+      college levels)'
+    19: Associate degree (but unable to determine if code 16 or 17)
+    20: Bachelor degree (e.g., BA, AB, BS, BBA)
+    21: Completed 16 years of school (but unable to determine if code 16-20)
+    22: Master?s degree (e.g., MA, MS, MEng, MEd, MBA)
+    23: Professional school degree (e.g., MD, DDS, DVM, JD)
+    24: Doctoral degree (e.g., PhD, EdD)
+    25: Post Master degree (but unable to determine if code 20 or 21)
+    26: Unknown/Missing
+    98: Refused to answer
+
+father_edu_cat:
+  type: Integer
+  description: Father's highest educational level category completed
+  range:
+  - 0::26
+  - 98
+  notes: '0 = Never attended or Kindergarten only; 1-11 = Grades 1=11; 12 = High school
+    No diploma; 13 = GED or equivalent; 14 = High school graduate; 15 = Completed
+    12 years of school (but unable to determine if code 12, 13, or 14); 16 = Some
+    college, no degree; 17 = Associate degree: occupational/technical/vocational program;
+    18 = Associate degree: academic program (includes non-US post high school/pre
+    college levels); 19 = Associate degree (but unable to determine if code 16 or
+    17); 20 = Bachelor degree (e.g., BA, AB, BS, BBA); 21 = Completed 16 years of
+    school (but unable to determine if code 16-20); 22 = Master?s degree (e.g., MA,
+    MS, MEng, MEd, MBA); 23 = Professional school degree (e.g., MD, DDS, DVM, JD);
+    24 = Doctoral degree (e.g., PhD, EdD); 25 = Post Master degree (but unable to
+    determine if code 20 or 21); 26 = Unknown/Missing; 98 = Refused to answer'
+  alias: sub_fgrade
+  codes:
+    0: Never attended or Kindergarten only
+    1-11: Grades 1=11
+    12: High school No diploma
+    13: GED or equivalent
+    14: High school graduate
+    15: Completed 12 years of school (but unable to determine if code 12, 13, or 14)
+    16: Some college, no degree
+    17: 'Associate degree: occupational/technical/vocational program'
+    18: 'Associate degree: academic program (includes non-US post high school/pre
+      college levels)'
+    19: Associate degree (but unable to determine if code 16 or 17)
+    20: Bachelor degree (e.g., BA, AB, BS, BBA)
+    21: Completed 16 years of school (but unable to determine if code 16-20)
+    22: Master?s degree (e.g., MA, MS, MEng, MEd, MBA)
+    23: Professional school degree (e.g., MD, DDS, DVM, JD)
+    24: Doctoral degree (e.g., PhD, EdD)
+    25: Post Master degree (but unable to determine if code 20 or 21)
+    26: Unknown/Missing
+    98: Refused to answer
+
+ustime_coded:
+  type: Integer
+  description: About how long have you been in the United States? PX011201_Years_living_in_US_Coded
+  range:
+  - 0::95
+  - 97
+  - 99
+  notes: 0=less than 1 year; 95= 95+ years; 97=Refused; 99=Don't Know
+  alias: sub_yrs_in_usa
+  codes:
+    0: less than 1 year
+    95: 95+ years
+    97: Refused
+    99: Don't Know
+
+sub_adopt_1:
+  type: String
+  length: 20
+  description: How old were when you were adopted?
+
+sub_income:
+  type: Integer
+  description: 'With regard to your current or most recent job activity: If not sure,
+    is your income:'
+  range:
+  - 1::10
+  - 99
+  - 999
+  notes: 1 =Less than $5,000 ; 2 =$5,000 through $11,999 ; 3 =$12,000 through $15,999
+    ; 4 =$16,000 through $24,999 ; 5 =$25,000 through $34,999 ; 6 =$35,000 through
+    $49,999 ; 7 =$50,000 through $74,999 ; 8 =$75,000 through $99,999 ; 9 =$100,000
+    through $199,999 ; 10 =$200,000 and greater; 99 = Don't Know; 999 = Don't wish
+    to answer
+  alias: p_income
+  codes:
+    1: Less than $5,000
+    2: $5,000 through $11,999
+    3: $12,000 through $15,999
+    4: $16,000 through $24,999
+    5: $25,000 through $34,999
+    6: $35,000 through $49,999
+    7: $50,000 through $74,999
+    8: $75,000 through $99,999
+    9: $100,000 through $199,999
+    10: $200,000 and greater
+    99: Don't Know
+    999: Don't wish to answer
+
+sub_income_famcode:
+  type: Integer
+  description: 'With regard to your current or most recent job activity: If not sure,
+    was your family income:'
+  range:
+  - 1::10
+  notes: 1 =Less than $5,000 ; 2 =$5,000 through $11,999 ; 3 =$12,000 through $15,999
+    ; 4 =$16,000 through $24,999 ; 5 =$25,000 through $34,999 ; 6 =$35,000 through
+    $49,999 ; 7 =$50,000 through $74,999 ; 8 =$75,000 through $99,999 ; 9 =$100,000
+    through $199,999 ; 10 =$200,000 and greater
+  alias: family_income_question
+  codes:
+    1: Less than $5,000
+    2: $5,000 through $11,999
+    3: $12,000 through $15,999
+    4: $16,000 through $24,999
+    5: $25,000 through $34,999
+    6: $35,000 through $49,999
+    7: $50,000 through $74,999
+    8: $75,000 through $99,999
+    9: $100,000 through $199,999
+    10: $200,000 and greater
+
+family_income_dfct1:
+  type: Integer
+  description: 'In the past 12 months, has there been a time when you and your immediate
+    family experienced any of the following: a. Needed food but couldn''t afford to
+    buy it or couldn''t afford to go out to get it?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+family_income_dfct2:
+  type: Integer
+  description: 'In the past 12 months, has there been a time when you and your immediate
+    family experienced any of the following: b. Were without telephone service because
+    you could not afford it?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+family_income_dfct3:
+  type: Integer
+  description: 'In the past 12 months, has there been a time when you and your immediate
+    family experienced any of the following: c. Didn''t pay the full amount of the
+    rent or mortgage because you could not afford it?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+family_income_dfct4:
+  type: Integer
+  description: 'In the past 12 months, has there been a time when you and your immediate
+    family experienced any of the following: d. Were evicted from your home for not
+    paying the rent or mortgage?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+family_income_dfct5:
+  type: Integer
+  description: 'In the past 12 months, has there been a time when you and your immediate
+    family experienced any of the following: e. Had services turned off by the gas
+    or electric company, or the oil company wouldn''t deliver oil because payments
+    were not made?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+family_income_dfct6:
+  type: Integer
+  description: 'In the past 12 months, has there been a time when you and your immediate
+    family experienced any of the following: f. Had someone who needed to see a doctor
+    or go to the hospital but didn''t go because you could not afford it?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+family_income_dfct7:
+  type: Integer
+  description: 'In the past 12 months, has there been a time when you and your immediate
+    family experienced any of the following: g. Had someone who needed a dentist but
+    couldn''t go because you could not afford it?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+smoker:
+  type: Integer
+  description: Smoker?
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=No; 1=Yes; 9=NK/missing
+  codes:
+    0: 'No'
+    1: 'Yes'
+    9: NK/missing
+
+other_phenotype_details:
+  type: String
+  length: 255
+  description: Details of other phenotype(s)
+  alias: other
+
+phenotype:
+  type: String
+  length: 200
+  description: Phenotype/diagnosis for the subject
+  alias: group,sample
+
+smoke_current_packs:
+  type: Float
+  description: how many packs per day if yes?
+  range:
+  - 0::10
+  alias: smoke_frequency
+
+saps_ad13:
+  type: Integer
+  description: Medication status
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0=No medication; 1=Medication; 2 = Drug Naive
+  alias: medsta
+  codes:
+    0: No medication
+    1: Medication
+    2: Drug Naive
+
+th1b:
+  type: Integer
+  description: 'Total Duration of Outpatient Treatment (weeks) '
+  alias: outpatient_treat_weeks
+
+scda17:
+  type: Integer
+  description: How many times have you (or subject if informant) been hospitalized
+    for psychiatric reasons? (Best estimate)
+  range:
+  - 0::300
+  alias: inpatient_treatments
+
+sldc227:
+  type: Float
+  description: Total Duration of Inpatient Treatment (Weeks)
+  alias: inpatient_treat_dur
+
+femenst:
+  type: Float
+  description: Age (in years) at First Menstrual Period
+  range:
+  - 1::100
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  alias: menarche_start
+  codes:
+    888: N/A
+    999: missing data
+
+race_category_informant:
+  type: Integer
+  description: Racial Category/categories of informant
+  range:
+  - 1::7
+  notes: 1 = American Indian/Alaska Native ; 2 = Asian ; 3 = Hawaiian or Pacific Islander
+    ; 4 = Black or African American ; 5 = White ; 6 = More than one race ; 7 = Unknown
+    or not reported
+  codes:
+    1: American Indian/Alaska Native
+    2: Asian
+    3: Hawaiian or Pacific Islander
+    4: Black or African American
+    5: White
+    6: More than one race
+    7: Unknown or not reported
+
+ethnic_category_informant:
+  type: Integer
+  description: Ethnic Category/categories of informant
+  range:
+  - 1::3
+  notes: 1 = Hispanic or Latino; 2 = Not Hispanic or Latino; 3 = Unknown
+  codes:
+    1: Hispanic or Latino
+    2: Not Hispanic or Latino
+    3: Unknown
+
+person2_exist:
+  type: Integer
+  description: Is there another person who significantly contributes to the participant's
+    current living expenses?
+  range:
+  - 0::1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+child_out_psych_ever:
+  type: Integer
+  description: Has your child who will be participating in study ever been in outpatient
+    psychiatric/psychological treatment?
+  range:
+  - 0::1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+outpatient_treatments:
+  type: Integer
+  description: If subject has ever been in outpatient psychiatric/psychological treatment,
+    how many times?
+
+area5_explain:
+  type: String
+  length: 255
+  description: Church, religion or spiritual orientation? Explain briefly
+  alias: religion,religious_category
+
+date_of_enrollment:
+  type: String
+  length: 10
+  description: Date of enrollment
+  alias: doe
+
+labsample29:
+  type: String
+  length: 10
+  description: Date of last menstrual period
+  notes: NA=if male or pre-puberty
+  alias: demo4,last_period
+  codes:
+    NA: if male or pre-puberty
+
+sis9:
+  type: String
+  length: 40
+  description: Who else was present during the interview? (select all that apply)
+  notes: 1 = No one; 2 = Other adults; 3 = Child(ren); 4 = Adults and child(ren) under
+    18
+  alias: interviewed_who
+  codes:
+    1: No one
+    2: Other adults
+    3: Child(ren)
+    4: Adults and child(ren) under 18
+
+ksads_outpt_age:
+  type: String
+  length: 100
+  description: Age at first outpatient treatment
+  alias: outpatient_treat_age
+
+pds6g:
+  type: Integer
+  description: 'Girls only : Have you begun to menstruate?'
+  range:
+  - 0
+  - 1
+  - 99
+  notes: 0=No; 1=Yes; 99 = Refused
+  alias: meneses
+  codes:
+    0: 'No'
+    1: 'Yes'
+    99: Refused
+
+phi1:
+  type: Integer
+  description: Type of interview
+  range:
+  - 1::5
+  notes: 1 = In person; 2 = Phone; 3 = Mail; 4 = SIG-O only; 5 = Carp only
+  alias: interview_type
+  codes:
+    1: In person
+    2: Phone
+    3: Mail
+    4: SIG-O only
+    5: Carp only
+
+yoga:
+  type: Integer
+  description: 'Have you practiced meditation or yoga regularly over the past three
+    years? '
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+yogahowoften:
+  type: String
+  length: 250
+  description: 'Have you practiced meditation or yoga regularly over the past three
+    years? If you answered yes, how often? '
+
+visnum:
+  type: Float
+  description: Numeric Visit Number
+  notes: '-1.5 = Pre-Screening; -1 = Screening; 0 = Baseline; ## = Visit ## (from
+    1 to 10); Whole numbers = standard monthly visits; #.001 - #.009 = Unscheduled;
+    #.1 = End of Phase 1; #.2 = End of Phase 2; #.3 = End of Phase 3; #.4 = End of
+    Open Choice Phase; #.5 = End of Study; #.6 = Genetic Analysis; 1000=all visits'
+  alias: sesscode
+  codes:
+    -1.5: Pre-Screening
+    -1: Screening
+    0: Baseline
+    9: Unscheduled
+    1: End of Phase 1
+    2: End of Phase 2
+    3: End of Phase 3
+    4: End of Open Choice Phase
+    5: End of Study
+    6: Genetic Analysis
+    1000: all visits
+
+relation_stat:
+  type: Integer
+  description: 'Relationship status:'
+  range:
+  - 0
+  - 1
+  notes: 0= Not currently in a long-term relationship ; 1= Currently in a long-term
+    relationship
+  codes:
+    0: Not currently in a long-term relationship
+    1: Currently in a long-term relationship
+
+dependent_home:
+  type: Integer
+  description: 'Number of children/dependents living at home:'
+
+religion_important:
+  type: Integer
+  description: How important is religion in your life?
+  range:
+  - 1::7
+  notes: 1= Not at all important ; 2= 2 ; 3= 3 ; 4= 4 ; 5= 5 ; 6= 6 ; 7= Extremely
+    important
+  codes:
+    1: Not at all important
+    2: '2'
+    3: '3'
+    4: '4'
+    5: '5'
+    6: '6'
+    7: Extremely important
+
+therapy_count:
+  type: Integer
+  description: How many times before now have you participated in therapy/counseling
+    for depression?
+  range:
+  - 1::4
+  notes: 1= Never ; 2= 1 or 2 times ; 3= 3 or 4 times ; 4= 5 or more times
+  codes:
+    1: Never
+    2: 1 or 2 times
+    3: 3 or 4 times
+    4: 5 or more times
+
+therapy_helpful:
+  type: Integer
+  description: How helpful did you find therapy in treating your depression?
+  range:
+  - 1::5
+  notes: 1= I have never been in therapy before ; 2= Not helpful at all ; 3= Not very
+    helpful ; 4= Somewhat helpful ; 5= Very helpful
+  codes:
+    1: I have never been in therapy before
+    2: Not helpful at all
+    3: Not very helpful
+    4: Somewhat helpful
+    5: Very helpful
+
+meds_count:
+  type: Integer
+  description: How many times have you used medication for one month or longer to
+    treat your depression?
+  range:
+  - 1::4
+  notes: 1= Never ; 2= 1 or 2 times ; 3= 3 or 4 times ; 4= 5 or more times
+  codes:
+    1: Never
+    2: 1 or 2 times
+    3: 3 or 4 times
+    4: 5 or more times
+
+meds_helpful:
+  type: Integer
+  description: How helpful did you find medication in treating your depression?
+  range:
+  - 1::5
+  notes: 1= I have never taken medication for depression before ; 2= Not helpful at
+    all ; 3= Not very helpful ; 4= Somewhat helpful ; 5= Very helpful
+  codes:
+    1: I have never taken medication for depression before
+    2: Not helpful at all
+    3: Not very helpful
+    4: Somewhat helpful
+    5: Very helpful
+
+rater_title:
+  type: String
+  length: 50
+  description: Rater's Title
+  alias: therapist
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+  alias: evalcode
+
+time_assess:
+  type: String
+  length: 20
+  description: Time of day the assessment was taken. Hour:minutes
+  alias: assess_time
+
+demoginfo15:
+  type: String
+  length: 50
+  description: Which religion do you currently practice?
+  alias: religion_other
+
+hx_psymeds_spec:
+  type: String
+  length: 300
+  description: Please describe your history of taking psychiatric medication.
+  alias: psychmeds
+
+saps_ad10:
+  type: Integer
+  description: Rater number
+  alias: diagnostician
+
+aescode:
+  type: Integer
+  description: Staff code number of person completing this form
+  alias: ra
+
+bio_father:
+  type: Integer
+  description: Are you the Child''s Biological Father?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+cust_parent:
+  type: Integer
+  description: If you are not a biological parent to the child, then are you the child''s
+    custodial parent?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+p_c_grade:
+  type: String
+  length: 100
+  description: 'What grade is your child in? (if it is summer, indicate their grade
+    starting in the fall)? '
+
+p_c_adopt_when_unit:
+  type: Integer
+  description: Adoption age given in months or years?
+  notes: 1 = Months ; 2 = Years
+  codes:
+    1: Months
+    2: Years
+
+p_c_gender_different:
+  type: String
+  length: 100
+  description: 'Please state if your child has different gender identity:'
+
+p_c_country:
+  type: String
+  length: 100
+  description: In which country was your child born?
+
+p_c_yrs_in_usa:
+  type: Integer
+  description: 'How many years has your child lived in the United States:'
+
+ptner_yn:
+  type: Integer
+  description: Do you have a partner?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ptner_grade:
+  type: String
+  length: 100
+  description: 'What is the highest grade or level of school your partner completed
+    or the highest degree they received?  '
+
+ptner_job:
+  type: Float
+  description: We would like to know about what your partner does--are they working
+    now, looking for work, retired, taking care of children, a student, or what?
+  notes: 1 = WORKING NOW ; 2 = ONLY TEMPORARILY LAID OFF ; 2.1 = SICK LEAVE ; 2.2
+    = MATERNITY LEAVE ; 3.1 = UNEMPLOYED, LOOKING FOR WORK ; 3.2 = UNEMPLOYED, NOT
+    LOOKING FOR WORK ; 4 = RETIRED ; 5 = DISABLED, PERMANENTLY OR TEMPORARILY ; 6
+    = TAKING CARE OF CHILDREN AND/OR RAISING CHILDREN AND/OR CARING FOR AGING PARENTS
+    ; 7 = STUDENT ; 8 = OTHER
+  codes:
+    1: WORKING NOW
+    2: ONLY TEMPORARILY LAID OFF
+    2.1: SICK LEAVE
+    2.2: MATERNITY LEAVE
+    3.1: UNEMPLOYED, LOOKING FOR WORK
+    3.2: UNEMPLOYED, NOT LOOKING FOR WORK
+    4: RETIRED
+    5: DISABLED, PERMANENTLY OR TEMPORARILY
+    6: TAKING CARE OF CHILDREN AND/OR RAISING CHILDREN AND/OR CARING FOR AGING PARENTS
+    7: STUDENT
+    8: OTHER
+
+ptner_job1_1:
+  type: Integer
+  description: If your partner is working now, are they
+  notes: 1 = FULL TIME ; 2 = PART TIME
+  codes:
+    1: FULL TIME
+    2: PART TIME
+
+ptner_job7_1:
+  type: Integer
+  description: If your partner is a student, are they
+  notes: 1 = FULL TIME ; 2 = PART TIME
+  codes:
+    1: FULL TIME
+    2: PART TIME
+
+ptner_job8_1:
+  type: String
+  length: 300
+  description: Specify partner''s/their other employment situation
+
+ptner_business:
+  type: String
+  length: 100
+  description: In what kind of business or industry does (did) your partner work?
+
+ptner_work:
+  type: String
+  length: 100
+  description: 'What kind of work does (did) your partner do? (Job Title)? '
+
+ptner_income:
+  type: Integer
+  description: How much did your partner earn, before taxes and other deductions,
+    during the past 12 months?
+  notes: 1 = Less than $5,000 ; 2 = $5,000 through $11,999 ; 3 = $12,000 through $15,999
+    ; 4 = $16,000 through $24,999 ; 5 = $25,000 through $34,999 ; 6 = $35,000 through
+    $49,999 ; 7 = $50,000 through $74,999 ; 8 = $75,000 through $99,999 ; 9 = $100,000
+    through $199,999 ; 10 = $200,000 and greater ; 99 = Don''t Know ; 999 = Do not
+    want to answer
+  codes:
+    1: Less than $5,000
+    2: $5,000 through $11,999
+    3: $12,000 through $15,999
+    4: $16,000 through $24,999
+    5: $25,000 through $34,999
+    6: $35,000 through $49,999
+    7: $50,000 through $74,999
+    8: $75,000 through $99,999
+    9: $100,000 through $199,999
+    10: $200,000 and greater
+    99: Don''t Know
+    999: Do not want to answer
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)
+  alias: other_parent
+
+demo_adopt_age:
+  type: String
+  length: 20
+  description: 'Reporting parent: At what age was your child adopted?'
+  alias: p_c_adopt_when
+
+employotr:
+  type: String
+  length: 50
+  description: Employment situation other, specify
+  alias: p_job8_1
+
+nimh_rv_dem_03:
+  type: Integer
+  description: Current gender identity
+  range:
+  - 0::5
+  - 7
+  - 8
+  notes: 0=Male; 1=Female; 2=Trans male/Trans man; 3=Trans female/Trans woman; 4=Genderqueer
+    or Gender non-conforming; 5=Different identity; 7 = Refused; 8 = Don't Know
+  alias: p_c_gender
+  codes:
+    0: Male
+    1: Female
+    2: Trans male/Trans man
+    3: Trans female/Trans woman
+    4: Genderqueer or Gender non-conforming
+    5: Different identity
+    7: Refused
+    8: Don't Know
+
+p_partnerbio:
+  type: Integer
+  description: Is partner child's biological parent?
+  range:
+  - 0
+  - 1
+  - -99
+  - 88
+  - 77
+  notes: 0= No ; 1= Yes ; -99= N/A ; 88= Missing ; 77= Refused
+  alias: ptner_bio_parent
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -99: N/A
+    88: Missing
+    77: Refused
+
+ustime:
+  type: String
+  length: 100
+  description: How long you lived in US, years
+  alias: p_yrs_in_usa
+
+bio_mother:
+  type: Integer
+  description: Are you the Child''s Biological Mother?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sample:
+  type: Integer
+  description: Training or randomized case
+  range:
+  - 1
+  - 2
+  notes: 1 = randomized; 2 = training
+  codes:
+    1: randomized
+    2: training

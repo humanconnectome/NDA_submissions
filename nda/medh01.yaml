@@ -1,0 +1,2133 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: child_id,hcpa_id,record_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: date_of_interview_contact
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: age,mcd1
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,mcd3,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+
+medh1:
+  type: Integer
+  description: Medical history/physical exam completed in the past 30 days
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medh2:
+  type: Integer
+  description: Allergies
+  range:
+  - 1::3
+  notes: 1=no significant history; 2=past; 3= present
+  alias: medical_10
+  codes:
+    1: no significant history
+    2: past
+    3: present
+
+medh3:
+  type: String
+  length: 200
+  description: Allergies. Details/amount
+
+medh4:
+  type: Integer
+  description: Cardiovascular
+  range:
+  - 1::3
+  notes: 1=no significant history; 2=past; 3= present
+  alias: medical_3
+  codes:
+    1: no significant history
+    2: past
+    3: present
+
+medh5:
+  type: String
+  length: 200
+  description: Cardiovascular Details/amount
+
+medh6:
+  type: Integer
+  description: Dermatological
+  range:
+  - 1::3
+  notes: 1=no significant history; 2=past; 3= present
+  codes:
+    1: no significant history
+    2: past
+    3: present
+
+medh7:
+  type: String
+  length: 200
+  description: Dermatological. Details/amount
+
+medh8:
+  type: String
+  length: 200
+  description: Endocrine. Details/amount
+
+medh9:
+  type: Integer
+  description: Endocrine/
+  range:
+  - 1::3
+  notes: 1=no significant history; 2=past; 3= present
+  alias: medical_4
+  codes:
+    1: no significant history
+    2: past
+    3: present
+
+medh10:
+  type: Integer
+  description: Gastrointestinal
+  range:
+  - 1::3
+  notes: 1=no significant history; 2=past; 3= present
+  alias: medical_5
+  codes:
+    1: no significant history
+    2: past
+    3: present
+
+medh11:
+  type: String
+  length: 200
+  description: Gastrointestinal. Details/amount
+
+medh12:
+  type: Integer
+  description: Genitourinary
+  range:
+  - 1::3
+  notes: 1=no significant history; 2=past; 3= present
+  alias: medical_6
+  codes:
+    1: no significant history
+    2: past
+    3: present
+
+medh13:
+  type: String
+  length: 200
+  description: Genitourinary. Details/amount
+
+medh14:
+  type: Integer
+  description: Is the participant pregnant or planning to become pregnant during the
+    study period
+  range:
+  - 0::2
+  notes: 0=No; 1=Yes; 2=NA
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: NA
+
+medh15:
+  type: Integer
+  description: Hematological
+  range:
+  - 1::3
+  notes: 1=no significant history; 2=past; 3= present
+  codes:
+    1: no significant history
+    2: past
+    3: present
+
+medh16:
+  type: String
+  length: 200
+  description: Hematological. Details/amount
+
+medh17:
+  type: Integer
+  description: Hepatic
+  range:
+  - 1::3
+  notes: 1=no significant history; 2=past; 3= present
+  codes:
+    1: no significant history
+    2: past
+    3: present
+
+medh18:
+  type: String
+  length: 200
+  description: Hepatic. Details/amount
+
+medh19:
+  type: Integer
+  description: Immunological
+  range:
+  - 1::3
+  notes: 1=no significant history; 2=past; 3= present
+  codes:
+    1: no significant history
+    2: past
+    3: present
+
+medh20:
+  type: String
+  length: 200
+  description: Immunological. Details/amount
+
+medh21:
+  type: Integer
+  description: Metabolic
+  range:
+  - 1::3
+  notes: 1=no significant history; 2=past; 3= present
+  codes:
+    1: no significant history
+    2: past
+    3: present
+
+medh22:
+  type: String
+  length: 200
+  description: Metabolic. Details/amount
+
+medh23:
+  type: Integer
+  description: Musculoskeletal
+  range:
+  - 1::3
+  notes: 1=no significant history; 2=past; 3= present
+  alias: medical_7
+  codes:
+    1: no significant history
+    2: past
+    3: present
+
+medh24:
+  type: String
+  length: 200
+  description: Musculoskeletal. Details/amount
+
+medh25:
+  type: Integer
+  description: Neoplastic
+  range:
+  - 1::3
+  notes: 1=no significant history; 2=past; 3= present
+  codes:
+    1: no significant history
+    2: past
+    3: present
+
+medh26:
+  type: String
+  length: 200
+  description: Neoplastic. Details/amount
+
+medh27:
+  type: Integer
+  description: Neurological
+  range:
+  - 1::3
+  notes: 1=no significant history; 2=past; 3= present
+  alias: medical_1
+  codes:
+    1: no significant history
+    2: past
+    3: present
+
+medh28:
+  type: String
+  length: 200
+  description: Neurological. Details/amount
+
+medh29:
+  type: String
+  length: 200
+  description: Other  med history (Specify)
+
+medh30:
+  type: Integer
+  description: Other med history
+  range:
+  - 1::3
+  notes: 1=no significant history; 2=past; 3= present
+  alias: medical_9
+  codes:
+    1: no significant history
+    2: past
+    3: present
+
+medh31:
+  type: String
+  length: 200
+  description: Other med history. Details/amount
+
+medh32:
+  type: Integer
+  description: Respiratory
+  range:
+  - 1::3
+  notes: 1=no significant history; 2=past; 3= present
+  alias: medical_2
+  codes:
+    1: no significant history
+    2: past
+    3: present
+
+medh33:
+  type: String
+  length: 200
+  description: Respiratory. Details/amount
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+  alias: comments,mh_notes
+
+medhx_celiac:
+  type: Integer
+  description: Celiac Disease
+  range:
+  - 0::2
+  notes: 0 = No, 1 = Yes, 2 = Not sure
+  codes:
+    0: "No"
+    1: "Yes"
+    2: Not sure
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+
+ghq_8:
+  type: Integer
+  description: Current smoker. How many cigarettes have you smoked in the past 24
+    hours?
+  range:
+  - 1::200
+  alias: esq1
+
+avnumcig:
+  type: Integer
+  description: Average Number of Cigarettes
+  alias: esq2
+
+pehxmen:
+  type: Integer
+  description: History of menstruation
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: esq8_fem_1
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+urine_last_menstrual_pd_days:
+  type: String
+  length: 25
+  description: 'Urine Measures: Number of days since last menstrual period (Date sample
+    taken - Date of last menstruation)'
+  alias: esq8_fem_2
+
+menstrualcycle3_y:
+  type: Integer
+  description: Is your menstrual cycle regular?
+  range:
+  - 0::3
+  notes: 1 = Yes; 0 = No; 2 = Don't know; 3 = Refuse to answer; The following questions
+    are about the history of your menstrual cycle. If you do not remember specific
+    details, just try to answer as best you can.
+  alias: esq8_fem_3
+  codes:
+    1: 'Yes'
+    0: 'No'
+    2: Don't know
+    3: Refuse to answer
+
+mchq_18:
+  type: String
+  length: 100
+  description: Do you have regular menstrual cycles. If no, explain
+  alias: esq8_fem_4
+
+contr:
+  type: Integer
+  description: Currently taking any type of hormonal contraceptive?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: esq9_fem
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+esq1_wk:
+  type: String
+  length: 90
+  description: 'Past week drug/alcohol use: Substance 1'
+
+esq2_wk:
+  type: String
+  length: 90
+  description: 'Past week drug/alcohol use: Substance 2'
+
+esq3_wk:
+  type: String
+  length: 90
+  description: 'Past week drug/alcohol use: Substance 3'
+
+esq4_wk:
+  type: String
+  length: 90
+  description: 'Past week drug/alcohol use: Substance 4'
+
+esq5_wk:
+  type: String
+  length: 90
+  description: 'Past week drug/alcohol use: Substance 5'
+
+esq6_wk:
+  type: String
+  length: 90
+  description: 'Past week drug/alcohol use: Substance 6'
+
+esq7_wk:
+  type: String
+  length: 90
+  description: 'Past week drug/alcohol use: Substance 7'
+
+esq8_wk:
+  type: String
+  length: 90
+  description: 'Past week drug/alcohol use: Substance 8'
+
+esq1_24hr:
+  type: String
+  length: 90
+  description: 'Past 24 hr drug/alcohol use: Substance 1'
+
+esq2_24hr:
+  type: String
+  length: 90
+  description: 'Past 24 hr drug/alcohol use: Substance 2'
+
+esq3_24hr:
+  type: String
+  length: 90
+  description: 'Past 24 hr drug/alcohol use: Substance 3'
+
+esq4_24hr:
+  type: String
+  length: 90
+  description: 'Past 24 hr drug/alcohol use: Substance 4'
+
+esq5_24hr:
+  type: String
+  length: 90
+  description: 'Past 24 hr drug/alcohol use: Substance 5'
+
+esq6_24hr:
+  type: String
+  length: 90
+  description: 'Past 24 hr drug/alcohol use: Substance 6'
+
+esq7_24hr:
+  type: String
+  length: 90
+  description: 'Past 24 hr drug/alcohol use: Substance 7'
+
+esq8_24hr:
+  type: String
+  length: 90
+  description: 'Past 24 hr drug/alcohol use: Substance 8'
+
+esq3:
+  type: Integer
+  description: Other tobacco/nicotine products in past 24 hrs
+  range:
+  - 0::1
+  - -9
+  notes: 0=no; 1=yes; -9=missing
+  codes:
+    0: 'no'
+    1: 'yes'
+    -9: missing
+
+esq3_1:
+  type: String
+  length: 200
+  description: 'If used other tobacco/nicotine products in past 24 hours: What kind
+    and how much?'
+
+esq4_cofftea:
+  type: Integer
+  description: How many cups of coffee/tea in past 24 hrs
+
+esq4_soda:
+  type: Integer
+  description: Glasses of soda in past 24 hrs
+
+esq5_cofftea:
+  type: Integer
+  description: How many cups of coffee/tea in average day
+
+esq5_soda:
+  type: Integer
+  description: Glasses of soda in average day
+
+esq6:
+  type: Integer
+  description: How much time spent exercising in past 24 hrs
+  range:
+  - 0::3
+  - -9
+  notes: 0=less than 1 hour; 1=1-3 hours per week; 2=4-5 hours per week; 3=more than
+    5 hours; -9=missing
+  codes:
+    0: less than 1 hour
+    1: 1-3 hours per week
+    2: 4-5 hours per week
+    3: more than 5 hours
+    -9: missing
+
+esq7:
+  type: Integer
+  description: How much time spent exercising per week
+  range:
+  - 0::4
+  - -9
+  notes: 0=less than 1 hour; 1=1-3 hours per week; 2=4-5 hours per week; 3=6-10 hours
+    per week; 4=more than 10 hours per week; -9=missing
+  codes:
+    0: less than 1 hour
+    1: 1-3 hours per week
+    2: 4-5 hours per week
+    3: 6-10 hours per week
+    4: more than 10 hours per week
+    -9: missing
+
+esq8:
+  type: Integer
+  description: Gums bleeding
+  range:
+  - 0::1
+  - -9
+  notes: 0=no; 1=yes; -9=missing
+  codes:
+    0: 'no'
+    1: 'yes'
+    -9: missing
+
+medical_8:
+  type: Integer
+  description: ASD or Communication Disorder
+  range:
+  - 1::3
+  notes: 1=no significant history; 2=past; 3= present
+  codes:
+    1: no significant history
+    2: past
+    3: present
+
+dental1:
+  type: Integer
+  description: 'Do you currently have any of the following dental hardware?: Lower
+    Retainer'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+dental2:
+  type: Integer
+  description: 'Do you currently have any of the following dental hardware?: Lower
+    Spacer'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+dental2_1:
+  type: String
+  length: 30
+  description: 'Lower Spacer: If yes: How many?'
+
+dental3:
+  type: Integer
+  description: 'Do you currently have any of the following dental hardware?: Metal
+    fillings (amalgam, silver, gold)? '
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+dental3_1:
+  type: String
+  length: 30
+  description: Metal fillings (amalgam, silver, gold)? If Yes, How many on top?
+
+dental3_2:
+  type: String
+  length: 30
+  description: Metal fillings (amalgam, silver, gold)? If Yes, How many on bottom?
+
+dental4:
+  type: Integer
+  description: 'Do you currently have any of the following dental hardware?: Crowns? '
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+dental4_1:
+  type: String
+  length: 30
+  description: Crowns? If Yes, How many on top?
+
+dental4_2:
+  type: String
+  length: 30
+  description: Crowns? If Yes, How many on bottom?
+
+dental5:
+  type: Integer
+  description: 'Do you currently have any of the following dental hardware?: Gold
+    teeth? '
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+dental5_1:
+  type: String
+  length: 30
+  description: Gold teeth? If Yes, How many on top?
+
+dental5_2:
+  type: String
+  length: 30
+  description: Gold teeth? If Yes, How many on bottom?
+
+dental6:
+  type: Integer
+  description: 'Do you currently have any of the following dental hardware?: Any other
+    metal posts, implants or anything else? '
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+dental6_1:
+  type: String
+  length: 60
+  description: Any other metal posts, implants or anything else? If Yes, What?
+
+dental6_2:
+  type: String
+  length: 50
+  description: Any other metal posts, implants or anything else? If Yes, Where?
+
+mh6a2:
+  type: Integer
+  description: 'Have you ever taken any medications prescribed to you by a doctor
+    for 12 months or longer for the following reasons: DO NOT COUNT OTC. - To help
+    you sleep?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+mh6a3:
+  type: Integer
+  description: 'Have you ever taken any medications prescribed to you by a doctor
+    for 12 months or longer for the following reasons: DO NOT COUNT OTC. - To feel
+    less depressed?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+mh6a4:
+  type: Integer
+  description: 'Have you ever taken any medications prescribed to you by a doctor
+    for 12 months or longer for the following reasons: DO NOT COUNT OTC. - For headaches?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+mh6a5:
+  type: Integer
+  description: 'Have you ever taken any medications prescribed to you by a doctor
+    for 12 months or longer for the following reasons: DO NOT COUNT OTC. - To have
+    more energy?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+mh6a6:
+  type: Integer
+  description: 'Have you ever taken any medications prescribed to you by a doctor
+    for 12 months or longer for the following reasons: DO NOT COUNT OTC. - Women Only:
+    For birth control?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+mh6a7:
+  type: Integer
+  description: 'Have you ever taken any medications prescribed to you by a doctor
+    for 12 months or longer for the following reasons: DO NOT COUNT OTC. - Containing
+    steroids?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+baseline_m_008:
+  type: Integer
+  description: In the past six months, how many emergency room visits were for medical
+    problems not related to a psychiatric or mental health problem?
+  alias: mh4c
+
+sf1:
+  type: Integer
+  description: 'In general, would you say your health is:'
+  range:
+  - 1::5
+  notes: 1= Excellent; 2= Very Good; 3= Good; 4= Fair; 5= Poor
+  alias: mh1
+  codes:
+    1: Excellent
+    2: Very Good
+    3: Good
+    4: Fair
+    5: Poor
+
+tosurg:
+  type: Integer
+  description: Number of outpatient surgery
+  alias: mh4b
+
+mh2:
+  type: Integer
+  description: Has your health always been at the current rating, or has it been better
+    or worse?
+  range:
+  - 1
+  - 2
+  - 5
+  - 6
+  notes: 1 = NO, WORSE ; 2 = NO, BETTER ; 5 = YES, SAME ; 6 = BOTH BETTER & WORSE
+  codes:
+    1: NO, WORSE
+    2: NO, BETTER
+    5: YES, SAME
+    6: BOTH BETTER & WORSE
+
+mh4a:
+  type: Integer
+  description: How many times have you been in a hospital overnight (including surgery
+    and pregnancy), excluding psychiatric or substance abuse treatment?
+
+mh5:
+  type: Integer
+  description: In the last 6 months, how many visits have you made to a doctor, clinic,
+    or emergency room for your physical health?  DO NOT COUNT CHIROPRACTORS.
+
+mh6a1:
+  type: Integer
+  description: 'Have you ever taken any medications prescribed to you by a doctor
+    for 12 months or longer for the following reasons: DO NOT COUNT OTC. - To make
+    you feel less nervous?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+mcd8:
+  type: Integer
+  description: 7-day post-discharge follow-up with outpatient mental health care
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+mcd9:
+  type: Integer
+  description: 30-day post-discharge follow-up with outpatient mental health care
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+encounter1_019:
+  type: String
+  length: 100
+  description: Primary ICD Diagnosis Code
+  alias: mcd5
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+
+study:
+  type: String
+  length: 100
+  description: Study
+
+mcd2:
+  type: Integer
+  description: 7-day hospital inpatient all-cause readmission
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+mcd4:
+  type: Integer
+  description: 30-day hospital inpatient all-cause readmission
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+mcd6:
+  type: Integer
+  description: 7-day post-discharge follow-up with outpatient medical care
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+mcd7:
+  type: Integer
+  description: 30-day post-discharge follow-up with outpatient medical care
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ph_119:
+  type: Integer
+  description: Has your child been to the Emergency Room within the past year?
+  range:
+  - 0
+  - 1
+  - 6
+  - 7
+  notes: 0 = No; 1 = Yes; 6 = Don't know ; 7 = Refuse to answer
+  alias: medhx_4a
+  codes:
+    0: 'No'
+    1: 'Yes'
+    6: Don't know
+    7: Refuse to answer
+
+medhis_6q_drug7:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    7
+  alias: medhx_6q_drug7
+
+medhis_6q_drug8:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    8
+  alias: medhx_6q_drug8
+
+medhis_6q_drug9:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    9
+  alias: medhx_6q_drug9
+
+medhis_6q_drug10:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    10
+  alias: medhx_6q_drug10
+
+medhis_6q_drug11:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    11
+  alias: medhx_6q_drug11
+
+medhis_6q_drug12:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    12
+  alias: medhx_6q_drug12
+
+medhis_6q_drug13:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    13
+  alias: medhx_6q_drug13
+
+medhis_6q_drug14:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    14
+  alias: medhx_6q_drug14
+
+medhis_6q_drug15:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    15
+  alias: medhx_6q_drug15
+
+medhis_6q_drug16:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    16
+  alias: medhx_6q_drug16
+
+ph_9:
+  type: Integer
+  description: Has your child ever had a seizure or fit?
+  range:
+  - 0::1
+  - 9998
+  notes: 0 = No (If No, please go to Question 10); 1 = Yes; 9998 = Did not answer
+  alias: medhx_6p
+  codes:
+    0: No (If No, please go to Question 10)
+    1: 'Yes'
+    9998: Did not answer
+
+medhis_6q_drug17:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    17
+  alias: medhx_6q_drug17
+
+medhis_6q_drug18:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    18
+  alias: medhx_6q_drug18
+
+medhis_6q_drug19:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    19
+  alias: medhx_6q_drug19
+
+medhis_6q_drug20:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    20
+  alias: medhx_6q_drug20
+
+medhis_6q_drug21:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    21
+  alias: medhx_6q_drug21
+
+medhis_6q_drug22:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    22
+  alias: medhx_6q_drug22
+
+medhis_6q_drug23:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    23
+  alias: medhx_6q_drug23
+
+medhis_6q_drug24:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    24
+  alias: medhx_6q_drug24
+
+medhis_6q_drug25:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    25
+  alias: medhx_6q_drug25
+
+medhis_6q_drug26:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    26
+  alias: medhx_6q_drug26
+
+ph_9a:
+  type: Integer
+  description: 'How many seizures or fits has your child ever had? #:'
+  range:
+  - 0::1200
+  - 9998
+  notes: Number of occurrences; 9998 = N/A
+  alias: medhx_6p_notes
+  codes:
+    9998: N/A
+
+medhis_6q_drug27:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    27
+  alias: medhx_6q_drug27
+
+medhis_6q_drug28:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    28
+  alias: medhx_6q_drug28
+
+medhis_6q_drug29:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    29
+  alias: medhx_6q_drug29
+
+medhis_6q_drug30:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    30
+  alias: medhx_6q_drug30
+
+medhis_6r:
+  type: Integer
+  description: Has your child ever had a gunshot wound?
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: medhx_6r
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhis_6r_notes:
+  type: String
+  length: 150
+  description: If your child has had a gunshot wound, how many times?
+  alias: medhx_6r_notes
+
+medhis_6s:
+  type: Integer
+  description: Has your child had a wound from knife or any other weapon
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: medhx_6s
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhis_6s_times:
+  type: String
+  length: 150
+  description: If your child has had a wound from knife or any other weapon, how many
+    times?
+  alias: medhx_6s_times
+
+medhis_6t:
+  type: Integer
+  description: Has your child had any other severe harm done?
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: medhx_6t
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhis_6t_describe:
+  type: String
+  length: 150
+  description: 'If your child has had other severe harm, please fill in:'
+  alias: medhx_6t_describe
+
+ph_neuro9:
+  type: Integer
+  description: Has your child ever had a serious head injury (whether unconscious
+    or not)?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: medhx_6i
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhis_6t_times:
+  type: String
+  length: 150
+  description: If your child has had other severe harm, how many times?
+  alias: medhx_6t_times
+
+medhis_8b_describe:
+  type: String
+  length: 400
+  description: 'If your child has ever been in the hospital overnight or longer, please
+    describe:'
+  alias: medhx_8b_describe
+
+medhis_9a:
+  type: Integer
+  description: Has your child ever had general anesthesia or sedation for any surgery
+    or procedure?
+  range:
+  - 0
+  - 1
+  - 6
+  notes: 1 = Yes ; 0 = No ; 6 = Don''t know
+  alias: medhx_9a
+  codes:
+    1: 'Yes'
+    0: 'No'
+    6: Don''t know
+
+medhis_9b:
+  type: String
+  length: 150
+  description: If your child has ever had general anesthesia or sedation for any surgery
+    or procedure, how many times?
+  alias: medhx_9b
+
+medhis_9c:
+  type: String
+  length: 150
+  description: If your child has ever had general anesthesia or sedation for any surgery
+    or procedure, at what age for the most recent time?
+  alias: medhx_9c
+
+q17_b14:
+  type: Integer
+  description: Has she/he ever been to a doctor for any of these things?Problems with
+    Heart /Problemas del coraz?n
+  range:
+  - 0::2
+  notes: 0 = No, 1 = Yes, 2 = Not sure
+  alias: medhx_2o
+  codes:
+    0: "No"
+    1: "Yes"
+    2: Not sure
+
+seq1c_2:
+  type: Integer
+  description: 'Has a health or education professoinal told you that your child has
+    any of the following conditions? : Traumatic brain injury'
+  range:
+  - 1
+  - 2
+  - -99
+  - 77
+  - 88
+  notes: 2= No;1= Yes ; -99= N/A ; 77= Refused ; 88= Missing
+  alias: medhx_2c
+  codes:
+    2: 'No'
+    1: 'Yes'
+    -99: N/A
+    77: Refused
+    88: Missing
+
+w1_m_cu_hrng:
+  type: Integer
+  description: Has she/he ever been to a doctor for any of these things?Hearing Problem
+    /Problema Auditivo
+  range:
+  - 0
+  - 1
+  - -888
+  - -999
+  notes: 0 = No; 1 = Yes; -999 = missing; -888 = not applicable
+  alias: medhx_2i
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -999: missing
+    -888: not applicable
+
+wk_allergies:
+  type: Integer
+  description: Has she/he ever been to a doctor for any of these things?Allergies
+    /Alergias
+  range:
+  - 0
+  - 1
+  notes: No = 0; Yes = 1
+  alias: medhx_2b
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+cfmh_chd_seizure:
+  type: Integer
+  description: Does (did) the Child have Seizure Disorder/Epilepsy?
+  range:
+  - 1
+  - 0
+  - 999
+  - -7
+  notes: 0 = No; 1 = Yes; ; -7=Refused; 999=NA/NK
+  alias: medhx_2h
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -7: Refused
+    999: NA/NK
+
+wk_asthma:
+  type: Integer
+  description: Has she/he ever been to a doctor for any of these things?Asthma /Asma
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: medhx_2a
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+baseline_k_005:
+  type: Integer
+  description: Has she/he ever been to a doctor for any of these things?Diabetes /Diabetes
+  range:
+  - 0
+  - 1
+  - -888
+  - -999
+  - -7
+  notes: 0=No; 1=Yes; -888=Not Applicable; -999=Missing/NK; -7=Refused
+  alias: medhx_2g
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -888: Not Applicable
+    -999: Missing/NK
+    -7: Refused
+
+cfmh_chd_cerpalsy:
+  type: Integer
+  description: Has she/he ever been to a doctor for any of these things?Cerebral Palsy
+    /Paralisis Cerebral
+  range:
+  - 1
+  - 0
+  - 999
+  notes: 0 = No; 1 = Yes
+  alias: medhx_2f
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhis_1a:
+  type: Integer
+  description: During the past year, has your child been to see a doctor, nurse, nurse
+    practitioner, dentist, or any other health professional like that, OTHER than
+    for regular checkups?
+  range:
+  - 0
+  - 1
+  - 6
+  notes: 1 = Yes ; 0 = No ; 6 = Don''t know
+  alias: medhx_1a
+  codes:
+    1: 'Yes'
+    0: 'No'
+    6: Don''t know
+
+medhis_1a_other:
+  type: String
+  length: 150
+  description: During the past year, has your child been to see a doctor, nurse, nurse
+    practitioner, dentist, or any other health professional like that, OTHER than
+    for regular checkups? If yes, then why?
+  alias: medhx_1a_other
+
+medhis_2d:
+  type: Integer
+  description: 'Has your child ever been to a doctor for any of these things: Bronchitis'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: medhx_2d
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+medhis_2e:
+  type: Integer
+  description: 'Has your child ever been to a doctor for any of these things: Cancer/Leukemia'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: medhx_2e
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+medhis_2k:
+  type: Integer
+  description: 'Has your child ever been to a doctor for any of these things: Lead
+    Poisoning'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: medhx_2k
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+medhis_2n:
+  type: Integer
+  description: 'Has your child ever been to a doctor for any of these things: Problems
+    with Vision'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: medhx_2n
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+medhis_2p:
+  type: Integer
+  description: 'Has your child ever been to a doctor for any of these things: Sickle
+    Cell Anemia'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: medhx_2p
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+medhis_2q:
+  type: Integer
+  description: 'Has your child ever been to a doctor for any of these things: Very
+    Bad Headaches'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: medhx_2q
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+ex_vd2_dev_muscular_dystrophy:
+  type: String
+  length: 2
+  description: '"Screening and Exclusion Form (0:0 to 4:5 y:m) Question VD2 Child
+    of Interest (COI) Muscular Dystrophy (Y=Yes, N=No, NA=Not Available)"'
+  range:
+  - Y
+  - N
+  - NA
+  notes: Y = Yes; N = No; NA = Not available
+  alias: medhx_2l
+  codes:
+    Y: 'Yes'
+    N: 'No'
+    NA: Not available
+
+medhis_2r:
+  type: Integer
+  description: 'Has your child ever been to a doctor for any of these things: An Operation'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: medhx_2r
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+medhis_2s:
+  type: Integer
+  description: 'Has your child ever been to a doctor for any of these things: Any
+    Other Illness'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: medhx_2s
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+medhis_2_notes:
+  type: String
+  length: 400
+  description: 'Has your child ever been to a doctor for any of these things: If any
+    operation, please specify:'
+  alias: medhx_2_notes
+
+medhis_2_notes2:
+  type: String
+  length: 550
+  description: 'Has your child ever been to a doctor for any of these things: If any
+    other illness, please specify:'
+  alias: medhx_2_notes2
+
+medhis_4b:
+  type: Integer
+  description: How many times has your child been to the emergency room in that past
+    year?
+  range:
+  - 1::5
+  notes: 1 = 1 time ; 2 = 2 times ; 3 = 3-4 times ; 4 = 5-9 times ; 5 = 10 or more
+    times
+  alias: medhx_4b
+  codes:
+    1: 1 time
+    2: 2 times
+    3: 3-4 times
+    4: 5-9 times
+    5: 10 or more times
+
+medhis_6b:
+  type: Integer
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Sprains'
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: medhx_6b
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhis_6b_notes:
+  type: String
+  length: 150
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Sprains - If yes, how many times?'
+  alias: medhx_6b_notes
+
+medhis_6c:
+  type: Integer
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Cuts or Scrapes'
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: medhx_6c
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhis_6c_times:
+  type: String
+  length: 150
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Cuts or Scrapes - If yes, how many
+    times?'
+  alias: medhx_6c_times
+
+medhis_6d:
+  type: Integer
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Stitches'
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: medhx_6d
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhx_brokenbones_specify:
+  type: String
+  length: 255
+  description: 'If yes to broken bones, specify:'
+  alias: medhx_6a_notes
+
+medhis_6d_notes:
+  type: String
+  length: 150
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Stitches - If yes, how many times?'
+  alias: medhx_6d_notes
+
+medhis_6e:
+  type: Integer
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Other Serious Wounds'
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: medhx_6e
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhis_6e_describe:
+  type: String
+  length: 450
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Other Serious Wounds - If yes, please
+    describe:'
+  alias: medhx_6e_describe
+
+medhis_6e_times:
+  type: String
+  length: 150
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Other Serious Wounds - If yes, how
+    many times?'
+  alias: medhx_6e_times
+
+medhis_6f:
+  type: Integer
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Falls'
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: medhx_6f
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhis_6f_notes:
+  type: String
+  length: 150
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Falls - If yes, how many times?'
+  alias: medhx_6f_notes
+
+medhis_6g_times:
+  type: String
+  length: 150
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Burns - If yes, how many times?'
+  alias: medhx_6g_times
+
+medhis_6h:
+  type: Integer
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: High Fever'
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: medhx_6h
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhis_6h_times:
+  type: String
+  length: 150
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: High Fever - If yes, how many times?'
+  alias: medhx_6h_times
+
+medhis_6i_times:
+  type: String
+  length: 150
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Head Injury - If yes, how many times?'
+  alias: medhx_6i_times
+
+strconkidney:
+  type: String
+  length: 5
+  description: Does the child/patient have kidney disease?
+  range:
+  - 'Yes'
+  - 'No'
+  alias: medhx_2j
+
+medhis_6j:
+  type: Integer
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Knocked Unconscious'
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: medhx_6j
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhis_6j_times:
+  type: String
+  length: 150
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Knocked Unconscious - If yes, how many
+    times?'
+  alias: medhx_6j_times
+
+medhis_6k:
+  type: Integer
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Bruises'
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: medhx_6k
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhis_6k_times:
+  type: String
+  length: 150
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Bruises - If yes, how many times?'
+  alias: medhx_6k_times
+
+medhis_6l:
+  type: Integer
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Asthma Attack'
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: medhx_6l
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhis_6l_notes:
+  type: String
+  length: 150
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Asthma Attack - If yes, how many times?'
+  alias: medhx_6l_notes
+
+medhis_6m:
+  type: Integer
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Broken Teeth'
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: medhx_6m
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhis_6m_times:
+  type: String
+  length: 150
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Broken Teeth - If yes, how many times?'
+  alias: medhx_6m_times
+
+medhis_6n:
+  type: Integer
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Animal Bite'
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: medhx_6n
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhis_6n_notes:
+  type: String
+  length: 150
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Animal Bite - If yes, how many times?'
+  alias: medhx_6n_notes
+
+ch_17_00:
+  type: Integer
+  description: Before you were 18, were/Has your child been burned? This includes
+    when you/your child suffered an injury caused by fire or excessive heat that is
+    not a sunburn.
+  range:
+  - 0
+  - 1
+  - -8
+  - -9
+  notes: 1=Yes; 0=No; -8= I don't know the answer to the question; -9= I don't want
+    to answer the question
+  alias: medhx_6g
+  codes:
+    1: 'Yes'
+    0: 'No'
+    -8: I don't know the answer to the question
+    -9: I don't want to answer the question
+
+medhis_6o:
+  type: Integer
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Overdose'
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: medhx_6o
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhis_6o_notes:
+  type: Integer
+  description: 'Has your child ever been to a doctor, a nurse, nurse practitioner,
+    the emergency room or a clinic because of: Overdose - If yes, how many times?'
+  range:
+  - 1::30
+  alias: medhx_6o_notes
+
+medhis_6o_drug1:
+  type: String
+  length: 150
+  description: 'Drug 1 that your child had overdosed on:'
+  alias: medhx_6o_drug1
+
+medhis_6o_drug2:
+  type: String
+  length: 150
+  description: 'Drug 2 that your child had overdosed on:'
+  alias: medhx_6o_drug2
+
+medhis_6o_drug3:
+  type: String
+  length: 150
+  description: 'Drug 3 that your child had overdosed on:'
+  alias: medhx_6o_drug3
+
+medhis_6o_drug4:
+  type: String
+  length: 150
+  description: 'Drug 4 that your child had overdosed on:'
+  alias: medhx_6o_drug4
+
+medhis_6o_drug5:
+  type: String
+  length: 150
+  description: 'Drug 5 that your child had overdosed on:'
+  alias: medhx_6o_drug5
+
+medhis_6o_drug6:
+  type: String
+  length: 150
+  description: 'Drug 6 that your child had overdosed on:'
+  alias: medhx_6o_drug6
+
+medhis_6o_drug7:
+  type: String
+  length: 150
+  description: 'Drug 7 that your child had overdosed on:'
+  alias: medhx_6o_drug7
+
+medhis_6o_drug8:
+  type: String
+  length: 150
+  description: 'Drug 8 that your child had overdosed on:'
+  alias: medhx_6o_drug8
+
+childhospital:
+  type: Integer
+  description: Has your child ever been overnight in the hospital?
+  range:
+  - 0
+  - 1
+  - -99
+  - 88
+  - 77
+  - 6
+  notes: 0= No ; 1= Yes ; -99= N/A ; 88= Missing ; 77= Refused; 6 = Don't know
+  alias: medhx_8a
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -99: N/A
+    88: Missing
+    77: Refused
+    6: Don't know
+
+medhis_6o_drug9:
+  type: String
+  length: 150
+  description: 'Drug 9 that your child had overdosed on:'
+  alias: medhx_6o_drug9
+
+medhis_6o_drug10:
+  type: String
+  length: 150
+  description: 'Drug 10 that your child had overdosed on:'
+  alias: medhx_6o_drug10
+
+medhis_6o_drug11:
+  type: String
+  length: 150
+  description: 'Drug 11 that your child had overdosed on:'
+  alias: medhx_6o_drug11
+
+medhis_6o_drug12:
+  type: String
+  length: 150
+  description: 'Drug 12 that your child had overdosed on:'
+  alias: medhx_6o_drug12
+
+medhis_6o_drug13:
+  type: String
+  length: 150
+  description: 'Drug 13 that your child had overdosed on:'
+  alias: medhx_6o_drug13
+
+medhis_6o_drug14:
+  type: String
+  length: 150
+  description: 'Drug 14 that your child had overdosed on:'
+  alias: medhx_6o_drug14
+
+medhis_6o_drug15:
+  type: String
+  length: 150
+  description: 'Drug 15 that your child had overdosed on:'
+  alias: medhx_6o_drug15
+
+medhis_6o_drug16:
+  type: String
+  length: 150
+  description: 'Drug 16 that your child had overdosed on:'
+  alias: medhx_6o_drug16
+
+medhis_6o_drug17:
+  type: String
+  length: 150
+  description: 'Drug 17 that your child had overdosed on:'
+  alias: medhx_6o_drug17
+
+medhis_6o_drug18:
+  type: String
+  length: 150
+  description: 'Drug 18 that your child had overdosed on:'
+  alias: medhx_6o_drug18
+
+medhx_brokenbones:
+  type: Integer
+  description: Has he/she ever been to a doctor, a nurse, nurse practitioner, the
+    emergency room or a clinic because any of these things happened...Broken Bones
+    /Fracturas
+  range:
+  - 0::2
+  notes: 0 = No, 1 = Yes, 2 = Not sure
+  alias: medhx_6a
+  codes:
+    0: "No"
+    1: "Yes"
+    2: Not sure
+
+medhis_6o_drug19:
+  type: String
+  length: 150
+  description: 'Drug 19 that your child had overdosed on:'
+  alias: medhx_6o_drug19
+
+medhis_6o_drug20:
+  type: String
+  length: 150
+  description: 'Drug 20 that your child had overdosed on:'
+  alias: medhx_6o_drug20
+
+medhis_6o_drug21:
+  type: String
+  length: 150
+  description: 'Drug 21 that your child had overdosed on:'
+  alias: medhx_6o_drug21
+
+medhis_6o_drug22:
+  type: String
+  length: 150
+  description: 'Drug 22 that your child had overdosed on:'
+  alias: medhx_6o_drug22
+
+medhis_6o_drug23:
+  type: String
+  length: 150
+  description: 'Drug 23 that your child had overdosed on:'
+  alias: medhx_6o_drug23
+
+medhis_6o_drug24:
+  type: String
+  length: 150
+  description: 'Drug 24 that your child had overdosed on:'
+  alias: medhx_6o_drug24
+
+medhis_6o_drug25:
+  type: String
+  length: 150
+  description: 'Drug 25 that your child had overdosed on:'
+  alias: medhx_6o_drug25
+
+medhis_6o_drug26:
+  type: String
+  length: 150
+  description: 'Drug 26 that your child had overdosed on:'
+  alias: medhx_6o_drug26
+
+medhis_6o_drug27:
+  type: String
+  length: 150
+  description: 'Drug 27 that your child had overdosed on:'
+  alias: medhx_6o_drug27
+
+medhis_6o_drug28:
+  type: String
+  length: 150
+  description: 'Drug 28 that your child had overdosed on:'
+  alias: medhx_6o_drug28
+
+ms:
+  type: Integer
+  description: Has she/he ever been to a doctor for any of these things?Multiple Sclerosis
+    /Esclerosis m?ltiple
+  range:
+  - 1
+  - 0
+  - -7
+  - 9
+  - -999
+  notes: 0=No; 1=Yes;-7=Refused; 9=Not evaluated; -999= Don't know/Missing Data
+  alias: medhx_2m
+  codes:
+    0: 'No'
+    1: 'Yes'
+    7: Refused
+    9: Not evaluated
+    -999: Don't know/Missing Data
+
+medhis_6o_drug29:
+  type: String
+  length: 150
+  description: 'Drug 29 that your child had overdosed on:'
+  alias: medhx_6o_drug29
+
+medhis_6o_drug30:
+  type: String
+  length: 150
+  description: 'Drug 30 that your child had overdosed on:'
+  alias: medhx_6o_drug30
+
+medhis_6q:
+  type: Integer
+  description: Has your child ever had an accidental poisoning?
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: medhx_6q
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medhis_6q_notes:
+  type: Integer
+  description: If your child has had accidental poisonings, how many times?
+  range:
+  - 1::30
+  alias: medhx_6q_notes
+
+medhis_6q_drug1:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    1
+  alias: medhx_6q_drug1
+
+medhis_6q_drug2:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    2
+  alias: medhx_6q_drug2
+
+medhis_6q_drug3:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    3
+  alias: medhx_6q_drug3
+
+medhis_6q_drug4:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    4
+  alias: medhx_6q_drug4
+
+medhis_6q_drug5:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    5
+  alias: medhx_6q_drug5
+
+medhis_6q_drug6:
+  type: String
+  length: 150
+  description: If your child has had accidental poisonings, then list poisons. Poison
+    6
+  alias: medhx_6q_drug6

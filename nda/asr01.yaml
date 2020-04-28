@@ -1,0 +1,4083 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: adate
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: age,asiagemos
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+asr1_1:
+  type: Integer
+  description: ASR 1 I am too forgetful
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr1,asr_q01_p,q1
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr1_2:
+  type: Integer
+  description: ASR 2 I make good use of my opportunities
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr2,asr_q02_p,q2
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr1_3:
+  type: Integer
+  description: ASR 3 I argue a lot
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr3,asr_q03_p,q3
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr1_4:
+  type: Integer
+  description: ASR 4 I work up to my ability
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr4,asr_q04_p,q4
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr1_5:
+  type: Integer
+  description: ASR 5 I blame others for my problems
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr5,asr_q05_p,q5
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr1_6:
+  type: Integer
+  description: ASR 6 I use drugs (other than alcohol and nicotine) for nonmedical
+    purposes
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr6,asr_q06_p,q6
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr1_6_text:
+  type: String
+  length: 500
+  description: 'ASR 6 Describe drug use:'
+  alias: asr6des
+
+asr2_1:
+  type: Integer
+  description: ASR 7 I brag
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr2_7,asr7,asr_q07_p,q7
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr2_2:
+  type: Integer
+  description: ASR 8 I have trouble concentrating or paying attention for long
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr2_8,asr8,asr_q08_p,oasr_ppl7,q8
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr2_3:
+  type: Integer
+  description: ASR 9 I can't get my mind off of certain thoughts
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr2_9,asr9,asr_q09_p,oasr_ppl8,q9
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr2_3_text:
+  type: String
+  length: 500
+  description: 'ASR 9 Describe thoughts:'
+  alias: asr2_9_text,asr9des,oasr_ppl8_des
+
+asr2_4:
+  type: Integer
+  description: ASR 10 I have trouble sitting still
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr10,asr2_10,asr_q10_p,oasr_ppl9,q10
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr2_5:
+  type: Integer
+  description: ASR 11 I am too dependent on others
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr11,asr2_11,asr_q11_p,q11
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr2_6:
+  type: Integer
+  description: ASR 12 I feel lonely
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr12,asr2_12,asr_q12_p,q12
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr3_1:
+  type: Integer
+  description: ASR 13 I feel confused or in a fog
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr13,asr3_13,asr_q13_p,oasr_ppl12,q13
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr3_2:
+  type: Integer
+  description: ASR 14 I cry a lot
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr14,asr3_14,asr_q14_p,oasr_ppl13,q14
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr3_3:
+  type: Integer
+  description: ASR 15 I am pretty honest
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr15,asr3_15,asr_q15_p,q15
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr3_4:
+  type: Integer
+  description: ASR 16 I am mean to others
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr16,asr3_16,asr_q16_p,oasr_ppl15,q16
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr3_5:
+  type: Integer
+  description: ASR 17 I daydream a lot
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr17,asr3_17,asr_q17_p,q17
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr3_6:
+  type: Integer
+  description: ASR 18 I deliberately try to hurt or kill myself
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr18,asr3_18,asr_q18_p,oasr_ppl17,q18
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr4_1:
+  type: Integer
+  description: ASR 19 I try to get a lot of attention
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr19,asr4_19,asr_q19_p,q19
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr4_2:
+  type: Integer
+  description: ASR 20 I damage or destroy my things
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr20,asr4_20,asr_q20_p,q20
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr4_3:
+  type: Integer
+  description: ASR 21 I damage or destroy things belonging to others
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr21,asr4_21,asr_q21_p,q21
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr4_4:
+  type: Integer
+  description: ASR 22 I worry about my future
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr22,asr4_22,asr_q22_p,q22
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr4_5:
+  type: Integer
+  description: ASR 23 I break rules at work or elsewhere
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr4_23,asr_q23_p,q23
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr4_6:
+  type: Integer
+  description: ASR 24 I don't eat as well as I should
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr4_24,asr_q24_p,q24
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr5_1:
+  type: Integer
+  description: ASR 25 I don't get along with other people
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr5_25,asr_q25_p,q25
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr5_2:
+  type: Integer
+  description: ASR 26 I don't feel guilty after doing something I shouldn't
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr26,asr5_26,asr_q26_p,q26
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr5_3:
+  type: Integer
+  description: ASR 27 I am jealous of others
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr27,asr5_27,asr_q27_p,q27
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr5_4:
+  type: Integer
+  description: ASR 28 I get along badly with my family
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr28,asr5_28,asr_q28_p,q28
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr5_5:
+  type: Integer
+  description: ASR 29 I am afraid of certain animals, situations, or places
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr29,asr5_29,asr_q29_p,oasr_ppl26,q29
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr5_5_text:
+  type: String
+  length: 500
+  description: 'ASR 29 Describe:'
+  alias: asr29des,asr5_29_text,oasr_ppl26_des
+
+asr5_6:
+  type: Integer
+  description: ASR 30 My relations with the opposite sex are poor
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr30,asr5_30,asr_q30_p,q30
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr6_1:
+  type: Integer
+  description: ASR 31 I am afraid I might think or do something bad
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr31,asr6_31,asr_q31_p,q31
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr6_2:
+  type: Integer
+  description: ASR 32 I feel that I have to be perfect
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr32,asr6_32,asr_q32_p,q32
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr6_3:
+  type: Integer
+  description: ASR 33 I feel that no one loves me
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr33,asr6_33,asr_q33_p,q33
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr6_4:
+  type: Integer
+  description: ASR 34 I feel that others are out to get me
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr34,asr6_34,asr_q34_p,oasr_ppl31,q34
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr6_5:
+  type: Integer
+  description: ASR 35 I feel worthless or inferior
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr35,asr6_35,asr_q35_p,oasr_ppl32,q35
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr6_6:
+  type: Integer
+  description: ASR 36 I accidentally get hurt a lot, accident-prone
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr36,asr6_36,asr_q36_p,q36
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr7_1:
+  type: Integer
+  description: ASR 37 I get in many fights
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr37,asr7_37,asr_q37_p,q37
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr7_2:
+  type: Integer
+  description: ASR 38 My relations with neighbors are poor
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr7_38,asr_q38_p,q38
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr7_3:
+  type: Integer
+  description: ASR 39 I hang around people who get in trouble
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr39,asr7_39,asr_q39_p,q39
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr7_4:
+  type: Integer
+  description: ASR 40 I hear sounds or voices that other people think aren't there
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr40,asr7_40,asr_q40_p,oasr_ppl36,q40
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr7_4_text:
+  type: String
+  length: 500
+  description: 'ASR 40 Describe:'
+  alias: asr40des,asr7_40_text,oasr_ppl36_des
+
+asr7_5:
+  type: Integer
+  description: ASR 41 I am impulsive or act without thinking
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr41,asr7_41,asr_q41_p,oasr_ppl37,q41
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr7_6:
+  type: Integer
+  description: ASR 42 I would rather be alone than with others
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr42,asr7_42,asr_q42_p,q42
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr8_1:
+  type: Integer
+  description: ASR 43 I lie or cheat
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr43,asr8_43,asr_q43_p,q43
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr8_2:
+  type: Integer
+  description: ASR 44 I feel overwhelmed by my responsibilities
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr44,asr8_44,asr_q44_p,q44
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr8_3:
+  type: Integer
+  description: ASR 45 I am nervous or tense
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr45,asr8_45,asr_q45_p,oasr_ppl40,q45
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr8_4:
+  type: Integer
+  description: ASR 46 Parts of my body twitch or make nervous movements
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr46,asr8_46,asr_q46_p,q46
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr8_4_text:
+  type: String
+  length: 500
+  description: 'ASR 46 Describe:'
+  alias: asr46des,asr8_46_text
+
+asr8_5:
+  type: Integer
+  description: ASR 47 I lack self-confidence
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr47,asr8_47,asr_q47_p,q47
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr8_6:
+  type: Integer
+  description: ASR 48 I am not liked by others
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr48,asr8_48,asr_q48_p,oasr_ppl43,q48
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr9_1:
+  type: Integer
+  description: ASR 49 I can do certain things better than other people
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr49,asr9_49,asr_q49_p,q49
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr9_2:
+  type: Integer
+  description: ASR 50 I am too fearful or anxious
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr50,asr9_50,asr_q50_p,oasr_ppl45,q50
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr9_3:
+  type: Integer
+  description: ASR 51 I feel dizzy or lightheaded
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr51,asr9_51,asr_q51_p,q51
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr9_4:
+  type: Integer
+  description: ASR 52 I feel too guilty
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr52,asr9_52,asr_q52_p,oasr_ppl23,q52
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr9_5:
+  type: Integer
+  description: ASR 53 I have trouble planning for the future
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr53,asr9_53,asr_q53_p,q53
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr9_6:
+  type: Integer
+  description: ASR 54 I feel tired without good reason
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr54,asr9_54,asr_q54_p,oasr_ppl48,q54
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr10_1:
+  type: Integer
+  description: ASR 55 My mood swings between elation and depression
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr10_55,asr55,asr_q55_p,q55
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr10_2:
+  type: Integer
+  description: ASR 56 I have physical problem(s) without known medical cause
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr10_56,asr56
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr10_3:
+  type: Integer
+  description: ASR 56 a. Aches and pains (not stomach or headaches)
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr10_57,asr56a,asr_q56a_p,oasr_ppl49_1,q56a
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr10_4:
+  type: Integer
+  description: ASR 56 b. Headaches
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr10_58,asr56b,asr_q56b_p,oasr_ppl49_2,q56b
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr10_5:
+  type: Integer
+  description: ASR 56 c. Nausea, feel sick
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr10_59,asr56c,asr_q56c_p,oasr_ppl49_3,q56c
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr10_6:
+  type: Integer
+  description: ASR 56 d. Problems with eyes (not if corrected by glasses)
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr10_60,asr56d,asr_q56d_p,oasr_ppl49_4,q56d
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr10_6_text:
+  type: String
+  length: 500
+  description: ASR 56 dd. Describe
+  alias: asr10_60_text,asr56ddes,oasr_ppl49_4_des
+
+asr11_1:
+  type: Integer
+  description: ASR 56 e. Rashes or other skin problems
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr11_61,asr56e,asr_q56e_p,oasr_ppl49_5,q56e
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr11_2:
+  type: Integer
+  description: ASR 56 f. Stomachaches
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr11_62,asr56f,asr_q56f_p,oasr_ppl49_6,q56f
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr11_3:
+  type: Integer
+  description: ASR 56 g. Vomiting, throwing up
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr11_63,asr56g,asr_q56g_p,oasr_ppl49_7,q56g
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr11_4:
+  type: Integer
+  description: ASR 56 h. Heart pounding or racing
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr11_64,asr56h,asr_q56h_p,oasr_ppl49_8,q56h
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr11_5:
+  type: Integer
+  description: ASR 56 i. Numbness or tingling in body parts
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr11_65,asr56i,asr_q56i_p,oasr_ppl49_9,q56i
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr11_6:
+  type: Integer
+  description: ASR 57 I physically attack people
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr11_66,asr57,asr_q57_p,q57
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr12_1:
+  type: Integer
+  description: ASR 58 I pick my skin or other parts of my body
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr12_67,asr58,asr_q58_p,q58
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr12_1_text:
+  type: String
+  length: 500
+  description: 'ASR 58 describe:'
+  alias: asr12_67_text,asr58des
+
+asr12_2:
+  type: Integer
+  description: ASR 59 I fail to finish things I should do
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr12_68,asr59,asr_q59_p,q59
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr12_3:
+  type: Integer
+  description: ASR 60 There is very little that I enjoy
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr12_69,asr60,asr_q60_p,oasr_ppl53,q60
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr12_4:
+  type: Integer
+  description: ASR 61 My work performance is poor
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr12_70,asr61,asr_q61_p,q61
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr12_5:
+  type: Integer
+  description: ASR 62 I am poorly coordinated or clumsy
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr12_71,asr62,asr_q62_p,q62
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr12_6:
+  type: Integer
+  description: ASR 63 I would rather be with older people than with people of my own
+    age
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr12_72,asr63,asr_q63_p,q63
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr13_1:
+  type: Integer
+  description: ASR 64 I have trouble setting priorities
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr13_73,asr64,asr_q64_p,q64
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr13_2:
+  type: Integer
+  description: ASR 65 I refuse to talk
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr13_74,asr65,asr_q65_p,q65
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr13_3:
+  type: Integer
+  description: ASR 66 I repeat certain acts over and over
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr13_75,asr66,asr_q66_p,q66
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr13_3_text:
+  type: String
+  length: 500
+  description: 'ASR 66 describe:'
+  alias: asr13_75_text,asr66des
+
+asr13_4:
+  type: Integer
+  description: ASR 67 I have trouble making or keeping friends
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr13_76,asr67,asr_q67_p,q67
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr13_5:
+  type: Integer
+  description: ASR 68 I scream or yell a lot
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr13_77,asr68,asr_q68_p,q68
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr13_6:
+  type: Integer
+  description: ASR 69 I am secretive or keep things to myself
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr13_78,asr69,asr_q69_p,q69
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr14_1:
+  type: Integer
+  description: ASR 70 I see things that other people think aren't there
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr14_79,asr70,asr_q70_p,oasr_ppl61,q70
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr14_1_text:
+  type: String
+  length: 500
+  description: 'ASR 70 describe:'
+  alias: asr14_79_text,asr70des,oasr_ppl61_des
+
+asr14_2:
+  type: Integer
+  description: ASR 71 I am self-conscious or easily embarrassed
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr14_80,asr71,asr_q71_p,q71
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr14_3:
+  type: Integer
+  description: ASR 72 I worry about my family
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr14_81,asr72,asr_q72_p,q72
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr14_4:
+  type: Integer
+  description: ASR 73 I meet my responsibilities to my family
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr14_82,asr73,asr_q73_p,q73
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr14_5:
+  type: Integer
+  description: ASR 74 I show off or clown
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr14_83,asr74,asr_q74_p,q74
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr14_6:
+  type: Integer
+  description: ASR 75 I am too shy or timid
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr14_84,asr75,asr_q75_p,q75
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr15_1:
+  type: Integer
+  description: ASR 76 My behavior is irresponsible
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr15_85,asr76,asr_q76_p,oasr_ppl67,q76
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr15_2:
+  type: Integer
+  description: ASR 77 I sleep more than most other people during day and/or night
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr15_86,asr77,asr_q77_p,q77
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr15_2_text:
+  type: String
+  length: 500
+  description: 'ASR 77 describe:'
+  alias: asr15_86_text,asr77des
+
+asr15_3:
+  type: Integer
+  description: ASR 78 I have trouble making decisions
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr15_87,asr78,asr_q78_p,oasr_ppl69,q78
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr15_4:
+  type: Integer
+  description: ASR 79 I have a speech problem
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr15_88,asr79,asr_q79_p,q79
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr15_4_text:
+  type: String
+  length: 500
+  description: 'ASR 79 describe:'
+  alias: asr15_88_text,asr79des
+
+asr15_5:
+  type: Integer
+  description: ASR 80 I stand up for my rights
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr15_89,asr80,asr_q80_p,q80
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr15_6:
+  type: Integer
+  description: ASR 81 My behavior is very changeable
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr15_90,asr81,asr_q81_p,q81
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr16_1:
+  type: Integer
+  description: ASR 82 I steal
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr16_91,asr82,asr_q82_p,oasr_ppl73,q82
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr16_2:
+  type: Integer
+  description: ASR 83 I am easily bored
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr16_92,asr83,asr_q83_p,q83
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr16_3:
+  type: Integer
+  description: ASR 84 I do things that other people think are strange
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr16_93,asr84,asr_q84_p,oasr_ppl74,q84
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr16_3_text:
+  type: String
+  length: 500
+  description: 'ASR 84 describe:'
+  alias: asr16_93_text,asr84des,oasr_ppl74_des
+
+asr16_4:
+  type: Integer
+  description: ASR 85 I have thoughts that other people think are strange
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr16_94,asr85,asr_q85_p,oasr_ppl75,q85
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr16_4_text:
+  type: String
+  length: 500
+  description: 'ASR 85 describe:'
+  alias: asr16_94_text,asr85des,oasr_ppl75_des
+
+asr16_5:
+  type: Integer
+  description: ASR 86 I am stubborn, sullen, or irritable
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr16_95,asr86,asr_q86_p,q86
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr16_6:
+  type: Integer
+  description: ASR 87 My moods or feelings change suddenly
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr16_96,asr87,asr_q87_p,q87
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr17_1:
+  type: Integer
+  description: ASR 88 I enjoy being with people
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr17_97,asr88,asr_q88_p,q88
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr17_2:
+  type: Integer
+  description: ASR 89 I rush into things without considering the risks
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr17_98,asr89,asr_q89_p,q89
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr17_3:
+  type: Integer
+  description: ASR 90 I drink too much alcohol or get drunk
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr17_99,asr90,asr_q90_p,q90
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr17_4:
+  type: Integer
+  description: ASR 91 I think about killing myself
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr17_100,asr91,asr_q91_p,oasr_ppl81,q91
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr17_5:
+  type: Integer
+  description: ASR 92 I do things that may cause me trouble with the law
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr17_101,asr92,asr_q92_p,oasr_ppl82,q92
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr17_5_text:
+  type: String
+  length: 500
+  description: 'ASR 92 describe:'
+  alias: asr17_101_text,asr92des,oasr_ppl82_des
+
+asr17_6:
+  type: Integer
+  description: ASR 93 I talk too much
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr17_102,asr93,asr_q93_p,q93
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr18_1:
+  type: Integer
+  description: ASR 94 I tease others a lot
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr18_103,asr94,asr_q94_p,q94
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr18_2:
+  type: Integer
+  description: ASR 95 I have a hot temper
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr18_104,asr95,asr_q95_p,oasr_ppl85,q95
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr18_3:
+  type: Integer
+  description: ASR 96 I think about sex too much
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr18_105,asr96,asr_q96_p,q96
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr18_4:
+  type: Integer
+  description: ASR 97 I threaten to hurt people
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr18_106,asr97,asr_q97_p,oasr_ppl87,q97
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr18_5:
+  type: Integer
+  description: ASR 98 I like to help others
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr18_107,asr98,asr_q98_p,q98
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr18_6:
+  type: Integer
+  description: ASR 99 I dislike staying in one place for very long
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr18_108,asr99,asr_q99_p,q99
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr19_1:
+  type: Integer
+  description: ASR 100 I have trouble sleeping
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr100,asr19_109,asr_q100_p,oasr_ppl90,q100
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr19_1_text:
+  type: String
+  length: 500
+  description: 'ASR 100 describe:'
+  alias: asr100des,asr19_109_text
+
+asr19_2:
+  type: Integer
+  description: ASR 101 I stay away from my job even when I'm not sick or not on vacation
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr101,asr19_110,asr_q101_p,q101
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr19_3:
+  type: Integer
+  description: ASR 102 I don't have much energy
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr102,asr19_111,asr_q102_p,oasr_ppl92,q102
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr19_4:
+  type: Integer
+  description: ASR 103 I am unhappy, sad, or depressed
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr103,asr19_112,asr_q103_p,oasr_ppl93,q103
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr19_5:
+  type: Integer
+  description: ASR 104 I am louder than others
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr104,asr19_113,asr_q104_p,q104
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr19_6:
+  type: Integer
+  description: ASR 105 People think I am disorganized
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr105,asr19_114,asr_q105_p,q105
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr20_1:
+  type: Integer
+  description: ASR 106 I try to be fair to others
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr106,asr20_115,asr_q106_p,q106
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr20_2:
+  type: Integer
+  description: ASR 107 I feel that I can't succeed
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr107,asr20_116,asr_q107_p,oasr_ppl97,q107
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr20_3:
+  type: Integer
+  description: ASR 108 I tend to lose things
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr108,asr20_117,asr_q108_p,q108
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr20_4:
+  type: Integer
+  description: ASR 109 I like to try new things
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr109,asr20_118,asr_q109_p,q109
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr20_5:
+  type: Integer
+  description: ASR 110 I wish I were of the opposite sex
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr110,asr20_119,asr_q110_p,q110
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr20_6:
+  type: Integer
+  description: ASR 111 I keep from getting involved with others
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr111,asr20_120,asr_q111_p,oasr_ppl99,q111
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr21_1:
+  type: Integer
+  description: ASR 112 I worry a lot
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr112,asr21_121,asr_q112_p,oasr_ppl100,q112
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr21_2:
+  type: Integer
+  description: ASR 113 I worry about my relations with the opposite sex
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr113,asr21_122,asr_q113_p,q113
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr21_3:
+  type: Integer
+  description: ASR 114 I fail to pay my debts or meet other financial responsibliites
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr114,asr21_123,asr_q114_p,q114
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr21_4:
+  type: Integer
+  description: ASR 115 I feel restless or fidgety
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr115,asr21_124,asr_q115_p,oasr_ppl34,q115
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr21_5:
+  type: Integer
+  description: ASR 116 I get upset too easily
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr116,asr21_125,asr_q116_p,q116
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr21_6:
+  type: Integer
+  description: ASR 117 I have trouble managing money or credit cards
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr117,asr21_126,asr_q117_p,q117
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr22_1:
+  type: Integer
+  description: ASR 118 I am too impatient
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr118,asr22_127,asr_q118_p,q118
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr22_2:
+  type: Integer
+  description: ASR 119 I am not good at details
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr119,asr22_128,asr_q119_p,q119
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr22_3:
+  type: Integer
+  description: ASR 120 I drive too fast
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr120,asr22_129,asr_q120_p,q120
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr22_4:
+  type: Integer
+  description: ASR 121 I tend to be late for appointments
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr121,asr22_130,asr_q121_p,q121
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr22_5:
+  type: Integer
+  description: ASR 122 I have trouble keeping a job
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr122,asr22_131,asr_q122_p,q122
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr22_6:
+  type: Integer
+  description: ASR 123 I am a happy person
+  range:
+  - 1::3
+  - -99
+  - 77
+  - 88
+  notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
+    -99= N/A ; 77= Refused ; 88= Missing
+  alias: asr123,asr22_132,asr_q123_p,q123
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr23:
+  type: Float
+  description: ASR 124 In the past 6 months, about how many times per day did you
+    use tobacco (including smokeless tobacco)?
+  notes: ' -99= N/A ; 77= Refused ; 88= Missing'
+  alias: asr_q124_p,q124
+  codes:
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr24:
+  type: Float
+  description: ASR 125 In the past 6 months, on how many days were you drunk?
+  notes: ' -99= N/A ; 77= Refused ; 88= Missing'
+  alias: asr_q125_p,q125
+  codes:
+    -99: N/A
+    77: Refused
+    88: Missing
+
+asr25:
+  type: String
+  length: 25
+  description: ASR 126 In the past 6 months, on how many days did you use drugs for
+    nonmedical purposes (including marijuana, cocaine, and other drugs, except alcohol
+    and nicotine)?
+  notes: ' -99= N/A ; 77= Refused ; 88= Missing'
+  alias: asr_q126_p,q126
+  codes:
+    -99: N/A
+    77: Refused
+    88: Missing
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+
+version:
+  type: String
+  length: 20
+  description: Version/code of assessment
+
+highest_education_specify:
+  type: String
+  length: 255
+  description: 'Please Check Adult''s Highest Education - Other education (specify):'
+  alias: schoolother
+
+c23:
+  type: Integer
+  description: Total Number of Friends (How many close friends does child have?)
+  range:
+  - 0::3
+  - 9
+  notes: 0 = None;1 = One;2 = Two or Three;3 = Four or more;9 = Missing
+  alias: frienda
+  codes:
+    0: None
+    1: One
+    2: Two or Three
+    3: Four or more
+    9: Missing
+
+marital_status_specify:
+  type: String
+  length: 255
+  description: 'Other marital status - Please describe:'
+  alias: marstatother
+
+job_detail:
+  type: String
+  length: 255
+  description: Please indicate type of program/job and amount of hours per week.
+  alias: jobdescribe
+
+resp_occupation:
+  type: String
+  length: 255
+  description: Respondent's occupation
+  alias: yourwork
+
+demo_partner_occupation:
+  type: String
+  length: 100
+  description: Spouse/partner Occupation
+  alias: spousework
+
+highest_education:
+  type: Integer
+  description: Please Check Adult's Highest Education
+  range:
+  - 1::10
+  - 999
+  notes: 1. No high school diploma and no GED, 2. General Equivalency Diploma (GED),
+    3. High school graduate, 4. Some college but no college degree, 5. Associate's
+    Degree, 6. Bachelor's or RN Degree, 7. Some graduate school but no graduate degree,
+    8. Master's Degree, 9. Doctoral or Law Degree 10=Other education; 999=missing
+  alias: school
+  codes:
+    10: Other education
+    999: missing
+
+contact_friends:
+  type: String
+  length: 20
+  description: 'I-B. About how many times a month does he/she have contact with any
+    close friends? (Include in-person contacts, phone, letters, e-mail.) '
+  range:
+  - 1 or 2
+  - 3 or 4
+  - 5 or more
+  - Less Than 1
+  - Missing/NA
+  alias: friendb
+
+gets_along_friends:
+  type: String
+  length: 20
+  description: I-C. How well does he/she get along with close friends?
+  range:
+  - Above Average
+  - Average
+  - Far Above Average
+  - Not Well
+  - Missing/NA
+  alias: friendc
+
+friends_visit:
+  type: String
+  length: 20
+  description: I-D. About how many times a month do any friends or family visit him/her?
+  range:
+  - 1 or 2
+  - 3 or 4
+  - 5 or more
+  - Less Than 1
+  - Missing/NA
+  alias: friendd
+
+demo_resp_status:
+  type: Integer
+  description: respondent's marital status
+  range:
+  - 1::12
+  notes: 1 = Married; 2 = Remarried; 3 = Live with partner (not married); 4 = Separated;
+    5 = Divorced; 6 = Single (never married); 7 = Widowed; 8=Married or Living Together;9
+    = Missing/Not Applicable; 10 = Other; 11=Refused to answer; 12= Engaged
+  alias: marstat
+  codes:
+    1: Married
+    2: Remarried
+    3: Live with partner (not married)
+    4: Separated
+    5: Divorced
+    6: Single (never married)
+    7: Widowed
+    8: Married or Living Together
+    9: Missing/Not Applicable
+    10: Other
+    11: Refused to answer
+    12: Engaged
+
+live_with_spouse:
+  type: String
+  length: 3
+  description: II. At any time in the past 6 months, did he/she live with a spouse
+    or partner?
+  range:
+  - 'No'
+  - 'Yes'
+  - NA
+  alias: livewith
+
+gets_along_spouse:
+  type: Integer
+  description: II-A. Gets along well with spouse or partner
+  range:
+  - 0::2
+  - 8
+  - 9
+  notes: 0 = Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very
+    True or Often True;8 = Not Applicable; 9 = Missing
+  alias: spousea
+  codes:
+    0: Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very True
+      or Often True
+    8: Not Applicable
+    9: Missing
+
+sharing_responsibilities:
+  type: Integer
+  description: II-B. Has trouble sharing responsibilities with spouse or partner
+  range:
+  - 0::2
+  - 8
+  - 9
+  notes: 0 = Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very
+    True or Often True; 8 = Not Applicable; 9 = Missing
+  alias: spouseb
+  codes:
+    0: Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very True
+      or Often True
+    8: Not Applicable
+    9: Missing
+
+satisfied_spouse:
+  type: Integer
+  description: II-C. Seems satisfied with spouse or partner
+  range:
+  - 0::2
+  - 8
+  - 9
+  notes: 0 = Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very
+    True or Often True; 8 = Not Applicable; 9 = Missing
+  alias: spousec
+  codes:
+    0: Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very True
+      or Often True
+    8: Not Applicable
+    9: Missing
+
+similar_activites_spouse:
+  type: Integer
+  description: II-D. Enjoys similar activities as spouse or partner
+  range:
+  - 0::2
+  - 8
+  - 9
+  notes: 0 = Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very
+    True or Often True; 8 = Not Applicable; 9 = Missing
+  alias: spoused
+  codes:
+    0: Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very True
+      or Often True
+    8: Not Applicable
+    9: Missing
+
+disagrees_spouse:
+  type: Integer
+  description: II-E. Disagrees with spouse or partner about living arrangements, such
+    as where to live
+  range:
+  - 0::2
+  - 8
+  - 9
+  notes: 0 = Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very
+    True or Often True; 8 = Not Applicable; 9 = Missing
+  alias: spousee
+  codes:
+    0: Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very True
+      or Often True
+    8: Not Applicable
+    9: Missing
+
+trouble_spouse_family:
+  type: Integer
+  description: II-F. Has trouble with spouse or partner's family
+  range:
+  - 0::2
+  - 8
+  - 9
+  notes: 0 = Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very
+    True or Often True; 8 = Not Applicable; 9 = Missing
+  alias: spousef
+  codes:
+    0: Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very True
+      or Often True
+    8: Not Applicable
+    9: Missing
+
+likes_spouse_friends:
+  type: Integer
+  description: II-G. Likes spouse or partner's friends
+  range:
+  - 0::2
+  - 8
+  - 9
+  notes: 0 = Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very
+    True or Often True; 8 = Not Applicable; 9 = Missing
+  alias: spouseg
+  codes:
+    0: Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very True
+      or Often True
+    8: Not Applicable
+    9: Missing
+
+annoyed_spouse_behavior:
+  type: Integer
+  description: II-H. Is annoyed by spouse or partner's behavior
+  range:
+  - 0::2
+  - 8
+  - 9
+  notes: 0 = Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very
+    True or Often True; 8 = Not Applicable; 9 = Missing
+  alias: spouseh
+  codes:
+    0: Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very True
+      or Often True
+    8: Not Applicable
+    9: Missing
+
+cprs12:
+  type: Integer
+  description: 'CPRS 12. Fails to complete assignments (i) Note: Imputed-version'
+  range:
+  - 0::3
+  notes: 0 = Not true at all 1 = Just a little true2 = Pretty much true 3 = Very much
+    true
+  alias: educ
+  codes:
+    0: Not true at all 1 = Just a little true2 = Pretty much true 3 = Very much true
+
+lq_16:
+  type: Integer
+  description: I get along with other kids.
+  range:
+  - 1::5
+  notes: 1 = Always true; 2 = True most of the time; 3 = True sometimes; 4 = Hardly
+    ever true; 5 = Not true at all
+  alias: edua
+  codes:
+    1: Always true
+    2: True most of the time
+    3: True sometimes
+    4: Hardly ever true
+    5: Not true at all
+
+cdrs11:
+  type: Integer
+  description: You can achieve your goals
+  range:
+  - 0::4
+  notes: 0= not true at all; 1= rarely true; 2= sometimes true; 3= often true; 4=
+    true nearly all of the time
+  alias: edub
+  codes:
+    0: not true at all
+    1: rarely true
+    2: sometimes true
+    3: often true
+    4: true nearly all of the time
+
+ill_disable_handicap_yes_no:
+  type: String
+  length: 3
+  description: III. Does he/she have any illness, disability, or handicap?
+  range:
+  - 'No'
+  - 'Yes'
+  - Missing
+  alias: illness
+
+life_15:
+  type: Integer
+  description: 15. Have a job
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=No; 1=Yes;9=missing
+  alias: job
+  codes:
+    0: 'No'
+    1: 'Yes'
+    9: missing
+
+ssis_s_soc_19_true:
+  type: Integer
+  description: I do my work without bother others - How true?
+  range:
+  - 0::3
+  - 99999
+  notes: 0 = Not true; 1 = Little true; 2 = A lot true; 3 = Very true; 9999=NA/Missing/NK
+  alias: joba
+  codes:
+    0: Not true
+    1: Little true
+    2: A lot true
+    3: Very true
+    9999: NA/Missing/NK
+
+siremind:
+  type: Integer
+  description: Does not follow through on instructions and fails to finish work
+  range:
+  - 0::3
+  - 8
+  - 9
+  notes: 0=Not at all; 1=Just a little; 2=Pretty much; 3=Very much;8 = Not Applicable;
+    9 = Missing
+  alias: jobd
+  codes:
+    0: Not at all
+    1: Just a little
+    2: Pretty much
+    3: Very much
+    8: Not Applicable
+    9: Missing
+
+q12_sat_occ_role:
+  type: Integer
+  description: 12. Satisfaction with occupational role functioning
+  range:
+  - 0::6
+  - 8
+  - 9
+  notes: 0 = Pervasive unhappiness and dissatisfaction with occupational role; 2 =  Little
+    or no definite evidence of unhappiness or dissatisfaction, but role does not provide
+    any positive pleasure or fulfillment. Perhaps boredom is evident; 4 = Little or
+    no discontent and some limited pleasure in work; 6 = Rather consistent sense of
+    fulfillment and satisfaction, perhaps in spite of some limited complaints; 8=missing;
+    9 = Not applicable if patient not involved in any occupational role functioning
+  alias: jobe
+  codes:
+    0: Pervasive unhappiness and dissatisfaction with occupational role
+    2: Little or no definite evidence of unhappiness or dissatisfaction, but role
+      does not provide any positive pleasure or fulfillment. Perhaps boredom is evident
+    4: Little or no discontent and some limited pleasure in work
+    6: Rather consistent sense of fulfillment and satisfaction, perhaps in spite of
+      some limited complaints
+    8: missing
+    9: Not applicable if patient not involved in any occupational role functioning
+
+abcl122:
+  type: Integer
+  description: Rule Breaking Behavior - 122 - Can't keep job
+  range:
+  - 0::2
+  - 8
+  - 9
+  notes: 0 = Not True; 1 = Somewhat or Sometimes True; 2 = Very True or Often True;
+    8 = Not Applicable; 9 = Missing
+  alias: jobf
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+    8: Not Applicable
+    9: Missing
+
+abcl101:
+  type: Integer
+  description: Attention Problems - 101 - Avoids work
+  range:
+  - 0::2
+  - 8
+  - 9
+  notes: 0 = Not True; 1 = Somewhat or Sometimes True; 2 = Very True or Often True;
+    8 = Not Applicable; 9 = Missing
+  alias: jobg
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+    8: Not Applicable
+    9: Missing
+
+demo_class_attend:
+  type: Integer
+  description: How regularly did you attend classes in the past 6 months?
+  range:
+  - 1::9
+  notes: 1=All of the time; 2=Most of the time; 3=About half the time; 4=Less than
+    half of the time; 5=N/A; 6 = Attended at all; 7 = Never attended; 9 = Missing
+  alias: edu
+  codes:
+    1: All of the time
+    2: Most of the time
+    3: About half the time
+    4: Less than half of the time
+    5: N/A
+    6: Attended at all
+    7: Never attended
+    9: Missing
+
+edue:
+  type: Integer
+  description: I do things that may cause me to fail
+  range:
+  - 0::2
+  - 8
+  - 9
+  notes: 0 = Not True; 1 = Somewhat or Sometimes True; 2 = Very True or Often True;
+    8; Not Applicable; 9 = Missing
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+    9: Missing
+
+familye1:
+  type: Integer
+  description: 'Compared with other, how well do you: Get along with your biological
+    or adopted children? 1. Oldest child'
+  range:
+  - 0::4
+  - 8
+  - 9
+  notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
+    3 = No Contact; 4 = Not applicable; 9 = Missing
+  codes:
+    0: Worse than Average
+    1: Variable or Average
+    2: Better than Average
+    3: No Contact
+    4: Not applicable
+    9: Missing
+
+familye2:
+  type: Integer
+  description: 'Compared with other, how well do you: Get along with your biological
+    or adopted children? 2. 2nd oldest child'
+  range:
+  - 0::4
+  - 8
+  - 9
+  notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
+    3 = No Contact; 4 = Not applicable; 9 = Missing
+  codes:
+    0: Worse than Average
+    1: Variable or Average
+    2: Better than Average
+    3: No Contact
+    4: Not applicable
+    9: Missing
+
+familye3:
+  type: Integer
+  description: 'Compared with other, how well do you: Get along with your biological
+    or adopted children? 3. 3rd oldest child'
+  range:
+  - 0::4
+  - 8
+  - 9
+  notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
+    3 = No Contact; 4 = Not applicable; 9 = Missing
+  codes:
+    0: Worse than Average
+    1: Variable or Average
+    2: Better than Average
+    3: No Contact
+    4: Not applicable
+    9: Missing
+
+familye4:
+  type: Integer
+  description: 'Compared with other, how well do you: Get along with your biological
+    or adopted children? 4. Other children'
+  range:
+  - 0::4
+  - 8
+  - 9
+  notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
+    3 = No Contact; 4 = Not applicable; 9 = Missing
+  codes:
+    0: Worse than Average
+    1: Variable or Average
+    2: Better than Average
+    3: No Contact
+    4: Not applicable
+    9: Missing
+
+familyf:
+  type: Integer
+  description: 'Compared with other, how well do you: Get along with your stepchildren?'
+  range:
+  - 0::4
+  - 8
+  - 9
+  notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
+    3 = No Contact; 4 = I have no stepchildren; 9 = Missing
+  codes:
+    0: Worse than Average
+    1: Variable or Average
+    2: Better than Average
+    3: No Contact
+    4: I have no stepchildren
+    9: Missing
+
+jobc:
+  type: Integer
+  description: I do my work well
+  range:
+  - 0::2
+  - 8
+  - 9
+  notes: 0 = Not True; 1 = Somewhat or Sometimes True; 2 = Very True or Often True;
+    8 = Not Applicable; 9 = Missing
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+    8: Not Applicable
+    9: Missing
+
+jobi:
+  type: Integer
+  description: I worry too much about work
+  range:
+  - 0::2
+  - 8
+  - 9
+  notes: 0 = Not True; 1 = Somewhat or Sometimes True; 2 = Very True or Often True;
+    8 = Not Applicable; 9 = Missing
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+    8: Not Applicable
+    9: Missing
+
+race:
+  type: String
+  length: 30
+  description: Race of study subject
+  range:
+  - American Indian/Alaska Native
+  - Asian
+  - Hawaiian or Pacific Islander
+  - Black or African American
+  - White
+  - More than one race
+  - Unknown or not reported
+
+ethnicity:
+  type: String
+  length: 30
+  description: Ethnicity of participant
+  range:
+  - Hispanic or Latino
+  - Not Hispanic or Latino
+  - Unknown
+
+jobb:
+  type: Integer
+  description: I have trouble getting along with bosses
+  range:
+  - 0::2
+  - 8
+  - 9
+  notes: 0 = Not True; 1 = Somewhat or Sometimes True; 2 = Very True or Often True;
+    8 = Not Applicable; 9 = Missing
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+    8: Not Applicable
+    9: Missing
+
+familya:
+  type: Integer
+  description: 'Compared with other, how well do you: Get along with your brothers?'
+  range:
+  - 0::4
+  - 8
+  - 9
+  notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
+    3 = No Contact; 4 = I have no brothers; 9 = Missing
+  codes:
+    0: Worse than Average
+    1: Variable or Average
+    2: Better than Average
+    3: No Contact
+    4: I have no brothers
+    9: Missing
+
+familyb:
+  type: Integer
+  description: 'Compared with other, how well do you: Get along with your sisters?'
+  range:
+  - 0::4
+  - 8
+  - 9
+  notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
+    3 = No Contact; 4 = I have no sisters; 9 = Missing
+  codes:
+    0: Worse than Average
+    1: Variable or Average
+    2: Better than Average
+    3: No Contact
+    4: I have no sisters
+    9: Missing
+
+familyc:
+  type: Integer
+  description: 'Compared with other, how well do you: Get along with your mother?'
+  range:
+  - 0::4
+  - 8
+  - 9
+  notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
+    3 = No Contact; 4 = Mother is deceased; 9 = Missing
+  codes:
+    0: Worse than Average
+    1: Variable or Average
+    2: Better than Average
+    3: No Contact
+    4: Mother is deceased
+    9: Missing
+
+familyd:
+  type: Integer
+  description: 'Compared with other, how well do you: Get along with your father?'
+  range:
+  - 0::4
+  - 8
+  - 9
+  notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
+    3 = No Contact; 4 = Father is deceased;  9 = Missing
+  codes:
+    0: Worse than Average
+    1: Variable or Average
+    2: Better than Average
+    3: No Contact
+    4: Father is deceased
+    9: Missing
+
+bsimo:
+  type: Float
+  description: Months from Time 0 to assessment
+  alias: monfol
+
+edud:
+  type: Integer
+  description: I am satisfied with my educational situation
+  range:
+  - 0::2
+  - 8
+  - 9
+  notes: 0 = Not True; 1 = Somewhat or Sometimes True; 2 = Very True or Often True;
+    8; Not Applicable; 9 = Missing
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+    9: Missing
+
+jobstress:
+  type: Integer
+  description: My job is too stressful
+  range:
+  - 0::2
+  - 8
+  - 9
+  notes: 0 = Not True; 1 = Somewhat or Sometimes True; 2 = Very True or Often True;
+    8 = Not Applicable; 9 = Missing
+  alias: jobh
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+    8: Not Applicable
+    9: Missing
+
+accult_select_language:
+  type: Integer
+  description: Test given in Spanish? ??Espa??ol?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+asr_31e:
+  type: Integer
+  description: 'Compared with others, how well do you: Get along with your biological
+    or adopted children?'
+  range:
+  - 0::4
+  notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
+    3 = No Contact; 4 = Not applicable
+  codes:
+    0: Worse than Average
+    1: Variable or Average
+    2: Better than Average
+    3: No Contact
+    4: Not applicable
+
+asr_39a:
+  type: Integer
+  description: I work well with others
+  range:
+  - 0::2
+  notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true
+  codes:
+    0: Not true
+    1: Somewhat or sometimes true
+    2: Very true or often true
+
+asr_42d:
+  type: Integer
+  description: I have trouble finishing my work
+  range:
+  - 0::2
+  notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true
+  codes:
+    0: Not true
+    1: Somewhat or sometimes true
+    2: Very true or often true
+
+asr_43e:
+  type: Integer
+  description: I am satisfied with my work situation
+  range:
+  - 0::2
+  notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true
+  codes:
+    0: Not true
+    1: Somewhat or sometimes true
+    2: Very true or often true
+
+asr_44f:
+  type: Integer
+  description: I do things that may cause me to lose my job
+  range:
+  - 0::2
+  notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true
+  codes:
+    0: Not true
+    1: Somewhat or sometimes true
+    2: Very true or often true
+
+asr_49:
+  type: String
+  length: 100
+  description: If you attend(ed) school, college, or other education/training, what
+    kind of program was it?
+
+asr_50:
+  type: String
+  length: 100
+  description: What degree or diploma are you seeking?
+
+asr_51:
+  type: String
+  length: 50
+  description: What is/was your major in school?
+
+asr_52:
+  type: String
+  length: 50
+  description: When do you expect to receive your degree or diploma?
+
+asr_53:
+  type: Integer
+  description: I get along well with other students
+  range:
+  - 0::2
+  notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true
+  codes:
+    0: Not true
+    1: Somewhat or sometimes true
+    2: Very true or often true
+
+asr_54:
+  type: Integer
+  description: I achieve what I am capable of
+  range:
+  - 0::2
+  notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true
+  codes:
+    0: Not true
+    1: Somewhat or sometimes true
+    2: Very true or often true
+
+asr_55:
+  type: Integer
+  description: I have trouble finishing assignments
+  range:
+  - 0::2
+  notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true
+  codes:
+    0: Not true
+    1: Somewhat or sometimes true
+    2: Very true or often true
+
+asr_61:
+  type: String
+  length: 500
+  description: Please describe the best thing about yourself
+
+wrkfrpay:
+  type: Integer
+  description: Work for Pay?
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=No; 1=Yes; 9=NK
+  codes:
+    0: 'No'
+    1: 'Yes'
+    9: NK
+
+sni_8:
+  type: Integer
+  description: Do you attend any classes (school, university, technical training,
+    or adult education) on a regular basis
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+demo_edu_other:
+  type: String
+  length: 100
+  description: 'Education other: specify'
+
+d5o:
+  type: String
+  length: 150
+  description: '"Specify type of disability, health care need or condition"'
+
+adi_cc_ctcnb:
+  type: String
+  length: 1024
+  description: Current Concerns (specify)
+
+asr38:
+  type: String
+  length: 100
+  description: If you had paid work in past 6 months (including self-employment and
+    military service), specify
+
+cbcl56h_des:
+  type: String
+  length: 500
+  description: 'Physical problems without known medical cause: Other (describe)'
+  alias: oasr_ppl49_11_des
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+
+oasr_ppl3:
+  type: Integer
+  description: I have difficulty getting things done
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+oasr_ppl9_des:
+  type: String
+  length: 250
+  description: 'I have difficulty getting things done: Describe:'
+
+oasr_ppl16:
+  type: Integer
+  description: 'I sit around and don''t do much '
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+oasr_ppl19:
+  type: Integer
+  description: 'I damage or destroy things '
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+oasr_ppl20:
+  type: Integer
+  description: 'I forget people''s names '
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+oasr_ppl33:
+  type: Integer
+  description: 'I feel sick a lot of the time '
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+oasr_ppl35:
+  type: Integer
+  description: I like to have things my own way
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+oasr_ppl39:
+  type: Integer
+  description: 'I do things that others don''t like '
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+oasr_ppl47:
+  type: Integer
+  description: 'I am bothered by a guilty conscience '
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+oasr_ppl49_10:
+  type: Integer
+  description: 'I am short of breath or I breathe hard '
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+oasr_ppl49_11:
+  type: Integer
+  description: Other physical problems not listed
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+oasr_ppl54:
+  type: Integer
+  description: My performance at tasks is poor
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+oasr_ppl79:
+  type: Integer
+  description: 'I am suspicious '
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+oasr_ppl101:
+  type: Integer
+  description: 'I wake up too early '
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+oasr_ppl102:
+  type: Integer
+  description: 'I worry too much about my health '
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+oasr_ppl109:
+  type: Integer
+  description: 'I am too concerned about death '
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+oasr_ppl110:
+  type: Integer
+  description: 'I have trouble remembering things I am told '
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+oasr_ppl114:
+  type: Integer
+  description: 'If I don''t write things down, I forget them '
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+oasr_ppl121:
+  type: Integer
+  description: 'I feel that I am a burden on others '
+  range:
+  - 0::2
+  notes: 0 = Not True ; 1 = Somewhat or Sometimes True ; 2 = Very True or Often True
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+thought_problems_tscore:
+  type: Float
+  description: Thought Problems Adult Self-Report (ASR) Syndrome Scale (t-score)
+  alias: asr_syn_thou_t
+
+attention_problems_total:
+  type: Float
+  description: Attention Problems Adult Self-Report (ASR) Syndrome Scale (raw score)
+
+attention_problems_tscore:
+  type: Float
+  description: Attention Problems Adult Self-Report (ASR) Syndrome Scale (t-score)
+
+aggressive_behavior_total:
+  type: Float
+  description: Aggressive Behavior Adult Self-Report (ASR) Syndrome Scale (raw score)
+
+aggressive_behavior_tscore:
+  type: Float
+  description: Aggressive Behavior Adult Self-Report (ASR) Syndrome Scale (t-score)
+
+rule_breaking_behavior_total:
+  type: Float
+  description: Rule-Breaking Behavior Adult Self-Report (ASR) Syndrome Scale (raw
+    score)
+
+rule_breaking_behavior_tscore:
+  type: Float
+  description: Rule-Breaking Behavior Adult Self-Report (ASR) Syndrome Scale (t-score)
+
+internalizing_problems_total:
+  type: Float
+  description: Interalizing Problems Adult Self-Report (ASR) Syndrome Scale (raw score)
+
+internalizing_problems_tscore:
+  type: Float
+  description: Interalizing Problems Adult Self-Report (ASR) Syndrome Scale (t-score)
+
+externalizing_problems_total:
+  type: Float
+  description: Externalizing Problems Adult Self-Report (ASR) Syndrome Scale (raw
+    score)
+
+externalizing_problems_tscore:
+  type: Float
+  description: Externalizing Problems Adult Self-Report (ASR) Syndrome Scale (t-score)
+
+total_problems_total:
+  type: Float
+  description: Total Problems Adult Self-Report (ASR) Syndrome Scale (raw score)
+
+total_problems_tscore:
+  type: Float
+  description: Total Problems Adult Self-Report (ASR) Syndrome Scale (t-score)
+
+anxious__depressed_total:
+  type: Float
+  description: Anxious/Depressed Adult Self-Report (ASR) Syndrome Scale (raw score)
+
+anxious__depressed_tscore:
+  type: Float
+  description: Anxious/Depressed Adult Self-Report (ASR) Syndrome Scale (t-score)
+
+withdrawn_total:
+  type: Float
+  description: Withdrawn Adult Self-Report (ASR) Syndrome Scale (raw score)
+
+withdrawn_tscore:
+  type: Float
+  description: Withdrawn Adult Self-Report (ASR) Syndrome Scale (t-score)
+
+somatic_complaints_total:
+  type: Float
+  description: Somatic Complaints Adult Self-Report (ASR) Syndrome Scale (raw score)
+
+somatic_complaints_tscore:
+  type: Float
+  description: Somatic Complaints Adult Self-Report (ASR) Syndrome Scale (t-score)
+  alias: asr_syn_som_t
+
+thought_problems_total:
+  type: Float
+  description: Thought Problems Adult Self-Report (ASR) Syndrome Scale (raw score)
+
+antisocial_total:
+  type: Integer
+  description: Antisocial Personality Problems Total
+  alias: asr_anp
+
+anxiety_t_score:
+  type: Integer
+  description: Anxiety Problems T Score
+  alias: asr_anx_t
+
+anxiety_total:
+  type: Integer
+  description: Anxiety Problems Total Score
+  alias: asr_anx
+
+asr_scr_thought_r:
+  type: Integer
+  description: Thought Problems ASR Syndrome Scale (raw score)
+  range:
+  - 0::20
+  alias: asr_syn_thou
+
+avoidant_t_score:
+  type: Integer
+  description: Avoidant Personality Problems T Score
+  alias: asr_avo_t
+
+avoidant_total:
+  type: Integer
+  description: Avoidant Personality Problems Total
+  alias: asr_avo
+
+critical_t_score:
+  type: Integer
+  description: Critical Items T Score
+  alias: asr_syn_critical_t
+
+depressive_t_score:
+  type: Integer
+  description: Depressive Problems T Score
+  alias: asr_dep_t
+
+depressive_total:
+  type: Integer
+  description: Depressive Problems Total Score
+  alias: asr_dep
+
+abcl_critical_total:
+  type: Integer
+  description: Total score for Critical Items
+  alias: asr_syn_critical
+
+abcl_other_total:
+  type: Integer
+  description: Total score for Other Problems
+  range:
+  - 0::34
+  alias: asr_syn_other
+
+kksomar:
+  type: Integer
+  description: 'Somatic Complaints  Raw score '
+  alias: asr_syn_som
+
+kkanxdp:
+  type: Float
+  description: 'Anxious  Depressed Percentile  '
+  alias: asr_syn_dep_pcnt
+
+kkanxp:
+  type: Float
+  description: 'Anxiety Problems Percentile  '
+  alias: asr_anx_pcnt
+
+kkattnp:
+  type: Float
+  description: 'Attention Problems Percentile  '
+  alias: asr_syn_attn_pcnt
+
+kkdelip:
+  type: Float
+  description: 'Rule Breaking Behavior Percentile  '
+  alias: asr_syn_rule_pcnt
+
+kkaddp:
+  type: Float
+  description: 'Attention Deficit  Hyperactivity Problems Percentile  '
+  alias: asr_adh_pcnt
+
+kksomap:
+  type: Float
+  description: 'Somatic Complaints Percentile  '
+  alias: asr_syn_som_pcnt
+
+kkthotp:
+  type: Float
+  description: 'Thought Problems Percentile  '
+  alias: asr_syn_thou_pcnt
+
+kksomp:
+  type: Float
+  description: 'Somatic Problems Percentile  '
+  alias: asr_som_pcnt
+
+cbcl_withdrawn_perc:
+  type: String
+  length: 20
+  description: Withdrawn Percentile
+  alias: asr_syn_with_pcnt
+
+kkaggrp:
+  type: Float
+  description: 'Aggressive Behavior Percentile  '
+  alias: asr_syn_aggr_pcnt
+
+kkdepp:
+  type: Float
+  description: 'Depressive Problems Percentile  '
+  alias: asr_dep_pcnt
+
+asr_anp_pcnt:
+  type: Float
+  description: 'Antisocial Personality Problems Percentile:'
+
+asr_avo_pcnt:
+  type: Float
+  description: 'Avoidant Personality Problems Percentile:'
+
+asr_hi_pcnt:
+  type: Float
+  description: 'Attention Deficit/Hyperactivity Problems Subscales Male: Hyperactivity-Impulsivity
+    (H-I) Percentile:'
+
+asr_hi_t:
+  type: Float
+  description: 'Attention Deficit/Hyperactivity Problems Subscales Male: Hyperactivity-Impulsivity
+    (H-I) t score:'
+
+asr_i_pcnt:
+  type: Float
+  description: 'Attention Deficit/Hyperactivity Problems Subscales Male: Inattention
+    (I) Percentile:'
+
+asr_i_t:
+  type: Float
+  description: 'Attention Deficit/Hyperactivity Problems Subscales Male: Inattention
+    (I) t score:'
+
+asr_syn_critical_pcnt:
+  type: Float
+  description: Critical Items Syndrome Percentile
+
+asr_syn_csum:
+  type: Integer
+  description: C Sum Syndrome Score
+
+missingsum_obvq:
+  type: Integer
+  description: total number of missing items
+  alias: asr_miss
+
+asr_syn_extnl_pcnt:
+  type: Float
+  description: External Syndrome Percentile
+
+asr_syn_intnl_pcnt:
+  type: Float
+  description: Internal Syndrome Percentile
+
+asr_syn_intru_pcnt:
+  type: Float
+  description: Intrusive Syndrome Percentile
+
+asr_syn_sum_pcnt:
+  type: Float
+  description: Total Syndrome Percentile
+
+adh_h_i_total:
+  type: Integer
+  description: 'AD/H Problems Subscales: Hyperactivity-Impulsivity (H-I) Total Score'
+  alias: asr_hi
+
+adh_i_total:
+  type: Integer
+  description: 'AD/H Problems Subscales: Inattention (I) Total Score'
+  alias: asr_i
+
+adh_t_score:
+  type: Integer
+  description: AD/H Problems T Score
+  alias: asr_adh_t
+
+adh_total:
+  type: Integer
+  description: AD/H Problems Total
+  alias: asr_adh
+
+antisocial_t_score:
+  type: Integer
+  description: Antisocial Personality Problems T Score
+  alias: asr_anp_t

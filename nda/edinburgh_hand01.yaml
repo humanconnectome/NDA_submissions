@@ -1,0 +1,1170 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: nimhid,record_id
+
+handedness_score:
+  type: Float
+  description: Total Handedness computed by totalling number of responses where right
+    hand is used and those where left hand is used and inputting to the formula right
+    minus left dvided by right plus left
+  notes: Computed by the formula (r-l)/(r+l) where r = total number of responses on
+    the form where the participant indicated they use their right hand (even if they
+    also use their left hand to do that action, i.e. use both hands) and l = total
+    number of responses participant indicated left hand for (including actions participant
+    also uses right hand for, i.e. both hands)
+  alias: erq_handedness,hand_total
+  codes:
+    r: total number of responses on the form where the participant indicated they
+      use their right hand (even if they also use their left hand to do that action,
+      i.e. use both hands) and l = total number of responses participant indicated
+      left hand for (including actions participant also uses right hand for, i.e.
+      both hands)
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: demo_study_id,ptid,stepid,subject_id
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: ehi_time,hand_doa,handedness_date,handsum_doa,testdate,visit_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: age
+
+writing:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: edinburgh_handedness_1,ehi1,ehi1b,ehi_01,hand1,hand_1_writing,hand_writing,handedness_1,iihandwr,ohq_writing,short_handform_writing
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+drawing:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: draw,edinburgh_handedness_2,ehi2,ehi_02,hand2,hand2l_drawing,hand2r_drawing,hand_2_drawing,handedness_2,ohq_drawing
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+throwing:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: edinburgh_handedness_3,ehi2b,ehi3,ehi_03,hand3,hand3l_throwing,hand3r_throwing,hand_3_throwing,hand_throwing,handedness_3,iihandth,ohq_throwing,short_handform_throwing,throw
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+scissors:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: edinburgh_handedness_4,ehi4,ehi_04,hand4,hand4l_scissors,hand4r_scissors,hand7,hand_4_scissors,hand_scissors,handedness_4,iihandsc,ohq_scissors,scissor,short_handform_scissors
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+comb:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: ehi_05,hand14l_comb,hand14r_comb,hand_14_comb
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+toothbrush:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: edinburgh_handedness_5,ehi3b,ehi5,ehi_06,hand4,hand5,hand5l_toothbrush,hand5r_toothbrush,hand_5_toothbrush,hand_toothbrush,handedness_5,iihandto,ohq_toothbrush,tooth
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+knife_no_fork:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: edinburgh_handedness_6,ehi6,ehi_07,hand6,hand6l_knife,hand6r_knife,hand_6_knife,hand_knife,handedness_6,iihandkn,knife,ohq_knife
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+spoon:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: edinburgh_handedness_7,ehi4b,ehi7,hand6,hand7,hand7l_spoon,hand7r_spoon,hand_7_spoon,hand_spoon,handedness_7,iihandsp,ohq_spoon,short_handform_spoon
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+hammer:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: hand13l_hammer,hand13r_hammer,hand2,hand_13_hammer
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+screwdriver:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+tennis:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+knife_with_fork:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: holding_a_knife_to_cut_mea
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+baseball_bat:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+golf_club:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+broom:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: broom_upper_hand,edinburgh_handedness_8,ehi8,ehi_08,hand8,hand8l_broom,hand8r_broom,hand_8_broom,handedness_8,iihandbr,ohq_broom
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+rake:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+match:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: edinburgh_handedness_9,ehi9,ehi_09,hand9,hand9l_match,hand9r_match,hand_9_match,hand_match,handedness_9,iihandma,ohq_match,strike,striking_a_match
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+box:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: edinburgh_handedness_10,ehi_10,hand10,hand10l_box,hand10r_box,hand_10_box,handedness_10,iihandbo,open,opening_box_lid
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+cards:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+needle:
+  type: String
+  length: 5
+  description: Hand subject uses to do named action
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+foot:
+  type: String
+  length: 5
+  description: Which foot do you prefer to kick with
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: edinburgh_handedness_11,hand11,iihandfk,ohq_kickball
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+eye:
+  type: String
+  length: 5
+  description: Which eye do you use when using only one
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: edinburgh_handedness_12,hand12,iihandey,ohq_eye
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+turn_on_tap:
+  type: String
+  length: 5
+  description: Hand used to turn on tap water
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+dayscons:
+  type: Integer
+  description: days since consent
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+  alias: site_id,siteid
+
+ehiscore:
+  type: Float
+  description: EHI Score
+  alias: edinburgh_handedness_13,ehi_res,ehi_result
+
+edh_lft:
+  type: Float
+  description: Edinburgh Handedness Number of left responses
+  alias: ehi_totl,hand_total_left,handsum_total_left,leftscore
+
+edh_rgt:
+  type: Float
+  description: Edinburgh Handedness Number of right responses
+  alias: ehi_totr,hand_total_right,handsum_total_right,rightscore
+
+edh_bth:
+  type: Float
+  description: Edinburgh Handedness Number of both responses
+
+days_baseline:
+  type: Integer
+  description: Days since baseline
+  alias: dayneuro
+
+assbdic:
+  type: String
+  length: 5
+  description: Assessment Point
+  range:
+  - D
+  - 14
+  - E
+  - 24
+  - LB
+  - 36
+  - 72
+  - 96
+  - 120
+  - 9
+  - B
+  - 3
+  - 7
+  - 144
+  - 168
+  - 192
+  - C
+  notes: D=MTA baseline assessment; 14=MTA 14 month assessment; E=MTA early termination
+    assessment; B = MTA Pre-Baseline Screening Assessment (579/579); 09 = MTA 9 Month
+    Assessment (530/530); 24=MTA 24 month assessment; LB=LNCG baseline assessment;
+    36=MTA and LNCG 3 year assessment; 72=MTA and LNCG 6 year assessment; 96=MTA and
+    LNCG 8 year assessment; 03 = MTA 3 Month Assessment (438/687);120=MTA and LNCG
+    10 year assessment; 7= 7th Grade Assessment (221/276); 144 = MTA & LNCG 12 Month
+    Assessment (578/578); 168 = MTA & LNCG 14 Month Assessment (585/585); 192 = MTA
+    & LNCG 16 Month Assessment (505/505); C = MTA Pre-Baseline Screening Assessment
+    (78/78)
+  alias: assneuro
+  codes:
+    D: MTA baseline assessment
+    14: MTA 14 month assessment
+    E: MTA early termination assessment
+    B: MTA Pre-Baseline Screening Assessment (579/579)
+    9: MTA 9 Month Assessment (530/530)
+    24: MTA 24 month assessment
+    LB: LNCG baseline assessment
+    36: MTA and LNCG 3 year assessment
+    72: MTA and LNCG 6 year assessment
+    96: MTA and LNCG 8 year assessment
+    3: MTA 3 Month Assessment (438/687)
+    120: MTA and LNCG 10 year assessment
+    7: 7th Grade Assessment (221/276)
+    144: MTA & LNCG 12 Month Assessment (578/578)
+    168: MTA & LNCG 14 Month Assessment (585/585)
+    192: MTA & LNCG 16 Month Assessment (505/505)
+    C: MTA Pre-Baseline Screening Assessment (78/78)
+
+relationship:
+  type: Integer
+  description: Relationship of respondent to individual
+  range:
+  - 1::93
+  - -999
+  notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
+    (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
+    Speech and language therapist; 8 = Behavioral therapist; 9 = Paraprofessional;
+    10 = Aide; 11 = Principal; 12 = Administrator; 13 = 90=Other; 14 = Content teacher;
+    15 = Parent center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father;
+    19=Foster mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother;
+    24 = Step-father; 25=Aunt; 26=Uncle; 27=Missing Data; 28=Both parents;31= Grandmother
+    from mother side; 32= Grandfather from mother side; 33= Grandmother from father
+    side; 34= Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39=
+    female caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
+    44=Friend; 45=Parent; 46=Significant other; 47=Sibling; 48=Son/Daughter; 49=Son-in-law/Daughter-in
+    law; 50=Other Relative; 51=Paid caregiver; 52=Friends; 53=Roommate; 54=Supervisor;
+    55=mother's boyfriend; 56=other parental figure; 57=Summary; 58=counselor ; 59
+    = other female relative; 60 = other male relative; 61 = non-relative ; 62=Maternal
+    Aunt; 63=Maternal Uncle; 64=Maternal Cousin; 65 = Paternal Aunt; 66=Paternal Uncle;
+    67=Paternal Cousin ; 68=Biological/Adoptive Mother and Grandmother; 69=Biological/Adoptive
+    Mother and Stepmother and Grandmother; 70=Biological/Adoptive Mother and Grandmother
+    and Foster Father; 71=Biological/Adoptive Mother and Stepmother and Foster Mother;
+    72=Biological/Adoptive Mother and Foster Mother; 73=Biological/Adoptive Mother
+    and Biological/Adoptive Father; 74=Biological/Adoptive Mother and Stepmother and
+    Biological/Adoptive Father; 75=Biological/Adoptive Mother and Other; 76=Biological/Adoptive
+    Mother and Stepmother and Stepfather; 77=Biological/Adoptive Mother and Stepfather;
+    78=Biological/Adoptive Mother and Grandfather; 79=Biological/Adoptive Mother and
+    Stepmother and Foster Father; 80=Biological/Adoptive Mother and Stepmother; 81=Guardian,
+    female; 82=Other female; 83=Guardian, male; 84=Other male; 85=Other/Grandparent/Nanny;
+    86 = Mother, Father, Guardian; 87 = Daughter, son, grandchild; 88 = Professional
+    (e.g., social worker, nurse, therapist, psychiatrist, or group home staff);  -999=Missing;
+    89 = Biological parent; 91 = Stepparent; 92 = Adoptive parent; 93 = Foster parent
+  alias: relneuro
+  codes:
+    1: Biological mom
+    2: Biological dad
+    3: Grandparent
+    4: Special education (sped) teacher
+    5: General education teacher
+    6: Occupational therapist
+    7: Speech and language therapist
+    8: Behavioral therapist
+    9: Paraprofessional
+    10: Aide
+    11: Principal
+    12: Administrator
+    13: 90=Other
+    14: Content teacher
+    15: Parent center director
+    16: Self
+    17: Adoptive mother
+    18: Adoptive father
+    19: Foster mother
+    20: Foster father
+    21: Grandmother
+    22: Grandfather
+    23: Step-mother
+    24: Step-father
+    25: Aunt
+    26: Uncle
+    27: Missing Data
+    28: Both parents
+    31: Grandmother from mother side
+    32: Grandfather from mother side
+    33: Grandmother from father side
+    34: Grandfather from father side
+    36: Brother
+    37: Sister
+    38: Cousin
+    39: female caregiver
+    40: male caregiver
+    41: Female child
+    42: Male child
+    43: Spouse/Mate
+    44: Friend
+    45: Parent
+    46: Significant other
+    47: Sibling
+    48: Son/Daughter
+    49: Son-in-law/Daughter-in law
+    50: Other Relative
+    51: Paid caregiver
+    52: Friends
+    53: Roommate
+    54: Supervisor
+    55: mother's boyfriend
+    56: other parental figure
+    57: Summary
+    58: counselor
+    59: other female relative
+    60: other male relative
+    61: non-relative
+    62: Maternal Aunt
+    63: Maternal Uncle
+    64: Maternal Cousin
+    65: Paternal Aunt
+    66: Paternal Uncle
+    67: Paternal Cousin
+    68: Biological/Adoptive Mother and Grandmother
+    69: Biological/Adoptive Mother and Stepmother and Grandmother
+    70: Biological/Adoptive Mother and Grandmother and Foster Father
+    71: Biological/Adoptive Mother and Stepmother and Foster Mother
+    72: Biological/Adoptive Mother and Foster Mother
+    73: Biological/Adoptive Mother and Biological/Adoptive Father
+    74: Biological/Adoptive Mother and Stepmother and Biological/Adoptive Father
+    75: Biological/Adoptive Mother and Other
+    76: Biological/Adoptive Mother and Stepmother and Stepfather
+    77: Biological/Adoptive Mother and Stepfather
+    78: Biological/Adoptive Mother and Grandfather
+    79: Biological/Adoptive Mother and Stepmother and Foster Father
+    80: Biological/Adoptive Mother and Stepmother
+    81: Guardian, female
+    82: Other female
+    83: Guardian, male
+    84: Other male
+    85: Other/Grandparent/Nanny
+    86: Mother, Father, Guardian
+    87: Daughter, son, grandchild
+    88: Professional (e.g., social worker, nurse, therapist, psychiatrist, or group
+      home staff)
+    -999: Missing
+    89: Biological parent
+    91: Stepparent
+    92: Adoptive parent
+    93: Foster parent
+
+actbdic:
+  type: Integer
+  description: Active status
+  range:
+  - 0::5
+  notes: 0=Inactive-Data collected after the 14 month treatment phase/after early
+    termination from treatment phase/prior to treatment phase; 1=Active-Data collected
+    during the 14 month treatment phase while subject received originally assigned
+    treatment regardless of degree of compliance; 2=Active-This is the last active
+    assessment for subjects who were about to violate treatment arm by receiving alternate
+    treatment; 3=Active-This is the last active assessment for subjects who were about
+    to leave the study by moving away;4=Yes, Active; 5=No, Not Active
+  alias: actneuro
+  codes:
+    0: Inactive-Data collected after the 14 month treatment phase/after early termination
+      from treatment phase/prior to treatment phase
+    1: Active-Data collected during the 14 month treatment phase while subject received
+      originally assigned treatment regardless of degree of compliance
+    2: Active-This is the last active assessment for subjects who were about to violate
+      treatment arm by receiving alternate treatment
+    3: Active-This is the last active assessment for subjects who were about to leave
+      the study by moving away
+    4: Yes, Active
+    5: No, Not Active
+
+sjtyp:
+  type: Integer
+  description: Subject type
+  range:
+  - 1
+  - 2
+  notes: 1=MTA randomized trial subject; 2=Local normative comparison group (LNCG)
+    subject
+  codes:
+    1: MTA randomized trial subject
+    2: Local normative comparison group (LNCG) subject
+
+ehi_11:
+  type: String
+  length: 5
+  description: Which foot do you prefer to kick with?
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+
+ehi_12:
+  type: String
+  length: 5
+  description: Which eye do you use when using only one?
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+
+subject_description:
+  type: String
+  length: 4000
+  description: Subject related information (e.g the affection, phenotype, disease
+    information, etc.).
+
+study:
+  type: String
+  length: 100
+  description: Study
+
+week:
+  type: Float
+  description: Week in level/study
+  notes: 99=week 10-week 14
+  codes:
+    99: week 10-week 14
+
+ehi_cumu:
+  type: Float
+  description: Cumulative total
+
+ehi_diff:
+  type: Float
+  description: Difference
+
+ehi_int:
+  type: Float
+  description: Interpretation
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+  alias: eventname
+
+handsum_score_range:
+  type: String
+  length: 100
+  description: The value you provided is outside the suggested range. (0 - 15). This
+    value is admissible, but you may wish to verify
+  alias: short_handform_sum
+
+handedness_score_lq:
+  type: Float
+  description: Laterality quotient (LQ)= (R-L)/(R+L)
+  notes: computed by totaling number of responses where right hand is used and those
+    where left hand is used and inputting to the formula right minus left divided
+    by right plus left
+  alias: hand_laterality_quotient,handscore,handsum_laterality_quotient,short_handform_lateralityquotient
+
+doa_futdt:
+  type: String
+  length: 20
+  description: Future date entered (Assessment)
+  alias: handsum_doa_futdt
+
+dode:
+  type: String
+  length: 10
+  description: Date of Data Entry
+  alias: hand_dode,handsum_dode
+
+dode_futdt:
+  type: String
+  length: 20
+  description: Future date entered (Data Entry)
+  alias: handsum_dode_futdt
+
+form_completed:
+  type: Integer
+  description: Was the form completed?
+  range:
+  - 1::4
+  notes: 1=Yes; 2=No; 3=Unverified; 4 = N/A-Not in age range
+  alias: hand_form_complete,handsum_form_complete
+  codes:
+    1: 'Yes'
+    2: 'No'
+    3: Unverified
+    4: N/A-Not in age range
+
+form_explain:
+  type: Integer
+  description: Why was this form not completed?
+  range:
+  - 86::99
+  notes: '99=Participant unable to complete due to cognitive impairment; 98=Participant
+    unable to complete due to physical impairment; 97=Participant refused to begin/finish;
+    96=Participant completed but with less than best effort; 95=Participant unable
+    to be contacted; 94=Participant deceased; 93=Participant withdrew consent; 92=Time
+    constraints; 91=Rater forgot to administer; 90=Missed appointment; 89=Participant
+    was terminated from study; 88=Other;87 = Not Done (reason unspecified); 86 = Not
+    Applicable '
+  alias: hand_explain,handsum_explain
+  codes:
+    99: Participant unable to complete due to cognitive impairment
+    98: Participant unable to complete due to physical impairment
+    97: Participant refused to begin/finish
+    96: Participant completed but with less than best effort
+    95: Participant unable to be contacted
+    94: Participant deceased
+    93: Participant withdrew consent
+    92: Time constraints
+    91: Rater forgot to administer
+    90: Missed appointment
+    89: Participant was terminated from study
+    88: Other
+    87: Not Done (reason unspecified)
+    86: Not Applicable
+
+other_reason_nc:
+  type: String
+  length: 100
+  description: Other reason form was not completed
+  alias: hand_other_reason_nc,handsum_other_reason_nc
+
+assessment_complete:
+  type: Integer
+  description: Complete?
+  range:
+  - 0::2
+  notes: 0=Incomplete; 1=Unverified; 2=Complete
+  alias: edinburgh_hand_dominance_questionnaire_summary
+  codes:
+    0: Incomplete
+    1: Unverified
+    2: Complete
+
+comments:
+  type: String
+  length: 4000
+  description: Comments about assessment
+  alias: edinburgh_handedness_comments,hand_notes,handsum_notes
+
+hand_11_mouse:
+  type: String
+  length: 5
+  description: Holding a Computer Mouse
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: hand11l_mouse,hand11r_mouse,hand_comp_mouse
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+hand_12_unlock:
+  type: String
+  length: 5
+  description: Using a Key to Unlock a Door
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: hand12l_unlock,hand12r_unlock
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+hand_15_drink:
+  type: String
+  length: 5
+  description: Holding a Cup while Drinking
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: hand15l_drink,hand15r_drink,hand8
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+ehi_restxt:
+  type: String
+  length: 100
+  description: EHI test results
+
+lid_bottle:
+  type: String
+  length: 10
+  description: Take lid off bottle (lid)
+  range:
+  - spr
+  - right
+  - spl
+  - left
+  - both
+  - np
+  - ne
+  - oh
+  notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
+    np=no preference; oh=sometimes uses other hand
+  alias: ehi10,lid
+  codes:
+    SPR: Strongly Prefer Right
+    SPL: Strongly Prefer Left
+    ne: not experienced
+    np: no preference
+    oh: sometimes uses other hand
+
+ehi_y_ss_scoreb:
+  type: Float
+  description: Handedness score rating
+  range:
+  - 1::3
+  notes: '1=right handed; 2=left handed; 3=mixed handed//Calculation: if ((mean([ehi1b],
+    [ehi2b], [ehi3b],[ehi4b]) < -60),2, if ((mean([ehi1b], [ehi2b], [ehi3b],[ehi4b])
+    > 60),1,3)); 1.  Veale, J. F. (2014) Edinburgh Handedness Inventory - Short Form:
+    a revised version based on confirmatory factor analysis. Laterality 19(2):164-77.  //If
+    mixed handed, use the hand that the child writes with for NeuroCog and fMRI tasks.'
+  codes:
+    1: right handed
+    2: left handed
+    3: 'mixed handed//Calculation: if ((mean([ehi1b], [ehi2b], [ehi3b],[ehi4b]) <
+      -60),2, if ((mean([ehi1b], [ehi2b], [ehi3b],[ehi4b]) > 60),1,3))'
+
+handedness:
+  type: String
+  length: 29
+  description: handedness
+  range:
+  - R
+  - L
+  - B
+  - 999
+  notes: R = Right; L = Left; B = Both
+  alias: which_do_you_consider_your
+  codes:
+    R: Right
+    L: Left
+    B: Both
+
+hand5:
+  type: String
+  length: 5
+  description: Point to nose (for 5<=age in years < 11)
+  range:
+  - left
+  - right
+
+hcp_handedness_score:
+  type: Integer
+  description: HCP handedness score
+  range:
+  - -100::100
+  notes: hcp_handedness_score=sum(writing,throwing,scissors,toothbrush,knife_no_fork,spoon,broom,match,box,foot),
+    where values for elements are coded left=-10, spl/usually left=-5, np=0, spr/usually
+    right=5, and right=10. Missing elements are assigned the median of subject's other
+    summands.
+  codes:
+    np: 0, spr/usually right=5, and right=10. Missing elements are assigned the median
+      of subject's other summands.
+
+hand_score:
+  type: Integer
+  description: HCP short form score
+  range:
+  - 0::8
+  notes: hand_score=sum(writing,hammer,throwing,toothbrush,hand5,spoon,scissors,hand_15_drink)
+    where values for elements are coded left=0 and right=1. Missing elements are assigned
+    the median of subject's other summands.
+
+handedness_11:
+  type: Integer
+  description: How do you write? (see image below)
+  range:
+  - 1::4
+  notes: 1= LN; 2= LI; 3= RI; 4= RN
+  codes:
+    1: LN
+    2: LI
+    3: RI
+    4: RN

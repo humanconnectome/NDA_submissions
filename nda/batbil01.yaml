@@ -1,0 +1,5692 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+batlq1:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In a car crash?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq1_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In a car crash? If yes:
+    Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq1_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: In a car crash? If yes:
+    Loss of consciousness/knocked out for how long?'
+
+batlq1_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In a car crash? If yes:
+    Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq1_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: In a car crash? If yes:
+    Dazed and/or Memory Gap for how long?'
+
+batlq1_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: In a car crash? If yes:
+    Age'
+
+batlq2:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In a motorcycle crash?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq2_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In a motorcycle crash?
+    If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq2_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: In a motorcycle crash?
+    If yes: Loss of consciousness/knocked out for how long?'
+
+batlq2_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In a motorcycle crash?
+    If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq2_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: In a motorcycle crash?
+    If yes: Dazed and/or Memory Gap for how long?'
+
+batlq2_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: In a motorcycle crash?
+    If yes: Age'
+
+batlq3:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In an all-terrain vehicle
+    crash?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq3_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In an all-terrain vehicle
+    crash? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq3_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: In an all-terrain vehicle
+    crash? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq3_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In an all-terrain vehicle
+    crash? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq3_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: In an all-terrain vehicle
+    crash? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq3_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: In an all-terrain vehicle
+    crash? If yes: Age'
+
+batlq4:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: As a pedestrian hit
+    by a vehicle?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq4_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: As a pedestrian hit
+    by a vehicle? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq4_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: As a pedestrian hit
+    by a vehicle? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq4_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: As a pedestrian hit
+    by a vehicle? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq4_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: As a pedestrian hit
+    by a vehicle? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq4_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: As a pedestrian hit
+    by a vehicle? If yes: Age'
+
+batlq5:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being hit by a falling
+    object?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq5_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being hit by a falling
+    object? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq5_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Being hit by a falling
+    object? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq5_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being hit by a falling
+    object? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq5_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Being hit by a falling
+    object? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq5_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Being hit by a falling
+    object? If yes: Age'
+
+batlq6:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being hit by equipment?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq6_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being hit by equipment?
+    If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq6_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Being hit by equipment?
+    If yes: Loss of consciousness/knocked out for how long?'
+
+batlq6_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being hit by equipment?
+    If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq6_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Being hit by equipment?
+    If yes: Dazed and/or Memory Gap for how long?'
+
+batlq6_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Being hit by equipment?
+    If yes: Age'
+
+batlq7:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Falling down stairs?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq7_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Falling down stairs?
+    If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq7_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Falling down stairs?
+    If yes: Loss of consciousness/knocked out for how long?'
+
+batlq7_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Falling down stairs?
+    If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq7_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Falling down stairs?
+    If yes: Dazed and/or Memory Gap for how long?'
+
+batlq7_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Falling down stairs?
+    If yes: Age'
+
+batlq8:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Falling from a high
+    place?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq8_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Falling from a high
+    place? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq8_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Falling from a high
+    place? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq8_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Falling from a high
+    place? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq8_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Falling from a high
+    place? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq8_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Falling from a high
+    place? If yes: Age'
+
+batlq9:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a fainting spell?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq9_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a fainting spell?
+    If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq9_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: During a fainting spell?
+    If yes: Loss of consciousness/knocked out for how long?'
+
+batlq9_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a fainting spell?
+    If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq9_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: During a fainting spell?
+    If yes: Dazed and/or Memory Gap for how long?'
+
+batlq9_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: During a fainting spell?
+    If yes: Age'
+
+batlq10:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a drug or alcohol
+    blackout?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq10_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a drug or alcohol
+    blackout? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq10_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: During a drug or alcohol
+    blackout? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq10_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a drug or alcohol
+    blackout? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq10_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: During a drug or alcohol
+    blackout? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq10_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: During a drug or alcohol
+    blackout? If yes: Age'
+
+batlq11:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While biking?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq11_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While biking? If yes:
+    Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq11_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While biking? If yes:
+    Loss of consciousness/knocked out for how long?'
+
+batlq11_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While biking? If yes:
+    Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq11_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While biking? If yes:
+    Dazed and/or Memory Gap for how long?'
+
+batlq11_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While biking? If yes:
+    Age'
+
+batlq12:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While roller blading/skateboarding?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq12_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While roller blading/skateboarding?
+    If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq12_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While roller blading/skateboarding?
+    If yes: Loss of consciousness/knocked out for how long?'
+
+batlq12_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While roller blading/skateboarding?
+    If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq12_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While roller blading/skateboarding?
+    If yes: Dazed and/or Memory Gap for how long?'
+
+batlq12_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While roller blading/skateboarding?
+    If yes: Age'
+
+batlq13:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While horseback riding?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq13_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While horseback riding?
+    If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq13_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While horseback riding?
+    If yes: Loss of consciousness/knocked out for how long?'
+
+batlq13_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While horseback riding?
+    If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq13_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While horseback riding?
+    If yes: Dazed and/or Memory Gap for how long?'
+
+batlq13_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While horseback riding?
+    If yes: Age'
+
+batlq14:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While skiing/snowboarding?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq14_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While skiing/snowboarding?
+    If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq14_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While skiing/snowboarding?
+    If yes: Loss of consciousness/knocked out for how long?'
+
+batlq14_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While skiing/snowboarding?
+    If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq14_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While skiing/snowboarding?
+    If yes: Dazed and/or Memory Gap for how long?'
+
+batlq14_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While skiing/snowboarding?
+    If yes: Age'
+
+batlq15:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While skydiving?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq15_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While skydiving? If
+    yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq15_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While skydiving? If
+    yes: Loss of consciousness/knocked out for how long?'
+
+batlq15_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While skydiving? If
+    yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq15_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While skydiving? If
+    yes: Dazed and/or Memory Gap for how long?'
+
+batlq15_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While skydiving? If
+    yes: Age'
+
+batlq16:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While participating
+    in other sports? Ex: football, hockey, baseball, basketball, soccer, lacrosse,
+    boxing, wrestling, martial arts, etc.'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq16_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While participating
+    in other sports? Ex: football, hockey, baseball, basketball, soccer, lacrosse,
+    boxing, wrestling, martial arts, etc. If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq16_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While participating
+    in other sports? Ex: football, hockey, baseball, basketball, soccer, lacrosse,
+    boxing, wrestling, martial arts, etc. If yes: Loss of consciousness/knocked out
+    for how long?'
+
+batlq16_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While participating
+    in other sports? Ex: football, hockey, baseball, basketball, soccer, lacrosse,
+    boxing, wrestling, martial arts, etc. If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq16_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While participating
+    in other sports? Ex: football, hockey, baseball, basketball, soccer, lacrosse,
+    boxing, wrestling, martial arts, etc. If yes: Dazed and/or Memory Gap for how
+    long?'
+
+batlq16_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While participating
+    in other sports? Ex: football, hockey, baseball, basketball, soccer, lacrosse,
+    boxing, wrestling, martial arts, etc. If yes: Age'
+
+batlq17:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While on the playground?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq17_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While on the playground?
+    If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq17_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While on the playground?
+    If yes: Loss of consciousness/knocked out for how long?'
+
+batlq17_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While on the playground?
+    If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq17_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While on the playground?
+    If yes: Dazed and/or Memory Gap for how long?'
+
+batlq17_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While on the playground?
+    If yes: Age'
+
+batlq18:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While diving into water?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq18_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While diving into water?
+    If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq18_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While diving into water?
+    If yes: Loss of consciousness/knocked out for how long?'
+
+batlq18_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While diving into water?
+    If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq18_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While diving into water?
+    If yes: Dazed and/or Memory Gap for how long?'
+
+batlq18_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While diving into water?
+    If yes: Age'
+
+batlq19:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being physically abused?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq19_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being physically abused?
+    If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq19_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Being physically abused?
+    If yes: Loss of consciousness/knocked out for how long?'
+
+batlq19_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being physically abused?
+    If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq19_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Being physically abused?
+    If yes: Dazed and/or Memory Gap for how long?'
+
+batlq19_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Being physically abused?
+    If yes: Age'
+
+batlq20:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While being assaulted
+    or mugged?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq20_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While being assaulted
+    or mugged? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq20_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While being assaulted
+    or mugged? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq20_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While being assaulted
+    or mugged? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq20_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While being assaulted
+    or mugged? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq20_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: While being assaulted
+    or mugged? If yes: Age'
+
+batlq21:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a military or
+    other training exercise?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq21_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a military or
+    other training exercise? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq21_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: During a military or
+    other training exercise? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq21_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a military or
+    other training exercise? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq21_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: During a military or
+    other training exercise? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq21_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: During a military or
+    other training exercise? If yes: Age'
+
+batlq22:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During combat?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq22_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During combat? If yes:
+    Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq22_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: During combat? If yes:
+    Loss of consciousness/knocked out for how long?'
+
+batlq22_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During combat? If yes:
+    Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq22_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: During combat? If yes:
+    Dazed and/or Memory Gap for how long?'
+
+batlq22_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: During combat? If yes:
+    Age'
+
+batlq23:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Other activity?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq23_lc:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Other activity? If yes:
+    Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq23_lct:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Other activity? If yes:
+    Loss of consciousness/knocked out for how long?'
+
+batlq23_dz:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Other activity? If yes:
+    Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq23_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Other activity? If yes:
+    Dazed and/or Memory Gap for how long?'
+
+batlq23_age:
+  type: String
+  length: 100
+  description: 'Have you ever experienced a blow to the head: Other activity? If yes:
+    Age'
+
+batlq24:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Concussion?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq24_lc:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Concussion? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq24_lct:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Concussion? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq24_dz:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Concussion? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq24_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Concussion? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq24_age:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Concussion? If yes: Age'
+
+batlq25:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Fracture of the head, neck, or face?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq25_lc:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Fracture of the head, neck, or face? If yes: Loss of consciousness/knocked
+    out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq25_lct:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Fracture of the head, neck, or face? If yes: Loss of consciousness/knocked
+    out for how long?'
+
+batlq25_dz:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Fracture of the head, neck, or face? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq25_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Fracture of the head, neck, or face? If yes: Dazed and/or Memory Gap for how
+    long?'
+
+batlq25_age:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Fracture of the head, neck, or face? If yes: Age'
+
+batlq26:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Seizures?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq26_lc:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Seizures? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq26_lct:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Seizures? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq26_dz:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Seizures? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq26_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Seizures? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq26_age:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Seizures? If yes: Age'
+
+batlq27:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: High fever?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq27_lc:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: High fever? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq27_lct:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: High fever? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq27_dz:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: High fever? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq27_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: High fever? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq27_age:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: High fever? If yes: Age'
+
+batlq28:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Heart attack?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq28_lc:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Heart attack? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq28_lct:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Heart attack? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq28_dz:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Heart attack? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq28_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Heart attack? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq28_age:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Heart attack? If yes: Age'
+
+batlq29:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Near drowning?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq29_lc:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Near drowning? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq29_lct:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Near drowning? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq29_dz:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Near drowning? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq29_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Near drowning? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq29_age:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Near drowning? If yes: Age'
+
+batlq30:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Drug overdose?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq30_lc:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Drug overdose? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq30_lct:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Drug overdose? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq30_dz:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Drug overdose? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq30_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Drug overdose? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq30_age:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Drug overdose? If yes: Age'
+
+batlq31:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Poisoning?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq31_lc:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Poisoning? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq31_lct:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Poisoning? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq31_dz:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Poisoning? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq31_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Poisoning? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq31_age:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Poisoning? If yes: Age'
+
+batlq32:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Hit by lightning?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq32_lc:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Hit by lightning? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq32_lct:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Hit by lightning? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq32_dz:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Hit by lightning? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq32_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Hit by lightning? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq32_age:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Hit by lightning? If yes: Age'
+
+batlq33:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Electrical power injury?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq33_lc:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Electrical power injury? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq33_lct:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Electrical power injury? If yes: Loss of consciousness/knocked out for how
+    long?'
+
+batlq33_dz:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Electrical power injury? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq33_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Electrical power injury? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq33_age:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Electrical power injury? If yes: Age'
+
+batlq34:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Gun shot injury?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq34_lc:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Gun shot injury? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq34_lct:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Gun shot injury? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq34_dz:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Gun shot injury? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq34_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Gun shot injury? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq34_age:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Gun shot injury? If yes: Age'
+
+batlq35:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Stroke/brain hemorrhage?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq35_lc:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Stroke/brain hemorrhage? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq35_lct:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Stroke/brain hemorrhage? If yes: Loss of consciousness/knocked out for how
+    long?'
+
+batlq35_dz:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Stroke/brain hemorrhage? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq35_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Stroke/brain hemorrhage? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq35_age:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Stroke/brain hemorrhage? If yes: Age'
+
+batlq36:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain infection?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq36_lc:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain infection? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq36_lct:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain infection? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq36_dz:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain infection? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq36_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain infection? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq36_age:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain infection? If yes: Age'
+
+batlq37:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain tumor?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq37_lc:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain tumor? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq37_lct:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain tumor? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq37_dz:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain tumor? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq37_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain tumor? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq37_age:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain tumor? If yes: Age'
+
+batlq38:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Choking where you passed out?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq38_lc:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Choking where you passed out? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq38_lct:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Choking where you passed out? If yes: Loss of consciousness/knocked out for
+    how long?'
+
+batlq38_dz:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Choking where you passed out? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq38_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Choking where you passed out? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq38_age:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Choking where you passed out? If yes: Age'
+
+batlq39:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Other injury?'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq39_lc:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Other injury? If yes: Loss of consciousness/knocked out'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq39_lct:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Other injury? If yes: Loss of consciousness/knocked out for how long?'
+
+batlq39_dz:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Other injury? If yes: Dazed and/or Memory Gap'
+  range:
+  - 0
+  - 1
+  - 97
+  notes: 0 = No; 1 = Yes; 97 = Unsure/Don't Know
+  codes:
+    0: 'No'
+    1: 'Yes'
+    97: Unsure/Don't Know
+
+batlq39_dzt:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Other injury? If yes: Dazed and/or Memory Gap for how long?'
+
+batlq39_age:
+  type: String
+  length: 100
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Other injury? If yes: Age'
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+
+batl_total:
+  type: Integer
+  description: BAT-L Total Score
+  range:
+  - 0::60
+  notes: 0 = No lifetime Traumatic Brain Injury
+  codes:
+    0: No lifetime Traumatic Brain Injury
+
+batl_sum1_worst_injury:
+  type: Integer
+  description: 'Category sum (worst injury): Blast-related Injury'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_sum2_worst_injury:
+  type: Integer
+  description: 'Category sum (worst injury): Military (other) Injury'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_sum3_worst_injury:
+  type: Integer
+  description: 'Category sum (worst injury): Premilitary Injury'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_sum4_worst_injury:
+  type: Integer
+  description: 'Category sum (worst injury): Postmilitary Injury'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_sum1_2nd_worst_injury:
+  type: Integer
+  description: 'Category sum (second worst injury): Blast-related Injury'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_sum2_2nd_worst_injury:
+  type: Integer
+  description: 'Category sum (second worst injury): Military (other) Injury'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_sum3_2nd_worst_injury:
+  type: Integer
+  description: 'Category sum (second worst injury): Premilitary Injury'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_sum4_2nd_worst_injury:
+  type: Integer
+  description: 'Category sum (second worst injury): Postmilitary Injury'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_sum1_3rd_worst_injury:
+  type: Integer
+  description: 'Category sum (third worst injury): Blast-related Injury'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_sum2_3rd_worst_injury:
+  type: Integer
+  description: 'Category sum (third worst injury): Military (other) Injury'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_sum3_3rd_worst_injury:
+  type: Integer
+  description: 'Category sum (third worst injury): Premilitary Injury'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_sum4_3rd_worst_injury:
+  type: Integer
+  description: 'Category sum (third worst injury): Postmilitary Injury'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+worst_tbi_count1:
+  type: Integer
+  description: 'Number of TBIs: Blast-related Injury'
+
+worst_tbi_count2:
+  type: Integer
+  description: 'Number of TBIs: Military (other) Injury'
+
+worst_tbi_count3:
+  type: Integer
+  description: 'Number of TBIs: Premilitary Injury'
+
+worst_tbi_count4:
+  type: Integer
+  description: 'Number of TBIs: Postmilitary Injury'
+
+batl_summary1:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In a car crash? If yes,
+    what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary2:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In a motorcycle crash?
+    If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary3:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In an all-terrain vehicle
+    crash? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary4:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: As a pedestrian hit
+    by a vehicle? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary5:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being hit by a falling
+    object? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary6:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being hit by equipment?
+    If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary7:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Falling down stairs?
+    If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary8:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Falling from a high
+    place? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary9:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a fainting spell?
+    If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary10:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a drug or alcohol
+    blackout? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary11:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While biking? If yes,
+    what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary12:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While roller blading/skateboarding?
+    If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary13:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While horseback riding?
+    If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary14:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While skiing/snowboarding?
+    If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary15:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While skydiving? If
+    yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary16:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While participating
+    in other sports? Ex: football, hockey, baseball, basketball, soccer, lacrosse,
+    boxing, wrestling, martial arts, etc. If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary17:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While on the playground?
+    If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary18:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While diving into water?
+    If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary19:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being physically abused?
+    If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary20:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While being assaulted
+    or mugged? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary21:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a military or
+    other training exercise? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary22:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During combat? If yes,
+    what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary23:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Other activity? If yes,
+    what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary24:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Concussion? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary25:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Fracture of the head, neck, or face? If yes, what was the severity of any
+    TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary26:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Seizures? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary27:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: High fever? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary28:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Heart attack? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary29:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Near drowning? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary30:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Drug overdose? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary31:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Poisoning? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary32:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Hit by lightning? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary33:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Electrical power injury? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary34:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Gun shot injury? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary35:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Stroke/brain hemorrhage? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary36:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain infection? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary37:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain tumor? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary38:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Choking where you passed out? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary39:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Other injury? If yes, what was the severity of any TBI?'
+  range:
+  - 0::5
+  - 97
+  notes: '0 = No TBI; 1 = Mild Traumatic Brain Injury: Grade 1; 2 = Mild Traumatic
+    Brain Injury: Grade 2; 3 = Mild Traumatic Brain Injury: Grade 3; 4 = Moderate
+    TBI; 5 = Severe TBI; 97 = Unknown'
+  codes:
+    0: No TBI
+    1: 'Mild Traumatic Brain Injury: Grade 1'
+    2: 'Mild Traumatic Brain Injury: Grade 2'
+    3: 'Mild Traumatic Brain Injury: Grade 3'
+    4: Moderate TBI
+    5: Severe TBI
+    97: Unknown
+
+batl_summary40:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In a car crash? If yes,
+    what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary41:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In a motorcycle crash?
+    If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary42:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In an all-terrain vehicle
+    crash? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary43:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: As a pedestrian hit
+    by a vehicle? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary44:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being hit by a falling
+    object? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary45:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being hit by equipment?
+    If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary46:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Falling down stairs?
+    If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary47:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Falling from a high
+    place? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary48:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a fainting spell?
+    If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary49:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a drug or alcohol
+    blackout? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary50:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While biking? If yes,
+    what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary51:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While roller blading/skateboarding?
+    If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary52:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While horseback riding?
+    If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary53:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While skiing/snowboarding?
+    If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary54:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While skydiving? If
+    yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary55:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While participating
+    in other sports? Ex: football, hockey, baseball, basketball, soccer, lacrosse,
+    boxing, wrestling, martial arts, etc. If yes, what was the duration of Loss of
+    Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary56:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While on the playground?
+    If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary57:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While diving into water?
+    If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary58:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being physically abused?
+    If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary59:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While being assaulted
+    or mugged? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary60:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a military or
+    other training exercise? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary61:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During combat? If yes,
+    what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary62:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Other activity? If yes,
+    what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary63:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Concussion? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary64:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Fracture of the head, neck, or face? If yes, what was the duration of Loss
+    of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary65:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Seizures? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary66:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: High fever? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary67:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Heart attack? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary68:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Near drowning? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary69:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Drug overdose? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary70:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Poisoning? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary71:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Hit by lightning? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary72:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Electrical power injury? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary73:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Gun shot injury? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary74:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Stroke/brain hemorrhage? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary75:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain infection? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary76:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain tumor? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary77:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Choking where you passed out? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary78:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Other injury? If yes, what was the duration of Loss of Consciousness?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary79:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In a car crash? If yes,
+    what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary80:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In a motorcycle crash?
+    If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary81:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In an all-terrain vehicle
+    crash? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary82:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: As a pedestrian hit
+    by a vehicle? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary83:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being hit by a falling
+    object? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary84:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being hit by equipment?
+    If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary85:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Falling down stairs?
+    If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary86:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Falling from a high
+    place? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary87:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a fainting spell?
+    If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary88:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a drug or alcohol
+    blackout? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary89:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While biking? If yes,
+    what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary90:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While roller blading/skateboarding?
+    If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary91:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While horseback riding?
+    If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary92:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While skiing/snowboarding?
+    If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary93:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While skydiving? If
+    yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary94:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While participating
+    in other sports? Ex: football, hockey, baseball, basketball, soccer, lacrosse,
+    boxing, wrestling, martial arts, etc. If yes, what was the duration of Posttraumatic
+    Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary95:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While on the playground?
+    If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary96:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While diving into water?
+    If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary97:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being physically abused?
+    If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary98:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While being assaulted
+    or mugged? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary99:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a military or
+    other training exercise? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary100:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During combat? If yes,
+    what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary101:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Other activity? If yes,
+    what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary102:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Concussion? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary103:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Fracture of the head, neck, or face? If yes, what was the duration of Posttraumatic
+    Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary104:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Seizures? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary105:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: High fever? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary106:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Heart attack? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary107:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Near drowning? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary108:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Drug overdose? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary109:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Poisoning? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary110:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Hit by lightning? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary111:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Electrical power injury? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary112:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Gun shot injury? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary113:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Stroke/brain hemorrhage? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary114:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain infection? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary115:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain tumor? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary116:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Choking where you passed out? If yes, what was the duration of Posttraumatic
+    Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary117:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Other injury? If yes, what was the duration of Posttraumatic Amnesia?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary118:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In a car crash? If yes,
+    what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary119:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In a motorcycle crash?
+    If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary120:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: In an all-terrain vehicle
+    crash? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary121:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: As a pedestrian hit
+    by a vehicle? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary122:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being hit by a falling
+    object? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary123:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being hit by equipment?
+    If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary124:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Falling down stairs?
+    If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary125:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Falling from a high
+    place? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary126:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a fainting spell?
+    If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary127:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a drug or alcohol
+    blackout? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary128:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While biking? If yes,
+    what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary129:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While roller blading/skateboarding?
+    If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary130:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While horseback riding?
+    If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary131:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While skiing/snowboarding?
+    If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary132:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While skydiving? If
+    yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary133:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While participating
+    in other sports? Ex: football, hockey, baseball, basketball, soccer, lacrosse,
+    boxing, wrestling, martial arts, etc. If yes, what was the duration of Alteration
+    of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary134:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While on the playground?
+    If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary135:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While diving into water?
+    If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary136:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Being physically abused?
+    If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary137:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: While being assaulted
+    or mugged? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary138:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During a military or
+    other training exercise? If yes, what was the duration of Alteration of Mental
+    Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary139:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: During combat? If yes,
+    what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary140:
+  type: Integer
+  description: 'Have you ever experienced a blow to the head: Other activity? If yes,
+    what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary141:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Concussion? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary142:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Fracture of the head, neck, or face? If yes, what was the duration of Alteration
+    of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary143:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Seizures? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary144:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: High fever? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary145:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Heart attack? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary146:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Near drowning? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary147:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Drug overdose? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary148:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Poisoning? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary149:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Hit by lightning? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary150:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Electrical power injury? If yes, what was the duration of Alteration of Mental
+    Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary151:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Gun shot injury? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary152:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Stroke/brain hemorrhage? If yes, what was the duration of Alteration of Mental
+    Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary153:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain infection? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary154:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Brain tumor? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary155:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Choking where you passed out? If yes, what was the duration of Alteration
+    of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batl_summary156:
+  type: Integer
+  description: 'Have you ever been hospitalized or seen in an emergency room for because
+    of: Other injury? If yes, what was the duration of Alteration of Mental Status?'
+  range:
+  - 0::4
+  - 97
+  notes: '0 = Mild Grade I: None; 1 = Mild Grade II: Less than 5 minutes; 2 = Mild
+    Grade III: More than 5 and less than 30 minutes; 3 = Moderate TBI: More than 30
+    minutes and less than 24 hours; 4 = Severe TBI: More than 24 hours; 97 = Unknown'
+  codes:
+    0: 'Mild Grade I: None'
+    1: 'Mild Grade II: Less than 5 minutes'
+    2: 'Mild Grade III: More than 5 and less than 30 minutes'
+    3: 'Moderate TBI: More than 30 minutes and less than 24 hours'
+    4: 'Severe TBI: More than 24 hours'
+    97: Unknown
+
+batlq_score16:
+  type: Integer
+  description: 'While participating in other sports. Loss of consciousness/knocked
+    out:   Dazed and/or Memory Gap: SCORE:'
+
+batlq_score17:
+  type: Integer
+  description: 'While on the playground. Loss of consciousness/knocked out:   Dazed
+    and/or Memory Gap: SCORE:'
+
+batlq_score18:
+  type: Integer
+  description: 'While diving into water. Loss of consciousness/knocked out:   Dazed
+    and/or Memory Gap: SCORE:'
+
+batlq_score19:
+  type: Integer
+  description: 'Being physically abused. Loss of consciousness/knocked out:   Dazed
+    and/or Memory Gap: SCORE:'
+
+batlq_score2:
+  type: Integer
+  description: 'In a motorcycle crash. Loss of consciousness/knocked out:   Dazed
+    and/or Memory Gap: SCORE:'
+
+batlq_score20:
+  type: Integer
+  description: 'While being assaulted or mugged. Loss of consciousness/knocked out:   Dazed
+    and/or Memory Gap: SCORE:'
+
+batlq_score21:
+  type: Integer
+  description: 'During a military or other training exercise. Loss of consciousness/knocked
+    out:   Dazed and/or Memory Gap: SCORE:'
+
+batlq_score22:
+  type: Integer
+  description: 'During combat. Loss of consciousness/knocked out:   Dazed and/or Memory
+    Gap: SCORE:'
+
+batlq_score23:
+  type: Integer
+  description: 'Other. Loss of consciousness/knocked out:   Dazed and/or Memory Gap:
+    SCORE:'
+
+batlq_score24:
+  type: Integer
+  description: 'Concussion. Loss of consciousness/knocked out:   Dazed and/or Memory
+    Gap: SCORE:'
+
+batlq_score25:
+  type: Integer
+  description: 'Fracture of the head, neck, or face. Loss of consciousness/knocked
+    out:   Dazed and/or Memory Gap: SCORE:'
+
+batlq_score26:
+  type: Integer
+  description: 'Seizures. Loss of consciousness/knocked out:   Dazed and/or Memory
+    Gap: SCORE:'
+
+batlq_score27:
+  type: Integer
+  description: 'High fever. Loss of consciousness/knocked out:   Dazed and/or Memory
+    Gap: SCORE:'
+
+batlq_score28:
+  type: Integer
+  description: 'Heart attack. Loss of consciousness/knocked out:   Dazed and/or Memory
+    Gap: SCORE:'
+
+batlq_score29:
+  type: Integer
+  description: 'Near drowning. Loss of consciousness/knocked out:   Dazed and/or Memory
+    Gap: SCORE:'
+
+batlq_score3:
+  type: Integer
+  description: 'In an all-terrain vehicle crash. Loss of consciousness/knocked out:   Dazed
+    and/or Memory Gap: SCORE:'
+
+batlq_score30:
+  type: Integer
+  description: 'Drug overdose. Loss of consciousness/knocked out:   Dazed and/or Memory
+    Gap: SCORE:'
+
+batlq_score31:
+  type: Integer
+  description: 'Poisoning. Loss of consciousness/knocked out:   Dazed and/or Memory
+    Gap: SCORE:'
+
+batlq_score32:
+  type: Integer
+  description: 'Hit by lightning. Loss of consciousness/knocked out:   Dazed and/or
+    Memory Gap: SCORE:'
+
+batlq_score33:
+  type: Integer
+  description: 'Electrical power injury. Loss of consciousness/knocked out:   Dazed
+    and/or Memory Gap: SCORE:'
+
+batlq_score1:
+  type: Integer
+  description: 'In a car crash. Loss of consciousness/knocked out:   Dazed and/or
+    Memory Gap: SCORE: '
+
+batlq_score34:
+  type: Integer
+  description: 'Gun shot injury. Loss of consciousness/knocked out:   Dazed and/or
+    Memory Gap: SCORE:'
+
+batlq_score35:
+  type: Integer
+  description: 'Stroke/brain hemorrhage. Loss of consciousness/knocked out:   Dazed
+    and/or Memory Gap: SCORE:'
+
+batlq_score36:
+  type: Integer
+  description: 'Brain infection. Loss of consciousness/knocked out:   Dazed and/or
+    Memory Gap: SCORE:'
+
+batlq_score37:
+  type: Integer
+  description: 'Brain tumor. Loss of consciousness/knocked out:   Dazed and/or Memory
+    Gap: SCORE:'
+
+batlq_score38:
+  type: Integer
+  description: 'Choking where you passed out. Loss of consciousness/knocked out:   Dazed
+    and/or Memory Gap: SCORE:'
+
+batlq_score39:
+  type: Integer
+  description: 'Other injury. Loss of consciousness/knocked out:   Dazed and/or Memory
+    Gap: SCORE:'
+
+batlq_score4:
+  type: Integer
+  description: 'As a pedestrian hit by a vehicle. Loss of consciousness/knocked out:   Dazed
+    and/or Memory Gap: SCORE:'
+
+batlq_score5:
+  type: Integer
+  description: 'Being hit by a falling object. Loss of consciousness/knocked out:   Dazed
+    and/or Memory Gap: SCORE:'
+
+batlq_score6:
+  type: Integer
+  description: 'Being hit by equipment. Loss of consciousness/knocked out:   Dazed
+    and/or Memory Gap: SCORE:'
+
+batlq_score7:
+  type: Integer
+  description: 'Falling down stairs. Loss of consciousness/knocked out:   Dazed and/or
+    Memory Gap: SCORE:'
+
+batlq_score10:
+  type: Integer
+  description: 'During a drug or alcohol blackout. Loss of consciousness/knocked out:   Dazed
+    and/or Memory Gap: SCORE:'
+
+batlq_score8:
+  type: Integer
+  description: 'Falling from a high place. Loss of consciousness/knocked out:   Dazed
+    and/or Memory Gap: SCORE:'
+
+batlq_score9:
+  type: Integer
+  description: 'During a fainting spell. Loss of consciousness/knocked out:   Dazed
+    and/or Memory Gap: SCORE:'
+
+batlq_score11:
+  type: Integer
+  description: 'While biking. Loss of consciousness/knocked out:   Dazed and/or Memory
+    Gap: SCORE:'
+
+batlq_score12:
+  type: Integer
+  description: 'While roller blading/skateboarding. Loss of consciousness/knocked
+    out:   Dazed and/or Memory Gap: SCORE:'
+
+batlq_score13:
+  type: Integer
+  description: 'While horseback riding. Loss of consciousness/knocked out:   Dazed
+    and/or Memory Gap: SCORE:'
+
+batlq_score14:
+  type: Integer
+  description: 'While skiing. Loss of consciousness/knocked out:   Dazed and/or Memory
+    Gap: SCORE:'
+
+batlq_score15:
+  type: Integer
+  description: 'While skydiving. Loss of consciousness/knocked out:   Dazed and/or
+    Memory Gap: SCORE:'

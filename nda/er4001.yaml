@@ -1,0 +1,2404 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: interviewyear,studyday
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: adi_age
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+er40_c_cr:
+  type: Integer
+  description: Correct Responses
+  range:
+  - 0::40
+  alias: er40_d_cr,k_er40d.er40_cr,k_er40d_er40_cr,penn_ert_crrct
+
+er40_c_rtcr:
+  type: Float
+  description: Correct Responses Median Response Time (ms)
+  alias: er40_d_rtcr,k_er40d.er40_crt,k_er40d_er40_crt,penn_ert_meanrt_crrct
+
+er40_c_rt:
+  type: Float
+  description: Overall Median Response Time (ms)
+  alias: er40_d_rt,penn_ert_mednrt
+
+er40_c_fcrt:
+  type: Float
+  description: Correct Female Identifications Median Response Time (ms)
+  alias: er40_d_fcrt,k_er40d.er40fcrt,k_er40d_er40fcrt
+
+er40_c_mcrt:
+  type: Float
+  description: Correct Male Identifications Median Response Time (ms)
+  alias: er40_d_mcrt,k_er40d.er40mcrt,k_er40d_er40mcrt
+
+er40_c_ang:
+  type: Integer
+  description: Correct Anger Identifications
+  range:
+  - 0::8
+  alias: er40_d_ang,k_er40d.er40ang,k_er40d_er40ang,penn_ert_crrct_anger
+
+er40_c_fear:
+  type: Integer
+  description: Correct Fear Identifications
+  range:
+  - 0::8
+  alias: er40_d_fear,k_er40d.er40fear,k_er40d_er40fear,penn_ert_crrct_fear
+
+er40_c_hap:
+  type: Integer
+  description: Correct Happy Identifications
+  range:
+  - 0::8
+  alias: er40_d_hap,k_er40d.er40hap,k_er40d_er40hap,penn_ert_crrct_happy
+
+er40_c_noe:
+  type: Integer
+  description: Correct Neutral Identifications
+  range:
+  - 0::8
+  alias: er40_d_noe,k_er40d.er40noe,k_er40d_er40noe,penn_ert_crrct_neutral
+
+er40_c_sad:
+  type: Integer
+  description: Correct Sad Identifications
+  range:
+  - 0::8
+  alias: er40_d_sad,k_er40d.er40sad,k_er40d_er40sad,penn_ert_crrct_sad
+
+er40_c_fpa:
+  type: Integer
+  description: False Positive Anger Responses
+  range:
+  - 0::32
+  alias: k_er40d.er40_fpa,k_er40d_er40_fpa,penn_ert_falsepos_anger
+
+er40_c_fpf:
+  type: Integer
+  description: False Positive Fear Responses
+  range:
+  - 0::32
+  alias: k_er40d.er40_fpf,k_er40d_er40_fpf,penn_ert_falsepos_fear
+
+er40_c_fph:
+  type: Integer
+  description: False Positive Happy Responses
+  range:
+  - 0::32
+  alias: k_er40d.er40_fph,k_er40d_er40_fph,penn_ert_falsepos_happy
+
+er40_c_fpn:
+  type: Integer
+  description: False Positive Neutral Responses
+  range:
+  - 0::32
+  alias: k_er40d.er40_fpn,k_er40d_er40_fpn,penn_ert_falsepos_neutral
+
+er40_c_fps:
+  type: Integer
+  description: False Positive Sad Responses
+  range:
+  - 0::32
+  alias: k_er40d.er40_fps,k_er40d_er40_fps,penn_ert_falsepos_sad
+
+er40_c_fpart:
+  type: Float
+  description: Median Response Time for ER40_C False Positive Anger Responses (ms)
+  alias: emorecog_angry_medianrtc,k_er40d.er40_fpart,k_er40d_er40_fpart
+
+er40_c_fpfrt:
+  type: Float
+  description: Median Response Time for ER40_C False Positive Fear Responses (ms)
+  alias: emorecog_fearful_medianrtc,k_er40d.er40_fpfrt,k_er40d_er40_fpfrt
+
+er40_c_fphrt:
+  type: Float
+  description: Median Response Time for ER40_C False Positive Happy Responses (ms)
+  alias: emorecog_happy_medianrtc,k_er40d.er40_fphrt,k_er40d_er40_fphrt
+
+er40_c_fpnrt:
+  type: Float
+  description: Median Response Time for ER40_C False Positive Neutral Responses (ms)
+  alias: k_er40d.er40_fpnrt,k_er40d_er40_fpnrt
+
+er40_c_fpsrt:
+  type: Float
+  description: Median Response Time for ER40_C False Positive Sad Responses (ms)
+  alias: emorecog_sad_medianrtc,k_er40d.er40_fpsrt,k_er40d_er40_fpsrt
+
+er40_c_cnt_250:
+  type: Integer
+  description: Total Count Under 250 (ms)
+  range:
+  - 0::40
+
+er40_c_lrsr:
+  type: Integer
+  description: Longest Run of Same Responses
+  range:
+  - 0::40
+
+ncaid:
+  type: Integer
+  description: Primary ID of Neurocognitive Test
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+  alias: siteid
+
+timept:
+  type: Integer
+  description: Time Point
+  notes: 888 = not applicable; 999 = missing
+  alias: timepoint
+  codes:
+    888: not applicable
+    999: missing
+
+emorecog_stimulus:
+  type: String
+  length: 50
+  description: Filename of Image Shown
+
+emorecog_emotion:
+  type: String
+  length: 25
+  description: Correct Emotion of Image
+  notes: a=Angry; f=Fearful; h=Happy; s=Sad; 9=Non-response (Skipped or Timed-out)
+  codes:
+    a: Angry
+    f: Fearful
+    h: Happy
+    s: Sad
+    9: Non-response (Skipped or Timed-out)
+
+responsecorrect:
+  type: Float
+  description: Response Correct (1=Correct)
+  range:
+  - 0::1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+emorecog_response:
+  type: String
+  length: 25
+  description: Emotion Participant Selected
+  notes: a=Angry; f=Fearful; h=Happy; s=Sad; 9=Non-response (Skipped or Timed-out)
+  codes:
+    a: Angry
+    f: Fearful
+    h: Happy
+    s: Sad
+    9: Non-response (Skipped or Timed-out)
+
+responsetime:
+  type: Float
+  description: Response Time (ms)
+  alias: emorecog_rt
+
+battery_id:
+  type: Integer
+  description: Identifier of Battery
+  alias: emorecog_batteryid
+
+testid:
+  type: Integer
+  description: Identifier of Current Test
+  alias: emorecog_testid
+
+session_id:
+  type: String
+  length: 20
+  description: session ID/screening ID
+  alias: emorecog_sittingid
+
+cbgroup:
+  type: Integer
+  description: Counterbalancing Group
+  alias: emorecog_group
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: emorecog_version,k_er40d.valid_code,k_er40d_valid_code
+
+aurora_device:
+  type: Integer
+  description: Device Used
+  range:
+  - 1::6
+  notes: 1=iPad; 2=iPhone; 3=Tablet; 4=Android Smartphone; 5=Desktop; 6=Laptop
+  alias: emorecog_device
+  codes:
+    1: iPad
+    2: iPhone
+    3: Tablet
+    4: Android Smartphone
+    5: Desktop
+    6: Laptop
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+
+emorecog_accuracy:
+  type: Float
+  description: Prop Correct Responses Across All Trials
+
+emorecog_meanrtc:
+  type: Float
+  description: Mean Reaction Time For All Correct Trials (ms)
+
+emorecog_medianrtc:
+  type: Float
+  description: Median Reaction Time For All Correct Trials (ms)
+
+emorecog_sdrtc:
+  type: Float
+  description: Standard Deviation Of Reaction Times Across All Correct Trials (ms)
+
+emorecog_happy_correct:
+  type: Float
+  description: Proportion of Correct Responses For Happy Trials
+
+emorecog_happy_responses:
+  type: Float
+  description: Number Of Happy Responses Across All Trials (ms)
+
+emorecog_happy_meanrtc:
+  type: Float
+  description: Mean Reaction Time For All Correct Happy Trials (ms)
+
+emorecog_happy_sdrtc:
+  type: Float
+  description: Standard Deviation Of Reaction Times Across All Correct Happy Trials
+    (ms)
+
+emorecog_angry_correct:
+  type: Float
+  description: Proportion of Correct Responses For Angry Trials
+
+emorecog_angry_responses:
+  type: Float
+  description: Number Of Angry Responses Across All Trials
+
+emorecog_angry_meanrtc:
+  type: Float
+  description: Mean Reaction Time For All Correct Angry Trials (ms)
+
+emorecog_angry_sdrtc:
+  type: Float
+  description: Standard Deviation Of Reaction Times Across All Correct Angry Trials
+    (ms)
+
+emorecog_fearful_correct:
+  type: Float
+  description: Proportion of Correct Responses For Fearful Trials
+
+emorecog_fearful_responses:
+  type: Float
+  description: Number Of Fearful Responses Across All Trials
+
+emorecog_fearful_meanrtc:
+  type: Float
+  description: Mean Reaction Time For All Correct Fearful Trials (ms)
+
+emorecog_fearful_sdrtc:
+  type: Float
+  description: Standard Deviation Of Reaction Times Across All Correct Fearful Trials
+    (ms)
+
+emorecog_sad_correct:
+  type: Float
+  description: Proportion of Correct Responses For Sad Trials
+
+emorecog_sad_responses:
+  type: Float
+  description: Number Of Sad Responses Across All Trials
+
+emorecog_sad_meanrtc:
+  type: Float
+  description: Mean Reaction Time For All Correct Sad Trials (ms)
+
+emorecog_sad_sdrtc:
+  type: Float
+  description: Standard Deviation Of Reaction Times Across All Correct Sad Trials
+    (ms)
+
+deviceserialnumber:
+  type: String
+  length: 200
+  description: device serial number/ID
+  alias: emorecog_useragent
+
+testduration:
+  type: Integer
+  description: Seconds Taken To Complete Test
+  alias: emorecog_duration
+
+testrestarts:
+  type: Integer
+  description: Number Of Times Participant Restarted Test
+  alias: emorecog_reloaded
+
+emorecog_timepoint:
+  type: Integer
+  description: Timepoint For Assessment
+  range:
+  - 0::14
+  notes: 0=emergency department assessment; 1=48 hours assessment; 2=week 1 assessment;
+    3=week 2 assessment; 4=week 3 assessment; 5=week 4 assessment; 6=week 5 assessment;
+    7=week 6 assessment; 8=week 7 assessment; 9=week 8 assessment; 10=month 3 assessment;
+    11=month 6 assessment; 12=month 9 assessment; 13=month 12 assessment; 14=month
+    6 DP Visit
+  codes:
+    0: emergency department assessment
+    1: 48 hours assessment
+    2: week 1 assessment
+    3: week 2 assessment
+    4: week 3 assessment
+    5: week 4 assessment
+    6: week 5 assessment
+    7: week 6 assessment
+    8: week 7 assessment
+    9: week 8 assessment
+    10: month 3 assessment
+    11: month 6 assessment
+    12: month 9 assessment
+    13: month 12 assessment
+    14: month 6 DP Visit
+
+worddef_score1:
+  type: Integer
+  description: Score to Question 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_1:
+  type: Integer
+  description: 'Trial 1: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_1:
+  type: Integer
+  description: 'Trial 1: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_1:
+  type: Integer
+  description: 'Trial 1: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score2:
+  type: Integer
+  description: Score to Question 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_2:
+  type: Integer
+  description: 'Trial 2: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_2:
+  type: Integer
+  description: 'Trial 2: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_2:
+  type: Integer
+  description: 'Trial 2: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score3:
+  type: Integer
+  description: Score to Question 3
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_3:
+  type: Integer
+  description: 'Trial 3: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_3:
+  type: Integer
+  description: 'Trial 3: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_3:
+  type: Integer
+  description: 'Trial 3: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score4:
+  type: Integer
+  description: Score to Question 4
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_4:
+  type: Integer
+  description: 'Trial 4: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_4:
+  type: Integer
+  description: 'Trial 4: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_4:
+  type: Integer
+  description: 'Trial 4: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score5:
+  type: Integer
+  description: Score to Question 5
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_5:
+  type: Integer
+  description: 'Trial 5: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_5:
+  type: Integer
+  description: 'Trial 5: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_5:
+  type: Integer
+  description: 'Trial 5: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score6:
+  type: Integer
+  description: Score to Question 6
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_6:
+  type: Integer
+  description: 'Trial 6: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_6:
+  type: Integer
+  description: 'Trial 6: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_6:
+  type: Integer
+  description: 'Trial 6: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score7:
+  type: Integer
+  description: Score to Question 7
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_7:
+  type: Integer
+  description: 'Trial 7: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_7:
+  type: Integer
+  description: 'Trial 7: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_7:
+  type: Integer
+  description: 'Trial 7: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score8:
+  type: Integer
+  description: Score to Question 8
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_8:
+  type: Integer
+  description: 'Trial 8: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_8:
+  type: Integer
+  description: 'Trial 8: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_8:
+  type: Integer
+  description: 'Trial 8: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score9:
+  type: Integer
+  description: Score to Question 9
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_9:
+  type: Integer
+  description: 'Trial 9: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_9:
+  type: Integer
+  description: 'Trial 9: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_9:
+  type: Integer
+  description: 'Trial 9: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score10:
+  type: Integer
+  description: Score to Question 10
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_10:
+  type: Integer
+  description: 'Trial 10: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_10:
+  type: Integer
+  description: 'Trial 10: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_10:
+  type: Integer
+  description: 'Trial 10: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score11:
+  type: Integer
+  description: Score to Question 11
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_11:
+  type: Integer
+  description: 'Trial 11: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_11:
+  type: Integer
+  description: 'Trial 11: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_11:
+  type: Integer
+  description: 'Trial 11: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score12:
+  type: Integer
+  description: Score to Question 12
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_12:
+  type: Integer
+  description: 'Trial 12: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_12:
+  type: Integer
+  description: 'Trial 12: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_12:
+  type: Integer
+  description: 'Trial 12: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score13:
+  type: Integer
+  description: Score to Question 13
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_13:
+  type: Integer
+  description: 'Trial 13: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_13:
+  type: Integer
+  description: 'Trial 13: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_13:
+  type: Integer
+  description: 'Trial 13: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score14:
+  type: Integer
+  description: Score to Question 14
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_14:
+  type: Integer
+  description: 'Trial 14: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_14:
+  type: Integer
+  description: 'Trial 14: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_14:
+  type: Integer
+  description: 'Trial 14: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score15:
+  type: Integer
+  description: Score to Question 15
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_15:
+  type: Integer
+  description: 'Trial 15: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_15:
+  type: Integer
+  description: 'Trial 15: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_15:
+  type: Integer
+  description: 'Trial 15: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score16:
+  type: Integer
+  description: Score to Question 16
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_16:
+  type: Integer
+  description: 'Trial 16: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_16:
+  type: Integer
+  description: 'Trial 16: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_16:
+  type: Integer
+  description: 'Trial 16: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score17:
+  type: Integer
+  description: Score to Question 17
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_17:
+  type: Integer
+  description: 'Trial 17: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_17:
+  type: Integer
+  description: 'Trial 17: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_17:
+  type: Integer
+  description: 'Trial 17: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score18:
+  type: Integer
+  description: Score to Question 18
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_18:
+  type: Integer
+  description: 'Trial 18: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_18:
+  type: Integer
+  description: 'Trial 18: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_18:
+  type: Integer
+  description: 'Trial 18: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score19:
+  type: Integer
+  description: Score to Question 19
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_19:
+  type: Integer
+  description: 'Trial 19: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_19:
+  type: Integer
+  description: 'Trial 19: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_19:
+  type: Integer
+  description: 'Trial 19: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score20:
+  type: Integer
+  description: Score to Question 20
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_20:
+  type: Integer
+  description: 'Trial 20: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_20:
+  type: Integer
+  description: 'Trial 20: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_20:
+  type: Integer
+  description: 'Trial 20: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score21:
+  type: Integer
+  description: Score to Question 21
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_21:
+  type: Integer
+  description: 'Trial 21: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_21:
+  type: Integer
+  description: 'Trial 21: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_21:
+  type: Integer
+  description: 'Trial 21: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score22:
+  type: Integer
+  description: Score to Question 22
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_22:
+  type: Integer
+  description: 'Trial 22: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_22:
+  type: Integer
+  description: 'Trial 22: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_22:
+  type: Integer
+  description: 'Trial 22: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score23:
+  type: Integer
+  description: Score to Question 23
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_23:
+  type: Integer
+  description: 'Trial 23: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_23:
+  type: Integer
+  description: 'Trial 23: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_23:
+  type: Integer
+  description: 'Trial 23: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score24:
+  type: Integer
+  description: Score to Question 24
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_24:
+  type: Integer
+  description: 'Trial 24: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_24:
+  type: Integer
+  description: 'Trial 24: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_24:
+  type: Integer
+  description: 'Trial 24: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score25:
+  type: Integer
+  description: Score to Question 25
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_25:
+  type: Integer
+  description: 'Trial 25: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_25:
+  type: Integer
+  description: 'Trial 25: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_25:
+  type: Integer
+  description: 'Trial 25: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score26:
+  type: Integer
+  description: Score to Question 26
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_26:
+  type: Integer
+  description: 'Trial 26: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_26:
+  type: Integer
+  description: 'Trial 26: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_26:
+  type: Integer
+  description: 'Trial 26: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score27:
+  type: Integer
+  description: Score to Question 27
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_27:
+  type: Integer
+  description: 'Trial 27: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_27:
+  type: Integer
+  description: 'Trial 27: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_27:
+  type: Integer
+  description: 'Trial 27: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score28:
+  type: Integer
+  description: Score to Question 28
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_28:
+  type: Integer
+  description: 'Trial 28: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_28:
+  type: Integer
+  description: 'Trial 28: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_28:
+  type: Integer
+  description: 'Trial 28: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score29:
+  type: Integer
+  description: Score to Question 29
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_29:
+  type: Integer
+  description: 'Trial 29: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_29:
+  type: Integer
+  description: 'Trial 29: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_29:
+  type: Integer
+  description: 'Trial 29: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score30:
+  type: Integer
+  description: Score to Question 30
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_30:
+  type: Integer
+  description: 'Trial 30: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_30:
+  type: Integer
+  description: 'Trial 30: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_30:
+  type: Integer
+  description: 'Trial 30: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score31:
+  type: Integer
+  description: Score to Question 31
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_31:
+  type: Integer
+  description: 'Trial 31: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_31:
+  type: Integer
+  description: 'Trial 31: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_31:
+  type: Integer
+  description: 'Trial 31: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score32:
+  type: Integer
+  description: Score to Question 32
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_32:
+  type: Integer
+  description: 'Trial 32: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_32:
+  type: Integer
+  description: 'Trial 32: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_32:
+  type: Integer
+  description: 'Trial 32: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score33:
+  type: Integer
+  description: Score to Question 33
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_33:
+  type: Integer
+  description: 'Trial 33: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_33:
+  type: Integer
+  description: 'Trial 33: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_33:
+  type: Integer
+  description: 'Trial 33: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score34:
+  type: Integer
+  description: Score to Question 34
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_34:
+  type: Integer
+  description: 'Trial 34: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_34:
+  type: Integer
+  description: 'Trial 34: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_34:
+  type: Integer
+  description: 'Trial 34: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score35:
+  type: Integer
+  description: Score to Question 35
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_35:
+  type: Integer
+  description: 'Trial 35: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_35:
+  type: Integer
+  description: 'Trial 35: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_35:
+  type: Integer
+  description: 'Trial 35: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score36:
+  type: Integer
+  description: Score to Question 36
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_36:
+  type: Integer
+  description: 'Trial 36: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_36:
+  type: Integer
+  description: 'Trial 36: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_36:
+  type: Integer
+  description: 'Trial 36: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score37:
+  type: Integer
+  description: Score to Question 37
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_37:
+  type: Integer
+  description: 'Trial 37: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_37:
+  type: Integer
+  description: 'Trial 37: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_37:
+  type: Integer
+  description: 'Trial 37: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score38:
+  type: Integer
+  description: Score to Question 38
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_38:
+  type: Integer
+  description: 'Trial 38: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_38:
+  type: Integer
+  description: 'Trial 38: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_38:
+  type: Integer
+  description: 'Trial 38: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score39:
+  type: Integer
+  description: Score to Question 39
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_39:
+  type: Integer
+  description: 'Trial 39: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_39:
+  type: Integer
+  description: 'Trial 39: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_39:
+  type: Integer
+  description: 'Trial 39: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+worddef_score40:
+  type: Integer
+  description: Score to Question 40
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+wcst_confidence_40:
+  type: Integer
+  description: 'Trial 40: Confidence Rating'
+  range:
+  - 1::5
+  notes: 1=0%; 2=25%; 3=50%; 4=75%; 5=100%
+  codes:
+    1: 0%
+    2: 25%
+    3: 50%
+    4: 75%
+    5: 100%
+
+wcst_ia_40:
+  type: Integer
+  description: 'Trial 40: Do you think you were correct?'
+  range:
+  - 0
+  - 1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+er40_emotion_40:
+  type: Integer
+  description: 'Trial 40: Participant Answer'
+  range:
+  - 1::5
+  notes: 1=happy; 2=sad; 3=anger; 4=fear; 5=no emotion
+  codes:
+    1: happy
+    2: sad
+    3: anger
+    4: fear
+    5: no emotion
+
+respondent:
+  type: String
+  length: 20
+  description: Respondent
+  range:
+  - Mother
+  - Father
+  - Both
+  - Other
+  - Parent
+  - Teacher
+
+er40_d_fc:
+  type: Integer
+  description: ER40 Correct Female Identifications
+  range:
+  - 0::20
+  alias: k_er40d.er40_fc,k_er40d_er40_fc
+
+er40_d_mc:
+  type: Integer
+  description: ER40 Correct Male Identifications
+  range:
+  - 0::20
+  alias: k_er40d.er40_mc,k_er40d_er40_mc
+
+er40_d_angrt:
+  type: Float
+  description: Median Response Time for ER40 Correct Anger Identifications (ms)
+  alias: k_er40d.er40angrt,k_er40d_er40angrt
+
+er40_d_fearrt:
+  type: Float
+  description: Median Response Time for ER40 Correct Fear Identifications (ms)
+  alias: k_er40d.er40fearrt,k_er40d_er40fearrt
+
+er40_d_haprt:
+  type: Float
+  description: Median Response Time for ER40 Correct Happy Identifications (ms)
+  alias: k_er40d.er40haprt,k_er40d_er40haprt
+
+er40_d_noert:
+  type: Float
+  description: Median Response Time for ER40 Correct Neutral Identifications (ms)
+  alias: k_er40d.er40noert,k_er40d_er40noert
+
+er40_d_sadrt:
+  type: Float
+  description: Median Response Time for ER40 Correct Sad Identifications (ms)
+  alias: k_er40d.er40sadrt,k_er40d_er40sadrt
+
+mpdat:
+  type: Float
+  description: days from enrollment
+  alias: studyday
+
+cogbias_state:
+  type: String
+  length: 25
+  description: Event Received at Response Termination
+  alias: emorecog_state

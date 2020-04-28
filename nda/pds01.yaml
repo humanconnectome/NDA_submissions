@@ -1,0 +1,1257 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: case_id,child_id,clinical_barcode,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: bl_visit_date,pds_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: bslage,ch_age,pubc1,pubp1
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: ch_sex,dev_scales_gender,gender,pds_sex_y,pubertal_sex_p,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+respond:
+  type: Integer
+  required: true
+  description: Respondent
+  range:
+  - 1::5
+  - 999
+  notes: 1 = Parent; 2 = Teacher; 3=Self; 4= Other; 5= Significant other; 999 = Not
+    available
+  alias: pds_respondent,respondent,who
+  codes:
+    1: Parent
+    2: Teacher
+    3: Self
+    4: Other
+    5: Significant other
+    999: Not available
+
+pds_1:
+  type: Integer
+  description: 'C.Would you say that your growth in height has not yet begun to spurt,
+    has barely started, is definitely underway, or does growth seem completed. P.How
+    would you say your child''s growth in height has developed?
+
+    '
+  range:
+  - 1::5
+  - -99
+  - 77
+  - 88
+  notes: 1= Not begun; 2 =Yes (barely); 3= Yes (definitely); 4= Development complete;
+    5= Don't know; -99= N/A ; 77= Refused ; 88= Missing
+  alias: afh,amh,pds1,pds_1_p,pds_1_pv,pds_cv_1_boy,pds_cv_1_girl,pds_growth,pds_ht2_y,pds_p_1,pds_pr_1,pds_q1,pds_sub_1,peterson_fem_height,peterson_male_height,pfh,pmh,pubc2,puberty_1,pubp2,pufe_001t,puma_001t
+  codes:
+    1: Not begun
+    2: Yes (barely)
+    3: Yes (definitely)
+    4: Development complete
+    5: Don't know
+    -99: N/A
+    77: Refused
+    88: Missing
+
+pds_2:
+  type: Integer
+  description: "C.And how about the growth of body hair? Would you say that your body\
+    \ hair has not yet started growing, has barely started growing, is definitely\
+    \ underway, or does growth seem completed? (if asked, body hair = underarm or\
+    \ pubic hair). P. How wouold you say that your child's body hair has developed?\
+    \  (if asked, body hair = underarm or pubic hair) \n"
+  range:
+  - 1::5
+  - -99
+  - 77
+  - 88
+  notes: 1= Not begun; 2 =Yes (barely); 3= Yes (definitely); 4= Development complete;
+    5= Don't know; -99= N/A ; 77= Refused ; 88= Missing
+  alias: afbh,ambh,pds2,pds_2_p,pds_2_pv,pds_3b,pds_3g,pds_bdyhair_y,pds_cv_2_boy,pds_cv_2_girl,pds_hair,pds_p_2,pds_pr_2,pds_q2,pds_sub_2,peterson_fem_bodyhair,peterson_male_bodyhair,pfbh,pmbh,pubc3,puberty_2,pubp3,pufe_002t,puma_002t
+  codes:
+    1: Not begun
+    2: Yes (barely)
+    3: Yes (definitely)
+    4: Development complete
+    5: Don't know
+    -99: N/A
+    77: Refused
+    88: Missing
+
+pds_3:
+  type: Integer
+  description: "C. Have you noticed any skin changes, such as pimples or acne? Would\
+    \ you say that you have not yet started to get acne, have barely started to get\
+    \ acne, acne is definitely underway, or that you have finished getting acne?.\
+    \ P.Have you noticed your child is experiencing any skin changes, such as pimples\
+    \ or acne...  \n"
+  range:
+  - 1::5
+  - -99
+  - 77
+  - 88
+  notes: 1= Not begun; 2 =Yes (barely); 3= Yes (definitely); 4= Development complete;
+    5= Don't know; -99= N/A ; 77= Refused ; 88= Missing
+  alias: afs,ams,pds3,pds_3_p,pds_3_pv,pds_cv_3_boy,pds_cv_3_girl,pds_p_3,pds_pr_3,pds_q3,pds_skin,pds_skin2_y,pds_sub_3,peterson_fem_skin,peterson_male_skin,pfs,pms,pubc4,puberty_3,pubp4,pufe_003t,puma_003t
+  codes:
+    1: Not begun
+    2: Yes (barely)
+    3: Yes (definitely)
+    4: Development complete
+    5: Don't know
+    -99: N/A
+    77: Refused
+    88: Missing
+
+pds_4:
+  type: Integer
+  description: '(for boys only) C.  Have you noticed a deepening of your voice? Would
+    you say that your voice has not yet started to deepen, has barely started to deepen,
+    deepening is definitely underway, or deepening is complete?. P. Have you noticed
+    your son''s voice deepening? '
+  range:
+  - 1::5
+  - -99
+  - 77
+  - 88
+  notes: 1= Not begun; 2 =Yes (barely); 3= Yes (definitely); 4= Development complete;
+    5= Don't know; -99= N/A ; 77= Refused ; 88= Missing
+  alias: amv,pds4ba,pds4m,pds_4_pv,pds_4b,pds_cv_4_boy,pds_m4_p,pds_m4_y,pds_p_b4,pds_pr_4,pds_qm4a,pds_sub_b4,pds_voice,pdsb_2,peterson_male_voice,pmv,pubc5,puberty_boys4,pubp5,puma_004t
+  codes:
+    1: Not begun
+    2: Yes (barely)
+    3: Yes (definitely)
+    4: Development complete
+    5: Don't know
+    -99: N/A
+    77: Refused
+    88: Missing
+
+pds_5:
+  type: Integer
+  description: ( for boys only) C. Have you begun to grow hair on your face? Would
+    you say you have not yet started to grow hair on your face, barely started to
+    grow hair on your face, hair on your face is definitely underway, or hair growth
+    on your face is complete?. P. Has your child begun to grow hair on his face?
+  range:
+  - 1::5
+  - -99
+  - 77
+  - 88
+  notes: 1= Not begun; 2 =Yes (barely); 3= Yes (definitely); 4= Development complete;
+    5= Don't know; -99= N/A ; 77= Refused ; 88= Missing
+  alias: amfh,pds4bb,pds5m,pds_4b,pds_5_pv,pds_cv_5_boy,pds_fahair,pds_m5_p,pds_m5_y,pds_p_b5,pds_pr_5,pds_qm4b,pds_sub_b5,pdsb_1,peterson_male_face_hair,pmfh,pubc6,puberty_boys5,pubp6,puma_005t
+  codes:
+    1: Not begun
+    2: Yes (barely)
+    3: Yes (definitely)
+    4: Development complete
+    5: Don't know
+    -99: N/A
+    77: Refused
+    88: Missing
+
+pds_6:
+  type: Integer
+  description: '(for girls only) C. Have your breasts begun to grow? Would you say
+    that you have not yet started to grow breasts, barely started to grow breasts,
+    breasts are definitely underway, or breast growth is complete? P. Have your daughter''s
+    breasts begun to grow? '
+  range:
+  - 1::5
+  - -99
+  - 77
+  - 88
+  notes: 1= Not begun; 2 =Yes (barely); 3= Yes (definitely); 4= Development complete;
+    5= Don't know; -99= N/A ; 77= Refused ; 88= Missing
+  alias: afb,pds4f,pds4g,pds_4g,pds_6_pv,pds_breast,pds_cv_4_girl,pds_f4_2_y,pds_f4_p,pds_p_g4,pds_pr_6,pds_qf4,pds_sub_g4,peterson_fem_breasts,pfb,pubc7,puberty_girls4,pubp7,pufe_004t
+  codes:
+    1: Not begun
+    2: Yes (barely)
+    3: Yes (definitely)
+    4: Development complete
+    5: Don't know
+    -99: N/A
+    77: Refused
+    88: Missing
+
+pds_7:
+  type: Integer
+  description: ( for girls only) C. Have you begun to get your period? Would you say
+    that you have not yet started to get your period, have barely started to get your
+    period, or that your period is definitely underway? P. Has your daughter begun
+    to get her period?
+  range:
+  - 1::5
+  - -99
+  - 77
+  - 88
+  notes: 1= Not begun; 2 =Yes (barely); 3= Yes (definitely); 4= Development complete;
+    5= Don't know; -99= N/A ; 77= Refused ; 88= Missing
+  alias: pds_6g,pds_f5_y,pds_f5b_p,pds_pr_7,pds_sub_g5a,pubc8,puberty_girls5a,pubp8
+  codes:
+    1: Not begun
+    2: Yes (barely)
+    3: Yes (definitely)
+    4: Development complete
+    5: Don't know
+    -99: N/A
+    77: Refused
+    88: Missing
+
+pds_boy_rs:
+  type: Integer
+  required: Conditional
+  condition: sex == 'm'
+  description: Total raw score for boys
+  notes: sum of pds_2, pds_4, pds_5; 999=Missing
+  alias: male_score,pds_cv_boy_rs,pds_pv_boy_rs
+  codes:
+    999: Missing
+
+pds_girl_rs:
+  type: Integer
+  required: Conditional
+  condition: sex == 'f'
+  description: Total raw score for girls
+  notes: sum of pds_2, pds_7, pds_7; 999=Missing
+  alias: female_score,pds_cv_girl_rs,pds_pv_girl_rs
+  codes:
+    999: Missing
+
+respondent_other_specify:
+  type: String
+  length: 50
+  description: 'Respondent: Other (specify)'
+
+pds_7_pv:
+  type: Integer
+  description: 7. (for girls only) Do you think your daughters development is any
+    earlier or later than most girls her age?
+  range:
+  - 1::5
+  - 999
+  notes: 1=much earlier; 2=somewhat earlier; 3=about the same; 4=somewhat later; 5=much
+    later
+  alias: afd,pds_5g,pds_cv_5_girl,pds_fphdev,peterson_fem_development,pfd
+  codes:
+    1: much earlier
+    2: somewhat earlier
+    3: about the same
+    4: somewhat later
+    5: much later
+
+pds_9_pv:
+  type: Integer
+  description: 9. (for girls only) If yes, how old was she when she started to menstruate?
+  range:
+  - 1::9
+  - 999
+  notes: 1= she was less than 10; 2= she was 10; 3= she was 10.5; 4= she was 11; 5=
+    she was 11.5; 6= she was 12; 7= she was 12.5; 8= she was 13; 9= she was 13.5 or
+    more
+  alias: puberty_girls5b
+  codes:
+    1: she was less than 10
+    2: she was 10
+    3: she was 10.5
+    4: she was 11
+    5: she was 11.5
+    6: she was 12
+    7: she was 12.5
+    8: she was 13
+    9: she was 13.5 or more
+
+pds_pv_boy_tanner:
+  type: Integer
+  description: Category score
+  notes: '1=Prepubertal; 2= early pubertal; 3=midpubertal; 4=late pubertal; 5=postpubertal).
+    Scores determined by using the following criteria by totaling the raw score: Prepubertal=3;
+    Early pubertal= 4 or 5, no 3 point responses; Midpubertal=6-8, no 4 point responses;
+    Late pubertal=9-11; Postpubertal=12.'
+  alias: pds_cv_boy_tanner,pubertyfemale_totalscore
+  codes:
+    1: Prepubertal
+    2: early pubertal
+    3: midpubertal
+    4: late pubertal
+    5: 'postpubertal). Scores determined by using the following criteria by totaling
+      the raw score: Prepubertal=3'
+
+pds_pv_girl_tanner:
+  type: Integer
+  description: Category score
+  notes: '1=Prepubertal; 2= early pubertal; 3=midpubertal; 4=late pubertal; 5=postpubertal).
+    Scores determined by using the following criteria by totaling the raw score: Prepubertal=2,
+    no menstruation; Early pubertal= 3, no menstruation; Midpubertal= >3, no menstruation;
+    Late pubertal= less than and equal to 7, with menstruation; Postpubertal=8, with
+    menstruation.'
+  alias: pds_cv_girl_tanner,pubertymale_totalscore
+  codes:
+    1: Prepubertal
+    2: early pubertal
+    3: midpubertal
+    4: late pubertal
+    5: 'postpubertal). Scores determined by using the following criteria by totaling
+      the raw score: Prepubertal=2, no menstruation'
+
+pds_8_pv:
+  type: Integer
+  description: (for girls only) Has your child begun to get her period?
+  range:
+  - 1::2
+  - 999
+  notes: 1= Yes; 2= No
+  alias: afmc,pds_p_g5a,pdsg_2a,pfmc
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+pds_cv_6_girl:
+  type: Integer
+  description: Have you begun to get your period?
+  range:
+  - 0::9
+  notes: 0= No; 1= yes, I was 13.5 or more; 2= yes, I was 13; 3= yes, I was 12.5;
+    4= yes, I was 12; 5= yes, I was 11.5; 6= yes, I was 11; 7= yes, I was 10.5; 8=
+    yes, I was 10; 9= when I was less than 10
+  alias: pds_6g
+  codes:
+    0: 'No'
+    1: yes, I was 13.5 or more
+    2: yes, I was 13
+    3: yes, I was 12.5
+    4: yes, I was 12
+    5: yes, I was 11.5
+    6: yes, I was 11
+    7: yes, I was 10.5
+    8: yes, I was 10
+    9: when I was less than 10
+
+dsmvers:
+  type: String
+  length: 10
+  description: version/name of assessment
+
+pstatus:
+  type: Integer
+  description: Pubertal status - Unisex
+  range:
+  - 0::2
+  notes: 0=Under 10; 1=Prepubertal; 2=Pubertal
+  codes:
+    0: Under 10
+    1: Prepubertal
+    2: Pubertal
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+  alias: site_no
+
+trt_grp:
+  type: String
+  length: 10
+  description: Treatment Group Assignment
+  range:
+  - 1
+  - 1AO
+  - 1CT
+  - 2
+  - 3
+  notes: 1=Group 1 first 8 weeks; 1AO=Group 1 8 week add on; 1CT=Group 1 8 week cross
+    taper; 2=Group 2; 3=Group 3
+  codes:
+    1: Group 1 first 8 weeks
+    2: Group 2
+    3: Group 3
+
+days_baseline:
+  type: Integer
+  description: Days since baseline
+  alias: bsldays
+
+etype:
+  type: String
+  length: 10
+  description: Rating Period
+  range:
+  - BSL
+  - WK1
+  - WK2
+  - WK3
+  - WK4
+  - WK5
+  - WK6
+  - WK7
+  - WK8
+  - WK9
+  - WK10
+  - WK11
+  - WK12
+  - WK13
+  - WK14
+  - WK15
+  - WK16
+  notes: BSL=Baseline; WK1-WK16=Weeks 1-16
+  codes:
+    BSL: Baseline
+
+respond_detail_oth_spec:
+  type: String
+  length: 255
+  description: Respondent details
+  alias: informnt
+
+relationship:
+  type: Integer
+  description: Relationship of respondent to individual
+  range:
+  - 1::93
+  - -999
+  notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
+    (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
+    Speech and language therapist; 8 = Behavioral therapist; 9 = Paraprofessional;
+    10 = Aide; 11 = Principal; 12 = Administrator; 13 = 90=Other; 14 = Content teacher;
+    15 = Parent center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father;
+    19=Foster mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother;
+    24 = Step-father; 25=Aunt; 26=Uncle; 27=Missing Data; 28=Both parents;31= Grandmother
+    from mother side; 32= Grandfather from mother side; 33= Grandmother from father
+    side; 34= Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39=
+    female caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
+    44=Friend; 45=Parent; 46=Significant other; 47=Sibling; 48=Son/Daughter; 49=Son-in-law/Daughter-in
+    law; 50=Other Relative; 51=Paid caregiver; 52=Friends; 53=Roommate; 54=Supervisor;
+    55=mother's boyfriend; 56=other parental figure; 57=Summary; 58=counselor ; 59
+    = other female relative; 60 = other male relative; 61 = non-relative ; 62=Maternal
+    Aunt; 63=Maternal Uncle; 64=Maternal Cousin; 65 = Paternal Aunt; 66=Paternal Uncle;
+    67=Paternal Cousin ; 68=Biological/Adoptive Mother and Grandmother; 69=Biological/Adoptive
+    Mother and Stepmother and Grandmother; 70=Biological/Adoptive Mother and Grandmother
+    and Foster Father; 71=Biological/Adoptive Mother and Stepmother and Foster Mother;
+    72=Biological/Adoptive Mother and Foster Mother; 73=Biological/Adoptive Mother
+    and Biological/Adoptive Father; 74=Biological/Adoptive Mother and Stepmother and
+    Biological/Adoptive Father; 75=Biological/Adoptive Mother and Other; 76=Biological/Adoptive
+    Mother and Stepmother and Stepfather; 77=Biological/Adoptive Mother and Stepfather;
+    78=Biological/Adoptive Mother and Grandfather; 79=Biological/Adoptive Mother and
+    Stepmother and Foster Father; 80=Biological/Adoptive Mother and Stepmother; 81=Guardian,
+    female; 82=Other female; 83=Guardian, male; 84=Other male; 85=Other/Grandparent/Nanny;
+    86 = Mother, Father, Guardian; 87 = Daughter, son, grandchild; 88 = Professional
+    (e.g., social worker, nurse, therapist, psychiatrist, or group home staff);  -999=Missing;
+    89 = Biological parent; 91 = Stepparent; 92 = Adoptive parent; 93 = Foster parent
+  alias: infrmnt2
+  codes:
+    1: Biological mom
+    2: Biological dad
+    3: Grandparent
+    4: Special education (sped) teacher
+    5: General education teacher
+    6: Occupational therapist
+    7: Speech and language therapist
+    8: Behavioral therapist
+    9: Paraprofessional
+    10: Aide
+    11: Principal
+    12: Administrator
+    13: 90=Other
+    14: Content teacher
+    15: Parent center director
+    16: Self
+    17: Adoptive mother
+    18: Adoptive father
+    19: Foster mother
+    20: Foster father
+    21: Grandmother
+    22: Grandfather
+    23: Step-mother
+    24: Step-father
+    25: Aunt
+    26: Uncle
+    27: Missing Data
+    28: Both parents
+    31: Grandmother from mother side
+    32: Grandfather from mother side
+    33: Grandmother from father side
+    34: Grandfather from father side
+    36: Brother
+    37: Sister
+    38: Cousin
+    39: female caregiver
+    40: male caregiver
+    41: Female child
+    42: Male child
+    43: Spouse/Mate
+    44: Friend
+    45: Parent
+    46: Significant other
+    47: Sibling
+    48: Son/Daughter
+    49: Son-in-law/Daughter-in law
+    50: Other Relative
+    51: Paid caregiver
+    52: Friends
+    53: Roommate
+    54: Supervisor
+    55: mother's boyfriend
+    56: other parental figure
+    57: Summary
+    58: counselor
+    59: other female relative
+    60: other male relative
+    61: non-relative
+    62: Maternal Aunt
+    63: Maternal Uncle
+    64: Maternal Cousin
+    65: Paternal Aunt
+    66: Paternal Uncle
+    67: Paternal Cousin
+    68: Biological/Adoptive Mother and Grandmother
+    69: Biological/Adoptive Mother and Stepmother and Grandmother
+    70: Biological/Adoptive Mother and Grandmother and Foster Father
+    71: Biological/Adoptive Mother and Stepmother and Foster Mother
+    72: Biological/Adoptive Mother and Foster Mother
+    73: Biological/Adoptive Mother and Biological/Adoptive Father
+    74: Biological/Adoptive Mother and Stepmother and Biological/Adoptive Father
+    75: Biological/Adoptive Mother and Other
+    76: Biological/Adoptive Mother and Stepmother and Stepfather
+    77: Biological/Adoptive Mother and Stepfather
+    78: Biological/Adoptive Mother and Grandfather
+    79: Biological/Adoptive Mother and Stepmother and Foster Father
+    80: Biological/Adoptive Mother and Stepmother
+    81: Guardian, female
+    82: Other female
+    83: Guardian, male
+    84: Other male
+    85: Other/Grandparent/Nanny
+    86: Mother, Father, Guardian
+    87: Daughter, son, grandchild
+    88: Professional (e.g., social worker, nurse, therapist, psychiatrist, or group
+      home staff)
+    -999: Missing
+    89: Biological parent
+    91: Stepparent
+    92: Adoptive parent
+    93: Foster parent
+
+pds5:
+  type: Integer
+  description: How many of your friends have Taken some money at home that did not
+    belong to them, like from their mother's purse or from their parents' dresser?
+  range:
+  - 0::3
+  notes: 0=None of them; 1=One of them; 2=Some of them; 3=All of them
+  codes:
+    0: None of them
+    1: One of them
+    2: Some of them
+    3: All of them
+
+pds6g:
+  type: Integer
+  description: 'Girls only : Have you begun to menstruate?'
+  range:
+  - 0
+  - 1
+  - 99
+  notes: 0=No; 1=Yes; 99 = Refused
+  alias: pds5f,pds_qf10a,peterson_fem_menstruate,pufe_005t
+  codes:
+    0: 'No'
+    1: 'Yes'
+    99: Refused
+
+pds6gyr:
+  type: Integer
+  description: 'Girls only : If you answered YES, how old were you when you first
+    menstruated (years)?'
+  alias: afmcage_1_text,pds5f_firstperiod,pds_6.1g,pds_f6_p,pds_f6_y,pds_qf10b,peterson_fem_yesmenstruate_yrs,pfmcage_1_text
+
+pds6gmo:
+  type: Integer
+  description: 'Girls only : If you answered YES, how old were you when you first
+    menstruated (months)?'
+  alias: afmcage_2_text,pfmcage_2_text
+
+pds6g_d:
+  type: Integer
+  description: 'Girls only : Have not begun to menstruate?'
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: pds_menst
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+pds_n:
+  type: Integer
+  description: 'Number of present PDS scoring items '
+
+pds_sum:
+  type: Integer
+  description: Total PDS Score
+  alias: pds_pr_score
+
+pds_ave:
+  type: Float
+  description: Average PDS Score
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+  alias: eventname,stais_visit,timepoint
+
+visday:
+  type: Integer
+  description: Number of days from study baseline to date of visit
+
+pds_7b_pv:
+  type: Integer
+  description: Do you think your/your child's development is any earlier or later
+    than most boys/girls your/his/her age?
+  range:
+  - 1::5
+  - 999
+  notes: 1=much earlier; 2=somewhat earlier; 3=about the same; 4=somewhat later; 5=much
+    later
+  alias: amd,pds_6b,pds_mphdev,pds_sub_10,peterson_male_development,pmd
+  codes:
+    1: much earlier
+    2: somewhat earlier
+    3: about the same
+    4: somewhat later
+    5: much later
+
+imputation:
+  type: Integer
+  description: 'Indicator noting imputed data set number '
+  range:
+  - 1::20
+
+labsample29:
+  type: String
+  length: 10
+  description: Date of last menstrual period
+  notes: NA=if male or pre-puberty
+  alias: mendate,menstrualcycle1_p,menstrualcycle1_y
+  codes:
+    NA: if male or pre-puberty
+
+pufe_008t:
+  type: Integer
+  description: How would you rate your weight currently?
+  range:
+  - 1::7
+  notes: '1 = 1 (Underweight), 2 = 2, 3 = 3, 4 = 4 (Just about Right), 5 = 5, 6 =
+    6, 7 = (Overweight) '
+  alias: puma_008t
+  codes:
+    1: 1 (Underweight), 2 = 2, 3 = 3, 4 = 4 (Just about Right), 5 = 5, 6 = 6, 7 =
+      (Overweight)
+
+pufe_005at:
+  type: Integer
+  description: (Female only) What was the month and year of your first menstruation?
+  alias: pds_menst_years
+
+pufe_005bt:
+  type: Integer
+  description: (Female only) How many days does your menstrual cycle usually last?
+  alias: menstrualcycle2_p,menstrualcycle2_y
+
+pufe_005ct:
+  type: Integer
+  description: (Female only) How regular is your cycle?
+  range:
+  - 1::4
+  notes: 1 = Very regular, 2 = Pretty regular, 3 = Very irregular, 4 - Not sure yet
+  codes:
+    1: Very regular, 2 = Pretty regular, 3 = Very irregular, 4 - Not sure yet
+
+height_std:
+  type: Float
+  description: Height - Standard Unit
+  notes: -1 = Not known
+  alias: pds_ch_ft,pds_ch_in,pds_height_ft,pds_q6,pufe_006t,puma_006t
+  codes:
+    -1: Not known
+
+weight_std:
+  type: Float
+  description: Weight - Standard Unit
+  notes: -1 = Not known
+  alias: pds_ch_wgt,pds_q8,pds_weight,pufe_007t,puma_007t
+  codes:
+    -1: Not known
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+
+pds_pr_stage:
+  type: Integer
+  description: PDS Pubertal Stage
+  range:
+  - 1::5
+  notes: 1=pre-pubertal; 2=early puberty; 3=mid puberty; 4=late puberty; 5=post pubertal
+  codes:
+    1: pre-pubertal
+    2: early puberty
+    3: mid puberty
+    4: late puberty
+    5: post pubertal
+
+q19_a3:
+  type: Integer
+  description: Tanner Stage
+  range:
+  - 1::5
+  notes: 1=pre puberty, 2=early puberty, 3=mid puberty, 4=late puberty, 5=post puberty
+  alias: ch_tanner_dev_clinician,tanner_pr_stage
+  codes:
+    1: pre puberty, 2=early puberty, 3=mid puberty, 4=late puberty, 5=post puberty
+
+visit_num:
+  type: Integer
+  description: Visit number
+  range:
+  - 1::3
+  notes: 1=Baseline, 2=12 Month, 3=24 Month
+  codes:
+    1: Baseline, 2=12 Month, 3=24 Month
+
+accult_select_language:
+  type: Integer
+  description: Test given in Spanish? ??Espa??ol?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: pds_select_language___1
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+pds_f6_y_dk:
+  type: Integer
+  description: how old were you when you started to menstruate? Don't know
+  range:
+  - 999
+  - 777
+  notes: 999 = I Don't know; 777=refuse to answer
+  alias: pds_f6_p_dk,pdsg_2c,pdsg_2d
+  codes:
+    999: I Don't know
+    777: refuse to answer
+
+menstrualcycle2_y_dk:
+  type: Integer
+  description: On average, how many days are there between the first day of your period
+    and the first day of your next period? (e.g., 30 days). Don't know
+  range:
+  - 999
+  - 777
+  notes: 999 = Don't know; 777= refuse to answer
+  alias: menstrualcycle2_p_dk
+  codes:
+    999: Don't know
+    777: refuse to answer
+
+menstrualcycle3_y:
+  type: Integer
+  description: Is your menstrual cycle regular?
+  range:
+  - 0::3
+  notes: 1 = Yes; 0 = No; 2 = Don't know; 3 = Refuse to answer; The following questions
+    are about the history of your menstrual cycle. If you do not remember specific
+    details, just try to answer as best you can.
+  alias: menstrualcycle3_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    2: Don't know
+    3: Refuse to answer
+
+usingbc:
+  type: Integer
+  description: currently using birth control
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0=No; 1=Yes; -7=Refused
+  alias: menstrualcycle4_y
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -7: Refused
+
+menstrualcycle5_y:
+  type: Integer
+  description: Do you/does your child experience premenstrual symptoms, such as irritability,
+    fatigue, etc., which start before a period and stop within a few days of bleeding?
+  range:
+  - 1::4
+  - 777
+  notes: 1 = Not at all; 2 = Mild; 3 = Moderate; 4 = Severe; 777 = Decline to answer;
+    The following questions are about the history of your menstrual cycle. If you
+    do not remember specific details, just try to answer as best you can.
+  alias: menstrualcycle5_p,pds_p_mss_premenstrual,pds_sub_mss_premenstrual
+  codes:
+    1: Not at all
+    2: Mild
+    3: Moderate
+    4: Severe
+    777: Decline to answer
+
+menstrualcycle6_y:
+  type: Integer
+  description: Do your/your child's premenstrual symptoms interfere with your/her
+    relationships with family and friends, productivity, and/or social life activities?
+  range:
+  - 1::4
+  - 777
+  notes: 1 = Not at all; 2 = Mild; 3 = Moderate; 4 = Severe; 777 = Decline to answer;
+    The following questions are about the history of your menstrual cycle. If you
+    do not remember specific details, just try to answer as best you can.
+  alias: menstrualcycle6_p,pds_p_mss_relation,pds_sub_mss_relation
+  codes:
+    1: Not at all
+    2: Mild
+    3: Moderate
+    4: Severe
+    777: Decline to answer
+
+pds_q7:
+  type: Float
+  description: 'About how much have you grown in the past six months? '
+  notes: '*Growth in inches'
+
+pds_q9:
+  type: Float
+  description: How much weight have you gained in the past six months?
+  notes: '*Weight in pounds'
+
+pds_q10:
+  type: Float
+  description: 'How much weight have you lost in the past six months? '
+  notes: '*Weight in pounds'
+
+neuro_q8_height_cm:
+  type: Float
+  description: Physical/Neurological Examination Question 8 Measured Height in Centimeters
+  alias: pds_height_now_2
+
+q19_a1a:
+  type: Integer
+  description: 'Height: Feet'
+  range:
+  - 2::6
+  - -7
+  - -8
+  - -9
+  notes: '"Field should not be left blank. If missing, please use -7,8, -9."'
+  alias: pds_height_now_3
+
+q19_a1b:
+  type: Integer
+  description: 'Height: Inches'
+  range:
+  - 0::85
+  - -7
+  - -8
+  - -9
+  notes: '"Round to the nearest ? in. Field should not be left blank. If missing,
+    please use -7,-8, -9."'
+  alias: afhinches_1_text,amhinches_1_text,pds_height_now_4,pfhinches_1_text,pmhinches_1_text
+
+neuro_q10_weight_kg:
+  type: Float
+  description: Physical/Neurological Examination Question 10 Measured Weight in Kilograms
+  alias: pds_weight_now_1
+
+anthroweight1lb:
+  type: String
+  length: 30
+  description: 'Make sure shoes and unnecessary layers of clothes (jackets or hats)
+    have been removed before taking weight measurement.) 1. Okay, make sure you empty
+    your pockets for this next measurement. Please stand completely still in the center
+    of the scale with your feet close together, your hands at your side, and your
+    head looking straight ahead. Please stay as still as possible while I measure
+    your weight. (OBTAIN & RECORD WEIGHT #1 (in lbs))'
+  notes: 'WEIGHT #1 (measured to the nearest 0.1 pounds)'
+  alias: afw_1_text,amw_1_text,pds_weight_now_2,pfw_1_text,pmw_1_text
+
+aut_prebasic_health:
+  type: Integer
+  description: In general, how would you rate your health?
+  range:
+  - 1::5
+  notes: 1= Poor; 2 = Fair; 3 = Good; 4 = Very good; 5 = Excellent
+  alias: pds_generalhealth
+  codes:
+    1: Poor
+    2: Fair
+    3: Good
+    4: Very good
+    5: Excellent
+
+pds_height_now_1:
+  type: Float
+  description: How tall are you now? Specify in Meters
+
+timept:
+  type: Integer
+  description: Time Point
+  notes: 888 = not applicable; 999 = missing
+  codes:
+    888: not applicable
+    999: missing
+
+pubertyg_19:
+  type: Integer
+  description: 19. The pictures below show different stages of how the breasts grow.
+    A girl can go through each of the five stages shown. Please look at each of the
+    pictures, and read the sentences. Choose the number that is closest to your state
+    of growth.
+  range:
+  - 1::5
+  - -9999
+  notes: '1= The nipple is raised a little in this stage. The rest of the breast is
+    still flat; 2= This is the breast bud stage. In this stage the nipple is raised
+    more than in stage 1. The breast is a small mound. The areola is larger than in
+    stage 1; 3= The areola and the breast are both larger than in stage 2. The areola
+    does not stick out away from the breast.; 4= The areola and the nipple make up
+    a mound that sticks up above the shape of the breast. (Note: this stage may not
+    happen at all. Some girls develop from stage 3 to stage 5, with no stage 4; 5=
+    This is the mature adult stage. The breasts are fully developed. Only the nipple
+    sticks out in this stage. The areola has moved back in the general shape of the
+    breast; -9999= Do not wish to answer'
+  alias: pubertal_p_fb,pubertal_sub_fb
+  codes:
+    1: The nipple is raised a little in this stage. The rest of the breast is still
+      flat
+    2: This is the breast bud stage. In this stage the nipple is raised more than
+      in stage 1. The breast is a small mound. The areola is larger than in stage
+      1
+    3: The areola and the breast are both larger than in stage 2. The areola does
+      not stick out away from the breast.
+    4: 'The areola and the nipple make up a mound that sticks up above the shape of
+      the breast. (Note: this stage may not happen at all. Some girls develop from
+      stage 3 to stage 5, with no stage 4'
+    5: This is the mature adult stage. The breasts are fully developed. Only the nipple
+      sticks out in this stage. The areola has moved back in the general shape of
+      the breast
+    -9999: Do not wish to answer
+
+gynecological_hist_6:
+  type: Integer
+  description: Are your/your child's menstrual cycles regular now? In other words,
+    is the onset of each period generally predictable within 5 days?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: pds_p_mss_regular,pds_sub_mss_regular
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+menstrualcycle4_y:
+  type: Integer
+  description: Are you/is your child currently using hormonal birth control (eg. the
+    pill, hormone patch, hormone injection)?
+  range:
+  - 1
+  - 0
+  - 2
+  - 3
+  notes: 1 = Yes; 0 = No; 2 = Don't know; 3 = Refuse to answer; The following questions
+    are about the history of your menstrual cycle. If you do not remember specific
+    details, just try to answer as best you can.
+  alias: pds_p_mss_bcontrol,pds_sub_mss_bcontrol
+  codes:
+    1: 'Yes'
+    0: 'No'
+    2: Don't know
+    3: Refuse to answer
+
+menstrualcycle2_y:
+  type: Float
+  length: 30
+  description: On average, how many days are there between the first day of your/your
+    child's period and the first day of your/her next period? (e.g., 30 days)
+  range:
+  - 17::50
+  notes: If you don't know, please choose "don't know" in what follows below.
+  alias: pds_p_mss_average,pds_sub_mss_average
+
+scq_24_a:
+  type: Integer
+  description: Has a doctor ever told you that you have-Any other endocrine or hormone
+    problem
+  range:
+  - 0
+  - 1
+  notes: 0 = No;1 = Yes
+  alias: mstrl_p1c,mstrl_sub1c
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+midihist_029a:
+  type: String
+  length: 250
+  description: Underactive thyroid (for instance, Hashimoto's thyroiditis) describe
+  alias: mstrl_p1a,mstrl_sub1a
+
+midihist_030a:
+  type: String
+  length: 250
+  description: Overactive thyroid (for instance, Grave's disease) describe
+  alias: mstrl_p1b,mstrl_sub1b
+
+cirsg_13_endocrine_condn:
+  type: String
+  length: 200
+  description: Describe Endocrine/metabolic and breast condition
+  alias: mstrl_sub1c_age
+
+hypoage:
+  type: String
+  length: 50
+  description: age diagnosed hypothyroidism
+  alias: mstrl_p1a_age,mstrl_sub1a_age
+
+hyperage:
+  type: String
+  length: 50
+  description: age diagnosed hyperthyroidism
+  alias: mstrl_p1b_age,mstrl_sub1b_age
+
+menstrualcycle1_y:
+  type: String
+  length: 30
+  description: What was the date of the first day of your/your child's last period?
+  notes: The following questions are about the history of your menstrual cycle. If
+    you do not remember specific details, just try to answer as best you can.
+  alias: pds_p_mss_last,pds_sub_mss_last
+
+pubertyg_15:
+  type: String
+  length: 100
+  description: 15. When was your/your child's first period?
+  alias: pds_p_mss_date,pds_sub_mss_date
+
+pubertyb_18:
+  type: Integer
+  description: 18. The pictures below show different amounts of male pubic hair. A
+    boy goes through each of the 5 stages as shown. Please look at each picture, and
+    read the sentences. Choose the number of the picture that is closest to your stage
+    of pubic hair growth.
+  range:
+  - 1::5
+  - -9999
+  notes: 1= There is no pubic hair at all; 2= There is a little soft= long= lightly
+    colored hair. Most of the hair is at the base of the penis. This hair may be straight
+    or a little curly; 3= The hair is darker in this stage. It is more curled. It
+    has spread out and thinly covers a bigger area; 4= The hair is now as dark and
+    curly as that of an adult man. The area that the hair covers is not as big as
+    that of an adult man. The hair has not spread out to the legs; 5= The hair has
+    spread out to the legs. The hair is like that of an adult man. It covers the same
+    area as that of an adult man.; -9999= Do not wish to answer
+  alias: pubertal_p_mh,pubertal_sub_mh
+  codes:
+    1: There is no pubic hair at all
+    2: There is a little soft= long= lightly colored hair. Most of the hair is at
+      the base of the penis. This hair may be straight or a little curly
+    3: The hair is darker in this stage. It is more curled. It has spread out and
+      thinly covers a bigger area
+    4: The hair is now as dark and curly as that of an adult man. The area that the
+      hair covers is not as big as that of an adult man. The hair has not spread out
+      to the legs
+    5: The hair has spread out to the legs. The hair is like that of an adult man.
+      It covers the same area as that of an adult man.
+    -9999: Do not wish to answer
+
+pubertyg_20:
+  type: Integer
+  description: 20. The pictures below show different amounts of female pubic hair.
+    A girl goes through each of the five stages shown. Please look at each picture,
+    and read the sentences. Choose the number of the picture that is closest to the
+    amount of pubic hair you have.
+  range:
+  - 1::5
+  - -9999
+  notes: 1= There is no pubic hair; 2= There is a little long, lightly colored hair.
+    This may be straight or a little curly; 3= The hair is darker in this stage. It
+    is coarser and more curled. It has spread out and thinly covers a bigger area;
+    4= The hair is now as dark, curly, and coarse as that of an adult woman. However,
+    the area that the hair covers is not as large as that of an adult woman. The hair
+    has not spread out to the legs; 5= The hair is now like that of an adult woman.
+    It also covers the same area as that of the adult woman. The hair usually forms
+    a triangular pattern as it spreads out to the legs.; -9999= Do not wish to answer
+  alias: pubertal_p_fp,pubertal_sub_fp
+  codes:
+    1: There is no pubic hair
+    2: There is a little long, lightly colored hair. This may be straight or a little
+      curly
+    3: The hair is darker in this stage. It is coarser and more curled. It has spread
+      out and thinly covers a bigger area
+    4: The hair is now as dark, curly, and coarse as that of an adult woman. However,
+      the area that the hair covers is not as large as that of an adult woman. The
+      hair has not spread out to the legs
+    5: The hair is now like that of an adult woman. It also covers the same area as
+      that of the adult woman. The hair usually forms a triangular pattern as it spreads
+      out to the legs.
+    -9999: Do not wish to answer
+
+pubertyb_17:
+  type: Integer
+  description: 17. The pictures below show stages of growth of the testes, scrotum,
+    and penis. A boy goes through each of the 5 stages as shown. Please look at each
+    picture, and read the sentences. Choose the number of the picture that is closest
+    to your stage of growth.
+  range:
+  - 1::5
+  - -9999
+  notes: 1= The testes, scrotum, and penis are about the same size and shape as they
+    were when you were a child; 2= The testes and scrotum are bigger. The skin of
+    the scrotum has changed. The scrotum, the sac holding the testes, has gotten lower.;
+    3= The penis has grown in length. The testes and scrotum have grown and dropped
+    lower than in picture 2.; 4= The penis has gotten even bigger. It is wider. The
+    glans (the head of the penis) is bigger. The scrotum is darker than before. It
+    is bigger because the testes are bigger.; 5= The penis, scrotum, and testes are
+    the shape of that of an adult man; -9999= Do not wish to answer
+  alias: pubertal_p_mp,pubertal_sub_mp
+  codes:
+    1: The testes, scrotum, and penis are about the same size and shape as they were
+      when you were a child
+    2: The testes and scrotum are bigger. The skin of the scrotum has changed. The
+      scrotum, the sac holding the testes, has gotten lower.
+    3: The penis has grown in length. The testes and scrotum have grown and dropped
+      lower than in picture 2.
+    4: The penis has gotten even bigger. It is wider. The glans (the head of the penis)
+      is bigger. The scrotum is darker than before. It is bigger because the testes
+      are bigger.
+    5: The penis, scrotum, and testes are the shape of that of an adult man
+    -9999: Do not wish to answer
+
+pds_2b:
+  type: String
+  length: 50
+  description: How would you describe yourself physically?
+  alias: pds_2g
+
+pds_2_1b:
+  type: Integer
+  description: Describe your weight
+  range:
+  - 1::6
+  notes: 1=Very skinny (thin); 2=Somewhat skinny (thin); 3=Average weight; 4=Somewhat
+    overweight; 5=Very overweight; 6=Refuse
+  alias: pds_2.1b,pds_2_1g
+  codes:
+    1: Very skinny (thin)
+    2: Somewhat skinny (thin)
+    3: Average weight
+    4: Somewhat overweight
+    5: Very overweight
+    6: Refuse
+
+pds_2_2b:
+  type: Integer
+  description: your height for someone your age
+  range:
+  - 1::6
+  notes: 1=Very short; 2=Somewhat short; 3=Average height; 4=Somewhat tall; 5=Very
+    tall; 6=Refuse
+  alias: pds_2.2b,pds_2_2g
+  codes:
+    1: Very short
+    2: Somewhat short
+    3: Average height
+    4: Somewhat tall
+    5: Very tall
+    6: Refuse
+
+pds_5b:
+  type: Integer
+  description: 'How do you see yourself compared to other boys/girls your age? Would
+    you say that you:'
+  range:
+  - 1::4
+  notes: 1=Look younger than most boys/girls your age; 2=Look about average compared
+    to other boys/girls your age; 3=Look older than most boys/girls your age; 4=Refuse
+  alias: pds_5g
+  codes:
+    1: Look younger than most boys/girls your age
+    2: Look about average compared to other boys/girls your age
+    3: Look older than most boys/girls your age
+    4: Refuse
+
+mhx016b:
+  type: String
+  length: 250
+  description: 'If YES, Enter onset/resolved date indicate ongoing with treatment
+    or not. If NOT EVALUATED, explain or describe below: Endocrine disorder'
+  alias: mstrl_p1c_age
+
+resp_source:
+  type: Integer
+  description: Respondent Source
+  range:
+  - 1::6
+  notes: 1= subject; 2= parent; 3= clinician; 4= teacher; 5= trainer; 6= fidelity
+    reviewer
+  alias: source
+  codes:
+    1: subject
+    2: parent
+    3: clinician
+    4: teacher
+    5: trainer
+    6: fidelity reviewer

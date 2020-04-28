@@ -1,0 +1,1346 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: guid,ndar_psqi
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,record_id,subject,subject_id,subjectid
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: age_psqi
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: datacollecteddate,date_psqi,psqi_date,psqidate
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,gender_psqi,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+psqic1:
+  type: String
+  length: 50
+  description: 'Instructions: The following questions relate to your usual sleep habits
+    during the past month only. Your answers should indicate the most accurate reply
+    for the majority of days and nights in the past month. Please answer all the questions.'
+  alias: psqinh_01
+
+psqip1:
+  type: String
+  length: 50
+  description: 'Parent: During the past month, when has your child usually gone to
+    bed?     Child/Self: During the past month when have you usually gone to bed? '
+  notes: ' -9=incomplete'
+  alias: psi_bedtime,psq1,psqi1,psqi_01,psqi_1,psqi_q01,psqic2
+  codes:
+    -9: incomplete
+
+psqip2:
+  type: String
+  length: 50
+  description: 'Parent: During the past month, how long (in minutes) has it taken
+    your child to fall asleep each night?     Child/Self: During the past month how
+    long (in minutes) has it taken you to / fall asleep each night?'
+  notes: ' -9=incomplete'
+  alias: psq2,psq_minutes,psqi2,psqi_02,psqi_2,psqi_q02,psqic3,psqinh_02
+  codes:
+    -9: incomplete
+
+psqip3:
+  type: String
+  length: 50
+  description: 'Parent: During the past month, when has your child usually gotten
+    up in the morning?     Child/Self: During the past month when have you usually
+    gotten up in the / morning?'
+  notes: ' -9=incomplete'
+  alias: psq3,psq_gettingup,psqi3,psqi_03,psqi_3,psqi_q03,psqic4,psqinh_03
+  codes:
+    -9: incomplete
+
+psqip4:
+  type: String
+  length: 50
+  description: 'Parent: During the past month, how many hours of actual sleep does
+    your child get at night? (This may be different than the number of hours your
+    child spends in bed.)     Child/Self: During the past month how many hours of
+    actual sleep do you get at / night?'
+  notes: ' -9=incomplete'
+  alias: psi_hours,psqi4,psqi_04,psqi_4,psqi_q04,psqic5,psqinh_04
+  codes:
+    -9: incomplete
+
+psqip5:
+  type: Integer
+  description: 'Parent: One hears about "morning" and "evening" types of people. Which
+    one of these do you consider your child to be?     Child/Self: One hears about
+    "morning" and "evening" types of people. Which one / of these do you consider
+    yourself to be?'
+  range:
+  - 1::4
+  - -99
+  - 77
+  - 88
+  notes: 1= Definitely a morning type ; 2= More a morning than an evening type ; 3=
+    More an evening than a morning type ; 4= Definitely an evening type ; -99= N/A
+    ; 77= Refused ; 88= Missing
+  alias: psqic6
+  codes:
+    1: Definitely a morning type
+    2: More a morning than an evening type
+    3: More an evening than a morning type
+    4: Definitely an evening type
+    -99: N/A
+    77: Refused
+    88: Missing
+
+psqip6a_1:
+  type: Integer
+  description: 'Parent: During the past month, how often has your child had trouble
+    sleeping because he/she Cannot get to sleep within 30 minutes.     Child/Self:
+    During the past month, how often have you had trouble sleeping / because you -Cannot
+    get to sleep within 30 minutes'
+  range:
+  - 1::4
+  - -99
+  - 77
+  - 88
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+  alias: psq_5a,psqi5a,psqi_05a,psqi_5a,psqi_q05a,psqic7a_1,psqinh_06a
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -99: N/A
+    77: Refused
+    88: Missing
+
+psqip6a_2:
+  type: Integer
+  description: 'Parent: During the past month, how often has your child had trouble
+    sleeping because he/she Wakes up in the middle of the night or early morning.     Child/Self:
+    During the past month, how often have you had trouble sleeping / because you -Wake
+    up in the middle of the night or early morning'
+  range:
+  - 1::4
+  - -99
+  - 77
+  - 88
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+  alias: psq_5b,psqi5b,psqi_05b,psqi_5b,psqi_q05b,psqic7a_2,psqinh_06b
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -99: N/A
+    77: Refused
+    88: Missing
+
+psqip6a_3:
+  type: Integer
+  description: 'Parent: During the past month, how often has your child had trouble
+    sleeping because he/she Has to get up to use the bathroom.     Child/Self: During
+    the past month, how often have you had trouble sleeping / because you -Have to
+    get up to use the bathroom'
+  range:
+  - 1::4
+  - -99
+  - 77
+  - 88
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+  alias: csq_psqi_5c,psq_5c,psqi5c,psqi_05c,psqi_5c,psqi_q05c,psqic7a_3,psqinh_06c,psqu_5c
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -99: N/A
+    77: Refused
+    88: Missing
+
+psqip6a_4:
+  type: Integer
+  description: 'Parent: During the past month, how often has your child had trouble
+    sleeping because he/she Cannot breathe comfortably.     Child/Self: During the
+    past month, how often have you had trouble sleeping / because you -Cannot breathe
+    comfortably'
+  range:
+  - 1::4
+  - -99
+  - 77
+  - 88
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+  alias: csq_psqi_5d,psq_5d,psqi5d,psqi_05d,psqi_5d,psqi_q05d,psqic7a_4,psqinh_06d
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -99: N/A
+    77: Refused
+    88: Missing
+
+psqip6a_5:
+  type: Integer
+  description: 'Parent: During the past month, how often has your child had trouble
+    sleeping because he/she Cough or snore loudly.     Child/Self: During the past
+    month, how often have you had trouble sleeping / because you -Cough or snore loudly'
+  range:
+  - 1::4
+  - -99
+  - 77
+  - 88
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+  alias: csq_psqi_5e,psq_5e,psqi5e,psqi_05e,psqi_5e,psqi_q05e,psqic7a_5,psqinh_06e
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -99: N/A
+    77: Refused
+    88: Missing
+
+psqip6b_1:
+  type: Integer
+  description: 'Parent: During the past month, how often has your child had trouble
+    sleeping because he/she Feels too cold.     Child/Self: During the past month,
+    how often have you had trouble sleeping / because you -Feel too cold'
+  range:
+  - 1::4
+  - -99
+  - 77
+  - 88
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+  alias: csq_psqi_5f,psq_5f,psqi5f,psqi_05f,psqi_5f,psqi_q05f,psqic7b_1,psqic7b_6,psqinh_06f,psqip6b_6
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -99: N/A
+    77: Refused
+    88: Missing
+
+psqip6b_2:
+  type: Integer
+  description: 'Parent: During the past month, how often has your child had trouble
+    sleeping because he/she Feels too hot.     Child/Self: During the past month,
+    how often have you had trouble sleeping / because you -Feel too hot'
+  range:
+  - 1::4
+  - -99
+  - 77
+  - 88
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+  alias: csq_psqi_5g,psq_5g,psqi5g,psqi_05g,psqi_5g,psqi_q05g,psqic7b_2,psqic7b_7,psqip6b_7
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -99: N/A
+    77: Refused
+    88: Missing
+
+psqip6b_3:
+  type: Integer
+  description: 'Parent: During the past month, how often has your child had trouble
+    sleeping because he/she Has bad dreams.     Child/Self: During the past month,
+    how often have you had trouble sleeping / because you -Had bad dreams'
+  range:
+  - 1::4
+  - -99
+  - 77
+  - 88
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+  alias: csq_psqi_5h,psq_5h,psqi5h,psqi_05h,psqi_5h,psqi_q05h,psqic7b_3,psqic7b_8,psqinh_06g,psqip6b_8
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -99: N/A
+    77: Refused
+    88: Missing
+
+psqip6b_4:
+  type: Integer
+  description: 'Parent: During the past month, how often has your child had trouble
+    sleeping because he/she Has pain.     Child/Self: During the past month, how often
+    have you had trouble sleeping / because you -Have pain'
+  range:
+  - 1::4
+  - -99
+  - 77
+  - 88
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+  alias: csq_psqi_5j,psq_5i,psqi5i,psqi_05i,psqi_5i,psqi_q05i,psqic7b_4,psqic7b_9,psqinh_06h,psqip6b_9
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -99: N/A
+    77: Refused
+    88: Missing
+
+psqip6b_5:
+  type: Integer
+  description: 'Parent: During the past month, how often has your child had trouble
+    sleeping because he/she Other reason(s), please describe, including how often
+    your child has had trouble sleeping because of this reason(s):________________     Child/Self:
+    During the past month, how often have you had trouble sleeping / because you -Other
+    reason(s), please describe, including how often you have had trouble sleeping
+    because of this reason(s):'
+  range:
+  - 1::4
+  - -99
+  - 77
+  - 88
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+  alias: psq_5j_specify,psqi5j2,psqi_05othera,psqi_5j,psqi_5othera,psqi_q05k,psqic7b_10,psqic7b_5,psqinh_06i,psqip6b_10
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -99: N/A
+    77: Refused
+    88: Missing
+
+psqpi7_1:
+  type: Integer
+  description: 'Parent: During the past month, how often has your child taken medicine
+    (prescribed or "over the counter") to help him/her sleep?     Child/Self: During
+    the past month how often have you taken medicine (prescribed or "over the counter")
+    to help you sleep?'
+  range:
+  - 1::4
+  - -99
+  - 77
+  - 88
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+  alias: psq_meds,psqi7,psqi_07,psqi_6,psqi_7,psqi_q07,psqic8,psqinh_08,psqpi7
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -99: N/A
+    77: Refused
+    88: Missing
+
+psqpi7_2:
+  type: Integer
+  description: 'Parent: During the past month, how often has your child had trouble
+    staying awake while driving, eating meals, or engaging in social activity?     Child/Self:
+    During the past month, how often have you had trouble staying awake / while driving,
+    eating meals, or engaging in social activity?'
+  range:
+  - 1::4
+  - -99
+  - 77
+  - 88
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+  alias: psq_activities,psqi8,psqi_7,psqi_8,psqi_q08,psqic9,psqinh_09
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -99: N/A
+    77: Refused
+    88: Missing
+
+psqpi7_3:
+  type: Integer
+  description: 'Parent: During the past month, how much of a problem has it been for
+    your child to keep up enthusiasm to get things done?     Child/Self: During the
+    past month, how much of a problem has it been for you to keep up enthusiasm to
+    get things done?'
+  range:
+  - 1::4
+  - -99
+  - 77
+  - 88
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+  alias: psq8,psq_enthusiasm,psqi9,psqi_8,psqi_q09,psqic10,psqinh_10
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -99: N/A
+    77: Refused
+    88: Missing
+
+psqpi8:
+  type: Integer
+  description: 'Parent: During the past month, how would you rate your child''s sleep
+    quality overall?     Child/Self: During the past month, how would you rate your
+    sleep quality overall?'
+  range:
+  - 1::4
+  - -99
+  - 77
+  - 88
+  notes: 1= Very good ; 2= Fairly good ; 3= Fairly bad ; 4= Very bad ; -99= N/A ;
+    77= Refused ; 88= Missing
+  alias: psq9,psq_quality,psqi6,psqi_06,psqi_6,psqi_q06,psqic11,psqinh_07,psqpi6
+  codes:
+    1: Very good
+    2: Fairly good
+    3: Fairly bad
+    4: Very bad
+    -99: N/A
+    77: Refused
+    88: Missing
+
+psqpi9:
+  type: Integer
+  description: 'Parent: How would you rate your child''s sleep quality last night?     Child/Self:
+    How would you rate your sleep quality last night?'
+  range:
+  - 1::4
+  - -99
+  - 77
+  - 88
+  notes: 1= Very good ; 2= Fairly good ; 3= Fairly bad ; 4= Very bad ; -99= N/A ;
+    77= Refused ; 88= Missing
+  alias: psqic12
+  codes:
+    1: Very good
+    2: Fairly good
+    3: Fairly bad
+    4: Very bad
+    -99: N/A
+    77: Refused
+    88: Missing
+
+psqi_nh5:
+  type: Integer
+  description: During the past month, have you taken naps during the day?
+  range:
+  - 0::3
+  notes: 0=Not during the past month; 1=Less than once a week; 2=Once or twice a week;
+    3=Three or more times a week
+  alias: psqinh_05
+  codes:
+    0: Not during the past month
+    1: Less than once a week
+    2: Once or twice a week
+    3: Three or more times a week
+
+psqi_nh11:
+  type: Integer
+  description: Do you go to bed and get out of bed at about the same time (within
+    one hour) every day?
+  range:
+  - 0::2
+  notes: 0=Usually/Always; 1=Sometimes; 2=Rarely/Never
+  alias: psqinh_11
+  codes:
+    0: Usually/Always
+    1: Sometimes
+    2: Rarely/Never
+
+psqi_nh12:
+  type: Integer
+  description: Are you satisfied with your sleep?
+  range:
+  - 0::2
+  notes: 0=Usually/Always; 1=Sometimes; 2=Rarely/Never
+  alias: psqinh_12
+  codes:
+    0: Usually/Always
+    1: Sometimes
+    2: Rarely/Never
+
+psqi_nh13:
+  type: Integer
+  description: Do you stay awake all day without dozing or napping?
+  range:
+  - 0::2
+  notes: 0=Usually/Always; 1=Sometimes; 2=Rarely/Never
+  alias: psqinh_13
+  codes:
+    0: Usually/Always
+    1: Sometimes
+    2: Rarely/Never
+
+psqi_nh14:
+  type: Integer
+  description: Are you asleep (or trying to sleep) between 2:00 a.m. and 4:00 a.m.?
+  range:
+  - 0::2
+  notes: 0=Usually/Always; 1=Sometimes; 2=Rarely/Never
+  alias: psqinh_14
+  codes:
+    0: Usually/Always
+    1: Sometimes
+    2: Rarely/Never
+
+psqi_nh15:
+  type: Integer
+  description: Do you sleep between 6 and 8 hours per day?
+  range:
+  - 0::2
+  notes: 0=Usually/Always; 1=Sometimes; 2=Rarely/Never
+  alias: psqinh_15
+  codes:
+    0: Usually/Always
+    1: Sometimes
+    2: Rarely/Never
+
+elig_inclusion_check:
+  type: Integer
+  description: Checks for a pass/fail on Elig for Inclusion
+  range:
+  - 0::3
+  notes: 0=Failed (Ineligible); 1=Passed (Eligible); 2=In screening; 3=NA
+  codes:
+    0: Failed (Ineligible)
+    1: Passed (Eligible)
+    2: In screening
+    3: NA
+
+dataquality:
+  type: Integer
+  description: Data quality
+  range:
+  - 0::5
+  notes: 0=No data (cancelled); 1=Data entered but only once, has missing data; 2=Data
+    entered but only once, no missing data; 3=Double entered; 4=Data frozen for cleaning;
+    5=Data clean/locked
+  codes:
+    0: No data (cancelled)
+    1: Data entered but only once, has missing data
+    2: Data entered but only once, no missing data
+    3: Double entered
+    4: Data frozen for cleaning
+    5: Data clean/locked
+
+visit_name:
+  type: String
+  length: 20
+  description: session ID/screening ID
+  alias: visitnumber
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+  alias: visitlabel
+
+psqinh_05a:
+  type: Integer
+  description: If you checked once or twice a week or more, how long do you typically
+    nap for?
+  range:
+  - 0::240
+  notes: Number of minutes
+
+subjecttype:
+  type: String
+  length: 20
+  description: Subject Type
+  range:
+  - Control
+  - Prodromal
+  - Enhanced
+  - Non-Enhanced
+
+psqi5j:
+  type: String
+  length: 1000
+  description: Other reason(s), please describe
+  alias: psq5jdesc,psq_other_specify,psqi_05other,psqi_5other
+
+psqi10:
+  type: Integer
+  description: Do you have a bed partner or room mate?
+  range:
+  - 0::5
+  - -9
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -9 = Incomplete; 0 = No; 5 = Yes
+  alias: psq_roommate,psqi_10
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -9: Incomplete
+    0: 'No'
+    5: 'Yes'
+
+psqi10a:
+  type: Integer
+  description: If you have a room mate or bed partner, ask him/her how often in the
+    past month you have had loud snoring
+  range:
+  - 1::4
+  - -9
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -9 = Incomplete
+  alias: psq_snoring,psqi_10a,psqi_q11a
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -9: Incomplete
+
+psqi10b:
+  type: Integer
+  description: If you have a room mate or bed partner, ask him/her how often in the
+    past month you have had long pauses between breaths while asleep
+  range:
+  - 1::4
+  - -9
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -9 = Incomplete
+  alias: psq_pauses,psqi_10b,psqi_q11b
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -9: Incomplete
+
+psqi10c:
+  type: Integer
+  description: If you have a room mate or bed partner, ask him/her how often in the
+    past month you have had legs twitching or jerking while you sleep
+  range:
+  - 1::4
+  - -9
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -9 = Incomplete
+  alias: psq_twitch,psqi_10c,psqi_q11c
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -9: Incomplete
+
+psqi10d:
+  type: Integer
+  description: If you have a room mate or bed partner, ask him/her how often in the
+    past month you have had episodes of disorientation or confusion during sleep
+  range:
+  - 1::4
+  - -9
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -9 = Incomplete
+  alias: psq_confusion,psqi_10d,psqi_q11d
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -9: Incomplete
+
+psqi10e:
+  type: String
+  length: 250
+  description: 'If you have a room mate or bed partner, ask him/her how often in the
+    past month you have had other restlessness while you sleep; please describe:'
+  alias: psq_other_restless,psqi_10e,psqi_10e1,psqi_q11e
+
+psqi10e2:
+  type: Integer
+  description: 'If you have a room mate or bed partner, ask him/her how often in the
+    past month you have had other restlessness while you sleep; please describe frequency:'
+  range:
+  - 1::4
+  - -9
+  notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+    a week ; 4= Three or more times a week ; -9 = Incomplete
+  alias: psq_restless,psqi_10e,psqi_10e1,psqi_q11f
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    -9: Incomplete
+
+psqi_9:
+  type: Integer
+  description: During the past month, how much of a problem has it been for you to
+    keep up enough enthusiasm to get things done?
+  range:
+  - 1::4
+  notes: 1=No problem at all; 2=Only a very slight problem; 3=Somewhat of a problem;
+    4=A very big problem
+  alias: psq_enthusiasm,psqi9
+  codes:
+    1: No problem at all
+    2: Only a very slight problem
+    3: Somewhat of a problem
+    4: A very big problem
+
+psqia_1:
+  type: Integer
+  description: 'During the past month, how often have you had trouble sleeping because
+    you: Feel hot flashes'
+  range:
+  - 1::4
+  notes: 1 = Not during the past month; 2 = Less than once a week; 3 = Once or twice
+    a week; 4 = Three or more times a week
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+
+psqia_2:
+  type: Integer
+  description: 'During the past month, how often have you had trouble sleeping because
+    you: Feel general nervousness'
+  range:
+  - 1::4
+  notes: 1 = Not during the past month; 2 = Less than once a week; 3 = Once or twice
+    a week; 4 = Three or more times a week
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+
+psqia_3:
+  type: Integer
+  description: 'During the past month, how often have you had trouble sleeping because
+    you: Had memories or nightmares of a traumatic experience'
+  range:
+  - 1::4
+  notes: 1 = Not during the past month; 2 = Less than once a week; 3 = Once or twice
+    a week; 4 = Three or more times a week
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+
+psqia_4:
+  type: Integer
+  description: 'During the past month, how often have you had trouble sleeping because
+    you: Had severe anxiety or panic, not related to traumatic memories'
+  range:
+  - 0::5
+  notes: 0=Never; 1 = Not during the past month; 2 = Less than once a week; 3 = Once
+    or twice a week; 4 = Three or more times a week; 5= Every or nearly every night
+  alias: awakesleepwithanxiety
+  codes:
+    0: Never
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    5: Every or nearly every night
+
+psqia_5:
+  type: Integer
+  description: 'During the past month, how often have you had trouble sleeping because
+    you: Had bad dreams, not related to traumatic memories'
+  range:
+  - 0::5
+  notes: 0=Never; 1 = Not during the past month; 2 = Less than once a week; 3 = Once
+    or twice a week; 4 = Three or more times a week; 5= Every or nearly every night
+  alias: howoftenunpleasantdreams
+  codes:
+    0: Never
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+    5: Every or nearly every night
+
+psqia_6:
+  type: Integer
+  description: 'During the past month, how often have you had trouble sleeping because
+    you: Had episodes of terror or screaming during sleep without fully awakening'
+  range:
+  - 1::4
+  notes: 1 = Not during the past month; 2 = Less than once a week; 3 = Once or twice
+    a week; 4 = Three or more times a week
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+
+psqia_7:
+  type: Integer
+  description: During the past month, how often have you had trouble sleeping because
+    you:Had episodes of "acting out" your dreams, such as kicking, punching, running,
+    or screaming
+  range:
+  - 1::4
+  notes: 1 = Not during the past month; 2 = Less than once a week; 3 = Once or twice
+    a week; 4 = Three or more times a week
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+
+psqia_8:
+  type: Integer
+  description: 'During the past month, how often have you had trouble sleeping because
+    you: How much anxiety did you feel during the memories/nightmares'
+  range:
+  - 1::4
+  notes: 1 = Not during the past month; 2 = Less than once a week; 3 = Once or twice
+    a week; 4 = Three or more times a week
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+
+psqia_9:
+  type: Integer
+  description: 'During the past month, how often have you had trouble sleeping because
+    you: How much anger did you feel during the memories/nightmares'
+  range:
+  - 1::4
+  notes: 1 = Not during the past month; 2 = Less than once a week; 3 = Once or twice
+    a week; 4 = Three or more times a week
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+
+psqia_10:
+  type: Integer
+  description: 'During the past month, how often have you had trouble sleeping because
+    you: What time of night did most memories/nightmares occur?'
+  range:
+  - 1::4
+  notes: 1 = Not during the past month; 2 = Less than once a week; 3 = Once or twice
+    a week; 4 = Three or more times a week
+  codes:
+    1: Not during the past month
+    2: Less than once a week
+    3: Once or twice a week
+    4: Three or more times a week
+
+csq_psqi_1:
+  type: String
+  length: 50
+  description: During the past two weeks, when have you usually gone to bed at night?
+  notes: Bedtime, Military Time (eg 12:30 AM = 0030)
+  codes:
+    AM: 0030)
+
+csq_psqi_3:
+  type: String
+  length: 50
+  description: During the past two weeks, when have you usually gotten up in the morning?
+  notes: Risetime, Military Time (eg 11:30 pm = 2330)
+  codes:
+    pm: 2330)
+
+csq_psqi_2:
+  type: String
+  length: 50
+  description: During the past two weeks, how long (in minutes) has it usually taken
+    you to fall asleep each night?
+
+csq_psqi_2_score:
+  type: Integer
+  description: Scoring for how long has it usually taken you to fall asleep each night
+  range:
+  - 0::3
+  notes: 0 = less than or equal to 15 minutes, 1 = 16-30 minutes, 2 = 31-60 minutes,
+    3 = greater than 60 minutes
+  codes:
+    0: less than or equal to 15 minutes, 1 = 16-30 minutes, 2 = 31-60 minutes, 3 =
+      greater than 60 minutes
+
+csq_psqi_5a:
+  type: Integer
+  description: 'During the past two weeks, how often have you had trouble sleeping
+    because you cannot get to sleep within 30 minutes? '
+  range:
+  - 0::3
+  notes: 0=Not at all; 1=Less than once a week; 2=Once or twice a week; 3=Three times
+    or more a week
+  codes:
+    0: Not at all
+    1: Less than once a week
+    2: Once or twice a week
+    3: Three times or more a week
+
+csq_psqi_4:
+  type: String
+  length: 50
+  description: During the past two weeks, how many hours of actual sleep did you get
+    at night?  (This may be different than the number of hours you spend in bed).
+  alias: sleephourspernight
+
+csq_psqi_4_score:
+  type: Integer
+  description: Scoring for how many hours of actual sleep did you get at night
+  range:
+  - 0::3
+  notes: 0= more than  7 hours; 1 = 6-7 hours, 2 = 5-6 hours; 3 = less than 5 hours
+  alias: psqi_component3
+  codes:
+    0: more than  7 hours
+    1: 6-7 hours, 2 = 5-6 hours
+    3: less than 5 hours
+
+csq_psqi_5b1:
+  type: Integer
+  description: During the past two weeks, how often have you had trouble sleeping
+    because you wake up in the middle of the night?
+  range:
+  - 0::3
+  notes: 0=Not at all; 1=Less than once a week; 2=Once or twice a week; 3=Three times
+    or more a week
+  codes:
+    0: Not at all
+    1: Less than once a week
+    2: Once or twice a week
+    3: Three times or more a week
+
+csq_psqi_5b2:
+  type: Integer
+  description: During the past two weeks, how often have you had trouble sleeping
+    because you wake up early in the morning?
+  range:
+  - 0::3
+  notes: 0=Not at all; 1=Less than once a week; 2=Once or twice a week; 3=Three times
+    or more a week
+  codes:
+    0: Not at all
+    1: Less than once a week
+    2: Once or twice a week
+    3: Three times or more a week
+
+csq_psqi_6:
+  type: Integer
+  description: 'During the past two weeks, how would you rate you sleep quality overall? '
+  range:
+  - 0::3
+  notes: 0=Very good; 1=Fairly good; 2=Fairly bad; 3=Very bad
+  codes:
+    0: Very good
+    1: Fairly good
+    2: Fairly bad
+    3: Very bad
+
+csq_psqi_se:
+  type: Float
+  description: 'Sleep efficiency '
+  notes: 'csq_psqi_4/csq_psqi_tib*100 '
+
+insomnia8:
+  type: Integer
+  description: PSQI Component 4 (Sleep efficiency) score
+  range:
+  - 0::3
+  notes: 0 = sleep efficiency greater than 85%; 1 = 75-84%; 2 = 65-74%; 3 = less than
+    65%; Sleep efficiency = (Number of hours slept from  PSQI4/Number of hours in
+    bed calculated from PSQI1 and PSQI3)*100
+  alias: csq_psqi_se_score,psqi_component4,psqihse
+  codes:
+    0: sleep efficiency greater than 85%
+    1: 75-84%
+    2: 65-74%
+    3: less than 65%
+
+csq_psqi_sd_score:
+  type: Integer
+  description: 'Score for sleep disturbance (Modified PSQI Component 5: Sleep Disturbance)'
+  range:
+  - 0::3
+  notes: 0 = sum csq_psqi_5b1_score + csq_psqi_5b2_score is 0; 1 = sum is 1-2, 2 =
+    sum is 3-4, 3 = sum is 5-6
+  alias: psqi_component5,psqidistb
+  codes:
+    0: sum csq_psqi_5b1_score + csq_psqi_5b2_score is 0
+    1: sum is 1-2, 2 = sum is 3-4, 3 = sum is 5-6
+
+csq_psqi_7:
+  type: Integer
+  description: During the past two weeks, how often have you taken medicine (prescribed
+    or "over the  counter") to help you sleep?
+  range:
+  - 0::3
+  notes: 0=Not at all; 1=Less than once a week; 2=Once or twice a week; 3=Three times
+    or more a week
+  codes:
+    0: Not at all
+    1: Less than once a week
+    2: Once or twice a week
+    3: Three times or more a week
+
+csq_psqi_tib:
+  type: Float
+  description: Hours spent in bed
+  notes: Hours, Calculated from csq_psqi_1 and csq_psqi_3
+
+csq_psqi_8:
+  type: Integer
+  description: During the past two weeks, how often have you had trouble staying awake
+    while driving, eating meals, or engaging in social activity?
+  range:
+  - 0::3
+  notes: 0=Not at all; 1=Less than once a week; 2=Once or twice a week; 3=Three times
+    or more a week
+  codes:
+    0: Not at all
+    1: Less than once a week
+    2: Once or twice a week
+    3: Three times or more a week
+
+psqi_total:
+  type: Float
+  description: PSQI Total score
+  range:
+  - 0::21
+  notes: 'Modified score: psqi_total_score  = Sum of Components 1 to 7; Component
+    1 (Subjective sleep quality) score = csq_psqi_6 score; Component 2 (Sleep latency)
+    score: 0 = sum csq_psqi_2_score + csq_psqi_5a_score is 0; 1 = sum is 1-2, 2 =
+    sum is 3-4, 3 = sum is 5-6;  Component 3 (Sleep duration) score = csq_psqi_4 score;
+    Component 4 (Sleep efficiency) score: 0 = sleep efficiency greater than 85%, 1
+    = 75-84%, 2 = 65-74%, 3 = less than 65%; Component 5 (Sleep disturbance) score:
+    0 = sum csq_psqi_5b1_score + csq_psqi_5b2_score is 0; 1 = sum is 1-2, 2 = sum
+    is 3-4, 3 = sum is 5-6; Component 6 (Use of sleeping medication) score = csq_psqi_7
+    score; Component 7 (Daytime dsyfunction) score = csq_psqi_8 score'
+  alias: psqi,psqi_gen_score,psqi_score
+  codes:
+    0: sum csq_psqi_5b1_score + csq_psqi_5b2_score is 0
+    1: sum is 1-2, 2 = sum is 3-4, 3 = sum is 5-6
+
+subject_description:
+  type: String
+  length: 4000
+  description: Subject related information (e.g the affection, phenotype, disease
+    information, etc.).
+  alias: psqi_notes
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+  alias: siteid
+
+week:
+  type: Float
+  description: Week in level/study
+  notes: 99=week 10-week 14
+  codes:
+    99: week 10-week 14
+
+days_baseline:
+  type: Integer
+  description: Days since baseline
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+
+t_mde_22:
+  type: Integer
+  description: Was there any reason why you/she think you/she had trouble sleeping
+    during that time?
+  range:
+  - 0
+  - 1
+  notes: No = 0; Yes = 1
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+timept:
+  type: Integer
+  description: Time Point
+  notes: 888 = not applicable; 999 = missing
+  alias: timepoint
+  codes:
+    888: not applicable
+    999: missing
+
+average_sleep:
+  type: Integer
+  description: How much sleep do you average per night?
+  alias: pastsleep_hourspernight
+
+psqi_pret_score:
+  type: Integer
+  description: Pittsburgh Sleep Quality Index Sleep (Pre-Trauma) [SCORE]
+  range:
+  - 0::3
+  notes: 0=Good Duration; 1=Fairly Good Duration; 2=Fairly Poor Duration; 3=Poor Duration
+  codes:
+    0: Good Duration
+    1: Fairly Good Duration
+    2: Fairly Poor Duration
+    3: Poor Duration
+
+sleepdifficultystressfulexp:
+  type: Integer
+  description: Difficulty Sleep After Stress
+  range:
+  - 0::4
+  - -7
+  - -8
+  notes: 0=Never; 1=Rarely; 2=Sometimes; 3=Often; 4=Very often; -8=DON'T KNOW; -7=REFUSED
+  codes:
+    0: Never
+    1: Rarely
+    2: Sometimes
+    3: Often
+    4: Very often
+    -8: DON'T KNOW
+    -7: REFUSED
+
+sleepdifficultybadnews:
+  type: Integer
+  description: Difficulty Sleep After Bad News
+  range:
+  - 0::4
+  - -7
+  - -8
+  notes: 0=Never; 1=Rarely; 2=Sometimes; 3=Often; 4=Very often; -8=DON'T KNOW; -7=REFUSED
+  codes:
+    0: Never
+    1: Rarely
+    2: Sometimes
+    3: Often
+    4: Very often
+    -8: DON'T KNOW
+    -7: REFUSED
+
+psqi3:
+  type: String
+  length: 25
+  description: DURING THE PAST MONTH, what time have you usually gotten up in the
+    morning, ON WEEKDAYS?
+
+psqi4:
+  type: String
+  length: 25
+  description: DURING THE PAST MONTH, what time?have you usually gotten up in the
+    morning, ON WEEKENDS?
+
+visit_num:
+  type: Integer
+  description: Visit number
+  range:
+  - 1::3
+  notes: 1=Baseline, 2=12 Month, 3=24 Month
+  codes:
+    1: Baseline, 2=12 Month, 3=24 Month
+
+psqi5jalt:
+  type: Integer
+  description: Are there any other reasons you have had trouble sleeping in the past
+    month?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+psqi5j_1:
+  type: String
+  length: 100
+  description: 'Are there any other reasons you have had trouble sleeping in the past
+    month? If YES, please describe:'
+
+psqi5j_2:
+  type: Integer
+  description: How often during the past month have you had trouble sleeping because
+    of this?
+  range:
+  - 1::4
+  notes: 1=Less than once a week; 2=Once or twice a week; 3=Three times or more a
+    week
+  codes:
+    1: Less than once a week
+    2: Once or twice a week
+    3: Three times or more a week
+
+parent_sleep20:
+  type: Integer
+  description: 'Parent: Does your child have a bed partner (e.g., a sibling) or share
+    their bedroom with someone? / Child or Self-report: Do you have a bed partner
+    or share your bedroom with someone?'
+  range:
+  - 1::4
+  notes: 1=No bed partner or roommate; 2=Partner/ roommate in other room; 3=Partner
+    in same room, but not same bed; 4=Partner in same bed
+  alias: psqi10alt
+  codes:
+    1: No bed partner or roommate
+    2: Partner/ roommate in other room
+    3: Partner in same room, but not same bed
+    4: Partner in same bed
+
+psqi_08:
+  type: Integer
+  description: How much anxiety did you feel during the memories/nightmares?
+  range:
+  - 1::4
+  notes: 1= None; 2= Very Little; 3= Moderate; 4= Severe
+  codes:
+    1: None
+    2: Very Little
+    3: Moderate
+    4: Severe
+
+psqi_09:
+  type: Integer
+  description: How much anger did you feel during the memories/nightmares?
+  range:
+  - 1::4
+  notes: 1= None; 2= Very Little; 3= Moderate; 4= Severe
+  codes:
+    1: None
+    2: Very Little
+    3: Moderate
+    4: Severe
+
+psqi_10:
+  type: Integer
+  description: What time of night did most memories/nightmares occur?
+  range:
+  - 1::4
+  notes: 1= Early in the night; 2= Middle of the night; 3= Late night, near morning;
+    4= No particular time
+  codes:
+    1: Early in the night
+    2: Middle of the night
+    3: Late night, near morning
+    4: No particular time
+
+psqi_component1:
+  type: Integer
+  description: Subjective sleep quality (component 1) score
+  range:
+  - 0::3
+  notes: 0=no difficulty; 3=severe difficulty
+  codes:
+    0: no difficulty
+    3: severe difficulty
+
+psqi_component2:
+  type: Integer
+  description: Sleep latency (component 2) score
+  range:
+  - 0::3
+  notes: 0=no difficulty; 3=severe difficulty
+  codes:
+    0: no difficulty
+    3: severe difficulty
+
+psqi_component6:
+  type: Integer
+  description: Use of sleep medication (component 6) score
+  range:
+  - 0::3
+  notes: 0=no difficulty; 3=severe difficulty
+  codes:
+    0: no difficulty
+    3: severe difficulty
+
+psqi_component7:
+  type: Integer
+  description: Daytime dysfunction (component 7) score
+  range:
+  - 0::3
+  notes: 0=no difficulty; 3=severe difficulty
+  codes:
+    0: no difficulty
+    3: severe difficulty
+
+baseline_a_002:
+  type: String
+  length: 100
+  description: 'Interview Start Time:'
+  alias: psqi_time
+
+phi3a:
+  type: Integer
+  description: 'Time interview began: AM or PM'
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM
+  alias: psqi_ampm
+  codes:
+    1: AM
+    2: PM
+
+psqi_com2_3:
+  type: Integer
+  description: 'Add #2 score and #5a score as shown on scoring sheet'
+
+psqi_com5:
+  type: Integer
+  description: 'Assign Component 5 score as follows: Sum of # 5b-5j Component 5 score
+    0, 0 1-9, 1 10-18, 2 19-27, 3'
+
+psqi_com7:
+  type: Integer
+  description: 'Assign component 7 score as follows: Sum of # 8 and #9 Component 7
+    score 0, 0 1-2, 1 3-4, 2 5-6, 3'

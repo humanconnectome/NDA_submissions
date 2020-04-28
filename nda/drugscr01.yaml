@@ -1,0 +1,1342 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: guid,nimhid
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,ptid,subject_id
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: intvdate,testdate,tox_1,udsdtm,visit_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: age,intvage
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+macipds_01:
+  type: Integer
+  description: 'Visit drug screen was performed at:'
+  range:
+  - 1::4
+  - -999
+  notes: 1=Clinical Visit 1; 2=Clinical Visit 2; 3= Scan Session 1; 4= Scan Session;
+    -999=Don't Know/Missing Data
+  alias: uds_visit
+  codes:
+    1: Clinical Visit 1
+    2: Clinical Visit 2
+    3: Scan Session 1
+    4: Scan Session
+    -999: Don't Know/Missing Data
+
+macipds_02:
+  type: Integer
+  description: Positive for amphetamines?
+  range:
+  - 0::4
+  - 9
+  - -999
+  notes: 0=No; 1=Yes;2=Unclear or Equivocal; 3=Results not valid; 4=Not assessed;
+    9= Did not perform; -999=Don't Know/ Missing Data
+  alias: amphetam,amphetamine,tox_5,uds001a,uds_01,urinedrugamphetamines,utox4
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Unclear or Equivocal
+    3: Results not valid
+    4: Not assessed
+    9: Did not perform
+    -999: Don't Know/ Missing Data
+
+macipds_03:
+  type: Integer
+  description: Positive for cocaine?
+  range:
+  - 0::4
+  - 9
+  - -999
+  notes: 0=No; 1=Yes;2=Unclear or Equivocal; 3=Results not valid; 4=Not assessed;
+    9= Did not perform; -999=Don't Know/ Missing Data
+  alias: cocaine,tox_6,uds005a,uds_04,urinedrugcocaine,utox3
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Unclear or Equivocal
+    3: Results not valid
+    4: Not assessed
+    9: Did not perform
+    -999: Don't Know/ Missing Data
+
+macipds_04:
+  type: Integer
+  description: Positive for marijuana?
+  range:
+  - 0::4
+  - 9
+  - -999
+  notes: 0=No; 1=Yes;2=Unclear or Equivocal; 3=Results not valid; 4=Not assessed;
+    9= Did not perform; -999=Don't Know/ Missing Data
+  alias: marijuana,tox_7,uds_10,urinedrugcannabis
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Unclear or Equivocal
+    3: Results not valid
+    4: Not assessed
+    9: Did not perform
+    -999: Don't Know/ Missing Data
+
+macipds_05:
+  type: Integer
+  description: Positive for methamphetamines?
+  range:
+  - 0::4
+  - -999
+  notes: 0=No; 1=Yes;2=Unclear or Equivocal; 3=Results not valid; 4=Not assessed;
+    -999=Don't Know/ Missing Data
+  alias: methamph,methamphetamine,uds_05
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Unclear or Equivocal
+    3: Results not valid
+    4: Not assessed
+    -999: Don't Know/ Missing Data
+
+macipds_06:
+  type: Integer
+  description: Positive for opiates?
+  range:
+  - 0::4
+  - 9
+  - -999
+  notes: 0=No; 1=Yes;2=Unclear or Equivocal; 3=Results not valid; 4=Not assessed;
+    9= Did not perform; -999=Don't Know/ Missing Data
+  alias: morphine,opiates,tox_8,uds007a,uds_07,urinedrugopiates,utox6
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Unclear or Equivocal
+    3: Results not valid
+    4: Not assessed
+    9: Did not perform
+    -999: Don't Know/ Missing Data
+
+macipds_07:
+  type: Integer
+  description: Positive for PCP?
+  range:
+  - 0::4
+  - 9
+  - -999
+  notes: 0=No; 1=Yes;2=Unclear or Equivocal; 3=Results not valid; 4=Not assessed;
+    9= Did not perform; -999=Don't Know/ Missing Data
+  alias: pcp,phencyclidine,tox_9,uds008a,uds_09,urinedrugpcp
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Unclear or Equivocal
+    3: Results not valid
+    4: Not assessed
+    9: Did not perform
+    -999: Don't Know/ Missing Data
+
+macipds_08:
+  type: Integer
+  description: Positive for benzodiazepines?
+  range:
+  - 0::4
+  - 9
+  - -999
+  notes: 0=No; 1=Yes;2=Unclear or Equivocal; 3=Results not valid; 4=Not assessed;
+    9= Did not perform; -999=Don't Know/ Missing Data
+  alias: benzodiazepines,tox_10,uds003a,uds_03,urinedrugbenzos,utox2
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Unclear or Equivocal
+    3: Results not valid
+    4: Not assessed
+    9: Did not perform
+    -999: Don't Know/ Missing Data
+
+macipds_09:
+  type: Integer
+  description: Positive for barbiturates?
+  range:
+  - 0::4
+  - 9
+  - -999
+  notes: 0=No; 1=Yes;2=Unclear or Equivocal; 3=Results not valid; 4=Not assessed;
+    9= Did not perform; -999=Don't Know/ Missing Data
+  alias: barbitur,barbiturates,tox_11,uds002a,uds_02,urinedrugbarbiturates,utox7
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Unclear or Equivocal
+    3: Results not valid
+    4: Not assessed
+    9: Did not perform
+    -999: Don't Know/ Missing Data
+
+macipds_10:
+  type: Integer
+  description: Positive for methadone?
+  range:
+  - 0::4
+  - -999
+  notes: 0=No; 1=Yes;2=Unclear or Equivocal; 3=Results not valid; 4=Not assessed;
+    -999=Don't Know/ Missing Data
+  alias: methadon,methadone,tox_12,uds006a,uds_06
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Unclear or Equivocal
+    3: Results not valid
+    4: Not assessed
+    -999: Don't Know/ Missing Data
+
+macipds_11:
+  type: Integer
+  description: Positive for MDMA?
+  range:
+  - 0::4
+  - -999
+  notes: 0=No; 1=Yes;2=Unclear or Equivocal; 3=Results not valid; 4=Not assessed;
+    -999=Don't Know/ Missing Data
+  alias: mdma,tox_13
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Unclear or Equivocal
+    3: Results not valid
+    4: Not assessed
+    -999: Don't Know/ Missing Data
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+  alias: additionalcomments,macipds_12
+
+macipds_13:
+  type: String
+  length: 250
+  description: Other_Drug_Presence
+  alias: urinedrugother_descr
+
+uds001b:
+  type: Integer
+  description: Amphetamines excludes
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=No; 1=Yes; -9=Unknown
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -9: Unknown
+
+uds001c:
+  type: String
+  length: 200
+  description: Amphetamines comments
+  alias: urinedrugamphetamines_other
+
+uds002b:
+  type: Integer
+  description: Barbiturates excludes
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=No; 1=Yes; -9=Unknown
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -9: Unknown
+
+uds002c:
+  type: String
+  length: 200
+  description: Barbiturates comments
+  alias: urinedrugbarbiturates_other
+
+uds003b:
+  type: Integer
+  description: Benzodiazepines excludes
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=No; 1=Yes; -9=Unknown
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -9: Unknown
+
+uds003c:
+  type: String
+  length: 200
+  description: Benzodiazepines comments
+  alias: urinedrugbenzos_other
+
+uds004a:
+  type: Integer
+  description: Cannabinoids results
+  range:
+  - 1::4
+  - -9
+  notes: 1=Positive; 2=Negative; 3=Results not valid; 4=Not assessed; -9=Unknown
+  alias: thc,utox5
+  codes:
+    1: Positive
+    2: Negative
+    3: Results not valid
+    4: Not assessed
+    -9: Unknown
+
+uds004b:
+  type: Integer
+  description: Cannabinoids excludes
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=No; 1=Yes; -9=Unknown
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -9: Unknown
+
+uds004c:
+  type: String
+  length: 200
+  description: Cannabinoids comments
+  alias: urinedrugcannabis_other
+
+uds005b:
+  type: Integer
+  description: Cocaine Metabolite excludes
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=No; 1=Yes; -9=Unknown
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -9: Unknown
+
+uds005c:
+  type: String
+  length: 200
+  description: Cocaine Metabolite comments
+  alias: urinedrugcocaine_other
+
+uds006b:
+  type: Integer
+  description: Methadone excludes
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=No; 1=Yes; -9=Unknown
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -9: Unknown
+
+uds006c:
+  type: String
+  length: 200
+  description: Methadone comments
+
+uds007b:
+  type: Integer
+  description: Opiates excludes
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=No; 1=Yes; -9=Unknown
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -9: Unknown
+
+uds007c:
+  type: String
+  length: 200
+  description: Opiates comments
+  alias: urinedrugopiates_other
+
+uds008b:
+  type: Integer
+  description: Phencyclidine excludes
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=No; 1=Yes; -9=Unknown
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -9: Unknown
+
+uds008c:
+  type: String
+  length: 200
+  description: Phencyclidine comments
+  alias: urinedrugpcp_other
+
+utoxcldt:
+  type: Date
+  description: Urine Tox Screen Collection Date Completed
+
+lab020:
+  type: Date
+  description: Date of PI/clinician signature
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+  alias: visitnum
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+  alias: siteid
+
+completed:
+  type: Integer
+  description: Checks if completed
+  range:
+  - 0::3
+  notes: 0=No; 1=Yes; 2=Yes, lost; 3=Unverified
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Yes, lost
+    3: Unverified
+
+urine_collection_time:
+  type: String
+  length: 10
+  description: 'Urine Measures: Time of urine collection'
+
+uri_doa:
+  type: Date
+  description: Date of analysis
+  alias: u1_coc_doa
+
+uri_tim:
+  type: String
+  length: 10
+  description: Tester read end time
+  alias: u1_coc_anatime
+
+uri_vrt:
+  type: String
+  length: 10
+  description: Verification read time
+  alias: u1_coc_vertime
+
+uri_cocv:
+  type: Integer
+  description: Cocaine results performed by verifier
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  codes:
+    0: Negative
+    1: Positive
+
+uri_mav:
+  type: Integer
+  description: Methamphetamines results performed by verifier
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  codes:
+    0: Negative
+    1: Positive
+
+uri_thct:
+  type: Integer
+  description: THC results performed by tester
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  alias: u1_thc_result
+  codes:
+    0: Negative
+    1: Positive
+
+uri_thcv:
+  type: Integer
+  description: THC results performed by verifier
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  codes:
+    0: Negative
+    1: Positive
+
+uri_opiv:
+  type: Integer
+  description: Opiates results performed by verifier
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  codes:
+    0: Negative
+    1: Positive
+
+uri_benv:
+  type: Integer
+  description: Benzodiazepines results performed by verifier
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  codes:
+    0: Negative
+    1: Positive
+
+uri_redo:
+  type: Integer
+  description: 'Urine test: re-do'
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+uri_coct2:
+  type: Integer
+  description: 'Cocaine results performed by tester: re-do'
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  codes:
+    0: Negative
+    1: Positive
+
+uri_cocv2:
+  type: Integer
+  description: 'Cocaine results performed by verifier: re-do'
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  codes:
+    0: Negative
+    1: Positive
+
+uri_mat2:
+  type: Integer
+  description: 'Methamphetamines results performed by tester: re-do'
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  codes:
+    0: Negative
+    1: Positive
+
+uri_mav2:
+  type: Integer
+  description: 'Methamphetamines results performed by verifier: re-do'
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  codes:
+    0: Negative
+    1: Positive
+
+uri_thct2:
+  type: Integer
+  description: 'THC results performed by tester: re-do'
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  codes:
+    0: Negative
+    1: Positive
+
+uri_thcv2:
+  type: Integer
+  description: 'THC results performed by verifier: re-do'
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  codes:
+    0: Negative
+    1: Positive
+
+uri_opit2:
+  type: Integer
+  description: 'Opiates results performed by tester: re-do'
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  codes:
+    0: Negative
+    1: Positive
+
+uri_opiv2:
+  type: Integer
+  description: 'Opiates results performed by verifier: re-do'
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  codes:
+    0: Negative
+    1: Positive
+
+uri_bent2:
+  type: Integer
+  description: 'Benzodiazepines results performed by tester: re-do'
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  codes:
+    0: Negative
+    1: Positive
+
+uri_benv2:
+  type: Integer
+  description: 'Benzodiazepines results performed by verifier: re-do'
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  codes:
+    0: Negative
+    1: Positive
+
+uri_coct:
+  type: Integer
+  description: Cocaine results performed by tester
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  alias: u1_coc_result
+  codes:
+    0: Negative
+    1: Positive
+
+uri_mat:
+  type: Integer
+  description: Methamphetamines results performed by tester
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  alias: u1_ma_result
+  codes:
+    0: Negative
+    1: Positive
+
+uri_opit:
+  type: Integer
+  description: Opiates results performed by tester
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  alias: u1_opi_result
+  codes:
+    0: Negative
+    1: Positive
+
+uri_bent:
+  type: Integer
+  description: Benzodiazepines results performed by tester
+  range:
+  - 0
+  - 1
+  notes: 0=Negative; 1=Positive
+  alias: u1_ben_result
+  codes:
+    0: Negative
+    1: Positive
+
+gen002:
+  type: Date
+  description: 'Collection Date: (mm/dd/yyyy)'
+  alias: uds00a,uri_doc
+
+uri_st:
+  type: String
+  length: 10
+  description: 'Urine: start time'
+
+udstemp:
+  type: String
+  length: 2
+  description: Was urine temperature within expected range?
+  range:
+  - Y
+  - N
+  - U
+  notes: Y=Yes; N=No; U=Unknown
+  alias: chdpot
+  codes:
+    Y: 'Yes'
+    N: 'No'
+    U: Unknown
+
+udssup:
+  type: String
+  length: 2
+  description: Was this urine collection supervised?
+  range:
+  - Y
+  - N
+  - U
+  notes: Y=Yes; N=No; U=Unknown
+  codes:
+    Y: 'Yes'
+    N: 'No'
+    U: Unknown
+
+oxycodon:
+  type: Integer
+  description: Oxycodone
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  notes: 0=No; 1=Yes;2=Unclear or Equivocal; 3=Results not valid; 4=Not assessed
+  alias: oxycodone,uds_08,utox9
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Unclear or Equivocal
+    3: Results not valid
+    4: Not assessed
+
+antidepr:
+  type: Integer
+  description: Tricyclic Antidepressants
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  notes: 0=No; 1=Yes;2=Unclear or Equivocal; 3=Results not valid; 4=Not assessed
+  alias: triantidepressants
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Unclear or Equivocal
+    3: Results not valid
+    4: Not assessed
+
+week:
+  type: Float
+  description: Week in level/study
+  notes: 99=week 10-week 14
+  codes:
+    99: week 10-week 14
+
+pregnan:
+  type: Integer
+  description: pregnancy test
+  range:
+  - 0::5
+  - -7
+  - 9
+  notes: 0=Negative; 1=Positive; 2=Test not conducted; -7=Refused; 9=NA;3=Not pregnant
+    (per pregnancy test); 4=Not pregnant (has not reached menarche); 5=Pregnancy suspected,
+    but not confirmed
+  alias: pregres,uds_pregnancy,urine_preg_results,urine_preg_results.
+  codes:
+    0: Negative
+    1: Positive
+    2: Test not conducted
+    -7: Refused
+    9: NA
+    3: Not pregnant (per pregnancy test)
+    4: Not pregnant (has not reached menarche)
+    5: Pregnancy suspected, but not confirmed
+
+alcohol_level:
+  type: Float
+  description: Alcohol level
+  range:
+  - 0::1
+  notes: .00; .02; .04; .06; .08; .30
+  alias: bloodalcoholresult
+
+bsimo:
+  type: Float
+  description: Months from Time 0 to assessment
+  alias: monfol
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: form
+
+propoxyphene:
+  type: Integer
+  description: Propoxyphene (PPX)
+  range:
+  - 0
+  - 1
+  notes: 1=Positive; 0=Negative
+  codes:
+    1: Positive
+    0: Negative
+
+timept:
+  type: Integer
+  description: Time Point
+  notes: 888 = not applicable; 999 = missing
+  alias: timepoint
+  codes:
+    888: not applicable
+    999: missing
+
+bloodalcohol:
+  type: Integer
+  description: Blood Alcohol Concentration Test [1 = Performed]
+  range:
+  - 0::1
+  notes: 0=Not Performed; 1=Performed
+  codes:
+    0: Not Performed
+    1: Performed
+
+urinedrugscreen:
+  type: Integer
+  description: 'Urine Drug Screen [1 = Performed]:'
+  range:
+  - 0::1
+  notes: 0=Not Performed; 1=Performed
+  alias: utox_healthy
+  codes:
+    0: Not Performed
+    1: Performed
+
+urinedrugother:
+  type: Integer
+  description: 'Drug: Other [1 = Positive]'
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=Negative; 1=Positive; 9=Did not perform
+  codes:
+    0: Negative
+    1: Positive
+    9: Did not perform
+
+urinedrugother_other:
+  type: String
+  length: 100
+  description: 'Drug: Other (Value)'
+
+utox1:
+  type: Integer
+  description: Phencyclidine test
+  range:
+  - 1
+  - 2
+  notes: 1= Positive; 2= Negative
+  codes:
+    1: Positive
+    2: Negative
+
+utox8:
+  type: Integer
+  description: Ethanol test
+  range:
+  - 1
+  - 2
+  notes: 1= Positive; 2= Negative
+  codes:
+    1: Positive
+    2: Negative
+
+urine_preg_healthy:
+  type: Integer
+  description: Was Urine pregnancy  test collected
+  range:
+  - 1::3
+  notes: 1= Yes; 2= No; 3= N/A Male
+  codes:
+    1: 'Yes'
+    2: 'No'
+    3: N/A Male
+
+pregdtm:
+  type: String
+  length: 25
+  description: Date and time of Pregnancy Test
+  alias: pregd
+
+ureadtm:
+  type: String
+  length: 25
+  description: Date and time of Urea Breath Test
+  alias: uread
+
+hpyrs:
+  type: Integer
+  description: H. Pylori Urea Breath Test Result
+  range:
+  - 1
+  - 2
+  notes: 1=Negative; 2=Positive
+  alias: ureares
+  codes:
+    1: Negative
+    2: Positive
+
+phi1:
+  type: Integer
+  description: Type of interview
+  range:
+  - 1::5
+  notes: 1 = In person; 2 = Phone; 3 = Mail; 4 = SIG-O only; 5 = Carp only
+  alias: in_person
+  codes:
+    1: In person
+    2: Phone
+    3: Mail
+    4: SIG-O only
+    5: Carp only
+
+tox_2:
+  type: String
+  length: 100
+  description: Cup Description
+
+tox_3:
+  type: Integer
+  description: Valid volume
+  range:
+  - 0
+  - 1
+  notes: 1= Yes; 0= No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+tox_4:
+  type: Integer
+  description: Valid temperature
+  range:
+  - 0
+  - 1
+  notes: 1= Yes; 0= No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+tox_14:
+  type: String
+  length: 100
+  description: Stick Description
+
+tox_15:
+  type: Integer
+  description: Tox Screen Completed
+  range:
+  - 0
+  - 1
+  notes: 1= Yes; 0= No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+tox_16:
+  type: Integer
+  description: Tox Screen Valid?
+  range:
+  - 0
+  - 1
+  notes: 1= Valid; 0= Invalid
+  codes:
+    1: Valid
+    0: Invalid
+
+tox_17:
+  type: Integer
+  description: Tox Screen Result
+  range:
+  - 0
+  - 1
+  - 8
+  notes: 1= positive; 0= negative; 8= Invalid
+  codes:
+    1: positive
+    0: negative
+    8: Invalid
+
+bloodalcoholresult:
+  type: Float
+  description: BAC Test Results (mg/dl)
+  range:
+  - 0::1000
+  notes: mg/dl
+
+caffeine_session:
+  type: String
+  length: 35
+  description: 'Sessions Completed (Caffeine):'
+  notes: List up to 6 sessions
+
+caffeine_s1yn:
+  type: Integer
+  description: 'Caffeine: Session Complete?'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = N/A
+  alias: caffeine_s2yn,caffeine_s3yn,caffeine_s4yn,caffeine_s5yn,caffeine_s6yn
+  codes:
+    1: 'Yes'
+    0: N/A
+
+caffeine_s1:
+  type: Integer
+  description: 'Caffeine: Session complete when:'
+  range:
+  - 1
+  - 2
+  notes: 1 = Prior to visit ; 2 = During Visit
+  alias: caffeine_s2,caffeine_s3,caffeine_s4,caffeine_s5,caffeine_s6
+  codes:
+    1: Prior to visit
+    2: During Visit
+
+caffeine_s1pretype:
+  type: String
+  length: 110
+  description: 'Caffeine: Caffeine most recently used prior to visit: Type: '
+  alias: caffeine_s2pretype,caffeine_s3pretype,caffeine_s4pretype,caffeine_s5pretype,caffeine_s6pretype
+
+caffeine_s1pretime:
+  type: String
+  length: 30
+  description: 'Caffeine: Caffeine most recently used prior to visit: Time:'
+  alias: caffeine_s2pretime,caffeine_s3pretime,caffeine_s4pretime,caffeine_s5pretime,caffeine_s6pretime
+
+caffeine_s1preday:
+  type: Integer
+  description: 'Caffeine: Caffeine most recently used prior to visit: Same day/Prior
+    Day'
+  notes: 1 = Same day ; 0 = Prior Day
+  alias: caffeine_s2preday,caffeine_s3preday,caffeine_s4preday,caffeine_s5preday,caffeine_s6preday
+  codes:
+    1: Same day
+    0: Prior Day
+
+caffeine_s1vsttype1:
+  type: String
+  length: 60
+  description: 'Caffeine: Caffeine used during visit: Type 1: '
+  alias: caffeine_s2vsttype1,caffeine_s3vsttype1,caffeine_s4vsttype1,caffeine_s5vsttype1,caffeine_s6vsttype1
+
+caffeine_s1vsttime1:
+  type: String
+  length: 30
+  description: 'Caffeine: Caffeine used during visit: Time 1:'
+  alias: caffeine_s2vsttime1,caffeine_s3vsttime1,caffeine_s4vsttime1,caffeine_s5vsttime1,caffeine_s6vsttime1
+
+caffeine_s1vsttype2:
+  type: String
+  length: 30
+  description: 'Caffeine: Caffeine used during visit: Type 2: '
+  alias: caffeine_s2vsttype2,caffeine_s3vsttype2,caffeine_s4vsttype2,caffeine_s5vsttype2,caffeine_s6vsttype2
+
+caffeine_s1vsttime2:
+  type: String
+  length: 30
+  description: 'Caffeine: Caffeine used during visit: Time 2:'
+  alias: caffeine_s2vsttime2,caffeine_s3vsttime2,caffeine_s4vsttime2,caffeine_s5vsttime2,caffeine_s6vsttime2
+
+nicotine_session:
+  type: String
+  length: 35
+  description: 'Sessions Completed (Nicotine):'
+  notes: List up to 6 sessions
+
+nicotine_s1yn:
+  type: Integer
+  description: 'Nicotine: Session Complete?'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = N/A
+  alias: nicotine_s2yn,nicotine_s3yn,nicotine_s4yn,nicotine_s5yn,nicotine_s6yn
+  codes:
+    1: 'Yes'
+    0: N/A
+
+nicotine_s1:
+  type: Integer
+  description: 'Nicotine: Session complete when:'
+  range:
+  - 1
+  - 2
+  notes: 1 = Prior to visit ; 2 = During Visit
+  alias: nicotine_s2,nicotine_s3,nicotine_s4,nicotine_s5,nicotine_s6
+  codes:
+    1: Prior to visit
+    2: During Visit
+
+nicotine_s1pretype:
+  type: String
+  length: 30
+  description: 'Nicotine: Nicotine most recently used prior to visit: Type: '
+  alias: nicotine_s2pretype,nicotine_s3pretype,nicotine_s4pretype,nicotine_s5pretype,nicotine_s6pretype
+
+nicotine_s1pretime:
+  type: String
+  length: 30
+  description: 'Nicotine: Nicotine most recently used prior to visit: Time:'
+  alias: nicotine_s2pretime,nicotine_s3pretime,nicotine_s4pretime,nicotine_s5pretime,nicotine_s6pretime
+
+nicotine_s1preday:
+  type: Integer
+  description: 'Nicotine: Nicotine most recently used prior to visit: Same day/Prior
+    Day'
+  range:
+  - 0
+  - 1
+  notes: 1 = Same day ; 0 = Prior Day
+  alias: nicotine_s2preday,nicotine_s3preday,nicotine_s4preday,nicotine_s5preday,nicotine_s6preday
+  codes:
+    1: Same day
+    0: Prior Day
+
+nicotine_s1vsttype1:
+  type: String
+  length: 30
+  description: 'Nicotine: Nicotine used during visit: Type 1: '
+  alias: nicotine_s2vsttype1,nicotine_s3vsttype1,nicotine_s4vsttype1,nicotine_s5vsttype1,nicotine_s6vsttype1
+
+nicotine_s1vsttime1:
+  type: String
+  length: 30
+  description: 'Nicotine: Nicotine used during visit: Time 1:'
+  alias: nicotine_s2vsttime1,nicotine_s3vsttime1,nicotine_s4vsttime1,nicotine_s5vsttime1,nicotine_s6vsttime1
+
+nicotine_s1vsttype2:
+  type: String
+  length: 30
+  description: 'Nicotine: Nicotine used during visit: Type 2: '
+  alias: nicotine_s2vsttype2,nicotine_s3vsttype2,nicotine_s4vsttype2,nicotine_s5vsttype2,nicotine_s6vsttype2
+
+nicotine_s1vsttime2:
+  type: String
+  length: 30
+  description: 'Nicotine: Nicotine used during visit: Time 2:'
+  alias: nicotine_s2vsttime2,nicotine_s3vsttime2,nicotine_s4vsttime2,nicotine_s5vsttime2,nicotine_s6vsttime2
+
+alc:
+  type: String
+  length: 20
+  description: 'Alcohol and Drugs: Alcohol Testing:'
+  notes: List up to 6 days
+
+alc_breath1:
+  type: String
+  length: 10
+  description: 'Alcohol and Drugs: Alcohol Day 1 Breathalyzer Rating:'
+
+alc_breath2:
+  type: String
+  length: 10
+  description: 'Alcohol and Drugs: Alcohol Day 2 Breathalyzer Rating:'
+
+alc_breath3:
+  type: String
+  length: 10
+  description: 'Alcohol and Drugs: Alcohol Day 3 Breathalyzer Rating:'
+
+alc_breath4:
+  type: String
+  length: 10
+  description: 'Alcohol and Drugs: Alcohol Day 4 Breathalyzer Rating:'
+
+alc_breath5:
+  type: String
+  length: 10
+  description: 'Alcohol and Drugs: Alcohol Day 5 Breathalyzer Rating:'
+
+alc_breath6:
+  type: String
+  length: 10
+  description: 'Alcohol and Drugs: Alcohol Day 6 Breathalyzer Rating:'
+
+drug:
+  type: String
+  length: 20
+  description: 'Alcohol and Drugs: Drug Testing'
+  notes: List up to 6 days
+
+drug1_1:
+  type: Integer
+  description: 'Alcohol and Drugs: Drug test done on Day 1: Cocaine'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: drug2_1,drug3_1,drug4_1,drug5_1,drug6_1
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+drug1_2:
+  type: Integer
+  description: 'Alcohol and Drugs: Drug test done on Day 1: THC'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: drug2_2,drug3_2,drug4_2,drug5_2,drug6_2
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+drug1_3:
+  type: Integer
+  description: 'Alcohol and Drugs: Drug test done on Day 1: Opiates'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: drug2_3,drug3_3,drug4_3,drug5_3,drug6_3
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+drug1_4:
+  type: Integer
+  description: 'Alcohol and Drugs: Drug test done on Day 1: Amphetamine'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: drug2_4,drug3_4,drug4_4,drug5_4,drug6_4
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+drug1_5:
+  type: Integer
+  description: 'Alcohol and Drugs: Drug test done on Day 1: Meth Amphetamine'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: drug2_5,drug3_5,drug4_5,drug5_5,drug6_5
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+drug1_6:
+  type: Integer
+  description: 'Alcohol and Drugs: Drug test done on Day 1: Oxycontin'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: drug2_6,drug3_6,drug4_6,drug5_6,drug6_6
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+tox_02:
+  type: String
+  length: 100
+  description: Marijuana dose
+
+tox_03:
+  type: Integer
+  description: Alcohol use indicated?
+  range:
+  - 1
+  - 2
+  notes: 2=No; Yes=1
+  codes:
+    2: 'No'
+    1: 'Yes'
+
+tox_04:
+  type: String
+  length: 100
+  description: Alcohol volume
+
+tox_06:
+  type: String
+  length: 100
+  description: Cocaine dose

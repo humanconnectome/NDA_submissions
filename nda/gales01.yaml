@@ -1,0 +1,1512 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+gales1:
+  type: Integer
+  description: 'Past Year: Financial/Work Difficulties - Major financial difficulties'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales1b:
+  type: Integer
+  description: 'Past Year: Financial/Work Difficulties - Major financial difficulties
+    - How stressful did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales1c:
+  type: Integer
+  description: 'Past Year: Financial/Work Difficulties - Major financial difficulties
+    - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales2:
+  type: Integer
+  description: 'Past Year: Financial/Work Difficulties - Retirement'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales2b:
+  type: Integer
+  description: 'Past Year: Financial/Work Difficulties - Retirement - How stressful
+    did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales2c:
+  type: Integer
+  description: 'Past Year: Financial/Work Difficulties - Retirement - Did it make
+    you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales3:
+  type: Integer
+  description: 'Past Year: Financial/Work Difficulties - Sudden loss of employment'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales3b:
+  type: Integer
+  description: 'Past Year: Financial/Work Difficulties - Sudden loss of employment
+    - How stressful did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales3c:
+  type: Integer
+  description: 'Past Year: Financial/Work Difficulties - Sudden loss of employment
+    - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales4:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - New major physical illness'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales4b:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - New major physical illness
+    - How stressful did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales4c:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - New major physical illness
+    - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales5:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - Other long-standing major physical
+    illness'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales5b:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - Other major physical illness
+    - How stressful did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales5c:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - Other major physical illness
+    - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales6:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - Major physical illness of a
+    close family member'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales6b:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - Major physical illness of a
+    close family member - How stressful did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales6c:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - Major physical illness of a
+    close family member - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales7:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - Accident or injury'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales7b:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - Accident or injury - How stressful
+    did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales7c:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - Accident or injury - Did it
+    make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales8:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Marital separation or divorce'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales8b:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Marital separation or divorce
+    - How stressful did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales8c:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Marital separation or divorce
+    - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales9:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Other marital difficulties'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales9b:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Other marital difficulties -
+    How stressful did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales9c:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Other marital difficulties -
+    Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales10:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Major family problems/conflicts
+    other than with spouse'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales10b:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Major family problems/conflicts
+    other than with spouse - How stressful did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales10c:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Major family problems/conflicts
+    other than with spouse - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales11:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Major problems/conflicts with
+    friends or neighbors'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales11b:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Major problems/conflicts with
+    friends or neighbors - How stressful did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales11c:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Major problems/conflicts with
+    friends or neighbors - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales12:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Break-up of a long-term relationship
+    other than marriage'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales12b:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Break-up of a long-term relationship
+    other than marriage - How stressful did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales12c:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Break-up of a long-term relationship
+    other than marriage - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales13:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Separation from any other close
+    friend or relative'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales13b:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Separation from any other close
+    friend or relative - How stressful did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales13c:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Separation from any other close
+    friend or relative - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales14:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of spouse'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales14b:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of spouse - How stressful did
+    you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales14c:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of spouse - Did it make you
+    feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales15:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of child'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales15b:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of child - How stressful did
+    you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales15c:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of child - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales16:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of parent'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales16b:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of parent - How stressful did
+    you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales16c:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of parent - Did it make you
+    feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales17:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of brother or sister'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales17b:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of brother or sister - How stressful
+    did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales17c:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of brother or sister - Did it
+    make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales18:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of other relative or close friend'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales18b:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of other relative or close friend
+    - How stressful did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales18c:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of other relative or close friend
+    - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales19:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of pet'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales19b:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of pet - How stressful did you
+    find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales19c:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Death of pet - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales20:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - Forced to leave or lose
+    home, for example, eviction'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales20b:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - Forced to leave or lose
+    home (e.g., eviction) - How stressful did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales20c:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - Forced to leave or lose
+    home (e.g., eviction) - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales21:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - Voluntarily changed place
+    of residence'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales21b:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - Voluntarily changed place
+    of residence - How stressful did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales21c:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - Voluntarily changed place
+    of residence - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales22:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - Individual moved out of
+    house - excluding marriage/relationship break-up'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales22b:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - Individual moved out of
+    house (excluding marriage/relationship break-up) - How stressful did you find
+    the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales22c:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - Individual moved out of
+    house (excluding marriage/relationship break-up) - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales23:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - Individual moved into
+    house'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales23b:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - Individual moved into
+    house - How stressful did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales23c:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - Individual moved into
+    house - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales24:
+  type: Integer
+  description: 'Past Year: Other Life Events - Difficulty getting adequate professional
+    services'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales24b:
+  type: Integer
+  description: 'Past Year: Other Life Events - Difficulty getting adequate professional
+    services - How stressful did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales24c:
+  type: Integer
+  description: 'Past Year: Other Life Events - Difficulty getting adequate professional
+    services - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales25:
+  type: Integer
+  description: 'Past Year: Other Life Events - Victim of crime'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales25b:
+  type: Integer
+  description: 'Past Year: Other Life Events - Victim of crime - How stressful did
+    you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales25c:
+  type: Integer
+  description: 'Past Year: Other Life Events - Victim of crime - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales26:
+  type: Integer
+  description: 'Past Year: Other Life Events - Became caretaker for relative or friend'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales26b:
+  type: Integer
+  description: 'Past Year: Other Life Events - Became caretaker for relative or friend
+    - How stressful did you find the event?'
+  range:
+  - 1::3
+  notes: 1 = Not at all stressful ; 2 = Somewhat stressful ; 3 = Very stressful
+  codes:
+    1: Not at all stressful
+    2: Somewhat stressful
+    3: Very stressful
+
+gales26c:
+  type: Integer
+  description: 'Past Year: Other Life Events - Became caretaker for relative or friend
+    - Did it make you feel'
+  range:
+  - 1::5
+  notes: 1 = Much better ; 2 = Better ; 3 = No effect ; 4 = Worse ; 5 = Much worse
+  codes:
+    1: Much better
+    2: Better
+    3: No effect
+    4: Worse
+    5: Much worse
+
+gales_worst:
+  type: Integer
+  description: 'Past Year: Of all the items for which you checked YES, which one affected
+    you the most?'
+  range:
+  - 1::26
+  notes: 1 = Major financial difficulties ; 2 = Retirement ; 3 = Sudden loss of employment
+    ; 4 = New major physical illness ; 5 = Other major physical illness ; 6 = Major
+    physical illness of a close family member ; 7 = Accident or injury ; 8 = Marital
+    separation or divorce ; 9 = Other marital difficulties ; 10 = Major family problems/conflicts
+    other than with spouse ; 11 = Major problems/conflicts with friends or neighbors
+    ; 12 = Break-up-of a long-term relationship other than marriage ; 13 = Separation
+    from any other close friend or relative ; 14 = Death of spouse ; 15 = Death of
+    child ; 16 = Death of parent ; 17 = Death of brother or sister ; 18 = Death of
+    other relative or close friend ; 19 = Death of pet ; 20 = Forced to leave or lose
+    home (e.g. = eviction) ; 21 = Voluntarily changed place of residence ; 22 = Individual
+    moved out of house (excluding marriage/relationship break-up) ; 23 = Individual
+    moved into house ; 24 = Difficulty getting adequate professional services ; 25
+    = Victim of crime ; 26 = Became caretaker for relative or friend
+  codes:
+    1: Major financial difficulties
+    2: Retirement
+    3: Sudden loss of employment
+    4: New major physical illness
+    5: Other major physical illness
+    6: Major physical illness of a close family member
+    7: Accident or injury
+    8: Marital separation or divorce
+    9: Other marital difficulties
+    10: Major family problems/conflicts other than with spouse
+    11: Major problems/conflicts with friends or neighbors
+    12: Break-up-of a long-term relationship other than marriage
+    13: Separation from any other close friend or relative
+    14: Death of spouse
+    15: Death of child
+    16: Death of parent
+    17: Death of brother or sister
+    18: Death of other relative or close friend
+    19: Death of pet
+    20: Forced to leave or lose home (e.g. = eviction)
+    21: Voluntarily changed place of residence
+    22: Individual moved out of house (excluding marriage/relationship break-up)
+    23: Individual moved into house
+    24: Difficulty getting adequate professional services
+    25: Victim of crime
+    26: Became caretaker for relative or friend
+
+gales_repeat1:
+  type: Integer
+  description: 'Past Year: Financial/Work Difficulties - Has event happened more than
+    once? - Major financial difficulties'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat2:
+  type: Integer
+  description: 'Past Year: Financial/Work Difficulties - Has event happened more than
+    once? - Retirement'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat3:
+  type: Integer
+  description: 'Past Year: Financial/Work Difficulties - Has event happened more than
+    once? - Sudden loss of employment'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat4:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - Has event happened more than
+    once? - New major physical illness'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat5:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - Has event happened more than
+    once? - Other long- Has event happened more than once? -standing major physical
+    illness'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat6:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - Has event happened more than
+    once? - Major physical illness of a close family member'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat7:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - Has event happened more than
+    once? - Accident or injury'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat8:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Has event happened more than
+    once? - Marital separation or divorce'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat9:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Has event happened more than
+    once? - Other marital difficulties'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat10:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Has event happened more than
+    once? - Major family problems/conflicts other than with spouse'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat11:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Has event happened more than
+    once? - Major problems/conflicts with friends or neighbors'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat12:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Has event happened more than
+    once? - Break-up of a long-term relationship other than marriage'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat13:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - Has event happened more than
+    once? - Separation from any other close friend or relative'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat14:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Has event happened more than once?
+    - Death of spouse'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat15:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Has event happened more than once?
+    - Death of child'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat16:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Has event happened more than once?
+    - Death of parent'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat17:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Has event happened more than once?
+    - Death of brother or sister'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat18:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Has event happened more than once?
+    - Death of other relative or close friend'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat19:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - Has event happened more than once?
+    - Death of pet'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat20:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - Has event happened more
+    than once? - Forced to leave or lose home, for example, eviction'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat21:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - Has event happened more
+    than once? - Voluntarily changed place of residence'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat22:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - Has event happened more
+    than once? - Individual moved out of house - excluding marriage/relationship break-
+    Has event happened more than once? -up'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat23:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - Has event happened more
+    than once? - Individual moved into house'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat24:
+  type: Integer
+  description: 'Past Year: Other Life Events - Has event happened more than once?
+    - Difficulty getting adequate professional services'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat25:
+  type: Integer
+  description: 'Past Year: Other Life Events - Has event happened more than once?
+    - Victim of crime'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat26:
+  type: Integer
+  description: 'Past Year: Other Life Events - Has event happened more than once?
+    - Became caretaker for relative or friend'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+gales_repeat_num1:
+  type: Integer
+  description: 'Past Year: Financial/Work Difficulties - If event happened more than
+    once, then how many times? - Major financial difficulties'
+
+gales_repeat_num2:
+  type: Integer
+  description: 'Past Year: Financial/Work Difficulties - If event happened more than
+    once, then how many times? - Retirement'
+
+gales_repeat_num3:
+  type: Integer
+  description: 'Past Year: Financial/Work Difficulties - If event happened more than
+    once, then how many times? - Sudden loss of employment'
+
+gales_repeat_num4:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - If event happened more than
+    once, then how many times? - New major physical illness'
+
+gales_repeat_num5:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - If event happened more than
+    once, then how many times? - Other long- If event happened more than once, then
+    how many times? -standing major physical illness'
+
+gales_repeat_num6:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - If event happened more than
+    once, then how many times? - Major physical illness of a close family member'
+
+gales_repeat_num7:
+  type: Integer
+  description: 'Past Year: Physical Illness/Accident - If event happened more than
+    once, then how many times? - Accident or injury'
+
+gales_repeat_num8:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - If event happened more than once,
+    then how many times? - Marital separation or divorce'
+
+gales_repeat_num9:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - If event happened more than once,
+    then how many times? - Other marital difficulties'
+
+gales_repeat_num10:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - If event happened more than once,
+    then how many times? - Major family problems/conflicts other than with spouse'
+
+gales_repeat_num11:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - If event happened more than once,
+    then how many times? - Major problems/conflicts with friends or neighbors'
+
+gales_repeat_num12:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - If event happened more than once,
+    then how many times? - Break-up of a long-term relationship other than marriage'
+
+gales_repeat_num13:
+  type: Integer
+  description: 'Past Year: Interpersonal Conflicts - If event happened more than once,
+    then how many times? - Separation from any other close friend or relative'
+
+gales_repeat_num14:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - If event happened more than once,
+    then how many times? - Death of spouse'
+
+gales_repeat_num15:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - If event happened more than once,
+    then how many times? - Death of child'
+
+gales_repeat_num16:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - If event happened more than once,
+    then how many times? - Death of parent'
+
+gales_repeat_num17:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - If event happened more than once,
+    then how many times? - Death of brother or sister'
+
+gales_repeat_num18:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - If event happened more than once,
+    then how many times? - Death of other relative or close friend'
+
+gales_repeat_num19:
+  type: Integer
+  description: 'Past Year: Interpersonal Loss - If event happened more than once,
+    then how many times? - Death of pet'
+
+gales_repeat_num20:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - If event happened more
+    than once, then how many times? - Forced to leave or lose home, for example, eviction'
+
+gales_repeat_num21:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - If event happened more
+    than once, then how many times? - Voluntarily changed place of residence'
+
+gales_repeat_num22:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - If event happened more
+    than once, then how many times? - Individual moved out of house - excluding marriage/relationship
+    break- If event happened more than once, then how many times? -up'
+
+gales_repeat_num23:
+  type: Integer
+  description: 'Past Year: Disruption in Living Situation - If event happened more
+    than once, then how many times? - Individual moved into house'
+
+gales_repeat_num24:
+  type: Integer
+  description: 'Past Year: Other Life Events - If event happened more than once, then
+    how many times? - Difficulty getting adequate professional services'
+
+gales_repeat_num25:
+  type: Integer
+  description: 'Past Year: Other Life Events - If event happened more than once, then
+    how many times? - Victim of crime'
+
+gales_repeat_num26:
+  type: Integer
+  description: 'Past Year: Other Life Events - If event happened more than once, then
+    how many times? - Became caretaker for relative or friend'

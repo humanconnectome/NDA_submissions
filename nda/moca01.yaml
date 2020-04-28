@@ -1,0 +1,333 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,subject_id
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: interview_date_moca
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+
+years_of_school:
+  type: Integer
+  description: Subject's education
+  range:
+  - 0
+  - 1
+  notes: 0 = More than 12 years of school; 1 = less than 12 years of school
+  codes:
+    0: More than 12 years of school
+    1: less than 12 years of school
+
+visuospatial_executive:
+  type: Integer
+  description: Trail, cube, and clock drawings
+  range:
+  - 0::5
+  alias: vse
+
+naming:
+  type: Integer
+  description: Animal name recall task
+  range:
+  - 0::3
+  alias: n
+
+memory_1st:
+  type: String
+  length: 50
+  description: Words correctly repeated (1st trial)
+  notes: 'Options are: Face, Velvet, Church, Daisy, Red'
+
+memory_2nd:
+  type: String
+  length: 50
+  description: Words correctly repeated (2nd trial)
+  notes: 'Options are: Face, Velvet, Church, Daisy, Red'
+
+attention_total:
+  type: Integer
+  description: Attention section total
+  range:
+  - 0::6
+  alias: at
+
+language_score:
+  type: Integer
+  description: Language section total
+  range:
+  - 0::3
+  alias: l,language
+
+abstraction:
+  type: Integer
+  description: Similarity between object pairs
+  range:
+  - 0::2
+  alias: ab
+
+delayed_recall:
+  type: Integer
+  description: Points for uncued recall
+  range:
+  - 0::5
+
+orientation:
+  type: Integer
+  description: Orientation to time and location
+  range:
+  - 0::6
+  alias: o
+
+moca_total:
+  type: Integer
+  description: Montreal Cognitive Assessment Total Score
+  range:
+  - 0::30
+  alias: moca_sum
+
+attention_digit:
+  type: Integer
+  description: Repeating digits score
+  range:
+  - 0::2
+
+attention_letter:
+  type: Integer
+  description: Letter tapping score
+  range:
+  - 0
+  - 1
+
+attention_subtraction:
+  type: Integer
+  description: Serial 7 subtraction score
+  range:
+  - 0::3
+
+mull_el_rs2:
+  type: Integer
+  description: Repeats sentences II
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Repeats one sentence; 2 = Repeats two sentences
+  alias: language_repetition
+  codes:
+    0: Fail
+    1: Repeats one sentence
+    2: Repeats two sentences
+
+language_letter:
+  type: Integer
+  description: Maximal one-minute recall of words beginning with 'F'
+  range:
+  - 0
+  - 1
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+
+moca_edu:
+  type: Integer
+  description: Years of education completed
+  range:
+  - 1::21
+  - 77
+  - 99
+  notes: '0= never attended/kindergarten only;  1= 1st grade; 2= 2nd grade; 3= 3rd
+    grade; 4= 4th grade; 5= 5th grade; 6= 6th grade; 7= 7th grade; 8= 8th grade; 9=
+    9th grade; 10= 10th grade; 11= 11th grade; 12= 12th grade, no diploma; 13= high
+    school graduate; 14= GED or equivalent; 15= some college, no degree; 16= associate
+    degree: occupational, technical, or vocational program; 17= associate degree:
+    academic program; 18= bachelor''s degree (BA, AB, BS, BBA); 19= master''s degree
+    (MA,  MS, MENG, MED, MBA); 20= professional school degree (MD, DDS, DVM, JD);
+    21= doctoral degree (PhD, EDD); 77= refused; 99= don''t know'
+  codes:
+    0: never attended/kindergarten only
+    1: 1st grade
+    2: 2nd grade
+    3: 3rd grade
+    4: 4th grade
+    5: 5th grade
+    6: 6th grade
+    7: 7th grade
+    8: 8th grade
+    9: 9th grade
+    10: 10th grade
+    11: 11th grade
+    12: 12th grade, no diploma
+    13: high school graduate
+    14: GED or equivalent
+    15: some college, no degree
+    16: 'associate degree: occupational, technical, or vocational program'
+    17: 'associate degree: academic program'
+    18: bachelor's degree (BA, AB, BS, BBA)
+    19: master's degree (MA,  MS, MENG, MED, MBA)
+    20: professional school degree (MD, DDS, DVM, JD)
+    21: doctoral degree (PhD, EDD)
+    77: refused
+    99: don't know
+
+study:
+  type: String
+  length: 100
+  description: Study
+
+memory_2nd___3:
+  type: Integer
+  description: 'Words Correctly Repeated (2nd Trial): Church'
+  range:
+  - 0
+  - 1
+  notes: 0= Unchecked; 1= Checked
+  codes:
+    0: Unchecked
+    1: Checked
+
+memory_2nd___4:
+  type: Integer
+  description: 'Words Correctly Repeated (2nd Trial): Daisy'
+  range:
+  - 0
+  - 1
+  notes: 0= Unchecked; 1= Checked
+  codes:
+    0: Unchecked
+    1: Checked
+
+memory_2nd___5:
+  type: Integer
+  description: 'Words Correctly Repeated (2nd Trial): Red'
+  range:
+  - 0
+  - 1
+  notes: 0= Unchecked; 1= Checked
+  codes:
+    0: Unchecked
+    1: Checked
+
+memory_1st___1:
+  type: Integer
+  description: 'Words Correctly Repeated (1st Trial): Face'
+  range:
+  - 0
+  - 1
+  notes: 0= Unchecked; 1= Checked
+  codes:
+    0: Unchecked
+    1: Checked
+
+memory_1st___2:
+  type: Integer
+  description: 'Words Correctly Repeated (1st Trial): Velvet'
+  range:
+  - 0
+  - 1
+  notes: 0= Unchecked; 1= Checked
+  codes:
+    0: Unchecked
+    1: Checked
+
+memory_1st___3:
+  type: Integer
+  description: 'Words Correctly Repeated (1st Trial): Church'
+  range:
+  - 0
+  - 1
+  notes: 0= Unchecked; 1= Checked
+  codes:
+    0: Unchecked
+    1: Checked
+
+memory_1st___4:
+  type: Integer
+  description: 'Words Correctly Repeated (1st Trial): Daisy'
+  range:
+  - 0
+  - 1
+  notes: 0= Unchecked; 1= Checked
+  codes:
+    0: Unchecked
+    1: Checked
+
+memory_1st___5:
+  type: Integer
+  description: 'Words Correctly Repeated (1st Trial): Red'
+  range:
+  - 0
+  - 1
+  notes: 0= Unchecked; 1= Checked
+  codes:
+    0: Unchecked
+    1: Checked
+
+memory_2nd___1:
+  type: Integer
+  description: 'Words Correctly Repeated (2nd Trial): Face'
+  range:
+  - 0
+  - 1
+  notes: 0= Unchecked; 1= Checked
+  codes:
+    0: Unchecked
+    1: Checked
+
+memory_2nd___2:
+  type: Integer
+  description: 'Words Correctly Repeated (2nd Trial): Velvet'
+  range:
+  - 0
+  - 1
+  notes: 0= Unchecked; 1= Checked
+  codes:
+    0: Unchecked
+    1: Checked

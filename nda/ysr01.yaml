@@ -1,0 +1,3002 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: guid
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: id,record_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: adate,pp_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: age,age_a
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,sex,sex_a
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+ysr_1:
+  type: Integer
+  description: 1. I act too young for my age
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q1,ysr_prob_1,ysra_item1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_2:
+  type: Integer
+  description: 2. I have an allergy
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_3:
+  type: Integer
+  description: 3. I argue a lot
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q3,ysr_prob_3,ysra_item3
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_4:
+  type: Integer
+  description: 4. I have asthma
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_5:
+  type: Integer
+  description: 5. I act like the opposite sex
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_6:
+  type: Integer
+  description: 6. I like animals
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q6,ysr_prob_6,ysra_item6
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_7:
+  type: Integer
+  description: 7. I brag
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q7,ysr_prob_7,ysra_item7
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_8:
+  type: Integer
+  description: 8.  I have trouble concentrating or paying attention
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q8,ysr_prob_8,ysra_item8
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_9:
+  type: Integer
+  description: 9.  I can't get my mind off certain thoughts
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q9,ysr_prob_9,ysra_item9_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_10:
+  type: Integer
+  description: 10. I have trouble sitting still
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q10,ysr_prob_10,ysra_item10
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_11:
+  type: Integer
+  description: 11. I'm too dependent on adults
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q11,ysr_prob_11,ysra_item11
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_12:
+  type: Integer
+  description: 12. I feel lonely
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q12,ysr_prob_12,ysra_item12
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_13:
+  type: Integer
+  description: 13. I feel confused or in a fog
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q13,ysr_prob_13,ysra_item13
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_14:
+  type: Integer
+  description: 14. I cry a lot
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q14,ysr_prob_14,ysra_item14
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_15:
+  type: Integer
+  description: 15. I am pretty honest
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q15,ysr_prob_15,ysra_item15
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_16:
+  type: Integer
+  description: 16. I am mean to others
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q16,ysr_prob_16,ysra_item16
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_17:
+  type: Integer
+  description: 17. I daydream a lot
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q17,ysr_prob_17,ysra_item17
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_18:
+  type: Integer
+  description: 18. I deliberately try to hurt or kill myself
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q18,ysra_item18
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_19:
+  type: Integer
+  description: 19. I try to get a lot of attention
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q19,ysr_prob_19,ysra_item19
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_20:
+  type: Integer
+  description: 20. I destroy my own things
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q20,ysr_prob_20,ysra_item20
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_21:
+  type: Integer
+  description: 21. I destroy things belonging to others
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q21,ysr_prob_21,ysra_item21
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_22:
+  type: Integer
+  description: 22. I disobey my parents
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q22,ysr_prob_22,ysra_item22
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_23:
+  type: Integer
+  description: 23. I disobey at school
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q23,ysr_prob_23,ysra_item23
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_24:
+  type: Integer
+  description: 24. I don't eat as well as I should
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q24,ysr_prob_24,ysra_item24
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_25:
+  type: Integer
+  description: 25. I don't get along with other kids
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q25,ysr_prob_25,ysra_item25
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_26:
+  type: Integer
+  description: 26. I don't feel guilty after doing something I shouldn't
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q26,ysr_prob_26,ysra_item26
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_27:
+  type: Integer
+  description: 27. I am jealous of others
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q27,ysr_prob_27,ysra_item27
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_28:
+  type: Integer
+  description: 28. I am willing to help others when they need help
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_29:
+  type: Integer
+  description: 29. I am afraid of certain animals, situations, or places, other than
+    school
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q29,ysr_prob_29,ysra_item29_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_30:
+  type: Integer
+  description: 30. I am afraid of going to school
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q30,ysr_prob_30,ysra_item30
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_31:
+  type: Integer
+  description: 31. I am afraid I might think or do something bad
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q31,ysr_prob_31,ysra_item31
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_32:
+  type: Integer
+  description: 32. I feel that I have to be perfect
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q32,ysr_prob_32,ysra_item32
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_33:
+  type: Integer
+  description: 33. I feel that no one loves me
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q33,ysr_prob_33,ysra_item33
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_34:
+  type: Integer
+  description: 34. I feel that others are out to get me
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q34,ysr_prob_34,ysra_item34
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_35:
+  type: Integer
+  description: 35. I feel worthless or inferior
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q35,ysr_prob_35,ysra_item35
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_36:
+  type: Integer
+  description: 36. I accidentally get hurt a lot
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q36,ysr_prob_36,ysra_item36
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_37:
+  type: Integer
+  description: 37. I get in many fights
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q37,ysr_prob_37,ysra_item37
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_38:
+  type: Integer
+  description: 38. I get teased a lot
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q38,ysr_prob_38,ysra_item38
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_39:
+  type: Integer
+  description: 39. I hang around with kids who get in trouble
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q39,ysr_prob_39,ysra_item39
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_40:
+  type: Integer
+  description: 40. I hear sounds or voices that other people think aren't there
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q40,ysr_prob_40,ysra_item40_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_41:
+  type: Integer
+  description: 41. I act without stopping to think
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q41,ysr_prob_41,ysra_item41
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_42:
+  type: Integer
+  description: 42. I would rather be alone than with others
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q42,ysr_prob_42,ysra_item42
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_43:
+  type: Integer
+  description: 43. I lie or cheat
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q43,ysr_prob_43,ysra_item43
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_44:
+  type: Integer
+  description: 44. I bite my fingernails
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q44,ysr_prob_44,ysra_item44
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_45:
+  type: Integer
+  description: 45. I am nervous or tense
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q45,ysr_prob_45,ysra_item45
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_46:
+  type: Integer
+  description: 46. Parts of my body twitch or make nervous movements
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q46,ysr_prob_46,ysra_item46_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_47:
+  type: Integer
+  description: 47. I have nightmares
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q47,ysr_prob_47,ysra_item47
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_48:
+  type: Integer
+  description: 48. I am not liked by other kids
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q48,ysr_prob_48,ysra_item48
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_49:
+  type: Integer
+  description: 49. I can do certain things better than most kids
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q49,ysr_prob_49,ysra_item49
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_50:
+  type: Integer
+  description: 50. I am too fearful or anxious
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q50,ysr_prob_50,ysra_item50
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_51:
+  type: Integer
+  description: 51. I feel dizzy
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q51,ysr_prob_51,ysra_item51
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_52:
+  type: Integer
+  description: 52 I feel too guilty
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q52,ysr_prob_52,ysra_item52
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_53:
+  type: Integer
+  description: 53. I eat too much
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q53,ysr_prob_53,ysra_item53
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_54:
+  type: Integer
+  description: 54. I feel overtired
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q54,ysr_prob_54,ysra_item54
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_55:
+  type: Integer
+  description: 55. I am overweight
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q55,ysr_prob_55,ysra_item55
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_56:
+  type: Integer
+  description: '56a. Physical problems without known medical cause: aches or pains
+    (not headaches)'
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q56a,ysr_56a,ysr_prob_56a,ysra_item56_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_57:
+  type: Integer
+  description: '56b. Physical problems without known medical cause: Headaches'
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q56b,ysr_56b,ysr_prob_56b,ysra_item56_2
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_58:
+  type: Integer
+  description: '56c.Physical problems without known medical cause: Nausea, feel sick'
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q56c,ysr_56c,ysr_prob_56c,ysra_item56_3
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_59:
+  type: Integer
+  description: '56d. Physical problems without known medical cause: Problems with
+    eyes'
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q56d,ysr_56d,ysr_prob_56d,ysra_item56_4_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_60:
+  type: Integer
+  description: '56e. Physical problems without known medical cause: Rashes or other
+    skin problems'
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q56e,ysr_prob_56e,ysra_item56_5
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_61:
+  type: Integer
+  description: '56f. Physical problems without known medical cause: Stomach aches
+    or cramps'
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q56f,ysr_prob_56f,ysra_item56_6
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_62:
+  type: Integer
+  description: '56g. Physical problems without known medical cause: Vomiting, throwing
+    up'
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q56g,ysr_prob_56g,ysra_item56_7
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_63:
+  type: Integer
+  description: '56h. Physical problems without known medical cause: Other physical
+    problems without known medical cause'
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q56h,ysr_prob_56h,ysra_item56_8_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_64:
+  type: Integer
+  description: 57. I physically attack people
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q57,ysr_prob_57,ysra_item57
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_65:
+  type: Integer
+  description: 58. I pick my skin or other parts of my body
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q58,ysr_prob_58,ysra_item58_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_66:
+  type: Integer
+  description: 59. I can be pretty friendly
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q59,ysr_prob_59,ysra_item59
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_67:
+  type: Integer
+  description: 60. I like to try new things
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q60,ysr_prob_60,ysra_item60
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_68:
+  type: Integer
+  description: 61. My school work is poor
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q61,ysr_prob_61,ysra_item61
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_69:
+  type: Integer
+  description: 62 I am poorly coordinated or clumsy .
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q62,ysr_prob_62,ysra_item62
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_70:
+  type: Integer
+  description: 63. I would rather be with older kids than with kids my own age
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q63,ysr_prob_63,ysra_item63
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_71:
+  type: Integer
+  description: 64. I would rather be with younger kids than with kids my own age
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q64,ysr_prob_64,ysra_item64
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_72:
+  type: Integer
+  description: 6S.I refuse to talk
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q65,ysr_prob_65,ysra_item65
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_73:
+  type: Integer
+  description: 66. I repeat certain actions over and over
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q66,ysr_prob_66,ysra_item66_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_74:
+  type: Integer
+  description: 67. I run away from home
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q67,ysr_prob_67,ysra_item67
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_75:
+  type: Integer
+  description: 68. I scream a lot
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q68,ysr_prob_68,ysra_item68
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_76:
+  type: Integer
+  description: 69. I am secretive or keep things to myself
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q69,ysr_prob_69,ysra_item69
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_77:
+  type: Integer
+  description: '70. I see things that other people think: aren''t there'
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q70,ysr_prob_70,ysra_item70_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_78:
+  type: Integer
+  description: 71. I am self-conscious or easily embarrassed
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q71,ysr_prob_71,ysra_item71
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_79:
+  type: Integer
+  description: 72. I set fires
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q72,ysr_prob_72,ysra_item72
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_80:
+  type: Integer
+  description: 73. I can work well with my hands
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q73,ysr_prob_73,ysra_item73_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_81:
+  type: Integer
+  description: 74. I show off or clown
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q74,ysr_prob_74,ysra_item74
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_82:
+  type: Integer
+  description: 75.I am shy
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q75,ysr_prob_75,ysra_item75
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_83:
+  type: Integer
+  description: 76. I sleep less than most kids
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q76,ysr_prob_76,ysra_item76
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_84:
+  type: Integer
+  description: 77. I sleep more than most kids during the day and/or night
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q77,ysr_prob_77,ysra_item77_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_85:
+  type: Integer
+  description: 78. I have a good imagination
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_86:
+  type: Integer
+  description: 79. I have a speech problem
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q79,ysr_prob_79,ysra_item79_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_87:
+  type: Integer
+  description: 80. I stand up for my rights
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q80,ysr_prob_80,ysra_item80
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_88:
+  type: Integer
+  description: 81. I steal at home
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q81,ysr_prob_81,ysra_item81
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_89:
+  type: Integer
+  description: 82. I steal from places other than home
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q82,ysr_prob_82,ysra_item82
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_90:
+  type: Integer
+  description: 83. I store up things I don't need
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q83,ysr_prob_83,ysra_item83_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_91:
+  type: Integer
+  description: 84. I do things other people think are strange
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q84,ysr_prob_84,ysra_item84_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_92:
+  type: Integer
+  description: 85. I have thoughts that other people would think are strange
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q85,ysr_prob_85,ysra_item85_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_93:
+  type: Integer
+  description: 86. I am stubborn
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q86,ysr_prob_86,ysra_item86
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_94:
+  type: Integer
+  description: 87. My moods or feelings change suddenly
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q87,ysr_prob_87,ysra_item87
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_95:
+  type: Integer
+  description: 88. I enjoy being with other people
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q88,ysr_prob_88,ysra_item88
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_96:
+  type: Integer
+  description: 89. I am suspicious
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q89,ysr_prob_89,ysra_item89
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_97:
+  type: Integer
+  description: 90. I swear or use dirty language
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q90,ysr_prob_90,ysra_item90
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_98:
+  type: Integer
+  description: 91. I think about killing myself
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q91,ysra_item91
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_99:
+  type: Integer
+  description: 92. I like to make others laugh
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q92,ysr_prob_92,ysra_item92_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_100:
+  type: Integer
+  description: 93. I talk too much
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q93,ysr_prob_93,ysra_item93
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_101:
+  type: Integer
+  description: 94. I tease others a lot
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q94,ysr_prob_94,ysra_item94
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_102:
+  type: Integer
+  description: '95. I have a hot temper '
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q95,ysr_prob_95,ysra_item95
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_103:
+  type: Integer
+  description: 96. I think about sex too much
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q96,ysr_prob_96,ysra_item96
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_104:
+  type: Integer
+  description: 97. I threaten to hurt people
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q97,ysr_prob_97,ysra_item97
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_105:
+  type: Integer
+  description: 98. I like to help others
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q98,ysr_prob_98,ysra_item98
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_106:
+  type: Integer
+  description: 99. I am too concerned about being neat or clean
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_107:
+  type: Integer
+  description: 100. I have trouble sleeping
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q100,ysr_prob_100,ysra_item100_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_108:
+  type: Integer
+  description: 101. I cut classes or skip school
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q101,ysr_prob_101,ysra_item101
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_109:
+  type: Integer
+  description: 102. I don't have much energy
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q102,ysr_prob_102,ysra_item102
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_110:
+  type: Integer
+  description: 103. I am unhappy, sad, or depressed
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q103,ysr_prob_103,ysra_item103
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_111:
+  type: Integer
+  description: 104. I am louder than other kids
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q104,ysr_prob_104,ysra_item104
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_112:
+  type: Integer
+  description: l05. I use alcohol or drugs for nonmedical purposes
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q105,ysr_prob_105,ysra_item105_1
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_113:
+  type: Integer
+  description: 106. I try to be fair to others
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q106,ysr_prob_106,ysra_item106
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_114:
+  type: Integer
+  description: 107. I enjoy a good joke
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q107,ysr_prob_107,ysra_item107
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_115:
+  type: Integer
+  description: 108. I like to take life easy
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q108,ysr_prob_108,ysra_item108
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_116:
+  type: Integer
+  description: 109. I try to help other people when I can
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q109,ysr_prob_109,ysra_item109
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_117:
+  type: Integer
+  description: 110. I wish I were of the opposite sex
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q110,ysr_prob_110,ysra_item110
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_118:
+  type: Integer
+  description: 111. I keep from getting involved with others
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q111,ysr_prob_111,ysra_item111
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+ysr_119:
+  type: Integer
+  description: 112. I worry a lot
+  range:
+  - 0::2
+  notes: 0=Not True; 1 = Somewhat or Sometimes True; 2=Very True or OftenTrue
+  alias: q112,ysr_prob_112,ysra_item112
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or OftenTrue
+
+visnum:
+  type: Float
+  description: Numeric Visit Number
+  notes: '-1.5 = Pre-Screening; -1 = Screening; 0 = Baseline; ## = Visit ## (from
+    1 to 10); Whole numbers = standard monthly visits; #.001 - #.009 = Unscheduled;
+    #.1 = End of Phase 1; #.2 = End of Phase 2; #.3 = End of Phase 3; #.4 = End of
+    Open Choice Phase; #.5 = End of Study; #.6 = Genetic Analysis; 1000=all visits'
+  codes:
+    -1.5: Pre-Screening
+    -1: Screening
+    0: Baseline
+    9: Unscheduled
+    1: End of Phase 1
+    2: End of Phase 2
+    3: End of Phase 3
+    4: End of Open Choice Phase
+    5: End of Study
+    6: Genetic Analysis
+    1000: all visits
+
+relationship:
+  type: Integer
+  description: Relationship of respondent to individual
+  range:
+  - 1::93
+  - -999
+  notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
+    (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
+    Speech and language therapist; 8 = Behavioral therapist; 9 = Paraprofessional;
+    10 = Aide; 11 = Principal; 12 = Administrator; 13 = 90=Other; 14 = Content teacher;
+    15 = Parent center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father;
+    19=Foster mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother;
+    24 = Step-father; 25=Aunt; 26=Uncle; 27=Missing Data; 28=Both parents;31= Grandmother
+    from mother side; 32= Grandfather from mother side; 33= Grandmother from father
+    side; 34= Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39=
+    female caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
+    44=Friend; 45=Parent; 46=Significant other; 47=Sibling; 48=Son/Daughter; 49=Son-in-law/Daughter-in
+    law; 50=Other Relative; 51=Paid caregiver; 52=Friends; 53=Roommate; 54=Supervisor;
+    55=mother's boyfriend; 56=other parental figure; 57=Summary; 58=counselor ; 59
+    = other female relative; 60 = other male relative; 61 = non-relative ; 62=Maternal
+    Aunt; 63=Maternal Uncle; 64=Maternal Cousin; 65 = Paternal Aunt; 66=Paternal Uncle;
+    67=Paternal Cousin ; 68=Biological/Adoptive Mother and Grandmother; 69=Biological/Adoptive
+    Mother and Stepmother and Grandmother; 70=Biological/Adoptive Mother and Grandmother
+    and Foster Father; 71=Biological/Adoptive Mother and Stepmother and Foster Mother;
+    72=Biological/Adoptive Mother and Foster Mother; 73=Biological/Adoptive Mother
+    and Biological/Adoptive Father; 74=Biological/Adoptive Mother and Stepmother and
+    Biological/Adoptive Father; 75=Biological/Adoptive Mother and Other; 76=Biological/Adoptive
+    Mother and Stepmother and Stepfather; 77=Biological/Adoptive Mother and Stepfather;
+    78=Biological/Adoptive Mother and Grandfather; 79=Biological/Adoptive Mother and
+    Stepmother and Foster Father; 80=Biological/Adoptive Mother and Stepmother; 81=Guardian,
+    female; 82=Other female; 83=Guardian, male; 84=Other male; 85=Other/Grandparent/Nanny;
+    86 = Mother, Father, Guardian; 87 = Daughter, son, grandchild; 88 = Professional
+    (e.g., social worker, nurse, therapist, psychiatrist, or group home staff);  -999=Missing;
+    89 = Biological parent; 91 = Stepparent; 92 = Adoptive parent; 93 = Foster parent
+  codes:
+    1: Biological mom
+    2: Biological dad
+    3: Grandparent
+    4: Special education (sped) teacher
+    5: General education teacher
+    6: Occupational therapist
+    7: Speech and language therapist
+    8: Behavioral therapist
+    9: Paraprofessional
+    10: Aide
+    11: Principal
+    12: Administrator
+    13: 90=Other
+    14: Content teacher
+    15: Parent center director
+    16: Self
+    17: Adoptive mother
+    18: Adoptive father
+    19: Foster mother
+    20: Foster father
+    21: Grandmother
+    22: Grandfather
+    23: Step-mother
+    24: Step-father
+    25: Aunt
+    26: Uncle
+    27: Missing Data
+    28: Both parents
+    31: Grandmother from mother side
+    32: Grandfather from mother side
+    33: Grandmother from father side
+    34: Grandfather from father side
+    36: Brother
+    37: Sister
+    38: Cousin
+    39: female caregiver
+    40: male caregiver
+    41: Female child
+    42: Male child
+    43: Spouse/Mate
+    44: Friend
+    45: Parent
+    46: Significant other
+    47: Sibling
+    48: Son/Daughter
+    49: Son-in-law/Daughter-in law
+    50: Other Relative
+    51: Paid caregiver
+    52: Friends
+    53: Roommate
+    54: Supervisor
+    55: mother's boyfriend
+    56: other parental figure
+    57: Summary
+    58: counselor
+    59: other female relative
+    60: other male relative
+    61: non-relative
+    62: Maternal Aunt
+    63: Maternal Uncle
+    64: Maternal Cousin
+    65: Paternal Aunt
+    66: Paternal Uncle
+    67: Paternal Cousin
+    68: Biological/Adoptive Mother and Grandmother
+    69: Biological/Adoptive Mother and Stepmother and Grandmother
+    70: Biological/Adoptive Mother and Grandmother and Foster Father
+    71: Biological/Adoptive Mother and Stepmother and Foster Mother
+    72: Biological/Adoptive Mother and Foster Mother
+    73: Biological/Adoptive Mother and Biological/Adoptive Father
+    74: Biological/Adoptive Mother and Stepmother and Biological/Adoptive Father
+    75: Biological/Adoptive Mother and Other
+    76: Biological/Adoptive Mother and Stepmother and Stepfather
+    77: Biological/Adoptive Mother and Stepfather
+    78: Biological/Adoptive Mother and Grandfather
+    79: Biological/Adoptive Mother and Stepmother and Foster Father
+    80: Biological/Adoptive Mother and Stepmother
+    81: Guardian, female
+    82: Other female
+    83: Guardian, male
+    84: Other male
+    85: Other/Grandparent/Nanny
+    86: Mother, Father, Guardian
+    87: Daughter, son, grandchild
+    88: Professional (e.g., social worker, nurse, therapist, psychiatrist, or group
+      home staff)
+    -999: Missing
+    89: Biological parent
+    91: Stepparent
+    92: Adoptive parent
+    93: Foster parent
+
+sports_des1:
+  type: String
+  length: 500
+  description: Sport1 description
+  alias: ysr_sport1
+
+sports_time1:
+  type: Integer
+  description: Amount of time spent on sport1
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 999
+  notes: 0 = Less than average; 1 = Average; 2 = More than average; 3 = Don't know
+  alias: xsporta,ysr_sport1_time
+  codes:
+    0: Less than average
+    1: Average
+    2: More than average
+    3: Don't know
+
+sports_well1:
+  type: Integer
+  description: How well youth does sport1
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 999
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know
+  alias: ssporta,ysr_sport1_well
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+
+sports_des2:
+  type: String
+  length: 500
+  description: Sport2 description
+  alias: ysr_sport2
+
+sports_time2:
+  type: Integer
+  description: Amount of time spent on sport2
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 999
+  notes: 0 = Less than average; 1 = Average; 2 = More than average; 3 = Don't know
+  alias: xsportb,ysr_sport2_time
+  codes:
+    0: Less than average
+    1: Average
+    2: More than average
+    3: Don't know
+
+sports_well2:
+  type: Integer
+  description: How well youth does sport2
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 999
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know
+  alias: ssportb,ysr_sport2_well
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+
+sports_des3:
+  type: String
+  length: 500
+  description: Sport3 description
+  alias: ysr_sport3
+
+sports_time3:
+  type: Integer
+  description: Amount of time spent on sport3
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 999
+  notes: 0 = Less than average; 1 = Average; 2 = More than average; 3 = Don't know
+  alias: xsportc,ysr_sport3_time
+  codes:
+    0: Less than average
+    1: Average
+    2: More than average
+    3: Don't know
+
+sports_well3:
+  type: Integer
+  description: How well youth does sport3
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 999
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know
+  alias: ssportc,ysr_sport3_well
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+
+activities_des1:
+  type: String
+  length: 500
+  description: activity1 description
+  alias: ysr_hob1
+
+activities_time1:
+  type: Integer
+  description: Amount of time spent on activity1
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Less than average; 1 = Average; 2 = More than average; 3 = Don't know;9
+    = Missing
+  alias: xacta,ysr_hob1_time
+  codes:
+    0: Less than average
+    1: Average
+    2: More than average
+    3: Don't know
+    9: Missing
+
+activities_well1:
+  type: Integer
+  description: How well youth does activity1
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know;9 = Missing
+  alias: sacta,ysr_hob1_well
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+    9: Missing
+
+activities_des2:
+  type: String
+  length: 500
+  description: activity2 description
+  alias: ysr_hob2
+
+activities_time2:
+  type: Integer
+  description: Amount of time spent on activity2
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Less than average; 1 = Average; 2 = More than average; 3 = Don't know;9
+    = Missing
+  alias: xactb,ysr_hob2_time
+  codes:
+    0: Less than average
+    1: Average
+    2: More than average
+    3: Don't know
+    9: Missing
+
+activities_well2:
+  type: Integer
+  description: How well youth does activity2
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know;9 = Missing
+  alias: sactb,ysr_hob2_well
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+    9: Missing
+
+activities_des3:
+  type: String
+  length: 500
+  description: activity3 description
+  alias: ysr_hob3
+
+activities_time3:
+  type: Integer
+  description: Amount of time spent on activity3
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Less than average; 1 = Average; 2 = More than average; 3 = Don't know;9
+    = Missing
+  alias: xactc,ysr_hob3_time
+  codes:
+    0: Less than average
+    1: Average
+    2: More than average
+    3: Don't know
+    9: Missing
+
+activities_well3:
+  type: Integer
+  description: How well youth does activity3
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know;9 = Missing
+  alias: sactc,ysr_hob3_well
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+    9: Missing
+
+clubs_des1:
+  type: String
+  length: 500
+  description: Club1 description
+  alias: ysr_org1
+
+clubs_active1:
+  type: Integer
+  description: How active youth is in club1
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Less active; 1 = Average; 2 = Above average; 3 = Don't know; 999=missing/NA
+  alias: aorga,ysr_org1_act
+  codes:
+    0: Less active
+    1: Average
+    2: Above average
+    3: Don't know
+    999: missing/NA
+
+clubs_des2:
+  type: String
+  length: 500
+  description: Club2 description
+  alias: ysr_org2
+
+clubs_active2:
+  type: Integer
+  description: How active youth is in club2
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Less active; 1 = Average; 2 = Above average; 3 = Don't know; 999=missing/NA
+  alias: aorgb,ysr_org2_act
+  codes:
+    0: Less active
+    1: Average
+    2: Above average
+    3: Don't know
+    999: missing/NA
+
+clubs_des3:
+  type: String
+  length: 500
+  description: Club3description
+  alias: ysr_org3
+
+clubs_active3:
+  type: Integer
+  description: How active youth is in club3
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Less active; 1 = Average; 2 = Above average; 3 = Don't know; 999=missing/NA
+  alias: aorgc,ysr_org3_act
+  codes:
+    0: Less active
+    1: Average
+    2: Above average
+    3: Don't know
+    999: missing/NA
+
+chores_des1:
+  type: String
+  length: 500
+  description: Chore1 description
+  alias: ysr_job1
+
+chores_well1:
+  type: Integer
+  description: How well youth does chore1
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know; 999= missing/NA
+  alias: wjoba,ysr_job1_well
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+    999: missing/NA
+
+chores_des2:
+  type: String
+  length: 500
+  description: Chore2 description
+  alias: ysr_job2
+
+chores_well2:
+  type: Integer
+  description: How well youth does chore2
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know; 999= missing/NA
+  alias: wjobb,ysr_job2_well
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+    999: missing/NA
+
+chores_des3:
+  type: String
+  length: 500
+  description: Chore3 description
+  alias: ysr_job3
+
+chores_well3:
+  type: Integer
+  description: How well youth does chore3
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know; 999= missing/NA
+  alias: wjobc,ysr_job3_well
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+    999: missing/NA
+
+friends:
+  type: Integer
+  description: 'P: How many close friends does youth have? / S: How many close friends
+    do you have? (Do not include brother & sister)'
+  range:
+  - 0::3
+  - 9
+  notes: 0 = None; 1 = 1; 2 = 2 or 3; 3 = 4 or more; 9=Missing
+  alias: nfriend,ysr_v1
+  codes:
+    0: None
+    1: '1'
+    2: 2 or 3
+    3: 4 or more
+    9: Missing
+
+friends_time:
+  type: Integer
+  description: 'P: How much time does youth spend with friends? / S: About how many
+    times a week do you do things with any friends outside of regular school hours?
+    (Do not include brother & sister)'
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Less than once a week; 1 = 1 or 2 times a week; 2 = 3 or more times a
+    week; 9=Missing
+  alias: xwkfr,ysr_v2
+  codes:
+    0: Less than once a week
+    1: 1 or 2 times a week
+    2: 3 or more times a week
+    9: Missing
+
+interp_siblings:
+  type: Integer
+  description: 'P: How well does youth get along with siblings? / S: Get along with
+    your brother & sister'
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Worse; 1 = Average; 2 = Better; 3 = Has no brothers or sisters; -9=unknown
+  alias: gasib,ysr_iv_a
+  codes:
+    0: Worse
+    1: Average
+    2: Better
+    3: Has no brothers or sisters
+    -9: unknown
+
+interp_kids:
+  type: Integer
+  description: 'P: How well does youth get along with other kids? / S: Get along with
+    other kids?'
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Worse; 1 = Average; 2 = Better; 9=missing
+  alias: gapeer,ysr_iv_b
+  codes:
+    0: Worse
+    1: Average
+    2: Better
+    9: missing
+
+interp_parents:
+  type: Integer
+  description: 'P: How well does youth behave with his/her parents? / S: Behave with
+    your parent?'
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Worse; 1 = Average; 2 = Better; 9=missing
+  alias: gapar,ysr_iv_c
+  codes:
+    0: Worse
+    1: Average
+    2: Better
+    9: missing
+
+interp_alone:
+  type: Integer
+  description: 'P: How well does youth play and work alone? / S: Do things by yourself?'
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Worse; 1 = Average; 2 = Better; 9=missing
+  alias: pwself,ysr_iv_d
+  codes:
+    0: Worse
+    1: Average
+    2: Better
+    9: missing
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+
+week:
+  type: Float
+  description: Week in level/study
+  notes: 99=week 10-week 14
+  codes:
+    99: week 10-week 14
+
+rand_num:
+  type: Integer
+  description: Randomization Number
+  range:
+  - 0::2
+
+daysrz:
+  type: Integer
+  description: days since randomization
+
+psqgrade:
+  type: Integer
+  description: Grade in School (0 for Kindergarten)
+  notes: -9 = Missing value
+  alias: grade
+  codes:
+    -9: Missing value
+
+teendemo1b:
+  type: String
+  length: 255
+  description: If not in school, please explain why
+  alias: ysr_p1_8text
+
+ysr_noattnd:
+  type: Integer
+  description: Subject Not Attending School
+  range:
+  - 1
+  notes: 1=checked
+  codes:
+    1: checked
+
+ysr_i_n:
+  type: Integer
+  description: 'YSR I-N: Sports Like = None'
+  range:
+  - 1
+  notes: 1=checked
+  alias: ysr_sport
+  codes:
+    1: checked
+
+ysr_ii_n:
+  type: Integer
+  description: 'YSR II-N: Hobbies, Activities = None'
+  range:
+  - 1
+  notes: 1=cheked
+  alias: ysr_hob
+  codes:
+    1: cheked
+
+ysr_iii_n:
+  type: Integer
+  description: 'YSR III-N: Clubs, Teams = None'
+  range:
+  - 1
+  notes: 1=cheked
+  alias: ysr_org
+  codes:
+    1: cheked
+
+ysr_iv_n:
+  type: Integer
+  description: 'YSR IV-N: Jobs or Chores = None'
+  range:
+  - 1
+  notes: 1=cheked
+  alias: ysr_job
+  codes:
+    1: cheked
+
+ysr_vii_1a:
+  type: Integer
+  description: 'YSR VII-1A: performance in academic subjects A'
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  notes: 0=failing; 1=below average; 2=average; 3=above average
+  alias: apa
+  codes:
+    0: failing
+    1: below average
+    2: average
+    3: above average
+
+ysr_vii_1b:
+  type: Integer
+  description: 'YSR VII-1B: performance in academic subjects B'
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  notes: 0=failing; 1=below average; 2=average; 3=above average
+  alias: apb
+  codes:
+    0: failing
+    1: below average
+    2: average
+    3: above average
+
+ysr_vii_1c:
+  type: Integer
+  description: 'YSR VII-1C: performance in academic subjects C'
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  notes: 0=failing; 1=below average; 2=average; 3=above average
+  alias: apc
+  codes:
+    0: failing
+    1: below average
+    2: average
+    3: above average
+
+ysr_vii_1d:
+  type: Integer
+  description: 'YSR VII-1D: performance in academic subjects D'
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  notes: 0=failing; 1=below average; 2=average; 3=above average
+  alias: apd
+  codes:
+    0: failing
+    1: below average
+    2: average
+    3: above average
+
+ysr_vii_1e:
+  type: Integer
+  description: 'YSR VII-1E: performance in academic subjects E'
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  notes: 0=failing; 1=below average; 2=average; 3=above average
+  alias: ape
+  codes:
+    0: failing
+    1: below average
+    2: average
+    3: above average
+
+ysr_vii_1f:
+  type: Integer
+  description: 'YSR VII-1F: performance in academic subjects F'
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  notes: 0=failing; 1=below average; 2=average; 3=above average
+  alias: apf
+  codes:
+    0: failing
+    1: below average
+    2: average
+    3: above average
+
+ysr_vii_1g:
+  type: Integer
+  description: 'YSR VII-1G: performance in academic subjects G'
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  notes: 0=failing; 1=below average; 2=average; 3=above average
+  alias: apg
+  codes:
+    0: failing
+    1: below average
+    2: average
+    3: above average
+
+ysr2:
+  type: Integer
+  description: 'YSR 2: drink alcohol'
+  range:
+  - 0::2
+  notes: 0=Not True; 1=Somewhat true; 2=Very True
+  alias: q2,ysr_prob_2,ysra_item2_1
+  codes:
+    0: Not True
+    1: Somewhat true
+    2: Very True
+
+ysr5:
+  type: Integer
+  description: 'YSR 5: enjoy very little'
+  range:
+  - 0::2
+  notes: 0=Not True; 1=Somewhat true; 2=Very True
+  alias: q5,ysr_prob_5,ysra_item5
+  codes:
+    0: Not True
+    1: Somewhat true
+    2: Very True
+
+ysr28:
+  type: Integer
+  description: 'YSR 28: break rules at home/school'
+  range:
+  - 0::2
+  notes: 0=Not True; 1=Somewhat true; 2=Very True
+  alias: q28,ysr_prob_28,ysra_item28
+  codes:
+    0: Not True
+    1: Somewhat true
+    2: Very True
+
+ysr99:
+  type: Integer
+  description: 'YSR 99: use tobacco'
+  range:
+  - 0::2
+  notes: 0=Not True; 1=Somewhat true; 2=Very True
+  alias: ysr_prob_99
+  codes:
+    0: Not True
+    1: Somewhat true
+    2: Very True
+
+tr04:
+  type: Integer
+  description: 4. Fails to finish things he/she starts
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true;
+    9 = Missing/blank
+  alias: q4,ysr_prob_4,ysra_item4
+  codes:
+    0: Not true
+    1: Somewhat or sometimes true
+    2: Very true or often true
+    9: Missing/blank
+
+tr78:
+  type: Integer
+  description: 78. Inattentive or easily distracted
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true;
+    9 = Missing/blank
+  alias: q78,ysr_prob_78,ysra_item78
+  codes:
+    0: Not true
+    1: Somewhat or sometimes true
+    2: Very true or often true
+    9: Missing/blank
+
+tr84:
+  type: Integer
+  description: 84. Strange behavior
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true;
+    9 = Missing/blank
+  codes:
+    0: Not true
+    1: Somewhat or sometimes true
+    2: Very true or often true
+    9: Missing/blank
+
+tr111:
+  type: Integer
+  description: '" 111. Withdrawn, doesn''t get involved with others  "'
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true;
+    9 = Missing/blank
+  codes:
+    0: Not true
+    1: Somewhat or sometimes true
+    2: Very true or often true
+    9: Missing/blank
+
+anxious_t_score:
+  type: Integer
+  description: Anxious Depressed T Score
+  alias: kkanxdt,ysr_anx_ts
+
+cbcl_withdrawn_depressed_t_sc:
+  type: Integer
+  description: 'CBCL (6-18): Withdrawn depressed T score'
+  alias: kkwitht,ysr_with_ts
+
+somatic_t_score:
+  type: Integer
+  description: Somatic Complaints T Score
+  alias: kksomat,ysr_som_ts
+
+cbcl_social_p:
+  type: Integer
+  description: Social Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: kksocpt,ysr_soc_pro_ts
+  codes:
+    999: Missing value
+
+thought_t_score:
+  type: Integer
+  description: Thought Problems T Score
+  alias: kkthott,ysr_thou_pro_ts
+
+attention_t_score:
+  type: Integer
+  description: Attention Problems T Score
+  alias: kkattnt,ysr_att_pro_ts
+
+cbcl_rulebreak:
+  type: Integer
+  description: Rule-Breaking Behavior T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: kkdelit,ysr_rule_be_ts
+  codes:
+    999: Missing value
+
+aggressive_t_score:
+  type: Integer
+  description: Aggressive Behavior T Score
+  alias: kkaggrt,ysr_agg_be_ts
+
+cbcl_internal:
+  type: Integer
+  description: Internalizing Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: kkintt,ysr_in_pro_ts
+  codes:
+    999: Missing value
+
+cbcl_external:
+  type: Integer
+  description: Externalizing Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: kkextt,ysr_ex_pro_ts
+  codes:
+    999: Missing value
+
+cbcl_total:
+  type: Integer
+  description: Total Problems T Score
+  range:
+  - 0::183
+  - 999
+  notes: 999 = Missing value
+  alias: kktott,ysr_tot_pro_ts
+  codes:
+    999: Missing value
+
+cbcl_comp_activities_t_score:
+  type: Integer
+  description: 'CBCL (4-18 or 6-18): Competence scale activities T score'
+  alias: ysr_act_ts
+
+cbcl_comp_social_t_score:
+  type: Integer
+  description: 'CBCL (4-18 or 6-18): Competence scale social T score'
+  alias: ysr_soc_ts
+
+cbcl_comp_school_t_score:
+  type: Integer
+  description: 'CBCL (4-18 or 6-18): Competence scale school T score'
+
+cbcl_comp_totalcompetence_t_sc:
+  type: Integer
+  description: 'CBCL (4-18 or 6-18): Competence scale total competence T score'
+  alias: ysr_tot_comp_ts
+
+cbcl_affective:
+  type: Integer
+  description: Affective Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: ysr_aff_pro_ts
+  codes:
+    999: Missing value
+
+cbcl_anxiety:
+  type: Integer
+  description: Anxiety Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: kkanxt,ysr_anx_pro_ts
+  codes:
+    999: Missing value
+
+somatic_problems_t_score:
+  type: Integer
+  description: Somatic Problems T Score
+  alias: kksomt,ysr_som_pro_ts
+
+cbcl_dsm_adhd_t_score:
+  type: Integer
+  description: 'CBCL (1.5-5 or 6-18): DSM scale ADHD T score'
+  alias: kkaddt,ysr_adh_pro_ts
+
+cbcl_oppositional:
+  type: Integer
+  description: Oppositional Defiant Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: kkoddt,ysr_opp_pro_ts
+  codes:
+    999: Missing value
+
+cbcl_conduct:
+  type: Integer
+  description: Conduct Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: kkcdt,ysr_con_pro_ts
+  codes:
+    999: Missing value
+
+cbcl99:
+  type: Integer
+  description: Smokes, chews, or sniffs tobacco / Fuma, masca o inhala tabaco
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: q99,ysra_item99
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: version
+
+sports_totnum:
+  type: Integer
+  description: Total Number of Sports (Does child take part in Sports?)
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Does not take part in any sports;1 = One sport;2 = Two sports;3 = Three
+    sports;9 = Missing
+  alias: tnsport
+  codes:
+    0: Does not take part in any sports
+    1: One sport
+    2: Two sports
+    3: Three sports
+    9: Missing
+
+activities_tot:
+  type: Integer
+  description: Total Number of Activities (Child's favorite Activities?)
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Does not take part in any activities;1 = One activity;2 =Two activities;3
+    =Three activities;9 = Missing
+  alias: tnact
+  codes:
+    0: Does not take part in any activities
+    1: One activity
+    2: Two activities
+    3: Three activities
+    9: Missing
+
+c15:
+  type: Integer
+  description: Total Number of Organizations (Does child belong to Organizations?)
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Does not  belong to any organizations;1 = One organization;2 = Two organizations;3
+    = Three organizations;9 = Missing
+  codes:
+    0: Does not  belong to any organizations
+    1: One organization
+    2: Two organizations
+    3: Three organizations
+    9: Missing
+
+c19:
+  type: Integer
+  description: Total Number of Jobs (Does child have any jobs or chores?)
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Does not have any jobs or chores;1 = One chore;2 =Two chores;3 =Three
+    chores;9 = Missing
+  alias: tnjob
+  codes:
+    0: Does not have any jobs or chores
+    1: One chore
+    2: Two chores
+    3: Three chores
+    9: Missing
+
+bsimo:
+  type: Float
+  description: Months from Time 0 to assessment
+  alias: monfol
+
+kkanxdr:
+  type: Integer
+  description: 'Anxious  Depressed  Raw score '
+  alias: ysra_scale1
+
+kkanxdp:
+  type: Float
+  description: 'Anxious  Depressed Percentile  '
+
+kkwithr:
+  type: Integer
+  description: 'Withdrawn Depressed  Raw score '
+  alias: ysra_scale2
+
+kkwithp:
+  type: Float
+  description: 'Withdrawn Depressed Percentile  '
+
+kksomar:
+  type: Integer
+  description: 'Somatic Complaints  Raw score '
+  alias: ysra_scale3
+
+kksomap:
+  type: Float
+  description: 'Somatic Complaints Percentile  '
+
+kksocpr:
+  type: Integer
+  description: 'Social Problems  Raw score '
+  alias: ysra_scale4
+
+kksocpp:
+  type: Float
+  description: 'Social Problems Percentile  '
+
+kkthotr:
+  type: Integer
+  description: 'Thought Problems  Raw score '
+  alias: ysra_scale5
+
+kkthotp:
+  type: Float
+  description: 'Thought Problems Percentile  '
+
+kkattnr:
+  type: Integer
+  description: 'Attention Problems  Raw score '
+  alias: ysra_scale6
+
+kkattnp:
+  type: Float
+  description: 'Attention Problems Percentile  '
+
+kkdelir:
+  type: Integer
+  description: 'Rule Breaking Behavior  Raw score '
+  alias: ysra_scale7
+
+kkdelip:
+  type: Float
+  description: 'Rule Breaking Behavior Percentile  '
+
+kkaggrr:
+  type: Integer
+  description: 'Aggressive Behavior  Raw score '
+  alias: ysra_scale8
+
+kkaggrp:
+  type: Float
+  description: 'Aggressive Behavior Percentile  '
+
+kkintr:
+  type: Integer
+  description: 'Internalizing Problems  Raw score '
+  alias: ysra_intnl_scale
+
+kkintp:
+  type: Float
+  description: 'Internalizing Problems Percentile  '
+
+kkextr:
+  type: Integer
+  description: 'Externalizing Problems  Raw score '
+  alias: ysra_extnl_scale
+
+kkextp:
+  type: Float
+  description: 'Externalizing Problems Percentile  '
+
+kktotr:
+  type: Integer
+  description: 'Total Problems  Raw score '
+
+kktotp:
+  type: Float
+  description: 'Total Problems Percentile  '
+
+kkdepr:
+  type: Integer
+  description: 'Depressive Problems  Raw score '
+  alias: ysra_dsm5_scale1
+
+kkdept:
+  type: Float
+  description: 'Depressive Problems T Score  '
+
+kkdepp:
+  type: Float
+  description: 'Depressive Problems Percentile  '
+
+kkanxr:
+  type: Integer
+  description: 'Anxiety Problems  Raw score '
+  alias: ysra_dsm5_scale2
+
+kkanxp:
+  type: Float
+  description: 'Anxiety Problems Percentile  '
+
+kksomr:
+  type: Integer
+  description: 'Somatic Problems  Raw score '
+  alias: ysra_dsm5_scale3
+
+kksomp:
+  type: Float
+  description: 'Somatic Problems Percentile  '
+
+kkaddr:
+  type: Integer
+  description: 'Attention Deficit  Hyperactivity Problems  Raw score '
+  alias: ysra_dsm5_scale4
+
+kkaddp:
+  type: Float
+  description: 'Attention Deficit  Hyperactivity Problems Percentile  '
+
+kkoddr:
+  type: Integer
+  description: 'Oppositional Defiant Problems  Raw score '
+  alias: ysra_dsm5_scale5
+
+kkoddp:
+  type: Float
+  description: 'Oppositional Defiant Problems Percentile  '
+
+kkcdr:
+  type: Integer
+  description: 'Conduct Problems  Raw score '
+  alias: ysra_dsm5_scale6
+
+kkcdp:
+  type: Float
+  description: 'Conduct Problems Percentile  '
+
+kkocdr:
+  type: Integer
+  description: 'Obsessive Compulsive Problems  Raw score '
+
+kkocdt:
+  type: Float
+  description: 'Obsessive Compulsive Problems T Score  '
+  alias: ysr_obs_pro_ts
+
+kkocdp:
+  type: Float
+  description: 'Obsessive Compulsive Problems Percentile  '
+
+kkstrr:
+  type: Integer
+  description: 'Stress Problems  Raw score '
+
+kkstrt:
+  type: Float
+  description: 'Stress Problems T Score  '
+
+kkstrp:
+  type: Float
+  description: 'Stress Problems Percentile  '
+
+kkpqr:
+  type: Integer
+  description: 'Positive Qualities  Raw score '
+
+kkpqt:
+  type: Float
+  description: 'Positive Qualities T Score  '
+  alias: ysr_pos_qua_ts
+
+kkpqp:
+  type: Float
+  description: 'Positive Qualities Percentile  '
+
+aescode:
+  type: Integer
+  description: Staff code number of person completing this form
+  alias: pi_staff
+
+cbcl1_2_text:
+  type: String
+  length: 500
+  description: Describe alcohol use
+  notes: Touching in patterns (Current)
+  alias: ysr_2_desc,ysra_item2_2
+
+cbcl2_3_text:
+  type: String
+  length: 800
+  description: Describe thoughts, obsessions
+  alias: ysr_9_desc,ysra_item9_2
+
+cbcl5_2_text:
+  type: String
+  length: 500
+  description: 'Describe Fears certain animals, situations, or places, other than
+    school
+
+    '
+  alias: ysr_29_desc,ysra_item29_2
+
+cbcl6_6_text:
+  type: String
+  length: 500
+  description: 'Describe: Hears sound or voices that aren''t there
+
+    '
+  alias: ysr_40_desc,ysra_item40_2
+
+cbcl7_3_text:
+  type: String
+  length: 500
+  description: 'Describe: Nervous movements to twitching
+
+    '
+  alias: ysr_46_desc,ysra_item46_2
+
+cbcl9_2_text:
+  type: String
+  length: 500
+  description: 'Describe: Physical problems without known medical cause:  problems
+    with eyes (not if corrected by glasses)
+
+    '
+  alias: ysr_56d_desc,ysra_item56_4_2
+
+cbcl10_1_text:
+  type: String
+  length: 500
+  description: 'Describe: Picks nose, skin, or other parts of body'
+  alias: ysr_58_desc,ysra_item58_2
+
+cbcl11_2_text:
+  type: String
+  length: 500
+  description: 'Describe: Repeats certain acts over and over; compulsions'
+  alias: ysr_66_desc,ysra_item66_2
+
+cbcl11_6_text:
+  type: String
+  length: 500
+  description: 'Describe: Sees things that aren''t there'
+  alias: ysr_70_desc,ysra_item70_2
+
+cbcl13_1_text:
+  type: String
+  length: 500
+  description: 'Describe: Speech problems'
+  alias: ysr_79_desc,ysra_item79_2
+
+cbcl13_5_text:
+  type: String
+  length: 500
+  description: 'Describe: Stores up too many things he/she doesn''t need'
+  alias: ysr_83_desc,ysra_item83_2
+
+cbcl13_6_text:
+  type: String
+  length: 500
+  description: 'Describe: Strange behavior'
+  alias: ysr_84_desc,ysra_item84_2
+
+cbcl13_7_text:
+  type: String
+  length: 550
+  description: 'Describe: Strange ideas'
+  alias: ysr_85_desc,ysra_item85_2
+
+cbcl16_1_text:
+  type: String
+  length: 500
+  description: 'Describe: Trouble sleeping'
+  alias: ysr_100_desc,ysra_item100_2
+
+cbcl16_6_text:
+  type: String
+  length: 500
+  description: 'Describe: Uses drugs for nonmedical purposes (don''t include alcohol
+    or tobacco)'
+  alias: ysr_105_desc,ysra_item105_2
+
+cbcl_ptsd:
+  type: Integer
+  description: Post-Traumatic Stress Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: ysr_post_pro_ts
+  codes:
+    999: Missing value
+
+ysr_aca_per_ts:
+  type: Integer
+  description: Academic Performance Total Score
+  notes: 999 = Missing
+  codes:
+    999: Missing
+
+cbcl56h_des:
+  type: String
+  length: 500
+  description: 'Physical problems without known medical cause: Other (describe)'
+  alias: ysr_56h_desc,ysra_item56_8_2
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+
+cbcl12_6_text:
+  type: String
+  length: 500
+  description: 'Describe: Sleeps more than most kids during day and/or night'
+  alias: ysra_item77_2
+
+abcl_other_total:
+  type: Integer
+  description: Total score for Other Problems
+  range:
+  - 0::34
+  alias: ysra_scale9
+
+cbcl_adhd:
+  type: Integer
+  description: Attention Deficit/Hyperactivity T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: ysra_dsm5_atn_t_value
+  codes:
+    999: Missing value
+
+missingsum_obvq:
+  type: Integer
+  description: total number of missing items
+  alias: ysra_missing
+
+ysra_c_scale:
+  type: Integer
+  description: YSR C Scale
+
+ysra_total_score:
+  type: Integer
+  description: YSR Sum A, B, C Scales

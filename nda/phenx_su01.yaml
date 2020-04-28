@@ -1,0 +1,2909 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: guid
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+alc_30day_freq:
+  type: Integer
+  description: Think specifically about the past 30 days, from, up to and including
+    today. During the past 30 days, on how many days did you drink one or more drinks
+    of an alcoholic beverage? PX030301_Alcohol_30Day_Frequency
+  range:
+  - 0::30
+  - 999
+  notes: 'DATEFILL is the date 30 days prior to the date of the interview.  Enter
+    frequency in days.  Definition of a standard drink: 1 12oz bottle of beer, 1 glass
+    4oz non-fortified wine, 1 mixed drink with 1oz liquor.  If respondent needs a
+    visual reference for the size of a drink, use the flashcards from the Wave 1 National
+    Epidemiologic Survey on Alcohol and Related Conditions (NESARC) study.'
+  alias: nida_y_alclife3,numdaysalcohol,su_3
+
+alc_30day_freqcode:
+  type: Integer
+  description: Think specifically about the past 30 days, from [DATEFILL], up to and
+    including today. During the past 30 days, on how many days did you drink one or
+    more drinks of an alcoholic beverage? PX030301_Alcohol_30Day_Frequency_Coded
+  notes: 97=Refused;99=Don't know
+  codes:
+    97: Refused
+    99: Don't know
+
+alc_30day_quantity:
+  type: Integer
+  description: On the days that you drank during the past 30 days, how many drinks
+    did you usually have each day? Count as a drink a can or bottle of beer; a wine
+    cooler or a glass of wine, champagne, or sherry; a shot of liquor or a mixed drink
+    or cocktail. PX030301_Alcohol_30Day_Quantity
+  range:
+  - 0::90
+  - 999
+  notes: 'Enter quantity in drinks.  Definition of a standard drink: 1 12oz bottle
+    of beer, 1 glass 4oz non-fortified wine, 1 mixed drink with 1oz liquor.  If respondent
+    needs a visual reference for the size of a drink, use the flashcards from the
+    Wave 1 National Epidemiologic Survey on Alcohol and Related Conditions (NESARC)
+    study.'
+  alias: nida_y_alclife4,numdrinksperday,su_4
+
+alc_30day_quantitycode:
+  type: Float
+  description: On the days that you drank during the past 30 days, how many drinks
+    did you usually have each day? Count as a drink a can or bottle of beer; a wine
+    cooler or a glass of wine, champagne, or sherry; a shot of liquor or a mixed drink
+    or cocktail. PX030301_Alcohol_30Day_Quantity_Coded
+  notes: 97=Refused;99=Don't know
+  codes:
+    97: Refused
+    99: Don't know
+
+alc_first_use_age:
+  type: Integer
+  description: The next question is about drinking alcohol. This includes coolers,
+    beer, wine, champagne, liquor such as whiskey, rum, gin, vodka, scotch, or liqueurs,
+    and also any other type of alcohol.  About how old were you when you first started
+    drinking, not counting small tastes or sips of alcohol? PX030201_Alcohol_First_Use_Age
+  notes: 'Enter age in years.  Definition of a standard drink: 1 12oz bottle of beer,
+    1 glass 4oz non-fortified wine, 1 mixed drink with 1oz liquor.  If respondent
+    needs a visual reference for the size of a drink, use the flashcards from the
+    Wave 1 National Epidemiologic Survey on Alcohol and Related Conditions (NESARC)
+    study.'
+  alias: life_howoldfirstalcohol,nida_y_alclife2,su_2
+
+alc_first_use_agecoded:
+  type: Integer
+  description: The next question is about drinking alcohol. This includes coolers,
+    beer, wine, champagne, liquor such as whiskey, rum, gin, vodka, scotch, or liqueurs,
+    and also any other type of alcohol.  About how old were you when you first started
+    drinking, not counting small tastes or sips of alcohol? PX030201_Alcohol_First_Use_Age_Coded
+  range:
+  - 96
+  - 97
+  - 99
+  notes: 96=Never drank; 97=Refused; 99=Don't know
+  codes:
+    96: Never drank
+    97: Refused
+    99: Don't know
+
+alc_lifetime_use:
+  type: Integer
+  description: In your entire life, have you had at least 1 drink of any kind of alcohol,
+    not counting small tastes or sips? PX030101_Lifetime_Use
+  range:
+  - 1
+  - 2
+  - 999
+  notes: '1=Yes; 2=No. (Definition of a standard drink: 1 12oz bottle of beer, 1 glass
+    4oz non-fortified wine, 1 mixed drink with 1oz liquor.  If respondent needs a
+    visual reference for the size of a drink, use the flashcards from the Wave 1 National
+    Epidemiologic Survey on Alcohol and Related Conditions (NESARC) study.)'
+  alias: hbqspt_1,life_alcoholuse,nida_y_alclife1,su_1
+  codes:
+    1: 'Yes'
+    2: 'No. (Definition of a standard drink: 1 12oz bottle of beer, 1 glass 4oz non-fortified
+      wine, 1 mixed drink with 1oz liquor.  If respondent needs a visual reference
+      for the size of a drink, use the flashcards from the Wave 1 National Epidemiologic
+      Survey on Alcohol and Related Conditions (NESARC) study.)'
+
+fam_mem_died:
+  type: Integer
+  description: Someone in family died PX211501_Family_Member_Died
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale1
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+fam_mem_died_exp:
+  type: Integer
+  description: Someone in family died  If "Yes",  Was this a good or bad experience?
+    PX211501_Family_Member_Died_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale1_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+fam_mem_died_aff:
+  type: Integer
+  description: Someone in family died  If "Yes",  How much did the event affect you?
+    PX211501_Family_Member_Died_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale1_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+fam_mem_injured:
+  type: Integer
+  description: Family member was seriously injured PX211501_Family_Member_Injured
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale2
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+fam_mem_injured_exp:
+  type: Integer
+  description: Family member was seriously injured  If "Yes",  Was this a good or
+    bad experience? PX211501_Family_Member_Injured_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale2_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+fam_mem_injured_aff:
+  type: Integer
+  description: Family member was seriously injured  If "Yes",  How much did the event
+    affect you? PX211501_Family_Member_Injured_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale2_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+saw_crime_accident:
+  type: Integer
+  description: Saw crime/accident PX211501_Saw_Crime_Accident
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale3
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+saw_crime_accident_exp:
+  type: Integer
+  description: Saw crime/accident  If "Yes",  Was this a good or bad experience? PX211501_Saw_Crime_Accident_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale3_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+saw_crime_accident_aff:
+  type: Integer
+  description: Saw crime/accident  If "Yes",  How much did the event affect you? PX211501_Saw_Crime_Accident_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale3_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+lost_close_friend:
+  type: Integer
+  description: Lost a close friend PX211501_Lost_Close_Friend
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale4
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+lost_close_friend_exp:
+  type: Integer
+  description: Lost a close friend  If "Yes",  Was this a good or bad experience?
+    PX211501_Lost_Close_Friend_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale4_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+lost_close_friend_aff:
+  type: Integer
+  description: Lost a close friend  If "Yes",  How much did the event affect you?
+    PX211501_Lost_Close_Friend_Experience
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale4_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+close_friend_sick_injured:
+  type: Integer
+  description: Close friend was seriously sick/injured PX211501_Close_Friend_Sick_Injured
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale5
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+close_friend_sick_injured_exp:
+  type: Integer
+  description: Close friend was seriously sick/injured  If "Yes",  Was this a good
+    or bad experience? PX211501_Close_Friend_Sick_Injured_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale5_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+close_friend_sick_injured_aff:
+  type: Integer
+  description: Close friend was seriously sick/injured  If "Yes",  How much did the
+    event affect you? PX211501_Close_Friend_Sick_Injured_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale5_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+parents_fin_situation:
+  type: Integer
+  description: Negative change in parent's financial situation PX211501_Parents_Financial_Situation
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale6
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+parents_fin_situation_exp:
+  type: Integer
+  description: Negative change in parent's financial situation  If "Yes",  Was this
+    a good or bad experience? PX211501_Parents_Financial_Situation_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale6_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+parents_fin_situation_aff:
+  type: Integer
+  description: Negative change in parent's financial situation  If "Yes",  How much
+    did the event affect you? PX211501_Parents_Financial_Situation_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale6_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+fam_mem_drug_alc:
+  type: Integer
+  description: Family member had drug/alcohol problem PX211501_Family_Member_Drug_Alcohol
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale7
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+fam_mem_drug_alc_exp:
+  type: Integer
+  description: Family member had drug/alcohol problem  If "Yes",  Was this a good
+    or bad experience? PX211501_Family_Member_Drug_Alcohol_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale7_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+fam_mem_drug_alc_aff:
+  type: Integer
+  description: Family member had drug/alcohol problem  If "Yes",  How much did the
+    event affect you? PX211501_Family_Member_Drug_Alcohol_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale7_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+sick_injured:
+  type: Integer
+  description: Got seriously sick or injured PX211501_Sick_Injured
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale8
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+sick_injured_exp:
+  type: Integer
+  description: Got seriously sick or injured  If "Yes",  Was this a good or bad experience?
+    PX211501_Sick_Injured_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale8_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+sick_injured_aff:
+  type: Integer
+  description: Got seriously sick or injured  If "Yes",  How much did the event affect
+    you? PX211501_Sick_Injured_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale8_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+parents_argue:
+  type: Integer
+  description: Parents argued more than previously PX211501_Parents_Argued
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale9
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+parents_argue_exp:
+  type: Integer
+  description: Parents argued more than previously  If "Yes",  Was this a good or
+    bad experience? PX211501_Parents_Argued_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale9_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+parents_argue_aff:
+  type: Integer
+  description: Parents argued more than previously  If "Yes",  How much did the event
+    affect you? PX211501_Parents_Argued_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale9_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+mother_father_lostjob:
+  type: Integer
+  description: Mother/father figure lost job PX211501_Mother_Father_Lost_Job
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale10
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+mother_father_lostjob_exp:
+  type: Integer
+  description: Mother/father figure lost job  If "Yes",  Was this a good or bad experience?
+    PX211501_Mother_Father_Lost_Job_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale10_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+mother_father_lostjob_aff:
+  type: Integer
+  description: Mother/father figure lost job  If "Yes",  How much did the event affect
+    you? PX211501_Mother_Father_Lost_Job_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale10_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+parent_away_home:
+  type: Integer
+  description: One parent was away from home more often PX211501_Parent_Away_From_Home
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale11
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+parent_away_home_exp:
+  type: Integer
+  description: One parent was away from home more often  If "Yes",  Was this a good
+    or bad experience? PX211501_Parent_Away_From_Home_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale11_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+parent_away_home_aff:
+  type: Integer
+  description: One parent was away from home more often  If "Yes",  How much did the
+    event affect you? PX211501_Parent_Away_From_Home_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale11_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+fam_mem_arrest:
+  type: Integer
+  description: Someone in the family was arrested PX211501_Family_Member_Arrested
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale12
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+fam_mem_arrest_exp:
+  type: Integer
+  description: Someone in the family was arrested  If "Yes",  Was this a good or bad
+    experience? PX211501_Family_Member_Arrested_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale12_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+fam_mem_arrest_aff:
+  type: Integer
+  description: Someone in the family was arrested  If "Yes",  How much did the event
+    affect you? PX211501_Family_Member_Arrested_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale12_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+close_friend_died:
+  type: Integer
+  description: Close friend died PX211501_Close_Friend_Died
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale13
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+close_friend_died_exp:
+  type: Integer
+  description: Close friend died  If "Yes",  Was this a good or bad experience? PX211501_Close_Friend_Died_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale13_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+close_friend_died_aff:
+  type: Integer
+  description: Close friend died  If "Yes",  How much did the event affect you? PX211501_Close_Friend_Died_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale13_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+fam_mem_emo_mental:
+  type: Integer
+  description: Family member had mental/emotional problem PX211501_Family_Member_Mental/Emotional_Problem
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale14
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+fam_mem_emo_mental_exp:
+  type: Integer
+  description: Family member had mental/emotional problem  If "Yes",  Was this a good
+    or bad experience? PX211501_Family_Member_Mental/Emotional_Problem_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale14_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+fam_mem_emo_mental_aff:
+  type: Integer
+  description: Family member had mental/emotional problem  If "Yes",  How much did
+    the event affect you? PX211501_Family_Member_Mental/Emotional_Problem_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale14_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+sibling_left_home:
+  type: Integer
+  description: Brother or sister left home PX211501_Sibling_Left_Home
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale15
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+sibling_left_home_exp:
+  type: Integer
+  description: Brother or sister left home  If "Yes",  Was this a good or bad experience?
+    PX211501_Sibling_Left_Home_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale15_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+sibling_left_home_aff:
+  type: Integer
+  description: Brother or sister left home  If "Yes",  How much did the event affect
+    you? PX211501_Sibling_Left_Home_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale15_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+victim_crime_assualt:
+  type: Integer
+  description: Being a victim of crime/violence/assault PX211501_Victim_Of_Crime/Violence/Assault
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale16
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+victim_crime_assualt_exp:
+  type: Integer
+  description: Being a victim of crime/violence/assault  If "Yes",  Was this a good
+    or bad experience? PX211501_Victim_Of_Crime/Violence/Assault_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale16_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+victim_crime_assualt_aff:
+  type: Integer
+  description: Being a victim of crime/violence/assault  If "Yes",  How much did the
+    event affect you? PX211501_Victim_Of_Crime/Violence/Assault_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale16_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+parents_sep_12mons:
+  type: Integer
+  description: Parents separated in last 12 months PX211501_Parents_Separated_Last_12Months
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale17
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+parents_sep_12mons_exp:
+  type: Integer
+  description: Parents separated in last 12 months  If "Yes",  Was this a good or
+    bad experience PX211501_Parents_Separated_Last_12Months_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale17_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+parents_sep_12mons_aff:
+  type: Integer
+  description: Parents separated in last 12 months  If "Yes",  How much did the event
+    affect you PX211501_Parents_Separated_Last_12Months_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale17_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+parents_trouble_law:
+  type: Integer
+  description: Parents got into trouble with the law PX211501_Parents_Trouble_With_Law
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale18
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+parents_trouble_law_exp:
+  type: Integer
+  description: Parents got into trouble with the law  If "Yes",  Was this a good or
+    bad experience? PX211501_Parents_Trouble_With_Law_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale18_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+parents_trouble_law_aff:
+  type: Integer
+  description: Parents got into trouble with the law  If "Yes",  How much did the
+    event affect you? PX211501_Parents_Trouble_With_Law_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale18_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+attended_new_school:
+  type: Integer
+  description: Attended a new school PX211501_Attended_New_School
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale19
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+attended_new_school_exp:
+  type: Integer
+  description: Attended a new school  If "Yes",  Was this a good or bad experience?
+    PX211501_Attended_New_School_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale19_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+attended_new_school_aff:
+  type: Integer
+  description: Attended a new school  If "Yes",  How much did the event affect you?
+    PX211501_Attended_New_School_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale19_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+family_moved:
+  type: Integer
+  description: Family moved PX211501_Family_Moved
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale20
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+family_moved_exp:
+  type: Integer
+  description: Family moved  If "Yes",  Was this a good or bad experience? PX211501_Family_Moved_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale20_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+family_moved_aff:
+  type: Integer
+  description: Family moved  If "Yes",  How much did the event affect you? PX211501_Family_Moved_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale20_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+parents_divorced:
+  type: Integer
+  description: Parents got divorced PX211501_Parents_Divorced
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale21
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+parents_divorced_exp:
+  type: Integer
+  description: Parents got divorced  If "Yes",  Was this a good or bad experience?
+    PX211501_Parents_Divorced_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale21_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+parents_divorced_aff:
+  type: Integer
+  description: Parents got divorced  If "Yes",  How much did the event affect you?
+    PX211501_Parents_Divorced_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale21_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+parent_went_to_jail:
+  type: Integer
+  description: One of the parents went to jail PX211501_Parent_Went_To_Jail
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale22
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+parent_went_to_jail_exp:
+  type: Integer
+  description: One of the parents went to jail  If "Yes",  Was this a good or bad
+    experience? PX211501_Parent_Went_To_Jail_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale22_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+parent_went_to_jail_aff:
+  type: Integer
+  description: One of the parents went to jail  If "Yes",  How much did the event
+    affect you? PX211501_Parent_Went_To_Jail_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale22_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+new_stepparent:
+  type: Integer
+  description: Got new stepmother or stepfather PX211501_New_Stepparent
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale23
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+new_stepparent_exp:
+  type: Integer
+  description: Got new stepmother or stepfather  If "Yes",  Was this a good or bad
+    experience? PX211501_New_Stepparent_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale23_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+new_stepparent_aff:
+  type: Integer
+  description: Got new stepmother or stepfather  If "Yes",  How much did the event
+    affect you? PX211501_New_Stepparent_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale23_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+parent_new_job:
+  type: Integer
+  description: Parent got a new job PX211501_Parent_Got_New_Job
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale24
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+parent_new_job_exp:
+  type: Integer
+  description: Parent got a new job  If "Yes",  Was this a good or bad experience?
+    PX211501_Parent_Got_New_Job_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale24_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+parent_new_job_aff:
+  type: Integer
+  description: Parent got a new job  If "Yes",  How much did the event affect you?
+    PX211501_Parent_Got_New_Job_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale24_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+new_sibling:
+  type: Integer
+  description: Got new brother or sister PX211501_New_Sibling
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ale25
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+new_sibling_exp:
+  type: Integer
+  description: Got new brother or sister  If "Yes",  Was this a good or bad experience?
+    PX211501_New_Sibling_Experience
+  range:
+  - 1::4
+  notes: 1=Mostly good; 2=Mostly bad;3=Not applicable; 4=Don't Know
+  alias: ale25_1
+  codes:
+    1: Mostly good
+    2: Mostly bad
+    3: Not applicable
+    4: Don't Know
+
+new_sibling_aff:
+  type: Integer
+  description: Got new brother or sister  If "Yes",  How much did the event affect
+    you? PX211501_New_Sibling_Affect
+  range:
+  - 1::6
+  notes: 1=Not at all; 2= A little; 3=Some; 4=A lot; 5=Not applicable; 6=Don't know
+  alias: ale25_2
+  codes:
+    1: Not at all
+    2: A little
+    3: Some
+    4: A lot
+    5: Not applicable
+    6: Don't know
+
+earli_ss_unexpectation:
+  type: Integer
+  description: '"In the last month, how often have you been upset because of something
+    that happened unexpectedly?"'
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometimes; 3=Fairly often; 4=Very often
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometimes
+    3: Fairly often
+    4: Very often
+
+earli_ss_control:
+  type: Integer
+  description: '"In the last month, how often have you felt that you were unable to
+    control the important things in your life? "'
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometimes; 3=Fairly often; 4=Very often
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometimes
+    3: Fairly often
+    4: Very often
+
+earli_ss_nervous:
+  type: Integer
+  description: In the last month, how often have you felt nervous and "stressed"?
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometimes; 3=Fairly often; 4=Very often
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometimes
+    3: Fairly often
+    4: Very often
+
+earli_ss_personal:
+  type: Integer
+  description: '"In the last month, how often have you felt confident about your ability
+    to handle your personal problems? "'
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometimes; 3=Fairly often; 4=Very often
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometimes
+    3: Fairly often
+    4: Very often
+
+earli_ss_yourway:
+  type: Integer
+  description: '"In the last month, how often have you felt that things were going
+    your way?"'
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometimes; 3=Fairly often; 4=Very often
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometimes
+    3: Fairly often
+    4: Very often
+
+earli_ss_coping:
+  type: Integer
+  description: '"In the last month, how often have you found that you could not cope
+    with all the things that you had to do? "'
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometimes; 3=Fairly often; 4=Very often
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometimes
+    3: Fairly often
+    4: Very often
+
+earli_ss_irritations:
+  type: Integer
+  description: '"In the last month, how often have you been able to control irritations
+    in your life? "'
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometimes; 3=Fairly often; 4=Very often
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometimes
+    3: Fairly often
+    4: Very often
+
+earli_ss_things:
+  type: Integer
+  description: '"In the last month, how often have you felt that you were on top of
+    things? "'
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometimes; 3=Fairly often; 4=Very often
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometimes
+    3: Fairly often
+    4: Very often
+
+earli_ss_anger:
+  type: Integer
+  description: '"In the last month, how often have you been angered because of things
+    that were outside of your control? "'
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometimes; 3=Fairly often; 4=Very often
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometimes
+    3: Fairly often
+    4: Very often
+
+earli_ss_difficulties:
+  type: Integer
+  description: '"In the last month, how often have you felt difficulties were piling
+    up so high that you could not overcome them? "'
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometimes; 3=Fairly often; 4=Very often
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometimes
+    3: Fairly often
+    4: Very often
+
+frquency_sedatives:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use sedatives? PX031301_Frequency_Sedatives
+  range:
+  - 0::30
+  alias: sedativesnumdays
+
+frquency_sedatives_code:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use sedatives? PX031301_Frequency_Sedatives_Coded
+  range:
+  - 0::30
+  - 97
+  - 99
+  notes: 97=Refused; 99=Don't Know
+  alias: nida_y_drug1b
+  codes:
+    97: Refused
+    99: Don't Know
+
+frquency_tranqulizers:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use tranquilizers or anti-anxiety drugs?
+    PX031301_Frequency_Tranquilizers
+  range:
+  - 1::30
+
+frquency_tranquilzers_code:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use tranquilizers or anti-anxiety drugs?
+    PX031301_Frequency_Tranquilizers_Coded
+  range:
+  - 0::30
+  - 97
+  - 99
+  notes: 97=Refused; 99=Don't Know
+  alias: nida_y_drug2b
+  codes:
+    97: Refused
+    99: Don't Know
+
+frquency_painkillers:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use painkillers?  PX031301_Frequency_Painkillers
+  range:
+  - 1::30
+
+frquency_painkillers_code:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use painkillers? PX031301_Frequency_Painkillers_Coded
+  range:
+  - 0::30
+  - 97
+  - 99
+  notes: 97=Refused; 99=Don't Know
+  alias: nida_y_drug3b
+  codes:
+    97: Refused
+    99: Don't Know
+
+frquency_stimulants:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use stimulants? PX031301_Frequency_Stimulants
+  range:
+  - 0::30
+  alias: stimulantsnumdays
+
+frquency_stimulants_code:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use stimulants? PX031301_Frequency_Stimulants_Coded
+  range:
+  - 0::30
+  - 97
+  - 99
+  notes: 97=Refused; 99=Don't Know
+  alias: nida_y_drug4b
+  codes:
+    97: Refused
+    99: Don't Know
+
+frquency_marijuana:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use marijuana or hashish? PX031301_Frequency_Marijuana
+  range:
+  - 0::30
+  alias: marijuananumdays
+
+frquency_marijuana_code:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use marijuana or hashish? PX031301_Frequency_Marijuana_Coded
+  range:
+  - 0::30
+  - 97
+  - 99
+  notes: 97=Refused; 99=Don't Know
+  alias: nida_y_drug5b
+  codes:
+    97: Refused
+    99: Don't Know
+
+frquency_cocaine:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use cocaine? PX031301_Frequency_Cocaine
+  range:
+  - 0::30
+  alias: cocainenumdays
+
+frquency_cocaine_code:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use cocaine? PX031301_Frequency_Cocaine_Coded
+  range:
+  - 0::30
+  - 97
+  - 99
+  notes: 97=Refused; 99=Don't Know
+  alias: nida_y_drug6b
+  codes:
+    97: Refused
+    99: Don't Know
+
+frquency_crack:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use crack? PX031301_Frequency_Crack
+  range:
+  - 1::30
+
+frquency_crack_code:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use crack? PX031301_Frequency_Crack_Coded
+  range:
+  - 0::30
+  - 97
+  - 99
+  notes: 97=Refused; 99=Don't Know
+  codes:
+    97: Refused
+    99: Don't Know
+
+frquency_hallucinogens:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use any hallucinogens? PX031301_Frequency_Hallucinogens
+  range:
+  - 0::30
+  alias: hallucinogennumdays
+
+frquency_hallucinogens_code:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use any hallucinogens? PX031301_Frequency_Hallucinogens_Coded
+  range:
+  - 0::30
+  - 97
+  - 99
+  notes: 97=Refused; 99=Don't Know
+  alias: nida_y_drug7b
+  codes:
+    97: Refused
+    99: Don't Know
+
+frquency_inhalant:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use any inhalant for kicks or to get
+    high? PX031301_Frequency_Inhalant
+  range:
+  - 0::30
+
+frquency_inhalant_code:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use any inhalant for kicks or to get
+    high? PX031301_Frequency_Inhalant_Coded
+  range:
+  - 0::30
+  - 97
+  - 99
+  notes: 97=Refused; 99=Don't Know
+  alias: nida_y_drug8b
+  codes:
+    97: Refused
+    99: Don't Know
+
+frquency_heroin:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use any heroin? PX031301_Frequency_Heroin
+  range:
+  - 0::30
+  alias: heroinnumdays
+
+frquency_heroin_code:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use any heroin? PX031301_Frequency_Heroin_Coded
+  range:
+  - 0::30
+  - 97
+  - 99
+  notes: 97=Refused; 99=Don't Know
+  alias: nida_y_drug9b
+  codes:
+    97: Refused
+    99: Don't Know
+
+frquency_other:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use any other medicines or drugs or
+    substances? PX031301_Frequency_Other
+  range:
+  - 0::30
+
+frquency_other_code:
+  type: Integer
+  description: Think specifically about the past 30 days,  including today. During
+    the past 30 days, on how many days did you use any other medicines or drugs or
+    substances? PX031301_Frequency_Other_Coded
+  range:
+  - 0::30
+  - 97
+  - 99
+  notes: 97=Refused; 99=Don't Know
+  alias: nida_y_drug10b
+  codes:
+    97: Refused
+    99: Don't Know
+
+first_use_age_sedatives:
+  type: Integer
+  description: How old were you when you FIRST used Sedatives? PX031201_First_Use_Age_Sedatives
+  range:
+  - 1::99
+  notes: Age in years
+  alias: nida_y_drug1a
+
+first_use_age_tranq:
+  type: Integer
+  description: How old were you when you FIRST used Tranquilizers? PX031201_First_Use_Age_Tranquilizers
+  range:
+  - 1::99
+  notes: Age in years
+  alias: nida_y_drug2a
+
+first_use_age_painkillers:
+  type: Integer
+  description: How old were you when you FIRST used Painkillers? PX031201_First_Use_Age_Painkillers
+  range:
+  - 1::99
+  notes: Age in years
+  alias: nida_y_drug3a
+
+first_use_age_stimulants:
+  type: Integer
+  description: How old were you when you FIRST used Stimulants? PX031201_First_Use_Age_Stimulants
+  range:
+  - 1::99
+  notes: Age in years
+  alias: nida_y_drug4a
+
+first_use_age_marijuana:
+  type: Integer
+  description: How old were you when you FIRST used Marijuana? PX031201_First_Use_Age_Marijuana
+  range:
+  - 1::99
+  notes: Age in years
+  alias: nida_y_drug5a
+
+first_use_age_cocaine:
+  type: Integer
+  description: How old were you when you FIRST used Cocaine or Crack? PX031201_First_Use_Age_Cocaine
+  range:
+  - 1::99
+  notes: Age in years
+  alias: nida_y_drug6a
+
+first_use_age_halluc:
+  type: Integer
+  description: How old were you when you FIRST used Hallucinogens? PX031201_First_Use_Age_Hallucinogens
+  range:
+  - 1::99
+  notes: Age in years
+  alias: nida_y_drug7a
+
+first_use_age_inhalant:
+  type: Integer
+  description: How old were you when you FIRST used Inhalant? PX031201_First_Use_Age_Inhalant
+  range:
+  - 1::99
+  notes: Age in years
+  alias: nida_y_drug8a
+
+first_use_age_heroin:
+  type: Integer
+  description: How old were you when you FIRST used Heroin? PX031201_First_Use_Age_Heroin
+  range:
+  - 1::99
+  notes: Age in years
+  alias: nida_y_drug9a
+
+first_use_age_other:
+  type: Integer
+  description: How old were you when you FIRST used Other? PX031201_First_Use_Age_Other
+  range:
+  - 1::99
+  notes: Age in years
+  alias: nida_y_drug10a
+
+lifetime_use_sedatives:
+  type: String
+  length: 25
+  description: Have you EVER used any of these medicines or drugs?  Sedatives, for
+    example, sleeping pills, barbiturates, Seconal&#174;, Quaaludes, or Chloral Hydrate
+    - Specify PX031101_Lifetime_Use_Sedatives
+  alias: life_sedatives,nida_y_drug1
+
+lifetime_use_tranq:
+  type: String
+  length: 25
+  description: Have you EVER used any of these medicines or drugs?  Tranquilizers
+    or anti-anxiety drugs, for example, Valium&#174;, Librium&#174;, muscle relaxants,
+    or Zanax&#174;- Specify PX031101_Lifetime_Use_Tranquilizers
+  alias: nida_y_drug2
+
+lifetime_use_painkillers:
+  type: String
+  length: 25
+  description: Have you EVER used any of these medicines or drugs?  Painkillers, for
+    example, Codeine, Darvon&#174;, Percodan&#174;, Oxycontin&#174;, Dilaudid&#174;,
+    Demerol&#174;, Celebrex&#174 Vioxx&#174; - Specify PX031101_Lifetime_Use_Painkillers
+  alias: nida_y_drug3
+
+lifetime_use_stimulants:
+  type: String
+  length: 25
+  description: Have you EVER used any of these medicines or drugs?  Stimulants, for
+    example, Preludin&#174;, Benzedrine&#174;, Methedrine&#174;, Ritalin&#174;, uppers,
+    or speed - Specify PX031101_Lifetime_Use_Stimulants
+  alias: life_stimulants,nida_y_drug4
+
+lifetime_use_marijuana:
+  type: String
+  length: 25
+  description: Have you EVER used any of these medicines or drugs?  Marijuana, hash,
+    THC, or grass - Specify PX031101_Lifetime_Use_Marijuana
+  alias: life_marijuana,nida_y_drug5
+
+lifetime_use_cocaine:
+  type: String
+  length: 25
+  description: Have you EVER used any of these medicines or drugs?  Cocaine or crack
+    - Specify PX031101_Lifetime_Use_Cocaine
+  alias: life_cocaine,nida_y_drug6
+
+lifetime_use_halluc:
+  type: String
+  length: 25
+  description: Have you EVER used any of these medicines or drugs?  Hallucinogens,
+    for example, Ecstasy/MDMA, LSD, mescaline, psilocybin, PCP, angel dust, or peyote
+    - Specify PX031101_Lifetime_Use_Hallucinogens
+  alias: life_hallucinogen,nida_y_drug7
+
+lifetime_use_inhalant:
+  type: String
+  length: 25
+  description: Have you EVER used any of these medicines or drugs?  Inhalants or solvents,
+    for example, amyl nitrite, nitrous oxide, glue, toluene or gasoline - Specify
+    PX031101_Lifetime_Use_Inhalant
+  alias: nida_y_drug8
+
+lifetime_use_heroin:
+  type: String
+  length: 25
+  description: Have you EVER used any of these medicines or drugs?  Heroin PX031101_Lifetime_Use_Heroin
+  alias: life_heroin,nida_y_drug9
+
+llifetime_use_other:
+  type: String
+  length: 25
+  description: Have you EVER used any of these medicines or drugs?  Any OTHER medicines,
+    or drugs, or substances, for example, methadone, Elavil&#174;, steroids, Thorazine&#174;
+    or Haldol&#174;? - (SELECT MOST FREQUENTLY USED OTHER DRUG) PX031101_Lifetime_Use_Other
+  alias: nida_y_drug10
+
+cigarette_30day_smoking:
+  type: Integer
+  description: Now think about the past 30 days, including today. During the past
+    30 days, have you smoked part or all of a cigarette? PX030801_30Day_Cigarette_Smoking
+  range:
+  - 1
+  - 2
+  - 99
+  notes: 1=Yes; 2=No; 99=DK/refused
+  alias: nida_y_tobaco6,su_8
+  codes:
+    1: 'Yes'
+    2: 'No'
+    99: DK/refused
+
+freq_30day_count:
+  type: Integer
+  description: During the past 30 days, on how many days did you smoke part or all
+    of a cigarette? PX030801_30Day_Frequency_Count
+  range:
+  - 0::30
+  - 999
+  alias: nida_y_tobaco6a,numdaysnicotine,su_8a
+
+freq_30day_countcoded:
+  type: Integer
+  description: During the past 30 days, on how many days did you smoke part or all
+    of a cigarette? PX030801_30Day_Frequency_Count_Coded
+  range:
+  - 97
+  - 99
+  notes: 97=Refused; 99=Don't Know
+  codes:
+    97: Refused
+    99: Don't Know
+
+freq_30day_estimate:
+  type: Integer
+  description: What is your best estimate of the number of days you smoked part or
+    all of a cigarette during the past 30 days? PX030801_30Day_Frequency_Estimate
+  range:
+  - 1::6
+  - 999
+  notes: 1 = 1 or 2 days; 2 = 3 to 5 days; 3 = 6 to 9 days; 4 = 10 to 19 days; 5 =
+    20 to 29 days; 6 = All 30 days
+  alias: nida_y_tobaco6b
+  codes:
+    1: 1 or 2 days
+    2: 3 to 5 days
+    3: 6 to 9 days
+    4: 10 to 19 days
+    5: 20 to 29 days
+    6: All 30 days
+
+quantity_30day:
+  type: Integer
+  description: On the you smoked cigarettes during the past 30 days, how many cigarettes
+    did you smoke per day, on average? PX030801_30Day_Quantity
+  range:
+  - 1::10
+  - 9998
+  notes: 1 = Less than one cigarette per day; 2 = 1 cigarette per day; 3 = 2 to 5
+    cigarettes per day; 4 = 6 to 15 cigarettes per day (about 1/2 pack); 5 = 16 to
+    25 cigarettes per day (about 1 pack); 6 = 26 to 35 cigarettes per day (about 1
+    1/2 packs); 7 = More than 35 cigarettes per day (about 2 packs or more); 8=DK/refused;
+    9 = 1 to 5; 10 = More than 26 cigarettes per day; 9998 = N/A
+  alias: nida_y_tobaco7,su_8b
+  codes:
+    1: Less than one cigarette per day
+    2: 1 cigarette per day
+    3: 2 to 5 cigarettes per day
+    4: 6 to 15 cigarettes per day (about 1/2 pack)
+    5: 16 to 25 cigarettes per day (about 1 pack)
+    6: 26 to 35 cigarettes per day (about 1 1/2 packs)
+    7: More than 35 cigarettes per day (about 2 packs or more)
+    8: DK/refused
+    9: 1 to 5
+    10: More than 26 cigarettes per day
+    9998: N/A
+
+evryday_smoker_qty_1day:
+  type: Integer
+  description: Protocol A is used with adults who are Every-Day Smokers.  On the average,
+    about how many cigarettes do you now smoke each day? PX030802_Everyday_Smoker_Quantity_1Day
+  range:
+  - 1::99
+
+evryday_smoker_qty_1day_code:
+  type: Integer
+  description: Protocol A is used with adults who are Every-Day Smokers.  On the average,
+    about how many cigarettes do you now smoke each day? PX030802_Everyday_Smoker_Quantity_1Day_Coded
+  range:
+  - 97
+  notes: '97=Don''t know/Refused; X for "none"
+
+    '
+  codes:
+    97: Don't know/Refused
+
+someday_smoker_days_1mon:
+  type: Integer
+  description: Protocol B is used with adults who are Some-Day Smokers.  On how many
+    of the past 30 days did you smoke cigarettes? PX030802_Someday_Smoker_Days_1Month
+  range:
+  - 1::30
+
+someday_smok_days_1mon_code:
+  type: Integer
+  description: Protocol B is used with adults who are Some-Day Smokers.  On how many
+    of the past 30 days did you smoke cigarettes? PX030802_Someday_Smoker_Days_1Month_Coded
+  range:
+  - 97
+  notes: '97=Don''t know/Refused
+
+    '
+  codes:
+    97: Don't know/Refused
+
+someday_smoker_qty_1day:
+  type: Integer
+  description: Protocol B is used with adults who are Some-Day Smokers.  On the average,
+    how many cigarettes did you usually smoke each day? PX030802_Someday_Smoker_Quantity_1Day
+  range:
+  - 1::99
+
+someday_smoker_qty_1day_code:
+  type: Integer
+  description: Protocol B is used with adults who are Some-Day Smokers.  On the average,
+    how many cigarettes did you usually smoke each day? PX030802_Someday_Smoker_Quantity_1Day_Coded
+  range:
+  - 97
+  notes: '97=Don''t know/Refused
+
+    '
+  codes:
+    97: Don't know/Refused
+
+former_smoker_6mons:
+  type: Integer
+  description: Protocol C is used with adults who are Former Smokers.  Have you EVER
+    smoked cigarettes EVERY DAY for at least 6 months? PX030802_Former_Smoker_Smoking_6Month
+  range:
+  - 1
+  - 2
+  - 97
+  notes: 1=Yes; 2=No; 97=Don't Know/Refused
+  codes:
+    1: 'Yes'
+    2: 'No'
+    97: Don't Know/Refused
+
+former_smoker_qty_1daya:
+  type: Integer
+  description: Protocol C is used with adults who are Former Smokers.  When you last
+    smoked every day, on average how many cigarettes did you smoke each day? PX030802_Former_Smoker_Quantity_1DayA
+  range:
+  - 1::99
+
+former_smoker_qty_1daya_code:
+  type: Integer
+  description: Protocol C is used with adults who are Former Smokers.  When you last
+    smoked every day, on average how many cigarettes did you smoke each day? PX030802_Former_Smoker_Quantity_1DayA_Coded
+  range:
+  - 97
+  notes: '97=Don''t know/Refused
+
+    '
+  codes:
+    97: Don't know/Refused
+
+former_smoker_qty_1dayb:
+  type: Integer
+  description: Protocol C is used with adults who are Former Smokers.  When you last
+    smoked every day, on average how many cigarettes did you smoke each day? PX030802_Former_Smoker_Quantity_1DayB
+  range:
+  - 1::99
+
+former_smoker_qty_1dayb_code:
+  type: Integer
+  description: Protocol C is used with adults who are Former Smokers.  When you last
+    smoked every day, on average how many cigarettes did you smoke each day? PX030802_Former_Smoker_Quantity_1DayB_Coded
+  range:
+  - 97
+  notes: '97=Don''t know/Refused
+
+    '
+  codes:
+    97: Don't know/Refused
+
+first_cig_smoke_age:
+  type: Integer
+  description: How old were you the first time you smoked part or all of a cigarette?
+    PX030701_First_Cigarette_Smoking_Age
+  range:
+  - 1::110
+  notes: Age in years
+  alias: life_howoldfirstsmoked,su_7
+
+first_cig_smoke_age_code:
+  type: Integer
+  description: How old were you the first time you smoked part or all of a cigarette?
+    PX030701_First_Cigarette_Smoking_Age_Coded
+  range:
+  - 97
+  notes: 97=Don't know/Refused
+  codes:
+    97: Don't know/Refused
+
+first_cig_smoke_evryday_age1:
+  type: Integer
+  description: How old were you when you first started smoking cigarettes every day?
+    PX030701_First_Cigarette_Smoking_Everyday_Age
+  range:
+  - 1::110
+  - 999
+  notes: Age in years
+  alias: nida_y_tobaco4
+
+first_cig_smoke_eday_age1_code:
+  type: Integer
+  description: How old were you when you first started smoking cigarettes every day?
+    PX030701_First_Cigarette_Smoking_Everyday_Age_Coded
+  range:
+  - 97
+  notes: 97=Don't know/Refused
+  codes:
+    97: Don't know/Refused
+
+first_cig_smoke_evryday_age2:
+  type: Integer
+  description: How old were you when you first started smoking cigarettes every day?
+    PX030702_First_Cigarette_Smoking_Everyday_Age
+  range:
+  - 1::99
+  notes: Age in years
+
+first_cig_smoke_eday_age2_code:
+  type: Integer
+  description: How old were you when you first started smoking cigarettes every day?
+    PX030702_First_Cigarette_Smoking_Everyday_Age_Coded
+  range:
+  - 97
+  notes: 97=Don't know/Refused
+  codes:
+    97: Don't know/Refused
+
+first_cig_smoke_reg_age:
+  type: Integer
+  description: How old were you when you first started smoking cigarettes FAIRLY REGULARLY?
+    PX030702_First_Cigarette_Smoking_Regularly_Age
+  range:
+  - 1::99
+  - 999
+  alias: nida_y_tobaco5
+
+first_cig_smoke_reg_age_code:
+  type: Integer
+  description: How old were you when you first started smoking cigarettes FAIRLY REGULARLY?
+    PX030702_First_Cigarette_Smoking_Regularly_Age_Coded
+  range:
+  - 97
+  - 99
+  notes: 97=Don't know/Refused; 99=Never
+  codes:
+    97: Don't know/Refused
+    99: Never
+
+cig_smoking:
+  type: Integer
+  description: Have you ever smoked part or all of a cigarette? PX030601_Cigarette_Smoking
+  range:
+  - 1
+  - 2
+  - 97
+  notes: 1=Yes; 2=No; 97=Don't Know/Refused
+  alias: cigarette,nida_y_tobaco,su_6
+  codes:
+    1: 'Yes'
+    2: 'No'
+    97: Don't Know/Refused
+
+cig_smoking1_100:
+  type: Integer
+  description: Have you smoked at least 100 cigarettes in your entire life? PX030601_Cigarette_Smoking_100
+  range:
+  - 1
+  - 2
+  - 97
+  notes: 1=Yes; 2=No; 97=Don't Know/Refused
+  alias: life_cigarettes,nida_y_tobaco1
+  codes:
+    1: 'Yes'
+    2: 'No'
+    97: Don't Know/Refused
+
+cig_smoking1_current:
+  type: Integer
+  description: Do you now smoke cigarettes every day, some days, or not at all? PX030601_Cigarette_Smoking_Current
+  range:
+  - 1::4
+  notes: 1=Every day; 2=Some days; 3=Not at all; 4=Don't know/Refused
+  alias: nida_y_tobaco2
+  codes:
+    1: Every day
+    2: Some days
+    3: Not at all
+    4: Don't know/Refused
+
+cig_smoking_evryday_1mon:
+  type: Integer
+  description: Has there ever been a period in your life when you smoked cigarettes
+    every day for at least 30 days? PX030601_Cigarette_Smoking_Everyday_1Month
+  range:
+  - 1
+  - 2
+  - 97
+  - 999
+  notes: 1=Yes; 2=No; 97=Don't Know/Refused; 999 = Legitimate Skip
+  alias: nida_y_tobaco3
+  codes:
+    1: 'Yes'
+    2: 'No'
+    97: Don't Know/Refused
+    999: Legitimate Skip
+
+cig_smoking2_100:
+  type: Integer
+  description: 'Have you smoked at least 100 cigarettes in your entire life?  (Note
+    to interviewer: 100 CIGARETTES = APPROXIMATELY 5 PACKS) PX030602_Cigarette_Smoking_100'
+  range:
+  - 1
+  - 2
+  - 97
+  notes: 1=Yes; 2=No; 97=Don't Know/Refused
+  codes:
+    1: 'Yes'
+    2: 'No'
+    97: Don't Know/Refused
+
+cig_smoking2_current:
+  type: Integer
+  description: Do you now smoke cigarettes every day, some days, or not at all? PX030602_Cigarette_Smoking_Current
+  range:
+  - 1::4
+  notes: 1=Every day; 2=Some days; 3=Not at all; 4=Don't know/Refused
+  codes:
+    1: Every day
+    2: Some days
+    3: Not at all
+    4: Don't know/Refused
+
+cig_smoking_evryday_6mon:
+  type: Integer
+  description: Has there ever been a period in your life when you smoked cigarettes
+    every day for at least 6 months? PX030602_Cigarette_Smoking_Everyday_6Month
+  range:
+  - 1
+  - 2
+  - 97
+  notes: 1=Yes; 2=No; 97=Don't Know/Refused
+  codes:
+    1: 'Yes'
+    2: 'No'
+    97: Don't Know/Refused
+
+su_5:
+  type: Integer
+  description: Do you have any friends who drank beer, wine, or any drink containing
+    alcohol in the past year?
+  range:
+  - 0::1
+  - 9997
+  notes: 0 = NO; 1 = YES; 9997 = DID NOT ANSWER
+  codes:
+    0: 'NO'
+    1: 'YES'
+    9997: DID NOT ANSWER
+
+su_9:
+  type: Integer
+  description: In your entire life, have you ever tried an electronic cigarette (e-cigarette),
+    even if it was only a puff?
+  range:
+  - 0::1
+  - 9998
+  notes: 0 = NO; 1 = YES; 9998 = DID NOT ANSWER
+  alias: ecig,life_ecig
+  codes:
+    0: 'NO'
+    1: 'YES'
+    9998: DID NOT ANSWER
+
+su_10:
+  type: Integer
+  description: How old were you the first time tried an e-cigarette?
+  range:
+  - 0::1200
+  - 9999
+  - 9998
+  notes: age in years; 9999 = DON'T KNOW; 9998 = N/A
+  codes:
+    9999: DON'T KNOW
+    9998: N/A
+
+su_11:
+  type: Integer
+  description: Now think about the past 30 days, up to and including today, on how
+    many days did you use an e-cigarette?
+  range:
+  - 0::1
+  - 9998
+  notes: 0 = NO; 1 = YES; 9998 = DID NOT ANSWER
+  codes:
+    0: 'NO'
+    1: 'YES'
+    9998: DID NOT ANSWER
+
+su_11a:
+  type: Integer
+  description: During the past 30 days, up to and including today, on how many days
+    did you use an e-cigarette?
+  range:
+  - 0::1200
+  - 9999
+  - 9998
+  notes: in days, 9999 = DON'T KNOW; 9998 = N/A
+  codes:
+    9999: DON'T KNOW
+    9998: N/A
+
+su_11b:
+  type: Integer
+  description: On the days you used e-cigarettes during the past 30 days, how many
+    millileters (mL) did you "vape" or use per day, on average?
+  range:
+  - 0::1200
+  - 9999
+  - 9998
+  notes: In days; 9999 = DON'T KNOW; 9998 = N/A
+  codes:
+    9999: DON'T KNOW
+    9998: N/A
+
+su_12:
+  type: Integer
+  description: In your entire life, have you ever taken prescription medication that
+    was not your own?
+  range:
+  - 0::6
+  - 9998
+  notes: 1 = less than .5 mL; 2 = .5-1 mL; 3 = 1-2 mL; 4 = 2-3 mL; 5 = 4-5 mL; 6 =
+    More than 5 mL; 9998 = N/A
+  codes:
+    1: less than .5 mL
+    2: .5-1 mL
+    3: 1-2 mL
+    4: 2-3 mL
+    5: 4-5 mL
+    6: More than 5 mL
+    9998: N/A
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+
+su_13:
+  type: Integer
+  description: About how old were you when you first started taking prescription medication
+    that was not your own?
+  range:
+  - 0::1200
+  - 9998
+  - 9999
+  notes: in years; 9998 = N/A; 9999 = Don't know
+  codes:
+    9998: N/A
+    9999: Don't know
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+  alias: siteid
+
+timept:
+  type: Integer
+  description: Time Point
+  notes: 888 = not applicable; 999 = missing
+  alias: timepoint
+  codes:
+    888: not applicable
+    999: missing
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+
+first_nicotine_3:
+  type: Integer
+  description: Have you ever used smokeless tobacco like chew, dip, or snus?
+  range:
+  - 1
+  - 2
+  - 0
+  notes: 1 = Yes; 2 = No; 0 = No
+  alias: dip,life_dip
+  codes:
+    1: 'Yes'
+    2: 'No'
+    0: 'No'
+
+sm_3b3:
+  type: Integer
+  description: Tried non-cigarette tobacco or nicotine product  hookah?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1=Yes
+  alias: hookah,life_hookah
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+smkamt:
+  type: Integer
+  description: About how many cigarettes smoke per day
+  alias: life_numsmokedaysmkmost,numsmokeperday
+
+b30:
+  type: Integer
+  description: barbituates 30 days
+  alias: barbituratesnumdays
+
+phenxalcquant:
+  type: Integer
+  description: Total Alcohol Quantity
+
+pipe:
+  type: Integer
+  description: Ever smoked pipe, cigars or cigarillos
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: life_pipe
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+gum:
+  type: Integer
+  description: ' Gum,Patches [1=Yes]'
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Not Selected; 1=Selected; -9=Missing (Question not answered)
+  alias: life_gum
+  codes:
+    0: Not Selected
+    1: Selected
+    -9: Missing (Question not answered)
+
+opiatenumdays:
+  type: Integer
+  description: 'Number of days Opiates '
+
+qq4:
+  type: Integer
+  description: Section Q - Nicotine Dependence. Q4. When you (smoked cigarettes/smoked
+    cigars/smoked a pipe/used tobacco) the most, how soon after waking up would you
+    start? Was it within the first...
+  range:
+  - 1::4
+  notes: 1=5 minutes; 2=30 minutes; 3=hour; 4=later
+  alias: life_howsoonwhenwakesmoke
+  codes:
+    1: 5 minutes
+    2: 30 minutes
+    3: hour
+    4: later
+
+sm_2m:
+  type: Integer
+  description: Which cigarette would you hate most to give up?
+  range:
+  - 1
+  - 2
+  notes: 1=The first one in the morning; 2=All the others
+  alias: life_hatedmostgiveup
+  codes:
+    1: The first one in the morning
+    2: All the others
+
+life_moreinam:
+  type: Integer
+  description: Smoked more in the AM
+  range:
+  - 0::1
+  - -7
+  - -8
+  notes: 0=No; 1=Yes; -8=DON'T KNOW; -7=REFUSED
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -8: DON'T KNOW
+    -7: REFUSED
+
+phx_tobacco_dependence_c2:
+  type: Integer
+  description: think about the six-month period when you were smoking the most...
+    did you find it difficult to refrain from smoking in places where it is forbidden
+  range:
+  - 0
+  - 1
+  notes: 1=yes; 0=no
+  alias: life_difficultrefrain
+  codes:
+    1: 'yes'
+    0: 'no'
+
+phx_tobacco_dependence_b6:
+  type: Integer
+  description: when you smoked more, did you smoke if you are so ill that you are
+    in bed most of the day?
+  range:
+  - 0
+  - 1
+  notes: 1=yes; 0=no
+  alias: life_smokewhenill
+  codes:
+    1: 'yes'
+    0: 'no'
+
+alcage:
+  type: Integer
+  description: 'Age during first use of alcohol?
+
+    (specify age in years)'
+  notes: specify age in years
+  alias: life_howoldfirstused
+
+life_opiates:
+  type: Integer
+  description: Ever in life used Opiates
+  range:
+  - 0::1
+  - -7
+  - -8
+  notes: 0=No; 1=Yes; -8=DON'T KNOW; -7=REFUSED
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -8: DON'T KNOW
+    -7: REFUSED
+
+life_barbiturates:
+  type: Integer
+  description: Ever in life used Barbiturates
+  range:
+  - 0::1
+  - -5
+  - -7
+  - -8
+  notes: 0=No; 1=Yes; -8=DON'T KNOW; -7=REFUSED; -5=Missing (Question presented)
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -8: DON'T KNOW
+    -7: REFUSED
+    -5: Missing (Question presented)
+
+life_alcyear:
+  type: Integer
+  description: Ever in life had one or more drink per month for 12 months
+  range:
+  - 0::1
+  - -5
+  - -7
+  - -8
+  notes: 0=No; 1=Yes; -8=DON'T KNOW; -7=REFUSED; -5=Missing (Question presented)
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -8: DON'T KNOW
+    -7: REFUSED
+    -5: Missing (Question presented)
+
+life_toomuchday:
+  type: Integer
+  description: Too Much Time Drinking
+  range:
+  - 0::4
+  - -7
+  - -8
+  notes: 0=Never; 1=Less than once a week; 2=1-2 days a week; 3=3-4 days a week; 4=Every
+    or nearly every day; -8=DON'T KNOW; -7=REFUSED
+  codes:
+    0: Never
+    1: Less than once a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+    -8: DON'T KNOW
+    -7: REFUSED
+
+life_heavysinglesetting:
+  type: Integer
+  description: Drink Heavily in Single Sitting
+  range:
+  - 0::4
+  - -7
+  - -8
+  notes: 0=Never; 1=Less than once a week; 2=1-2 days a week; 3=3-4 days a week; 4=Every
+    or nearly every day; -8=DON'T KNOW; -7=REFUSED
+  codes:
+    0: Never
+    1: Less than once a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+    -8: DON'T KNOW
+    -7: REFUSED
+
+life_drinktoomuch:
+  type: Integer
+  description: Too Much Drinking
+  range:
+  - 0::4
+  - -7
+  - -8
+  notes: 0=Never; 1=Less than once a week; 2=1-2 days a week; 3=3-4 days a week; 4=Every
+    or nearly every day; -8=DON'T KNOW; -7=REFUSED
+  codes:
+    0: Never
+    1: Less than once a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+    -8: DON'T KNOW
+    -7: REFUSED
+
+life_morethanplanned:
+  type: Integer
+  description: Drinked  More Than Planned
+  range:
+  - 0::4
+  - -7
+  - -8
+  notes: 0=Never; 1=Less than once a week; 2=1-2 days a week; 3=3-4 days a week; 4=Every
+    or nearly every day; -8=DON'T KNOW; -7=REFUSED
+  codes:
+    0: Never
+    1: Less than once a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+    -8: DON'T KNOW
+    -7: REFUSED
+
+life_cutdown:
+  type: Integer
+  description: Trouble Controlling Drinking
+  range:
+  - 0::4
+  - -5
+  - -7
+  - -8
+  notes: 0=Never; 1=Less than once a week; 2=1-2 days a week; 3=3-4 days a week; 4=Every
+    or nearly every day; -8=DON'T KNOW; -7=REFUSED; -5=Missing (Question presented)
+  codes:
+    0: Never
+    1: Less than once a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+    -8: DON'T KNOW
+    -7: REFUSED
+    -5: Missing (Question presented)
+
+life_difficultystopping:
+  type: Integer
+  description: Difficulty Stopping After one or two Drinks
+  range:
+  - 0::4
+  - -7
+  - -8
+  notes: 0=Never; 1=Less than once a week; 2=1-2 days a week; 3=3-4 days a week; 4=Every
+    or nearly every day; -8=DON'T KNOW; -7=REFUSED
+  codes:
+    0: Never
+    1: Less than once a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+    -8: DON'T KNOW
+    -7: REFUSED
+
+life_outofmind:
+  type: Integer
+  description: Can't Get Drink Out of Mind
+  range:
+  - 0::4
+  - -7
+  - -8
+  notes: 0=Never; 1=Less than once a week; 2=1-2 days a week; 3=3-4 days a week; 4=Every
+    or nearly every day; -8=DON'T KNOW; -7=REFUSED
+  codes:
+    0: Never
+    1: Less than once a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+    -8: DON'T KNOW
+    -7: REFUSED
+
+toomuchday:
+  type: Integer
+  description: Too Much Time Drinking in the past 30 days
+  range:
+  - 0::4
+  - -5
+  - -7
+  - -8
+  notes: 0=Never; 1=Less than once a week; 2=1-2 days a week; 3=3-4 days a week; 4=Every
+    or nearly every day; -8=DON'T KNOW; -7=REFUSED; -5=Missing (Question presented)
+  codes:
+    0: Never
+    1: Less than once a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+    -8: DON'T KNOW
+    -7: REFUSED
+    -5: Missing (Question presented)
+
+heavysinglesetting:
+  type: Integer
+  description: Heavily Single Sitting in the past 30 days
+  range:
+  - 0::4
+  - -5
+  - -7
+  - -8
+  notes: 0=Never; 1=Less than once a week; 2=1-2 days a week; 3=3-4 days a week; 4=Every
+    or nearly every day; -8=DON'T KNOW; -7=REFUSED; -5=Missing (Question presented)
+  codes:
+    0: Never
+    1: Less than once a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+    -8: DON'T KNOW
+    -7: REFUSED
+    -5: Missing (Question presented)
+
+drinktoomuch:
+  type: Integer
+  description: Too much in the past 30 days
+  range:
+  - 0::4
+  - -5
+  - -7
+  - -8
+  notes: 0=Never; 1=Less than once a week; 2=1-2 days a week; 3=3-4 days a week; 4=Every
+    or nearly every day; -8=DON'T KNOW; -7=REFUSED; -5=Missing (Question presented)
+  codes:
+    0: Never
+    1: Less than once a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+    -8: DON'T KNOW
+    -7: REFUSED
+    -5: Missing (Question presented)
+
+morethanplanned:
+  type: Integer
+  description: More Than Planned in the past 30 days
+  range:
+  - 0::4
+  - -5
+  - -7
+  - -8
+  notes: 0=Never; 1=Less than once a week; 2=1-2 days a week; 3=3-4 days a week; 4=Every
+    or nearly every day; -8=DON'T KNOW; -7=REFUSED; -5=Missing (Question presented)
+  codes:
+    0: Never
+    1: Less than once a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+    -8: DON'T KNOW
+    -7: REFUSED
+    -5: Missing (Question presented)
+
+cutdown:
+  type: Integer
+  description: Trouble Controlling in the past 30 days
+  range:
+  - 0::4
+  - -5
+  - -7
+  - -8
+  notes: 0=Never; 1=Less than once a week; 2=1-2 days a week; 3=3-4 days a week; 4=Every
+    or nearly every day; -8=DON'T KNOW; -7=REFUSED; -5=Missing (Question presented)
+  codes:
+    0: Never
+    1: Less than once a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+    -8: DON'T KNOW
+    -7: REFUSED
+    -5: Missing (Question presented)
+
+difficultystopping:
+  type: Integer
+  description: Diff Stop After 1 or 2 in the past 30 days
+  range:
+  - 0::4
+  - -5
+  - -7
+  - -8
+  notes: 0=Never; 1=Less than once a week; 2=1-2 days a week; 3=3-4 days a week; 4=Every
+    or nearly every day; -8=DON'T KNOW; -7=REFUSED; -5=Missing (Question presented)
+  codes:
+    0: Never
+    1: Less than once a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+    -8: DON'T KNOW
+    -7: REFUSED
+    -5: Missing (Question presented)
+
+outofmind:
+  type: Integer
+  description: Get Drink Out of Mind in the past 30 days
+  range:
+  - 0::4
+  - -5
+  - -7
+  - -8
+  notes: 0=Never; 1=Less than once a week; 2=1-2 days a week; 3=3-4 days a week; 4=Every
+    or nearly every day; -8=DON'T KNOW; -7=REFUSED; -5=Missing (Question presented)
+  codes:
+    0: Never
+    1: Less than once a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+    -8: DON'T KNOW
+    -7: REFUSED
+    -5: Missing (Question presented)
+
+rxdruguse:
+  type: Integer
+  description: Use Rx To Get High in the past 30 days
+  range:
+  - 0::1
+  - -7
+  - -8
+  notes: 0=No; 1=Yes; -8=DON'T KNOW; -7=REFUSED
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -8: DON'T KNOW
+    -7: REFUSED
+
+life_nicotine:
+  type: Integer
+  description: Used Nicotine lifetime
+  range:
+  - 0::1
+  - -5
+  - -7
+  - -8
+  notes: 0=No; 1=Yes; -8=DON'T KNOW; -7=REFUSED; -5=Presented, not answered
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -8: DON'T KNOW
+    -7: REFUSED
+    -5: Presented, not answered
+
+life_howoldfirstalcyear:
+  type: Integer
+  description: Age when subject had one or more alcoholic drinks per month For 12
+    months straight
+
+life_howmanyyearsalcyear:
+  type: Integer
+  description: How many years subject had one or more alcoholic drinks per month For
+    12 months straight
+
+life_howoftendrkmost:
+  type: Integer
+  description: Drank alcohol how often over life
+  range:
+  - 1::5
+  - -5
+  - -7
+  - -8
+  notes: 1=Less than once a month; 2=1-3 days a month; 3=1-2 days a week; 4=3-4 days
+    a week; 5=Every or nearly every day; -8=DON'T KNOW; -7=REFUSED; -5=Presented,
+    not answered
+  codes:
+    1: Less than once a month
+    2: 1-3 days a month
+    3: 1-2 days a week
+    4: 3-4 days a week
+    5: Every or nearly every day
+    -8: DON'T KNOW
+    -7: REFUSED
+    -5: Presented, not answered
+
+life_numdrinksdaydrkmost:
+  type: Integer
+  description: Highest number of alcoholic drinks Per Day
+
+life_howmanyyearssmoked:
+  type: Integer
+  description: Number of Years Smoke cigarrettes
+
+life_howoftensmkmost:
+  type: Integer
+  description: Smokes cigarrettes how often
+  range:
+  - 1::5
+  - -5
+  - -7
+  - -8
+  notes: 1=Less than once a month; 2=1-3 days a month; 3=1-2 days a week; 4=3-4 days
+    a week; 5=Every or nearly every day; -8=DON'T KNOW; -7=REFUSED; -5=Presented,
+    not answered
+  codes:
+    1: Less than once a month
+    2: 1-3 days a month
+    3: 1-2 days a week
+    4: 3-4 days a week
+    5: Every or nearly every day
+    -8: DON'T KNOW
+    -7: REFUSED
+    -5: Presented, not answered
+
+life_howmanyyearsused:
+  type: Integer
+  description: Substance Use - Number of Years
+
+life_howoftenusedmost:
+  type: Integer
+  description: Substance Use - How Often Use
+  range:
+  - 1::5
+  - -5
+  - -7
+  - -8
+  notes: 1=Less than once a month; 2=1-3 days a month; 3=1-2 days a week; 4=3-4 days
+    a week; 5=Every or nearly every day; -8=DON'T KNOW; -7=REFUSED; -5=Presented,
+    not answered
+  codes:
+    1: Less than once a month
+    2: 1-3 days a month
+    3: 1-2 days a week
+    4: 3-4 days a week
+    5: Every or nearly every day
+    -8: DON'T KNOW
+    -7: REFUSED
+    -5: Presented, not answered
+
+life_nicotine_dk:
+  type: Integer
+  description: Ever used tobacco? Don?t know
+  range:
+  - 0
+  - 1
+  - -5
+  - -7
+  - -8
+  notes: 0=Not Selected; 1=Selected; -8=DON'T KNOW; -7=REFUSED; -5=Presented, not
+    answered
+  alias: nicotine_dk
+  codes:
+    0: Not Selected
+    1: Selected
+    -8: DON'T KNOW
+    -7: REFUSED
+    -5: Presented, not answered
+
+life_nicotine_ref:
+  type: Integer
+  description: Ever used tobacco? Refused
+  range:
+  - 0
+  - 1
+  - -5
+  - -7
+  - -8
+  notes: 0=Not Selected; 1=Selected; -8=DON'T KNOW; -7=REFUSED; -5=Presented, not
+    answered
+  alias: nicotine_ref
+  codes:
+    0: Not Selected
+    1: Selected
+    -8: DON'T KNOW
+    -7: REFUSED
+    -5: Presented, not answered
+
+otdrug:
+  type: String
+  length: 50
+  description: Other drug
+  alias: nida_y_drug10other
+
+nida_y_tobaco_type:
+  type: Float
+  description: Smoking status
+  range:
+  - 0
+  - 1
+  - 2
+  - 2.1
+  - 2.2
+  - 2.3
+  - 2.31
+  notes: 0 = Never smoker; 1 = Non-Smoker; 2 = Smoker; 2.1 = Current Every-Day Smoker
+    ; 2.2 = Current Some-Day Smoker ; 2.3 = Former Smoker ; 2.31 = Former Smoker Heavier
+    Past Exposure
+  codes:
+    0: Never smoker
+    1: Non-Smoker
+    2: Smoker
+    2.1: Current Every-Day Smoker
+    2.2: Current Some-Day Smoker
+    2.3: Former Smoker
+    2.31: Former Smoker Heavier Past Exposure
+
+ale_total_number:
+  type: Integer
+  description: 'Total Number of Events, Validation: No Minimum '
+
+ale_total_number_nm:
+  type: Integer
+  description: Total Number of Events Number Missing Answers
+
+ale_affect_sum:
+  type: Integer
+  description: 'How Much Affected - Sum Validation: No Minimum '
+
+ale_affected_bad_mean:
+  type: Float
+  description: 'How Much Affected Bad - Mean Validation: No Minimum'
+
+ale_affected_bad_sum:
+  type: Integer
+  description: 'How Much Affected Bad - Sum Validation: No Minimum'
+
+ale_affected_good_mean:
+  type: Float
+  description: 'How Much Affected Good - Mean Validation: No Minimum'
+
+ale_affected_good_sum:
+  type: Integer
+  description: 'How Much Affected Good - Sum Validation: No Minimum'
+
+ale_total_bad:
+  type: Integer
+  description: 'Total Number of Bad Events Validation: No Minimum'
+
+ale_total_good:
+  type: Integer
+  description: 'Total Number of Good Events Validation: No Minimum'

@@ -1,0 +1,1152 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,subject_id
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: date_ctq,v2_ctq_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: v2_ctq_age
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+hysterec:
+  type: Integer
+  description: hysterectomy
+  range:
+  - 0
+  - 1
+  - -7
+  - 888
+  - 999
+  notes: 0=No; 1=Yes; -7=Refused; 888=N/A; 999=missing data
+  alias: mchq_1
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -7: Refused
+    888: N/A
+    999: missing data
+
+hystage:
+  type: Integer
+  description: age at hysterectomy
+  notes: 888=N/A; 999=missing data
+  alias: mchq_2
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_3:
+  type: Integer
+  description: Removal of one or both ovaries?
+  range:
+  - 1
+  - 2
+  - 888
+  - 999
+  notes: 1=Yes; 2=No; 888=N/A; 999=missing data
+  codes:
+    1: 'Yes'
+    2: 'No'
+    888: N/A
+    999: missing data
+
+mchq_4:
+  type: Integer
+  description: Removal of one or both ovaries - Age of Surgery
+  range:
+  - 1::100
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_5:
+  type: Integer
+  description: Polycystic Ovary Disease (Stein-Leventhal Syndrome)
+  range:
+  - 1
+  - 2
+  - 888
+  - 999
+  notes: 1=Yes; 2=No; 888=N/A; 999=missing data
+  alias: gynecological_hist_4a
+  codes:
+    1: 'Yes'
+    2: 'No'
+    888: N/A
+    999: missing data
+
+mchq_6:
+  type: Integer
+  description: Polycystic Ovary Disease (Stein-Leventhal Syndrome) - Age of Onset
+  range:
+  - 1::100
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_7:
+  type: Integer
+  description: Abnormal pap smear?
+  range:
+  - 1
+  - 2
+  - 888
+  - 999
+  notes: 1=Yes; 2=No; 888=N/A; 999=missing data
+  codes:
+    1: 'Yes'
+    2: 'No'
+    888: N/A
+    999: missing data
+
+mchq_8:
+  type: Integer
+  description: Abnormal pap smear - Age of Onset
+  range:
+  - 1::100
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+endomsis:
+  type: Integer
+  description: endometriosis
+  range:
+  - 0
+  - 1
+  - -7
+  - 888
+  - 999
+  notes: 0=No; 1=Yes; -7=Refused; 888=N/A; 999=missing data
+  alias: mchq_9
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -7: Refused
+    888: N/A
+    999: missing data
+
+mchq_10:
+  type: Integer
+  description: Endometriosis - Age of Onset
+  range:
+  - 1::100
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_11:
+  type: Integer
+  description: Pelvic Inflammatory Disease (infection of your womb tubes)?
+  range:
+  - 1
+  - 2
+  - 888
+  - 999
+  notes: 1=Yes; 2=No; 888=N/A; 999=missing data
+  codes:
+    1: 'Yes'
+    2: 'No'
+    888: N/A
+    999: missing data
+
+mchq_12:
+  type: Integer
+  description: Pelvic Inflammatory Disease (infection of your womb tubes) - Age of
+    Onset
+  range:
+  - 1::100
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_13:
+  type: Integer
+  description: Amenorrhea (? 3 months without a period when not pregnant)?
+  range:
+  - 1
+  - 2
+  - 888
+  - 999
+  notes: 1=Yes; 2=No; 888=N/A; 999=missing data
+  alias: gynecological_hist_4c
+  codes:
+    1: 'Yes'
+    2: 'No'
+    888: N/A
+    999: missing data
+
+mchq_14:
+  type: Integer
+  description: Amenorrhea (? 3 months without a period when not pregnant) - Age of
+    Onset
+  range:
+  - 1::100
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+scq_23_sp:
+  type: String
+  length: 100
+  description: Specify any other gynecological problem
+  alias: mchq_15
+
+mchq_16:
+  type: Integer
+  description: Other Gynecological condition - Age of Onset
+  range:
+  - 1::100
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_17:
+  type: Integer
+  description: Do you have regular menstrual cycles?
+  range:
+  - 1
+  - 2
+  - 888
+  - 999
+  notes: 1=Yes; 2=No; 888=N/A; 999=missing data
+  alias: mstrl2
+  codes:
+    1: 'Yes'
+    2: 'No'
+    888: N/A
+    999: missing data
+
+mchq_18:
+  type: String
+  length: 100
+  description: Do you have regular menstrual cycles. If no, explain
+  alias: mstrl2_reason
+
+femenst:
+  type: Float
+  description: Age (in years) at First Menstrual Period
+  range:
+  - 1::100
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  alias: gynecological_hist_9,mchq_19,mstrl2_age
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_20:
+  type: Integer
+  description: At what age did your mother have her very first period?
+  range:
+  - 1::100
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_21:
+  type: Integer
+  description: About how long is your entire cycle?
+  range:
+  - 1
+  - 2
+  - 3
+  notes: 1= less than every 25 days; 2= between 25-35 days; 3= more than every 35
+    days
+  alias: mstrl2_cycle
+  codes:
+    1: less than every 25 days
+    2: between 25-35 days
+    3: more than every 35 days
+
+mchq_23:
+  type: Date
+  description: When was the previous menstrual period (before the last menstrual period
+
+mchq_24:
+  type: Integer
+  description: Do you remember when you first started developing breasts (age)?
+  range:
+  - 1::100
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_25:
+  type: Integer
+  description: 'If you are not having regular periods:  At what age did your periods
+    become irregular'
+  range:
+  - 1::100
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_26:
+  type: Integer
+  description: 'If you are not getting your periods:  at what age did they stop'
+  range:
+  - 1::100
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_27:
+  type: Integer
+  description: If your periods were irregular before the age of 15, how many periods
+    per year on average have you had from the age at your first period to 15 years
+  range:
+  - 0::1260
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_28:
+  type: Integer
+  description: If your periods were irregular during ages 16-18, how many periods
+    per year on average have you had from 16-18 years old
+  range:
+  - 0::1260
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_29:
+  type: Integer
+  description: If your periods were irregular during ages 19-21, how many periods
+    per year on average have you had from 19-21 years old
+  range:
+  - 0::1260
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_30:
+  type: Integer
+  description: If your periods were irregular during ages 22-25, how many periods
+    per year on average have you had from 22-25 years old
+  range:
+  - 0::1260
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_31:
+  type: String
+  length: 100
+  description: What kind of sports activities (team or solo) are you engaged in?
+
+mchq_32:
+  type: Integer
+  description: How many hours per week do you typically spend on this activity?
+  range:
+  - 0::200
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_33:
+  type: Integer
+  description: At what age did this activity begin?
+  range:
+  - 1::100
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_34:
+  type: Integer
+  description: Is the activity on going?
+  range:
+  - 1
+  - 2
+  - 888
+  - 999
+  notes: 1=Yes; 2=No; 888=N/A; 999=missing data
+  codes:
+    1: 'Yes'
+    2: 'No'
+    888: N/A
+    999: missing data
+
+mchq_35:
+  type: Integer
+  description: If it is not ongoing, when did you stop this activity? (activity age
+    in years)
+  range:
+  - 1::100
+  - 888
+  - 999
+  notes: 888=N/A; 999=missing data
+  codes:
+    888: N/A
+    999: missing data
+
+mchq_36:
+  type: Integer
+  description: Do you currently use a hormonal contraceptive (oral, implant, patch,
+    or hormone-secreting IUD) or are you on any hormone therapy?
+  range:
+  - 1
+  - 2
+  - 888
+  - 999
+  notes: 1=Yes; 2=No; 888=N/A; 999=missing data
+  alias: mcq_03a
+  codes:
+    1: 'Yes'
+    2: 'No'
+    888: N/A
+    999: missing data
+
+mchq_37:
+  type: String
+  length: 25
+  description: If yes, please list contraceptive using the code below
+  notes: 1=OC's for contraception; 2=OC's primarily for menstrual regulation; 3=Other
+    estradiol for menstrual regulation; 4=progesterone for menstrual regulation; 5=fertility
+    therapy; 6=other; 7=unknown
+  codes:
+    1: OC's for contraception
+    2: OC's primarily for menstrual regulation
+    3: Other estradiol for menstrual regulation
+    4: progesterone for menstrual regulation
+    5: fertility therapy
+    6: other
+    7: unknown
+
+meau_01b:
+  type: Date
+  description: When was the first day of your last menstrual period?
+  alias: mchq_38,mcq_01,mcq_04,mstrl2_last
+
+mchq_39:
+  type: Date
+  description: Can you approximate, based on your experience, when you expect the
+    onset of your next period?
+  alias: mcq_03
+
+labsample29:
+  type: String
+  length: 10
+  description: Date of last menstrual period
+  notes: NA=if male or pre-puberty
+  alias: mpdatm
+  codes:
+    NA: if male or pre-puberty
+
+gynecological_hist_2:
+  type: String
+  length: 300
+  description: How many times have you been pregnant including miscarriages or abortions?
+  notes: If this does not apply to you, type "0".
+
+gynecological_hist_3b:
+  type: Integer
+  description: What was this first hormone used for?
+  range:
+  - 1::6
+  notes: 1 = Birth control for contraception ; 2 = Birth control for menstrual regulation
+    ; 3 = Estrogen pill for menstrual regulation ; 4 = Progesterone pill for menstrual
+    regulation ; 5 = Other ; 6 = unknown
+  codes:
+    1: Birth control for contraception
+    2: Birth control for menstrual regulation
+    3: Estrogen pill for menstrual regulation
+    4: Progesterone pill for menstrual regulation
+    5: Other
+    6: unknown
+
+gynecological_hist_3c:
+  type: String
+  length: 100
+  description: At what age did you begin using this first hormone?
+
+gynecological_hist_3d:
+  type: Integer
+  description: How many months did you use this first hormone for?
+  notes: Please only write the number of months (i.e., enter "6" for 6 months of use)
+
+gynecological_hist_3e:
+  type: Integer
+  description: Have you used another female hormone?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+gynecological_hist_3b_2:
+  type: Integer
+  description: What was this second hormone used for?
+  range:
+  - 1::6
+  notes: 1 = Birth control for contraception ; 2 = Birth control for menstrual regulation
+    ; 3 = Estrogen pill for menstrual regulation ; 4 = Progesterone pill for menstrual
+    regulation ; 5 = Other ; 6 = unknown
+  codes:
+    1: Birth control for contraception
+    2: Birth control for menstrual regulation
+    3: Estrogen pill for menstrual regulation
+    4: Progesterone pill for menstrual regulation
+    5: Other
+    6: unknown
+
+gynecological_hist_3c_2:
+  type: String
+  length: 100
+  description: At what age did you begin using this second hormone?
+
+gynecological_hist_3d_2:
+  type: Integer
+  description: How many months did you use this second hormone for?
+  notes: Please only write the number of months (i.e., enter "6" for 6 months of use)
+
+gynecological_hist_3e_2:
+  type: Integer
+  description: Have you used another female hormone?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+gynecological_hist_3b_3:
+  type: Integer
+  description: What was this third hormone used for?
+  range:
+  - 1::6
+  notes: 1 = Birth control for contraception ; 2 = Birth control for menstrual regulation
+    ; 3 = Estrogen pill for menstrual regulation ; 4 = Progesterone pill for menstrual
+    regulation ; 5 = Other ; 6 = unknown
+  codes:
+    1: Birth control for contraception
+    2: Birth control for menstrual regulation
+    3: Estrogen pill for menstrual regulation
+    4: Progesterone pill for menstrual regulation
+    5: Other
+    6: unknown
+
+gynecological_hist_3c_3:
+  type: String
+  length: 100
+  description: At what age did you begin using this third hormone?
+
+gynecological_hist_3d_3:
+  type: Integer
+  description: How many months did you use this third hormone for?
+  notes: Please only write the number of months (i.e., enter "6" for 6 months of use)
+
+gynecological_hist_3e_3:
+  type: Integer
+  description: Have you used another female hormone?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+gynecological_hist_3b_4:
+  type: Integer
+  description: What was this fourth hormone used for?
+  range:
+  - 1::6
+  notes: 1 = Birth control for contraception ; 2 = Birth control for menstrual regulation
+    ; 3 = Estrogen pill for menstrual regulation ; 4 = Progesterone pill for menstrual
+    regulation ; 5 = Other ; 6 = unknown
+  codes:
+    1: Birth control for contraception
+    2: Birth control for menstrual regulation
+    3: Estrogen pill for menstrual regulation
+    4: Progesterone pill for menstrual regulation
+    5: Other
+    6: unknown
+
+gynecological_hist_3c_4:
+  type: String
+  length: 100
+  description: At what age did you begin using this fourth hormone?
+
+gynecological_hist_3d_4:
+  type: Integer
+  description: How many months did you use this fourth hormone for?
+  notes: Please only write the number of months (i.e., enter "6" for 6 months of use)
+
+gynecological_hist_3e_4:
+  type: Integer
+  description: Have you used another female hormone?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+gynecological_hist_3b_5:
+  type: Integer
+  description: What was this fifth hormone used for?
+  range:
+  - 1::6
+  notes: 1 = Birth control for contraception ; 2 = Birth control for menstrual regulation
+    ; 3 = Estrogen pill for menstrual regulation ; 4 = Progesterone pill for menstrual
+    regulation ; 5 = Other ; 6 = unknown
+  codes:
+    1: Birth control for contraception
+    2: Birth control for menstrual regulation
+    3: Estrogen pill for menstrual regulation
+    4: Progesterone pill for menstrual regulation
+    5: Other
+    6: unknown
+
+gynecological_hist_3c_5:
+  type: String
+  length: 100
+  description: At what age did you begin using this fifth hormone?
+
+gynecological_hist_3d_5:
+  type: Integer
+  description: How many months did you use this fifth hormone for?
+  notes: Please only write the number of months (i.e., enter "6" for 6 months of use)
+
+gynecological_hist_4b:
+  type: Integer
+  description: Hirsutism (excessive hair growth, especially on face)
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+gynecological_hist_4d:
+  type: Integer
+  description: Galactorrhea (breast milk production when not pregnant or lactating)
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+gynecological_hist_6:
+  type: Integer
+  description: Are your/your child's menstrual cycles regular now? In other words,
+    is the onset of each period generally predictable within 5 days?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+gynecological_hist_7:
+  type: Integer
+  description: On average, how regularly do you have a period?
+  range:
+  - 1::3
+  notes: 1 = Less than every 25 days ; 2 = Between 25-35 days ; 3 = More than every
+    35 days
+  codes:
+    1: Less than every 25 days
+    2: Between 25-35 days
+    3: More than every 35 days
+
+gynecological_hist_8:
+  type: Integer
+  description: How many days does your period usually flow?
+  notes: Please write an integer (i.e., write 5 for 5 days)
+
+pregev:
+  type: Integer
+  description: Have you ever been pregnant
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: gynecological_hist_1
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medication1_name:
+  type: String
+  length: 500
+  description: Name first medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  alias: gynecological_hist_3a
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication2_name:
+  type: String
+  length: 200
+  description: Name second medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  alias: gynecological_hist_3a_2
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication3_name:
+  type: String
+  length: 150
+  description: Name third medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  alias: gynecological_hist_3a_3
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication4_name:
+  type: String
+  length: 100
+  description: Name fourth medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  alias: gynecological_hist_3a_4
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication5_name:
+  type: String
+  length: 500
+  description: Name fifth medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  alias: gynecological_hist_3a_5
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+daylastpd:
+  type: String
+  length: 30
+  description: First day of last menstrual period ( in days/months/years ago)
+  alias: gynecological_hist_5,men_start
+
+bcpever:
+  type: Integer
+  description: ever taken birth control pills or progesterone
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0=No; 1=Yes; -7=Refused
+  alias: gynecological_hist_3
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -7: Refused
+
+pds6g:
+  type: Integer
+  description: 'Girls only : Have you begun to menstruate?'
+  range:
+  - 0
+  - 1
+  - 99
+  notes: 0=No; 1=Yes; 99 = Refused
+  alias: men_period
+  codes:
+    0: 'No'
+    1: 'Yes'
+    99: Refused
+
+regmense:
+  type: Integer
+  description: Regular menstrual periods
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=No;1=Yes; 999=NA
+  alias: men_reg
+  codes:
+    0: 'No'
+    1: 'Yes'
+    999: NA
+
+rlhq2q1:
+  type: Integer
+  description: Current use of ORAL contraceptive pills?
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: men_contr
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+rev_endohypothyroidism:
+  type: String
+  length: 50
+  description: Hypothyroidism
+  range:
+  - 'Yes'
+  - 'No'
+  - NK
+  notes: NK = Not known
+  alias: mstrl1a
+  codes:
+    NK: Not known
+
+hyperthyroid:
+  type: String
+  length: 20
+  description: Hyperthyroidism
+  range:
+  - 'Yes'
+  - 'No'
+  - 999
+  notes: 999=NA/missing
+  alias: mstrl1b
+  codes:
+    999: NA/missing
+
+scq_24_a:
+  type: Integer
+  description: Has a doctor ever told you that you have-Any other endocrine or hormone
+    problem
+  range:
+  - 0
+  - 1
+  notes: 0 = No;1 = Yes
+  alias: mstrl1c
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+mhx016b:
+  type: String
+  length: 250
+  description: 'If YES, Enter onset/resolved date indicate ongoing with treatment
+    or not. If NOT EVALUATED, explain or describe below: Endocrine disorder'
+  alias: mstrl1c_age
+
+hypoage:
+  type: String
+  length: 50
+  description: age diagnosed hypothyroidism
+  alias: mstrl1a_age
+
+hyperage:
+  type: String
+  length: 50
+  description: age diagnosed hyperthyroidism
+  alias: mstrl1b_age
+
+straw1:
+  type: Integer
+  description: Have you had a period in the past year (12 months)?
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+straw1a:
+  type: Integer
+  description: When was your last period? Choose one of the following.
+  range:
+  - 1::4
+  notes: 1 = less than two years ago ; 2 = 2-3 years ago ; 3 = 3-6 years ago ; 4 =
+    more than 6 years ago
+  codes:
+    1: less than two years ago
+    2: 2-3 years ago
+    3: 3-6 years ago
+    4: more than 6 years ago
+
+straw1b:
+  type: Integer
+  description: Why do you think your periods stopped? Please choose the best answer
+    below. (read through all).
+  range:
+  - 1::7
+  - 999
+  notes: 1 = They stopped naturally as a I grew older and became postmenopausal -
+    done with 'the change'? ; 2 = I have had a hysterectomy or endometrial ablation.
+    ; 3 = I am pregnant or breast feeding. ; 4 = I am taking medications such as a
+    birth control injection or an intrauterine device (eg, Mirena IUD) that makes
+    my periods stop. ; 5 = I had chemotherapy and/or other treatments for cancer,
+    and my periods stopped. ; 6 = I have dramatic weight loss (for example due to
+    HIV or other medical condition or stressful/traumatic life experience) and my
+    periods stopped. ; 7 = Other ; 999 = Don't know
+  codes:
+    1: They stopped naturally as a I grew older and became postmenopausal - done with
+      'the change'?
+    2: I have had a hysterectomy or endometrial ablation.
+    3: I am pregnant or breast feeding.
+    4: I am taking medications such as a birth control injection or an intrauterine
+      device (eg, Mirena IUD) that makes my periods stop.
+    5: I had chemotherapy and/or other treatments for cancer, and my periods stopped.
+    6: I have dramatic weight loss (for example due to HIV or other medical condition
+      or stressful/traumatic life experience) and my periods stopped.
+    7: Other
+    999: Don't know
+
+straw1b_other:
+  type: String
+  length: 100
+  description: 'If other reason you think your periods stopped, fill in: '
+
+straw2:
+  type: Integer
+  description: In the past 12 months, have you skipped or missed a period? In other
+    words, have you ever gone 60 days, or two months, without a period?
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+straw2a:
+  type: Integer
+  description: Did you skip periods because you are getting older? (yes/no/don't know)
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 1 = Yes ; 0 = No ; 999 = Don't Know
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don't Know
+
+straw2b:
+  type: Integer
+  description: Choose one of the following reasons why you skipped periods.
+  range:
+  - 1::5
+  - 999
+  notes: 1 = I am/was pregnant or breast feeding. ; 2 = I have had a hysterectomy
+    or endometrial ablation. ; 3 = I am/was taking medications such as a birth control
+    injection that makes my periods stop. ; 4 = I had chemotherapy and my periods
+    stopped. ; 5 = Other ; 999 = Don't know
+  codes:
+    1: I am/was pregnant or breast feeding.
+    2: I have had a hysterectomy or endometrial ablation.
+    3: I am/was taking medications such as a birth control injection that makes my
+      periods stop.
+    4: I had chemotherapy and my periods stopped.
+    5: Other
+    999: Don't know
+
+straw2b_other:
+  type: String
+  length: 100
+  description: 'If other reason you have skipped periods, fill in: '
+
+straw3:
+  type: Integer
+  description: 'Have you noticed that your period comes earlier or later than you
+    expected? '
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+straw3a:
+  type: Integer
+  description: Has your period come late or early by at least a week?
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 1 = Yes ; 0 = No ; 999 = Don't Know
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don't Know
+
+straw3b:
+  type: Integer
+  description: 'Did your period come late or early by at least a week two times or
+    more over the past year (12 months)? '
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+straw4a:
+  type: Integer
+  description: Have you noticed that the length of your period (# of bleeding days)
+    is shorter or longer than usual for you?
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 1 = Yes ; 0 = No ; 999 = Don't Know
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don't Know
+
+straw4b:
+  type: Integer
+  description: Have you noticed that the amount of bleeding during your period is
+    more or less compared to what is normal for you?
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 1 = Yes ; 0 = No ; 999 = Don't Know
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don't Know
+
+straw_code:
+  type: Float
+  description: 'Stages of Reproductive Aging Workshop (STRAW) code
+
+    '
+  range:
+  - 1.11
+  - 1.12
+  - 1.13
+  - 1.14
+  - 1.21
+  - 1.22
+  - 2
+  - 2.2
+  - 3
+  - 4.1
+  - 4.2
+  notes: '1.11 = Postmenopausal: plus 1a; 1.12 = Postmenopausal: plus 1b ; 1.13 =
+    Postmenopausal:  plus 1c; 1.14 = Postmenopausal: plus 2; 1.21 = Postmenopausal;
+    1.22 = No periods for 12 months other reason; 2 = Late Transition; 2.2 = Skipped
+    periods not necessarily due to natural menopause; 3 = Early Transition ; 4.1 =
+    Late Reproductive (i.e., late premenopausal); 4.2 = Reproductive(i.e., premenopausal)
+    - codes are explained in https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3580996/'
+  codes:
+    1.11: 'Postmenopausal: plus 1a'
+    1.12: 'Postmenopausal: plus 1b'
+    1.13: 'Postmenopausal:  plus 1c'
+    1.14: 'Postmenopausal: plus 2'
+    1.21: Postmenopausal
+    1.22: No periods for 12 months other reason
+    2: Late Transition
+    2.2: Skipped periods not necessarily due to natural menopause
+    3: Early Transition
+    4.1: Late Reproductive (i.e., late premenopausal)
+    4.2: Reproductive(i.e., premenopausal) - codes are explained in https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3580996/
+
+mcq_02:
+  type: String
+  length: 20
+  description: About how long is your entire cycle (days)?

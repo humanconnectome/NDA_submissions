@@ -1,0 +1,1095 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: nimhid
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: ptid,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: sessiondate,studyday
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: age
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+dd_ip1:
+  type: Float
+  description: Delay discounting - Indifference point for 1 day delay
+  range:
+  - 0::10
+
+dd_ip2:
+  type: Float
+  description: Delay discounting - Indifference point for 2 day delay
+  range:
+  - 0::10
+
+dd_ip30:
+  type: Float
+  description: Delay discounting - Indifference point for 30 day delay
+  range:
+  - 0::10
+
+dd_ip180:
+  type: Float
+  description: Delay discounting - Indifference point for 180 day delay
+  range:
+  - 0::10
+
+dd_ip360:
+  type: Float
+  description: Delay discounting - Indifference point for 360 day delay
+  range:
+  - 0::10
+
+dd_1:
+  type: Integer
+  description: Would you prefer $54 today, or $55 in 117 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_2:
+  type: Integer
+  description: Would you prefer $55 today, or $75 in 61 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_3:
+  type: Integer
+  description: Would you prefer $19 today, or $25 in 53 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_4:
+  type: Integer
+  description: Would you prefer $31 today, or $85 in 7 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_5:
+  type: Integer
+  description: Would you prefer $14 today, or $25 in 19 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_6:
+  type: Integer
+  description: Would you prefer $47 today, or $50 in 160 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_7:
+  type: Integer
+  description: Would you prefer $15 today, or $35 in 13 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_8:
+  type: Integer
+  description: Would you prefer $25 today, or $60 in 14 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_9:
+  type: Integer
+  description: Would you prefer $78 today, or $80 in 162 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_10:
+  type: Integer
+  description: Would you prefer $40 today, or $55 in 62 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_11:
+  type: Integer
+  description: Would you prefer $11 today, or $30 in 7 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_12:
+  type: Integer
+  description: Would you prefer $67 today, or $75 in 119 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_13:
+  type: Integer
+  description: Would you prefer $34 today, or $35 in 186 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_14:
+  type: Integer
+  description: Would you prefer $27 today, or $50 in 21 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_15:
+  type: Integer
+  description: Would you prefer $69 today, or $85 in 91 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_16:
+  type: Integer
+  description: Would you prefer $49 today, or $60 in 89 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_17:
+  type: Integer
+  description: Would you prefer $80 today, or $85 in 157 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_18:
+  type: Integer
+  description: Would you prefer $24 today, or $35 in 29 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_19:
+  type: Integer
+  description: Would you prefer $33 today, or $80 in 14 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_20:
+  type: Integer
+  description: Would you prefer $28 today, or $30 in 179 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_21:
+  type: Integer
+  description: Would you prefer $34 today, or $50 in 30 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_22:
+  type: Integer
+  description: Would you prefer $25 today, or $30 in 80 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_23:
+  type: Integer
+  description: Would you prefer $41 today, or $75 in 20 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_24:
+  type: Integer
+  description: Would you prefer $54 today, or $60 in 111 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_25:
+  type: Integer
+  description: Would you prefer $54 today, or $80 in 30 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_26:
+  type: Integer
+  description: Would you prefer $22 today, or $25 in 136 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+dd_27:
+  type: Integer
+  description: Would you prefer $20 today, or $55 in 7 days?
+  range:
+  - 0
+  - 1
+  notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  codes:
+    0: smaller reward today
+    1: larger reward in the specified number of days
+
+completed:
+  type: Integer
+  description: Checks if completed
+  range:
+  - 0::3
+  notes: 0=No; 1=Yes; 2=Yes, lost; 3=Unverified
+  alias: dd_completed
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Yes, lost
+    3: Unverified
+
+dd_expressions_nips:
+  type: Integer
+  description: The total number of successfully determined temporal and probabilistic
+    indifference points
+  range:
+  - 0::10
+  notes: The procedure determines a total of 10 different indifference points (for
+    five temporal delays, 't1' to 't5', and five probabilistic 'delays', 'p1' to 'p5').
+    The procedure is stopped as soon as 'expressions.nips' returns 10, i.e. when all
+    indifference points at question have been obtained.
+
+dd_t1_ip_found:
+  type: Integer
+  description: Has an indifference point has been successfully determined  for temporal
+    delay t1
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+dd_t1_ip:
+  type: Float
+  description: Indifference point estimate for temporal delay t1
+  range:
+  - 0::10
+
+dd_t2_ip_found:
+  type: Integer
+  description: Has an indifference point has been successfully determined for temporal
+    delay t2
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+dd_t2_ip:
+  type: Float
+  description: Indifference point estimate for temporal delay t2
+  range:
+  - 0::10
+
+dd_t3_ip_found:
+  type: Integer
+  description: Has an indifference point has been successfully determined for temporal
+    delay t3
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+dd_t3_ip:
+  type: Float
+  description: Indifference point estimate for temporal delay t3
+  range:
+  - 0::10
+
+dd_t4_ip_found:
+  type: Integer
+  description: Has an indifference point has been successfully determined for temporal
+    delay t4
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+dd_t4_ip:
+  type: Float
+  description: Indifference point estimate for temporal delay t4
+  range:
+  - 0::10
+
+dd_t5_ip_found:
+  type: Integer
+  description: Has an indifference point has been successfully determined for temporal
+    delay t5
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+dd_t5_ip:
+  type: Float
+  description: Indifference point estimate for temporal delay t5
+  range:
+  - 0::10
+
+dd_p1_ip_found:
+  type: Integer
+  description: Has an indifference point has been successfully determined for probabilistic
+    delay  p1
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+dd_p1_ip:
+  type: Float
+  description: Indifference point estimate for probabilistic delay  p1
+  range:
+  - 0::10
+
+dd_p2_ip_found:
+  type: Integer
+  description: Has an indifference point has been successfully determined for probabilistic
+    delay  p2
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+dd_p2_ip:
+  type: Float
+  description: Indifference point estimate for probabilistic delay  p2
+  range:
+  - 0::10
+
+dd_p3_ip_found:
+  type: Integer
+  description: 'Has an indifference point has been successfully determined for probabilistic
+    delay  p3 '
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+dd_p3_ip:
+  type: Float
+  description: Indifference point estimate for probabilistic delay  p3
+  range:
+  - 0::10
+
+dd_p4_ip_found:
+  type: Integer
+  description: Has an indifference point has been successfully determined for probabilistic
+    delay  p4
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+dd_p4_ip:
+  type: Float
+  description: Indifference point estimate for probabilistic delay  p4
+  range:
+  - 0::10
+
+dd_p5_ip_found:
+  type: Integer
+  description: Has an indifference point has been successfully determined for probabilistic
+    delay  p5
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+dd_p5_ip:
+  type: Float
+  description: Indifference point estimate for probabilistic delay  p5
+  range:
+  - 0::10
+
+subject_response:
+  type: String
+  length: 10
+  description: Subject's response
+  alias: choiceresp,delaydisc_choice_ab
+
+rt:
+  type: Float
+  description: Reaction Time
+  alias: choicert,delaydisc_rt,responsetime
+
+delaytrial:
+  type: Integer
+  description: time in milliseconds between end of previous stimulus and beginning
+    of current stimulus.
+  alias: delay
+
+ddt_small_k:
+  type: Float
+  description: k value for small sums of money ($25 to $35)
+
+ddt_medium_k:
+  type: Float
+  description: k value for medium sums of money ($50 to $60)
+
+ddt_large_k:
+  type: Float
+  description: k value for large sums of money ($75 to $85)
+
+ddt_total_k:
+  type: Float
+  description: k value for all sums of money ($25 to $85). Taken as the geometric
+    mean of small k, medium k, and large k
+
+ddt_log_small_k:
+  type: Float
+  description: The natural log of the k value for small sums of money. Done to reduce
+    skewness.
+
+ddt_log_medium_k:
+  type: Float
+  description: The natural log of the k value for medium sums of money. Done to reduce
+    skewness.
+
+ddt_log_large_k:
+  type: Float
+  description: The natural log of the k value for large sums of money. Done to reduce
+    skewness.
+
+ddt_log_total_k:
+  type: Float
+  description: The natural log of the k value for all sums of money. Done to reduce
+    skewness.
+
+ddt_small_incon:
+  type: Integer
+  description: Inconsistent responding within the small sums of money (3 or more responses
+    are not consistent with the assigned small k value). Inconsistent responding suggests
+    that the assigned k value is not a good fit for the data. Exclude subject from
+    analyses.
+
+ddt_medium_incon:
+  type: Integer
+  description: Inconsistent responding within the medium sums of money (3 or more
+    responses are not consistent with the assigned medium k value). Inconsistent responding
+    suggests that the assigned k value is not a good fit for the data. Exclude subject
+    from analyses.
+
+ddt_large_incon:
+  type: Integer
+  description: Inconsistent responding within the large sums of money (3 or more responses
+    are not consistent with the assigned large k value). Inconsistent responding suggests
+    that the assigned k value is not a good fit for the data. Exclude subject from
+    analyses.
+
+ddt_mn_rt:
+  type: Float
+  description: Mean reaction time for all trials
+  alias: delaydisc_meanrt
+
+ddt_md_rt:
+  type: Float
+  description: Median reaction time for all trials
+  alias: delaydisc_medianrt
+
+ddt_sd_rt:
+  type: Float
+  description: Standard deviation of reaction time for all trials
+  alias: delaydisc_sdrt
+
+ddt_items7_typo:
+  type: Integer
+  description: This indicates if there was a typo on item 7, in which the delay period
+    is off (should be "13 days" but the typo says "136 days"). The scoring algorithm
+    adjusts for the typo, but this variable may be used to exclude typo data if desired.
+
+left_choice1:
+  type: String
+  length: 20
+  description: reward option on the left side of the screen for each item
+
+right_choice2:
+  type: String
+  length: 20
+  description: reward option on the right side of the screen for each item
+
+delayedchoice:
+  type: String
+  length: 20
+  description: This variable is supposed to indicate which button selects the delayed
+    choice on a given trial. It is WRONG from item 19 to 27, and thus should NOT be
+    used in calculations.
+
+r_size:
+  type: String
+  length: 20
+  description: whether the item is small (1), medium (2), or large (3) in monetary
+    magnitude
+
+sir:
+  type: Integer
+  description: reward size for the immediate choice
+
+ldr:
+  type: Integer
+  description: reward size for the delayed choice
+
+k_indiff:
+  type: Float
+  description: discounting INDIFFERENCE value for each item
+
+k_rank:
+  type: Integer
+  description: Rank of degree of discounting. Higher rank is higher discounting.
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+  alias: siteid
+
+timept:
+  type: Integer
+  description: Time Point
+  notes: 888 = not applicable; 999 = missing
+  alias: timepoint
+  codes:
+    888: not applicable
+    999: missing
+
+trial:
+  type: Integer
+  description: Trial number
+  range:
+  - 0::400
+  - -777
+  - -999
+  notes: 1 = first; 2= second; 3=third; 4=fourth; 5=fifth; 6=sixth; etc; -777=NA,
+    -999=missing
+  alias: delaydisc_trial
+  codes:
+    1: first
+    2: second
+    3: third
+    4: fourth
+    5: fifth
+    6: sixth
+    -777: NA, -999=missing
+
+ncaid:
+  type: Integer
+  description: Primary ID of Neurocognitive Test
+
+delaydisc_type:
+  type: String
+  length: 15
+  description: Time Length For 6-Trials Bundle (or if catch trial)
+
+delaydisc_type_num:
+  type: Integer
+  description: 'Trial # In Set of Six (0-6)'
+
+delaydisc_current_a:
+  type: Float
+  description: Amount of Money Receive Immediately
+
+delaydisc_current_k:
+  type: Float
+  description: How Deeply Value Decreased w/Time
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: ddisc.experimentname,ddisc_valid,delaydisc_batteryid
+
+testid:
+  type: Integer
+  description: Identifier of Current Test
+  alias: delaydisc_testid
+
+session_id:
+  type: String
+  length: 20
+  description: session ID/screening ID
+  alias: delaydisc_sittingid
+
+cbgroup:
+  type: Integer
+  description: Counterbalancing Group
+  alias: delaydisc_group
+
+aurora_device:
+  type: Integer
+  description: Device Used
+  range:
+  - 1::6
+  notes: 1=iPad; 2=iPhone; 3=Tablet; 4=Android Smartphone; 5=Desktop; 6=Laptop
+  alias: delaydisc_device
+  codes:
+    1: iPad
+    2: iPhone
+    3: Tablet
+    4: Android Smartphone
+    5: Desktop
+    6: Laptop
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+  alias: delaydisc_timepoint
+
+delaydisc_catch_score:
+  type: Float
+  description: Proportion of Correct Responses Across All Trials
+
+delaydisc_lnk:
+  type: Float
+  description: Natural Log Of K Parameter Averaged Across Conditions
+
+delaydisc_twoweeks_lnk:
+  type: Float
+  description: Natural Log Of K Parameter For Two Week Delays
+
+delaydisc_onemonth_lnk:
+  type: Float
+  description: Natural Log Of K Parameter For One Month Delays
+
+delaydisc_sixmonths_lnk:
+  type: Float
+  description: Natural Log Of K Parameter For Six Month Delays
+
+delaydisc_oneyear_lnk:
+  type: Float
+  description: Natural Log Of K Parameter For One Year Delays
+
+delaydisc_threeyears_lnk:
+  type: Float
+  description: Natural Log Of K Parameter For Three Year Delays
+
+delaydisc_fiveyears_lnk:
+  type: Float
+  description: Natural Log Of K Parameter For Five Year Delays
+
+delaydisc_tenyears_lnk:
+  type: Float
+  description: Natural Log Of K Parameter For Ten Year Delays
+
+deviceserialnumber:
+  type: String
+  length: 200
+  description: device serial number/ID
+  alias: delaydisc_useragent
+
+testduration:
+  type: Integer
+  description: Seconds Taken To Complete Test
+  alias: delaydisc_duration
+
+testrestarts:
+  type: Integer
+  description: Number Of Times Participant Restarted Test
+  alias: delaydisc_reloaded
+
+experiment_name:
+  type: String
+  length: 200
+  description: Experiment Name
+  alias: experimentname
+
+groups:
+  type: Integer
+  description: Group
+  range:
+  - 0
+  - 1
+  notes: 0=Control; 1=Case
+  alias: group
+  codes:
+    0: Control
+    1: Case
+
+stime:
+  type: String
+  length: 20
+  description: Session time
+  alias: sessiontime
+
+block_number:
+  type: Integer
+  description: Block Number
+  alias: block
+
+handedness:
+  type: String
+  length: 29
+  description: handedness
+  range:
+  - R
+  - L
+  - B
+  - 999
+  notes: R = Right; L = Left; B = Both
+  codes:
+    R: Right
+    L: Left
+    B: Both
+
+respondent:
+  type: String
+  length: 20
+  description: Respondent
+  range:
+  - Mother
+  - Father
+  - Both
+  - Other
+  - Parent
+  - Teacher
+
+sv_6mo_200:
+  type: Float
+  description: Subject for Delay / Indifference Point 6mo, Delay Amount $200
+  alias: ddisc.sv_6mo_200,ddisc_sv_6mo_200
+
+sv_3yr_200:
+  type: Float
+  description: Subject for Delay / Indifference Point 3yr, Delay Amount $200
+  alias: ddisc.sv_3yr_200,ddisc_sv_3yr_200
+
+sv_1mo_200:
+  type: Float
+  description: Subject for Delay / Indifference Point 1mo, Delay Amount $200
+  alias: ddisc.sv_1mo_200,ddisc_sv_1mo_200
+
+sv_5yr_200:
+  type: Float
+  description: Subject for Delay / Indifference Point 5yr, Delay Amount $200
+  alias: ddisc.sv_5yr_200,ddisc_sv_5yr_200
+
+sv_10yr_200:
+  type: Float
+  description: Subject for Delay / Indifference Point 10yr, Delay Amount $200
+  alias: ddisc.sv_10yr_200,ddisc_sv_10yr_200
+
+sv_1yr_200:
+  type: Float
+  description: Subject for Delay / Indifference Point 1yr, Delay Amount $200
+  alias: ddisc.sv_1yr_200,ddisc_sv_1yr_200
+
+sv_6mo_40000:
+  type: Float
+  description: Subject for Delay / Indifference Point 6mo, Delay Amount $40000
+  alias: ddisc.sv_6mo_40000,ddisc_sv_6mo_40000
+
+sv_3yr_40000:
+  type: Float
+  description: Subject for Delay / Indifference Point 3yr, Delay Amount $40000
+  alias: ddisc.sv_3yr_40000,ddisc_sv_3yr_40000
+
+sv_1mo_40000:
+  type: Float
+  description: Subject for Delay / Indifference Point 1mo, Delay Amount $40000
+  alias: ddisc.sv_1mo_40000,ddisc_sv_1mo_40000
+
+sv_5yr_40000:
+  type: Float
+  description: Subject for Delay / Indifference Point 5yr, Delay Amount $40000
+  alias: ddisc.sv_5yr_40000,ddisc_sv_5yr_40000
+
+sv_10yr_40000:
+  type: Float
+  description: Subject for Delay / Indifference Point 10yr, Delay Amount $40000
+  alias: ddisc.sv_10yr_40000,ddisc_sv_10yr_40000
+
+sv_1yr_40000:
+  type: Float
+  description: Subject for Delay / Indifference Point 1yr, Delay Amount $40000
+  alias: ddisc.sv_1yr_40000,ddisc_sv_1yr_40000
+
+auc_200:
+  type: Float
+  description: Area Under the Curve for Delay Amount $200
+  alias: ddisc.auc_200,ddisc_auc_200
+
+auc_40000:
+  type: Float
+  description: Area Under the Curve for Delay Amount $40000
+  alias: ddisc.auc_40000,ddisc_auc_40000
+
+mpdat:
+  type: Float
+  description: days from enrollment
+  alias: studyday
+
+cogbias_state:
+  type: String
+  length: 25
+  description: Event Received at Response Termination
+  alias: delaydisc_state
+
+ddisc_sv_1wk_100:
+  type: Float
+  description: Subjective Value / Indifference Point, Amount $100 in 1 week Delay
+  alias: ddisc.sv_1wk_100
+
+ddisc_sv_2wk_100:
+  type: Float
+  description: Subjective Value / Indifference Point, Amount $100 in 2 week Delay
+  alias: ddisc.sv_2wk_100
+
+ddisc_sv_1mo_100:
+  type: Float
+  description: Subjective Value / Indifference Point, Amount $100 in 1 month Delay
+  alias: ddisc.sv_1mo_100
+
+ddisc_sv_6mo_100:
+  type: Float
+  description: Subjective Value / Indifference Point, Amount $100 in 6 month Delay
+  alias: ddisc.sv_6mo_100
+
+ddisc_sv_1yr_100:
+  type: Float
+  description: Subjective Value / Indifference Point, Amount $100 in 1 year Delay
+  alias: ddisc.sv_1yr_100
+
+ddisc_sv_3yr_100:
+  type: Float
+  description: Subjective Value / Indifference Point, Amount $100 in 3 year Delay
+  alias: ddisc.sv_3yr_100
+
+ddisc_auc_20:
+  type: Float
+  description: Area Under the Curve for Delay Amount $20
+  alias: ddisc.auc_20
+
+ddisc_auc_100:
+  type: Float
+  description: Area Under the Curve for Delay Amount $100
+  alias: ddisc.auc_100
+
+ddisc_comparemoney:
+  type: Float
+  description: Mean accuracy for comparison between two monetary values
+  alias: ddisc.comparemoney
+
+ddisc_comparemoneydelay:
+  type: Float
+  description: Mean accuracy for comparison between one monetary value at two different
+    delays
+  alias: ddisc.comparemoneydelay
+
+ddisc_comparedelay:
+  type: Float
+  description: Mean accuracy for comparison between two temporal delays
+  alias: ddisc.comparedelay
+
+ddisc_valid:
+  type: Integer
+  description: Current Programming Version of the Scoring Code
+
+ddisc_sv_1wk_20:
+  type: Float
+  description: Subjective Value / Indifference Point, Amount $20 in 1 week Delay
+  alias: ddisc.sv_1wk_20
+
+ddisc_sv_2wk_20:
+  type: Float
+  description: Subjective Value / Indifference Point, Amount $20 in 2 week Delay
+  alias: ddisc.sv_2wk_20
+
+ddisc_sv_1mo_20:
+  type: Float
+  description: Subjective Value / Indifference Point, Amount $20 in 1 month Delay
+  alias: ddisc.sv_1mo_20
+
+ddisc_sv_6mo_20:
+  type: Float
+  description: Subjective Value / Indifference Point, Amount $20 in 6 month Delay
+  alias: ddisc.sv_6mo_20
+
+ddisc_sv_1yr_20:
+  type: Float
+  description: Subjective Value / Indifference Point, Amount $20 in 1 year Delay
+  alias: ddisc.sv_1yr_20
+
+ddisc_sv_3yr_20:
+  type: Float
+  description: Subjective Value / Indifference Point, Amount $20 in 3 year Delay
+  alias: ddisc.sv_3yr_20

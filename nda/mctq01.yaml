@@ -1,0 +1,600 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: nimhid
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: ptid
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: testdate
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: age
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+  alias: visitnum
+
+regsch:
+  type: Integer
+  description: 'Work days: Do you have a regular work schedule? (this applies if you
+    are a househusband / housewife or student, etc.)'
+  range:
+  - 0
+  - 1
+  notes: 1=Yes 0=No
+  alias: mctq_school_yn
+  codes:
+    1: Yes 0=No
+
+eo20:
+  type: Integer
+  description: How many days per week do/did you usually work
+  alias: dyflsch,mctq_school_days
+
+wkbed:
+  type: String
+  length: 10
+  description: Bed time on workdays
+  alias: mctq_school1
+
+wkslp:
+  type: String
+  length: 10
+  description: Sleep time on workdays
+  alias: mctq_school3
+
+wkmnslp:
+  type: Integer
+  description: 'Work days: I need _ minutes to fall asleep'
+  range:
+  - 0::999
+  alias: mctq_school4
+
+wkwakup:
+  type: String
+  length: 10
+  description: Wake up time on workdays
+  alias: mctq_school5
+
+wkalarm:
+  type: Integer
+  description: Wake up on workdays. With/Without Alarm Clock
+  range:
+  - 1
+  - 2
+  notes: 1=With an Alarm Clock 2=Without an Alarm Clock
+  alias: mctq_school7
+  codes:
+    1: With an Alarm Clock 2=Without an Alarm Clock
+
+wkmnup:
+  type: Integer
+  description: Wake up on workdays. After _ minutes I get up
+  range:
+  - 0::999
+  alias: mctq_school6
+
+wknap:
+  type: Integer
+  description: 'Work days: If I get a chance, I like to take a siesta/nap'
+  range:
+  - 0
+  - 1
+  notes: 1=True; 0 = False
+  codes:
+    1: 'True'
+    0: 'False'
+
+wkmnnap:
+  type: Integer
+  description: 'Work days nap: I then sleep for _ minutes'
+  range:
+  - 0::999
+
+frbed:
+  type: String
+  length: 10
+  description: Bed time on free days
+  alias: mctq_free1
+
+frslp:
+  type: String
+  length: 10
+  description: Sleep time on free days
+  alias: mctq_free3
+
+frmnslp:
+  type: Integer
+  description: 'Free days: I need _ minutes to fall asleep'
+  range:
+  - 0::999
+  alias: mctq_free4
+
+frwakup:
+  type: String
+  length: 10
+  description: Wake up time on free days
+  alias: mctq_free5
+
+fralarm:
+  type: Integer
+  description: Wake up on free days. With/Without Alarm Clock
+  range:
+  - 1
+  - 2
+  notes: 1=With an Alarm Clock 2=Without an Alarm Clock
+  alias: mctq_free7
+  codes:
+    1: With an Alarm Clock 2=Without an Alarm Clock
+
+frmnup:
+  type: Integer
+  description: Wake up on free days. After _minutes I get up
+  range:
+  - 0::999
+  alias: mctq_free6
+
+frnap:
+  type: Integer
+  description: Free days. If I get a chance, I like to take a siesta/nap
+  range:
+  - 0
+  - 1
+  notes: '1=True
+
+    0 = False'
+  codes:
+    1: 'True
+
+      0 = False'
+
+frmnnap:
+  type: Integer
+  description: Free days nap. I then sleep for _ minutes
+  range:
+  - 0::999
+
+frprntslp:
+  type: Integer
+  description: Is there anything that prevents you from freely choosing your sleep
+    times (e.g., pets, children, etc.)?
+  range:
+  - 0
+  - 1
+  notes: 1=Yes 0=No
+  alias: mctq_free8
+  codes:
+    1: Yes 0=No
+
+frprnts:
+  type: String
+  length: 200
+  description: Is there anything that prevents you from freely choosing your sleep
+    times. If yes please describe below
+  alias: mctq_free10,mctq_free9
+
+frdark:
+  type: Integer
+  description: I prefer to sleep in a completely dark room.
+  range:
+  - 0
+  - 1
+  notes: 1=Yes 0=No
+  codes:
+    1: Yes 0=No
+
+frlight:
+  type: Integer
+  description: I wake up more easily when morning light shines into my room.
+  range:
+  - 0
+  - 1
+  notes: 1=Yes 0=No
+  codes:
+    1: Yes 0=No
+
+wkhr:
+  type: Integer
+  description: 'Wake up. On work days: (Hrs)'
+  range:
+  - 0::24
+
+wkmn:
+  type: Integer
+  description: 'Wake up. On work days: (min)'
+  range:
+  - 0::59
+
+frhr:
+  type: Integer
+  description: 'Wake up. On free days: (Hrs)'
+  range:
+  - 0::24
+
+frmn:
+  type: Integer
+  description: 'Wake up. On free days: (min)'
+  range:
+  - 0::59
+
+present:
+  type: Integer
+  description: Subject's punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+child_punct:
+  type: Integer
+  description: Punctuality as child
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+teen_punct:
+  type: Integer
+  description: Punctuality as teenager
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+mom_punct:
+  type: Integer
+  description: Mother's punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+dad_punct:
+  type: Integer
+  description: Father punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+numbro:
+  type: Integer
+  description: How many brothers do you have?
+
+bro1_punct:
+  type: Integer
+  description: Brother1's Punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+bro2_punct:
+  type: Integer
+  description: Brother2's Punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+bro3_punct:
+  type: Integer
+  description: Brother3's Punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+bro4_punct:
+  type: Integer
+  description: Brother4's Punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+bro5_punct:
+  type: Integer
+  description: Brother5's Punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+bro6_punct:
+  type: Integer
+  description: 30. Brother6's Punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type 1=Moderate Early Type 2=Slight Early Type 3=Normal Type
+    4=Slight Late Type 5=Moderate Late Type 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type 1=Moderate Early Type 2=Slight Early Type 3=Normal Type
+      4=Slight Late Type 5=Moderate Late Type 6=Extreme Late Type
+
+bro7_punct:
+  type: Integer
+  description: Brother7's Punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+numsis:
+  type: Integer
+  description: How many sisters do you have?
+
+sis1_punct:
+  type: Integer
+  description: Sister1's Punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+sis2_punct:
+  type: Integer
+  description: Sister2's Punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+sis3_punct:
+  type: Integer
+  description: Sister3's Punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+sis4_punct:
+  type: Integer
+  description: Sister4's Punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+sis5_punct:
+  type: Integer
+  description: Sister5's Punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+sis6_punct:
+  type: Integer
+  description: Sister6's Punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+sis7_punct:
+  type: Integer
+  description: Sister7's Punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+partner_punct:
+  type: Integer
+  description: Partner's (girl/boy friend, spouse) punctuality
+  range:
+  - 0::6
+  notes: 0=Extreme Early Type; 1=Moderate Early Type; 2=Slight Early Type; 3=Normal
+    Type; 4=Slight Late Type; 5=Moderate Late Type; 6=Extreme Late Type
+  codes:
+    0: Extreme Early Type
+    1: Moderate Early Type
+    2: Slight Early Type
+    3: Normal Type
+    4: Slight Late Type
+    5: Moderate Late Type
+    6: Extreme Late Type
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+
+mctq_school8:
+  type: Integer
+  description: 'Past 4 weeks: School Days: If your alarm clock or parents wake you
+    on school days: I regularly wake up BEFORE the alarm rings:'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'

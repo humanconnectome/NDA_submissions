@@ -1,0 +1,3069 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,p2
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: p4
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+scidvtp:
+  type: String
+  length: 4
+  description: pre-treatment assessment or post-assessment
+  range:
+  - Pre
+  - Post
+
+psref:
+  type: Integer
+  description: Delusions of reference presence/absence
+  range:
+  - 0::3
+  notes: 0=Inadequate information; 1=Absent or false; 2=Subthreshold; 3=Threshold
+    or true
+  alias: b1,scidv_b1,scidv_bc1
+  codes:
+    0: Inadequate information
+    1: Absent or false
+    2: Subthreshold
+    3: Threshold or true
+
+scidv_b2:
+  type: Integer
+  description: persecutory delusion
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b2,cce_delusions10,pce_delusions10,sce_delusions10,scidv_bc2
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b3:
+  type: Integer
+  description: grandiose delusion
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b3,cce_delusions1,pce_delusions1,sce_delusions1,scidv_bc3
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b4:
+  type: Integer
+  description: somatic delusion
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b4,cce_delusions4,pce_delusions4,sce_delusions4,scidv_bc4
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b5:
+  type: Integer
+  description: delusion of guilt
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b5,cce_delusions2,pce_delusions2,sce_delusions2,scidv_bc5
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b6:
+  type: Integer
+  description: jealous delusion
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b6,scidv_bc6
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b7:
+  type: Integer
+  description: erotomanic delusion
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b7,scidv_bc7
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b8:
+  type: Integer
+  description: religious delusion
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b8,scidv_bc8
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidmodb11:
+  type: Integer
+  description: B11. Delusion of being controlled i.e., feelings, impulses, thoughts,
+    or actions are experienced as being under the control of some external force
+  range:
+  - 0::3
+  notes: 0= Not Evaluable Inadequate information; 1= Absent; 2= Sub-Threshold; 3=
+    Threshold
+  alias: b9,cce_delusions3,pce_delusions3,sce_delusions3,scidv_b9,scidv_bc9
+  codes:
+    0: Not Evaluable Inadequate information
+    1: Absent
+    2: Sub-Threshold
+    3: Threshold
+
+d7pce:
+  type: Integer
+  description: Thought Insertion
+  range:
+  - 0::3
+  notes: 1=Absent; 2=Suspected or Likely; 3= Definite
+  alias: b10,cce_delusions7,pce_delusions7,sce_delusions7,scidv_b10,scidv_bc10
+  codes:
+    1: Absent
+    2: Suspected or Likely
+    3: Definite
+
+scidv_b11:
+  type: Integer
+  description: thought withdrawal
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b11,cce_delusions8,pce_delusions8,sce_delusions8,scidv_bc11
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidmodb14:
+  type: Integer
+  description: B14. Thought broadcasting, i.e., the delusion that one's thoughts are
+    audible to others
+  range:
+  - 0::3
+  notes: 0= Not Evaluable Inadequate information; 1= Absent; 2= Sub-Threshold; 3=
+    Threshold
+  alias: b12,cce_delusions6,pce_delusions6,sce_delusions6,scidv_b12,scidv_bc12
+  codes:
+    0: Not Evaluable Inadequate information
+    1: Absent
+    2: Sub-Threshold
+    3: Threshold
+
+ps1oth:
+  type: Integer
+  description: Other delusions presence/absence
+  range:
+  - 0::3
+  notes: 0=Inadequate information; 1=Absent or false; 2=Subthreshold; 3=Threshold
+    or true
+  alias: b13,cce_delusions13,pce_delusions13,sce_delusions13,scidv_b13,scidv_bc13
+  codes:
+    0: Inadequate information
+    1: Absent or false
+    2: Subthreshold
+    3: Threshold or true
+
+scidmodb15:
+  type: Integer
+  description: B15. Bizarre delusion i.e., involving a phenomenon that the individual's
+    subculture would regard as totally implausible (e.g., the person's brain has been
+    removed and replaced with someone else's brain)
+  range:
+  - 0::3
+  notes: 0= Not Evaluable Inadequate information; 1= Absent; 2= Sub-Threshold; 3=
+    Threshold
+  alias: b14,scidv_b14
+  codes:
+    0: Not Evaluable Inadequate information
+    1: Absent
+    2: Sub-Threshold
+    3: Threshold
+
+scidv_b15:
+  type: Integer
+  description: severity of all delusions and most severe in past 7 days
+  range:
+  - 0::4
+  - -7
+  - -9
+  notes: 0 = not present; 1= equivocal; 2 =present, but mild; 3 = present and moderate;
+    4 = present and severe; -7 = N/A; -9 = missing or not reported
+  alias: b15
+  codes:
+    0: not present
+    1: equivocal
+    2: present, but mild
+    3: present and moderate
+    4: present and severe
+    -7: N/A
+    -9: missing or not reported
+
+psaud:
+  type: Integer
+  description: Auditory hallucinations presence/absence
+  range:
+  - 0::3
+  notes: 0=Inadequate information; 1=Absent or false; 2=Subthreshold; 3=Threshold
+    or true
+  alias: b16,scidv_b16,scidv_bc14
+  codes:
+    0: Inadequate information
+    1: Absent or false
+    2: Subthreshold
+    3: Threshold or true
+
+psvis:
+  type: Integer
+  description: Visual hallucinations presence/absence
+  range:
+  - 0::3
+  notes: 0=Inadequate information; 1=Absent or false; 2=Subthreshold; 3=Threshold
+    or true
+  alias: b17,scidv_b17,scidv_bc15
+  codes:
+    0: Inadequate information
+    1: Absent or false
+    2: Subthreshold
+    3: Threshold or true
+
+pstac:
+  type: Integer
+  description: Tactile hallucinations presence/absence
+  range:
+  - 0::3
+  notes: 0=Inadequate information; 1=Absent or false; 2=Subthreshold; 3=Threshold
+    or true
+  alias: b18,scidv_b18,scidv_bc16
+  codes:
+    0: Inadequate information
+    1: Absent or false
+    2: Subthreshold
+    3: Threshold or true
+
+scidv_b19:
+  type: Integer
+  description: somatic hallucinations
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b19,scidv_bc17
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scid_bc25:
+  type: Integer
+  description: Gustatory hallucinations
+  range:
+  - 0::3
+  notes: 0 = Inadequate Information ; 1=Absent; 2=Subthreshold; 3=Threshold
+  alias: b20,scidv_bc18
+  codes:
+    0: Inadequate Information
+    1: Absent
+    2: Subthreshold
+    3: Threshold
+
+scidv_b21:
+  type: Integer
+  description: olfactory hallucinations
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b21,scidv_bc19
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b22:
+  type: Integer
+  description: severity of all hallucinations and most severe in past 7 days
+  range:
+  - 0::4
+  - -7
+  - -9
+  notes: 0 = not present; 1= equivocal; 2 =present, but mild; 3 = present and moderate;
+    4 = present and severe;-7 = N/A; -9 = missing or not reported
+  codes:
+    0: not present
+    1: equivocal
+    2: present, but mild
+    3: present and moderate
+    4: present and severe
+    7: N/A
+    -9: missing or not reported
+
+scidv_b23:
+  type: Integer
+  description: no suggestion there have ever been psychotic symptoms of any kind
+  range:
+  - 1
+  - 3
+  - -7
+  - -9
+  notes: 1= absent or false; 3 = threshold or true; -7 = N/A; -9 = missing or not
+    reported
+  alias: b23
+  codes:
+    1: absent or false
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+disorgsp:
+  type: Integer
+  description: Disorganized Speech
+  range:
+  - 0::3
+  notes: 0=Inadequate information; 1= Absent; 2= Subthreshold; 3=Threshold
+  alias: b24,scidv_b24
+  codes:
+    0: Inadequate information
+    1: Absent
+    2: Subthreshold
+    3: Threshold
+
+scidv_b25:
+  type: Integer
+  description: severity of disorganized speech at its most severe in past 7 days
+  range:
+  - 0::4
+  - -7
+  - -9
+  notes: 0 = not present; 1= equivocal; 2 =present, but mild; 3 = present and moderate;
+    4 = present and severe-7 = N/A; -9 = missing or not reported
+  alias: b25
+  codes:
+    0: not present
+    1: equivocal
+    2: present, but mild
+    3: present and moderate
+    4: present and severe-7 = N/A
+    -9: missing or not reported
+
+scidv_b26:
+  type: Integer
+  description: grossly disorganized behavior
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b26
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b27:
+  type: Integer
+  description: stupor
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b27
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b28:
+  type: Integer
+  description: grimacing
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b28
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b29:
+  type: Integer
+  description: mannerism
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b29
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b30:
+  type: Integer
+  description: posturing
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b30
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b31:
+  type: Integer
+  description: agitation, not influenced by external stimuli
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b31
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b32:
+  type: Integer
+  description: stereotypy
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b32
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b33:
+  type: Integer
+  description: mutism
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b33
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b34:
+  type: Integer
+  description: echolalia
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b34
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b35:
+  type: Integer
+  description: negativism
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b35
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b36:
+  type: Integer
+  description: echophraxia
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b36
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b37:
+  type: Integer
+  description: catalepsy
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b37
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b38:
+  type: Integer
+  description: waxy flexibility
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b38
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b39:
+  type: Integer
+  description: rate severity of abnormal psychomotor behavior at its most severe in
+    past 7 days
+  range:
+  - 0::4
+  - -7
+  - -9
+  notes: 0 = not present; 1= equivocal; 2 =present, but mild; 3 = present and moderate;
+    4 = present and severe; -7 = N/A; -9 = missing or not reported
+  alias: b39
+  codes:
+    0: not present
+    1: equivocal
+    2: present, but mild
+    3: present and moderate
+    4: present and severe
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b40:
+  type: Integer
+  description: avolition
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b40
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b41:
+  type: Integer
+  description: poss/def secondary or primary
+  range:
+  - 1
+  - 3
+  - -7
+  - -9
+  notes: 1= poss/def secondary; 3 = primary; -7 = N/A; -9 = missing or not reported
+  alias: b41
+  codes:
+    1: poss/def secondary
+    3: primary
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b42:
+  type: Integer
+  description: diminished emotional expressiveness
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: b42
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b43:
+  type: Integer
+  description: poss/def secondary or primary
+  range:
+  - 1
+  - 3
+  - -7
+  - -9
+  notes: 1= poss/def secondary; 3 = primary; -7 = N/A; -9 = missing or not reported
+  alias: b43
+  codes:
+    1: poss/def secondary
+    3: primary
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b44:
+  type: Integer
+  description: rate severity of  negative symptoms at their most severe in past 7
+    days
+  range:
+  - 0::4
+  - -7
+  - -9
+  notes: 0 = not present; 1= equivocal; 2 =present, but mild; 3 = present and moderate;
+    4 = present and severe; -7 = N/A; -9 = missing or not reported
+  alias: b44
+  codes:
+    0: not present
+    1: equivocal
+    2: present, but mild
+    3: present and moderate
+    4: present and severe
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b45:
+  type: String
+  length: 50
+  description: Psychosis type of symptom 1
+  alias: b45
+
+scidv_b46:
+  type: Integer
+  description: Psychosis type of symptom 1, course
+  range:
+  - 1::3
+  notes: 1=acute; 2=chronic; 3= intermittent
+  alias: b46
+  codes:
+    1: acute
+    2: chronic
+    3: intermittent
+
+scidv_b47:
+  type: String
+  length: 10
+  description: Psychosis type of symptom 1, onset
+  notes: two-digit month/four-digit year
+  alias: b47
+
+scidv_b48:
+  type: String
+  length: 10
+  description: Psychosis type of symptom 1, offset
+  notes: two-digit month/four-digit year
+  alias: b48
+
+scidv_b49:
+  type: Integer
+  description: Psychosis type of symptom 1, present last month
+  range:
+  - 1
+  - 3
+  - -7
+  - -9
+  notes: 1= absent or false; 3 = threshold or true; -7 = N/A; -9 = missing or not
+    reported
+  alias: b49
+  codes:
+    1: absent or false
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b50:
+  type: String
+  length: 50
+  description: Psychosis type of symptom 2
+  alias: b50
+
+scidv_b51:
+  type: Integer
+  description: Psychosis type of symptom 2, course
+  range:
+  - 1::3
+  notes: 1=acute; 2=chronic; 3= intermittent
+  alias: b51
+  codes:
+    1: acute
+    2: chronic
+    3: intermittent
+
+scidv_b52:
+  type: String
+  length: 10
+  description: Psychosis type of symptom 2, onset
+  notes: two-digit month/four-digit year
+  alias: b52
+
+scidv_b53:
+  type: String
+  length: 10
+  description: Psychosis type of symptom 2, offset
+  notes: two-digit month/four-digit year
+  alias: b53
+
+scidv_b54:
+  type: Integer
+  description: Psychosis type of symptom 2, present last month
+  range:
+  - 1
+  - 3
+  - -7
+  - -9
+  notes: 1= absent or false; 3 = threshold or true; -7 = N/A; -9 = missing or not
+    reported
+  alias: b54
+  codes:
+    1: absent or false
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b55:
+  type: String
+  length: 50
+  description: Psychosis type of symptom 3
+  alias: b55
+
+scidv_b56:
+  type: Integer
+  description: Psychosis type of symptom 3, course
+  range:
+  - 1::3
+  notes: 1=acute; 2=chronic; 3= intermittent
+  alias: b56
+  codes:
+    1: acute
+    2: chronic
+    3: intermittent
+
+scidv_b57:
+  type: String
+  length: 10
+  description: Psychosis type of symptom 3, onset
+  notes: two-digit month/four-digit year
+  alias: b57
+
+scidv_b58:
+  type: String
+  length: 10
+  description: Psychosis type of symptom 3, offset
+  notes: two-digit month/four-digit year
+  alias: b58
+
+scidv_b59:
+  type: Integer
+  description: Psychosis type of symptom 3, present last month
+  range:
+  - 1
+  - 3
+  - -7
+  - -9
+  notes: 1= absent or false; 3 = threshold or true; -7 = N/A; -9 = missing or not
+    reported
+  alias: b59
+  codes:
+    1: absent or false
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_b60:
+  type: String
+  length: 50
+  description: Psychosis type of symptom 4
+  alias: b60
+
+scidv_b61:
+  type: Integer
+  description: Psychosis type of symptom 4, course
+  range:
+  - 1::3
+  notes: 1=acute; 2=chronic; 3= intermittent
+  alias: b61
+  codes:
+    1: acute
+    2: chronic
+    3: intermittent
+
+scidv_b62:
+  type: String
+  length: 10
+  description: Psychosis type of symptom 4, onset
+  notes: two-digit month/four-digit year
+  alias: b62
+
+scidv_b63:
+  type: String
+  length: 10
+  description: Psychosis type of symptom 4, offset
+  notes: two-digit month/four-digit year
+  alias: b63
+
+scidv_b64:
+  type: Integer
+  description: Psychosis type of symptom 4, present last month
+  range:
+  - 1
+  - 3
+  - -7
+  - -9
+  notes: 1= absent or false; 3 = threshold or true; -7 = N/A; -9 = missing or not
+    reported
+  alias: b64
+  codes:
+    1: absent or false
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_c67:
+  type: Integer
+  description: symptoms not temporally associated with a general medical condition
+  range:
+  - 1
+  - 3
+  - -7
+  - -9
+  notes: 1= absent or false; 3 = threshold or true; -7 = N/A; -9 = missing or not
+    reported
+  codes:
+    1: absent or false
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidmodc41:
+  type: Integer
+  description: C41. Prominent hallucinations or delusions
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate information; 1= Absent; 2= Sub-Threshold; 3= Threshold
+  alias: c68,scidv_c68
+  codes:
+    0: Not Evaluable Inadequate information
+    1: Absent
+    2: Sub-Threshold
+    3: Threshold
+
+scidmodc42:
+  type: Integer
+  description: C42. There is evidence from the history, physical  examination, or
+    laboratory findings that the  disturbance is the direct physiological consequence  of
+    a general medical condition and the disturbance is not better accounted for by
+    another mental disorder
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate information; 1= Absent; 2= Sub-Threshold; 3= Threshold
+  alias: c69,scidv_c69
+  codes:
+    0: Not Evaluable Inadequate information
+    1: Absent
+    2: Sub-Threshold
+    3: Threshold
+
+scidv_c70:
+  type: Integer
+  description: disturbance causes clinically significant distress or impairment in
+    social, occupational, or other important areas of functioning
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_c71:
+  type: Integer
+  description: psychotic disorder due to amc criteria a, b/c, and e coded "3"
+  range:
+  - 1
+  - 3
+  - -7
+  - -9
+  notes: 1= absent or false; 3 = threshold or true; -7 = N/A; -9 = missing or not
+    reported
+  alias: c71
+  codes:
+    1: absent or false
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_c72:
+  type: Integer
+  description: psychotic disorder type
+  range:
+  - 1
+  - 2
+  - -7
+  - -9
+  notes: 1 = with delusions; 2 = with hallucinations; -7 = N/A; -9 = missing or not
+    reported
+  alias: c72
+  codes:
+    1: with delusions
+    2: with hallucinations
+    -7: N/A
+    -9: missing or not reported
+
+scidv_c73:
+  type: Integer
+  description: if symptoms not temporally associated with substance use, check here
+  range:
+  - 1
+  - 3
+  - -7
+  - -9
+  notes: 1= absent or false; 3 = threshold or true; -7 = N/A; -9 = missing or not
+    reported
+  alias: c73
+  codes:
+    1: absent or false
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_c74:
+  type: Integer
+  description: 'presence of one or both of the following symptoms: delusions; hallucinations'
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: c74
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_c75:
+  type: Integer
+  description: evidence from the history, physical examination, or laboratory findings
+    of both (1) and (2)
+  range:
+  - 1::3
+  - -7
+  - -9
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported
+  alias: c75
+  codes:
+    1: absent or false
+    2: subthreshold
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidmodc45:
+  type: Integer
+  description: C45. The disturbance is not better accounted for by a  Psychotic Disorder
+    that is not substance-induced
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate information; 1= Absent; 2= Sub-Threshold; 3= Threshold
+  alias: scidv_c76
+  codes:
+    0: Not Evaluable Inadequate information
+    1: Absent
+    2: Sub-Threshold
+    3: Threshold
+
+mdcinter:
+  type: Integer
+  description: The symptoms cause clinically significant distress or impairment in
+    social, occupational, or other important areas of functioning
+  range:
+  - 0::3
+  notes: 0=Inadequate information; 1=Absent or false; 2=Subthreshold; 3=Threshold
+    or true
+  alias: c77,scidv_c77
+  codes:
+    0: Inadequate information
+    1: Absent or false
+    2: Subthreshold
+    3: Threshold or true
+
+scidv_c78:
+  type: Integer
+  description: substance-induced psychotic disorder criteria a, b, c, and e are coded
+    "3"
+  range:
+  - 1
+  - 3
+  - -7
+  - -9
+  notes: 1= absent or false; 3 = threshold or true; -7 = N/A; -9 = missing or not
+    reported
+  alias: c78
+  codes:
+    1: absent or false
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidmodc48:
+  type: Integer
+  description: C48. Indicate context of development of mood  symptoms
+  range:
+  - 1
+  - 2
+  notes: 1= With Onset During Intoxication; 2= With Onset During Withdrawal
+  alias: c79
+  codes:
+    1: With Onset During Intoxication
+    2: With Onset During Withdrawal
+
+scidv_c79:
+  type: Integer
+  description: Any psychotic item coded 3
+  range:
+  - 1
+  - 3
+  - -7
+  - -9
+  notes: 1= absent or false; 3 = threshold or true; -7 = N/A; -9 = missing or not
+    reported
+  alias: scidv_bc20
+  codes:
+    1: absent or false
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+scidv_c80:
+  type: Integer
+  description: Psychotic symptoms occur at times other than mood episodes
+  range:
+  - 1
+  - 3
+  - -7
+  - -9
+  notes: 1= absent or false; 3 = threshold or true; -7 = N/A; -9 = missing or not
+    reported
+  alias: scidv_bc21
+  codes:
+    1: absent or false
+    3: threshold or true
+    -7: N/A
+    -9: missing or not reported
+
+psref_al:
+  type: Integer
+  description: Delusions of reference presence/absence, were you using drugs or alcohol
+    at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: ps5,scidv_bc1a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+scidv_b2_al:
+  type: Integer
+  description: persecutory delusion, were you using drugs or alcohol at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc2a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+scidv_b3_al:
+  type: Integer
+  description: grandiose delusion, were you using drugs or alcohol at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc3a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+scidv_b4_al:
+  type: Integer
+  description: somatic delusion, were you using drugs or alcohol at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc4a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+scidv_b5_al:
+  type: Integer
+  description: delusion of guilt, were you using drugs or alcohol at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc5a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+scidv_b6_al:
+  type: Integer
+  description: jealous delusion, were you using drugs or alcohol at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc6a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+scidv_b7_al:
+  type: Integer
+  description: erotomanic delusion, were you using drugs or alcohol at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc7a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+scidv_b8_al:
+  type: Integer
+  description: religious delusion, were you using drugs or alcohol at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc8a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+scidmodb11_al:
+  type: Integer
+  description: Delusion of being controlled i.e., feelings, impulses, thoughts, or
+    actions are experienced as being under the control of some external force, were
+    you using drugs or alcohol at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc9a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+d7pce_al:
+  type: Integer
+  description: Thought Insertion, were you using drugs or alcohol at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc10a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+scidv_b11_al:
+  type: Integer
+  description: thought withdrawal, were you using drugs or alcohol at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc11a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+scidmodb14_al:
+  type: Integer
+  description: Thought broadcasting, i.e., the delusion that one's thoughts are audible
+    to others, were you using drugs or alcohol at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc12a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+ps1oth_al:
+  type: Integer
+  description: Other delusions presence/absence, were you using drugs or alcohol at
+    that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc13a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+psaud_al:
+  type: Integer
+  description: Auditory hallucinations presence/absence, were you using drugs or alcohol
+    at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc14a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+psvis_al:
+  type: Integer
+  description: Visual hallucinations presence/absence, were you using drugs or alcohol
+    at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc15a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+pstac_al:
+  type: Integer
+  description: Tactile hallucinations presence/absence, were you using drugs or alcohol
+    at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc16a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+scidv_b19_al:
+  type: Integer
+  description: somatic hallucinations, were you using drugs or alcohol at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc17a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+scid_bc25_al:
+  type: Integer
+  description: Gustatory hallucinations, were you using drugs or alcohol at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc18a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+scidv_b21_al:
+  type: Integer
+  description: olfactory hallucinations, were you using drugs or alcohol at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  alias: scidv_bc19a
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+scidv_b22_al:
+  type: Integer
+  description: severity of all hallucinations and most severe in past 7 days, were
+    you using drugs or alcohol at that time?
+  range:
+  - 1
+  - 3
+  notes: 1=No; 3= Yes
+  codes:
+    1: 'No'
+    3: 'Yes'
+
+pce_delusions4a:
+  type: Integer
+  description: Delusions 4a. Only during Affective Episode - Current
+  range:
+  - 0::2
+  notes: 0= No Information; 1= No; 2=  Yes
+  alias: cce_delusions4a,sce_delusions4a
+  codes:
+    0: No Information
+    1: 'No'
+    2: 'Yes'
+
+pce_delusions5:
+  type: Integer
+  description: Delusions 5. Nihilism - Current
+  range:
+  - 0::2
+  notes: 0= No Information; 1= No; 2=  Yes
+  alias: cce_delusions5,sce_delusions5
+  codes:
+    0: No Information
+    1: 'No'
+    2: 'Yes'
+
+pce_delusions9:
+  type: Integer
+  description: Delusions 9. Message from TV/Radio - Current
+  range:
+  - 0::2
+  notes: 0= No Information; 1= No; 2=  Yes
+  alias: cce_delusions9,sce_delusions9
+  codes:
+    0: No Information
+    1: 'No'
+    2: 'Yes'
+
+pce_delusions11:
+  type: Integer
+  description: Delusions 11. Delusions that others can read his/her mind - Current
+  range:
+  - 0::2
+  notes: 0= No Information; 1= No; 2=  Yes
+  alias: cce_delusions11,sce_delusions11
+  codes:
+    0: No Information
+    1: 'No'
+    2: 'Yes'
+
+pce_delusions12:
+  type: Integer
+  description: Delusions 12. Delusions of Reference - Current
+  range:
+  - 0::2
+  notes: 0= No Information; 1= No; 2=  Yes
+  alias: cce_delusions12,sce_delusions12
+  codes:
+    0: No Information
+    1: 'No'
+    2: 'Yes'
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+
+respond_detail_oth_spec:
+  type: String
+  length: 255
+  description: Respondent details
+  alias: p5,p6,p7
+
+pmsp_delusions4a:
+  type: Integer
+  description: Delusions 4a. Only during Affective Episode - Most Severe Past
+  range:
+  - 0::2
+  notes: 0= No Information; 1= No; 2=  Yes
+  alias: cmsp_delusions4a,smsp_delusions4a
+  codes:
+    0: No Information
+    1: 'No'
+    2: 'Yes'
+
+pmsp_delusions5:
+  type: Integer
+  description: Delusions 5. Nihilism - Most Severe Past
+  range:
+  - 0::2
+  notes: 0= No Information; 1= No; 2=  Yes
+  alias: cmsp_delusions5,smsp_delusions5
+  codes:
+    0: No Information
+    1: 'No'
+    2: 'Yes'
+
+pmsp_delusions9:
+  type: Integer
+  description: Delusions 9. Message from TV/Radio - Most Severe Past
+  range:
+  - 0::2
+  notes: 0= No Information; 1= No; 2=  Yes
+  alias: cmsp_delusions9,smsp_delusions9
+  codes:
+    0: No Information
+    1: 'No'
+    2: 'Yes'
+
+pmsp_delusions11:
+  type: Integer
+  description: Delusions 11. Delusions that others can read his/her mind - Most Severe
+    Past
+  range:
+  - 0::2
+  notes: 0= No Information; 1= No; 2=  Yes
+  alias: cmsp_delusions11,smsp_delusions11
+  codes:
+    0: No Information
+    1: 'No'
+    2: 'Yes'
+
+pmsp_delusions12:
+  type: Integer
+  description: Delusions 12. Delusions of Reference - Most Severe Past
+  range:
+  - 0::2
+  notes: 0= No Information; 1= No; 2=  Yes
+  alias: cmsp_delusions12,smsp_delusions12
+  codes:
+    0: No Information
+    1: 'No'
+    2: 'Yes'
+
+pmsp_delusions1:
+  type: Integer
+  description: Delusions 1. Grandiosity - Most Severe Past
+  range:
+  - 0::3
+  notes: 0= No Information; 1= Not Present; 2= Subthreshold; 3= Threshold
+  alias: cmsp_delusions1,smsp_delusions1
+  codes:
+    0: No Information
+    1: Not Present
+    2: Subthreshold
+    3: Threshold
+
+pmsp_delusions2:
+  type: Integer
+  description: Delusions 2. Guilt / Sin - Most Severe Past
+  range:
+  - 0::3
+  notes: 0= No Information; 1= Not Present; 2= Subthreshold; 3= Threshold
+  alias: cmsp_delusions2,smsp_delusions2
+  codes:
+    0: No Information
+    1: Not Present
+    2: Subthreshold
+    3: Threshold
+
+pmsp_delusions3:
+  type: Integer
+  description: Delusions 3. Delusions of Control - Most Severe Past
+  range:
+  - 0::3
+  notes: 0= No Information; 1= Not Present; 2= Subthreshold; 3= Threshold
+  alias: cmsp_delusions3,smsp_delusions3
+  codes:
+    0: No Information
+    1: Not Present
+    2: Subthreshold
+    3: Threshold
+
+pmsp_delusions4:
+  type: Integer
+  description: Delusions 4. Somatic Delusions - Most Severe Past
+  range:
+  - 0::3
+  notes: 0= No Information; 1= Not Present; 2= Subthreshold; 3= Threshold
+  alias: cmsp_delusions4,smsp_delusions4
+  codes:
+    0: No Information
+    1: Not Present
+    2: Subthreshold
+    3: Threshold
+
+pmsp_delusions6:
+  type: Integer
+  description: Delusions 6. Thought Broadcasting - Most Severe Past
+  range:
+  - 0::3
+  notes: 0= No Information; 1= Not Present; 2= Subthreshold; 3= Threshold
+  alias: cmsp_delusions6,smsp_delusions6
+  codes:
+    0: No Information
+    1: Not Present
+    2: Subthreshold
+    3: Threshold
+
+pmsp_delusions7:
+  type: Integer
+  description: Delusions 7. Thought Insertion - Most Severe Past
+  range:
+  - 0::3
+  notes: 0= No Information; 1= Not Present; 2= Subthreshold; 3= Threshold
+  alias: cmsp_delusions7,smsp_delusions7
+  codes:
+    0: No Information
+    1: Not Present
+    2: Subthreshold
+    3: Threshold
+
+pmsp_delusions8:
+  type: Integer
+  description: Delusions 8. Thought Withdrawal - Most Severe Past
+  range:
+  - 0::3
+  notes: 0= No Information; 1= Not Present; 2= Subthreshold; 3= Threshold
+  alias: cmsp_delusions8,smsp_delusions8
+  codes:
+    0: No Information
+    1: Not Present
+    2: Subthreshold
+    3: Threshold
+
+pmsp_delusions10:
+  type: Integer
+  description: Delusions 10. Delusions of Persecution - Most Severe Past
+  range:
+  - 0::3
+  notes: 0= No Information; 1= Not Present; 2= Subthreshold; 3= Threshold
+  alias: cmsp_delusions10,smsp_delusions10
+  codes:
+    0: No Information
+    1: Not Present
+    2: Subthreshold
+    3: Threshold
+
+pmsp_delusions13:
+  type: Integer
+  description: Delusions 13. Other Bizarre Delusions - Most Severe Past
+  range:
+  - 0::3
+  notes: 0= No Information; 1= Not Present; 2= Subthreshold; 3= Threshold
+  alias: cmsp_delusions13,smsp_delusions13
+  codes:
+    0: No Information
+    1: Not Present
+    2: Subthreshold
+    3: Threshold
+
+pmsp_delusions15:
+  type: Integer
+  description: Delusions 15. Subcultural or Family Delusions - Most Severe Past
+  range:
+  - 0::3
+  notes: 0= No Information; 1= Not Present; 2= Subthreshold; 3= Threshold
+  alias: cmsp_delusions15,smsp_delusions15
+  codes:
+    0: No Information
+    1: Not Present
+    2: Subthreshold
+    3: Threshold
+
+pmsp_delusions16:
+  type: Integer
+  description: Delusions 16. Multiple Delusions - Most Severe Past
+  range:
+  - 0::3
+  notes: 0= No Information; 1= Not Present; 2= Subthreshold; 3= Threshold
+  alias: cmsp_delusions16,smsp_delusions16
+  codes:
+    0: No Information
+    1: Not Present
+    2: Subthreshold
+    3: Threshold
+
+pmsp_delusions17:
+  type: Integer
+  description: Delusions 17. Delusions always occurred during or within 2 weeks of
+    an affective illness - Most Severe Past
+  range:
+  - 0::3
+  notes: 0= No Information; 1= Not Present; 2= Subthreshold; 3= Threshold
+  alias: cmsp_delusions17,smsp_delusions17
+  codes:
+    0: No Information
+    1: Not Present
+    2: Subthreshold
+    3: Threshold
+
+pmsp_delusions18:
+  type: Integer
+  description: Delusions 18. Delusions always occurred in the context of substance
+    use or during the course of a medical illness - Most Severe Past
+  range:
+  - 0::3
+  notes: 0= No Information; 1= Not Present; 2= Subthreshold; 3= Threshold
+  alias: cmsp_delusions18,smsp_delusions18
+  codes:
+    0: No Information
+    1: Not Present
+    2: Subthreshold
+    3: Threshold
+
+pmsp_delusions19:
+  type: Integer
+  description: Delusions 19. Content of Delusions always related to depressed or elated
+    mood - Most Severe Past
+  range:
+  - 0::3
+  notes: 0= No Information; 1= Not Present; 2= Subthreshold; 3= Threshold
+  alias: cmsp_delusions19,smsp_delusions19
+  codes:
+    0: No Information
+    1: Not Present
+    2: Subthreshold
+    3: Threshold
+
+caarms1p1_q5:
+  type: String
+  length: 100
+  description: 'Ideas of Reference: Have you felt that things that were happening
+    around you had a special meaning, or that people were trying to give you messages?  What
+    is it like?  How did it start? '
+  alias: b1_describe,ps5_specify
+
+c_30:
+  type: Integer
+  description: 'Delusional Disorder: Check if delusions are restricted to beliefs
+    about appearance or to beliefs about obsessions or compulsions'
+  range:
+  - 0
+  - 1
+  notes: 0 = Unchecked; 1 = Checked
+  alias: c30
+  codes:
+    0: Unchecked
+    1: Checked
+
+c36:
+  type: Integer
+  description: 'Delusional Disorder: not better explained by another mental disorder,
+    such as Body Dysmorphic Disorder or Obsessive-Compulsive Disorder.'
+  range:
+  - 1
+  - 3
+  notes: 1 = absent or false; 3 = threshold or true
+  codes:
+    1: absent or false
+    3: threshold or true
+
+c39:
+  type: Integer
+  description: 'Delusional Disorder: specify if bizarre content'
+  range:
+  - 0
+  - 1
+  notes: 0 = Unchecked; 1 = Checked
+  codes:
+    0: Unchecked
+    1: Checked
+
+c45:
+  type: Integer
+  description: 'Brief Psychotic Disorder: Specify'
+  range:
+  - 1
+  - 2
+  notes: 1 = With marked stressor(s) (brief reactive psychosis); 2 = Without marked
+    stressor(s)
+  codes:
+    1: With marked stressor(s) (brief reactive psychosis)
+    2: Without marked stressor(s)
+
+c46:
+  type: Integer
+  description: 'Brief Psychotic Disorder: with peripartum onset?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+c47:
+  type: Integer
+  description: 'Brief Psychotic Disorder: with catatonia?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+c50:
+  type: Integer
+  description: 'Primary Other Specified Psychotic Disorder: Not attributable to the
+    physiological effects of a substance (drugs of abuse, medication) or to another
+    medical condition.'
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 0 = Inadequate information; 1 = Absent or false ; 3 = Threshold or true
+  codes:
+    0: Inadequate information
+    1: Absent or false
+    3: Threshold or true
+
+c51:
+  type: Integer
+  description: 'Primary Other Specified Psychotic Disorder: indicate type'
+  range:
+  - 1::9
+  notes: 1 = Persistent auditory hallucinations; 2 = Delusions with significant overlapping
+    mood episodes; 3 = Attenuated psychosis syndrome; 4 = Delusional symptoms in partner
+    of individual with delusional disorder; 5 = Postpartum psychosis that does not
+    meet criteria for Mood Disorder With Psychotic Features, Brief Psychotic Disorder,
+    Psychotic Disorder Due to Another Medical Condition, or a Substance-/Medication-Induced
+    Psychotic Disorder; 6 = Psychotic symptoms that have lasted for less than one
+    month, but have not yet remitted so that the criteria for Brief Psychotic Disorder
+    are not met; 7 = Situations in which the clinician has concluded that a psychotic
+    disorder is present but is unable to determine whether it is primary, due to another
+    medical condition or substance-/medication-induced; 8 = Other (describe); 9 =
+    Unspecified. Insufficient information to make a more specific diagnosis.
+  codes:
+    1: Persistent auditory hallucinations
+    2: Delusions with significant overlapping mood episodes
+    3: Attenuated psychosis syndrome
+    4: Delusional symptoms in partner of individual with delusional disorder
+    5: Postpartum psychosis that does not meet criteria for Mood Disorder With Psychotic
+      Features, Brief Psychotic Disorder, Psychotic Disorder Due to Another Medical
+      Condition, or a Substance-/Medication-Induced Psychotic Disorder
+    6: Psychotic symptoms that have lasted for less than one month, but have not yet
+      remitted so that the criteria for Brief Psychotic Disorder are not met
+    7: Situations in which the clinician has concluded that a psychotic disorder is
+      present but is unable to determine whether it is primary, due to another medical
+      condition or substance-/medication-induced
+    8: Other (describe)
+    9: Unspecified. Insufficient information to make a more specific diagnosis.
+
+c51_describe:
+  type: String
+  length: 100
+  description: 'Primary Other Specified Psychotic Disorder: indicate type, Other:
+    specify here'
+
+c52:
+  type: Integer
+  description: 'Schizophrenia, Delusional Disorder, and Schizoaffective Disorder:
+    Active phase criteria (except duration) met at some point in the past month'
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 0 = Inadequate information; 1 = Absent or false ; 3 = Threshold or true
+  codes:
+    0: Inadequate information
+    1: Absent or false
+    3: Threshold or true
+
+caarms1p1_q8:
+  type: String
+  length: 100
+  description: 'Made thoughts, feelings, impulses:  Have you felt that someone, or
+    something, outside yourself has been controlling your thoughts, feelings, actions
+    or urges?  Have you had feelings or impulses that don?t seem to come from yourself?'
+  alias: b9_describe
+
+c53:
+  type: Integer
+  description: Delusions at some point in the past month
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 0 = Inadequate information; 1 = Absent or false ; 3 = Threshold or true
+  codes:
+    0: Inadequate information
+    1: Absent or false
+    3: Threshold or true
+
+c54:
+  type: Integer
+  description: Symptoms meeting criteria for a Major Depressive or Manic Episode (except
+    for duration) are concurrent with symptoms meeting Criterion A of Schizophrenia
+    at some point in past month, or Delusions or hallucinations in the absence of
+    a Manic or Major Depression Episode at somepoint in the past month.
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 0 = Inadequate information; 1 = Absent or false ; 3 = Threshold or true
+  codes:
+    0: Inadequate information
+    1: Absent or false
+    3: Threshold or true
+
+c59:
+  type: Integer
+  description: Select specifier that best characterizes the longitudinal course of
+    the disturbance
+  range:
+  - 1::8
+  notes: 1 = First episode, currently in acute episode; 2 = First episode, currently
+    in partial remission; 3 = First episode, currently in full remission; 4 = Multiple
+    episodes, currently in acute episode; 5 = Multiple episodes, currently in partial
+    remission ; 6 = Multiple episodes, currently in full remission; 7 = Continuous;
+    8 = Other or unspecified pattern
+  codes:
+    1: First episode, currently in acute episode
+    2: First episode, currently in partial remission
+    3: First episode, currently in full remission
+    4: Multiple episodes, currently in acute episode
+    5: Multiple episodes, currently in partial remission
+    6: Multiple episodes, currently in full remission
+    7: Continuous
+    8: Other or unspecified pattern
+
+c60:
+  type: Integer
+  description: 'Schizophreniform/Brief Psychotic/Medical Condition-related/Substance-induced/Other
+    Specified Psychotic Disorder: Active phase criteria (except duration) met at some
+    point in the past month'
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 0 = Inadequate information; 1 = Absent or false ; 3 = Threshold or true
+  codes:
+    0: Inadequate information
+    1: Absent or false
+    3: Threshold or true
+
+c61:
+  type: Integer
+  description: 'Schizophreniform/Brief Psychotic/Medical Condition-related/Substance-induced/Other
+    Specified Psychotic Disorder: One or more o fthe following at some point in the
+    past month: delusions, hallucinations, or disorganized speech'
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 0 = Inadequate information; 1 = Absent or false ; 3 = Threshold or true
+  codes:
+    0: Inadequate information
+    1: Absent or false
+    3: Threshold or true
+
+c62:
+  type: Integer
+  description: 'Schizophreniform/Brief Psychotic/Medical Condition-related/Substance-induced/Other
+    Specified Psychotic Disorder: Delusions or hallucinations in past month'
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 0 = Inadequate information; 1 = Absent or false ; 3 = Threshold or true
+  codes:
+    0: Inadequate information
+    1: Absent or false
+    3: Threshold or true
+
+c63:
+  type: Integer
+  description: 'Schizophreniform/Brief Psychotic/Medical Condition-related/Substance-induced/Other
+    Specified Psychotic Disorder: Psychotic symptoms in past month'
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 0 = Inadequate information; 1 = Absent or false ; 3 = Threshold or true
+  codes:
+    0: Inadequate information
+    1: Absent or false
+    3: Threshold or true
+
+c64:
+  type: Integer
+  description: 'Schizophreniform/Brief Psychotic/Medical Condition-related/Substance-induced/Other
+    Specified Psychotic Disorder: Number of months prior to last had symptoms that
+    met full criteria'
+
+c65:
+  type: Integer
+  description: 'Schizophreniform/Brief Psychotic/Medical Condition-related/Substance-induced/Other
+    Specified Psychotic Disorder: Age at onset (code 99 if unknown)'
+
+c66:
+  type: Integer
+  description: 'Schizophreniform/Brief Psychotic/Medical Condition-related/Substance-induced/Other
+    Specified Psychotic Disorder: Age at onset of prodromal symptoms (code 99 if unknown)'
+
+caarms1p2_q1:
+  type: String
+  length: 100
+  description: 'Suspiciousness, Persecutory Ideas: Has anybody been giving you a hard
+    time or trying to hurt you?  Do you feel like people have been talking about you,
+    laughing at you, or watching you? What is it like? How do you know this?'
+  alias: b2_describe
+
+c70:
+  type: Integer
+  description: 'Psychotic disorder due to medical condition: The disturbance causes
+    clinically significant distress or impairment in social, occupational, or  other
+    important areas of functioning'
+  range:
+  - 0::3
+  notes: 0=Inadequate information; 1=Absent or false; 2=Subthreshold; 3=Threshold
+    or true
+  codes:
+    0: Inadequate information
+    1: Absent or false
+    2: Subthreshold
+    3: Threshold or true
+
+c76:
+  type: Integer
+  description: The disturbance is not better accounted for by a  Psychotic Disorder
+    that is not substance-induced
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 0 = Inadequate information; 1 = Absent or false ; 3 = Threshold or true
+  codes:
+    0: Inadequate information
+    1: Absent or false
+    3: Threshold or true
+
+caarms1p2_q2:
+  type: String
+  length: 100
+  description: 'Grandiose Ideas: Have you been feeling that you are especially important
+    in some way, or that you have powers to do things that other people can?t do?'
+  alias: b3_describe
+
+caarms1p2_q3:
+  type: String
+  length: 100
+  description: 'Somatic Ideas: Have you had the feeling that something odd is going
+    on with your body that you can?t explain? What is it like? Do you feel that your
+    body has changed in some way, or that there is a problem with your body shape?'
+  alias: b4_describe
+
+caarms1p2_q4:
+  type: String
+  length: 100
+  description: 'Ideas of Guilt:  Do you feel you deserve punishment for anything you
+    have done wrong?'
+  alias: b5_describe
+
+caarms1p2_q6:
+  type: String
+  length: 100
+  description: 'Jealous Ideas:  Are you a jealous person? Do you worry about relationships
+    that your spouse/girlfriend/boyfriend has with other people?'
+  alias: b6_describe
+
+caarms1p2_q7:
+  type: String
+  length: 100
+  description: 'Religious Ideas:  Are you very religious? Have you had any religious
+    experiences?'
+  alias: b8_describe
+
+caarms1p2_q8:
+  type: String
+  length: 100
+  description: 'Erotomanic Ideas:  Is anyone in love with you? Who? How do you know
+    this?  Do you return his/her feelings?'
+  alias: b7_describe
+
+carp33_notes:
+  type: String
+  length: 250
+  description: 'Diminished emotional range: Present or Absent? If present, then include
+    notes'
+  alias: b42_describe
+
+chat107:
+  type: String
+  length: 300
+  description: Description of visual hallucinations
+  alias: b17_describe,ps2_specify
+
+chat168:
+  type: String
+  length: 300
+  description: Description of olfactory hallucinations
+  alias: b21_describe
+
+chat217:
+  type: String
+  length: 300
+  description: Description of tactile hallucinations
+  alias: b18_describe
+
+chat268:
+  type: String
+  length: 300
+  description: Description of gustatory hallucinations
+  alias: b20_describe
+
+chat52:
+  type: String
+  length: 300
+  description: Description of auditory hallucinations
+  alias: b16_describe,ps1_specify
+
+dcf17:
+  type: String
+  length: 200
+  description: Describe other delusions
+  alias: b13_describe
+
+psza4:
+  type: String
+  length: 30
+  description: 'Module D: Schizophrenia (SCHIZ). disorganized or catatonic behavior'
+  alias: b26_describe
+
+psznote:
+  type: String
+  length: 30
+  description: 'Module D: Schizophrenia (SCHIZ). bizarre delusion or hallucinations'
+  alias: b14_describe
+
+q056_pdgmc_spec:
+  type: String
+  length: 40
+  description: Psychotic Disorder Due to General Medical Condition Specifier
+  alias: gmc
+
+q061_sipd_spec:
+  type: String
+  length: 40
+  description: Substance-Induced Psychotic Disorder Specifier
+  alias: substance
+
+aescode:
+  type: Integer
+  description: Staff code number of person completing this form
+  alias: p3
+
+caarms1p1_q10:
+  type: String
+  length: 100
+  description: 'Thought Insertion:  Have you felt that ideas or thoughts that are
+    not your own have been put into your head? How do you know they are not your own?  Where
+    do they come from?'
+  alias: b10_describe
+
+a1d10:
+  type: Integer
+  description: Schizophreniform Disorder
+  range:
+  - 0::3
+  notes: 0 = Inadequate Information ; Positive Diagnosis = 3; Intermediate Diagnosis
+    = 2; Negative Diagnosis = 1
+  alias: p34,p35
+  codes:
+    0: Inadequate Information
+
+a1d11:
+  type: Integer
+  description: Schizoaffective Disorder
+  range:
+  - 0::3
+  notes: 0 = Inadequate Information ; Positive Diagnosis = 3; Intermediate Diagnosis
+    = 2; Negative Diagnosis = 1
+  alias: p36,p37
+  codes:
+    0: Inadequate Information
+
+a1d12:
+  type: Integer
+  description: Delusional Disorder
+  range:
+  - 0::3
+  notes: 0 = Inadequate Information ; Positive Diagnosis (Definitely Present) = 3;
+    Intermediate Diagnosis (Probable) = 2; Negative Diagnosis (Absent) = 1
+  alias: p38,p39
+  codes:
+    0: Inadequate Information
+
+a1d13:
+  type: Integer
+  description: Brief Psychotic Disorder
+  range:
+  - 0::3
+  notes: 0 = Inadequate Information ; Positive Diagnosis = 3; Intermediate Diagnosis
+    = 2; Negative Diagnosis = 1
+  alias: p40,p41
+  codes:
+    0: Inadequate Information
+
+a1d9:
+  type: Integer
+  description: Schizophrenia
+  range:
+  - 0::3
+  notes: 0 = Inadequate Information ; Positive Diagnosis = 3; Intermediate Diagnosis
+    = 2; Negative Diagnosis = 1
+  alias: p32,p33
+  codes:
+    0: Inadequate Information
+
+mini_other1:
+  type: Integer
+  description: 'Other specified schizophrenia spectrum and other psychotic disorder:
+    current'
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: c48
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+monomood:
+  type: Integer
+  description: Psychotic symptoms occur at times other than during mood syndromes
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 0=Inadequate information; 1=Psychotic mood disorder; 3=Pyschotic when no
+    mood syndromes
+  alias: c2
+  codes:
+    0: Inadequate information
+    1: Psychotic mood disorder
+    3: Pyschotic when no mood syndromes
+
+otherschizo:
+  type: Integer
+  description: Other Specified Schizophrenia Spectrum and Other Psychotic Disorder
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=No; 1=Yes; -9=Unknown
+  alias: p46,p47
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -9: Unknown
+
+p17i1:
+  type: Integer
+  description: Schizoaffective Disorder - Fits criteria currently
+  range:
+  - 1
+  - 2
+  notes: 1=no;2=yes
+  alias: c26
+  codes:
+    1: 'no'
+    2: 'yes'
+
+dode:
+  type: String
+  length: 10
+  description: Date of Data Entry
+  alias: date
+
+p18i1:
+  type: Integer
+  description: Delusional Disorder - Fits criteria currently
+  range:
+  - 1
+  - 2
+  notes: 1=no;2=yes
+  alias: c37
+  codes:
+    1: 'no'
+    2: 'yes'
+
+p19i1:
+  type: Integer
+  description: Brief Psychotic Disorder - Fits criteria currently
+  range:
+  - 1
+  - 2
+  notes: 1=no;2=yes
+  alias: c44
+  codes:
+    1: 'no'
+    2: 'yes'
+
+q047_szp_prog:
+  type: Integer
+  description: Schizophreniform Disorder Prognosis
+  range:
+  - 1
+  - 2
+  notes: 1= With Good Prognostic Features;2 = Without Good Prognostic Features
+  alias: c20
+  codes:
+    1: With Good Prognostic Features
+    2: Without Good Prognostic Features
+
+scid_c13g__4:
+  type: Integer
+  description: Age at onset of prodromal Sxs
+  alias: c58
+
+scid_c34__4:
+  type: Integer
+  description: Delusional Disorder subtype
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  notes: 1=Persecutory; 2=Jealous; 3=Erotomanic; 4=Somatic; 5=Grandiose; 6=Mixed;
+    7=Unspecified
+  alias: c38
+  codes:
+    1: Persecutory
+    2: Jealous
+    3: Erotomanic
+    4: Somatic
+    5: Grandiose
+    6: Mixed
+    7: Unspecified
+
+scid_p47:
+  type: Integer
+  description: Other specified psychotic disorder (current)
+  range:
+  - 1::3
+  - 99
+  notes: 1= Absent; 2= Sub-Threshold; 3= Threshold; 99= Inadequate Information
+  alias: c49
+  codes:
+    1: Absent
+    2: Sub-Threshold
+    3: Threshold
+    99: Inadequate Information
+
+scidmodc14:
+  type: Integer
+  description: C14. An episode of the disorder (including prodromal,  active and residual
+    phases) lasts at least 1 month  but less than 6 months
+  range:
+  - 1
+  - 3
+  notes: 1= Absent or False; 3= Theshold or True
+  alias: c12
+  codes:
+    1: Absent or False
+    3: Theshold or True
+
+scidmodc15:
+  type: Integer
+  description: C15. The disturbance is not due to the direct physiological effects
+    of a substance (e.g., a drug of abuse, medication) or to a general medical condition
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c13
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc17:
+  type: Integer
+  description: C17. Onset of prominent psychotic symptoms within 4  weeks of first
+    noticeable change in usual behavior or functioning
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c16
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc18:
+  type: Integer
+  description: C18. Confusion or perplexity at the height of the  psychotic episode
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c17
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+study_id:
+  type: Integer
+  description: Study ID number
+  notes: 46=Acute Phase; 47=Stabilization Phase
+  alias: p1
+  codes:
+    46: Acute Phase
+    47: Stabilization Phase
+
+scidmodc19:
+  type: Integer
+  description: C19. Good premorbid social and occupational functioning
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c18
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc20:
+  type: Integer
+  description: C20. Absence of blunted or flat affect
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c19
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc22:
+  type: Integer
+  description: C22. An uninterrupted period of illness during which, at some time,
+    there is either a Major Depressive Episode (which must include A(1) depressed
+    mood), a Manic or a Mixed episode concurrent with symptoms that meet Criterion
+    A for Schizophrenia
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c22
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc24:
+  type: Integer
+  description: C24. Symptoms that meet criteria for a mood episode  are present for
+    a substantial portion of the total  duration of the active and residual periods
+    of the  illness
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c24
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc25:
+  type: Integer
+  description: C25. The disturbance is not due to the direct  physiological effects
+    of a substance (e.g., a drug of  abuse, medication) or to a general medical condition
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c25
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc26:
+  type: Integer
+  description: C26. Schizoaffective disorder subtypes
+  range:
+  - 1
+  - 3
+  notes: 1= Depressive Type; 3= Bipolar Type
+  alias: c27
+  codes:
+    1: Depressive Type
+    3: Bipolar Type
+
+scidmodc28:
+  type: Integer
+  description: C28. The total duration of all mood episodes occurring concurrently
+    with delusions has been brief relative to the duration of the delusional periods
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c31
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc3:
+  type: Integer
+  description: 'C3. Two (or more) of the following, each present for  a significant
+    portion of time during a 1-month period (or less if successfully treated): (1)
+    delusions (2) hallucinations (3) disorganized speech (4) grossly disorganized
+    or catatonic behavior (5) negat'
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c3
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc30:
+  type: Integer
+  description: C30. Nonbizarre delusions (i.e., involving situations that occur in
+    real life, such as being followed,  poisoned, infected, loved at a distance, having
+    a disease, or being deceived by one's spouse or lover) of at least 1 month's duration
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c32
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc31:
+  type: Integer
+  description: C31. Has never met criterion A for Schizophrenia
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c33
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+bprs_notes1:
+  type: String
+  length: 200
+  description: 'Somatic Concern-Additional Comments '
+  alias: b19_describe,b22
+
+scidmodc32:
+  type: Integer
+  description: C32. Apart from the impact of the delusion(s) or its  ramifications,
+    functioning is not markedly impaired  and behavior is not obviously odd or bizarre
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c34
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc33:
+  type: Integer
+  description: C33. The disturbance is not due to the direct  physiological effects
+    of a substance (e.g., a drug of abuse, a medication) or a general medical condition
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c35
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc35:
+  type: Integer
+  description: 'C35. Presence of one (or more) of the following symptoms: (1) delusions
+    (2) hallucinations (3) Absent disorganized speech (4) grossly disorganized or
+    catatonic behavior'
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c40
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc36:
+  type: Integer
+  description: C36. The disturbance is not due to the direct  physiological effects
+    of a substance (drugs of abuse,  medication) or to a general medical condition
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c43
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc37:
+  type: Integer
+  description: C37. Duration of an episode of the disturbance is at  least 1 day,
+    but less than 1 month, with an eventual  full return to premorbid level of functioning
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c41
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc38:
+  type: Integer
+  description: C38. Not better accounted for by a Mood Disorder  (i.e., no full mood
+    episode is present)
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c42
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc4:
+  type: Integer
+  description: C4. No Major Depressive, Manic or Mixed Episodes have  occurred concurrently
+    with the active phase symptoms
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c4
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc40a:
+  type: Integer
+  description: C40a. If symptoms not temporally associated with a  general medical
+    condition, check yes
+  range:
+  - 1
+  - 2
+  notes: 1= Yes; 2= No
+  alias: c67
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+scidmodc42a:
+  type: Integer
+  description: C42a. Criteria A, B, C are met (for Psychotic  Disorder due to a General
+    Medical Condition)
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 0 = Inadequate Information ; 1= Absent or False; 3= Theshold or True
+  alias: p42,p43
+  codes:
+    0: Inadequate Information
+    1: Absent or False
+    3: Theshold or True
+
+scidmodc46:
+  type: Integer
+  description: C46. Criteria A, B, C are met (for Substance-Induced Psychotic Disorder
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 0 = Inadequate Information ; 1= Absent or False; 3= Theshold or True
+  alias: p44,p45
+  codes:
+    0: Inadequate Information
+    1: Absent or False
+    3: Theshold or True
+
+sans_comments18:
+  type: String
+  length: 200
+  description: Global Rating of Avolition - Additional Comments
+  alias: b40_describe
+
+scidmodc5:
+  type: Integer
+  description: C5. The total duration of mood episodes (occurring  during the disturbance)
+    has been brief relative to  the total duration of the active and residual phases
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c5
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc54:
+  type: Integer
+  description: C54. Number of months prior to interview when last had psychotic symptoms(in
+    months)
+  alias: c55
+
+scidmodc55:
+  type: Integer
+  description: C55. Age at onset of psychotic symptoms (age or code as 99 if unknown)
+  alias: c56
+
+scidmodc56:
+  type: Integer
+  description: 'C56. Number of episodes or exacerbations (List # or code as 99 if
+    too numerous or indistinct to count)'
+  alias: c57
+
+scidmodc6:
+  type: Integer
+  description: C6. Continuous signs of the disturbance persist for  at least 6 months
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c6
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc7:
+  type: Integer
+  description: C7. For a significant portion of the time since the onset of the disturbance,
+    one or more major areas of functioning such as work, interpersonal relations or
+    self-care is markedly below the level achieved prior to the onset (or when the
+    onset is in childho
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c7
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+scidmodc8:
+  type: Integer
+  description: C8. The disturbance is not due to the direct physiological effects
+    of a substance (e.g., a drug of abuse, a medication) or to a general medical condition
+  range:
+  - 0::3
+  notes: 0=Not Evaluable Inadequate Information; 1= Absent; 3= Threshold
+  alias: c8
+  codes:
+    0: Not Evaluable Inadequate Information
+    1: Absent
+    3: Threshold
+
+b24_describe:
+  type: String
+  length: 200
+  description: 'Disorganized speech: describe'
+
+b27_describe:
+  type: String
+  length: 200
+  description: 'stupor: describe'
+
+b28_describe:
+  type: String
+  length: 200
+  description: 'grimacing: describe'
+
+caarms1p1_q11:
+  type: String
+  length: 100
+  description: 'Thought Withdrawal:  Have you ever felt that ideas or thoughts are
+    being taken out of your head? How does that happen?'
+  alias: b11_describe
+
+b29_describe:
+  type: String
+  length: 200
+  description: 'mannerism: describe'
+
+b30_describe:
+  type: String
+  length: 200
+  description: 'posturing: describe'
+
+b31_describe:
+  type: String
+  length: 200
+  description: 'agitation, not influenced by external stimuli: describe'
+
+b32_describe:
+  type: String
+  length: 200
+  description: 'stereotypy: describe'
+
+b33_describe:
+  type: String
+  length: 200
+  description: 'mutism: describe'
+
+b34_describe:
+  type: String
+  length: 200
+  description: 'echolalia: describe'
+
+b35_describe:
+  type: String
+  length: 200
+  description: 'negativism: describe'
+
+b36_describe:
+  type: String
+  length: 200
+  description: 'echophraxia: describe'
+
+b37_describe:
+  type: String
+  length: 200
+  description: 'catalepsy: describe'
+
+b38_describe:
+  type: String
+  length: 200
+  description: 'waxy flexibility: describe'
+
+caarms1p1_q12:
+  type: String
+  length: 100
+  description: 'Thought Broadcasting:  Are your thoughts broadcast so that other people
+    know what you are thinking?'
+  alias: b12_describe,ps8_specify
+
+c_1:
+  type: Integer
+  description: IF THERE ARE NO ITEMS CODED 3 IN B. PSYCHOTIC AND ASSOCIATED SYMPTOMS,
+    CHECK HERE
+  range:
+  - 0
+  - 1
+  notes: 0 = Not checked; 1 = Checked
+  alias: c1
+  codes:
+    0: Not checked
+    1: Checked
+
+c9:
+  type: Integer
+  description: If there is a history of Autism Spectrum Disorder or a Communication
+    Disorder of childhood onset, diagnose Schizophrenia also only if prominent delusions/hallucinations
+    in addition to other required symptoms are also present for at least 1 month (or
+    less if successfully treated)
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 0 = Inadequate information; 1 = Psychotic mood disorder; 3 = Non-mood psychotic
+    disorder
+  codes:
+    0: Inadequate information
+    1: Psychotic mood disorder
+    3: Non-mood psychotic disorder
+
+c10:
+  type: Integer
+  description: SCHIZOPHRENIA CRITERIA A, B, C, D, E, AND F ARE CODED 3
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 0 = Inadequate information; 1 = Psychotic mood disorder; 3 = Non-mood psychotic
+    disorder
+  codes:
+    0: Inadequate information
+    1: Psychotic mood disorder
+    3: Non-mood psychotic disorder
+
+c11:
+  type: Integer
+  description: Specify if schizophrenia is present with catatonia
+  range:
+  - 0
+  - 1
+  notes: 0 = Unchecked; 1 = Checked
+  codes:
+    0: Unchecked
+    1: Checked
+
+c14:
+  type: Integer
+  description: Schizophreniform disorder criteria B and D are coded 3
+  range:
+  - 1
+  - 3
+  notes: 1 = Absent or false ; 3 = Threshold or true
+  codes:
+    1: Absent or false
+    3: Threshold or true
+
+c_15:
+  type: Integer
+  description: 'Schizophreniform disorder: indicate provisional vs. definite diagnosis'
+  range:
+  - 1
+  - 2
+  notes: 1 = Provisional; 3 = Definite
+  alias: c15
+  codes:
+    1: Provisional
+    3: Definite
+
+c_21:
+  type: Integer
+  description: 'Schizophreniform disorder: specify presence of catatonia'
+  range:
+  - 0
+  - 1
+  notes: 0 = No catatonia; 1 = With catatonia
+  alias: c21
+  codes:
+    0: No catatonia
+    1: With catatonia
+
+c23:
+  type: Integer
+  description: Total Number of Friends (How many close friends does child have?)
+  range:
+  - 0::3
+  - 9
+  notes: 0 = None;1 = One;2 = Two or Three;3 = Four or more;9 = Missing
+  codes:
+    0: None
+    1: One
+    2: Two or Three
+    3: Four or more
+    9: Missing
+
+c28:
+  type: Integer
+  description: 'Schizoaffective Disorder: specify presence of catatonia'
+  range:
+  - 0
+  - 1
+  notes: 0 = No catatonia; 1 = With catatonia
+  codes:
+    0: No catatonia
+    1: With catatonia
+
+c29:
+  type: Integer
+  description: 'Delusional Disorder: Check if there have NEVER been any delusions'
+  range:
+  - 0
+  - 1
+  notes: 0 = Unchecked; 1 = Checked
+  codes:
+    0: Unchecked
+    1: Checked
+
+chat17:
+  type: Integer
+  description: Have you ever had a visual hallucination?
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: ps2
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+chat8:
+  type: Integer
+  description: Have you ever had an auditory hallucination?
+  range:
+  - 0
+  - 1
+  notes: 0 = No ; 1 = Yes
+  alias: ps1
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+  alias: ps_notes
+
+ps_8:
+  type: Integer
+  description: 'Thought Broadcasting: Did you ever feel as if your thoughts were being
+    broadcast out loud so that other people could actually hear what you were thinking?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: ps8
+  codes:
+    0: 'No'
+    1: 'Yes'

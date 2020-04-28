@@ -1,0 +1,444 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: child_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+sleepdisturb_p1:
+  type: Integer
+  description: How many hours of sleep does your child get on most nights?
+  range:
+  - 1::5
+  notes: 1 = 9-11 hours ; 2 = 8-9 hours ; 3 = 7-8 hours ; 4 = 5-7 hours ; 5 = Less
+    than 5 hours
+  codes:
+    1: 9-11 hours
+    2: 8-9 hours
+    3: 7-8 hours
+    4: 5-7 hours
+    5: Less than 5 hours
+
+sleepdisturb_p2:
+  type: Integer
+  description: How long after going to bed does your child usually fall asleep?
+  range:
+  - 1::5
+  notes: 1 = Less than 15 minutes ; 2 = 15-30 minutes ; 3 = 30-45 minutes ; 4 = 45-60
+    minutes ; 5 = More than 60 minutes
+  codes:
+    1: Less than 15 minutes
+    2: 15-30 minutes
+    3: 30-45 minutes
+    4: 45-60 minutes
+    5: More than 60 minutes
+
+sleepdisturb_p3:
+  type: Integer
+  description: The child goes to bed reluctantly
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p4:
+  type: Integer
+  description: The child has difficulty getting to sleep at night
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p5:
+  type: Integer
+  description: The child feels anxious or afraid when falling asleep
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p6:
+  type: Integer
+  description: The child startles or jerks parts of the body while falling asleep
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p7:
+  type: Integer
+  description: The child shows repetitive actions such as rocking or head banging
+    while falling asleep
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p8:
+  type: Integer
+  description: The child experiences vivid dream-like scenes while falling asleep
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p9:
+  type: Integer
+  description: The child sweats excessively while falling asleep
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p10:
+  type: Integer
+  description: The child wakes up more than twice per night
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p11:
+  type: Integer
+  description: After waking up in the night, the child has difficulty falling asleep
+    again
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p12:
+  type: Integer
+  description: The child has frequent twitching or jerking of legs while asleep or
+    often changes position during the night or kicks the covers off the bed
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p13:
+  type: Integer
+  description: The child has difficulty breathing during the night
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p14:
+  type: Integer
+  description: The child gasps for breaths or is unable to breathe during sleep
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p15:
+  type: Integer
+  description: The child snores
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p16:
+  type: Integer
+  description: The child sweats exessively during the night
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p17:
+  type: Integer
+  description: You have observed the child sleepwalking
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p18:
+  type: Integer
+  description: You have observed the child talking in his/her sleep
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p19:
+  type: Integer
+  description: The child grinds his/her teeth during sleep
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p20:
+  type: Integer
+  description: The child wakes from sleep screaming or confused so you cannot seem
+    to get through to him/her, but has no memory of these events the next morning
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p21:
+  type: Integer
+  description: The child has nightmares which he/she doesn't remember the next day
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p22:
+  type: Integer
+  description: The child is unusuallly difficult to wake up in the morning
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p23:
+  type: Integer
+  description: The child awakes in the morning feeling tired
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p24:
+  type: Integer
+  description: The child feels unable to move when waking up in the morning
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p25:
+  type: Integer
+  description: The child experiences daytime sleepiness
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_p26:
+  type: Integer
+  description: The child falls asleep suddenly in inappropriate situations
+  range:
+  - 1::5
+  notes: 1 = Never ; 2 = Occasionally (once or twice per month or less) ; 3 = Sometimes
+    (once or twice per week) ; 4 = Often (3 or 5 times per week) ; 5 = Always (daily)
+  codes:
+    1: Never
+    2: Occasionally (once or twice per month or less)
+    3: Sometimes (once or twice per week)
+    4: Often (3 or 5 times per week)
+    5: Always (daily)
+
+sleepdisturb_arsal:
+  type: Integer
+  description: 'Disorders of arousal '
+
+sleepdisturb_brth:
+  type: Integer
+  description: 'Sleep Breathing Disorders '
+
+sleepdisturb_hype:
+  type: Integer
+  description: 'Sleep Hyperhydrosis '
+
+sleepdisturb_mtan:
+  type: Integer
+  description: 'Disorders of initiating and maintaining sleep '
+
+sleepdisturb_somn:
+  type: Integer
+  description: 'Disorders of excessive somnolence '
+
+sleepdisturb_total:
+  type: Integer
+  description: 'Total score '
+
+sleepdisturb_trans:
+  type: Integer
+  description: 'Sleep-Wake Transition Disorders '

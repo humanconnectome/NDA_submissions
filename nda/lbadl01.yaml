@@ -1,0 +1,708 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+inventoryadmin:
+  type: Integer
+  description: How the assessment was administered
+  range:
+  - 1::4
+  notes: 1 = Participant read and answered items independently; 2 = Items read by
+    examiner; 3 = Examiner read items and marked verbal given answers; 4 = Examiner
+    marked answers given verbally
+  codes:
+    1: Participant read and answered items independently
+    2: Items read by examiner
+    3: Examiner read items and marked verbal given answers
+    4: Examiner marked answers given verbally
+
+adlnow1:
+  type: Integer
+  description: Housekeeping current ability
+  range:
+  - 0::4
+  - 8
+  notes: 0 = I maintain my house/apartment by myself or only need occasional help
+    for larger jobs; 1 = I only perform light daily tasks (wash dishes; make bed);
+    2 = I perform some light tasks; but have difficulty keeping my place clean; 3
+    = I need help with all housekeeping tasks; 4 = I do not participate in any housekeeping
+    tasks; 8 = I am fully able to do housekeeping; but choose not to do so
+  alias: iadl4
+  codes:
+    0: I maintain my house/apartment by myself or only need occasional help for larger
+      jobs
+    1: I only perform light daily tasks (wash dishes
+    2: I perform some light tasks
+    3: I need help with all housekeeping tasks
+    4: I do not participate in any housekeeping tasks
+    8: I am fully able to do housekeeping
+
+adlbest1:
+  type: Integer
+  description: Housekeeping best ability
+  range:
+  - 0::3
+  - 8
+  notes: 0 = I maintain my house/apartment by myself or only need occasional help
+    for larger jobs; 1 = I only perform light daily tasks (wash dishes; make bed);
+    2 = I perform some light tasks; but have difficulty keeping my place clean; 3
+    = I need help with all housekeeping tasks; 8 = I am fully able to do housekeeping;
+    but choose not to do so
+  codes:
+    0: I maintain my house/apartment by myself or only need occasional help for larger
+      jobs
+    1: I only perform light daily tasks (wash dishes
+    2: I perform some light tasks
+    3: I need help with all housekeeping tasks
+    8: I am fully able to do housekeeping
+
+adlnow2:
+  type: Integer
+  description: Managing finances current ability
+  range:
+  - 0::2
+  - 8
+  notes: 0 = I manage all of my finances (check cashing; banking; handling money)
+    by myself; 1 = I manage routine small purchases; but need help with banking; checking;
+    and balancing accounts; 2 = I am not able to handle money accurately; 8 = I am
+    able to handle my own finances; but someone else does them for me
+  alias: iadl8
+  codes:
+    0: I manage all of my finances (check cashing
+    1: I manage routine small purchases
+    2: I am not able to handle money accurately
+    8: I am able to handle my own finances
+
+adlbest2:
+  type: Integer
+  description: Managing finances best ability
+  range:
+  - 0::2
+  - 8
+  notes: 0 = I manage all of my finances (check cashing; banking; handling money)
+    by myself; 1 = I manage routine small purchases; but need help with banking; checking;
+    and balancing accounts; 2 = I am not able to handle money accurately; 8 = I am
+    able to handle my own finances; but someone else does them for me
+  codes:
+    0: I manage all of my finances (check cashing
+    1: I manage routine small purchases
+    2: I am not able to handle money accurately
+    8: I am able to handle my own finances
+
+adlnow3:
+  type: Integer
+  description: Buying Groceries current ability
+  range:
+  - 0::2
+  - 8
+  notes: 0 = I create my own grocery list and do my own shopping; 1 = I need occasional
+    assistance in buying groceries; 2 = I need someone else to do my grocery shopping
+    for me; 8 = I am able to create my own grocery list and do my own shopping; but
+    someone else does it for me
+  codes:
+    0: I create my own grocery list and do my own shopping
+    1: I need occasional assistance in buying groceries
+    2: I need someone else to do my grocery shopping for me
+    8: I am able to create my own grocery list and do my own shopping
+
+adlbest3:
+  type: Integer
+  description: Buying Groceries best ability
+  range:
+  - 0::2
+  - 8
+  notes: 0 = I create my own grocery list and do my own shopping; 1 = I need occasional
+    assistance in buying groceries; 2 = I need someone else to do my grocery shopping
+    for me; 8 = I am able to create my own grocery list and do my own shopping; but
+    someone else does it for me
+  codes:
+    0: I create my own grocery list and do my own shopping
+    1: I need occasional assistance in buying groceries
+    2: I need someone else to do my grocery shopping for me
+    8: I am able to create my own grocery list and do my own shopping
+
+adlnow4:
+  type: Integer
+  description: Cooking current ability
+  range:
+  - 0::3
+  - 8
+  notes: 0 = I plan; prepare; and serve many of my own meals; 1 = I prepare meals
+    if someone else provides me with the right ingredients; 2 = I heat and serve meals
+    provided by others; 3 = I need to have meals prepared and served to me; 8 = I
+    am able to plan; prepare; and serve my own meals but someone else does it for
+    me
+  alias: iadl3
+  codes:
+    0: I plan
+    1: I prepare meals if someone else provides me with the right ingredients
+    2: I heat and serve meals provided by others
+    3: I need to have meals prepared and served to me
+    8: I am able to plan
+
+adlbest4:
+  type: Integer
+  description: Cooking best ability
+  range:
+  - 0::3
+  - 8
+  notes: 0 = I plan; prepare; and serve many of my own meals; 1 = I prepare meals
+    if someone else provides me with the right ingredients; 2 = I heat and serve meals
+    provided by others; 3 = I need to have meals prepared and served to me; 8 = I
+    am able to plan; prepare; and serve my own meals but someone else does it for
+    me
+  codes:
+    0: I plan
+    1: I prepare meals if someone else provides me with the right ingredients
+    2: I heat and serve meals provided by others
+    3: I need to have meals prepared and served to me
+    8: I am able to plan
+
+adlnow5:
+  type: Integer
+  description: Planning current ability
+  range:
+  - 1::3
+  notes: 1 = I frequently initiate and plan social activities (e.g. going out; having
+    a party); 2 = I rarely initiate and plan social activities; 3 = I do not plan
+    and initiate social activities
+  codes:
+    1: I frequently initiate and plan social activities (e.g. going out
+    2: I rarely initiate and plan social activities
+    3: I do not plan and initiate social activities
+
+adlbest5:
+  type: Integer
+  description: Planning best ability
+  range:
+  - 1::3
+  notes: 1 = I frequently initiate and plan social activities (e.g. going out; having
+    a party); 2 = I rarely initiate and plan social activities; 3 = I do not plan
+    and initiate social activities
+  codes:
+    1: I frequently initiate and plan social activities (e.g. going out
+    2: I rarely initiate and plan social activities
+    3: I do not plan and initiate social activities
+
+adlnow6:
+  type: Integer
+  description: Understanding reading current ability
+  range:
+  - 0::3
+  notes: 0 = I understand reading materials and TV without difficulty; 1 = I have
+    occasional difficulty understanding reading materials or TV; 2 = I have frequent
+    difficulty understanding reading materials or TV; 3 = I am unable to understand
+    reading materials or TV
+  codes:
+    0: I understand reading materials and TV without difficulty
+    1: I have occasional difficulty understanding reading materials or TV
+    2: I have frequent difficulty understanding reading materials or TV
+    3: I am unable to understand reading materials or TV
+
+adlbest6:
+  type: Integer
+  description: Understanding reading best ability
+  range:
+  - 0::3
+  notes: 0 = I understand reading materials and TV without difficulty; 1 = I have
+    occasional difficulty understanding reading materials or TV; 2 = I have frequent
+    difficulty understanding reading materials or TV; 3 = I am unable to understand
+    reading materials or TV
+  codes:
+    0: I understand reading materials and TV without difficulty
+    1: I have occasional difficulty understanding reading materials or TV
+    2: I have frequent difficulty understanding reading materials or TV
+    3: I am unable to understand reading materials or TV
+
+adlnow7:
+  type: Integer
+  description: Transportation current ability
+  range:
+  - 0::3
+  notes: 0 = I drive my own car or take public transportation on my own; 1 = I arrange
+    my own travel using taxis; but do not drive or use public transportation; 2 =
+    I can travel on public transportation or use taxis if I am assisted by another;
+    3 = I do not travel at all
+  codes:
+    0: I drive my own car or take public transportation on my own
+    1: I arrange my own travel using taxis
+    2: I can travel on public transportation or use taxis if I am assisted by another
+    3: I do not travel at all
+
+adlbest7:
+  type: Integer
+  description: Transportation best ability
+  range:
+  - 0::3
+  notes: 0 = I drive my own car or take public transportation on my own; 1 = I arrange
+    my own travel using taxis; but do not drive or use public transportation; 2 =
+    I can travel on public transportation or use taxis if I am assisted by another;
+    3 = I do not travel at all
+  codes:
+    0: I drive my own car or take public transportation on my own
+    1: I arrange my own travel using taxis
+    2: I can travel on public transportation or use taxis if I am assisted by another
+    3: I do not travel at all
+
+adlnow8:
+  type: Integer
+  description: Telephone current ability
+  range:
+  - 0::3
+  - 8
+  notes: 0 = I handle using the telephone without difficulty; 1 = I only dial a few
+    well-known numbers; 2 = I answer the telephone but do not dial; 3 = I do not use
+    the telephone at all; 8 = I do not have access to a telephone
+  alias: iadl1
+  codes:
+    0: I handle using the telephone without difficulty
+    1: I only dial a few well-known numbers
+    2: I answer the telephone but do not dial
+    3: I do not use the telephone at all
+    8: I do not have access to a telephone
+
+adlbest8:
+  type: Integer
+  description: Telephone bestability
+  range:
+  - 0::3
+  - 8
+  notes: 0 = I handle using the telephone without difficulty; 1 = I only dial a few
+    well-known numbers; 2 = I answer the telephone but do not dial; 3 = I do not use
+    the telephone at all; 8 = I do not have access to a telephone
+  codes:
+    0: I handle using the telephone without difficulty
+    1: I only dial a few well-known numbers
+    2: I answer the telephone but do not dial
+    3: I do not use the telephone at all
+    8: I do not have access to a telephone
+
+adlnow9:
+  type: Integer
+  description: Home repair current ability
+  range:
+  - 0::2
+  - 8
+  notes: 0 = I handle most minor home repairs (plubming; gardening); 1 = I need assistance
+    with most minor home repairs; 2 = I am unable to do most repairs by myself; 8
+    = I am capable of making minor repairs but choose not to
+  codes:
+    0: I handle most minor home repairs (plubming
+    1: I need assistance with most minor home repairs
+    2: I am unable to do most repairs by myself
+    8: I am capable of making minor repairs but choose not to
+
+adlbest9:
+  type: Integer
+  description: Home repair best ability
+  range:
+  - 0::2
+  - 8
+  notes: 0 = I handle most minor home repairs (plubming; gardening); 1 = I need assistance
+    with most minor home repairs; 2 = I am unable to do most repairs by myself; 8
+    = I am capable of making minor repairs but choose not to
+  codes:
+    0: I handle most minor home repairs (plubming
+    1: I need assistance with most minor home repairs
+    2: I am unable to do most repairs by myself
+    8: I am capable of making minor repairs but choose not to
+
+adlnow10:
+  type: Integer
+  description: Bathing current ability
+  range:
+  - 0::2
+  notes: 0 = I handle all of my bathing needs by myself; 1 = I need occasional assistance
+    with bathing (getting in and out of the tub/shower; etc.); 2 = I always need help
+    from others when bathing
+  codes:
+    0: I handle all of my bathing needs by myself
+    1: I need occasional assistance with bathing (getting in and out of the tub/shower
+    2: I always need help from others when bathing
+
+adlbest10:
+  type: Integer
+  description: Bathing best ability
+  range:
+  - 0::2
+  notes: 0 = I handle all of my bathing needs by myself; 1 = I need occasional assistance
+    with bathing (getting in and out of the tub/shower; etc.); 2 = I always need help
+    from others when bathing
+  codes:
+    0: I handle all of my bathing needs by myself
+    1: I need occasional assistance with bathing (getting in and out of the tub/shower
+    2: I always need help from others when bathing
+
+adlnow11:
+  type: Integer
+  description: Dressing current ability
+  range:
+  - 0::3
+  notes: 0 = I am able to dress myself and pick out my own clothes; 1 = I dress myself
+    but someone else must pick out my clothes for me; 2 = I need occasional assistance
+    getting dressed or frequently make mistakes in choosing clothes; 3 = I need frequent
+    assistance in getting dressed
+  codes:
+    0: I am able to dress myself and pick out my own clothes
+    1: I dress myself but someone else must pick out my clothes for me
+    2: I need occasional assistance getting dressed or frequently make mistakes in
+      choosing clothes
+    3: I need frequent assistance in getting dressed
+
+adlbest11:
+  type: Integer
+  description: Dressing best ability
+  range:
+  - 0::3
+  notes: 0 = I am able to dress myself and pick out my own clothes; 1 = I dress myself
+    but someone else must pick out my clothes for me; 2 = I need occasional assistance
+    getting dressed or frequently make mistakes in choosing clothes; 3 = I need frequent
+    assistance in getting dressed
+  codes:
+    0: I am able to dress myself and pick out my own clothes
+    1: I dress myself but someone else must pick out my clothes for me
+    2: I need occasional assistance getting dressed or frequently make mistakes in
+      choosing clothes
+    3: I need frequent assistance in getting dressed
+
+adlnow12:
+  type: Integer
+  description: Shopping current ability
+  range:
+  - 0::3
+  - 8
+  notes: 0 = I take care of all of my shopping needs; 1 = I only make small purchases;
+    2 = I need someone to go with me on any shopping trip; 3 = I am unable to shop;
+    8 = I am able to shop but choose to have someone else do my shopping for me
+  alias: iadl2
+  codes:
+    0: I take care of all of my shopping needs
+    1: I only make small purchases
+    2: I need someone to go with me on any shopping trip
+    3: I am unable to shop
+    8: I am able to shop but choose to have someone else do my shopping for me
+
+adlbest12:
+  type: Integer
+  description: Shopping best ability
+  range:
+  - 0::3
+  - 8
+  notes: 0 = I take care of all of my shopping needs; 1 = I only make small purchases;
+    2 = I need someone to go with me on any shopping trip; 3 = I am unable to shop;
+    8 = I am able to shop but choose to have someone else do my shopping for me
+  codes:
+    0: I take care of all of my shopping needs
+    1: I only make small purchases
+    2: I need someone to go with me on any shopping trip
+    3: I am unable to shop
+    8: I am able to shop but choose to have someone else do my shopping for me
+
+adlnow13:
+  type: Integer
+  description: Laundry current ability
+  range:
+  - 0::3
+  - 8
+  notes: 0 = I do all of my own laundry; 1 = I need occasional help in doing the laundry;
+    2 = I launder only small items; 3 = All laundry must be done by others; 8 = I
+    am able to do my own laundry; but choose to have others do it for me
+  codes:
+    0: I do all of my own laundry
+    1: I need occasional help in doing the laundry
+    2: I launder only small items
+    3: All laundry must be done by others
+    8: I am able to do my own laundry
+
+adlbest13:
+  type: Integer
+  description: Laundry best ability
+  range:
+  - 0::3
+  - 8
+  notes: 0 = I do all of my own laundry; 1 = I need occasional help in doing the laundry;
+    2 = I launder only small items; 3 = All laundry must be done by others; 8 = I
+    am able to do my own laundry; but choose to have others do it for me
+  codes:
+    0: I do all of my own laundry
+    1: I need occasional help in doing the laundry
+    2: I launder only small items
+    3: All laundry must be done by others
+    8: I am able to do my own laundry
+
+adlnow14:
+  type: Integer
+  description: Medication current ability
+  range:
+  - 0::2
+  - 8
+  notes: 0 = I take sole responsibility for taking medications in correct dosages
+    at the correct time; 1 = I take medications that are prepared in individual doses
+    by someone else; 2 = I am unable to track my own medications; 8 = I am able to
+    take care of my own medications but choose to have someone else do it for me
+  alias: iadl7
+  codes:
+    0: I take sole responsibility for taking medications in correct dosages at the
+      correct time
+    1: I take medications that are prepared in individual doses by someone else
+    2: I am unable to track my own medications
+    8: I am able to take care of my own medications but choose to have someone else
+      do it for me
+
+adlbest14:
+  type: Integer
+  description: Medication best ability
+  range:
+  - 0::2
+  - 8
+  notes: 0 = I take sole responsibility for taking medications in correct dosages
+    at the correct time; 1 = I take medications that are prepared in individual doses
+    by someone else; 2 = I am unable to track my own medications; 8 = I am able to
+    take care of my own medications but choose to have someone else do it for me
+  codes:
+    0: I take sole responsibility for taking medications in correct dosages at the
+      correct time
+    1: I take medications that are prepared in individual doses by someone else
+    2: I am unable to track my own medications
+    8: I am able to take care of my own medications but choose to have someone else
+      do it for me
+
+adlnow15:
+  type: Integer
+  description: Child Care current ability
+  range:
+  - 0::2
+  - 8
+  notes: 0 = I am fully able to handle child care; 1 = I need occasional assistance
+    in caring for my children; 2 = I need constant assistance in caring for my children;
+    8 = I do not have children
+  codes:
+    0: I am fully able to handle child care
+    1: I need occasional assistance in caring for my children
+    2: I need constant assistance in caring for my children
+    8: I do not have children
+
+adlbest15:
+  type: Integer
+  description: Child Care best ability
+  range:
+  - 0::2
+  - 8
+  notes: 0 = I am fully able to handle child care; 1 = I need occasional assistance
+    in caring for my children; 2 = I need constant assistance in caring for my children;
+    8 = I do not have children
+  codes:
+    0: I am fully able to handle child care
+    1: I need occasional assistance in caring for my children
+    2: I need constant assistance in caring for my children
+    8: I do not have children
+
+adlnow16:
+  type: Integer
+  description: Work current ability
+  range:
+  - 0::2
+  - 8
+  notes: 0 = I am efficient at work; 1 = I am not very efficient at work and have
+    difficulty maintaining attention or finishing tasks; 2 = I am having a great deal
+    of difficulty in maintaining attention or finishing tasks at work; 8 = I am no
+    longer able to work
+  codes:
+    0: I am efficient at work
+    1: I am not very efficient at work and have difficulty maintaining attention or
+      finishing tasks
+    2: I am having a great deal of difficulty in maintaining attention or finishing
+      tasks at work
+    8: I am no longer able to work
+
+adlbest16:
+  type: Integer
+  description: Work best ability
+  range:
+  - 0::2
+  - 8
+  notes: 0 = I am efficient at work; 1 = I am not very efficient at work and have
+    difficulty maintaining attention or finishing tasks; 2 = I am having a great deal
+    of difficulty in maintaining attention or finishing tasks at work; 8 = I am no
+    longer able to work
+  codes:
+    0: I am efficient at work
+    1: I am not very efficient at work and have difficulty maintaining attention or
+      finishing tasks
+    2: I am having a great deal of difficulty in maintaining attention or finishing
+      tasks at work
+    8: I am no longer able to work
+
+lawtonadl17:
+  type: String
+  length: 400
+  description: Please tell us of any other areas in which you are having difficulty
+
+lawtonadl18:
+  type: String
+  length: 400
+  description: What do you think are your major areas of difficulty at this time?
+
+lawtonadl19:
+  type: Integer
+  description: 'I feel that the difficulties that I am having on the above tasks,
+    if any, are due to:'
+  range:
+  - 1::3
+  - 8
+  notes: 1 = Primarily cognitive problems (e.g. thinking; memory; paying attention);
+    2 = Primarily physical problems (e.g. fatigue; feeling sick); 3 = Equally cognitive
+    and physical problems; 8 = I am not having any difficulties on the previous tasks
+  codes:
+    1: Primarily cognitive problems (e.g. thinking
+    2: Primarily physical problems (e.g. fatigue
+    3: Equally cognitive and physical problems
+    8: I am not having any difficulties on the previous tasks
+
+lawtonadl20:
+  type: Integer
+  description: If you are having more difficulty than you used to with the above tasks,
+    approximately when did the difficulties begin?
+  range:
+  - 1::5
+  - 8
+  notes: 1 = Within the last month; 2 = 1 to 6 months ago; 3 = 6 months to 2 years
+    ago; 4 = 2 to 5 years ago; 5 = More than 5 years ago; 8 = I am not having any
+    difficulties
+  codes:
+    1: Within the last month
+    2: 1 to 6 months ago
+    3: 6 months to 2 years ago
+    4: 2 to 5 years ago
+    5: More than 5 years ago
+    8: I am not having any difficulties
+
+form_completed:
+  type: Integer
+  description: Was the form completed?
+  range:
+  - 1::4
+  notes: 1=Yes; 2=No; 3=Unverified; 4 = N/A-Not in age range
+  codes:
+    1: 'Yes'
+    2: 'No'
+    3: Unverified
+    4: N/A-Not in age range
+
+date_updated:
+  type: Date
+  description: Date record updated
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+
+dode:
+  type: String
+  length: 10
+  description: Date of Data Entry
+
+lbadl_currtot:
+  type: Integer
+  description: L & B Activities of Daily Living Scale total of current items
+  alias: iadl_score
+
+lbadl_besttot:
+  type: Integer
+  description: L & B Activities of Daily Living Scale total of best items
+
+lbadl_iadldep:
+  type: Integer
+  description: indicate whether total score is IADL Dependent or IADL Independent
+  range:
+  - 0
+  - 1
+  notes: 0= IADL Dependent; 1= IADL Independent
+  alias: totalscore
+  codes:
+    0: IADL Dependent
+    1: IADL Independent
+
+iadl6:
+  type: Integer
+  description: 'Which ONE of the following statements best applies to your current
+    ability to use transportation:'
+  range:
+  - 1::5
+  notes: 1 = I can travel independently on public transportation or drive my own car
+    ; 2 = I can arrange my own travel via taxis, but cannot otherwise use public transportation
+    ; 3 = I can travel on public transportation when assisted or accompanied by another
+    ; 4 = My travel is limited to taxi or automobile with the assistance of another
+    ; 5 = I do not travel at all
+  codes:
+    1: I can travel independently on public transportation or drive my own car
+    2: I can arrange my own travel via taxis, but cannot otherwise use public transportation
+    3: I can travel on public transportation when assisted or accompanied by another
+    4: My travel is limited to taxi or automobile with the assistance of another
+    5: I do not travel at all
+
+iadl05:
+  type: Integer
+  description: 'Which ONE of the following statements best applies to your current
+    ability to do laundry:'
+  range:
+  - 1::3
+  notes: 1 = I can do my personal laundry completely ; 2 = I can launder small items,
+    rinse socks, stockings, etc. ; 3 = All my laundry must be done by others
+  alias: iadl5
+  codes:
+    1: I can do my personal laundry completely
+    2: I can launder small items, rinse socks, stockings, etc.
+    3: All my laundry must be done by others

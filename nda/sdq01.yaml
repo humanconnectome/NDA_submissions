@@ -1,0 +1,1289 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: guid
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: asd_child_id,child_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: complete_date,demo_:doi
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: ageyears,demo_:ch_age
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: child_sex,demo_:ch_gender,gender,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+relationship:
+  type: Integer
+  description: Relationship of respondent to individual
+  range:
+  - 1::93
+  - -999
+  notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
+    (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
+    Speech and language therapist; 8 = Behavioral therapist; 9 = Paraprofessional;
+    10 = Aide; 11 = Principal; 12 = Administrator; 13 = 90=Other; 14 = Content teacher;
+    15 = Parent center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father;
+    19=Foster mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother;
+    24 = Step-father; 25=Aunt; 26=Uncle; 27=Missing Data; 28=Both parents;31= Grandmother
+    from mother side; 32= Grandfather from mother side; 33= Grandmother from father
+    side; 34= Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39=
+    female caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
+    44=Friend; 45=Parent; 46=Significant other; 47=Sibling; 48=Son/Daughter; 49=Son-in-law/Daughter-in
+    law; 50=Other Relative; 51=Paid caregiver; 52=Friends; 53=Roommate; 54=Supervisor;
+    55=mother's boyfriend; 56=other parental figure; 57=Summary; 58=counselor ; 59
+    = other female relative; 60 = other male relative; 61 = non-relative ; 62=Maternal
+    Aunt; 63=Maternal Uncle; 64=Maternal Cousin; 65 = Paternal Aunt; 66=Paternal Uncle;
+    67=Paternal Cousin ; 68=Biological/Adoptive Mother and Grandmother; 69=Biological/Adoptive
+    Mother and Stepmother and Grandmother; 70=Biological/Adoptive Mother and Grandmother
+    and Foster Father; 71=Biological/Adoptive Mother and Stepmother and Foster Mother;
+    72=Biological/Adoptive Mother and Foster Mother; 73=Biological/Adoptive Mother
+    and Biological/Adoptive Father; 74=Biological/Adoptive Mother and Stepmother and
+    Biological/Adoptive Father; 75=Biological/Adoptive Mother and Other; 76=Biological/Adoptive
+    Mother and Stepmother and Stepfather; 77=Biological/Adoptive Mother and Stepfather;
+    78=Biological/Adoptive Mother and Grandfather; 79=Biological/Adoptive Mother and
+    Stepmother and Foster Father; 80=Biological/Adoptive Mother and Stepmother; 81=Guardian,
+    female; 82=Other female; 83=Guardian, male; 84=Other male; 85=Other/Grandparent/Nanny;
+    86 = Mother, Father, Guardian; 87 = Daughter, son, grandchild; 88 = Professional
+    (e.g., social worker, nurse, therapist, psychiatrist, or group home staff);  -999=Missing;
+    89 = Biological parent; 91 = Stepparent; 92 = Adoptive parent; 93 = Foster parent
+  alias: asd_respnum,completed_by,respondent
+  codes:
+    1: Biological mom
+    2: Biological dad
+    3: Grandparent
+    4: Special education (sped) teacher
+    5: General education teacher
+    6: Occupational therapist
+    7: Speech and language therapist
+    8: Behavioral therapist
+    9: Paraprofessional
+    10: Aide
+    11: Principal
+    12: Administrator
+    13: 90=Other
+    14: Content teacher
+    15: Parent center director
+    16: Self
+    17: Adoptive mother
+    18: Adoptive father
+    19: Foster mother
+    20: Foster father
+    21: Grandmother
+    22: Grandfather
+    23: Step-mother
+    24: Step-father
+    25: Aunt
+    26: Uncle
+    27: Missing Data
+    28: Both parents
+    31: Grandmother from mother side
+    32: Grandfather from mother side
+    33: Grandmother from father side
+    34: Grandfather from father side
+    36: Brother
+    37: Sister
+    38: Cousin
+    39: female caregiver
+    40: male caregiver
+    41: Female child
+    42: Male child
+    43: Spouse/Mate
+    44: Friend
+    45: Parent
+    46: Significant other
+    47: Sibling
+    48: Son/Daughter
+    49: Son-in-law/Daughter-in law
+    50: Other Relative
+    51: Paid caregiver
+    52: Friends
+    53: Roommate
+    54: Supervisor
+    55: mother's boyfriend
+    56: other parental figure
+    57: Summary
+    58: counselor
+    59: other female relative
+    60: other male relative
+    61: non-relative
+    62: Maternal Aunt
+    63: Maternal Uncle
+    64: Maternal Cousin
+    65: Paternal Aunt
+    66: Paternal Uncle
+    67: Paternal Cousin
+    68: Biological/Adoptive Mother and Grandmother
+    69: Biological/Adoptive Mother and Stepmother and Grandmother
+    70: Biological/Adoptive Mother and Grandmother and Foster Father
+    71: Biological/Adoptive Mother and Stepmother and Foster Mother
+    72: Biological/Adoptive Mother and Foster Mother
+    73: Biological/Adoptive Mother and Biological/Adoptive Father
+    74: Biological/Adoptive Mother and Stepmother and Biological/Adoptive Father
+    75: Biological/Adoptive Mother and Other
+    76: Biological/Adoptive Mother and Stepmother and Stepfather
+    77: Biological/Adoptive Mother and Stepfather
+    78: Biological/Adoptive Mother and Grandfather
+    79: Biological/Adoptive Mother and Stepmother and Foster Father
+    80: Biological/Adoptive Mother and Stepmother
+    81: Guardian, female
+    82: Other female
+    83: Guardian, male
+    84: Other male
+    85: Other/Grandparent/Nanny
+    86: Mother, Father, Guardian
+    87: Daughter, son, grandchild
+    88: Professional (e.g., social worker, nurse, therapist, psychiatrist, or group
+      home staff)
+    -999: Missing
+    89: Biological parent
+    91: Stepparent
+    92: Adoptive parent
+    93: Foster parent
+
+resp_sex:
+  type: Integer
+  description: gender of respondent
+  range:
+  - 1
+  - 2
+  notes: 1=Male; 2=Female
+  codes:
+    1: Male
+    2: Female
+
+p_c_sdq_1:
+  type: Integer
+  description: 1. Considerate of other peoples feelings
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q1_considerate_feelings?,sdq1112_1,sdq510_1,sdq:_1,sdq_pt_1,sdq_s_1
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_1_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_2:
+  type: Integer
+  description: 2.  Restless, overactive, cannot stay still for long
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q2_restless_overactive,sdq1112_2,sdq510_2,sdq:_2,sdq_pt_2,sdq_s_2
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_2_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_3:
+  type: Integer
+  description: 3. Often complains of headaches, stomach-aches or sickness
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q3_complains_aches,sdq1112_3,sdq510_3,sdq:_3,sdq_pt_3,sdq_s_3
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_3_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_4:
+  type: Integer
+  description: 4. Shares readily with other children (for example toys, treats, pencils)
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q4_shares_readily?,sdq1112_4,sdq510_4,sdq:_4,sdq_pt_4,sdq_s_4
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_4_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_5:
+  type: Integer
+  description: 5. Often loses temper
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q5_loses_temper?,sdq1112_5,sdq510_5,sdq:_5,sdq_pt_5,sdq_s_5
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_5_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_6:
+  type: Integer
+  description: 6. Rather solitary, prefers to play alone
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q6_solitary?,sdq1112_6,sdq510_6,sdq:_6,sdq_pt_6,sdq_s_6
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_6_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_7:
+  type: Integer
+  description: 7. Generally well behaved, usually does what adults request
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q7_well_behaved?,sdq1112_7,sdq510_7,sdq:_7
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_7_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 2=Not True; 1= Somewhat True; 0=Certainly True; -888=missing
+  alias: sdq_pt_7,sdq_s_7
+  codes:
+    2: Not True
+    1: Somewhat True
+    0: Certainly True
+    -888: missing
+
+p_c_sdq_8:
+  type: Integer
+  description: 8. Many worries or often seems worried
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q8_many_worries?,sdq1112_8,sdq510_8,sdq:_8,sdq_pt_8,sdq_s_8
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_8_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_9:
+  type: Integer
+  description: 9. Helpful if someone is hurt, upset or feeling ill
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q9_helpful_to_hurt,sdq1112_9,sdq510_9,sdq:_9,sdq_pt_9,sdq_s_9
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_9_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_10:
+  type: Integer
+  description: 10 Constantly fidgeting or squirming
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q10_fidgeting?,sdq1112_10,sdq510_10,sdq:_10,sdq_pt_10,sdq_s_10
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_10_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_11:
+  type: Integer
+  description: 11. Has at least one good friend
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q11_has_good_friend?,sdq1112_11,sdq510_11,sdq:_11,sdq_pt_11,sdq_s_11
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_11_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 2=Not True; 1= Somewhat True; 0=Certainly True; -888=missing
+  codes:
+    2: Not True
+    1: Somewhat True
+    0: Certainly True
+    -888: missing
+
+p_c_sdq_12:
+  type: Integer
+  description: 12. Often fights with other children or bullies them
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q12_often_fights,sdq1112_12,sdq510_12,sdq:_12,sdq_pt_12,sdq_s_12
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_12_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_13:
+  type: Integer
+  description: 13. Often unhappy, depressed or tearful
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q13_often_unhappy?,sdq1112_13,sdq510_13,sdq:_13,sdq_pt_13,sdq_s_13
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_13_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_14:
+  type: Integer
+  description: 14. Generally liked by other children
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q14_generally_liked?,sdq1112_14,sdq510_14,sdq:_14
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_14_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 2=Not True; 1= Somewhat True; 0=Certainly True; -888=missing
+  alias: sdq_pt_14,sdq_s_14
+  codes:
+    2: Not True
+    1: Somewhat True
+    0: Certainly True
+    -888: missing
+
+p_c_sdq_15:
+  type: Integer
+  description: 15. Easily distracted, concentration wanders
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q15_easily_distracted?,sdq1112_15,sdq510_15,sdq:_15,sdq_pt_15,sdq_s_15
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_15_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_16:
+  type: Integer
+  description: 16. Nervous or clingy in new situations, easily loses confidence
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q16_nervous?,sdq1112_16,sdq510_16,sdq:_16,sdq_pt_16,sdq_s_16
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_16_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_17:
+  type: Integer
+  description: 17.  Kind to younger children
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q17_kind_younger_children?,sdq1112_17,sdq510_17,sdq:_17,sdq_pt_17,sdq_s_17
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_17_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_18:
+  type: Integer
+  description: 18. Often lies or cheats
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q18_argumentative_adults,sdq1112_18,sdq510_18,sdq:_18,sdq_pt_18,sdq_s_18
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_18_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_19:
+  type: Integer
+  description: 19. Picked on or bullied by other children
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q19_picked_on?,sdq1112_19,sdq510_19,sdq:_19,sdq_pt_19,sdq_s_19
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_19_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_20:
+  type: Integer
+  description: 20. Often offers to help others (parents, teachers, other children)
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q20_offers_help?,sdq1112_20,sdq510_20,sdq:_20,sdq_pt_20,sdq_s_20
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_20_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_21:
+  type: Integer
+  description: 21. Thinks things out before acting
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q21_stop_and_think,sdq1112_21,sdq510_21,sdq:_21,sdq_pt_21,sdq_s_21
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_21_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 2=Not True; 1= Somewhat True; 0=Certainly True; -888=missing
+  codes:
+    2: Not True
+    1: Somewhat True
+    0: Certainly True
+    -888: missing
+
+p_c_sdq_22:
+  type: Integer
+  description: 22. Steals from home, school or elsewhere
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q22_spiteful,sdq1112_22,sdq510_22,sdq:_22,sdq_pt_22,sdq_s_22
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_22_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_23:
+  type: Integer
+  description: 23 .Gets along better with adults than with other children
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q23_along_adults,sdq1112_23,sdq510_23,sdq:_23,sdq_pt_23,sdq_s_23
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_23_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_24:
+  type: Integer
+  description: 24. Many fears, easily scared
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q24_many_fears,sdq1112_24,sdq510_24,sdq:_24,sdq_pt_24,sdq_s_24
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_24_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_25:
+  type: Integer
+  description: 25. Good attention span (sees chores or homework through to the end
+  range:
+  - 0::2
+  - -888
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
+  alias: q25_good_attention,sdq1112_25,sdq510_25,sdq:_25
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    -888: missing
+
+p_c_sdq_25_rc:
+  type: Integer
+  description: recoded item
+  range:
+  - 0::2
+  - -888
+  notes: 2=Not True; 1= Somewhat True; 0=Certainly True; -888=missing
+  alias: sdq_pt_25,sdq_s_25
+  codes:
+    2: Not True
+    1: Somewhat True
+    0: Certainly True
+    -888: missing
+
+p_c_sdq_26:
+  type: Integer
+  description: 'Overall, do you think that your child has difficulties in one or more
+    of the following areas: emotions, concentration, behavior or being able to get
+    on with other people?'
+  range:
+  - 0::3
+  - -888
+  notes: 0= No; 1 = Yes-Minor difficulties; 2= Yes- definite difficulties; 3 = Yes-
+    severe difficulties; -888=missing
+  alias: q26_overall_has_difficulty
+  codes:
+    0: 'No'
+    1: Yes-Minor difficulties
+    2: Yes- definite difficulties
+    3: Yes- severe difficulties
+    -888: missing
+
+p_c_sdq_27:
+  type: Integer
+  description: How long have these difficulties been present?
+  range:
+  - 1::4
+  - -888
+  notes: 1=Less than a month; 2=1-5 months; 3=6-12 months; 4=Over a year; -888=missing
+  alias: q27_how_long_present
+  codes:
+    1: Less than a month
+    2: 1-5 months
+    3: 6-12 months
+    4: Over a year
+    -888: missing
+
+p_c_sdq_28:
+  type: Integer
+  description: Do the difficulties upset or distress your child?
+  range:
+  - 0::3
+  - -888
+  notes: 0= No; 1 = Yes-Minor difficulties; 2= Yes- definite difficulties; 3 = Yes-
+    severe difficulties; -888=missing
+  alias: q28_do_diffs_distress?
+  codes:
+    0: 'No'
+    1: Yes-Minor difficulties
+    2: Yes- definite difficulties
+    3: Yes- severe difficulties
+    -888: missing
+
+p_c_sdq_28_rc:
+  type: Integer
+  description: recoded item for scoring
+  range:
+  - 0::2
+  - -888
+  notes: 0= No/Yes-Minor difficulties; 1= Yes- definite difficulties; 2 = Yes- severe
+    difficulties; -888 =missing
+  codes:
+    0: No/Yes-Minor difficulties
+    1: Yes- definite difficulties
+    2: Yes- severe difficulties
+    -888: missing
+
+p_c_sdq_29:
+  type: Integer
+  description: Do the difficulties interfere with your child's everyday life in the
+    following areas? Home
+  range:
+  - 0::3
+  - -888
+  notes: 0 = Not at all; 1 = Only a little; 2 = Quite a lot; 3 = A great deal; -888=missing
+  alias: q29_interfere_home_life?
+  codes:
+    0: Not at all
+    1: Only a little
+    2: Quite a lot
+    3: A great deal
+    -888: missing
+
+p_c_sdq_29_rc:
+  type: Integer
+  description: recoded item for scoring
+  range:
+  - 0::2
+  - -888
+  notes: 0 = Not at all/Only a little; 1 = Quite a lot; 2 = A great deal; -888= missing
+  codes:
+    0: Not at all/Only a little
+    1: Quite a lot
+    2: A great deal
+    -888: missing
+
+p_c_sdq_30:
+  type: Integer
+  description: Do the difficulties interfere with your child's everyday life in the
+    following areas? FRIENDSHIPS
+  range:
+  - 0::3
+  - -888
+  notes: 0 = Not at all; 1 = Only a little; 2 = Quite a lot; 3 = A great deal; -888=missing
+  alias: q30_interfere_friendships?
+  codes:
+    0: Not at all
+    1: Only a little
+    2: Quite a lot
+    3: A great deal
+    -888: missing
+
+p_c_sdq_30_rc:
+  type: Integer
+  description: recoded item for scoring
+  range:
+  - 0::2
+  - -888
+  notes: 0 = Not at all/Only a little; 1 = Quite a lot; 2 = A great deal; -888 =missing
+  codes:
+    0: Not at all/Only a little
+    1: Quite a lot
+    2: A great deal
+    -888: missing
+
+p_c_sdq_31:
+  type: Integer
+  description: Do the difficulties interfere with your child's everyday life in the
+    following areas? CLASSROOM LEARNING
+  range:
+  - 0::3
+  - -888
+  notes: 0 = Not at all; 1 = Only a little; 2 = Quite a lot; 3 = A great deal; -888=missing
+  alias: q31_interfere_learning
+  codes:
+    0: Not at all
+    1: Only a little
+    2: Quite a lot
+    3: A great deal
+    -888: missing
+
+p_c_sdq_31_rc:
+  type: Integer
+  description: recoded item for scoring
+  range:
+  - 0::2
+  - -888
+  notes: 0 = Not at all/Only a little; 1 = Quite a lot; 2 = A great deal; -888= missing
+  codes:
+    0: Not at all/Only a little
+    1: Quite a lot
+    2: A great deal
+    -888: missing
+
+p_c_sdq_32:
+  type: Integer
+  description: Do the difficulties interfere with your child's everyday life in the
+    following areas? LEISURE ACTIVITIES
+  range:
+  - 0::3
+  - -888
+  notes: 0 = Not at all; 1 = Only a little; 2 = Quite a lot; 3 = A great deal; -888=missing
+  alias: q32_interfere_leisure?
+  codes:
+    0: Not at all
+    1: Only a little
+    2: Quite a lot
+    3: A great deal
+    -888: missing
+
+p_c_sdq_32_rc:
+  type: Integer
+  description: recoded item for scoring
+  range:
+  - 0::2
+  - -888
+  notes: 0 = Not at all/Only a little; 1 = Quite a lot; 2 = A great deal; -888 =missing
+  codes:
+    0: Not at all/Only a little
+    1: Quite a lot
+    2: A great deal
+    -888: missing
+
+p_c_sdq_33:
+  type: Integer
+  description: Do the difficulties put a burden on you or the family as a whole?
+  range:
+  - 0::3
+  - -888
+  notes: 0 = Not at all; 1 = Only a little; 2 = Quite a lot; 3 = A great deal; -888=missing
+  alias: q33_burden
+  codes:
+    0: Not at all
+    1: Only a little
+    2: Quite a lot
+    3: A great deal
+    -888: missing
+
+p_c_sdq_co_rs:
+  type: Integer
+  description: Conduct problems Scale-raw score
+  alias: conduct_problems_scale,sdq:cps_total,sdq_pt_conduct,sdq_s_conduct
+
+p_c_sdq_co_ts:
+  type: Integer
+  description: Conduct problems Scale-t-score
+
+p_c_sdq_em_rs:
+  type: Integer
+  description: Emotional Problems Scale-raw score
+  alias: emotional_problems_scale,sdq:eps_total,sdq_pt_emotion,sdq_s_emotion
+
+p_c_sdq_em_ts:
+  type: Integer
+  description: Emotional Problems Scale-T-score
+
+p_c_sdq_hy_rs:
+  type: Integer
+  description: Hyperactivity scale-raw score
+  alias: hyperactivity_scale,sdq:has_total,sdq_pt_hyperactivity,sdq_s_hyperactivity
+
+p_c_sdq_hy_ts:
+  type: Integer
+  description: Hyperactivity scale-T-score
+
+p_c_sdq_im_rs:
+  type: Integer
+  description: Impact score-Raw score
+  alias: impact_supplement
+
+p_c_sdq_im_ts:
+  type: Integer
+  description: Impact score-T score
+
+p_c_sdq_pe_rs:
+  type: Integer
+  description: Peer problems scale-raw score
+  alias: peer_problems_scale,sdq:pps_total,sdq_pt_peer,sdq_s_peer
+
+p_c_sdq_pe_ts:
+  type: Integer
+  description: Peer problems scale-T-score
+
+p_c_sdq_px_rs:
+  type: Integer
+  description: Total difficulties score-raw score
+  alias: sdq_pt_total,sdq_s_total,total_difficulties_scale
+
+p_c_sdq_px_ts:
+  type: Integer
+  description: Total difficulties score-T-score
+
+p_c_sdq_so_rs:
+  type: Integer
+  description: Prosocial scale-Raw score
+  alias: prosocial_scale,sdq:pss_total,sdq_pt_prosocial,sdq_s_prosocial
+
+p_c_sdq_so_ts:
+  type: Integer
+  description: Prosocial scale-T-score
+
+sdq_pt_internalizing:
+  type: Integer
+  description: Strength and Difficulties - Report Internalizing Symptoms
+  range:
+  - 0::20
+  notes: Sum Emotional Problems and Peer Relationship Problems
+  alias: sdq_s_internalizing
+
+sdq_pt_externalizing:
+  type: Integer
+  description: Strength and Difficulties - Report Externalizing Symptoms
+  range:
+  - 0::20
+  notes: Sum Conduct Problems and Hyperactivity/Inattention
+  alias: sdq_s_externalizing
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+
+comments:
+  type: String
+  length: 4000
+  description: Comments about assessment
+
+sdq_08:
+  type: Integer
+  description: Have you talked to your child about schoolwork during the last school
+    term?
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes; 0= No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+sdq_09:
+  type: Integer
+  description: Have you asked the child if they needed help with their homework during
+    the last school term?
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes; 0= No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+sdq_10:
+  type: Integer
+  description: Have you talked to your child about their future plans during the last
+    school term?
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes; 0= No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+sdq_01:
+  type: Integer
+  description: Do the difficulties upset or distress your child?
+  range:
+  - 1::5
+  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 =  Rarely; 1 = Never
+  codes:
+    5: Always
+    4: Most of the time
+    3: Sometimes
+    2: Rarely
+    1: Never
+
+sdq_02:
+  type: Integer
+  description: Do the difficulties interfere with your child?s family life?
+  range:
+  - 1::5
+  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 =  Rarely; 1 = Never
+  codes:
+    5: Always
+    4: Most of the time
+    3: Sometimes
+    2: Rarely
+    1: Never
+
+sdq_03:
+  type: Integer
+  description: Do the difficulties interfere with your child?s friendships?
+  range:
+  - 1::5
+  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 =  Rarely; 1 = Never
+  codes:
+    5: Always
+    4: Most of the time
+    3: Sometimes
+    2: Rarely
+    1: Never
+
+sdq_04:
+  type: Integer
+  description: Do the difficulties interfere with your child?s classroom learning?
+  range:
+  - 1::5
+  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 =  Rarely; 1 = Never
+  codes:
+    5: Always
+    4: Most of the time
+    3: Sometimes
+    2: Rarely
+    1: Never
+
+sdq_05:
+  type: Integer
+  description: Do the difficulties interfere with your child?s leisure activities?
+  range:
+  - 1::5
+  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 =  Rarely; 1 = Never
+  codes:
+    5: Always
+    4: Most of the time
+    3: Sometimes
+    2: Rarely
+    1: Never
+
+sdq_06:
+  type: Integer
+  description: Do the difficulties put a burden on you or the family as a whole?
+  range:
+  - 1::5
+  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 =  Rarely; 1 = Never
+  codes:
+    5: Always
+    4: Most of the time
+    3: Sometimes
+    2: Rarely
+    1: Never
+
+sdq_07:
+  type: Integer
+  description: Do the difficulties interfere with your child?s home life?
+  range:
+  - 1::5
+  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 =  Rarely; 1 = Never
+  codes:
+    5: Always
+    4: Most of the time
+    3: Sometimes
+    2: Rarely
+    1: Never
+
+year_mta:
+  type: Integer
+  description: Year in study
+  alias: visit_year,visit_year?
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name

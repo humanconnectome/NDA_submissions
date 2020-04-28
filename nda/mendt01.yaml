@@ -1,0 +1,3179 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,id,patid,randid,record_id,subjectid,subjid
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: datacollecteddate,med_current,npmed_doa,pmed_doa,scidmvdate
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+study:
+  type: String
+  length: 100
+  description: Study
+  alias: rxhx_studyid,studyid
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+  alias: siteid
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+  alias: int1,rxhx_interval,visitlabel,vtyppmc
+
+completed:
+  type: Integer
+  description: Checks if completed
+  range:
+  - 0::3
+  notes: 0=No; 1=Yes; 2=Yes, lost; 3=Unverified
+  alias: formcomp,frmcomp,rxhx_frmcomp
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Yes, lost
+    3: Unverified
+
+subtrial_name:
+  type: Integer
+  description: Name of subtrial
+  range:
+  - 1::3
+  notes: 1=Crossover; 2=Guanfacine; 3= Open Label MPH
+  codes:
+    1: Crossover
+    2: Guanfacine
+    3: Open Label MPH
+
+pmtot:
+  type: Integer
+  description: Total pages
+  alias: pmltot,pttot
+
+pmany:
+  type: Integer
+  description: Any medications
+  range:
+  - 1
+  - 2
+  notes: 1=Yes 2=No
+  alias: npmed_meds_yn,pmed_meds_yn
+  codes:
+    1: Yes 2=No
+
+pmmednum:
+  type: Integer
+  description: Medication/treatment number
+  alias: pttrtnum,trtnum
+
+medication_name:
+  type: String
+  length: 255
+  description: Name of medication
+  alias: medlist_med_name,pmlname,ptname
+
+ddose:
+  type: String
+  length: 50
+  description: daily dose
+  notes: -9=unknown
+  alias: pmdose,pmldose
+  codes:
+    -9: unknown
+
+cmrouto:
+  type: String
+  length: 200
+  description: Route other specify
+  alias: npmed_drug1_route_other,pmrte
+
+cmunito:
+  type: String
+  length: 200
+  description: Unit other specify
+  alias: npmed_drug1_units_other,pmed_drug1_units_othersp,pmunit
+
+cmfreqo:
+  type: String
+  length: 200
+  description: Frequency other specify
+  alias: npmed_drug1_frequency_other,pmed_drug1_freq_othersp,pmfreq,pmlsplit
+
+pmstdt:
+  type: Integer
+  description: Date medication/treatment began in days from the randomization date
+  alias: ptstdt
+
+cmcont:
+  type: Integer
+  description: Continuing at end of study?
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  alias: ptcont
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+pmstop:
+  type: Integer
+  description: Date medication/treatment stopped in days from the randomization date
+  alias: ptstop
+
+ptany:
+  type: Integer
+  description: Treatments other than meds
+  range:
+  - 1
+  - 2
+  notes: 1=Yes 2=No
+  codes:
+    1: Yes 2=No
+
+daysrz:
+  type: Integer
+  description: days since randomization
+  alias: studyday,visitdt
+
+q1_14a1:
+  type: Integer
+  description: Medication Code 1
+  range:
+  - 1::2099
+  alias: med1,scidmed4_1e
+
+q1_14b1:
+  type: Integer
+  description: Medication Code 2
+  range:
+  - 1::2099
+  alias: med2,scidmed4_2e
+
+q1_14c1:
+  type: Integer
+  description: Medication Code 3
+  range:
+  - 1::2099
+  alias: med3,scidmed4_3e
+
+q1_14d1:
+  type: Integer
+  description: Medication Code 4
+  range:
+  - 1::2099
+  alias: med4,scidmed4_4e
+
+q1_14e1:
+  type: Integer
+  description: Medication Code 5
+  range:
+  - 1::2099
+  alias: med5,scidmed4_5e
+
+q1_14f1:
+  type: Integer
+  description: Medication Code 6
+  range:
+  - 1::2099
+  alias: med6,scidmed4_6e
+
+q1_14g1:
+  type: Integer
+  description: Medication Code 7
+  range:
+  - 1::2099
+  alias: med7
+
+q1_14h1:
+  type: Integer
+  description: Medication Code 8
+  range:
+  - 1::2099
+  alias: med8
+
+medication1_name:
+  type: String
+  length: 500
+  description: Name first medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  alias: med1,med_1n,name1,npmed_drug1_name,pmed_drug1_name,rxhx_medname,scidmed4_1a
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication2_name:
+  type: String
+  length: 200
+  description: Name second medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  alias: med2,med_2n,name2,npmed_drug2_name,pmed_drug2_name,scidmed4_2a
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication3_name:
+  type: String
+  length: 150
+  description: Name third medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  alias: med3,med_3n,name3,npmed_drug3_name,pmed_drug3_name,scidmed4_3a
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication4_name:
+  type: String
+  length: 100
+  description: Name fourth medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  alias: med4,med_4n,name4,npmed_drug4_name,pmed_drug4_name,scidmed4_4a
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication5_name:
+  type: String
+  length: 500
+  description: Name fifth medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  alias: med5,med_5n,name5,npmed_drug5_name,pmed_drug5_name,scidmed4_5a
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication6_name:
+  type: String
+  length: 500
+  description: Name sixth medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  alias: med6,med_6n,name6,npmed_drug6_name,pmed_drug6_name,scidmed4_6a
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication7_name:
+  type: String
+  length: 100
+  description: Name seventh medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  alias: med7,med_7n,name7,npmed_drug7_name,pmed_drug7_name
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication8_name:
+  type: String
+  length: 100
+  description: Name eighth medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  alias: med8,med_8n,name8,npmed_drug8_name,pmed_drug8_name
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+q53_b6a2:
+  type: String
+  length: 100
+  description: Medication 1 Indication
+  notes: Indicate use of medication
+  alias: ind1,npmed_drug1_purpose,pmed_drug1_purpose,rxhx_purpind
+
+q53_b6b2:
+  type: String
+  length: 100
+  description: Medication 2 Indication
+  notes: Indicate use of medication
+  alias: ind2,npmed_drug2_purpose,pmed_drug2_purpose
+
+q53_b6c2:
+  type: String
+  length: 100
+  description: Medication 3 Indication
+  notes: Indicate use of medication
+  alias: ind3,npmed_drug3_purpose,pmed_drug3_purpose
+
+q53_b6d2:
+  type: String
+  length: 100
+  description: Medication 4 Indication
+  notes: Indicate use of medication
+  alias: ind4,npmed_drug4_purpose,pmed_drug4_purpose
+
+q53_b6e2:
+  type: String
+  length: 100
+  description: Medication 5 Indication
+  notes: Indicate use of medication
+  alias: ind5,npmed_drug5_purpose,pmed_drug5_purpose
+
+q53_b6f2:
+  type: String
+  length: 100
+  description: Medication 6 Indication
+  notes: Indicate use of medication
+  alias: ind6,npmed_drug6_purpose,pmed_drug6_purpose
+
+ind7:
+  type: String
+  length: 100
+  description: Medication 7 Indication
+  alias: npmed_drug7_purpose,pmed_drug7_purpose
+
+ind8:
+  type: String
+  length: 100
+  description: Medication 8 Indicaiton
+  alias: npmed_drug8_purpose,pmed_drug8_purpose
+
+othersp1:
+  type: String
+  length: 100
+  description: Medication Indication specify 1
+
+othersp2:
+  type: String
+  length: 100
+  description: Medication Indication specify 2
+
+othersp3:
+  type: String
+  length: 100
+  description: Medication Indication specify 3
+
+othersp4:
+  type: String
+  length: 100
+  description: Medication Indication specify 4
+
+othersp5:
+  type: String
+  length: 100
+  description: Medication Indication specify 5
+
+othersp6:
+  type: String
+  length: 100
+  description: Medication Indication specify 6
+
+othersp7:
+  type: String
+  length: 100
+  description: Medication Indication specify 7
+
+othersp8:
+  type: String
+  length: 100
+  description: Medication Indication specify 8
+
+stdate1:
+  type: String
+  length: 20
+  description: Medication start date 1
+  notes: mm/dd/yyyy or write out month year
+  alias: med_1s,med_date_mo,medlist_start_date,medstart,npmed_drug1_started,pmed_drug1_started,pmlstdt
+
+stdate2:
+  type: String
+  length: 20
+  description: Medication start date 2
+  notes: mm/dd/yyyy or write out month year
+  alias: med_2s,medstart2,npmed_drug2_started,pmed_drug2_started
+
+stdate3:
+  type: String
+  length: 20
+  description: Medication start date 3
+  notes: mm/dd/yyyy or write out month year
+  alias: med_3s,medstart3,npmed_drug3_started,pmed_drug3_started
+
+stdate4:
+  type: String
+  length: 20
+  description: Medication start date 4
+  notes: mm/dd/yyyy or write out month year
+  alias: med_4s,medstart4,npmed_drug4_started,pmed_drug4_started
+
+stdate5:
+  type: String
+  length: 20
+  description: Medication start date 5
+  notes: mm/dd/yyyy or write out month year
+  alias: med_5s,medstart5,npmed_drug5_started,pmed_drug5_started
+
+stdate6:
+  type: String
+  length: 20
+  description: Medication start date 6
+  notes: mm/dd/yyyy or write out month year
+  alias: med_6s,medstart6,npmed_drug6_started,pmed_drug6_started
+
+stdate7:
+  type: String
+  length: 20
+  description: Medication start date 7
+  notes: mm/dd/yyyy or write out month year
+  alias: med_7s,medstart7,npmed_drug7_started,pmed_drug7_started
+
+stdate8:
+  type: String
+  length: 20
+  description: Medication start date 8
+  notes: mm/dd/yyyy or write out month year
+  alias: med_8s,npmed_drug8_started,pmed_drug8_started
+
+spdate1:
+  type: String
+  length: 20
+  description: Medication stop date 1
+  notes: mm/dd/yyyy or write out month year
+  alias: medend,medlist_stop_date,npmed_drug1_discontinued,pmed_drug1_discontinued,pmlstop
+
+spdate2:
+  type: String
+  length: 20
+  description: Medication stop date 2
+  notes: mm/dd/yyyy or write out month year
+  alias: medend2,npmed_drug2_discontinued,pmed_drug2_discontinued
+
+spdate3:
+  type: String
+  length: 20
+  description: Medication stop date 3
+  notes: mm/dd/yyyy or write out month year
+  alias: medend3,npmed_drug3_discontinued,pmed_drug3_discontinued
+
+spdate4:
+  type: String
+  length: 20
+  description: Medication stop date 4
+  notes: mm/dd/yyyy or write out month year
+  alias: medend4,npmed_drug4_discontinued,pmed_drug4_discontinued
+
+spdate5:
+  type: String
+  length: 20
+  description: Medication stop date 5
+  notes: mm/dd/yyyy or write out month year
+  alias: medend5,npmed_drug5_discontinued,pmed_drug5_discontinued
+
+spdate6:
+  type: String
+  length: 20
+  description: Medication stop date 6
+  notes: mm/dd/yyyy or write out month year
+  alias: medend6,npmed_drug6_discontinued,pmed_drug6_discontinued
+
+spdate7:
+  type: String
+  length: 20
+  description: Medication stop date 7
+  notes: mm/dd/yyyy or write out month year
+  alias: medend7,npmed_drug7_discontinued,pmed_drug7_discontinued
+
+spdate8:
+  type: String
+  length: 20
+  description: Medication stop date 8
+  notes: mm/dd/yyyy or write out month year
+  alias: npmed_drug8_discontinued,pmed_drug8_discontinued
+
+week:
+  type: Float
+  description: Week in level/study
+  notes: 99=week 10-week 14
+  alias: intid
+  codes:
+    99: week 10-week 14
+
+phase:
+  type: Integer
+  description: Phase
+  notes: 9 =follow up
+  codes:
+    9: follow up
+
+visday:
+  type: Integer
+  description: Number of days from study baseline to date of visit
+  alias: date
+
+stds1:
+  type: Float
+  description: Prescribed med daily dose 1
+  alias: medlist_dosage_mg,pmed_drug1_strength,scidmed4_1b
+
+stds2:
+  type: Float
+  description: Prescribed med daily dose 2
+  alias: pmed_drug2_strength,scidmed4_2b
+
+stds3:
+  type: Float
+  description: Prescribed med daily dose 3
+  alias: pmed_drug3_strength,scidmed4_3b
+
+stds4:
+  type: Float
+  description: Prescribed med daily dose 4
+  alias: pmed_drug4_strength,scidmed4_4b
+
+stds5:
+  type: String
+  length: 50
+  description: Prescribed med daily dose 5
+  alias: pmed_drug5_strength,scidmed4_5b
+
+stds6:
+  type: String
+  length: 50
+  description: Prescribed med daily dose 6
+  alias: pmed_drug6_strength,scidmed4_6b
+
+prndose1:
+  type: Float
+  description: PRN 1 dose mg 24hr total
+  alias: medlist_dosage_mg_prn,totalmg
+
+prndose2:
+  type: Float
+  description: PRN 2 dose mg 24hr total
+  alias: totalmg2
+
+prndose3:
+  type: Float
+  description: PRN 3 dose mg 24hr total
+  alias: totalmg3
+
+prndose4:
+  type: Float
+  description: PRN 4 dose mg 24hr total
+  alias: totalmg4
+
+prndose5:
+  type: Float
+  description: 'PRN 5 dose mg '
+  alias: totalmg5
+
+prndose6:
+  type: Float
+  description: 'PRN 6 dose mg '
+  alias: totalmg6
+
+medication1_frequency:
+  type: String
+  length: 60
+  description: First medication frequency
+  alias: med1_frqcy,med_freq,medlist_frequency,npmed_drug1_frequency,pmed_drug1_frequency,rxhx_freq,scidmed4_1d
+
+medication2_frequency:
+  type: String
+  length: 50
+  description: Second medication frequency
+  alias: med2_frqcy,npmed_drug2_frequency,pmed_drug2_frequency,scidmed4_2d
+
+medication3_frequency:
+  type: String
+  length: 70
+  description: Third medication frequency
+  alias: med3_frqcy,npmed_drug3_frequency,pmed_drug3_frequency,scidmed4_3d
+
+medication4_frequency:
+  type: String
+  length: 50
+  description: Fourth medication frequency
+  alias: med4_frqcy,npmed_drug4_frequency,pmed_drug4_frequency,scidmed4_4d
+
+medication5_frequency:
+  type: String
+  length: 50
+  description: Fifth medication frequency
+  alias: med5_frqcy,npmed_drug5_frequency,pmed_drug5_frequency,scidmed4_5d
+
+medication6_frequency:
+  type: String
+  length: 50
+  description: Sixth medication frequency
+  alias: med6_frqcy,npmed_drug6_frequency,pmed_drug6_frequency,scidmed4_6d
+
+med_source1:
+  type: String
+  length: 50
+  description: 'Med 1: source of data'
+  alias: medlist_source_of_data,npmed_drug1_source_info,npmed_drug1_source_info_other,pmed_drug1_source_info,pmed_drug1_source_info_other,pmed_drug1_source_info_other_hp
+
+med_source2:
+  type: String
+  length: 50
+  description: 'Med 2: source of data'
+  alias: npmed_drug2_source_info,pmed_drug2_source_info
+
+med_source3:
+  type: String
+  length: 50
+  description: 'Med 3: source of data'
+  alias: npmed_drug3_source_info,pmed_drug3_source_info
+
+med_source4:
+  type: String
+  length: 50
+  description: 'Med 4: source of data'
+  alias: npmed_drug4_source_info,pmed_drug4_source_info
+
+med_source5:
+  type: String
+  length: 50
+  description: 'Med 5: source of data'
+  alias: npmed_drug5_source_info,pmed_drug5_source_info
+
+med_source6:
+  type: String
+  length: 50
+  description: 'Med 6: source of data'
+  alias: npmed_drug6_source_info,pmed_drug6_source_info
+
+med_comp1:
+  type: Float
+  description: 'Med 1: % Compliance'
+  range:
+  - 0::200
+  notes: ' #of taken/#expected to be taken'
+  alias: medlist_compliance
+
+med_comp2:
+  type: Float
+  description: 'Med 2: % Compliance'
+  range:
+  - 0::200
+  notes: '#of taken/#of expected to take'
+
+med_comp3:
+  type: Integer
+  description: 'Med 3: % Compliance'
+  range:
+  - 0::100
+
+med_comp4:
+  type: Integer
+  description: 'Med 4: % Compliance'
+  range:
+  - 0::100
+
+med_comp5:
+  type: Integer
+  description: 'Med 5: % Compliance'
+  range:
+  - 0::100
+
+med_comp6:
+  type: Integer
+  description: 'Med 6: % Compliance'
+  range:
+  - 0::100
+
+prev_date:
+  type: Date
+  description: 'Date of Previous Assessment '
+
+elig_inclusion_check:
+  type: Integer
+  description: Checks for a pass/fail on Elig for Inclusion
+  range:
+  - 0::3
+  notes: 0=Failed (Ineligible); 1=Passed (Eligible); 2=In screening; 3=NA
+  codes:
+    0: Failed (Ineligible)
+    1: Passed (Eligible)
+    2: In screening
+    3: NA
+
+dataquality:
+  type: Integer
+  description: Data quality
+  range:
+  - 0::5
+  notes: 0=No data (cancelled); 1=Data entered but only once, has missing data; 2=Data
+    entered but only once, no missing data; 3=Double entered; 4=Data frozen for cleaning;
+    5=Data clean/locked
+  codes:
+    0: No data (cancelled)
+    1: Data entered but only once, has missing data
+    2: Data entered but only once, no missing data
+    3: Double entered
+    4: Data frozen for cleaning
+    5: Data clean/locked
+
+visit_name:
+  type: String
+  length: 20
+  description: session ID/screening ID
+  alias: visitnumber
+
+instance:
+  type: Integer
+  description: Instance
+  range:
+  - 0::100
+  notes: The number of instance of the first degree relative.
+
+medlist_med_code:
+  type: Integer
+  description: Code from Med List
+  range:
+  - 12::999
+
+medlist_dosage_ua:
+  type: Integer
+  description: Prescribed Daily Dosage
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+medlist_dosage_ua_prn:
+  type: Integer
+  description: Prescribed PRN Dosage
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+subjecttype:
+  type: String
+  length: 20
+  description: Subject Type
+  range:
+  - Control
+  - Prodromal
+  - Enhanced
+  - Non-Enhanced
+
+medication1_dosage:
+  type: String
+  length: 150
+  description: First medication dosage
+  notes: 0 = No medication; 999 = Missing
+  alias: med1_dose,med_1d,npmed_drug1_str_dose,pmed_drug1_str_dose,rxhx_dose
+  codes:
+    0: No medication
+    999: Missing
+
+medication2_dosage:
+  type: String
+  length: 100
+  description: Second medication dosage
+  notes: 0 = No medication; 999 = Missing
+  alias: med2_dose,med_2d,npmed_drug2_str_dose,pmed_drug2_str_dose
+  codes:
+    0: No medication
+    999: Missing
+
+medication3_dosage:
+  type: String
+  length: 100
+  description: Third medication dosage
+  notes: 0 = No medication; 999 = Missing
+  alias: med3_dose,med_3d,npmed_drug3_str_dose,pmed_drug3_str_dose
+  codes:
+    0: No medication
+    999: Missing
+
+medication4_dosage:
+  type: String
+  length: 100
+  description: Fourth  medication dosage
+  notes: 0 = No medication; 999 = Missing
+  alias: med4_dose,med_4d,npmed_drug4_str_dose,pmed_drug4_str_dose
+  codes:
+    0: No medication
+    999: Missing
+
+medication5_dosage:
+  type: String
+  length: 100
+  description: Fifth medication dosage
+  notes: 0 = No medication; 999 = Missing
+  alias: med5_dose,med_5d,npmed_drug5_str_dose,pmed_drug5_str_dose
+  codes:
+    0: No medication
+    999: Missing
+
+medication6_dosage:
+  type: String
+  length: 100
+  description: Sixth medication dosage
+  notes: 0 = No medication; 999 = Missing
+  alias: med6_dose,med_6d,npmed_drug6_str_dose,pmed_drug6_str_dose
+  codes:
+    0: No medication
+    999: Missing
+
+medication7_dosage:
+  type: String
+  length: 100
+  description: Seventh medication dosage
+  notes: 0 = No medication; 999 = Missing
+  alias: med7_dose,med_7d,npmed_drug7_str_dose,pmed_drug7_str_dose
+  codes:
+    0: No medication
+    999: Missing
+
+medication8_dosage:
+  type: String
+  length: 100
+  description: Eighth medication dosage
+  notes: 0 = No medication; 999 = Missing
+  alias: med8_dose,med_8d,npmed_drug8_str_dose,pmed_drug8_str_dose
+  codes:
+    0: No medication
+    999: Missing
+
+medication9_dosage:
+  type: String
+  length: 100
+  description: Ninth medication dosage
+  alias: med9_dose,med_9d,npmed_drug9_str_dose,pmed_drug9_str_dose
+
+medication10_dosage:
+  type: String
+  length: 50
+  description: Tenth medication dosage
+  alias: med_10d,npmed_drug10_str_dose,pmed_drug10_str_dose
+
+medication11_dosage:
+  type: Float
+  description: medication 11 dosage
+  alias: med11_dose,med_11d
+
+medication12_dosage:
+  type: Float
+  description: medication 12 dosage
+  alias: med12_dose,med_12d
+
+medication13_dosage:
+  type: String
+  length: 100
+  description: Medication 13 dosage
+  alias: med13_dose,med_13d
+
+medication14_dosage:
+  type: String
+  length: 100
+  description: Medication 14 dosage
+  alias: med14_dose,med_14d
+
+medication9_name:
+  type: String
+  length: 100
+  description: Name ninth medication that the participant has taken
+  alias: med9,med_9n,npmed_drug9_name,pmed_drug9_name
+
+medication_10_name:
+  type: String
+  length: 100
+  description: specify med 10
+  alias: med10,med_10n
+
+medication_11_name:
+  type: String
+  length: 250
+  description: Current medication 11
+  alias: med_11n
+
+medication_12_name:
+  type: String
+  length: 50
+  description: Medication 12 name
+  alias: med_12n
+
+medication_13_name:
+  type: String
+  length: 50
+  description: specify med 13
+  alias: med_13n
+
+medication_14_name:
+  type: String
+  length: 50
+  description: specify med 14
+  alias: med_14n
+
+stdate9:
+  type: String
+  length: 20
+  description: Medication start date 9
+  alias: med_9s,npmed_drug9_started,pmed_drug9_started
+
+stdate10:
+  type: String
+  length: 20
+  description: Medication start date 10
+  alias: med_10s,npmed_drug10_started,pmed_drug10_started
+
+stdate11:
+  type: String
+  length: 20
+  description: Medication start date 11
+  alias: med_11s
+
+stdate12:
+  type: String
+  length: 20
+  description: Medication start date 12
+  alias: med_12s
+
+stdate13:
+  type: String
+  length: 20
+  description: Medication start date 13
+  alias: med_13s
+
+stdate14:
+  type: String
+  length: 20
+  description: Medication start date 14
+  alias: med_14s
+
+intrt:
+  type: Integer
+  description: Treatment Status Code
+  range:
+  - 0::2
+  notes: 0=Baseline; 1=In Treatment; 2=In Follow-up
+  codes:
+    0: Baseline
+    1: In Treatment
+    2: In Follow-up
+
+trtgrp_p:
+  type: Integer
+  description: Treatment Group
+  range:
+  - 1
+  - 2
+  notes: 1=Long-Acting Injectable Risperidone Microspheres; 2=Second Generation Oral
+    Antipsychotic Medication
+  codes:
+    1: Long-Acting Injectable Risperidone Microspheres
+    2: Second Generation Oral Antipsychotic Medication
+
+days_visit1:
+  type: Integer
+  description: Days from Visit 1
+  alias: dav1pmc
+
+visnum:
+  type: Float
+  description: Numeric Visit Number
+  notes: '-1.5 = Pre-Screening; -1 = Screening; 0 = Baseline; ## = Visit ## (from
+    1 to 10); Whole numbers = standard monthly visits; #.001 - #.009 = Unscheduled;
+    #.1 = End of Phase 1; #.2 = End of Phase 2; #.3 = End of Phase 3; #.4 = End of
+    Open Choice Phase; #.5 = End of Study; #.6 = Genetic Analysis; 1000=all visits'
+  codes:
+    -1.5: Pre-Screening
+    -1: Screening
+    0: Baseline
+    9: Unscheduled
+    1: End of Phase 1
+    2: End of Phase 2
+    3: End of Phase 3
+    4: End of Open Choice Phase
+    5: End of Study
+    6: Genetic Analysis
+    1000: all visits
+
+num_meds:
+  type: Integer
+  description: Number of medications
+  alias: med_num
+
+medication1_adday:
+  type: Integer
+  description: Day medication added or dosage changed
+  alias: rxhx_adddat_x
+
+medication1_stpday:
+  type: Integer
+  description: Day medication stopped
+  alias: rxhx_stopdat_x
+
+medication1_cont:
+  type: Integer
+  description: Continuing Medication
+  range:
+  - 1
+  - 2
+  notes: 1= Yes; 2= No
+  alias: rxhx_continue
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+anymedhist:
+  type: Integer
+  description: No Medication History
+  range:
+  - 1
+  - 2
+  notes: 1= Yes; 2= No
+  alias: rxhx_nomeds
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+visitday:
+  type: Integer
+  description: day of visit
+  alias: rxhx_visitdat_x
+
+medication1_unit:
+  type: String
+  length: 100
+  description: 'Units of medication #1:'
+  alias: med_units,npmed_drug1_units,pmed_drug1_units,pmlunit,rxhx_units,scidmed4_1c
+
+route1:
+  type: String
+  length: 50
+  description: route 1
+  alias: npmed_drug1_route,pmed_drug1_route,rxhx_route
+
+blood2days:
+  type: Integer
+  description: 'Sertraline and Olanzapine: Days from Baseline of blood drawing'
+
+blood2time:
+  type: String
+  length: 6
+  description: 'Sertraline and Olanzapine: Time of blood drawing'
+
+blood2processtime:
+  type: String
+  length: 6
+  description: 'Sertraline and Olanzapine: Time of blood processing'
+
+sertlastdosedays:
+  type: Integer
+  description: 'Sertraline: Days from Baseline of last dose of sertraline vs placebo'
+
+sertlastdosetime:
+  type: String
+  length: 6
+  description: 'Sertraline: Time of last dose of sertraline vs placebo'
+
+sertlastdose:
+  type: Integer
+  description: 'Sertraline: Current daily dose at this time'
+
+olanlastdosedays:
+  type: Integer
+  description: 'Olanzapine: Days from Baseline of last dose of olanzapine'
+
+olanlastdosetime:
+  type: String
+  length: 6
+  description: 'Olanzapine: Time of last dose of olanzapine'
+
+olanlastdose:
+  type: Float
+  description: 'Olanzapine: Current daily dose at this time'
+
+study_id:
+  type: Integer
+  description: Study ID number
+  notes: 46=Acute Phase; 47=Stabilization Phase
+  codes:
+    46: Acute Phase
+    47: Stabilization Phase
+
+guess:
+  type: Integer
+  description: Treatment guess-Acute phase
+  range:
+  - 1
+  - 2
+  notes: 1 = I think I received only one medication (one of the medications was placebo);
+    2 = I think I received both medications
+  codes:
+    1: I think I received only one medication (one of the medications was placebo)
+    2: I think I received both medications
+
+confidence:
+  type: Integer
+  description: Confidence rating for treatment guess
+  range:
+  - 1::3
+  - 7
+  - 8
+  notes: 1=Low; 2=Medium; 3=High; 7=Unknown; 8=Refused
+  codes:
+    1: Low
+    2: Medium
+    3: High
+    7: Unknown
+    8: Refused
+
+lithlastdoseday:
+  type: Integer
+  description: 'Lithium: Days from Baseline of last dose of olanzapine'
+
+lithlastdosetime:
+  type: String
+  length: 10
+  description: 'Lithium: Time of last dose of olanzapine'
+
+lithlastdose:
+  type: Float
+  description: 'Lithium: Current daily dose at this time'
+
+blood3day:
+  type: Integer
+  description: 'Lithium: Days from Baseline of blood drawing'
+
+blood3time:
+  type: String
+  length: 10
+  description: 'Lithium: Time of blood drawing'
+
+fullremitter:
+  type: Integer
+  description: 'Partial remitters were admitted into the Stabilization phase and are
+    included in those relevant datasets.  However, for some analyses, it might appropriate
+    to separate the partial remitters from the full remitters. '
+  range:
+  - 0
+  - 1
+  notes: 0=no, partial remitter; 1=yes, full remitter
+  codes:
+    0: no, partial remitter
+    1: yes, full remitter
+
+med_ptpose:
+  type: String
+  length: 50
+  description: Medication Purpose
+  alias: ptpurp
+
+rtabam:
+  type: Float
+  description: Number of RED tablets AM Medication 1
+
+btabam:
+  type: Float
+  description: Number of BLUE tablets AM Medication 1
+
+rtabpm:
+  type: Float
+  description: Number of RED tablets PM Medication 1
+
+btabpm:
+  type: Float
+  description: Number of BLUE tablets PM Medication 1
+
+rtabam2:
+  type: Float
+  description: Number of RED tablets AM Medication 2
+
+btabam2:
+  type: Float
+  description: Number of BLUE tablets AM Medication 2
+
+rtabpm2:
+  type: Float
+  description: Number of RED tablets PM Medication 2
+
+btabpm2:
+  type: Float
+  description: Number of BLUE tablets PM Medication 2
+
+rtabam3:
+  type: Float
+  description: Number of RED tablets AM Medication 3
+
+btabam3:
+  type: Float
+  description: Number of BLUE tablets AM Medication 3
+
+rtabpm3:
+  type: Float
+  description: Number of RED tablets PM Medication 3
+
+btabpm3:
+  type: Float
+  description: Number of BLUE tablets PM Medication 3
+
+rtabam4:
+  type: Float
+  description: Number of RED tablets AM Medication 4
+
+btabam4:
+  type: Float
+  description: Number of BLUE tablets AM Medication 4
+
+rtabpm4:
+  type: Float
+  description: Number of RED tablets PM Medication 4
+
+btabpm4:
+  type: Float
+  description: Number of BLUE tablets PM Medication 4
+
+rtabam5:
+  type: Float
+  description: Number of RED tablets AM Medication 5
+
+btabam5:
+  type: Float
+  description: Number of BLUE tablets AM Medication 5
+
+rtabpm5:
+  type: Float
+  description: Number of RED tablets PM Medication 5
+
+btabpm5:
+  type: Float
+  description: Number of BLUE tablets PM Medication 5
+
+rtabam6:
+  type: Float
+  description: Number of RED tablets AM Medication 6
+
+btabam6:
+  type: Float
+  description: Number of BLUE tablets AM Medication 6
+
+rtabpm6:
+  type: Float
+  description: Number of RED tablets PM Medication 6
+
+btabpm6:
+  type: Float
+  description: Number of BLUE tablets PM Medication 6
+
+rtabam7:
+  type: Float
+  description: Number of RED tablets AM Medication 7
+
+btabam7:
+  type: Float
+  description: Number of BLUE tablets AM Medication 7
+
+rtabpm7:
+  type: Float
+  description: Number of RED tablets PM Medication 7
+
+btabpm7:
+  type: Float
+  description: Number of BLUE tablets PM Medication 7
+
+rnumdisp:
+  type: Float
+  description: Total Number of RED  tablets dispensed
+
+bnumdisp:
+  type: Float
+  description: Total Number of BLUE tablets dispensed
+
+rnumpres:
+  type: Float
+  description: Total Number of RED tablets prescribed
+
+bnumpres:
+  type: Float
+  description: Total Number of BLUE tablets prescribed
+
+rnumrtn:
+  type: Float
+  description: Actual number of RED  tablets returned
+
+bnumrtn:
+  type: Float
+  description: Actual number of BLUE tablets returned
+
+datedose:
+  type: Integer
+  description: 'When the last dose was given in days from the randomization date (DATEDOSE
+    = last dose date -
+
+    randomization date)'
+
+takeallmed:
+  type: Integer
+  description: All medication doses taken as prescribed
+  range:
+  - 1
+  - 2
+  notes: '1 = Yes;
+
+    2 = No'
+  alias: takemed
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+medmissed_date1:
+  type: Integer
+  description: First time the medication was not taken in days from the randomization
+    date (DATE1 = 1st date medication not taken Instance randomization date)
+  alias: date1
+
+rampm_1:
+  type: Integer
+  description: RED AM or PM? Instance 1
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+bampm_1:
+  type: Integer
+  description: BLUE AM or PM? Instance 1
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+medmissed_date2:
+  type: Integer
+  description: Second time the medication was not taken in days from the randomization
+    date (DATE2 = 2nd date medication not taken Instance randomization date)
+  alias: date2
+
+rampm_2:
+  type: Integer
+  description: RED AM or PM? Instance 2
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+bampm_2:
+  type: Integer
+  description: BLUE AM or PM? Instance 2
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+medmissed_date3:
+  type: Integer
+  description: Third time the medication was not taken in days from the randomization
+    date (DATE3 = 3rd date medication not taken Instance randomization date)
+  alias: date3
+
+rampm_3:
+  type: Integer
+  description: RED AM or PM? Instance 3
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+bampm_3:
+  type: Integer
+  description: BLUE AM or PM? Instance 3
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+medmissed_date4:
+  type: Integer
+  description: Foruth time the medication was not taken in days from the randomization
+    date (DATE4 = 4th date medication not taken Instance randomization date)
+  alias: date4
+
+rampm_4:
+  type: Integer
+  description: RED AM or PM? Instance 4
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+bampm_4:
+  type: Integer
+  description: BLUE AM or PM? Instance 4
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+medmissed_date5:
+  type: Integer
+  description: Fifth time the medication was not taken in days from the randomization
+    date (DATE5 = 5th date medication not taken Instance randomization date)
+  alias: date5
+
+rampm_5:
+  type: Integer
+  description: RED AM or PM? Instance 5
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+bampm_5:
+  type: Integer
+  description: BLUE AM or PM? Instance 5
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+medmissed_date6:
+  type: Integer
+  description: Sixth time the medication was not taken in days from the randomization
+    date (DATE6 = 6th date medication not taken Instance randomization date)
+  alias: date6
+
+rampm_6:
+  type: Integer
+  description: RED AM or PM? Instance 6
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+bampm_6:
+  type: Integer
+  description: BLUE AM or PM? Instance 6
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+medmissed_date7:
+  type: Integer
+  description: Seventh time the medication was not taken in days from the randomization
+    date (DATE7 = 7th date medication not taken Instance randomization date)
+  alias: date7
+
+rampm_7:
+  type: Integer
+  description: RED AM or PM? Instance 7
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+bampm_7:
+  type: Integer
+  description: BLUE AM or PM? Instance 7
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+medmissed_date8:
+  type: Integer
+  description: Eighth time the medication was not taken in days from the randomization
+    date (DATE8 = 8th date medication not taken Instance randomization date)
+  alias: date8
+
+rampm_8:
+  type: Integer
+  description: RED AM or PM? Instance 8
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+bampm_8:
+  type: Integer
+  description: BLUE AM or PM? Instance 8
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+medmissed_date9:
+  type: Integer
+  description: Ninth time the medication was not taken in days from the randomization
+    date (DATE9 = 9th date medication not taken Instance randomization date)
+  alias: date9
+
+rampm_9:
+  type: Integer
+  description: RED AM or PM? Instance 9
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+bampm_9:
+  type: Integer
+  description: BLUE AM or PM? Instance 9
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+medmissed_date10:
+  type: Integer
+  description: 'Tenth time the medication was not taken in days from the randomization
+    date (DATE10 = 10th date medication not taken Instance randomization
+
+    date)'
+  alias: date10
+
+rampm_10:
+  type: Integer
+  description: RED AM or PM? Instance 10
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+bampm_10:
+  type: Integer
+  description: BLUE AM or PM? Instance 10
+  range:
+  - 1
+  - 2
+  notes: 1 = AM; 2 = PM;
+  codes:
+    1: AM
+    2: PM
+
+sitedatasource_1:
+  type: Integer
+  description: 'Source of Data: Site'
+  range:
+  - 0
+  - 1
+  - -888
+  - -999
+  notes: 0=False; 1=True; -888=Not Applicable; -999=Missing;
+  alias: infosrcr
+  codes:
+    0: 'False'
+    1: 'True'
+    -888: Not Applicable
+    -999: Missing
+
+sitedatasource_phone:
+  type: Integer
+  description: 'Source of Data: Telephone'
+  range:
+  - 0
+  - 1
+  - -888
+  - -999
+  notes: 0=False; 1=True; -888=Not Applicable; -999=Missing;
+  alias: infosrct
+  codes:
+    0: 'False'
+    1: 'True'
+    -888: Not Applicable
+    -999: Missing
+
+sitedatasource_physician:
+  type: Integer
+  description: 'Source of Data: Physician'
+  range:
+  - 0
+  - 1
+  - -888
+  - -999
+  notes: 0=False; 1=True; -888=Not Applicable; -999=Missing;
+  alias: infosrcp
+  codes:
+    0: 'False'
+    1: 'True'
+    -888: Not Applicable
+    -999: Missing
+
+page:
+  type: Integer
+  description: Page of form
+  alias: pmlpg
+
+lineno:
+  type: Integer
+  description: Line number (lines per participant)
+  range:
+  - 0::150
+  alias: pmlline
+
+treatment_name:
+  type: String
+  length: 200
+  description: treatment name
+
+ci_enrolled:
+  type: Integer
+  description: Participant enrolled
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: enrolled
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ldosetm:
+  type: String
+  length: 10
+  description: Time of last dose
+  alias: timedose
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+  alias: med_comm,npmed_notes,pmed_notes
+
+ampm_1:
+  type: Integer
+  description: Missed medication AM or PM Instance 1
+  range:
+  - 1
+  - 2
+  notes: 1=AM; 2=PM
+  codes:
+    1: AM
+    2: PM
+
+ampm_2:
+  type: Integer
+  description: Missed medication AM or PM Instance 2
+  range:
+  - 1
+  - 2
+  notes: 1=AM; 2=PM
+  codes:
+    1: AM
+    2: PM
+
+ampm_3:
+  type: Integer
+  description: Missed medication AM or PM Instance 3
+  range:
+  - 1
+  - 2
+  notes: 1=AM; 2=PM
+  codes:
+    1: AM
+    2: PM
+
+ampm_4:
+  type: Integer
+  description: Missed medication AM or PM Instance 4
+  range:
+  - 1
+  - 2
+  notes: 1=AM; 2=PM
+  codes:
+    1: AM
+    2: PM
+
+ampm_5:
+  type: Integer
+  description: Missed medication AM or PM Instance 5
+  range:
+  - 1
+  - 2
+  notes: 1=AM; 2=PM
+  codes:
+    1: AM
+    2: PM
+
+ampm_6:
+  type: Integer
+  description: Missed medication AM or PM Instance 6
+  range:
+  - 1
+  - 2
+  notes: 1=AM; 2=PM
+  codes:
+    1: AM
+    2: PM
+
+ampm_7:
+  type: Integer
+  description: Missed medication AM or PM Instance 7
+  range:
+  - 1
+  - 2
+  notes: 1=AM; 2=PM
+  codes:
+    1: AM
+    2: PM
+
+ampm_8:
+  type: Integer
+  description: Missed medication AM or PM Instance 8
+  range:
+  - 1
+  - 2
+  notes: 1=AM; 2=PM
+  codes:
+    1: AM
+    2: PM
+
+ampm_9:
+  type: Integer
+  description: Missed medication AM or PM Instance 9
+  range:
+  - 1
+  - 2
+  notes: 1=AM; 2=PM
+  codes:
+    1: AM
+    2: PM
+
+ampm_10:
+  type: Integer
+  description: Missed medication AM or PM Instance 10
+  range:
+  - 1
+  - 2
+  notes: 1=AM; 2=PM
+  codes:
+    1: AM
+    2: PM
+
+tabam:
+  type: Float
+  description: Number of tablets presribed AM medication 1
+
+tabam2:
+  type: Float
+  description: Number of tablets presribed AM medication 2
+
+tabam3:
+  type: Float
+  description: Number of tablets presribed AM medication 3
+
+tabam4:
+  type: Float
+  description: Number of tablets presribed AM medication 4
+
+tabam5:
+  type: Float
+  description: Number of tablets presribed AM medication 5
+
+tabam6:
+  type: Float
+  description: Number of tablets presribed AM medication 6
+
+tabam7:
+  type: Float
+  description: Number of tablets presribed AM medication 7
+
+tabpm1:
+  type: Float
+  description: Number of tablets presribed PM medication 1
+
+tabpm2:
+  type: Float
+  description: Number of tablets presribed PM medication 2
+
+tabpm3:
+  type: Float
+  description: Number of tablets presribed PM medication 3
+
+tabpm4:
+  type: Float
+  description: Number of tablets presribed PM medication 4
+
+tabpm5:
+  type: Float
+  description: Number of tablets presribed PM medication 5
+
+tabpm6:
+  type: Float
+  description: Number of tablets presribed PM medication 6
+
+tabpm7:
+  type: Float
+  description: Number of tablets presribed PM medication 7
+
+numpres:
+  type: Float
+  description: Total Number of Tablets Prescribed
+
+asap13b:
+  type: Float
+  description: If medication dispensed, quantity dispensed (tablet)
+
+asap14b:
+  type: Float
+  description: If medication returned, quantity returned (tablet)
+
+medication7_frequency:
+  type: String
+  length: 50
+  description: Seventh medication frequency
+  alias: med7_frqcy,npmed_drug7_frequency,pmed_drug7_frequency
+
+medication8_frequency:
+  type: String
+  length: 50
+  description: Eighth medication frequency
+  alias: med8_frqcy,npmed_drug8_frequency,pmed_drug8_frequency
+
+medication9_frequency:
+  type: String
+  length: 50
+  description: Ninth medication frequency
+  alias: med9_frqcy,npmed_drug9_frequency,pmed_drug9_frequency
+
+medication10_frequency:
+  type: String
+  length: 50
+  description: Tenth medication frequency
+  alias: med10_frqcy,npmed_drug10_frequency,pmed_drug10_frequency
+
+med_source7:
+  type: String
+  length: 50
+  description: 'Med 7: source of data'
+  alias: npmed_drug7_source_info,pmed_drug7_source_info
+
+med_source8:
+  type: String
+  length: 50
+  description: 'Med 8: source of data'
+  alias: npmed_drug8_source_info,pmed_drug8_source_info
+
+med_source9:
+  type: String
+  length: 50
+  description: 'Med 9: source of data'
+  alias: npmed_drug9_source_info,pmed_drug9_source_info
+
+med_source10:
+  type: String
+  length: 50
+  description: 'Med 10: source of data'
+  alias: npmed_drug10_source_info,pmed_drug10_source_info
+
+medication10_name:
+  type: String
+  length: 100
+  description: Name tenth medication that the participant has taken
+  alias: npmed_drug10_name,pmed_drug10_name
+
+ind9:
+  type: String
+  length: 100
+  description: Medication 9 Indicaiton
+  alias: npmed_drug9_purpose,pmed_drug9_purpose
+
+ind10:
+  type: String
+  length: 100
+  description: Medication 10 Indicaiton
+  alias: npmed_drug10_purpose,pmed_drug10_purpose
+
+spdate9:
+  type: String
+  length: 20
+  description: Medication stop date 8
+  notes: mm/dd/yyyy or write out month year
+  alias: npmed_drug9_discontinued,pmed_drug9_discontinued
+
+spdate10:
+  type: String
+  length: 20
+  description: Medication stop date 8
+  notes: mm/dd/yyyy or write out month year
+  alias: npmed_drug10_discontinued,pmed_drug10_discontinued
+
+cont1:
+  type: Integer
+  description: drug 1 continued
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0=No (discontinued); 1=Yes; -7=Refused
+  alias: npmed_drug1_continuing,pmed_drug1_continuing
+  codes:
+    0: No (discontinued)
+    1: 'Yes'
+    -7: Refused
+
+cont2:
+  type: Integer
+  description: drug 2 continued
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0=No (discontinued); 1=Yes; -7=Refused
+  alias: npmed_drug2_continuing,pmed_drug2_continuing
+  codes:
+    0: No (discontinued)
+    1: 'Yes'
+    -7: Refused
+
+cont3:
+  type: Integer
+  description: drug 3 continued
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0=No (discontinued); 1=Yes; -7=Refused
+  alias: npmed_drug3_continuing,pmed_drug3_continuing
+  codes:
+    0: No (discontinued)
+    1: 'Yes'
+    -7: Refused
+
+cont4:
+  type: Integer
+  description: drug 4 continued
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0=No (discontinued); 1=Yes; -7=Refused
+  alias: npmed_drug4_continuing,pmed_drug4_continuing
+  codes:
+    0: No (discontinued)
+    1: 'Yes'
+    -7: Refused
+
+cont5:
+  type: Integer
+  description: drug 5 continued
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0=No (discontinued); 1=Yes; -7=Refused
+  alias: npmed_drug5_continuing,pmed_drug5_continuing
+  codes:
+    0: No (discontinued)
+    1: 'Yes'
+    -7: Refused
+
+cont6:
+  type: Integer
+  description: drug 6 continued
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0=No (discontinued); 1=Yes; -7=Refused
+  alias: npmed_drug6_continuing,pmed_drug6_continuing
+  codes:
+    0: No (discontinued)
+    1: 'Yes'
+    -7: Refused
+
+cont7:
+  type: Integer
+  description: drug 7 continued
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0=No (discontinued); 1=Yes; -7=Refused
+  alias: npmed_drug7_continuing,pmed_drug7_continuing
+  codes:
+    0: No (discontinued)
+    1: 'Yes'
+    -7: Refused
+
+cont8:
+  type: Integer
+  description: drug 8 continued
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0=No (discontinued); 1=Yes; -7=Refused
+  alias: npmed_drug8_continuing,pmed_drug8_continuing
+  codes:
+    0: No (discontinued)
+    1: 'Yes'
+    -7: Refused
+
+cont9:
+  type: Integer
+  description: drug 9 continued
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0=No (discontinued); 1=Yes; -7=Refused
+  alias: npmed_drug9_continuing,pmed_drug9_continuing
+  codes:
+    0: No (discontinued)
+    1: 'Yes'
+    -7: Refused
+
+cont10:
+  type: Integer
+  description: drug 10 continued
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0=No (discontinued); 1=Yes; -7=Refused
+  alias: npmed_drug10_continuing,pmed_drug10_continuing
+  codes:
+    0: No (discontinued)
+    1: 'Yes'
+    -7: Refused
+
+route2:
+  type: String
+  length: 50
+  description: route 2
+  alias: npmed_drug2_route,pmed_drug2_route
+
+route3:
+  type: String
+  length: 50
+  description: route 3
+  alias: npmed_drug3_route,pmed_drug3_route
+
+route4:
+  type: String
+  length: 50
+  description: route 4
+  alias: npmed_drug4_route,pmed_drug4_route
+
+route5:
+  type: String
+  length: 50
+  description: route 5
+  alias: npmed_drug5_route,pmed_drug5_route
+
+route6:
+  type: String
+  length: 50
+  description: route 6
+  alias: npmed_drug6_route,pmed_drug6_route
+
+route7:
+  type: String
+  length: 50
+  description: route 7
+  alias: npmed_drug7_route,pmed_drug7_route
+
+route8:
+  type: String
+  length: 50
+  description: route 8
+  alias: npmed_drug8_route,pmed_drug8_route
+
+route9:
+  type: String
+  length: 50
+  description: route 9
+  alias: npmed_drug9_route,pmed_drug9_route
+
+route10:
+  type: String
+  length: 50
+  description: route 10
+  alias: npmed_drug10_route,pmed_drug10_route
+
+medication1_time:
+  type: Integer
+  description: How long has first medication been taken? months
+  alias: med_duration,npmed_drug1_mths_on_drug,pmed_drug1_mths_on_drug
+
+medication2_time:
+  type: Integer
+  description: How long has second medication been taken? months
+  alias: npmed_drug2_mths_on_drug,pmed_drug2_mths_on_drug
+
+medication3_time:
+  type: Integer
+  description: How long has third medication been taken? months
+  alias: npmed_drug3_mths_on_drug,pmed_drug3_mths_on_drug
+
+medication4_time:
+  type: Integer
+  description: How long has fourth  medication been taken? months
+  alias: npmed_drug4_mths_on_drug,pmed_drug4_mths_on_drug
+
+medication5_time:
+  type: Integer
+  description: How long has fifth medication been taken? months
+  alias: npmed_drug5_mths_on_drug,pmed_drug5_mths_on_drug
+
+medication6_time:
+  type: Integer
+  description: How long has sixth medication been taken? months
+  alias: npmed_drug6_mths_on_drug,pmed_drug6_mths_on_drug
+
+medication7_time:
+  type: Integer
+  description: How long has seventh medication been taken? months
+  alias: npmed_drug7_mths_on_drug,pmed_drug7_mths_on_drug
+
+medication8_time:
+  type: Integer
+  description: How long has eighth medication been taken? months
+  alias: npmed_drug8_mths_on_drug,pmed_drug8_mths_on_drug
+
+medication9_time:
+  type: Integer
+  description: How long has ninth medication been taken? months
+  alias: npmed_drug9_mths_on_drug,pmed_drug9_mths_on_drug
+
+medication10_time:
+  type: Integer
+  description: How long has tenth medication been taken? months
+  alias: npmed_drug10_mths_on_drug,pmed_drug10_mths_on_drug
+
+medication2_unit:
+  type: String
+  length: 100
+  description: 'Units of medication #2:'
+  alias: npmed_drug2_units,pmed_drug2_units,scidmed4_2c
+
+medication3_unit:
+  type: String
+  length: 100
+  description: 'Units of medication #3:'
+  alias: npmed_drug3_units,pmed_drug3_units,scidmed4_3c
+
+medication4_unit:
+  type: String
+  length: 100
+  description: 'Units of medication #4:'
+  alias: npmed_drug4_units,pmed_drug4_units,scidmed4_4c
+
+medication5_unit:
+  type: String
+  length: 100
+  description: 'Units of medication #5:'
+  alias: npmed_drug5_units,pmed_drug5_units,scidmed4_5c
+
+medication6_unit:
+  type: String
+  length: 100
+  description: 'Units of medication #6:'
+  alias: npmed_drug6_units,pmed_drug6_units,scidmed4_6c
+
+medication7_unit:
+  type: String
+  length: 10
+  description: 'Units of medication #7'
+  alias: npmed_drug7_units,pmed_drug7_units
+
+medication8_unit:
+  type: String
+  length: 10
+  description: 'Units of medication #8'
+  alias: npmed_drug8_units,pmed_drug8_units
+
+medication9_unit:
+  type: String
+  length: 100
+  description: 'Units of medication #9'
+  alias: npmed_drug9_units,pmed_drug9_units
+
+medication10_unit:
+  type: String
+  length: 100
+  description: 'Units of medication #10'
+  alias: npmed_drug10_units,pmed_drug10_units
+
+drug_ae_yn1:
+  type: Integer
+  description: 'For treatment of an adverse effect #1'
+  alias: npmed_drug1_ae_yn,pmed_drug1_ae_yn
+
+drug_ae_num1:
+  type: Integer
+  description: 'AE Number #1'
+  alias: npmed_drug1_ae_num,pmed_drug1_ae_num
+
+drug_ae_yn2:
+  type: Integer
+  description: 'For treatment of an adverse effect #2'
+  alias: npmed_drug2_ae_yn,pmed_drug2_ae_yn
+
+drug_ae_num2:
+  type: Integer
+  description: 'AE Number #2'
+  alias: npmed_drug2_ae_num,pmed_drug2_ae_num
+
+drug_ae_yn3:
+  type: Integer
+  description: 'For treatment of an adverse effect #3'
+  alias: npmed_drug3_ae_yn,pmed_drug3_ae_yn
+
+drug_ae_num3:
+  type: Integer
+  description: 'AE Number #3'
+  alias: npmed_drug3_ae_num,pmed_drug3_ae_num
+
+drug_ae_yn4:
+  type: Integer
+  description: 'For treatment of an adverse effect #4'
+  alias: npmed_drug4_ae_yn,pmed_drug4_ae_yn
+
+drug_ae_num4:
+  type: Integer
+  description: 'AE Number #4'
+  alias: npmed_drug4_ae_num,pmed_drug4_ae_num
+
+drug_ae_yn5:
+  type: Integer
+  description: 'For treatment of an adverse effect #5'
+  alias: npmed_drug5_ae_yn,pmed_drug5_ae_yn
+
+drug_ae_num5:
+  type: Integer
+  description: 'AE Number #5'
+  alias: npmed_drug5_ae_num,pmed_drug5_ae_num
+
+drug_ae_yn6:
+  type: Integer
+  description: 'For treatment of an adverse effect #6'
+  alias: npmed_drug6_ae_yn,pmed_drug6_ae_yn
+
+drug_ae_num6:
+  type: Integer
+  description: 'AE Number #6'
+  alias: npmed_drug6_ae_num,pmed_drug6_ae_num
+
+drug_ae_yn7:
+  type: Integer
+  description: 'For treatment of an adverse effect #7'
+  alias: npmed_drug7_ae_yn,pmed_drug7_ae_yn
+
+drug_ae_num7:
+  type: Integer
+  description: 'AE Number #7'
+  alias: npmed_drug7_ae_num,pmed_drug7_ae_num
+
+drug_ae_yn8:
+  type: Integer
+  description: 'For treatment of an adverse effect #8'
+  alias: npmed_drug8_ae_yn,pmed_drug8_ae_yn
+
+drug_ae_num8:
+  type: Integer
+  description: 'AE Number #8'
+  alias: npmed_drug8_ae_num,pmed_drug8_ae_num
+
+drug_ae_yn9:
+  type: Integer
+  description: 'For treatment of an adverse effect #9'
+  alias: npmed_drug9_ae_yn,pmed_drug9_ae_yn
+
+drug_ae_num9:
+  type: Integer
+  description: 'AE Number #9'
+  alias: npmed_drug9_ae_num,pmed_drug9_ae_num
+
+drug_ae_yn10:
+  type: Integer
+  description: 'For treatment of an adverse effect #10'
+  alias: npmed_drug10_ae_yn,pmed_drug10_ae_yn
+
+drug_ae_num10:
+  type: Integer
+  description: 'AE Number #10'
+  alias: npmed_drug10_ae_num,pmed_drug10_ae_num
+
+doa_futdt:
+  type: String
+  length: 20
+  description: Future date entered (Assessment)
+  alias: fut1_dt,futpmed1_dt
+
+dode:
+  type: String
+  length: 10
+  description: Date of Data Entry
+  alias: npmed_dode,pmed_dode
+
+dode_futdt:
+  type: String
+  length: 20
+  description: Future date entered (Data Entry)
+  alias: fut2_d,futpmed2_dt
+
+form_completed:
+  type: Integer
+  description: Was the form completed?
+  range:
+  - 1::4
+  notes: 1=Yes; 2=No; 3=Unverified; 4 = N/A-Not in age range
+  alias: npmed_form_complete,pmed_form_complete
+  codes:
+    1: 'Yes'
+    2: 'No'
+    3: Unverified
+    4: N/A-Not in age range
+
+form_explain:
+  type: Integer
+  description: Why was this form not completed?
+  range:
+  - 86::99
+  notes: '99=Participant unable to complete due to cognitive impairment; 98=Participant
+    unable to complete due to physical impairment; 97=Participant refused to begin/finish;
+    96=Participant completed but with less than best effort; 95=Participant unable
+    to be contacted; 94=Participant deceased; 93=Participant withdrew consent; 92=Time
+    constraints; 91=Rater forgot to administer; 90=Missed appointment; 89=Participant
+    was terminated from study; 88=Other;87 = Not Done (reason unspecified); 86 = Not
+    Applicable '
+  alias: npmed_no_specify,pmed_no_specify
+  codes:
+    99: Participant unable to complete due to cognitive impairment
+    98: Participant unable to complete due to physical impairment
+    97: Participant refused to begin/finish
+    96: Participant completed but with less than best effort
+    95: Participant unable to be contacted
+    94: Participant deceased
+    93: Participant withdrew consent
+    92: Time constraints
+    91: Rater forgot to administer
+    90: Missed appointment
+    89: Participant was terminated from study
+    88: Other
+    87: Not Done (reason unspecified)
+    86: Not Applicable
+
+other_reason_nc:
+  type: String
+  length: 100
+  description: Other reason form was not completed
+  alias: npmed_other_reason_nc,pmed_other_reason_nc
+
+assessment_complete:
+  type: Integer
+  description: Complete?
+  range:
+  - 0::2
+  notes: 0=Incomplete; 1=Unverified; 2=Complete
+  alias: concomitant_medication_record_nonpsychotropic_complete,concomitant_medication_record_psychotropic_complete
+  codes:
+    0: Incomplete
+    1: Unverified
+    2: Complete
+
+npmed_drug10_frequency_other:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+npmed_drug10_route_other:
+  type: String
+  length: 30
+  description: Other  Please Specify
+
+npmed_drug10_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+npmed_drug10_units_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+npmed_drug2_frequency_other:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+npmed_drug2_route_other:
+  type: String
+  length: 30
+  description: Other  Please Specify
+
+npmed_drug2_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+npmed_drug2_units_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+npmed_drug3_frequency_other:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+npmed_drug3_route_other:
+  type: String
+  length: 30
+  description: Other  Please Specify
+
+npmed_drug3_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+npmed_drug3_units_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+npmed_drug4_frequency_other:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+npmed_drug4_route_other:
+  type: String
+  length: 30
+  description: Other  Please Specify
+
+npmed_drug4_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+npmed_drug4_units_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+npmed_drug5_frequency_other:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+npmed_drug5_route_other:
+  type: String
+  length: 30
+  description: Other  Please Specify
+
+npmed_drug5_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+npmed_drug5_units_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+npmed_drug6_frequency_other:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+npmed_drug6_route_other:
+  type: String
+  length: 30
+  description: Other  Please Specify
+
+npmed_drug6_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+npmed_drug6_units_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+npmed_drug7_frequency_other:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+npmed_drug7_route_other:
+  type: String
+  length: 30
+  description: Other  Please Specify
+
+npmed_drug7_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+npmed_drug7_units_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+npmed_drug8_frequency_other:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+npmed_drug8_route_other:
+  type: String
+  length: 30
+  description: Other  Please Specify
+
+npmed_drug8_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+npmed_drug8_units_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+npmed_drug9_frequency_other:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+npmed_drug9_route_other:
+  type: String
+  length: 30
+  description: Other  Please Specify
+
+npmed_drug9_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+npmed_drug9_units_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug10_freq_othersp:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+pmed_drug10_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug10_units_othersp:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug2_freq_othersp:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+pmed_drug2_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug2_units_othersp:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug3_freq_othersp:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+pmed_drug3_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug3_units_othersp:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug4_freq_othersp:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+pmed_drug4_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug4_units_othersp:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug5_freq_othersp:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+pmed_drug5_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug5_units_othersp:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug6_freq_othersp:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+pmed_drug6_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug6_units_othersp:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug7_freq_othersp:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+pmed_drug7_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug7_units_othersp:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug8_freq_othersp:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+pmed_drug8_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug8_units_othersp:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug9_freq_othersp:
+  type: String
+  length: 40
+  description: Other  Please Specify
+
+pmed_drug9_source_info_other:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+pmed_drug9_units_othersp:
+  type: String
+  length: 50
+  description: Other  Please Specify
+
+drug10_source_info_other_hp:
+  type: String
+  length: 50
+  description: Other Health Professional  Please Specify
+  alias: pmed_drug10_source_info_other_hp
+
+drug2_source_info_other_hp:
+  type: String
+  length: 50
+  description: Other Health Professional  Please Specify
+  alias: pmed_drug2_source_info_other_hp
+
+drug3_source_info_other_hp:
+  type: String
+  length: 50
+  description: Other Health Professional  Please Specify
+  alias: pmed_drug3_source_info_other_hp
+
+drug4_source_info_other_hp:
+  type: String
+  length: 50
+  description: Other Health Professional  Please Specify
+  alias: pmed_drug4_source_info_other_hp
+
+drug5_source_info_other_hp:
+  type: String
+  length: 50
+  description: Other Health Professional  Please Specify
+  alias: pmed_drug5_source_info_other_hp
+
+drug6_source_info_other_hp:
+  type: String
+  length: 50
+  description: Other Health Professional  Please Specify
+  alias: pmed_drug6_source_info_other_hp
+
+drug7_source_info_other_hp:
+  type: String
+  length: 50
+  description: Other Health Professional  Please Specify
+  alias: pmed_drug7_source_info_other_hp
+
+drug8_source_info_other_hp:
+  type: String
+  length: 50
+  description: Other Health Professional  Please Specify
+  alias: pmed_drug8_source_info_other_hp
+
+drug9_source_info_other_hp:
+  type: String
+  length: 50
+  description: Other Health Professional  Please Specify
+  alias: pmed_drug9_source_info_other_hp
+
+pmed_drug10_strength:
+  type: String
+  length: 50
+  description: Strength/dosage
+
+pmed_drug7_strength:
+  type: String
+  length: 50
+  description: Strength/dosage
+
+pmed_drug8_strength:
+  type: String
+  length: 50
+  description: Strength/dosage
+
+pmed_drug9_strength:
+  type: String
+  length: 50
+  description: Strength/dosage
+
+sts_q01:
+  type: Integer
+  description: Tolerate all study doses
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+np_reason_not_continu:
+  type: String
+  length: 500
+  description: Reason for not continuing
+
+smd004:
+  type: Date
+  description: If Yes, when did the dosage change start? (mm/dd/yyyy)
+
+disdt:
+  type: Date
+  description: Discontinued Date
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+
+pt_a:
+  type: Integer
+  description: Does the subject have a history of medical treatment other than drugs?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+med_a:
+  type: Integer
+  description: Was psychiatric medication information collected from the child?s physician
+    for this assessment point?
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 1=yes; 0=no; 3=Not Applicable
+  codes:
+    1: 'yes'
+    0: 'no'
+    3: Not Applicable
+
+med_sequence:
+  type: Integer
+  description: Med Sequence number
+
+med_2:
+  type: Integer
+  description: Med 2 Sequence Number
+
+med_2a:
+  type: Integer
+  description: Medication 2 Number
+
+med_3:
+  type: Integer
+  description: Med 3 Sequence Number
+
+med_3a:
+  type: Integer
+  description: Medication 3 Number
+
+med_4:
+  type: Integer
+  description: Med 4 Sequence Number
+
+med_4a:
+  type: Integer
+  description: Medication 4 Number
+
+med_5:
+  type: Integer
+  description: Med 5 Sequence Number
+
+med_5a:
+  type: Integer
+  description: Medication 5 Number
+
+aescode:
+  type: Integer
+  description: Staff code number of person completing this form
+  alias: scidmvra
+
+scidmed1:
+  type: Integer
+  description: Diagnosis
+  range:
+  - 1::11
+  notes: 1 = Schizophrenia ; 2 = Schizoaffective Disorder - bipolar type ; 3 = Schizoaffective
+    Disorder - depressive type ; 4 = Schizophreniform Disorder ; 5 = Delusional Disorder
+    ; 6 = Brief Psychotic Disorder ; 7 = Bipolar I - with psychotic features ; 8 =
+    Bipolar II - with psychotic features ; 9 = Major Depressive Disorder - with psychotic
+    features ; 10 = Persistent Depressive Disorder (Dysthymia) - with psychotic features
+    ; 11 = Other Specified Schizophrenia Spectrum and Other Psychotic Disorder
+  codes:
+    1: Schizophrenia
+    2: Schizoaffective Disorder - bipolar type
+    3: Schizoaffective Disorder - depressive type
+    4: Schizophreniform Disorder
+    5: Delusional Disorder
+    6: Brief Psychotic Disorder
+    7: Bipolar I - with psychotic features
+    8: Bipolar II - with psychotic features
+    9: Major Depressive Disorder - with psychotic features
+    10: Persistent Depressive Disorder (Dysthymia) - with psychotic features
+    11: Other Specified Schizophrenia Spectrum and Other Psychotic Disorder
+
+scidmed3a:
+  type: Integer
+  description: Drug Abuse, Lifetime
+  range:
+  - 0
+  - 1
+  - 99
+  notes: 0 = No; 1 = Yes; 99 = Missing
+  codes:
+    0: 'No'
+    1: 'Yes'
+    99: Missing
+
+scidmed3b:
+  type: Integer
+  description: Drug Dependence, Lifetime
+  range:
+  - 0
+  - 1
+  - 99
+  notes: 0 = No; 1 = Yes; 99 = Missing
+  codes:
+    0: 'No'
+    1: 'Yes'
+    99: Missing
+
+scidmed5:
+  type: Integer
+  description: Medication Type
+  range:
+  - 1::4
+  - 99
+  notes: 1 = Atypical medication only ; 2 = Typical medication only ; 3 = Both atypical
+    and typical medications ; 4 = No medication ; 99 = Missing
+  codes:
+    1: Atypical medication only
+    2: Typical medication only
+    3: Both atypical and typical medications
+    4: No medication
+    99: Missing
+
+medication_dosage:
+  type: Float
+  description: Dosage/quantity of medication
+  alias: med_dosage
+
+cyb_be_reli:
+  type: Integer
+  description: Reliability of Information
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  notes: 0 = Excellent; 1 = Good; 2 = Fair; 3 = Poor
+  alias: med_rel
+  codes:
+    0: Excellent
+    1: Good
+    2: Fair
+    3: Poor
+
+medcode:
+  type: String
+  length: 25
+  description: Created Medication code
+  alias: med_name
+
+concommeds_1_source:
+  type: Integer
+  description: Source of Information
+  range:
+  - 1::7
+  - 9
+  - 99
+  notes: 1=Subject; 2=Health Professional; 3=Chart/Medical Record; 4=Family/friends/associate;
+    ; 5 = Prescribing Physician; 6 = Therapist; 7 = Pharmacy;  9=Other; 99=Unknown
+  alias: med_source
+  codes:
+    1: Subject
+    2: Health Professional
+    3: Chart/Medical Record
+    4: Family/friends/associate
+    5: Prescribing Physician
+    6: Therapist
+    7: Pharmacy
+    9: Other
+    99: Unknown
+
+mini_k_abuse_life:
+  type: Integer
+  description: alcohol abuse (lifetime)
+  range:
+  - 0
+  - 1
+  - 99
+  notes: 0=no; 1=yes; 99=missing
+  alias: scidmed2a
+  codes:
+    0: 'no'
+    1: 'yes'
+    99: missing
+
+mini_k_dep_life:
+  type: Integer
+  description: alcohol dependence (lifetime)
+  range:
+  - 0
+  - 1
+  - 99
+  notes: 0=no; 1=yes; 99 =missing
+  alias: scidmed2b
+  codes:
+    0: 'no'
+    1: 'yes'
+    99: missing
+
+medication10_dose:
+  type: String
+  length: 100
+  description: Medication 10 dose last taken
+  alias: med10_dose
+
+medication15_dosage:
+  type: String
+  length: 100
+  description: Medication 15 dosage
+  alias: med15_dose
+
+phi217:
+  type: String
+  length: 50
+  description: Physical Medication 11 Schedule
+  alias: med11_frqcy
+
+medication11_name:
+  type: String
+  length: 100
+  description: Medication 11 name
+  alias: med11
+
+medication12_name:
+  type: String
+  length: 100
+  description: Med name12
+  alias: med12
+
+medication13_name:
+  type: String
+  length: 500
+  description: Medication 13 name
+  alias: med13
+
+medication14_name:
+  type: String
+  length: 500
+  description: Medication 14 name
+  alias: med14
+
+medication15_name:
+  type: String
+  length: 500
+  description: Medication 15 name
+  alias: med15
+
+othmed0a:
+  type: Integer
+  description: Did the patient take any medications
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: med_yn
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+med12_frqcy:
+  type: String
+  length: 10
+  description: How often do you take [med12]?
+  notes: Time(s)/(Day, Week, Month)
+
+med13_frqcy:
+  type: String
+  length: 10
+  description: How often do you take [med13]?
+  notes: Time(s)/(Day, Week, Month)
+
+med14_frqcy:
+  type: String
+  length: 10
+  description: How often do you take [med14]?
+  notes: Time(s)/(Day, Week, Month)
+
+med15_frqcy:
+  type: String
+  length: 10
+  description: How often do you take [med15]?
+  notes: Time(s)/(Day, Week, Month)

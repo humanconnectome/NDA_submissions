@@ -1,0 +1,1112 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: guid,nimhid
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,ptid,subject,subject_id
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: bldcldt,intvdate,testdate
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: age,intvage
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+  alias: siteid
+
+study:
+  type: String
+  length: 100
+  description: Study
+  alias: studyid
+
+daysrz:
+  type: Integer
+  description: days since randomization
+  alias: datecollect,studyday
+
+completed:
+  type: Integer
+  description: Checks if completed
+  range:
+  - 0::3
+  notes: 0=No; 1=Yes; 2=Yes, lost; 3=Unverified
+  alias: bldclst,formcomp
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Yes, lost
+    3: Unverified
+
+sitedatasource_1:
+  type: Integer
+  description: 'Source of Data: Site'
+  range:
+  - 0
+  - 1
+  - -888
+  - -999
+  notes: 0=False; 1=True; -888=Not Applicable; -999=Missing;
+  alias: infosrcr
+  codes:
+    0: 'False'
+    1: 'True'
+    -888: Not Applicable
+    -999: Missing
+
+sitedatasource_phone:
+  type: Integer
+  description: 'Source of Data: Telephone'
+  range:
+  - 0
+  - 1
+  - -888
+  - -999
+  notes: 0=False; 1=True; -888=Not Applicable; -999=Missing;
+  alias: infosrct
+  codes:
+    0: 'False'
+    1: 'True'
+    -888: Not Applicable
+    -999: Missing
+
+sitedatasource_physician:
+  type: Integer
+  description: 'Source of Data: Physician'
+  range:
+  - 0
+  - 1
+  - -888
+  - -999
+  notes: 0=False; 1=True; -888=Not Applicable; -999=Missing;
+  alias: infosrcp
+  codes:
+    0: 'False'
+    1: 'True'
+    -888: Not Applicable
+    -999: Missing
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+  alias: interval,visit_name,visitnum
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: bscpg,form_name
+
+bsctot:
+  type: Integer
+  description: Total number of forms
+  range:
+  - 1::99
+
+ldosedy:
+  type: Integer
+  description: Day of last dose
+  notes: Number of days from study baseline to date of last dose
+  alias: datelast
+
+ldosetm:
+  type: String
+  length: 10
+  description: Time of last dose
+  alias: lasttime
+
+bsc_q01:
+  type: Integer
+  description: Any blood drawn
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No;
+  alias: blood,pom001,pom002
+  codes:
+    1: Yes, 2=No
+
+drawdays:
+  type: Integer
+  description: blood draw days since consent
+  alias: bsc_q02,drawdate
+
+drawtime:
+  type: String
+  length: 20
+  description: time of blood draw
+  alias: bsc_q03,pom001a,pom002a,timecollect
+
+bsc_q04:
+  type: Integer
+  description: Consume 70-gm carbohydrates
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No;
+  codes:
+    1: Yes, 2=No
+
+lmealtm:
+  type: String
+  length: 10
+  description: Time of last meal
+  alias: bld_core_snacktime,bsc_q05,mealtime
+
+lmealdy:
+  type: Integer
+  description: Day of last meal
+  notes: Number of days from study baseline to date of last meal
+
+bsc_q06a:
+  type: Float
+  description: First food grams
+  range:
+  - 0::99
+
+bsc_q06b:
+  type: Float
+  description: Second food grams
+  range:
+  - 0::99
+
+bsc_q06c:
+  type: Float
+  description: Third food grams
+  range:
+  - 0::99
+
+mefa3:
+  type: Integer
+  description: Is the patient taking Risperidone? (Y/N) (If the patient is taking
+    more than one anti-psychotic, the patient is ineligible.)
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=No; 1=Yes; 999=Legitimately skipped
+  alias: bsc_q07
+  codes:
+    0: 'No'
+    1: 'Yes'
+    999: Legitimately skipped
+
+adl_q03:
+  type: Integer
+  description: Date of last study med  taken in days from the randomization date (ADL_Q03
+    = Date of last dose of study medication - randomization date)
+  notes: ' -888=NA'
+  alias: bsc_q08
+  codes:
+    -888: NA
+
+sma005:
+  type: String
+  length: 20
+  description: Time of last dose of study medication (hh:mm, 24-hour clock)
+  alias: bsc_q09
+
+bsc_q10a:
+  type: Integer
+  description: Blood collected for Risperidone
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No;
+  codes:
+    1: Yes, 2=No
+
+bsc_q10b:
+  type: Integer
+  description: Blood collected for prolactin
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No;
+  codes:
+    1: Yes, 2=No
+
+bsc_q10c:
+  type: Integer
+  description: Blood collected for glucose
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No;
+  codes:
+    1: Yes, 2=No
+
+bsc_q10d:
+  type: Integer
+  description: Blood collected for hgbA1c
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No;
+  codes:
+    1: Yes, 2=No
+
+bsc_q10e:
+  type: Integer
+  description: Blood collected for triglycerides
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No;
+  codes:
+    1: Yes, 2=No
+
+bsc_q10f:
+  type: Integer
+  description: Blood collected for total cholesterol
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No;
+  codes:
+    1: Yes, 2=No
+
+bsc_q10g:
+  type: Integer
+  description: Blood collected for LDL
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No;
+  codes:
+    1: Yes, 2=No
+
+bsc_q10h:
+  type: Integer
+  description: Blood collected for HDL
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No;
+  codes:
+    1: Yes, 2=No
+
+leptin:
+  type: Float
+  description: Leptin blood test result
+  notes: '"leptin_unit" specifies unit'
+
+leptin_unit:
+  type: String
+  length: 10
+  description: Unit for the leptin blood test result
+
+ci_enrolled:
+  type: Integer
+  description: Participant enrolled
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ptcon:
+  type: Integer
+  description: Patient consented
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: bldcnsnt
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+comments:
+  type: String
+  length: 4000
+  description: Comments about assessment
+  alias: blood_notes,ldl_notes,notes,salisaliva_notes
+
+med2b:
+  type: Integer
+  description: Visit Day
+  notes: Number of days from study baseline to date of visit
+
+visnum:
+  type: Float
+  description: Numeric Visit Number
+  notes: '-1.5 = Pre-Screening; -1 = Screening; 0 = Baseline; ## = Visit ## (from
+    1 to 10); Whole numbers = standard monthly visits; #.001 - #.009 = Unscheduled;
+    #.1 = End of Phase 1; #.2 = End of Phase 2; #.3 = End of Phase 3; #.4 = End of
+    Open Choice Phase; #.5 = End of Study; #.6 = Genetic Analysis; 1000=all visits'
+  codes:
+    -1.5: Pre-Screening
+    -1: Screening
+    0: Baseline
+    9: Unscheduled
+    1: End of Phase 1
+    2: End of Phase 2
+    3: End of Phase 3
+    4: End of Open Choice Phase
+    5: End of Study
+    6: Genetic Analysis
+    1000: all visits
+
+hypforin:
+  type: Float
+  description: 'Plasma assay: hyperforin'
+
+sertra:
+  type: Float
+  description: 'Plasma assay: sertraline'
+
+dmsertra:
+  type: Float
+  description: 'Plasma assay: N-desmethyl-sertraline'
+
+tx_num:
+  type: Integer
+  description: Medication Code Number
+  range:
+  - 1::3
+  notes: 1 = Sertraline; 2 = Hypericum; 3 = Placebo
+  codes:
+    1: Sertraline
+    2: Hypericum
+    3: Placebo
+
+bsc_q10hh:
+  type: Integer
+  description: Blood collected for Interleukin-6
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No
+  codes:
+    1: Yes, 2=No
+
+bsc_q10i:
+  type: Integer
+  description: Blood collected for LH
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No
+  codes:
+    1: Yes, 2=No
+
+bsc_q10j:
+  type: Integer
+  description: Blood collected for FSH
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No
+  codes:
+    1: Yes, 2=No
+
+bsc_q10k:
+  type: Integer
+  description: Blood collected for TSH
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No
+  codes:
+    1: Yes, 2=No
+
+bsc_q10l:
+  type: Integer
+  description: Blood collected for ACTH
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No
+  codes:
+    1: Yes, 2=No
+
+bsc_q10m:
+  type: Integer
+  description: Blood collected for Progesterone
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No
+  codes:
+    1: Yes, 2=No
+
+bsc_q10n:
+  type: Integer
+  description: Blood collected for Estradiol
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No
+  codes:
+    1: Yes, 2=No
+
+bsc_q10o:
+  type: Integer
+  description: Blood collected for Testosterone
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No
+  codes:
+    1: Yes, 2=No
+
+bsc_q10p:
+  type: Integer
+  description: Blood collected for SHBG
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No
+  codes:
+    1: Yes, 2=No
+
+bsc_q10q:
+  type: Integer
+  description: Blood collected for DHEA-S
+  range:
+  - 1
+  - 2
+  notes: 1= Yes, 2=No
+  codes:
+    1: Yes, 2=No
+
+interleukin6:
+  type: Float
+  description: Interleukin-6 blood test result
+  alias: interleukin-6
+
+interleukin6_unit:
+  type: String
+  length: 10
+  description: Unit for the Interleukin-6 blood test result
+  alias: interleukin-6_unit
+
+lh:
+  type: Float
+  description: LH blood test result
+
+lh_unit:
+  type: String
+  length: 10
+  description: Unit for the LH blood test result
+
+fsh:
+  type: Float
+  description: FSH blood test result
+
+fsh_unit:
+  type: String
+  length: 10
+  description: Unit for the FSH blood test result
+
+tsh:
+  type: Float
+  description: Thyroid-stimulating Hormone (TSH)
+  range:
+  - 0::99.99
+  - -7
+  - -8
+  - -9
+  - 999
+  notes: In microIU/mL. -7 = Don't know; -8 = Refused to answer; -9 = Does not apply
+  codes:
+    -7: Don't know
+    -8: Refused to answer
+    -9: Does not apply
+
+tsh_unit:
+  type: String
+  length: 10
+  description: Unit for the TSH blood test result
+
+acth:
+  type: Float
+  description: ACTH blood test result
+
+acth_unit:
+  type: String
+  length: 10
+  description: Unit for the ACTH blood test result
+
+fprgrs:
+  type: Float
+  description: Hormonal Measures Female Progesterone Results
+  alias: progesterone
+
+progesterone_unit:
+  type: String
+  length: 10
+  description: Unit for the Progesterone blood test result
+
+festrs:
+  type: Float
+  description: Hormonal Measures Female Estradiol Results
+  alias: estradiol
+
+estradiol_unit:
+  type: String
+  length: 10
+  description: Unit for the Estradiol blood test result
+
+rsptest_no:
+  type: Float
+  description: Blood value - Testosterone (ng/dL)
+  alias: testosterone
+
+testosterone_unit:
+  type: String
+  length: 10
+  description: Unit for the Testosterone blood test result
+
+shbg:
+  type: Float
+  description: SHBG blood test result
+
+shbg_unit:
+  type: String
+  length: 10
+  description: Unit for the SHBG blood test result
+
+dheas_mean_pgml:
+  type: Float
+  description: dheas Mean (pg/mL)
+  alias: dhea-s
+
+dhea_s_unit:
+  type: String
+  length: 10
+  description: Unit for the DHEA-S blood test result
+  alias: dhea-s_unit
+
+ls_alt:
+  type: Integer
+  description: 16. ALT(SGPT)(U/L)
+  notes: ' -9=Unknown;  -1=Normal; -2= <15'
+  alias: alt_sgpt
+  codes:
+    -9: Unknown
+    -1: Normal
+    -2: <15
+
+biospc_8:
+  type: Integer
+  description: Number of Purple tubes collected
+  alias: bld_core_ppl
+
+fasting:
+  type: Integer
+  description: fasting blood draw y/n
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0=No; 1=Yes; -7=Refused
+  alias: bld_core_fast
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -7: Refused
+
+rsptc_no:
+  type: Float
+  description: Blood value - Total Cholesterol (mg/dL)
+  notes: ' -9=Unknown'
+  alias: cholesterol
+  codes:
+    -9: Unknown
+
+rsptrig_no:
+  type: Float
+  description: Blood value - Triglycerides (mg/dL)
+  notes: ' -9=Unknown'
+  alias: triglyceride
+  codes:
+    -9: Unknown
+
+ls_ureanitrogen:
+  type: Float
+  description: 10. Urea Nitrogen(mg/dL)
+  range:
+  - 0::70
+  - -9
+  notes: ' -9=unknown'
+  alias: ureanitrogen
+  codes:
+    -9: unknown
+
+ls_totprotein:
+  type: Float
+  description: 11. Total Protein(g/dL)
+  range:
+  - 0::20.0
+  - -9
+  notes: ' -9=Unknown'
+  alias: totalprotein
+  codes:
+    -9: Unknown
+
+ls_co2:
+  type: Float
+  description: 7. CO2 Content(mmol/L)
+  range:
+  - 0::50
+  - -9
+  notes: -9=Unknown
+  alias: co2content
+  codes:
+    -9: Unknown
+
+ls_calcium:
+  type: Float
+  description: 17. Calcium(mg/dL)
+  range:
+  - 0::100.0
+  - -9
+  notes: ' -9=Unknown'
+  alias: calcium
+  codes:
+    -9: Unknown
+
+ls_bilirubin:
+  type: Float
+  description: 13. Bilirubin, Total(mg/dL)
+  range:
+  - 0::9.9
+  - -9
+  notes: ' -9=Unknown'
+  alias: totalbilirubin
+  codes:
+    -9: Unknown
+
+ls_albumin:
+  type: Float
+  description: 12. Albumin(g/dL)
+  range:
+  - 0::20.0
+  - -9
+  notes: -9=Unknown
+  alias: albumin
+  codes:
+    -9: Unknown
+
+laba8:
+  type: Float
+  description: Hscrp
+  alias: hscrp
+
+laba5:
+  type: Float
+  description: Hdl Cholesterol (Mg/Dl)
+  notes: ' -9=Unknown'
+  alias: hdl
+  codes:
+    -9: Unknown
+
+bp1_alk:
+  type: Float
+  description: Liver ALK Phos
+  notes: -9=Unknown
+  alias: alkphos_total
+  codes:
+    -9: Unknown
+
+a1crs:
+  type: Float
+  description: HbA1c Results
+  alias: hba1c
+
+biospc2_purple_tubes:
+  type: Float
+  description: num of purple tubes collected sample 2
+  alias: bld_rucdr_ppl
+
+bld_core:
+  type: Integer
+  description: CORE Blood Collected?
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+bld_core_grn:
+  type: Integer
+  description: 'CORE: Number of Tubes Collected: Green Tubes'
+
+bld_core_snack:
+  type: Integer
+  description: 'Fasting: Time of last meal/snack'
+  range:
+  - 0
+  - 1
+  notes: 1 = Same day ; 0 = Prior day
+  codes:
+    1: Same day
+    0: Prior day
+
+bld_core_spin:
+  type: Integer
+  description: Spin at 1000 - 1300G for 10 mins
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+insomm:
+  type: String
+  length: 250
+  description: 'Insulin: Comments'
+  alias: insulin
+
+bld_core_d2ph:
+  type: Integer
+  description: 'All Tubes Time from Draw to Processing: Hour(s):'
+
+bld_core_d2pm:
+  type: Integer
+  description: 'All Tubes Time from Draw to Processing: Minute(s):'
+
+bld_core_p2fh:
+  type: Integer
+  description: 'All Tubes Time from Processing to Freezing: Hour(s):'
+
+bld_core_p2fm:
+  type: Integer
+  description: 'All Tubes Time from Processing to Freezing: Minute(s):'
+
+bld_rucdr:
+  type: Integer
+  description: 'RUCDR Blood Collected?:'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+friedewald_ldl:
+  type: Float
+  description: 'Friedewald LDL Cholesterol: '
+  notes: 99999 for QNS(quantity not sufficient); Units=mg/dL
+
+laba6:
+  type: Integer
+  description: Ldl Cholesterol (Mg/Dl)
+  notes: ' -9=Unknown;  -1=Normal'
+  alias: ldl
+  codes:
+    -9: Unknown
+    -1: Normal
+
+biospc_6:
+  type: Integer
+  description: Number of Yellow tubes collected
+  alias: bld_rucdr_grn,bld_rucdr_ylw
+
+vitdlev:
+  type: Integer
+  description: 25- vitamin D level (ng/mL)
+  alias: vitamind
+
+ed1_saliva:
+  type: Integer
+  description: SALIVA SAMPLE COLLECTED
+  range:
+  - 0
+  - 1
+  - -5
+  - -7
+  - -8
+  notes: 0=No; 1=Yes -8=DON'T KNOW; -7=REFUSED; -5=Presented, not answered
+  alias: bld_rucdr_saliva
+  codes:
+    0: 'No'
+    1: "Yes"
+    -8: DON'T KNOW
+    -7: REFUSED
+    -5: Presented, not answered
+
+ed1_blood:
+  type: Integer
+  description: BLOOD SAMPLES COLLECTED
+  range:
+  - 0
+  - 1
+  - -5
+  - -7
+  - -8
+  notes: 0=No; 1=Yes -8=DON'T KNOW; -7=REFUSED; -5=Presented, not answered
+  alias: bld_draw
+  codes:
+    0: 'No'
+    1: Yes -8=DON'T KNOW
+    -7: REFUSED
+    -5: Presented, not answered
+
+ls_ast:
+  type: Integer
+  description: 15. AST(SGOT)(U/L)
+  notes: ' -9=Unknown;  -1=Normal'
+  alias: ast_sgot
+  codes:
+    -9: Unknown
+    -1: Normal
+
+hair3:
+  type: Integer
+  description: How many times do you wash your hair per week?
+
+hair4:
+  type: Integer
+  description: Do you dye/bleach your hair?
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+hair4_1:
+  type: String
+  length: 100
+  description: If you dye/bleach your hair, When did you dye/bleach your hair?
+
+hair4_2:
+  type: String
+  length: 100
+  description: 'Hair dye name:'
+
+hair4_3:
+  type: String
+  length: 100
+  description: 'Hair dye colour:'
+
+hair4_4:
+  type: String
+  length: 100
+  description: 'Degree of lightening:'
+
+hair5:
+  type: Integer
+  description: Do you perm your hair?
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+hair5y:
+  type: String
+  length: 100
+  description: 'If you perm your hair, when did you perm your hair?  '
+
+hair6:
+  type: Integer
+  description: Do you do any other hair treatments (straightening, hair growth stimulators,
+    hair-gel, etc)?
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+hair6y:
+  type: String
+  length: 200
+  description: 'If you have any other hair treatments, Specify:'
+
+hair7:
+  type: Integer
+  description: Are you aware that you are sweating relatively frequently/heavily on
+    the head?
+  range:
+  - 0::2
+  notes: 1 = Yes ; 0 = No ; 2 = Perhaps
+  codes:
+    1: 'Yes'
+    0: 'No'
+    2: Perhaps
+
+rucdrsaliva:
+  type: Integer
+  description: 'RUCDR Saliva: '
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+salisaliva_1st:
+  type: String
+  length: 10
+  description: 'Day of First Salimetric Scan:'
+
+salisaliva_collecttime1:
+  type: Integer
+  description: Did you eat before you collected your saliva sample?
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+salisaliva_collecttime1_1:
+  type: String
+  length: 50
+  description: 'If you ate before collecting your saliva sample, how long before collecting
+    saliva did you eat? '
+
+salisaliva_collecttime2:
+  type: Integer
+  description: Did you brush your teeth before you collected your saliva sample?
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+salisaliva_collecttime2_1:
+  type: String
+  length: 50
+  description: If you brushed your teeth before collecting your saliva sample, how
+    long before collecting saliva did you brush your teeth?
+
+salisaliva_frozen:
+  type: Integer
+  description: 'Saliva Sample Arrived Frozen:'
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+salisaliva_mestrual:
+  type: Integer
+  description: 'Saliva sample: Days after menstrual start'
+  notes: 999999 = N/A
+  codes:
+    999999: N/A
+
+salisaliva_timetofrz:
+  type: Integer
+  description: 'Saliva sample: Minutes from arrival to deep freezer:'
+
+p_col_nat_o:
+  type: String
+  length: 65
+  description: Describe other natural hair color
+  alias: hair1
+
+saliva_collection1_time:
+  type: String
+  length: 10
+  description: 'Saliva Measures: Time of the first saliva collection (hour:minute)'
+  alias: salisaliva_collecttime
+
+urine_saliva_data_entry_status:
+  type: String
+  length: 20
+  description: 'Urine and Saliva Measures: Urine and Saliva Measures: The Data entry
+    completion status of this instrument (whether the instrument is completed or not)'
+  range:
+  - Incomplete
+  - Complete
+  alias: salisaliva_yn
+
+bld_core_des_:
+  type: String
+  length: 100
+  description: 'Specify Tubes Collected: CORE'
+
+bld_rucdr_des:
+  type: String
+  length: 100
+  description: 'Specify Tubes Collected: RUCDR'
+
+hair_collect:
+  type: Integer
+  description: Hair Sample Collected?
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+hair2:
+  type: Integer
+  description: Do you have curls?
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'

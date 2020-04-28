@@ -1,0 +1,6172 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: candidateguid,guid,guid_r03,pseudo_guid,subject_key
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: CBCL_sss_ID,child_id_full,clinical_barcode,demo_study_id,ibisid,id,individual,participant_id,participantid,patid,pid,record_id,sid_r03,subject,subject_id
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: CBCL_sss_date,adate,assessment_dt,bl_visit_date,cbc_today,cbcl_date,consentdate,consented_study,date_demographics,date_interview_ses,date_taken,interviewdate,intvdate,lvdate_r03,pp_date,profile_date,testing_date,visit_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: CBCL_sss_age,age,age_a,cbc_age,cbcl_age,ch_age,childage_r03,test_age,total_age_in_months
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: CBCL_sss_gender,cbc_sex,cbcl_gender,ch_sex,childgender_r03,gender,sex,sex_a
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+  alias: cbcl_comments,cbcl_notes
+
+sports_des1:
+  type: String
+  length: 500
+  description: Sport1 description
+  alias: cbcl_q01aname,cbcl_sport1,cbcl_sporta,cbcl_sports
+
+sports_time1:
+  type: Integer
+  required: true
+  description: Amount of time spent on sport1
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 999
+  notes: 0 = Less than average; 1 = Average; 2 = More than average; 3 = Don't know
+  alias: c02,cbcl_q01atime,cbcl_sport1_time,cbcl_sporta_1a,cbcl_sports1_a,iat,xsporta
+  codes:
+    0: Less than average
+    1: Average
+    2: More than average
+    3: Don't know
+
+sports_well1:
+  type: Integer
+  required: true
+  description: How well youth does sport1
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 999
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know
+  alias: c03,cbcl_q01alvl,cbcl_sport1_well,cbcl_sporta_1b,cbcl_sports1_b,iaw,ssporta
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+
+sports_des2:
+  type: String
+  length: 500
+  description: Sport2 description
+  alias: cbcl_q01bname,cbcl_sport2,cbcl_sportb
+
+sports_time2:
+  type: Integer
+  required: true
+  description: Amount of time spent on sport2
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 999
+  notes: 0 = Less than average; 1 = Average; 2 = More than average; 3 = Don't know
+  alias: c04,cbcl_q01btime,cbcl_sport2_time,cbcl_sportb_1a,cbcl_sports2_a,ibt,xsportb
+  codes:
+    0: Less than average
+    1: Average
+    2: More than average
+    3: Don't know
+
+sports_well2:
+  type: Integer
+  required: true
+  description: How well youth does sport2
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 999
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know
+  alias: c05,cbcl_q01blvl,cbcl_sport2_well,cbcl_sportb_1b,cbcl_sports2_b,ibw,ssportb
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+
+sports_des3:
+  type: String
+  length: 500
+  description: Sport3 description
+  alias: cbcl_q01cname,cbcl_sport3,cbcl_sportc
+
+sports_time3:
+  type: Integer
+  required: true
+  description: Amount of time spent on sport3
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 999
+  notes: 0 = Less than average; 1 = Average; 2 = More than average; 3 = Don't know
+  alias: c06,cbcl_q01ctime,cbcl_sport3_time,cbcl_sportc_1a,cbcl_sports3_a,ict,xsportc
+  codes:
+    0: Less than average
+    1: Average
+    2: More than average
+    3: Don't know
+
+sports_well3:
+  type: Integer
+  required: true
+  description: How well youth does sport3
+  range:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 999
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know
+  alias: c07,cbcl_q01clvl,cbcl_sport3_well,cbcl_sportc_1b,cbcl_sports3_b,icw,ssportc
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+
+activities_des1:
+  type: String
+  length: 500
+  description: activity1 description
+  alias: cbcl_hob1,cbcl_hobbies,cbcl_hobbya,cbcl_q02aname
+
+activities_time1:
+  type: Integer
+  description: Amount of time spent on activity1
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Less than average; 1 = Average; 2 = More than average; 3 = Don't know;9
+    = Missing
+  alias: c09,cbcl_hob1_time,cbcl_hobbies1_a,cbcl_hobbya_2a,cbcl_q02atime,iiat,xacta
+  codes:
+    0: Less than average
+    1: Average
+    2: More than average
+    3: Don't know
+    9: Missing
+
+activities_well1:
+  type: Integer
+  description: How well youth does activity1
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know;9 = Missing
+  alias: c10,cbcl_hob1_well,cbcl_hobbies1_b,cbcl_hobbya_2b,cbcl_q02alvl,iiaw,sacta
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+    9: Missing
+
+activities_des2:
+  type: String
+  length: 500
+  description: activity2 description
+  alias: cbcl_hob2,cbcl_hobbyb,cbcl_q02bname
+
+activities_time2:
+  type: Integer
+  description: Amount of time spent on activity2
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Less than average; 1 = Average; 2 = More than average; 3 = Don't know;9
+    = Missing
+  alias: c11,cbcl_hob2_time,cbcl_hobbies2_a,cbcl_hobbyb_2a,cbcl_q02btime,iibt,xactb
+  codes:
+    0: Less than average
+    1: Average
+    2: More than average
+    3: Don't know
+    9: Missing
+
+activities_well2:
+  type: Integer
+  description: How well youth does activity2
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know;9 = Missing
+  alias: c12,cbcl_hob2_well,cbcl_hobbies2_b,cbcl_hobbyb_2b,cbcl_q02blvl,iibw,sactb
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+    9: Missing
+
+activities_des3:
+  type: String
+  length: 500
+  description: activity3 description
+  alias: cbcl_hob3,cbcl_hobbyc,cbcl_q02cname
+
+activities_time3:
+  type: Integer
+  description: Amount of time spent on activity3
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Less than average; 1 = Average; 2 = More than average; 3 = Don't know;9
+    = Missing
+  alias: c13,cbcl_hob3_time,cbcl_hobbies3_a,cbcl_hobbyc_2a,cbcl_q02ctime,iict,xactc
+  codes:
+    0: Less than average
+    1: Average
+    2: More than average
+    3: Don't know
+    9: Missing
+
+activities_well3:
+  type: Integer
+  description: How well youth does activity3
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know;9 = Missing
+  alias: c14,cbcl_hob3_well,cbcl_hobbies3_b,cbcl_hobbyc_2b,cbcl_q02clvl,iicw,sactc
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+    9: Missing
+
+clubs_des1:
+  type: String
+  length: 500
+  description: Club1 description
+  alias: cbcl_cluba,cbcl_groups,cbcl_org1,cbcl_q03aname
+
+clubs_active1:
+  type: Integer
+  description: How active youth is in club1
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Less active; 1 = Average; 2 = Above average; 3 = Don't know; 999=missing/NA
+  alias: aorga,cbcl_cluba_3a,cbcl_groups_active1,cbcl_org1_act,cbcl_q03aact,iiia
+  codes:
+    0: Less active
+    1: Average
+    2: Above average
+    3: Don't know
+    999: missing/NA
+
+clubs_des2:
+  type: String
+  length: 500
+  description: Club2 description
+  alias: cbcl_clubb,cbcl_org2,cbcl_q03bname
+
+clubs_active2:
+  type: Integer
+  description: How active youth is in club2
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Less active; 1 = Average; 2 = Above average; 3 = Don't know; 999=missing/NA
+  alias: aorgb,cbcl_clubb_3a,cbcl_groups_active2,cbcl_org2_act,cbcl_q03bact,iiib
+  codes:
+    0: Less active
+    1: Average
+    2: Above average
+    3: Don't know
+    999: missing/NA
+
+clubs_des3:
+  type: String
+  length: 500
+  description: Club3description
+  alias: cbcl_clubc,cbcl_org3,cbcl_q03cname
+
+clubs_active3:
+  type: Integer
+  description: How active youth is in club3
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Less active; 1 = Average; 2 = Above average; 3 = Don't know; 999=missing/NA
+  alias: aorgc,cbcl_clubc_3a,cbcl_groups_active3,cbcl_org3_act,cbcl_q03cact,iiic
+  codes:
+    0: Less active
+    1: Average
+    2: Above average
+    3: Don't know
+    999: missing/NA
+
+chores_des1:
+  type: String
+  length: 500
+  description: Chore1 description
+  alias: cbcl_chorea,cbcl_chores,cbcl_job1,cbcl_q04aname
+
+chores_well1:
+  type: Integer
+  description: How well youth does chore1
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know; 999= missing/NA
+  alias: cbcl_chorea_4a,cbcl_chores_well1,cbcl_job1_well,cbcl_q04aabl,iva
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+    999: missing/NA
+
+chores_des2:
+  type: String
+  length: 500
+  description: Chore2 description
+  alias: cbcl_choreb,cbcl_job2,cbcl_q04bname
+
+chores_well2:
+  type: Integer
+  description: How well youth does chore2
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know; 999= missing/NA
+  alias: cbcl_choreb_4a,cbcl_chores_well2,cbcl_job2_well,cbcl_q04babl,ivb
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+    999: missing/NA
+
+chores_des3:
+  type: String
+  length: 500
+  description: Chore3 description
+  alias: cbcl_chorec,cbcl_job3,cbcl_q04cname
+
+chores_well3:
+  type: Integer
+  description: How well youth does chore3
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Below average; 1 = Average; 2 = Above average; 3 = Don't know; 999= missing/NA
+  alias: cbcl_chorec_4a,cbcl_chores_well3,cbcl_job3_well,cbcl_q04cabl,ivc
+  codes:
+    0: Below average
+    1: Average
+    2: Above average
+    3: Don't know
+    999: missing/NA
+
+friends:
+  type: Integer
+  description: 'P: How many close friends does youth have? / S: How many close friends
+    do you have? (Do not include brother & sister)'
+  range:
+  - 0::3
+  - 9
+  notes: 0 = None; 1 = 1; 2 = 2 or 3; 3 = 4 or more; 9=Missing
+  alias: cbcl_close_friends,cbcl_p1_5,cbcl_v1,v1
+  codes:
+    0: None
+    1: '1'
+    2: 2 or 3
+    3: 4 or more
+    9: Missing
+
+friends_time:
+  type: Integer
+  description: 'P: How much time does youth spend with friends? / S: About how many
+    times a week do you do things with any friends outside of regular school hours?
+    (Do not include brother & sister)'
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Less than once a week; 1 = 1 or 2 times a week; 2 = 3 or more times a
+    week; 9=Missing
+  alias: cbcl_p1_6,cbcl_q05,cbcl_q05play,cbcl_times_a_week_friends,cbcl_v2,v2
+  codes:
+    0: Less than once a week
+    1: 1 or 2 times a week
+    2: 3 or more times a week
+    9: Missing
+
+interp_siblings:
+  type: Integer
+  description: 'P: How well does youth get along with siblings? / S: Get along with
+    your brother & sister'
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Worse; 1 = Average; 2 = Better; 3 = Has no brothers or sisters; -9=unknown
+  alias: c25,cbcl_along_w_sibs,cbcl_iv_a,cbcl_p1_7a,cbcl_q06sib,gasib,via
+  codes:
+    0: Worse
+    1: Average
+    2: Better
+    3: Has no brothers or sisters
+    -9: unknown
+
+interp_kids:
+  type: Integer
+  description: 'P: How well does youth get along with other kids? / S: Get along with
+    other kids?'
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Worse; 1 = Average; 2 = Better; 9=missing
+  alias: c26,cbcl_along_w_okids,cbcl_iv_b,cbcl_p1_7b,cbcl_q06kids,gapeer,vib
+  codes:
+    0: Worse
+    1: Average
+    2: Better
+    9: missing
+
+interp_parents:
+  type: Integer
+  description: 'P: How well does youth behave with his/her parents? / S: Behave with
+    your parent?'
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Worse; 1 = Average; 2 = Better; 9=missing
+  alias: c27,cbcl_behave_par,cbcl_iv_c,cbcl_p1_7c,cbcl_q06parnt,gapar,vic
+  codes:
+    0: Worse
+    1: Average
+    2: Better
+    9: missing
+
+interp_alone:
+  type: Integer
+  description: 'P: How well does youth play and work alone? / S: Do things by yourself?'
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Worse; 1 = Average; 2 = Better; 9=missing
+  alias: c28,cbcl_iv_d,cbcl_p1_7d,cbcl_paw_alone,cbcl_q06alone,pwself,vid
+  codes:
+    0: Worse
+    1: Average
+    2: Better
+    9: missing
+
+school1:
+  type: Integer
+  description: Child does not attend school
+  range:
+  - 0
+  - 1
+  notes: 0 = Attends School; 1 = Does not attend school
+  alias: cbcl_p1_8,ysr_p1_8
+  codes:
+    0: Attends School
+    1: Does not attend school
+
+school1a:
+  type: Integer
+  description: '"Peformance in reading, english, or language arts"'
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Failing; 1 = Below average; 2 = Average; 3 = Above average; 9=missing
+  alias: apa,c29,cbcl_p1_8a,cbcl_q07read,cbcl_read_lang_eng,vii1a,ysr_p1_8a
+  codes:
+    0: Failing
+    1: Below average
+    2: Average
+    3: Above average
+    9: missing
+
+school1b:
+  type: Integer
+  description: Performance in history or social studies
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Failing; 1 = Below average; 2 = Average; 3 = Above average; 9=missing
+  alias: apb,c30,cbcl_hist_ss,cbcl_p1_8b,cbcl_q07hist,vii1b,ysr_p1_8b
+  codes:
+    0: Failing
+    1: Below average
+    2: Average
+    3: Above average
+    9: missing
+
+school1c:
+  type: Integer
+  description: Performance in arithmetic or math
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Failing; 1 = Below average; 2 = Average; 3 = Above average; 9=missing
+  alias: apc,c31,cbcl_math,cbcl_p1_8c,cbcl_q07math,vii1c,ysr_p1_8c
+  codes:
+    0: Failing
+    1: Below average
+    2: Average
+    3: Above average
+    9: missing
+
+school1d:
+  type: Integer
+  description: Performance in science
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Failing; 1 = Below average; 2 = Average; 3 = Above average; 9=missing
+  alias: apd,c32,cbcl_p1_8d,cbcl_q07sci,cbcl_science,vii1d,ysr_p1_8d
+  codes:
+    0: Failing
+    1: Below average
+    2: Average
+    3: Above average
+    9: missing
+
+school1e:
+  type: Integer
+  description: Performance in other subect
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Failing; 1 = Below average; 2 = Average; 3 = Above average; 9=missing
+  alias: ape,c33,cbcl_other_grade1,cbcl_p1_8e,cbcl_q07aabl,vii1e,ysr_p1_8e
+  codes:
+    0: Failing
+    1: Below average
+    2: Average
+    3: Above average
+    9: missing
+
+school1e_des:
+  type: String
+  length: 500
+  description: Other subject description
+  alias: cbcl_other_sub,cbcl_p1_sub1,cbcl_q07aname,ysr_p1_sub1
+
+school1f:
+  type: Integer
+  description: Performance in other subect
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Failing; 1 = Below average; 2 = Average; 3 = Above average; 9=missing
+  alias: apf,c34,cbcl_other_sub_grade2,cbcl_p1_8f,cbcl_q07babl,vii1f,ysr_p1_8f
+  codes:
+    0: Failing
+    1: Below average
+    2: Average
+    3: Above average
+    9: missing
+
+school1f_des:
+  type: String
+  length: 500
+  description: Other subject description
+  alias: cbcl_other_sub2,cbcl_p1_sub2,cbcl_q07bname,ysr_p1_sub2
+
+school1g:
+  type: Integer
+  description: Performance in other subect
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Failing; 1 = Below average; 2 = Average; 3 = Above average; 9=missing
+  alias: apg,c35,cbcl_other_sub_grade3,cbcl_p1_8g,cbcl_q07cabl,vii1g,ysr_p1_8g
+  codes:
+    0: Failing
+    1: Below average
+    2: Average
+    3: Above average
+    9: missing
+
+school1g_des:
+  type: String
+  length: 500
+  description: Other subject description
+  alias: cbcl_other_sub3,cbcl_p1_sub3,cbcl_q07cname,ysr_p1_sub3
+
+special_ed:
+  type: Integer
+  description: Does subject receive special education or remedial services?
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0 = No; 1= Yes; 9=missing
+  alias: c36,cbcl_p1_9,cbcl_q08,cbcl_special_edu,sclass,vii2p
+  codes:
+    0: 'No'
+    1: 'Yes'
+    9: missing
+
+special_ed_des:
+  type: String
+  length: 500
+  description: Description of services
+  alias: cbcl_p1_9_spec,cbcl_q08type,cbcl_spec_special_edu
+
+repeat_grade:
+  type: Integer
+  description: Has youth repeated any grades?
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0 = No; 1= Yes; 9=missing
+  alias: c37,cbcl_p1_10,cbcl_q09,cbcl_repeat_grade,rgrade,vii3p
+  codes:
+    0: 'No'
+    1: 'Yes'
+    9: missing
+
+repeat_grade_des:
+  type: String
+  length: 500
+  description: Description
+  alias: cbcl_p1_10_spec,cbcl_q09reas,cbcl_which_grade_why
+
+academic:
+  type: Integer
+  description: Does youth have any academic or other problems in school?
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0 = No; 1= Yes; 9=missing
+  alias: c38,cbcl_acad_prob,cbcl_p1_11,cbcl_q10,oap,vii4p
+  codes:
+    0: 'No'
+    1: 'Yes'
+    9: missing
+
+academic_start:
+  type: String
+  length: 500
+  description: When did these problems start?
+  alias: cbcl_p1_11a,cbcl_q10dat_x,cbcl_when_start_prob
+
+academic_end:
+  type: Integer
+  description: Have these problems ended?
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0 = No; 1= Yes; 9=missing
+  alias: c39,cbcl_p1_11b,cbcl_prob_end,cbcl_q10end,cbcl_q10endat_x
+  codes:
+    0: 'No'
+    1: 'Yes'
+    9: missing
+
+illness_disability:
+  type: Integer
+  description: Does youth have any illness or disability?
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0 = No; 1= Yes; 9=missing
+  alias: c40,cbcl_disability,cbcl_p1_12,cbcl_q11
+  codes:
+    0: 'No'
+    1: 'Yes'
+    9: missing
+
+illness_disability_des:
+  type: String
+  length: 500
+  description: Description
+  alias: cbcl_describe_ill_dis,cbcl_p1_12_spec,cbcl_q11desc
+
+concerns:
+  type: String
+  length: 760
+  description: Parental concerns about youth
+  alias: cbcl_concern_ab_child,cbcl_p1_13,cbcl_q12
+
+best_things:
+  type: String
+  length: 500
+  description: Best things about youth
+  alias: cbcl_describe_best,cbcl_p1_14,cbcl_q13
+
+cbcl1:
+  type: Integer
+  required: true
+  description: Acts too young for his/her age/ Act??a como si fuera mucho menor que
+    su edad
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb1,cbc_prob_1,cbcl1_1,cbcl_1,cbcl_q01_p,cbcl_q1,cbcl_q_01,cbclold01_r03,cbclschitem1,p001,q1,ysr1_1
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl2:
+  type: Integer
+  required: true
+  description: Drinks alcohol without parents' approval/ Toma bebidas alcoh??licas
+    sin permiso de los padres
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb2,cbc_prob_2,cbcl1_2,cbcl_2,cbcl_q02_p,cbcl_q2,cbclold02_r03,cbclschitem2_1,q2,ysr1_2
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl3:
+  type: Integer
+  required: true
+  description: Argues a lot/ Discute mucho
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb3,cbc_prob_3,cbcl1_3,cbcl_3,cbcl_q03_p,cbcl_q3,cbcl_q_03,cbclold03_r03,cbclschitem3,p003,q3,ysr1_3
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl4:
+  type: Integer
+  required: true
+  description: Fails to finish things he/she starts/ Deja sin terminar lo que ??l/ella
+    empieza
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb4,cbc_prob_4,cbcl1_4,cbcl_4,cbcl_q04_p,cbcl_q4,cbclold04_r03,cbclschitem4,q4,ysr1_4
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl5:
+  type: Integer
+  required: true
+  description: There is very little he/she enjoys/ Disfruta de muy pocas cosas
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb5,cbc_prob_5,cbcl1_5,cbcl_5,cbcl_q05_p,cbcl_q5,cbclold05_r03,cbclschitem5,q5,ysr1_5
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl6:
+  type: Integer
+  required: true
+  description: Bowel movements outside toilet/ Hace sus necesidades en la ropa o en
+    lugares inadecuados
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb6,cbc_prob_6,cbcl1_6,cbcl_6,cbcl_q06_p,cbcl_q6,cbcl_q_06,cbclold06_r03,cbclschitem6,p006,q6
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl7:
+  type: Integer
+  required: true
+  description: Bragging, boasting/  Es engre??do(a), presumido(a)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb7,cbc_prob_7,cbcl2_7,cbcl_7,cbcl_q07_p,cbcl_q7,cbcl_q_07,cbclold07_r03,cbclschitem7,p007,q7,ysr1_7
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl8:
+  type: Integer
+  required: true
+  description: Can't concentrate, can't pay attention for long / No puede concentrarse
+    o prestar atenci??n por mucho tiempo
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb8,cbc_prob_8,cbcl2_8,cbcl_8,cbcl_q08_p,cbcl_q8,cbcl_q_08,cbclold08_r03,cbclschitem8,p008,q8,ysr2_8
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl9:
+  type: Integer
+  required: true
+  description: Can't get his/her mind off certain thoughts; obsessions/ Obsesiones,
+    que quiere decir que no puede sacarse de la mente ciertos pensamientos
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb9,cbc_prob_9,cbcl2_9,cbcl_9,cbcl_q09_p,cbcl_q9,cbcl_q_09,cbclold09_r03,cbclschitem9_1,p009,q9,ysr2_9
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl10:
+  type: Integer
+  required: true
+  description: Can't sit still, restless, or hyperactive/ No puede quedarse quieto(a);
+    es inquieto(a) o hiperactivo(a)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb10,cbc_prob_10,cbcl2_10,cbcl_10,cbcl_q10_p,cbcl_q_10,cbclold10_r03,cbclschitem10,p010,q10,ysr2_10
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl11:
+  type: Integer
+  required: true
+  description: Clings to adults or too dependent/ Es demasiado dependiente o apegado(a)
+    a los adultos
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb11,cbc_prob_11,cbcl2_11,cbcl_11,cbcl_q11_p,cbcl_q_11,cbclold11_r03,cbclschitem11,p011,q11,ysr2_11
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl12:
+  type: Integer
+  required: true
+  description: Complains of loneliness / Se queja de que se siente solo(a)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb12,cbc_prob_12,cbcl2_12,cbcl_12,cbcl_q12_p,cbcl_q_12,cbclold12_r03,cbclschitem12,p012,q12,ysr2_12
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl13:
+  type: Integer
+  required: true
+  description: Confused or seems to be in a fog/ Est?? confundido(a) o parece como
+    si estuviera en las nubes
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb13,cbc_prob_13,cbcl2_13,cbcl_13,cbcl_q13_p,cbcl_q_13,cbclold13_r03,cbclschitem13,p013,q13,ysr2_13
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl14:
+  type: Integer
+  description: Cries a lot/ Llora mucho
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb14,cbc_prob_14,cbcl3_14,cbcl_14,cbcl_q14,cbcl_q14_p,cbcl_q_14,cbclold14_r03,cbclschitem14,p014,q14,ysr2_14
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl15:
+  type: Integer
+  required: true
+  description: Cruel to animals/ Es cruel con los animales
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb15,cbc_prob_15,cbcl3_15,cbcl_15,cbcl_q15,cbcl_q15_p,cbcl_q_15,cbclold15_r03,cbclschitem15,p015,q15
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl16:
+  type: Integer
+  required: true
+  description: Cruelty, bullying, or meanness to others / Es cruel, abusador(a), y
+    malo(a) con los dem??s
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb16,cbc_prob_16,cbcl3_16,cbcl_16,cbcl_q16,cbcl_q16_p,cbcl_q_16,cbclold16_r03,cbclschitem16,p016,q16,ysr3_16
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl17:
+  type: Integer
+  required: true
+  description: Daydreams or gets lost in his/her thoughts/  Sue??a despierto(a), se
+    pierde en sus propios pensamientos
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb17,cbc_prob_17,cbcl3_17,cbcl_17,cbcl_q17,cbcl_q17_p,cbcl_q_17,cbclold17_r03,cbclschitem17,p017,q17,ysr3_17
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl18:
+  type: Integer
+  required: true
+  description: Deliberately harms self or attempts suicide/  Se hace da??o a s?? mismo(a)
+    deliberadamente o ha intentado suicidarse
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb18,cbc_prob_18,cbcl3_18,cbcl_18,cbcl_q18,cbcl_q18_p,cbcl_q_18,cbclold18_r03,cbclschitem18,p018,q18,ysr3_18
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl19:
+  type: Integer
+  required: true
+  description: Demands a lot of attention/ Exige mucha atenci??n
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb19,cbc_prob_19,cbcl3_19,cbcl_19,cbcl_q19,cbcl_q19_p,cbcl_q_19,cbclold19_r03,cbclschitem19,p019,q19,ysr3_19
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl20:
+  type: Integer
+  required: true
+  description: Destroys his/her own things/ Destruye sus propias cosas
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb20,cbc_prob_20,cbcl3_20,cbcl_20,cbcl_q20,cbcl_q20_p,cbcl_q_20,cbclold20_r03,cbclschitem20,p020,q20,ysr3_20
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl21:
+  type: Integer
+  required: true
+  description: Destroys things belonging to his/her family or others/  Destruye las
+    pertenencias de sus familiares o de otras personas
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb21,cbc_prob_21,cbcl4_21,cbcl_21,cbcl_q21,cbcl_q21_p,cbcl_q_21,cbclold21_r03,cbclschitem21,p021,q21,ysr3_21
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl22:
+  type: Integer
+  required: true
+  description: Disobedient at home/  Desobedece en casa
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb22,cbc_prob_22,cbcl4_22,cbcl_22,cbcl_q22,cbcl_q22_p,cbcl_q_22,cbclold22_r03,cbclschitem22,p022,q22,ysr4_22
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl23:
+  type: Integer
+  required: true
+  description: Disobedient at school/ Desobedece en la escuela
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb23,cbc_prob_23,cbcl4_23,cbcl_23,cbcl_q23,cbcl_q23_p,cbcl_q_23,cbclold23_r03,cbclschitem23,p023,q23,ysr4_23
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl24:
+  type: Integer
+  required: true
+  description: Doesn't eat well / No come bien
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb24,cbc_prob_24,cbcl4_24,cbcl_24,cbcl_q24,cbcl_q24_p,cbcl_q_24,cbclold24_r03,cbclschitem24,p024,q24,ysr4_24
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl25:
+  type: Integer
+  required: true
+  description: Doesn't get along with other kids / No se lleva bien con otros ni??os(as)/j??venes
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb25,cbc_prob_25,cbcl4_25,cbcl_25,cbcl_q25,cbcl_q25_p,cbcl_q_25,cbclold25_r03,cbclschitem25,p025,q25,ysr4_25
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl26:
+  type: Integer
+  required: true
+  description: Doesn't seem to feel guilty after misbehaving / No parece sentirse
+    culpable despu??s de portarse mal
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb26,cbc_prob_26,cbcl4_26,cbcl_26,cbcl_q26,cbcl_q26_p,cbcl_q_26,cbclold26_r03,cbclschitem26,p026,q26,ysr4_26
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl27:
+  type: Integer
+  required: true
+  description: Easily jealous / Se pone celoso(a) facilmente
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb27,cbc_prob_27,cbcl4_27,cbcl_27,cbcl_q27,cbcl_q27_p,cbcl_q_27,cbclold27_r03,cbclschitem27,p027,q27,ysr4_27
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl28:
+  type: Integer
+  required: true
+  description: Breaks rules at home, school or elsewhere  / No respeta/rompe las reglas
+    en casa, en la escuela, o en otro lugar
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb28,cbc_prob_28,cbcl5_28,cbcl_28,cbcl_q28,cbcl_q28_p,cbclold28_r03,cbclschitem28,q28,ysr4_28
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl29:
+  type: Integer
+  required: true
+  description: Fears certain animals, situations, or places, other than school / Tiene
+    miedo de ciertas situaciones, animales o lugares (no incluya la escuela)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb29,cbc_prob_29,cbcl5_29,cbcl_29,cbcl_q29,cbcl_q29_p,cbcl_q_29,cbclold29a_r03,cbclschitem29_1,p029,q29,ysr5_29
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl30:
+  type: Integer
+  required: true
+  description: Fears going to school / Le da miedo ir a la escuela
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb30,cbc_prob_30,cbcl5_30,cbcl_30,cbcl_q30,cbcl_q30_p,cbcl_q_30,cbclold30_r03,cbclschitem30,p030,q30,ysr5_30
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl31:
+  type: Integer
+  required: true
+  description: Fears he/she might think or do something bad / Tiene miedo de que pueda
+    pensar o hacer  algo malo
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb31,cbc_prob_31,cbcl5_31,cbcl_31,cbcl_q31,cbcl_q31_p,cbcl_q_31,cbclold31_r03,cbclschitem31,p031,q31,ysr5_31
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl32:
+  type: Integer
+  required: true
+  description: Feels he/she has to be perfect / Siente que tiene que ser perfecto(a)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb32,cbc_prob_32,cbcl5_32,cbcl_32,cbcl_q32,cbcl_q32_p,cbcl_q_32,cbclold32_r03,cbclschitem32,p032,q32,ysr5_32
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl33:
+  type: Integer
+  required: true
+  description: Feels or complains that no one loves him/her / Siente o se queja de
+    que nadie lo/la quiere
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb33,cbc_prob_33,cbcl5_33,cbcl_33,cbcl_q33,cbcl_q33_p,cbcl_q_33,cbclold33_r03,cbclschitem33,p033,q33,ysr5_33
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl34:
+  type: Integer
+  required: true
+  description: Feels others are out to get him/her / Siente que los dem??s lo/la quieren
+    perjudicar
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb34,cbc_prob_34,cbcl5_34,cbcl_34,cbcl_q34,cbcl_q34_p,cbcl_q_34,cbclold34_r03,cbclschitem34,p034,q34,ysr5_34
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl35:
+  type: Integer
+  required: true
+  description: Feels worthless or inferior / Se siente inferior o cree que no vale
+    nada
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb35,cbc_prob_35,cbcl6_35,cbcl_35,cbcl_q35,cbcl_q35_p,cbcl_q_35,cbclold35_r03,cbclschitem35,p035,q35,ysr5_35
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl36:
+  type: Integer
+  required: true
+  description: Gets hurt a lot, accident prone / Se lastima accidentalmente con mucha
+    frecuencia, propenso(a) a accidentes
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb36,cbc_prob_36,cbcl6_36,cbcl_36,cbcl_q36,cbcl_q36_p,cbcl_q_36,cbclold36_r03,cbclschitem36,p036,q36,ysr6_36
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl37:
+  type: Integer
+  description: Gets in many fights / Se mete mucho en peleas
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb37,cbc_prob_37,cbcl6_37,cbcl_37,cbcl_q37,cbcl_q37_p,cbcl_q_37,cbclold37_r03,cbclschitem37,p037,q37,ysr6_37
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl38:
+  type: Integer
+  required: true
+  description: Gets teased a lot / Los dem??s se burlan de ??l/ella a menudo
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb38,cbc_prob_38,cbcl6_38,cbcl_38,cbcl_q38,cbcl_q38_p,cbcl_q_38,cbclold38_r03,cbclschitem38,p038,q38,ysr6_38
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl39:
+  type: Integer
+  required: true
+  description: Hangs around with others who get in trouble / Se junta con ni??os(as)/j??venes
+    que se meten en problemas
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb39,cbc_prob_39,cbcl6_39,cbcl_39,cbcl_q39,cbcl_q39_p,cbcl_q_39,cbclold39_r03,cbclschitem39,p039,q39,ysr6_39
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl40:
+  type: Integer
+  required: true
+  description: Hears sound or voices that aren't there / Oye sonidos o voces que no
+    existen
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb40,cbc_prob_40,cbcl6_40,cbcl_40,cbcl_q40,cbcl_q40_p,cbcl_q_40,cbclold40a_r03,cbclschitem40_1,p040,q40,ysr6_40
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl41:
+  type: Integer
+  required: true
+  description: Impulsive or acts without thinking / Impulsivo(a); act??a sin pensar
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb41,cbc_prob_41,cbcl6_41,cbcl_41,cbcl_q41,cbcl_q41_p,cbcl_q_41,cbclold41_r03,cbclschitem41,p041,q41,ysr6_41
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl42:
+  type: Integer
+  required: true
+  description: Would rather be alone than with others / Prefiere estar solo(a) que
+    con otras personas
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb42,cbc_prob_42,cbcl6_42,cbcl_42,cbcl_q42,cbcl_q42_p,cbcl_q_42,cbclold42_r03,cbclschitem42,p042,q42,ysr6_42
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl43:
+  type: Integer
+  required: true
+  description: Lying or cheating / Dice mentiras o hace trampas
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb43,cbc_prob_43,cbcl6_43,cbcl_43,cbcl_q43,cbcl_q43_p,cbcl_q_43,cbclold43_r03,cbclschitem43,p043,q43,ysr7_43
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl44:
+  type: Integer
+  required: true
+  description: Bites fingernails / Se come/muerde las u??as
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb44,cbc_prob_44,cbcl7_42,cbcl_44,cbcl_q44,cbcl_q44_p,cbcl_q_44,cbclold44_r03,cbclschitem44,p044,q44,ysr7_44
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl45:
+  type: Integer
+  required: true
+  description: Nervous, highstrung, or tense / Nervioso(a), tenso(a)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb45,cbc_prob_45,cbcl7_43,cbcl_45,cbcl_q45,cbcl_q45_p,cbcl_q_45,cbclold45_r03,cbclschitem45,p045,q45,ysr7_45
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl46:
+  type: Integer
+  required: true
+  description: Nervous movements or twitching / Movimientos involuntarios o tics
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb46,cbc_prob_46,cbcl7_44,cbcl_46,cbcl_q46,cbcl_q46_p,cbcl_q_46,cbclold46a_r03,cbclschitem46_1,p046,q46,ysr7_46
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl47:
+  type: Integer
+  required: true
+  description: Nightmares / Pesadillas
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb47,cbc_prob_47,cbcl7_45,cbcl_47,cbcl_q47,cbcl_q47_p,cbcl_q_47,cbclold47_r03,cbclschitem47,p047,q47,ysr7_47
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl48:
+  type: Integer
+  required: true
+  description: Not liked by other kids / No le cae bien a otros ni??os(as)/j??venes
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb48,cbc_prob_48,cbcl7_46,cbcl_48,cbcl_q48,cbcl_q48_p,cbcl_q_48,cbclold48_r03,cbclschitem48,p048,q48,ysr7_48
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl49:
+  type: Integer
+  required: true
+  description: Constipated, doesn't move bowels / Padece de estre??imiento
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb49,cbc_prob_49,cbcl7_47,cbcl_49,cbcl_q49,cbcl_q49_p,cbcl_q_49,cbclold49_r03,cbclschitem49,p049,q49
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl50:
+  type: Integer
+  required: true
+  description: Too fearful or anxious / Demasiado ansioso(a) o miedoso(a)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb50,cbc_prob_50,cbcl7_48,cbcl_50,cbcl_q50,cbcl_q50_p,cbcl_q_50,cbclold50_r03,cbclschitem50,p050,q50,ysr8_50
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl51:
+  type: Integer
+  required: true
+  description: Feels dizzy or lightheaded / Se siente mareado(a)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb51,cbc_prob_51,cbcl8_49,cbcl_51,cbcl_q51,cbcl_q51_p,cbcl_q_51,cbclold51_r03,cbclschitem51,p051,q51,ysr8_51
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl52:
+  type: Integer
+  required: true
+  description: Feels too guilty / Se siente demasiado culpable
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb52,cbc_prob_52,cbcl8_50,cbcl_52,cbcl_q52,cbcl_q52_p,cbcl_q_52,cbclold52_r03,cbclschitem52,p052,q52,ysr8_52
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl53:
+  type: Integer
+  required: true
+  description: Overeating / Come demasiado
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb53,cbc_prob_53,cbcl8_51,cbcl_53,cbcl_q53,cbcl_q53_p,cbcl_q_53,cbclold53_r03,cbclschitem53,p053,q53,ysr8_53
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl54:
+  type: Integer
+  required: true
+  description: Overtired without good reason / Se siente demasiado cansado(a) sin
+    raz??n para estarlo
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb54,cbc_prob_54,cbcl8_52,cbcl_54,cbcl_q54,cbcl_q54_p,cbcl_q_54,cbclold54_r03,cbclschitem54,p054,q54,ysr8_54
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl55:
+  type: Integer
+  required: true
+  description: Overweight / Tiene sobrepeso
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb55,cbc_prob_55,cbcl8_53,cbcl_55,cbcl_q55,cbcl_q55_p,cbcl_q_55,cbclold55_r03,cbclschitem55,p055,q55,ysr8_55
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl56a:
+  type: Integer
+  required: true
+  description: Aches or pains (not stomach or headaches) / Dolores o molestias (sin
+    que sean del est??mago o dolores de cabeza)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb56a,cbc_prob_56a,cbcl8_54,cbcl_56a,cbcl_q56a,cbcl_q56a_p,cbcl_q_56_a,cbclold56a_r03,cbclschitem56_1,p056,q56a,ysr8_56
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl56b:
+  type: Integer
+  required: true
+  description: Headaches / Dolores de cabeza
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb56b,cbc_prob_56b,cbcl8_55,cbcl_56b,cbcl_q56b,cbcl_q56b_p,cbcl_q_56_b,cbclold56b_r03,cbclschitem56_2,p057,q56b,ysr9_57
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl56c:
+  type: Integer
+  required: true
+  description: Nausea, feels sick / N??useas, ganas de vomitar
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb56c,cbc_prob_56c,cbcl9_56,cbcl_56c,cbcl_q56c,cbcl_q56c_p,cbcl_q_56_c,cbclold56c_r03,cbclschitem56_3,p058,q56c,ysr9_58
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl56d:
+  type: Integer
+  required: true
+  description: Problems with eyes (not if corrected by glasses)  / Problemas con los
+    ojos (no incluya si se corrigi?? con gafas/lentes/espejuelos)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb56d,cbc_prob_56d,cbcl9_57,cbcl_56d,cbcl_q56d,cbcl_q56d_p,cbcl_q_56_d,cbclold56d_r03,cbclschitem56_4_1,p059,q56d,ysr9_59
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl56e:
+  type: Integer
+  required: true
+  description: Rashes or other skin problems / Salpullido o irritaci??n en la piel
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb56e,cbc_prob_56e,cbcl9_58,cbcl_56e,cbcl_q56e,cbcl_q56e_p,cbcl_q_56_e,cbclold56e_r03,cbclschitem56_5,p060,q56e,ysr9_60
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl56f:
+  type: Integer
+  required: true
+  description: Stomachaches / Dolores de est??mago
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb56f,cbc_prob_56f,cbcl9_59,cbcl_56f,cbcl_q56f,cbcl_q56f_p,cbcl_q_56_f,cbclold56f_r03,cbclschitem56_6,p061,q56f,ysr9_61
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl56g:
+  type: Integer
+  required: true
+  description: Vomiting, throwing up / V??mitos
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb56g,cbc_prob_56g,cbcl9_60,cbcl_56g,cbcl_q56g,cbcl_q56g_p,cbcl_q_56_g,cbclold56g_r03,cbclschitem56_7,p062,q56g,ysr9_62
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl56h:
+  type: Integer
+  required: true
+  description: Other (physical problems without known physical cause) / Otros (problemas
+    f??sicos sin causa m??dica conocida)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb56h,cbc_prob_56h,cbcl9_61,cbcl_56h,cbcl_q56h,cbcl_q56h_p,cbcl_q_56_h,cbclold56h_r03,cbclschitem56_8_1,p063,q56h,ysr9_63
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl56h_des:
+  type: String
+  length: 500
+  description: 'Physical problems without known medical cause: Other (describe)'
+  alias: cbcl_56h_desc,cbcl_q_56hdes,cbclold56j_r03,cbclschitem56_8_2
+
+cbcl57:
+  type: Integer
+  required: true
+  description: Physically attacks people  / Ataca/agrede f??sicamente a otras personas
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb57,cbc_prob_57,cbcl9_62,cbcl_57,cbcl_q57,cbcl_q57_p,cbcl_q_57,cbclold57_r03,cbclschitem57,p064,q57,ysr10_64
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl58:
+  type: Integer
+  required: true
+  description: Picks nose, skin, or other parts of body / Mete el dedo en la nariz,
+    se ara??a la piel u otras partes del cuerpo
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb58,cbc_prob_58,cbcl10_63,cbcl_58,cbcl_q58,cbcl_q58_p,cbcl_q_58,cbclold58_r03,cbclschitem58_1,p065,q58,ysr10_65
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl59:
+  type: Integer
+  required: true
+  description: Plays with own sex parts in public / Se toca/juega con sus partes sexuales
+    en p??blico
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb59,cbc_prob_59,cbcl10_64,cbcl_59,cbcl_q59,cbcl_q59_p,cbcl_q_59,cbclold59_r03,cbclschitem59,p066,q59
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl60:
+  type: Integer
+  required: true
+  description: Plays with own sex parts too much  /Se toca/juega demasiado con sus
+    partes sexuales
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb60,cbc_prob_60,cbcl10_65,cbcl_60,cbcl_q60,cbcl_q60_p,cbcl_q_60,cbclold60_r03,cbclschitem60,p067,q60
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl61:
+  type: Integer
+  required: true
+  description: Poor school work / Tiene bajo rendimiento en la escuela
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb61,cbc_prob_61,cbcl10_66,cbcl_61,cbcl_q61,cbcl_q61_p,cbcl_q_61,cbclold61_r03,cbclschitem61,p068,q61,ysr10_68
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl62:
+  type: Integer
+  required: true
+  description: Poorly coordinated or clumsy / Mala coordinaci??n o torpeza
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb62,cbc_prob_62,cbcl10_67,cbcl_62,cbcl_q62,cbcl_q62_p,cbcl_q_62,cbclold62_r03,cbclschitem62,p069,q62,ysr10_69
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl63:
+  type: Integer
+  required: true
+  description: Prefers being with older kids / Prefiere estar con ni??os(as) mayores
+    que ??l/ella
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb63,cbc_prob_63,cbcl10_68,cbcl_63,cbcl_q63,cbcl_q63_p,cbcl_q_63,cbclold63_r03,cbclschitem63,p070,q63,ysr11_119
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl64:
+  type: Integer
+  required: true
+  description: Prefers being with younger kids / Prefiere estar con ni??os(as) menores
+    que ??l/ella
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb64,cbc_prob_64,cbcl10_69,cbcl_64,cbcl_q64,cbcl_q64_p,cbcl_q_64,cbclold64_r03,cbclschitem64,p071,q64,ysr10_70
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl65:
+  type: Integer
+  required: true
+  description: Refuses to talk / Se rehusa a hablar
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb65,cbc_prob_65,cbcl11_70,cbcl_65,cbcl_q65,cbcl_q65_p,cbcl_q_65,cbclold65_r03,cbclschitem65,p072,q65,ysr11_71
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl66:
+  type: Integer
+  required: true
+  description: Repeats certain acts over and over; compulsions / Repite ciertas acciones
+    una y otra vez; compulsiones
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb66,cbc_prob_66,cbcl11_71,cbcl_66,cbcl_q66,cbcl_q66_p,cbcl_q_66,cbclold66a_r03,cbclschitem66_1,p073,q66,ysr11_72
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl67:
+  type: Integer
+  required: true
+  description: Runs away from home / Se fuga de la casa
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb67,cbc_prob_67,cbcl11_72,cbcl_67,cbcl_q67,cbcl_q67_p,cbcl_q_67,cbclold67_r03,cbclschitem67,p074,q67,ysr11_73
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl68:
+  type: Integer
+  required: true
+  description: Screams a lot  / Grita mucho
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb68,cbc_prob_68,cbcl11_73,cbcl_68,cbcl_q68,cbcl_q68_p,cbcl_q_68,cbclold68_r03,cbclschitem68,p075,q68,ysr11_74
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl69:
+  type: Integer
+  required: true
+  description: Secretive, keeps things to self / Reservado(a); se calla todo
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb69,cbc_prob_69,cbcl11_74,cbcl_69,cbcl_q69,cbcl_q69_p,cbcl_q_69,cbclold69_r03,cbclschitem69,p076,q69,ysr11_75
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl70:
+  type: Integer
+  required: true
+  description: Sees things that aren't there / Ve cosas que no existen
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb70,cbc_prob_70,cbcl11_75,cbcl_70,cbcl_q70,cbcl_q70_p,cbcl_q_70,cbclold70a_r03,cbclschitem70_1,p077,q70,ysr11_76
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl71:
+  type: Integer
+  required: true
+  description: Self-conscious or easily embarrassed / Se coh??be y se averg??enza
+    con facilidad
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb71,cbc_prob_71,cbcl11_76,cbcl_71,cbcl_q71,cbcl_q71_p,cbcl_q_71,cbclold71_r03,cbclschitem71,p078,q71,ysr12_77
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl72:
+  type: Integer
+  required: true
+  description: Sets fires / Prende fuegos/inicia incendios
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb72,cbc_prob_72,cbcl12_77,cbcl_72,cbcl_q72,cbcl_q72_p,cbcl_q_72,cbclold72_r03,cbclschitem72,p079,q72,ysr12_78
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl73:
+  type: Integer
+  required: true
+  description: Sexual problems / Problemas sexuales
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb73,cbc_prob_73,cbcl12_78,cbcl_73,cbcl_q73,cbcl_q73_p,cbcl_q_73,cbclold73a_r03,cbclschitem73_1,p080,q73,ysr12_79
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl74:
+  type: Integer
+  required: true
+  description: Showing off or clowning / Le gusta llamar la atenci??n o hacerse el/la
+    payaso(a), gracioso(a)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb74,cbc_prob_74,cbcl12_79,cbcl_74,cbcl_q74,cbcl_q74_p,cbcl_q_74,cbclold74_r03,cbclschitem74,p081,q74,ysr12_80
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl75:
+  type: Integer
+  required: true
+  description: Too shy or timid / Demasiado t??mido(a)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb75,cbc_prob_75,cbcl12_80,cbcl_75,cbcl_q75,cbcl_q75_p,cbcl_q_75,cbclold75_r03,cbclschitem75,p082,q75,ysr12_81
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl76:
+  type: Integer
+  required: true
+  description: Sleeps less than most kids / Duerme menos que la mayor??a de los/las
+    ni??os(as)/j??venes
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb76,cbc_prob_76,cbcl12_81,cbcl_76,cbcl_q76,cbcl_q76_p,cbcl_q_76,cbclold76_r03,cbclschitem76,p083,q76,ysr12_82
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl77:
+  type: Integer
+  required: true
+  description: Sleeps more than most kids during day and/or night / Duerme m??s que
+    la mayor??a de los/las ni??os(as)/j??venes durante el d??a y/o la noche
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb77,cbc_prob_77,cbcl12_82,cbcl_77,cbcl_q77,cbcl_q77_p,cbcl_q_77,cbclold77a_r03,cbclschitem77_1,p084,q77,ysr12_83
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl78:
+  type: Integer
+  required: true
+  description: Inattentive or easily distracted  / No presta atenci??n o se distrae
+    f??cilmente
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb78,cbc_prob_78,cbcl12_83,cbcl_78,cbcl_q78,cbcl_q78_p,cbclold78_r03,cbclschitem78,q78,ysr13_84
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl79:
+  type: Integer
+  description: Speech problem  / Problemas con el habla (describa)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb79,cbc_prob_79,cbcl13_84,cbcl_79,cbcl_q79,cbcl_q79_p,cbcl_q_79,cbclold79a_r03,cbclschitem79_1,p086,q79,ysr13_85
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl80:
+  type: Integer
+  required: true
+  description: Stares blankly / Se queda con la mirada fija, mirando al vac??o
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb80,cbc_prob_80,cbcl13_85,cbcl_80,cbcl_q80,cbcl_q80_p,cbcl_q_80,cbclold80_r03,cbclschitem80,p087,q80,ysr13_86
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl81:
+  type: Integer
+  required: true
+  description: Steals at home / Roba en casa
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb81,cbc_prob_81,cbcl13_86,cbcl_81,cbcl_q81,cbcl_q81_p,cbcl_q_81,cbclold81_r03,cbclschitem81,p088,q81,ysr13_87
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl82:
+  type: Integer
+  required: true
+  description: Steals outside the home / Roba fuera de casa
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb82,cbc_prob_82,cbcl13_87,cbcl_82,cbcl_q82,cbcl_q82_p,cbcl_q_82,cbclold82_r03,cbclschitem82,p089,q82,ysr13_88
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl83:
+  type: Integer
+  required: true
+  description: Stores up too many things he/she doesn't need / Almacena demasiadas
+    cosas que no necesita
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb83,cbc_prob_83,cbcl13_88,cbcl_83,cbcl_q83,cbcl_q83_p,cbcl_q_83,cbclold83a_r03,cbclschitem83_1,p090,q83,ysr13_89
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl84:
+  type: Integer
+  required: true
+  description: Strange behavior / Comportamiento raro
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb84,cbc_prob_84,cbcl13_89,cbcl_84,cbcl_q84,cbcl_q84_p,cbcl_q_84,cbclold84a_r03,cbclschitem84_1,p091,q84,ysr13_90
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl85:
+  type: Integer
+  required: true
+  description: Strange ideas / Ideas raras
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb85,cbc_prob_85,cbcl13_90,cbcl_85,cbcl_q85,cbcl_q85_p,cbcl_q_85,cbclold85a_r03,cbclschitem85_1,p092,q85,ysr14_91
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl86:
+  type: Integer
+  required: true
+  description: Stubborn, sullen, or irritable / Obstinado(a), malhumorado(a), irritable
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb86,cbc_prob_86,cbcl14_91,cbcl_86,cbcl_q86,cbcl_q86_p,cbcl_q_86,cbclold86_r03,cbclschitem86,p093,q86,ysr14_92
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl87:
+  type: Integer
+  required: true
+  description: Sudden changes in mood or feelings /  S??bitos cambios de humor o sentimientos
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb87,cbc_prob_87,cbcl14_92,cbcl_87,cbcl_q87,cbcl_q87_p,cbcl_q_87,cbclold87_r03,cbclschitem87,p094,q87,ysr14_93
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl88:
+  type: Integer
+  required: true
+  description: Sulks a lot / Queda contrariado(a), pone mala cara con frecuencia
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb88,cbc_prob_88,cbcl14_93,cbcl_88,cbcl_q88,cbcl_q88_p,cbcl_q_88,cbclold88_r03,cbclschitem88,p095,q88
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl89:
+  type: Integer
+  required: true
+  description: Suspicious / Desconfiado(a), receloso(a)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb89,cbc_prob_89,cbcl14_94,cbcl_89,cbcl_q89,cbcl_q89_p,cbcl_q_89,cbclold89_r03,cbclschitem89,p096,q89,ysr14_95
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl90:
+  type: Integer
+  required: true
+  description: Swearing or obscene language / Dice groser??as, usa lenguaje obsceno
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb90,cbc_prob_90,cbcl14_95,cbcl_90,cbcl_q90,cbcl_q90_p,cbcl_q_90,cbclold90_r03,cbclschitem90,p097,q90,ysr14_96
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl91:
+  type: Integer
+  required: true
+  description: Talks about killing self / Habla de querer matarse
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb91,cbc_prob_91,cbcl14_96,cbcl_91,cbcl_q91,cbcl_q91_p,cbcl_q_91,cbclold91_r03,cbclschitem91,p098,q91,ysr14_97
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl92:
+  type: Integer
+  required: true
+  description: Talks or walks in sleep Habla o camina cuando est?? dormido(a)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb92,cbc_prob_92,cbcl14_97,cbcl_92,cbcl_q92,cbcl_q92_p,cbcl_q_92,cbclold92a_r03,cbclschitem92_1,p099,q92
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl93:
+  type: Integer
+  required: true
+  description: Talks too much / Habla demasiado
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb93,cbc_prob_93,cbcl14_98,cbcl_93,cbcl_q93,cbcl_q93_p,cbcl_q_93,cbclold93_r03,cbclschitem93,p100,q93,ysr15_99
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl94:
+  type: Integer
+  required: true
+  description: Teases a lot / Se burla mucho de los dem??s
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb94,cbc_prob_94,cbcl14_99,cbcl_94,cbcl_q94,cbcl_q94_p,cbcl_q_94,cbclold94_r03,cbclschitem94,p101,q94,ysr15_100
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl95:
+  type: Integer
+  required: true
+  description: Temper tantrums or hot temper / Le dan rabietas o tiene mal genio
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb95,cbc_prob_95,cbcl14_100,cbcl_95,cbcl_q95,cbcl_q95_p,cbcl_q_95,cbclold95_r03,cbclschitem95,p102,q95,ysr15_101
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl96:
+  type: Integer
+  required: true
+  description: Thinks about sex too much / Parece pensar demasiado sobre temas sexuales
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb96,cbc_prob_96,cbcl14_101,cbcl_96,cbcl_q96,cbcl_q96_p,cbcl_q_96,cbclold96_r03,cbclschitem96,p103,q96,ysr15_102
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl97:
+  type: Integer
+  required: true
+  description: Threatens people / Amenaza a otros
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb97,cbc_prob_97,cbcl14_102,cbcl_97,cbcl_q97,cbcl_q97_p,cbcl_q_97,cbclold97_r03,cbclschitem97,p104,q97,ysr15_103
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl98:
+  type: Integer
+  required: true
+  description: Thumb-sucking / Se chupa el dedo
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb98,cbc_prob_98,cbcl14_103,cbcl_98,cbcl_q98,cbcl_q98_p,cbcl_q_98,cbclold98_r03,cbclschitem98,p105,q98
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl99:
+  type: Integer
+  required: true
+  description: Smokes, chews, or sniffs tobacco / Fuma, masca o inhala tabaco
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb99,cbc_prob_99,cbcl14_104,cbcl_99,cbcl_q99,cbcl_q99_p,cbclold99_r03,cbclschitem99,q99,ysr16_105
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl100:
+  type: Integer
+  required: true
+  description: Trouble sleeping / No duerme bien
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb100,cbc_prob_100,cbcl14_105,cbcl_100,cbcl_q100,cbcl_q100_p,cbcl_q_100,cbclold100a_r03,cbclschitem100_1,p107,q100,ysr16_107
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl101:
+  type: Integer
+  required: true
+  description: Truancy, skips school / Falta a la escuela sin motivo
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb101,cbc_prob_101,cbcl14_106,cbcl_101,cbcl_q101,cbcl_q101_p,cbcl_q_101,cbclold101_r03,cbclschitem101,p108,q101,ysr16_108
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl102:
+  type: Integer
+  required: true
+  description: Underactive, slow moving, or lacks energy / Poco activo(a), lento(a),
+    o le falta energ??a
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb102,cbc_prob_102,cbcl14_107,cbcl_102,cbcl_q102,cbcl_q102_p,cbcl_q_102,cbclold102_r03,cbclschitem102,p109,q102,ysr16_109
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl103:
+  type: Integer
+  required: true
+  description: Unhappy, sad, or depressed / Infeliz, triste, o deprimido(a)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb103,cbc_prob_103,cbcl14_108,cbcl_103,cbcl_q103,cbcl_q103_p,cbcl_q_103,cbclold103_r03,cbclschitem103,p110,q103,ysr16_110
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl104:
+  type: Integer
+  required: true
+  description: Unusually loud / M??s ruidoso(a) de lo com??n
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb104,cbc_prob_104,cbcl14_109,cbcl_104,cbcl_q104,cbcl_q104_p,cbcl_q_104,cbclold104_r03,cbclschitem104,p111,q104,ysr16_111
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl105:
+  type: Integer
+  required: true
+  description: Uses drugs for non medical purposes (don't include alcohol or tobacco)
+    / Usa drogas sin motivo m??dico (no incluya alcohol o tabaco)
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb105,cbc_prob_105,cbcl14_110,cbcl_105,cbcl_q105,cbcl_q105_p,cbcl_q_105,cbclold105a_r03,cbclschitem105_1,p112,q105,ysr16_106
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl106:
+  type: Integer
+  required: true
+  description: Vandalism / Comete actos de vandalismo, como romper ventanas u otras
+    cosas
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb106,cbc_prob_106,cbcl14_111,cbcl_106,cbcl_q106,cbcl_q106_p,cbcl_q_106,cbclold106_r03,cbclschitem106,p113,q106
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl107:
+  type: Integer
+  required: true
+  description: Wets self during the day / Se orina en la ropa durante el d??a
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb107,cbc_prob_107,cbcl14_112,cbcl_107,cbcl_q107,cbcl_q107_p,cbcl_q_107,cbclold107_r03,cbclschitem107,p114,q107
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl108:
+  type: Integer
+  required: true
+  description: Wets the bed / Se orina en la cama
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb108,cbc_prob_108,cbcl17_111,cbcl_108,cbcl_q108,cbcl_q108_p,cbcl_q_108,cbclold108_r03,cbclschitem108,p115,q108
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl109:
+  type: Integer
+  description: Whining / Se queja mucho
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb109,cbc_prob_109,cbcl17_112,cbcl_109,cbcl_q109,cbcl_q109_p,cbcl_q_109,cbclold109_r03,cbclschitem109,p116,q109
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl110:
+  type: Integer
+  required: true
+  description: Wishes to be of opposite sex / Desea ser del sexo opuesto
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb110,cbc_prob_110,cbcl17_113,cbcl_110,cbcl_q110,cbcl_q110_p,cbcl_q_110,cbclold110_r03,cbclschitem110,p117,q110
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl111:
+  type: Integer
+  required: true
+  description: Withdrawn, doesn't get involved with others / Se a??sla, no se relaciona
+    con los dem??s
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb111,cbc_prob_111,cbcl17_114,cbcl_111,cbcl_q111,cbcl_q111_p,cbcl_q_111,cbclold111_r03,cbclschitem111,p118,q111
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl112:
+  type: Integer
+  required: true
+  description: Worries / Se preocupa mucho
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
+    cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
+    ; 999=NA; 77=Refused; 88=Missing
+  alias: cb112,cbc_prob_112,cbcl17_115,cbcl_112,cbcl_q112,cbcl_q112_p,cbcl_q_112,cbclold112_r03,cbclschitem112,p119,q112
+  codes:
+    0: Not True/ No es cierto (que sepa usted)
+    1: Somewhat or Sometimes True/  En cierta manera
+    2: Very True orOften True/ Muy cierto o cierto con frecuencia
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl113a:
+  type: Integer
+  description: a. Please write in any problems your child has that were not listed
+    above
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true; 999=NA; 77=Refused;
+    88=Missing
+  alias: cb113a,cbc_113_pro1_r,cbc_prob_113a_other_problems_desc,cbcl_113a,cbcl_q113a,cbcl_q_113a,cbclold113_r03,q113
+  codes:
+    0: Not true
+    1: Somewhat or sometimes true
+    2: Very true
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl113a_des:
+  type: String
+  length: 500
+  description: a. (describe) Please write in any problems your child has that were
+    not listed above
+  alias: cbc_prob_113a_other_problems,cbcl_113_pro1,cbcl_113a_notes,cbcl_q113ades,cbclschitem113_1,problem_a
+
+cbcl113b:
+  type: Integer
+  description: b. Please write in any problems your child has that were not listed
+    above
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true; 999=NA; 77=Refused;
+    88=Missing
+  alias: cb113b,cbc_113_pro2_r,cbc_prob_113b_other_problems_desc,cbcl_113b,cbcl_q113b,cbcl_q_113b,cbclschitem113_2
+  codes:
+    0: Not true
+    1: Somewhat or sometimes true
+    2: Very true
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl113b_des:
+  type: String
+  length: 500
+  description: b. (describe)Please write in any problems your child has that were
+    not listed above
+  alias: cbc_prob_113b_other_problems,cbcl_113_pro2,cbcl_113b_notes,cbcl_q113bdes,cbclschitem114_1,problem_b
+
+cbcl113c:
+  type: Integer
+  description: c. Please write in any problems your child has that were not listed
+    above
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  - 77
+  - 88
+  notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true; 999=NA; 77=Refused;
+    88=Missing
+  alias: cb113c,cbc_113_pro3_r,cbc_prob_113c_other_problems_desc,cbcl_113c,cbcl_q113c,cbcl_q_113c,cbclschitem114_2
+  codes:
+    0: Not true
+    1: Somewhat or sometimes true
+    2: Very true
+    999: NA
+    77: Refused
+    88: Missing
+
+cbcl113c_des:
+  type: String
+  length: 500
+  description: c. (describe) Please write in any problems your child has that were
+    not listed above
+  alias: cbc_prob_113c_other_problems,cbcl_113_pro3,cbcl_113c_notes,cbcl_q113cdes,cbclschitem115_1,problem_c
+
+cbcl_emotional_raw:
+  type: Float
+  required: true
+  description: Emotionally Reactive Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: cbclschitem115_2
+  codes:
+    999: Missing value
+
+cbcl_emotional:
+  type: Integer
+  required: true
+  description: Emotionally Reactive T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  codes:
+    999: Missing value
+
+cbcl_anxious_raw:
+  type: Float
+  required: true
+  description: Anxious Depressed Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_ad_total_score,anxious_depressed_total,cb3anxx,cbcl_raw_anxdepr,cbs_anxdep,p18anxioustotalscore,p6to17anxioustotalscore,pkanxdr1,sc1raw
+  codes:
+    999: Missing value
+
+cbcl_anxious:
+  type: Integer
+  required: true
+  description: Anxious Depressed T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_ad_Tscore,anxious_depressed_t_score,cb3anxt,cbcl_anx_ts,cbcl_t_anxdepr,cbs_t_anxdep,p18anxioustscore,p6to17anxioustscore,pkanxdt1,sc1t
+  codes:
+    999: Missing value
+
+cbcl_somatic_c_raw:
+  type: Float
+  required: true
+  description: Somatic Complaints Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_dsm_somatic_total_score,CBCL_sc_total_score,cbcl_raw_somcomp,cbs_somatic,p18somcomplainttotalscore,p6to17somatictotalscore,pksomar1,sc3raw,somatic_complaints_total
+  codes:
+    999: Missing value
+
+cbcl_somatic_c:
+  type: Integer
+  required: true
+  description: Somatic Complaints T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_dsm_somatic_Tscore,CBCL_sc_Tscore,cbcl_som_ts,cbcl_t_somcomp,cbs_t_somat,p18somcomplaintstscore,p6to17somatictscore,pksomat1,sc3t,somatic_complaints_t_score
+  codes:
+    999: Missing value
+
+cbcl_withdrawn_raw:
+  type: Float
+  required: true
+  description: Withdrawn Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_w_total_score,cb1wthx,cbcl_raw_withdepr,cbs_withdrwn,p18withdrawntotalscore,p6to17withdrawntotalscore,pkwithr1,sc2raw,withdrawn_total
+  codes:
+    999: Missing value
+
+cbcl_withdrawn:
+  type: Integer
+  required: true
+  description: Withdrawn T Score
+  range:
+  - 0::100
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_w_Tscore,cb1wtht,cbcl_t_withdepr,cbcl_with_ts,cbs_t_wthd,p18withdrawntscore,p6to17withdrawntscore,pkwitht1,sc2t,withdrawn_t_score
+  codes:
+    999: Missing value
+
+cbcl_sleep_raw:
+  type: Float
+  required: true
+  description: Sleep Problems Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  codes:
+    999: Missing value
+
+cbcl_sleep:
+  type: Integer
+  required: true
+  description: Sleep Problems T Score
+  range:
+  - 0::100
+  - 999
+  notes: 999 = Missing value
+  codes:
+    999: Missing value
+
+cbcl_attention_raw:
+  type: Float
+  required: true
+  description: Attention Problems Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_ap_total_score,attention_problems_total,cb6attx,cbcl_raw_attenprob,cbs_attntion,p18attenprobtotalscore,p6to17attenprobtotalscore,pkattnr1,sc6raw
+  codes:
+    999: Missing value
+
+cbcl_attention:
+  type: Integer
+  required: true
+  description: Attention Problems T Score
+  range:
+  - 0::100
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_ap_Tscore,attention_problems_t_score,cb6attt,cbcl_att_pro_ts,cbcl_t_attenprob,cbs_t_attn,p18attenprobtscore,p6to17attnprobtscore,pkattnt1,sc6t
+  codes:
+    999: Missing value
+
+cbcl_aggressive_raw:
+  type: Float
+  required: true
+  description: Aggressive Behavior Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_ab_total_score,aggressive_behavior_total,cb8aggx,cbcl_raw_aggbeh,cbs_aggress,p18aggresstotalscore,p6to17aggrestotalscore,pkaggrr1,sc8raw
+  codes:
+    999: Missing value
+
+cbcl_aggressive:
+  type: Integer
+  required: true
+  description: Aggressive Behaviore T Score
+  range:
+  - 0::100
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_ab_Tscore,aggressive_behavior_t_score,cb8aggt,cbcl_agg_be_ts,cbcl_t_aggbeh,cbs_t_agg,p18aggresstscore,p6to17aggrestscore,pkaggrt1,sc8t
+  codes:
+    999: Missing value
+
+cbcl_internal_raw:
+  type: Float
+  required: true
+  description: Internalizing Problems Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_intProblem_total_score,cbcl_raw_intprob,cbintx,cbs_internal,internalizing_problems_total,p18internalizingtotalscore,p6to17internalizingtscore,pkintr1,sc9raw
+  codes:
+    999: Missing value
+
+cbcl_internal:
+  type: Integer
+  required: true
+  description: Internalizing Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_intProblem_Tscore,cbcl_in_pro_ts,cbcl_intern_t,cbcl_t_intprob,cbintt,cbs_t_int,internalizing_problems_t_score,p18internalizingtscore,p6to17internaltotalscore,pkintt1,sc9t
+  codes:
+    999: Missing value
+
+cbcl_external_raw:
+  type: Float
+  required: true
+  description: Externalizing Problems Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_extProblem_total_score,cbcl_raw_extprob,cbextx,cbs_external,externalizing_problems_total,p18externalizingtotalscore,p6to17externalizingtscore,pkextr1,sc10raw
+  codes:
+    999: Missing value
+
+cbcl_external:
+  type: Integer
+  required: true
+  description: Externalizing Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_extProblem_Tscore,cbcl_ex_pro_ts,cbcl_extern_t,cbcl_t_extprob,cbextt,cbs_t_ext,externalizing_problems_t_score,p18externalizingtscore,p6to17externaltotalscore,pkextt1,sc10t
+  codes:
+    999: Missing value
+
+cbcl_total_raw:
+  type: Float
+  required: true
+  description: Total Problems Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_totalProblem_total_score,cbcl_raw_totalprob,cbs_totprob,cbtotx,p18totalprobtotalscore,p6to17totalprobtotalscore,pktotr1,sc11raw,total_problems_total,total_scale
+  codes:
+    999: Missing value
+
+cbcl_total:
+  type: Integer
+  required: true
+  description: Total Problems T Score
+  range:
+  - 0::183
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_totalProblem_Tscore,cbcl_t_totalprob,cbcl_tot_pro_ts,cbs_t_tot,cbtott,p18totalprobtscore,p6to17totalprobtscore,pktott1,sc11t,total_problems_t_score
+  codes:
+    999: Missing value
+
+cbcl_affective_raw:
+  type: Float
+  required: true
+  description: Affective Problems Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_dsm_ap_total_score,affective_problems_total,cbcl_raw_affecprob,dsm1raw,p6to17affectivetotalscore
+  codes:
+    999: Missing value
+
+cbcl_affective:
+  type: Integer
+  required: true
+  description: Affective Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_dsm_ap_Tscore,affective_problems_t_score,cbcl_aff_pro_ts,cbcl_t_affecprob,dsm1t,p6to17affectivetscore
+  codes:
+    999: Missing value
+
+cbcl_anxiety_raw:
+  type: Float
+  required: true
+  description: Anxiety Problems Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_dsm_anx_total_score,anxiety_problems_total,cbcl_raw_anxprob,dsm2raw,p18anxprobtotalscore,p6to17anxietytotalscore,pkanxr1
+  codes:
+    999: Missing value
+
+cbcl_anxiety:
+  type: Integer
+  required: true
+  description: Anxiety Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_dsm_anx_Tscore,anxiety_problems_t_score,cbcl_anx_pro_ts,cbcl_t_anxprob,dsm2t,p18anxietyprobtscore,p6to17anxietytscore,pkanxt1
+  codes:
+    999: Missing value
+
+cbcl_pervasive_raw:
+  type: Float
+  required: true
+  description: Pervasive Developmental Problems Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  codes:
+    999: Missing value
+
+cbcl_pervasive:
+  type: Integer
+  required: true
+  description: Pervasive Developmental Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  codes:
+    999: Missing value
+
+cbcl_adhd_raw:
+  type: Float
+  required: true
+  description: Attention Deficit/Hyperactivity Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_dsm_adhp_total_score,add_adhd_total,cbcl_raw_adhdprob,dsm4raw,p18adhprobtotalscore,p6to17adhprobtotalscore,pkaddr1
+  codes:
+    999: Missing value
+
+cbcl_adhd:
+  type: Integer
+  required: true
+  description: Attention Deficit/Hyperactivity T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_dsm_adhp_Tscore,add_adhd_t_score,cbcl_adh_pro_ts,cbcl_t_adhdprob,dsm4t,p18adhprobtscore,p6to17adhprobtscore,pkaddt1
+  codes:
+    999: Missing value
+
+cbcl_oppositional_raw:
+  type: Float
+  required: true
+  description: Oppositional Defiant Problems Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_dsm_odp_total_score,cbcl_raw_opdefprob,dsm5raw,oppositional_defiant_total,pkoddr1
+  codes:
+    999: Missing value
+
+cbcl_oppositional:
+  type: Integer
+  required: true
+  description: Oppositional Defiant Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_dsm_odp_Tscore,cbcl_opp_pro_ts,cbcl_t_opdefprob,dsm5t,oppositional_defiant_t_score,pkoddt1
+  codes:
+    999: Missing value
+
+cbcl_social_p_raw:
+  type: Float
+  required: true
+  description: Social Problems Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_socialp_total_socialpore,cb4socx,cbcl_raw_socprob,cbs_social,p18antipersontotalscore,p6to17socprobtotalscore,p6to17totalsocial,pksocpr1,sc4raw,social_problems_total
+  codes:
+    999: Missing value
+
+cbcl_social_p:
+  type: Integer
+  required: true
+  description: Social Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_socialp_Tsocialpore,cb4soct,cbcl_soc_pro_ts,cbcl_t_socprob,cbs_t_social,p18antipersontscore,p6to17socprobtscore,p6to17tsocial,pksocpt1,sc4t,social_problems_t_score
+  codes:
+    999: Missing value
+
+cbcl_thought_raw:
+  type: Float
+  required: true
+  description: Thought Problems Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_tp_total_score,cb5thtx,cbcl_raw_thoprob,cbs_thought,p18thoughtprobtotalscore,p6to17thoughtprobtotalscore,pkthotr1,sc5raw,thought_problems_total
+  codes:
+    999: Missing value
+
+cbcl_thought:
+  type: Integer
+  required: true
+  description: Thought Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_tp_Tscore,cb5thtt,cbcl_t_thoprob,cbcl_thou_pro_ts,cbs_t_thght,p18thoughtprobtscore,p6to17thoughtprobtscore,pkthott1,sc5t,thought_problems_t_score
+  codes:
+    999: Missing value
+
+cbcl_rulebreak_raw:
+  type: Float
+  required: true
+  description: Rule-Breaking Behavior Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_rbb_total_score,cbcl_raw_rulebreak,p18rulebrktotalscore,p6to17rulebrktotalscore,pkdelir1,rule_breaking_total,sc7raw
+  codes:
+    999: Missing value
+
+cbcl_rulebreak:
+  type: Integer
+  required: true
+  description: Rule-Breaking Behavior T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_rbb_Tscore,cbcl_rule_be_ts,cbcl_t_rulebreak,p18rulebrktscore,p6to17rulebrktscore,pkdelit1,rule_breaking_t_score,sc7t
+  codes:
+    999: Missing value
+
+cbcl_activities_raw:
+  type: Float
+  required: true
+  description: Activities Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_girl_act_total_score,activities_total,cbcl_raw_activities,cbs_activs,comp1raw
+  codes:
+    999: Missing value
+
+cbcl_activities:
+  type: Integer
+  required: true
+  description: Activities T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_girl_act_Tscore,activities_t_score,cbcl_act_ts,cbcl_t_activities,cbs_t_act,comp1t
+  codes:
+    999: Missing value
+
+cbcl_social_c_raw:
+  type: Float
+  required: true
+  description: Social Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_girl_soc_total_score,cbcl_raw_social,cbcl_raw_socprob,cbs_socialc,comp2raw,social_total
+  codes:
+    999: Missing value
+
+cbcl_social_c:
+  type: Integer
+  required: true
+  description: Social T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_girl_soc_Tscore,cbcl_soc_ts,cbcl_t_social,cbcl_t_socprob,cbs_t_soclc,comp2t,social_t_score
+  codes:
+    999: Missing value
+
+cbcl_school_raw:
+  type: Float
+  required: true
+  description: School Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_girl_sch_total_score,cbcl_raw_school,cbs_school,comp3raw,school_total
+  codes:
+    999: Missing value
+
+cbcl_school:
+  type: Integer
+  required: true
+  description: School T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_girl_sch_Tscore,cbcl_sch_ts,cbcl_t_school,cbs_t_school,comp3t,school_t_score
+  codes:
+    999: Missing value
+
+cbcl_total_c_raw:
+  type: Float
+  required: true
+  description: Total Competence Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_girl_competence_total_score,cbcl_raw_totalcomp,cbs_comptnc,comp4raw,total_competence_total
+  codes:
+    999: Missing value
+
+cbcl_total_c:
+  type: Float
+  required: true
+  description: Total Competence T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_girl_competence_Tscore,cbcl_t_totalcomp,cbcl_tot_comp_ts,cbs_t_compet,comp4t,total_competence_t_score
+  codes:
+    999: Missing value
+
+cbcl_somatic_p_raw:
+  type: Float
+  required: true
+  description: Somatic Problems Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: cb2somx,cbcl_raw_somprob,dsm3raw,p18somprobtotalscore,p6to17somprobtotalscore,pksomr1,somatic_prob_total
+  codes:
+    999: Missing value
+
+cbcl_somatic_p:
+  type: Integer
+  required: true
+  description: Somatic Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: cb2somt,cbcl_som_pro_ts,cbcl_t_somprob,dsm3t,p18somprobtscore,p6to17somprobtscore,pksomt1,somatic_prob_t_score
+  codes:
+    999: Missing value
+
+cbcl_conduct_raw:
+  type: Float
+  required: true
+  description: Conduct Problems Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_dsm_cp_total_score,cbcl_raw_condprob,conduct_problems_total,dsm6raw,p6to17conducttotalscore,pkcdr1
+  codes:
+    999: Missing value
+
+cbcl_conduct:
+  type: Integer
+  required: true
+  description: Conduct Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_dsm_cp_Tscore,cbcl_con_pro_ts,cbcl_t_condprob,conduct_problems_t_score,dsm6t,p6to17conductprobtscore,pkcdt1
+  codes:
+    999: Missing value
+
+cbcl_sct_raw:
+  type: Float
+  required: true
+  description: Sluggish Cognitive Tempo Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_2007s_sct_total_score,cbcl_raw_slgcogtemp,pksctr1,spc1raw
+  codes:
+    999: Missing value
+
+cbcl_sct:
+  type: Integer
+  required: true
+  description: Sluggish Cognitive Tempo T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_2007s_sct_Tscore,cbcl_slu_cog_tem_ts,cbcl_t_slgcogtemp,pksctt1,spc1t
+  codes:
+    999: Missing value
+
+cbcl_ocd_raw:
+  type: Float
+  required: true
+  description: Obsessive-Compulsive Problems Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_2007s_ocp_total_score,cbcl_raw_ocdprob,pkocdr1,spc2raw
+  codes:
+    999: Missing value
+
+cbcl_ocd:
+  type: Integer
+  required: true
+  description: Obsessive-Compulsive Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_2007s_ocp_Tscore,cbcl_obb_pro_ts,cbcl_t_ocdprob,pkocdt1,spc2t
+  codes:
+    999: Missing value
+
+cbcl_ptsd_raw:
+  type: Float
+  required: true
+  description: Post-Traumatic Stress Problems Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_2007s_ptsp_total_score,cbcl_raw_strssprob,pkstrr1,spc3raw
+  codes:
+    999: Missing value
+
+cbcl_ptsd:
+  type: Integer
+  required: true
+  description: Post-Traumatic Stress Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: CBCL_2007s_ptsp_Tscore,cbcl_post_pro_ts,cbcl_t_strssprob,pkstrt1,spc3t
+  codes:
+    999: Missing value
+
+relationship:
+  type: Integer
+  description: Relationship of respondent to individual
+  range:
+  - 1::93
+  - -999
+  notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
+    (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
+    Speech and language therapist; 8 = Behavioral therapist; 9 = Paraprofessional;
+    10 = Aide; 11 = Principal; 12 = Administrator; 13 = 90=Other; 14 = Content teacher;
+    15 = Parent center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father;
+    19=Foster mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother;
+    24 = Step-father; 25=Aunt; 26=Uncle; 27=Missing Data; 28=Both parents;31= Grandmother
+    from mother side; 32= Grandfather from mother side; 33= Grandmother from father
+    side; 34= Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39=
+    female caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
+    44=Friend; 45=Parent; 46=Significant other; 47=Sibling; 48=Son/Daughter; 49=Son-in-law/Daughter-in
+    law; 50=Other Relative; 51=Paid caregiver; 52=Friends; 53=Roommate; 54=Supervisor;
+    55=mother's boyfriend; 56=other parental figure; 57=Summary; 58=counselor ; 59
+    = other female relative; 60 = other male relative; 61 = non-relative ; 62=Maternal
+    Aunt; 63=Maternal Uncle; 64=Maternal Cousin; 65 = Paternal Aunt; 66=Paternal Uncle;
+    67=Paternal Cousin ; 68=Biological/Adoptive Mother and Grandmother; 69=Biological/Adoptive
+    Mother and Stepmother and Grandmother; 70=Biological/Adoptive Mother and Grandmother
+    and Foster Father; 71=Biological/Adoptive Mother and Stepmother and Foster Mother;
+    72=Biological/Adoptive Mother and Foster Mother; 73=Biological/Adoptive Mother
+    and Biological/Adoptive Father; 74=Biological/Adoptive Mother and Stepmother and
+    Biological/Adoptive Father; 75=Biological/Adoptive Mother and Other; 76=Biological/Adoptive
+    Mother and Stepmother and Stepfather; 77=Biological/Adoptive Mother and Stepfather;
+    78=Biological/Adoptive Mother and Grandfather; 79=Biological/Adoptive Mother and
+    Stepmother and Foster Father; 80=Biological/Adoptive Mother and Stepmother; 81=Guardian,
+    female; 82=Other female; 83=Guardian, male; 84=Other male; 85=Other/Grandparent/Nanny;
+    86 = Mother, Father, Guardian; 87 = Daughter, son, grandchild; 88 = Professional
+    (e.g., social worker, nurse, therapist, psychiatrist, or group home staff);  -999=Missing;
+    89 = Biological parent; 91 = Stepparent; 92 = Adoptive parent; 93 = Foster parent
+  alias: CBCL_sss_relationship,relcbcl
+  codes:
+    1: Biological mom
+    2: Biological dad
+    3: Grandparent
+    4: Special education (sped) teacher
+    5: General education teacher
+    6: Occupational therapist
+    7: Speech and language therapist
+    8: Behavioral therapist
+    9: Paraprofessional
+    10: Aide
+    11: Principal
+    12: Administrator
+    13: 90=Other
+    14: Content teacher
+    15: Parent center director
+    16: Self
+    17: Adoptive mother
+    18: Adoptive father
+    19: Foster mother
+    20: Foster father
+    21: Grandmother
+    22: Grandfather
+    23: Step-mother
+    24: Step-father
+    25: Aunt
+    26: Uncle
+    27: Missing Data
+    28: Both parents
+    31: Grandmother from mother side
+    32: Grandfather from mother side
+    33: Grandmother from father side
+    34: Grandfather from father side
+    36: Brother
+    37: Sister
+    38: Cousin
+    39: female caregiver
+    40: male caregiver
+    41: Female child
+    42: Male child
+    43: Spouse/Mate
+    44: Friend
+    45: Parent
+    46: Significant other
+    47: Sibling
+    48: Son/Daughter
+    49: Son-in-law/Daughter-in law
+    50: Other Relative
+    51: Paid caregiver
+    52: Friends
+    53: Roommate
+    54: Supervisor
+    55: mother's boyfriend
+    56: other parental figure
+    57: Summary
+    58: counselor
+    59: other female relative
+    60: other male relative
+    61: non-relative
+    62: Maternal Aunt
+    63: Maternal Uncle
+    64: Maternal Cousin
+    65: Paternal Aunt
+    66: Paternal Uncle
+    67: Paternal Cousin
+    68: Biological/Adoptive Mother and Grandmother
+    69: Biological/Adoptive Mother and Stepmother and Grandmother
+    70: Biological/Adoptive Mother and Grandmother and Foster Father
+    71: Biological/Adoptive Mother and Stepmother and Foster Mother
+    72: Biological/Adoptive Mother and Foster Mother
+    73: Biological/Adoptive Mother and Biological/Adoptive Father
+    74: Biological/Adoptive Mother and Stepmother and Biological/Adoptive Father
+    75: Biological/Adoptive Mother and Other
+    76: Biological/Adoptive Mother and Stepmother and Stepfather
+    77: Biological/Adoptive Mother and Stepfather
+    78: Biological/Adoptive Mother and Grandfather
+    79: Biological/Adoptive Mother and Stepmother and Foster Father
+    80: Biological/Adoptive Mother and Stepmother
+    81: Guardian, female
+    82: Other female
+    83: Guardian, male
+    84: Other male
+    85: Other/Grandparent/Nanny
+    86: Mother, Father, Guardian
+    87: Daughter, son, grandchild
+    88: Professional (e.g., social worker, nurse, therapist, psychiatrist, or group
+      home staff)
+    -999: Missing
+    89: Biological parent
+    91: Stepparent
+    92: Adoptive parent
+    93: Foster parent
+
+cbcl_anxious_perc:
+  type: String
+  length: 20
+  description: Anxious/Depressed Percentile
+  alias: CBCL_ad_percentile,anxious_depressed_percent,cbcl_per_anxdepr,cbs_ct_axd,pkanxdp1,sc1pct
+
+cbcl_somatic_c_perc:
+  type: String
+  length: 20
+  description: Somatic Complaints Percentile
+  alias: CBCL_sc_percentile,cbcl_per_somcomp,cbs_ct_som,pksomap1,sc3pct,somatic_complaints_percent
+
+cbcl_withdrawn_perc:
+  type: String
+  length: 20
+  description: Withdrawn Percentile
+  alias: CBCL_w_percentile,cbcl_per_withdepr,cbs_ct_with,pkwithp1,sc2pct,withdrawn_percent
+
+cbcl_attention_perc:
+  type: String
+  length: 20
+  description: Attention Problems Percentile
+  alias: CBCL_ap_percentile,attention_problems_percent,cbcl_per_attenprob,cbs_ct_attn,pkattnp1,sc6pct
+
+cbcl_aggressive_perc:
+  type: String
+  length: 20
+  description: Aggressive Behavior Percentile
+  alias: CBCL_ab_percentile,aggressive_behavior_percent,cbcl_per_aggbeh,cbs_ct_agg,pkaggrp1,sc8pct
+
+cbcl_internal_perc:
+  type: String
+  length: 20
+  description: Internalizing Problems Percentile
+  alias: CBCL_intProblem_percentile,cbcl_per_intprob,internalizing_problems_percent,pkintp1,sc9pct
+
+cbcl_external_perc:
+  type: String
+  length: 20
+  description: Externalizing Problems Percentile
+  alias: CBCL_extProblem_percentile,cbcl_per_extprob,externalizing_problems_percent,pkextp1,sc10pct
+
+cbcl_total_perc:
+  type: String
+  length: 20
+  description: Total Problems Percentile
+  alias: CBCL_totalProblem_percentile,cbcl_per_totalprob,pktotp1,sc11pct,total_problems_percent
+
+cbcl_affective_perc:
+  type: String
+  length: 20
+  description: Affective Problems Percentile
+  alias: CBCL_dsm_ap_percentile,affective_problems_percent,cbcl_per_affecprob,dsm1pct
+
+cbcl_anxiety_perc:
+  type: String
+  length: 20
+  description: Anxiety Problems Percentile
+  alias: CBCL_dsm_anx_percentile,anxiety_problems_percent,cbcl_per_anxprob,dsm2pct,pkanxp1
+
+cbcl_adhd_perc:
+  type: String
+  length: 20
+  description: Attention Deficit/ Hyperactivity Problems Percentile
+  alias: CBCL_dsm_adhp_percentile,add_adhd_percent,cbcl_per_adhdprob,dsm4pct,pkaddp1
+
+cbcl_oppositional_perc:
+  type: String
+  length: 20
+  description: Oppositional Defiant Problems Percentile
+  alias: CBCL_dsm_odp_percentile,cbcl_per_opdefprob,dsm5pct,oppositional_defiant_percent,pkoddp1
+
+cbcl_activities_perc:
+  type: String
+  length: 20
+  description: Activities Percentile
+  alias: CBCL_girl_act_percentile,activities_percent,cbcl_per_activities,comp1pct
+
+cbcl_social__c_perc:
+  type: String
+  length: 20
+  description: Social Percentile
+  alias: CBCL_girl_soc_percentile,cbcl_per_social,cbs_ct_soc,comp2pct,pksocpp1,social_percent
+
+cbcl_school_perc:
+  type: String
+  length: 20
+  description: School Percentile
+  alias: CBCL_girl_sch_percentile,cbcl_per_school,comp3pct,school_percent
+
+cbcl_total_c_perc:
+  type: String
+  length: 20
+  description: Total Competence Percentile
+  alias: CBCL_girl_competence_percentile,cbcl_per_totalcomp,comp4pct,total_competence_percent
+
+cbcl_social_p_perc:
+  type: String
+  length: 20
+  description: Social Problems Percentile
+  alias: CBCL_socialp_percentile,cbcl_per_socprob,sc4pct,social_problems_percent
+
+cbcl_thought_perc:
+  type: String
+  length: 20
+  description: Thought Problems Percentile
+  alias: CBCL_tp_percentile,cbcl_per_thoprob,cbs_ct_thot,pkthotp1,sc5pct,thought_problems_percent
+
+cbcl_rulebreak_perc:
+  type: String
+  length: 20
+  description: Rule-Breaking Behavior Percentile
+  alias: CBCL_rbb_percentile,cbcl_per_rulebreak,pkdelip1,rule_breaking_percent,sc7pct
+
+cbcl_somatic_p_perc:
+  type: String
+  length: 20
+  description: Somatic Problems Percentile
+  alias: CBCL_dsm_somatic_percentile,cbcl_per_somprob,dsm3pct,pksomp1,somatic_prob_percent
+
+cbcl_conduct_perc:
+  type: String
+  length: 20
+  description: Conduct Problems Percentile
+  alias: CBCL_dsm_cp_percentile,cbcl_per_condprob,conduct_problems_percent,dsm6pct,pkcdp1
+
+cbcl_sct_perc:
+  type: String
+  length: 20
+  description: Sluggish Cognitive Tempo Percentile
+  alias: CBCL_2007s_sct_percentile,cbcl_per_slgcogtemp,pksctp1,spc1pct
+
+cbcl_ocd_perc:
+  type: String
+  length: 20
+  description: Obsessive-Compulsive Problems Percentile
+  alias: CBCL_2007s_ocp_percentile,cbcl_per_ocdprob,pkocdp1,spc2pct
+
+cbcl_ptsd_perc:
+  type: String
+  length: 20
+  description: Post-traumatic Stress Problems Percentile
+  alias: CBCL_2007s_ptsp_percentile,cbcl_per_strssprob,pkstrp1,spc3pct
+
+cb7dlqx:
+  type: Float
+  description: Delinquent behavior mean score
+  notes: Includes Items 26, 39, 43, 63, 67, 72, 81, 82, 90, 96, 101, 105, 106
+
+cb7dlqt:
+  type: Float
+  description: Delinquent behavior total score
+  notes: Includes Items 26, 39, 43, 63, 67, 72, 81, 82, 90, 96, 101, 105, 106
+  alias: cbs_delinq
+
+cb9sexx:
+  type: Float
+  description: Sex problems mean score
+  notes: Includes Items 5, 59, 60, 73, 96, 110
+
+cb9sext:
+  type: Float
+  description: Sex problems total score
+  notes: Includes Items 5, 59, 60, 73, 96, 110
+  alias: cbs_sexprob
+
+days_baseline:
+  type: Integer
+  description: Days since baseline
+  alias: daycbcl
+
+assbdic:
+  type: String
+  length: 5
+  description: Assessment Point
+  range:
+  - D
+  - 14
+  - E
+  - 24
+  - LB
+  - 36
+  - 72
+  - 96
+  - 120
+  - 9
+  - B
+  - 3
+  - 7
+  - 144
+  - 168
+  - 192
+  - C
+  notes: D=MTA baseline assessment; 14=MTA 14 month assessment; E=MTA early termination
+    assessment; B = MTA Pre-Baseline Screening Assessment (579/579); 09 = MTA 9 Month
+    Assessment (530/530); 24=MTA 24 month assessment; LB=LNCG baseline assessment;
+    36=MTA and LNCG 3 year assessment; 72=MTA and LNCG 6 year assessment; 96=MTA and
+    LNCG 8 year assessment; 03 = MTA 3 Month Assessment (438/687);120=MTA and LNCG
+    10 year assessment; 7= 7th Grade Assessment (221/276); 144 = MTA & LNCG 12 Month
+    Assessment (578/578); 168 = MTA & LNCG 14 Month Assessment (585/585); 192 = MTA
+    & LNCG 16 Month Assessment (505/505); C = MTA Pre-Baseline Screening Assessment
+    (78/78)
+  alias: asscbcl
+  codes:
+    D: MTA baseline assessment
+    14: MTA 14 month assessment
+    E: MTA early termination assessment
+    B: MTA Pre-Baseline Screening Assessment (579/579)
+    9: MTA 9 Month Assessment (530/530)
+    24: MTA 24 month assessment
+    LB: LNCG baseline assessment
+    36: MTA and LNCG 3 year assessment
+    72: MTA and LNCG 6 year assessment
+    96: MTA and LNCG 8 year assessment
+    3: MTA 3 Month Assessment (438/687)
+    120: MTA and LNCG 10 year assessment
+    7: 7th Grade Assessment (221/276)
+    144: MTA & LNCG 12 Month Assessment (578/578)
+    168: MTA & LNCG 14 Month Assessment (585/585)
+    192: MTA & LNCG 16 Month Assessment (505/505)
+    C: MTA Pre-Baseline Screening Assessment (78/78)
+
+actbdic:
+  type: Integer
+  description: Active status
+  range:
+  - 0::5
+  notes: 0=Inactive-Data collected after the 14 month treatment phase/after early
+    termination from treatment phase/prior to treatment phase; 1=Active-Data collected
+    during the 14 month treatment phase while subject received originally assigned
+    treatment regardless of degree of compliance; 2=Active-This is the last active
+    assessment for subjects who were about to violate treatment arm by receiving alternate
+    treatment; 3=Active-This is the last active assessment for subjects who were about
+    to leave the study by moving away;4=Yes, Active; 5=No, Not Active
+  alias: actcbcl
+  codes:
+    0: Inactive-Data collected after the 14 month treatment phase/after early termination
+      from treatment phase/prior to treatment phase
+    1: Active-Data collected during the 14 month treatment phase while subject received
+      originally assigned treatment regardless of degree of compliance
+    2: Active-This is the last active assessment for subjects who were about to violate
+      treatment arm by receiving alternate treatment
+    3: Active-This is the last active assessment for subjects who were about to leave
+      the study by moving away
+    4: Yes, Active
+    5: No, Not Active
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+  alias: cbcl_site_x,sitenum
+
+sjtyp:
+  type: Integer
+  description: Subject type
+  range:
+  - 1
+  - 2
+  notes: 1=MTA randomized trial subject; 2=Local normative comparison group (LNCG)
+    subject
+  codes:
+    1: MTA randomized trial subject
+    2: Local normative comparison group (LNCG) subject
+
+ins:
+  type: Integer
+  description: Does the child take part in sports?
+  range:
+  - 1
+  notes: 1=No
+  alias: cbcl_sport
+  codes:
+    1: 'No'
+
+iinh:
+  type: Integer
+  description: Child have any hobbies?
+  range:
+  - 1::4
+  notes: 1=No;2=One Hobby; 3=Two Hobbies; 4=Three Hobbies
+  alias: cbcl_hob
+  codes:
+    1: 'No'
+    2: One Hobby
+    3: Two Hobbies
+    4: Three Hobbies
+
+iiino:
+  type: Integer
+  description: Does the child belong to organizations or teams?
+  range:
+  - 1
+  notes: 1=No
+  alias: cbcl_org
+  codes:
+    1: 'No'
+
+ivnc:
+  type: Integer
+  description: Does the child have any jobs or chores?
+  range:
+  - 1
+  notes: 1=No
+  alias: cbcl_job
+  codes:
+    1: 'No'
+
+cbcl1_2_text:
+  type: String
+  length: 500
+  description: Describe alcohol use
+  notes: Touching in patterns (Current)
+  alias: cbcl_2_desc,cbcl_2a,cbclschitem2_2,q2_describe,ysr1_2_text
+
+cbcl5_2_text:
+  type: String
+  length: 500
+  description: 'Describe Fears certain animals, situations, or places, other than
+    school
+
+    '
+  alias: cbcl5_29_text,cbcl_29_desc,cbcl_29a,cbcl_q_29desc,cbclold29b_r03,cbclschitem29_2,q29_describe
+
+cbcl2_3_text:
+  type: String
+  length: 800
+  description: Describe thoughts, obsessions
+  alias: cbcl2_9_text,cbcl_9_desc,cbcl_9a,cbcl_q_09desc,cbclschitem9_2,q9_describe
+
+cbcl6_6_text:
+  type: String
+  length: 500
+  description: 'Describe: Hears sound or voices that aren''t there
+
+    '
+  alias: cbcl6_40_text,cbcl_40_desc,cbcl_40a,cbcl_q_40desc,cbclold40b_r03,cbclschitem40_2,q40_describe
+
+cbcl7_3_text:
+  type: String
+  length: 500
+  description: 'Describe: Nervous movements to twitching
+
+    '
+  alias: cbcl7_44_text,cbcl_46_desc,cbcl_46a,cbcl_q_46desc,cbclold46b_r03,cbclschitem46_2,q46_describe
+
+cbcl9_6_text:
+  type: String
+  length: 500
+  description: 'Describe: Physical problems without known medical cause:  other'
+  alias: cbcl9_61_text,cbcl_56h_1,q56h_other
+
+cbcl9_2_text:
+  type: String
+  length: 500
+  description: 'Describe: Physical problems without known medical cause:  problems
+    with eyes (not if corrected by glasses)
+
+    '
+  alias: cbcl9_57_text,cbcl_56d_1,cbcl_56d_desc,cbcl_q_56ddes,cbclschitem56_4_2,q56d_describe
+
+cbcl10_1_text:
+  type: String
+  length: 500
+  description: 'Describe: Picks nose, skin, or other parts of body'
+  alias: cbcl10_63_text,cbcl_58_desc,cbcl_58a,cbcl_q_58desc,cbclschitem58_2,q58_describe
+
+cbcl11_2_text:
+  type: String
+  length: 500
+  description: 'Describe: Repeats certain acts over and over; compulsions'
+  alias: cbcl11_71_text,cbcl_66_desc,cbcl_66a,cbcl_q_66desc,cbclold66b_r03,cbclschitem66_2,q66_describe
+
+cbcl11_6_text:
+  type: String
+  length: 500
+  description: 'Describe: Sees things that aren''t there'
+  alias: cbcl11_75_text,cbcl_70_desc,cbcl_70a,cbcl_q_70desc,cbclold70b_r03,cbclschitem70_2,q70_describe
+
+cbcl12_2_text:
+  type: String
+  length: 500
+  description: 'Describe: Sexual problems'
+  alias: cbcl12_78_text,cbcl_73_desc,cbcl_73a,cbcl_q_73desc,cbclold73b_r03,cbclschitem73_2,q73_describe
+
+cbcl12_6_text:
+  type: String
+  length: 500
+  description: 'Describe: Sleeps more than most kids during day and/or night'
+  alias: cbcl12_82_text,cbcl_77_desc,cbcl_77a,cbcl_q_77desc,cbclold77b_r03,cbclschitem77_2,q77_describe
+
+cbcl13_1_text:
+  type: String
+  length: 500
+  description: 'Describe: Speech problems'
+  alias: cbcl13_84_text,cbcl_79_desc,cbcl_79a,cbcl_q_79desc,cbclold79b_r03,cbclschitem79_2,q79_describe
+
+cbcl13_5_text:
+  type: String
+  length: 500
+  description: 'Describe: Stores up too many things he/she doesn''t need'
+  alias: cbcl13_88_text,cbcl_83_desc,cbcl_83a,cbcl_q_83desc,cbclold83b_r03,cbclschitem83_2,q83_describe
+
+cbcl13_6_text:
+  type: String
+  length: 500
+  description: 'Describe: Strange behavior'
+  alias: cbcl13_89_text,cbcl_84_desc,cbcl_84a,cbcl_q_84desc,cbclold84b_r03,cbclschitem84_2,q84_describe,ysr13_89_TEXT
+
+cbcl13_7_text:
+  type: String
+  length: 550
+  description: 'Describe: Strange ideas'
+  alias: cbcl13_90_text,cbcl_85_desc,cbcl_85a,cbcl_q_85desc,cbclold85b_r03,cbclschitem85_2,q85_describe,ysr13_90_TEXT
+
+cbcl14_7_text:
+  type: String
+  length: 500
+  description: 'Describe: Talk or walks in sleep'
+  alias: cbcl14_97_text,cbcl_92_desc,cbcl_92a,cbcl_q_92desc,cbclold92b_r03,cbclschitem92_2,q92_describe
+
+cbcl16_1_text:
+  type: String
+  length: 500
+  description: 'Describe: Trouble sleeping'
+  alias: cbcl14_105_text,cbcl_100_desc,cbcl_100a,cbcl_q100desc,cbclold100b_r03,cbclschitem100_2,q100_describe
+
+cbcl16_6_text:
+  type: String
+  length: 500
+  description: 'Describe: Uses drugs for nonmedical purposes (don''t include alcohol
+    or tobacco)'
+  alias: cbcl14_110_text,cbcl_105_desc,cbcl_105a,cbcl_q105desc,cbclold105b_r03,cbclschitem105_2,q105_describe
+
+ysr2_2_text:
+  type: String
+  length: 500
+  description: Describe can't concentrate
+  alias: ysr2_9_text
+
+ysr5_1_text:
+  type: String
+  length: 500
+  description: Describe talk too much
+  alias: ysr5_29_text
+
+ysr6_5_text:
+  type: String
+  length: 500
+  description: Describe hangs around get in trouble
+  alias: ysr6_40_text
+
+ysr7_4_text:
+  type: String
+  length: 500
+  description: Describe nightmares
+  alias: ysr7_46_text
+
+ysr9_3_text:
+  type: String
+  length: 500
+  description: Describe rushes and skin problems
+  alias: ysr9_59_text
+
+ysr9_7_text:
+  type: String
+  length: 500
+  description: Describe attacks people
+  alias: ysr9_63_text
+
+ysr10_2_text:
+  type: String
+  length: 500
+  description: Describe plays with own sex parts in public
+  alias: ysr10_65_text
+
+ysr11_3_text:
+  type: String
+  length: 500
+  description: Describe runs away
+  alias: ysr11_72_text
+
+ysr11_7_text:
+  type: String
+  length: 500
+  description: Describe easily embarrassed
+  alias: ysr11_76_text
+
+ysr12_7_text:
+  type: String
+  length: 500
+  description: Describe distracted
+  alias: ysr12_83_text
+
+ysr14_1_text:
+  type: String
+  length: 500
+  description: Describe stubborn
+  alias: ysr14_91_text
+
+ysr16_2_text:
+  type: String
+  length: 500
+  description: Describe truancy
+  alias: ysr16_107_text
+
+ysr16_7_text:
+  type: String
+  length: 500
+  description: Describe vandalism
+  alias: ysr16_106_text
+
+ysr3_1:
+  type: Integer
+  description: I am pretty honest.
+  range:
+  - 1::3
+  - 999
+  - 77
+  - 88
+  notes: 1= Not True;2= Somewhat or Sometimes True;3= Very True or Often True  ; 999=
+    N/A ; 77= Refused ; 88= Missing
+  alias: ysr3_15
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    999: N/A
+    77: Refused
+    88: Missing
+
+ysr10_3:
+  type: Integer
+  description: I can be pretty friendly
+  range:
+  - 1::3
+  - 999
+  - 77
+  - 88
+  notes: 1= Not True;2= Somewhat or Sometimes True;3= Very True or Often True  ; 999=
+    N/A ; 77= Refused ; 88= Missing
+  alias: ysr10_66
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    999: N/A
+    77: Refused
+    88: Missing
+
+ysr7_7:
+  type: Integer
+  description: I can do certain things better than most kids.
+  range:
+  - 1::3
+  - 999
+  - 77
+  - 88
+  notes: 1= Not True;2= Somewhat or Sometimes True;3= Very True or Often True  ; 999=
+    N/A ; 77= Refused ; 88= Missing
+  alias: ysr7_49
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    999: N/A
+    77: Refused
+    88: Missing
+
+ysr17_2:
+  type: Integer
+  description: I enjoy a good joke.
+  range:
+  - 1::3
+  - 999
+  - 77
+  - 88
+  notes: 1= Not True;2= Somewhat or Sometimes True;3= Very True or Often True  ; 999=
+    N/A ; 77= Refused ; 88= Missing
+  alias: ysr17_113
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    999: N/A
+    77: Refused
+    88: Missing
+
+ysr14_4:
+  type: Integer
+  description: I enjoy being with people.
+  range:
+  - 1::3
+  - 999
+  - 77
+  - 88
+  notes: 1= Not True;2= Somewhat or Sometimes True;3= Very True or Often True  ; 999=
+    N/A ; 77= Refused ; 88= Missing
+  alias: ysr14_94
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    999: N/A
+    77: Refused
+    88: Missing
+
+ysr17_6:
+  type: Integer
+  description: I keep from getting involved with others.
+  range:
+  - 1::3
+  - 999
+  - 77
+  - 88
+  notes: 1= Not True;2= Somewhat or Sometimes True;3= Very True or Often True  ; 999=
+    N/A ; 77= Refused ; 88= Missing
+  alias: ysr17_117
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    999: N/A
+    77: Refused
+    88: Missing
+
+ysr1_6:
+  type: Integer
+  description: I like animals.
+  range:
+  - 1::3
+  - 999
+  - 77
+  - 88
+  notes: 1= Not True;2= Somewhat or Sometimes True;3= Very True or Often True  ; 999=
+    N/A ; 77= Refused ; 88= Missing
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    999: N/A
+    77: Refused
+    88: Missing
+
+ysr17_1:
+  type: Integer
+  description: I like to be fair to others.
+  range:
+  - 1::3
+  - 999
+  - 77
+  - 88
+  notes: 1= Not True;2= Somewhat or Sometimes True;3= Very True or Often True  ; 999=
+    N/A ; 77= Refused ; 88= Missing
+  alias: ysr17_112
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    999: N/A
+    77: Refused
+    88: Missing
+
+ysr15_7:
+  type: Integer
+  description: I like to help others.
+  range:
+  - 1::3
+  - 999
+  - 77
+  - 88
+  notes: 1= Not True;2= Somewhat or Sometimes True;3= Very True or Often True  ; 999=
+    N/A ; 77= Refused ; 88= Missing
+  alias: ysr15_104
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    999: N/A
+    77: Refused
+    88: Missing
+
+ysr15_1:
+  type: Integer
+  description: I like to make others laugh.
+  range:
+  - 1::3
+  - 999
+  - 77
+  - 88
+  notes: 1= Not True;2= Somewhat or Sometimes True;3= Very True or Often True  ; 999=
+    N/A ; 77= Refused ; 88= Missing
+  alias: ysr15_98
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    999: N/A
+    77: Refused
+    88: Missing
+
+ysr17_3:
+  type: Integer
+  description: I like to take life easy.
+  range:
+  - 1::3
+  - 999
+  - 77
+  - 88
+  notes: 1= Not True;2= Somewhat or Sometimes True;3= Very True or Often True  ; 999=
+    N/A ; 77= Refused ; 88= Missing
+  alias: ysr17_114
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    999: N/A
+    77: Refused
+    88: Missing
+
+ysr10_4:
+  type: Integer
+  description: I like to try new things.
+  range:
+  - 1::3
+  - 999
+  - 77
+  - 88
+  notes: 1= Not True;2= Somewhat or Sometimes True;3= Very True or Often True  ; 999=
+    N/A ; 77= Refused ; 88= Missing
+  alias: ysr10_67
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    999: N/A
+    77: Refused
+    88: Missing
+
+ysr17_4:
+  type: Integer
+  description: I try to help other people when I can.
+  range:
+  - 1::3
+  - 999
+  - 77
+  - 88
+  notes: 1= Not True;2= Somewhat or Sometimes True;3= Very True or Often True  ; 999=
+    N/A ; 77= Refused ; 88= Missing
+  alias: ysr17_115
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    999: N/A
+    77: Refused
+    88: Missing
+
+ysr17_5:
+  type: Integer
+  description: I wish I were one of the opposite sex.
+  range:
+  - 1::3
+  - 999
+  - 77
+  - 88
+  notes: 1= Not True;2= Somewhat or Sometimes True;3= Very True or Often True  ; 999=
+    N/A ; 77= Refused ; 88= Missing
+  alias: ysr17_116
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    999: N/A
+    77: Refused
+    88: Missing
+
+ysr17_7:
+  type: Integer
+  description: I worry a lot.
+  range:
+  - 1::3
+  - 999
+  - 77
+  - 88
+  notes: 1= Not True;2= Somewhat or Sometimes True;3= Very True or Often True  ; 999=
+    N/A ; 77= Refused ; 88= Missing
+  alias: ysr17_118
+  codes:
+    1: Not True
+    2: Somewhat or Sometimes True
+    3: Very True or Often True
+    999: N/A
+    77: Refused
+    88: Missing
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+  alias: cbcl_interval,eventname,timept
+
+visday:
+  type: Integer
+  description: Number of days from study baseline to date of visit
+  alias: cbcl_visitdat_x
+
+sports_totnum:
+  type: Integer
+  description: Total Number of Sports (Does child take part in Sports?)
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Does not take part in any sports;1 = One sport;2 = Two sports;3 = Three
+    sports;9 = Missing
+  alias: c01,cbcl_number_of_sports,cbcl_q01,tnsport
+  codes:
+    0: Does not take part in any sports
+    1: One sport
+    2: Two sports
+    3: Three sports
+    9: Missing
+
+activities_tot:
+  type: Integer
+  description: Total Number of Activities (Child's favorite Activities?)
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Does not take part in any activities;1 = One activity;2 =Two activities;3
+    =Three activities;9 = Missing
+  alias: c08,cbcl_number_hobbies,cbcl_q02,tnact
+  codes:
+    0: Does not take part in any activities
+    1: One activity
+    2: Two activities
+    3: Three activities
+    9: Missing
+
+c15:
+  type: Integer
+  description: Total Number of Organizations (Does child belong to Organizations?)
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Does not  belong to any organizations;1 = One organization;2 = Two organizations;3
+    = Three organizations;9 = Missing
+  alias: cbcl_number_groups,cbcl_q03,tnorg
+  codes:
+    0: Does not  belong to any organizations
+    1: One organization
+    2: Two organizations
+    3: Three organizations
+    9: Missing
+
+c16:
+  type: Integer
+  description: 'Organization A - Compared to others of same age, how active is child
+    in Organization A?  '
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Less active;1 = Average;2 = More Active;3 = Don?t know;9 = Missing
+  codes:
+    0: Less active
+    1: Average
+    2: More Active
+    3: Don?t know
+    9: Missing
+
+c17:
+  type: Integer
+  description: Organization B - Compared to others of same age, how active is child
+    in Organization B?
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Less active;1 = Average;2 = More Active;3 = Don?t know;9 = Missing
+  codes:
+    0: Less active
+    1: Average
+    2: More Active
+    3: Don?t know
+    9: Missing
+
+c18:
+  type: Integer
+  description: Organization C - Compared to others of same age, how active is child
+    in Organization C?
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Less active;1 = Average;2 = More Active;3 = Don?t know;9 = Missing
+  codes:
+    0: Less active
+    1: Average
+    2: More Active
+    3: Don?t know
+    9: Missing
+
+c19:
+  type: Integer
+  description: Total Number of Jobs (Does child have any jobs or chores?)
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Does not have any jobs or chores;1 = One chore;2 =Two chores;3 =Three
+    chores;9 = Missing
+  alias: cbcl_number_chores,cbcl_q04,tnjob
+  codes:
+    0: Does not have any jobs or chores
+    1: One chore
+    2: Two chores
+    3: Three chores
+    9: Missing
+
+c20:
+  type: Integer
+  description: Job A - Compared to others of same age, how well does child do Job
+    A?
+  range:
+  - 0::3
+  - 9
+  notes: '0 = Below average;1 = Average;2 = Above Average;3 = Don?t know;9 = Missing  '
+  alias: wjoba
+  codes:
+    0: Below average
+    1: Average
+    2: Above Average
+    3: Don?t know
+    9: Missing
+
+c21:
+  type: Integer
+  description: Job B - Compared to others of same age, how well does child do Job
+    B?
+  range:
+  - 0::3
+  - 9
+  notes: '0 = Below average;1 = Average;2 = Above Average;3 = Don?t know;9 = Missing  '
+  alias: wjobb
+  codes:
+    0: Below average
+    1: Average
+    2: Above Average
+    3: Don?t know
+    9: Missing
+
+c22:
+  type: Integer
+  description: Job C - Compared to others of same age, how well does child do Job
+    C?
+  range:
+  - 0::3
+  - 9
+  notes: '0 = Below average;1 = Average;2 = Above Average;3 = Don?t know;9 = Missing  '
+  alias: wjobc
+  codes:
+    0: Below average
+    1: Average
+    2: Above Average
+    3: Don?t know
+    9: Missing
+
+c23:
+  type: Integer
+  description: Total Number of Friends (How many close friends does child have?)
+  range:
+  - 0::3
+  - 9
+  notes: 0 = None;1 = One;2 = Two or Three;3 = Four or more;9 = Missing
+  alias: nfriend
+  codes:
+    0: None
+    1: One
+    2: Two or Three
+    3: Four or more
+    9: Missing
+
+c24:
+  type: Integer
+  description: How many times a week does child do things with friends outside school?
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Less than one;1 = One or Two;2 = Three or more;9 = Missing
+  alias: cbcl_q07,xwkfr
+  codes:
+    0: Less than one
+    1: One or Two
+    2: Three or more
+    9: Missing
+
+p002:
+  type: Integer
+  description: 'Allergy '
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Not True;1 = Somewhat or Sometimes True;2 = Very True or Often True;9
+    = Missing
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+    9: Missing
+
+p004:
+  type: Integer
+  description: 'Asthma '
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Not True;1 = Somewhat or Sometimes True;2 = Very True or Often True;9
+    = Missing
+  alias: cbcl_q_04
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+    9: Missing
+
+p005:
+  type: Integer
+  description: 'Behaves like opposite sex '
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Not True;1 = Somewhat or Sometimes True;2 = Very True or Often True;9
+    = Missing
+  alias: cbcl_q_05
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+    9: Missing
+
+p028:
+  type: Integer
+  description: 'Eats or drinks things that are not food (dont include sweets) '
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Not True;1 = Somewhat or Sometimes True;2 = Very True or Often True;9
+    = Missing
+  alias: cbcl_q_28
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+    9: Missing
+
+p085:
+  type: Integer
+  description: 'Smears or plays with bowel movements '
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Not True;1 = Somewhat or Sometimes True;2 = Very True or Often True;9
+    = Missing
+  alias: cbcl_q_78
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+    9: Missing
+
+p106:
+  type: Integer
+  description: 'Too concerned with neatness or cleanliness '
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Not True;1 = Somewhat or Sometimes True;2 = Very True or Often True;9
+    = Missing
+  alias: cbcl_q_99
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+    9: Missing
+
+p120:
+  type: Integer
+  description: Maximum of three Problems your child has that were not listed above  items
+    113a, 113bb, 113c.
+  range:
+  - 0::2
+  - 9
+  notes: 0 = Not True;1 = Somewhat or Sometimes True;2 = Very True or Often True;9
+    = Missing
+  codes:
+    0: Not True
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+    9: Missing
+
+imputation:
+  type: Integer
+  description: 'Indicator noting imputed data set number '
+  range:
+  - 1::20
+
+cbcl_deprpr_perc:
+  type: Float
+  description: Depressive Problems Percentile
+  alias: pkdepr1
+
+cbcl_depresspr:
+  type: Integer
+  required: true
+  description: Depressive Problems T Score
+  range:
+  - 0::99
+  - 999
+  notes: 999 = Missing value
+  alias: 999=missingvalue,p18depressivetscore,pkdept1
+  codes:
+    999: Missing value
+
+cbcl_depresspr_raw:
+  type: Integer
+  required: true
+  description: Depressive Problems Raw Score
+  range:
+  - 0::300
+  - 999
+  notes: 999 = Missing value
+  alias: p18depressivetotalscore,pkdepp1
+  codes:
+    999: Missing value
+
+respondent:
+  type: String
+  length: 20
+  description: Respondent
+  range:
+  - Mother
+  - Father
+  - Both
+  - Other
+  - Parent
+  - Teacher
+  alias: filby
+
+respondent_other_specify:
+  type: String
+  length: 50
+  description: 'Respondent: Other (specify)'
+  alias: other_specify_cbcl
+
+p0028_specify:
+  type: String
+  length: 500
+  description: Describe Eats or drinks things that are not food
+  notes: don't include sweets
+  alias: q_28desc
+
+p002_specify:
+  type: String
+  length: 500
+  description: Describe Allergy
+  alias: q_02
+
+cb7dlqt_t:
+  type: Float
+  description: Child Behavior Checklist Delinquent T Score
+  alias: cbs_t_del
+
+cb9sext_t:
+  type: Float
+  description: Child Behavior Checklist Sex Probs T Score
+  alias: cbs_t_sex
+
+cbs_numprob:
+  type: Integer
+  description: Child Behavior Checklist Number of Probs
+
+cbs_nmiss:
+  type: Integer
+  description: Child Behavior Checklist Number Missing Items
+
+cbs_nerrors:
+  type: Integer
+  description: Child Behavior Checklist Number of Errors
+
+cbs_errors:
+  type: String
+  length: 10
+  description: CBCL Errors Specified
+
+cbs_ct_del:
+  type: Float
+  description: Child Behavior Checklist Delinq Clin T Score
+
+cbs_icc_wth:
+  type: Float
+  description: Intraclass Correlation Coefficient Withdrawn Type
+
+cbs_icc_som:
+  type: Float
+  description: Intraclass Correlation Coefficient Somatic Type
+
+cbs_icc_soc:
+  type: Float
+  description: Intraclass Correlation Coefficient Social Type
+
+cbs_icc_dagg:
+  type: Float
+  description: Intraclass Correlation Coefficient Del/Agg Type
+
+cbs_icc_wada:
+  type: Float
+  description: Intraclass Correlation Coefficient With-Anx/Dep-Agg Type
+
+cbs_icc_att:
+  type: Float
+  description: Intraclass Correlation Coefficient Attention Type
+
+cbs_icc_del:
+  type: Float
+  description: Intraclass Correlation Coefficient Delinquent Type
+
+completed:
+  type: Integer
+  description: Checks if completed
+  range:
+  - 0::3
+  notes: 0=No; 1=Yes; 2=Yes, lost; 3=Unverified
+  alias: cbcl_frmcomp
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Yes, lost
+    3: Unverified
+
+academic_probspecfy:
+  type: String
+  length: 500
+  description: Any academic or other problems in school, specify
+  alias: cbcl_a_specify_problems,cbcl_q10desc
+
+curreduccompleted:
+  type: String
+  length: 50
+  description: Current grade education level completed
+
+week:
+  type: Float
+  description: Week in level/study
+  notes: 99=week 10-week 14
+  codes:
+    99: week 10-week 14
+
+daysrz:
+  type: Integer
+  description: days since randomization
+
+sclgender:
+  type: String
+  length: 15
+  description: respondent's gender
+  range:
+  - M
+  - F
+  notes: M = Male; F = Female
+  codes:
+    M: Male
+    F: Female
+
+oscr_respondent_relationship:
+  type: String
+  length: 250
+  description: The relationship of the respondent to subject
+
+rand_num:
+  type: Integer
+  description: Randomization Number
+  range:
+  - 0::2
+
+cbc_vii_1:
+  type: String
+  length: 500
+  description: Reason for Child not to Attend School
+  alias: cbcl_why_no_school,ysr_p1_8text
+
+compact2:
+  type: Float
+  description: Mean Participation in Sports
+  range:
+  - 0::2
+  - 9
+  notes: Calculated by Scoring Program; 9 = Missing
+  codes:
+    9: Missing
+
+compact3:
+  type: Float
+  description: Mean Participation in Non-Sport Activities
+  range:
+  - 0::2
+  - 9
+  notes: Calculated by Scoring Program; 9 = Missing
+  codes:
+    9: Missing
+
+compact5:
+  type: Float
+  description: Mean Job or Chore Competence Quality
+  range:
+  - 0::2
+  - 9
+  notes: Calculated by Scoring Program; 9 = Missing
+  codes:
+    9: Missing
+
+compsoc2:
+  type: Float
+  description: Mean Participation in Organizations
+  range:
+  - 0::2
+  - 9
+  notes: Calculated by Scoring Program; 9 = Missing
+  codes:
+    9: Missing
+
+compsoc5:
+  type: Float
+  description: Social Scale Behavior around others
+  range:
+  - 0::2
+  - 9
+  notes: Calculated by Scoring Program; 9 = Missing
+  codes:
+    9: Missing
+
+compsoc6:
+  type: Float
+  description: Social Scale Behavior when alone
+  range:
+  - 0::2
+  - 9
+  notes: Calculated by Scoring Program; 9 = Missing
+  codes:
+    9: Missing
+
+compsch1:
+  type: Float
+  description: Academic Scale - Mean Performance
+  range:
+  - 0::3
+  - 9
+  notes: Calculated by Scoring Program; 9 = Missing
+  codes:
+    9: Missing
+
+compsch2:
+  type: Integer
+  description: Academic Scale - Special Class
+  range:
+  - 0
+  - 1
+  - 9
+  notes: Calculated by Scoring Program; 9 = Missing
+  codes:
+    9: Missing
+
+compsch3:
+  type: Integer
+  description: Academic Scale - Repeated Grade
+  range:
+  - 0
+  - 1
+  - 9
+  notes: Calculated by Scoring Program; 9 = Missing
+  codes:
+    9: Missing
+
+compsch4:
+  type: Integer
+  description: Academic Scale - School Problems
+  range:
+  - 0
+  - 1
+  - 9
+  notes: Calculated by Scoring Program; 9 = Missing
+  codes:
+    9: Missing
+
+visnum:
+  type: Float
+  description: Numeric Visit Number
+  notes: '-1.5 = Pre-Screening; -1 = Screening; 0 = Baseline; ## = Visit ## (from
+    1 to 10); Whole numbers = standard monthly visits; #.001 - #.009 = Unscheduled;
+    #.1 = End of Phase 1; #.2 = End of Phase 2; #.3 = End of Phase 3; #.4 = End of
+    Open Choice Phase; #.5 = End of Study; #.6 = Genetic Analysis; 1000=all visits'
+  codes:
+    -1.5: Pre-Screening
+    -1: Screening
+    0: Baseline
+    9: Unscheduled
+    1: End of Phase 1
+    2: End of Phase 2
+    3: End of Phase 3
+    4: End of Open Choice Phase
+    5: End of Study
+    6: Genetic Analysis
+    1000: all visits
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: cbclversion
+
+bsimo:
+  type: Float
+  description: Months from Time 0 to assessment
+  alias: monfol
+
+u18avoidpersontscore:
+  type: Integer
+  description: Avoidant Personality Problems T Score
+
+u18avoidprobtotalscore:
+  type: Integer
+  description: Avoidant Personality Problems Total Score
+
+u18intrusivetscore:
+  type: Integer
+  description: Intrusive T Score
+
+u18intrusivetotalscore:
+  type: Integer
+  description: Intrusive Total Score
+
+u6to17tactivities:
+  type: Integer
+  description: T Score Activities
+
+u18talcohol:
+  type: Integer
+  description: T Score Alcohol
+
+u18totalalcohol:
+  type: Integer
+  description: Total Score Alcohol
+
+u18tcritical:
+  type: Integer
+  description: T Score Critical Items
+
+u18totalcritical:
+  type: Integer
+  description: Total Score Critical Items
+
+u18tdrugs:
+  type: Integer
+  description: T Score Drugs
+
+u18totaldrugs:
+  type: Integer
+  description: Total Score Drugs
+
+u18tfriends:
+  type: Integer
+  description: T Score Friends
+
+u18totalfriends:
+  type: Integer
+  description: Total Score Friends
+
+u18tsubstance:
+  type: Integer
+  description: T Score Mean Substance Use
+
+u18totalsubstance:
+  type: Integer
+  description: Total Score Mean Substance Use
+
+u6to17tschool:
+  type: Integer
+  description: T Score School
+
+u6to17totalschool:
+  type: Integer
+  description: Total Score School
+
+u18ttobacco:
+  type: Integer
+  description: T Score Tobacco
+
+u18totaltobacco:
+  type: Integer
+  description: Total Score Tobacco
+
+u18tspouse:
+  type: Integer
+  description: T Score Spouse Partner
+
+u18totalspouse:
+  type: Integer
+  description: Total Score Spouse Partner
+
+u6to17totalactivities:
+  type: Integer
+  description: Total Score Activities
+
+cbcl_2aname:
+  type: String
+  length: 500
+  description: 'Hobby A ? Name of Hobby A? '
+
+cbcl_2atime:
+  type: Integer
+  description: 'Hobby A - Compared to others of same age, how much time spent doing
+    Hobby A? '
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Less than average; 1 = Average; 2 = More than Average; 3 = Don?t know;
+    9=missing
+  codes:
+    0: Less than average
+    1: Average
+    2: More than Average
+    3: Don?t know
+    9: missing
+
+cbcl_2acompare:
+  type: Integer
+  description: 'Hobby A - Compared to others of same age, how well does child do Hobby
+    A? '
+  range:
+  - 0::3
+  - 9
+  notes: '0 = Below average; 1 = Average; 2 = Above Average; 3 = Don?t know; 9  =
+    Missing '
+  codes:
+    0: Below average
+    1: Average
+    2: Above Average
+    3: Don?t know
+    9: Missing
+
+cbcl_2bname:
+  type: String
+  length: 500
+  description: 'Hobby B ? Name of Hobby B? '
+
+cbcl_2btime:
+  type: Integer
+  description: 'Hobby B - Compared to others of same age, how much time spent doing
+    Hobby B? '
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Less than average; 1 = Average; 2 = More than Average; 3 = Don?t know;
+    9=missing
+  codes:
+    0: Less than average
+    1: Average
+    2: More than Average
+    3: Don?t know
+    9: missing
+
+cbcl_2bcompare:
+  type: Integer
+  description: 'Hobby B - Compared to others of same age, how well does child do Hobby
+    B? '
+  range:
+  - 0::3
+  - 9
+  notes: '0 = Below average; 1 = Average; 2 = Above Average; 3 = Don?t know; 9  =
+    Missing '
+  codes:
+    0: Below average
+    1: Average
+    2: Above Average
+    3: Don?t know
+    9: Missing
+
+cbcl_2cname:
+  type: String
+  length: 500
+  description: 'Hobby C-Name of Hobby C? '
+
+cbcl_2ctime:
+  type: Integer
+  description: 'Hobby C-Compared to others of same age, how much time spent doing
+    Hobby C? '
+  range:
+  - 0::3
+  - 9
+  notes: 0 = Less than average; 1 = Average; 2 = More than Average; 3 = Don?t know;
+    9=missing
+  codes:
+    0: Less than average
+    1: Average
+    2: More than Average
+    3: Don?t know
+    9: missing
+
+cbcl_2ccompare:
+  type: Integer
+  description: 'Hobby C-Compared to others of same age, how well does child do Hobby
+    C? '
+  range:
+  - 0::3
+  - 9
+  notes: '0 = Below average; 1 = Average; 2 = Above Average; 3 = Don?t know; 9  =
+    Missing '
+  codes:
+    0: Below average
+    1: Average
+    2: Above Average
+    3: Don?t know
+    9: Missing
+
+currschool:
+  type: String
+  length: 255
+  description: Current school
+
+ms8cspec:
+  type: String
+  length: 250
+  description: Impairment - In School, Specify
+
+cbcl_7_4ed:
+  type: String
+  length: 50
+  description: Child had some academic or other problems in school, and have ended,
+    so what is the end date?
+  alias: cbcl_when_prob_end
+
+study:
+  type: String
+  length: 100
+  description: Study
+
+accult_select_language:
+  type: Integer
+  description: Test given in Spanish? ??Espa??ol?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: cbcl_select_language___1
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+form_completed:
+  type: Integer
+  description: Was the form completed?
+  range:
+  - 1::4
+  notes: 1=Yes; 2=No; 3=Unverified; 4 = N/A-Not in age range
+  alias: cbcl_age_6_18_yn
+  codes:
+    1: 'Yes'
+    2: 'No'
+    3: Unverified
+    4: N/A-Not in age range
+
+ycbcl_borderline:
+  type: String
+  length: 75
+  description: Were any of the following scales BORDERLINE?
+  notes: 1 = Emotionally Reactive ; 2 = Anxious/Depressed ; 3 = Somatic complaints
+    ; 4 = Withdrawn ; 5 = Sleep problems ; 6 = Attention problems ; 7 = Aggressive
+    behavior ; 8 = Internal problems ; 9 = External problems ; 10 = Total problems
+    ; 11 = Affective problems ; 12 = Anxiety problems ; 13 = Pervasive developmental
+    problems ; 14 = ADHD ; 15 = Oppositional defiant problems
+  alias: cbcl_borderline
+  codes:
+    1: Emotionally Reactive
+    2: Anxious/Depressed
+    3: Somatic complaints
+    4: Withdrawn
+    5: Sleep problems
+    6: Attention problems
+    7: Aggressive behavior
+    8: Internal problems
+    9: External problems
+    10: Total problems
+    11: Affective problems
+    12: Anxiety problems
+    13: Pervasive developmental problems
+    14: ADHD
+    15: Oppositional defiant problems
+
+ycbcl_clinical:
+  type: String
+  length: 75
+  description: Were any of the following scales CLINICAL?
+  notes: 1 = Emotionally Reactive ; 2 = Anxious/Depressed ; 3 = Somatic complaints
+    ; 4 = Withdrawn ; 5 = Sleep problems ; 6 = Attention problems ; 7 = Aggressive
+    behavior ; 8 = Internal problems ; 9 = External problems ; 10 = Total problems
+    ; 11 = Affective problems ; 12 = Anxiety problems ; 13 = Pervasive developmental
+    problems ; 14 = ADHD ; 15 = Oppositional defiant problems
+  alias: cbcl_clinical
+  codes:
+    1: Emotionally Reactive
+    2: Anxious/Depressed
+    3: Somatic complaints
+    4: Withdrawn
+    5: Sleep problems
+    6: Attention problems
+    7: Aggressive behavior
+    8: Internal problems
+    9: External problems
+    10: Total problems
+    11: Affective problems
+    12: Anxiety problems
+    13: Pervasive developmental problems
+    14: ADHD
+    15: Oppositional defiant problems
+
+aescode:
+  type: Integer
+  description: Staff code number of person completing this form
+  alias: pi_staff
+
+timept:
+  type: Integer
+  description: Time Point
+  notes: 888 = not applicable; 999 = missing
+  alias: timepoint
+  codes:
+    888: not applicable
+    999: missing
+
+cbclpre35_start:
+  type: Integer
+  description: If your child gets into many fights, then describe who starts the fights
+  range:
+  - 1::3
+  notes: 3 = The child usually starts the fights. ; 2 = Sometimes the child starts
+    the fights and sometimes another child starts the fights. ; 1 = The child usually
+    does NOT start the fights.
+  alias: cbclschitem37_start
+  codes:
+    3: The child usually starts the fights.
+    2: Sometimes the child starts the fights and sometimes another child starts the
+      fights.
+    1: The child usually does NOT start the fights.
+
+cbclpre100:
+  type: Integer
+  description: Please write in any problems the child has that were not listed above
+    - are any present?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: cbclschitem113
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+abcl_other_total:
+  type: Integer
+  description: Total score for Other Problems
+  range:
+  - 0::34
+  alias: sndrm_scale9
+
+kkwithr:
+  type: Integer
+  description: 'Withdrawn Depressed  Raw score '
+  alias: sndrm_scale2

@@ -1,0 +1,728 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: subject,subject_id
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+wppsi_viq_pr:
+  type: Float
+  description: Percentile Rank Percentile - Verbal
+
+wppsi_piq_pr:
+  type: Integer
+  description: Percentile RankPercentile Rank Percentile - Performance
+
+wppsi_psd_pr:
+  type: Float
+  description: Percentile Rank Percentile - Processing Speed
+
+wppsi_fiq_pr:
+  type: Float
+  description: Percentile Rank
+
+wppsi_fr_pr:
+  type: Float
+  description: Percentile - Fluid Reasoning
+
+wppsi_wm_pr:
+  type: Float
+  description: Percentile - Working Memory
+
+wppsi_bld_rawscre:
+  type: Integer
+  description: Raw score Raw - Block Design
+  range:
+  - 0::40
+
+wppsi_bld_scldscre:
+  type: Integer
+  description: Scaled score SS - Block Design
+  range:
+  - 0::20
+
+wppsi_inf_rawscre:
+  type: Integer
+  description: Raw score Raw - Information
+  range:
+  - 0::34
+
+wppsi_inf_scldscre:
+  type: Integer
+  description: Scaled score SS - Information
+  range:
+  - 0::20
+
+wppsi_mxr_rawscre:
+  type: Integer
+  description: Raw score Raw - Matrix Reasoning
+  range:
+  - 0::29
+
+wppsi_mxr_scldscre:
+  type: Integer
+  description: Scaled score SS - Matrix Reasoning
+  range:
+  - 0::20
+
+wppsi_vcb_rawscre:
+  type: Integer
+  description: Raw score Raw - Vocabulary
+  range:
+  - 0::43
+
+wppsi_vcb_scldscre:
+  type: Integer
+  description: Scaled score SS - Vocabulary
+  range:
+  - 0::20
+
+wppsi_pcn_rawscre:
+  type: Integer
+  description: Raw score Raw - Picture Concepts
+  range:
+  - 0::28
+
+wppsi_pcn_scldscre:
+  type: Integer
+  description: Scaled score SS- Picture Concepts
+  range:
+  - 0::20
+
+wppsi_sbs_rawscre:
+  type: Integer
+  description: Raw score Raw - Symbol Search
+  range:
+  - 0::50
+  alias: symbolsearchrawscore
+
+wppsi_sbs_scldscre:
+  type: Integer
+  description: Scaled score SS - Symbol Search
+  range:
+  - 0::20
+  alias: symbolsearchscaledscore
+
+wppsi_wrs_rawscre:
+  type: Integer
+  description: Raw score Raw - Word Reasoning
+  range:
+  - 0::28
+
+wppsi_wrs_scldscre:
+  type: Integer
+  description: Scaled score SS - Word Reasoning
+  range:
+  - 0::20
+
+wppsi_cdg_rawscre:
+  type: Integer
+  description: Scaled score SS -Coding
+  range:
+  - 0::65
+  alias: codingrawscore
+
+wppsi_cdg_scldscre:
+  type: Integer
+  description: Raw score Raw -Coding
+  range:
+  - 0::20
+  alias: codingscaledscore
+
+wppsi_cmp_rawscre:
+  type: Integer
+  description: Raw score Raw - Comprehension
+  range:
+  - 0::38
+
+wppsi_cmp_scldscre:
+  type: Integer
+  description: Scaled score SS - Comprehension
+  range:
+  - 0::20
+
+wppsi_bs_rawscre:
+  type: Integer
+  description: Raw score Raw - Bug Search
+  alias: bugsearchrawscore
+
+wppsi_bs_scldscre:
+  type: Integer
+  description: Scaled score SS - Bug Search
+  alias: bugsearchscaledscore
+
+wppsi_sml_rawscre:
+  type: Integer
+  description: Raw score Raw - Similarities
+  range:
+  - 0::46
+
+wppsi_sml_scldscre:
+  type: Integer
+  description: Scaled score SS - Similarities
+  range:
+  - 0::20
+
+wppsi_pm_rawscre:
+  type: Integer
+  description: Raw score Raw - Picture Memory
+
+wppsi_pm_scldscre:
+  type: Integer
+  description: Scaled score SS - Picture Memory
+
+wppsi_canc_rawscre:
+  type: Integer
+  description: Raw score Raw - Cancellation
+  alias: cancellationrawscore
+
+wppsi_canc_scldscre:
+  type: Integer
+  description: Scaled score SS - Cancellation
+  alias: cancellationscaledscore
+
+wppsi_zl_rawscre:
+  type: Integer
+  description: Raw score Raw - Zoo Locations
+
+wppsi_zl_scldscre:
+  type: Integer
+  description: Scaled score SS - Zoo Locations
+
+wppsi_ac_rawscre:
+  type: Integer
+  description: Raw score Raw - Animal Coding
+
+wppsi_ac_scldscre:
+  type: Integer
+  description: Scaled score SS - Animal Coding
+
+wppsi_cr_rawscre:
+  type: Integer
+  description: Raw score Raw - Cancel Random
+
+wppsi_cr_scldscre:
+  type: Integer
+  description: Scaled score SS - Cancel Random
+
+wppsi_cs_rawscre:
+  type: Integer
+  description: Raw score Raw - Cancel Structured
+
+wppsi_cs_scldscre:
+  type: Integer
+  description: Scaled score SS - Cancel Structured
+
+wppsi_viq_scldscre:
+  type: Integer
+  description: Sum of scaled scores  Sum - Verbal
+  range:
+  - 2::58
+
+wppsi_piq_sumscld:
+  type: Integer
+  description: Sum of scaled scores Sum - Performance
+  range:
+  - 2::58
+
+wppsi_psd_sumscld:
+  type: Integer
+  description: Sum of scaled scores Sum - Processing Speed
+  range:
+  - 2::38
+  alias: processingspeedscaledsum
+
+wppsi_fiq_sumscld:
+  type: Integer
+  description: Full Scale IQ Sum of Scaled Scores
+  range:
+  - 5::150
+
+wppsi_vcmp_sumscld:
+  type: Integer
+  description: Sum of scaled scores Sum - Verbal Comprehension
+
+wppsi_fr_sumscld:
+  type: Integer
+  description: Sum of scaled scores Sum - Fluid Reasoning
+
+wppsi_vm_sumscld:
+  type: Integer
+  description: Sum of scaled scores Sum - Working Memory
+
+wppsi_viq_compscre:
+  type: Integer
+  description: Composite score Composite - Verbal IQ
+  range:
+  - 46::155
+
+wppsi_piq_compscre:
+  type: Integer
+  description: Composite score Composite - Performance IQ
+  range:
+  - 45::155
+
+wppsi_psd_compscre:
+  type: Integer
+  description: Composite score Composite - Processing Speed
+  range:
+  - 40::150
+  alias: processingspeedcompositescore
+
+wppsi_fiq_composite:
+  type: Integer
+  description: Full Scale IQ Composite Score
+
+wppsi_vcmp_composite:
+  type: Integer
+  description: Composite score Composite - Verbal Comprehension
+
+wppsi_fr_composite:
+  type: Integer
+  description: Composite score Composite - Fluid Reasoning
+
+wppsi_vm_composite:
+  type: Integer
+  description: Composite score Composite - Working Memory
+
+wppsi_rvcb_rawscre:
+  type: Integer
+  description: Raw score - Receptive Vocabulary
+  notes: 999=N/A, Missing
+  codes:
+    999: N/A, Missing
+
+wppsi_rvcb_scldscre:
+  type: Integer
+  description: Scaled score SS - Receptive Vocabulary
+
+wppsi_gl_scldscre:
+  type: Integer
+  description: Sum of scaled scores Sum - General Language
+  notes: 999=N/A, Missing
+  codes:
+    999: N/A, Missing
+
+wsf_oaraw:
+  type: Integer
+  description: Object Assembly Raw Score
+  range:
+  - 0::51
+  - -999
+  notes: -999 = Missing value
+  codes:
+    -999: Missing value
+
+wsf_oass:
+  type: Integer
+  description: Object Assembly Scaled Score
+  range:
+  - 1::19
+  - -999
+  notes: -999 = Missing value
+  codes:
+    -999: Missing value
+
+wppsi_picname_rawscre:
+  type: Integer
+  description: Raw score - Picture Naming
+
+wppsi_picname_scldscre:
+  type: Integer
+  description: Scaled score SS - Picture Naming
+
+timept:
+  type: Integer
+  description: Time Point
+  notes: 888 = not applicable; 999 = missing
+  alias: wppsi_time
+  codes:
+    888: not applicable
+    999: missing
+
+matrixreason_item14:
+  type: Integer
+  description: Item 14
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item15:
+  type: Integer
+  description: Item 15
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item16:
+  type: Integer
+  description: Item 16
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item17:
+  type: Integer
+  description: Item 17
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item18:
+  type: Integer
+  description: Item 18
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item19:
+  type: Integer
+  description: Item 19
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item2:
+  type: Integer
+  description: Item 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item20:
+  type: Integer
+  description: Item 20
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item21:
+  type: Integer
+  description: Item 21
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item22:
+  type: Integer
+  description: Item 22
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item23:
+  type: Integer
+  description: Item 23
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item24:
+  type: Integer
+  description: Item 24
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item25:
+  type: Integer
+  description: Item 25
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item26:
+  type: Integer
+  description: Item 26
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item3:
+  type: Integer
+  description: Item 3
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item4:
+  type: Integer
+  description: Item 4
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item5:
+  type: Integer
+  description: Item 5
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item6:
+  type: Integer
+  description: Item 6
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item7:
+  type: Integer
+  description: Item 7
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item8:
+  type: Integer
+  description: Item 8
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+discontinue:
+  type: Integer
+  description: Rules Triggered, Discontinue
+
+matrixreason_item9:
+  type: Integer
+  description: Item 9
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+reverse:
+  type: Integer
+  description: Rules Triggered, Reverse
+
+wppsi_mxr_p:
+  type: Integer
+  description: Subtest Type Prompt (P), Total
+
+pea_wppsi_item_a_rs:
+  type: Integer
+  description: WPPSI-IV Ages 4-7 Matrix Reasoning Sample Item A
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+pea_wppsi_item_b_rs:
+  type: Integer
+  description: WPPSI-IV Ages 4-7 Matrix Reasoning Sample Item B
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+pea_wppsi_item_c_rs:
+  type: Integer
+  description: WPPSI-IV Ages 4-7 Matrix Reasoning Sample Item C
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+matrix_completion:
+  type: Float
+  description: Matrix Reasoning Completion time (seconds)
+
+matrixreason_item1:
+  type: Integer
+  description: Item 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item10:
+  type: Integer
+  description: Item 10
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item11:
+  type: Integer
+  description: Item 11
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item12:
+  type: Integer
+  description: Item 12
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreason_item13:
+  type: Integer
+  description: Item 13
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  codes:
+    0: Fail
+    1: Correct
+
+subtesttypedk:
+  type: Float
+  description: Subtest Type Don't Know (DK),Total
+  alias: wppsi_mxr_dk
+
+subtesttypenr:
+  type: Integer
+  description: Subtest Type No Response (NR),Total
+  alias: wppsi_mxr_nr

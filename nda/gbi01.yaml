@@ -1,0 +1,1244 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: child_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: date_bis
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+gbi1:
+  type: Integer
+  description: "P. Has your child experienced periods of several days or more when,\
+    \ although he/she was feeling unusually happy and intensely energetic (clearly\
+    \ more than your child's usual self), he/she was also physically restless, unable\
+    \ to sit still, and had to keep moving or jumping from one activity to another?/S.Have\
+    \ you experienced periods of several days \nor more when, although you were feeling\
+    \ unusually happy and intensely energetic (clearly more than your usual self),\
+    \ you were also physically restless, unable to sit still, and have to keep moving\
+    \ or jumping from one activity to another?"
+  range:
+  - 0::3
+  notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
+    constantly
+  alias: gbi_4,gbi_p1,gen_child_behav_1
+  codes:
+    0: Never - Hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often - almost constantly
+
+gbi2:
+  type: Integer
+  description: P.Have there been periods of several days or more when your child's
+    friends or other family members told you that your child seemed unusually happy
+    or high - clearly different from his/her usual self or from a typical good mood?/
+    S.Have there been periods of several days or more when your friends or other family
+    members told you that you seemed unusually happy or high ? clearly different from
+    your usual self or from a typical good mood?
+  range:
+  - 0::3
+  notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
+    constantly
+  alias: gbi_11,gbi_p2,gen_child_behav_2
+  codes:
+    0: Never - Hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often - almost constantly
+
+gbi3:
+  type: Integer
+  description: P. Has your child's mood or energy shifted rapidly back and forth from
+    happy to sad or high to low? S. Has your mood or energy shifted rapidly back and
+    forth from happy to sad or high to low?
+  range:
+  - 0::3
+  notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
+    constantly
+  alias: gbi_19,gbi_p3,gen_child_behav_3
+  codes:
+    0: Never - Hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often - almost constantly
+
+gbi4:
+  type: Integer
+  description: P. Has your child had periods of extreme happiness and intense energy
+    that last several days or more when he/she also felt more anxious or tense (jittery,
+    nervous, uptight) than usual (other than relates to the menstrual cycle)?  S.
+    Have you had periods of extreme happiness and intense energy lasting several days
+    or more when you also felt much more anxious or tense (jittery, nervous, uptight)
+    than usual (other than related to the menstrual cycle)?
+  range:
+  - 0::3
+  notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
+    constantly
+  alias: gbi_p4,gen_child_behav_4,s7upchildself1
+  codes:
+    0: Never - Hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often - almost constantly
+
+gbi5:
+  type: Integer
+  description: P. Have there been times of several days or more when, although your
+    child was feeling unusually happy and intensely energetic (clearly more than his/her
+    usual self), he/she also had to struggle very hard to control inner feelings of
+    rage or an urge to smash or destroy things? S. Have there been times of several
+    days or more when, although you were feeling unusually happy and intensely energetic
+    (clearly more than your usual self), you also had to struggle very hard to control
+    inner feelings of rage or an urge to smash or destroy things?
+  range:
+  - 0::3
+  notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
+    constantly
+  alias: gbi_27,gbi_p5,gen_child_behav_5
+  codes:
+    0: Never - Hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often - almost constantly
+
+gbi6:
+  type: Integer
+  description: P. Has your child had periods of extreme happiness and intense energy
+    (clearly more than his/her normal self) when, for several days or more, it took
+    him/her over an hour to get to sleep at night? S. Have you had periods of extreme
+    happiness and intense energy (clearly more than your usual self) when, for several
+    days or more, it took you over an hour to get to sleep at night?
+  range:
+  - 0::3
+  notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
+    constantly
+  alias: gbi_p6,gen_child_behav_6,s7upchildself3
+  codes:
+    0: Never - Hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often - almost constantly
+
+gbi7:
+  type: Integer
+  description: P. Have you ever found that your child's feelings or energy are generally
+    up or down, but rarely in the middle?  S. Have you found that your feelings or
+    energy are generally up or down, but rarely in the middle?
+  range:
+  - 0::3
+  notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
+    constantly
+  alias: gbi_40,gbi_p7,gen_child_behav_7
+  codes:
+    0: Never - Hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often - almost constantly
+
+gbi8:
+  type: Integer
+  description: P. Has your child had periods lasting several days or more when he/she
+    felt depressed or irritable, and then other periods of several days or more when
+    he/she felt extremely high, elated, and overflowing with energy? S. Have you had
+    periods lasting several days or more when you felt depressed or irritable, and
+    then other periods of several days or more when you felt extremely high, elated,
+    and overflowing with energy?
+  range:
+  - 0::3
+  notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
+    constantly
+  alias: gbi_53,gbi_p8,gen_child_behav_8
+  codes:
+    0: Never - Hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often - almost constantly
+
+gbi9:
+  type: Integer
+  description: P. Have there been periods when, although your child was feeling unusually
+    happy and intensely energetic, almost everything got on his/her nerves and made
+    him/her irritable or angry (other than related to the menstrual cycle)? S. Have
+    there been periods when, although you were feeling unusually happy and intensely
+    energetic, almost everything got on your nerves and made you irritable or angry
+    (other than related to the menstrual cycle?)
+  range:
+  - 0::3
+  notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
+    constantly
+  alias: gbi_54,gbi_p9,gen_child_behav_9
+  codes:
+    0: Never - Hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often - almost constantly
+
+gbi10:
+  type: Integer
+  description: P. Has your child had times when his/her thoughts and ideas came so
+    fast that he/she couldn't get them all out, or they came so quickly others complained
+    that they couldn't keep up with your child's ideas? S. Have you had times when
+    your thoughts and ideas came so fast that you couldn?t get them all out, or they
+    came so quickly others complained that they couldn?t keep up with your ideas?
+  range:
+  - 0::3
+  notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
+    constantly
+  alias: gbi_p10,gen_child_behav_10,s7upchildself7
+  codes:
+    0: Never - Hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often - almost constantly
+
+gbitotal:
+  type: Integer
+  description: General Behavior total score
+  alias: gbi_miss,gbi_total
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+
+respond:
+  type: Integer
+  description: Respondent
+  range:
+  - 1::5
+  - 999
+  notes: 1 = Parent; 2 = Teacher; 3=Self; 4= Other; 5= Significant other; 999 = Not
+    available
+  codes:
+    1: Parent
+    2: Teacher
+    3: Self
+    4: Other
+    5: Significant other
+    999: Not available
+
+gbi11:
+  type: Integer
+  description: Have you been paying attention to this survey? Please respond with
+    "Often" for this item
+  range:
+  - 0::3
+  notes: 1= Never- Hardly Ever; 1= Sometimes; 2= Often; 3= Very Often- Almost Constantly
+  codes:
+    1: Sometimes
+    2: Often
+    3: Very Often- Almost Constantly
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+
+gbi_mania:
+  type: Integer
+  description: GBI Manic/Hypomanic/Biphasic Scale Score
+
+gbi_depressive:
+  type: Integer
+  description: GBI Depressive Scale Score
+
+s7upchildself2:
+  type: Integer
+  description: Have there been times lasting several days or more when you felt you
+    must have lots of excitement, and you actually did a lot of new or different things?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+s7upchildself4:
+  type: Integer
+  description: Have you had periods of extreme happiness and high energy lasting several
+    days or more when what you saw, heard, smelled, tasted, or touched seemed vivid
+    or intense?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+s7upchildself5:
+  type: Integer
+  description: Have there been periods of several days or more when your thinking
+    was so clear and quick that it was much better than most other people's?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+s7upchildself6:
+  type: Integer
+  description: Have there been times of a couple days or more when you felt that you
+    were a very important person or that your abilities or talents were better than
+    most other people's?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+s7upchildself8:
+  type: Integer
+  description: Have there been times of several days or more when you were so sad
+    that it was quite painful or you felt that you couldn't stand it?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+s7upchildself9:
+  type: Integer
+  description: Have there been long periods in your life when you felt sad, depressed,
+    or irritable most of the time?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+s7upchildself10:
+  type: Integer
+  description: Have there been times when you have hated yourself or felt that you
+    were stupid, ugly, unlovable, or useless?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+s7upchildself11:
+  type: Integer
+  description: Have there been times of several days or more when you really got down
+    on yourself and felt worthless?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+s7upchildself12:
+  type: Integer
+  description: Have you had periods when it seemed that the future was hopeless and
+    things could not improve?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+s7upchildself13:
+  type: Integer
+  description: Have there been periods lasting several days or more when you were
+    so down in the dumps that you thought you might never snap out of it?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+s7upchildself14:
+  type: Integer
+  description: Have there been times when you have felt that you would be better off
+    dead?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_1:
+  type: Integer
+  description: Have there been periods, over the last year, when it was almost impossible
+    to make small decisions even though this may not be generally true of you?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_2:
+  type: Integer
+  description: Have you found your enjoyment in being with people changes -- from
+    times when you enjoy them immensely and want to be with them all the time, to
+    times when you do not want to see them at all?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_3:
+  type: Integer
+  description: Have you become sad, depressed, or irritable for several days or more
+    without really understanding why?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_5:
+  type: Integer
+  description: Have there been periods of several days or more when you felt that
+    you needed more sleep, even though you slept longer at night or napped more during
+    the day (not including times of exercise, physical illness, or heavy work schedules)?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_6:
+  type: Integer
+  description: Have people said that you looked sad or lonely?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_7:
+  type: Integer
+  description: Have there been periods of several days or more when you were almost
+    constantly active such that others told you they couldn't keep up with you or
+    that you wore them out?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_8:
+  type: Integer
+  description: Have there been periods of several days or more when you could not
+    keep your attention on any one thing for more than a few seconds, and your mind
+    jumped rapidly from one thought to another or to things around you?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_9:
+  type: Integer
+  description: Have there been periods lasting several days or more when you lost
+    almost all interest in people close to you and spent long times by yourself?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_10:
+  type: Integer
+  description: Have you had periods of several days or more when food seemed rather
+    flavorless and you didn't enjoy eating at all?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_12:
+  type: Integer
+  description: Have there been times when your memory or concentration seemed especially
+    poor and you found it difficult, for example, to read or follow a TV program,
+    even though you tried?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_13:
+  type: Integer
+  description: Have there been times when you lost almost all interest in the things
+    that you usually like to do (such as hobbies, school, work, entertainment)?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_14:
+  type: Integer
+  description: Have you had periods of sadness and depression when almost everything
+    gets on your nerves and makes you irritable or angry (other than related to the
+    menstrual cycle)?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_15:
+  type: Integer
+  description: Have there been times of several days or more when you did not feel
+    the need for sleep and were able to stay awake and alert for much longer than
+    usual because you were full of energy?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_16:
+  type: Integer
+  description: Have you had long periods in which you felt that you couldn't enjoy
+    life as easily as other people?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_17:
+  type: Integer
+  description: Have you had periods of several days or more when you wanted to be
+    with people so much of the time that they asked you to leave them alone for a
+    while?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_18:
+  type: Integer
+  description: Have there been times of several days or more when you were so tired
+    and worn out that it was very difficult or even impossible to do your normal everyday
+    activities (not including times of intense exercise, physical illness, or heavy
+    work schedules)?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_20:
+  type: Integer
+  description: Have there been periods lasting several days or more when you spent
+    much of your time brooding about unpleasant things that have happened?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_21:
+  type: Integer
+  description: Have there been times when you felt that you were physically cut off
+    from other people or from yourself, or felt as if you were in a dream, or felt
+    that the world looked different or had changed in some way?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_24:
+  type: Integer
+  description: Have you found that your enjoyment in eating changes ? from periods
+    of two or more days when food tastes exceptionally good, clearly better than usual,
+    to other periods of several days or more when food seems rather flavorless and
+    perhaps you don't enjoy eating at all?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_25:
+  type: Integer
+  description: Have there been times of several days or more when you wake up much
+    too early in the morning and have problems getting back to sleep?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_26:
+  type: Integer
+  description: Have you had periods when you were so down that you found it hard to
+    start talking or that talking took too much energy?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_28:
+  type: Integer
+  description: 'Have there been periods other than when you were physically ill that
+    you had more than one of the following: (a) headaches or feelings of tightness,
+    pressure, or "wooziness" in your head;(b) dizziness; (c ) constipation or diarrhea;
+    (d) aches and pains; (e) nausea, vomiting, or stomach aches; (f) blurred vision;
+    (g) trembling or shaking hands; or (h) feeling too hot or too cold?'
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_29:
+  type: Integer
+  description: Have you experienced periods of several days or more when were feeling
+    down and depressed, and you also were physically restless, unable to sit still,
+    and had to keep moving or jumping from one activity to another?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_32:
+  type: Integer
+  description: Over the past year, have there been times when you looked back over
+    your life and could see only failures or hardships?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_33:
+  type: Integer
+  description: Have you experienced times of several days or more when you felt as
+    if you were moving in slow motion?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_35:
+  type: Integer
+  description: Has it seemed that you experience both pleasurable and painful emotions
+    more intensely than other people?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_36:
+  type: Integer
+  description: Have there been periods of several days or more when you felt guilty
+    and thought you deserved to be punished for something you had or had not done?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_37:
+  type: Integer
+  description: Have you had times of several days or more when you woke up frequently
+    or had trouble staying asleep during the middle of the night?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_39:
+  type: Integer
+  description: Have there been times when you were feeling low and depressed, and
+    you also had to struggle very hard to control inner feelings of rage or an urge
+    to smash or destroy things?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_41:
+  type: Integer
+  description: Have you had periods of several days or more when it was difficult
+    or almost impossible to think and your mind felt sluggish, stagnant, or "dead"?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_42:
+  type: Integer
+  description: Have there been times when you had a strong urge to do something mischievous,
+    destructive, risky, or shocking?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_44:
+  type: Integer
+  description: Have there been times when you exploded at others and afterwards felt
+    bad about yourself?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_45:
+  type: Integer
+  description: Over the past year, have there been times of several days or more when
+    you were so down that nothing (not even friends or good news) could cheer you
+    up?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_48:
+  type: Integer
+  description: Have you found that your thinking changes greatly ? that there are
+    periods of several days or more when you think better than most people, and other
+    periods when your mind doesn't work well at all?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_49:
+  type: Integer
+  description: Have there been times of a day or more when you had no feelings or
+    emotions and seemed cut off from other people?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_50:
+  type: Integer
+  description: Have you had sad and depressed periods lasting several days or more
+    when you also felt much more anxious or tense (jittery, nervous, uptight) than
+    usual (other than related to the menstrual cycle)?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_51:
+  type: Integer
+  description: Have there been times when you have done things ? like perhaps driving
+    recklessly, taking a trip on the spur of the moment, creating a public disturbance,
+    being more sexually active than usual, getting into fights, destroying property,
+    or getting into trouble with the law ? which you later thought showed poor judgment?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_52:
+  type: Integer
+  description: Have you had periods of sadness and depression when, for several days
+    or more, it took you over an hour to get to sleep at night, even though you were
+    very tired?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_55:
+  type: Integer
+  description: Have there been times when upsetting or bad thoughts kept going through
+    your mind and you couldn't stop them?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_57:
+  type: Integer
+  description: Have there been times when you had blank spells in which your activities
+    were interrupted, and you did not know what was going on around you?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_58:
+  type: Integer
+  description: Have you had sad and depressed periods of several days or more, interrupted
+    by periods lasting between an hour to a day when you felt extremely happy and
+    intensely energetic?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_59:
+  type: Integer
+  description: Have there been periods of several days or more when you were slowed
+    down and couldn't move as quickly as usual?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_60:
+  type: Integer
+  description: Have you experienced weight changes (increases, decreases, or both)
+    of five (5) pounds or more in short periods of time (three weeks or less), not
+    including changes due to physical illness, menstruation, exercise, or dieting?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_61:
+  type: Integer
+  description: Have there been periods of a couple days or more when your sexual feelings
+    and thoughts were almost constant, and you couldn't think about anything else?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_65:
+  type: Integer
+  description: Have there been times of several days or more when you felt very down
+    and depressed during the early part of the day, but then less so during the evening?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_66:
+  type: Integer
+  description: Have then been times when you began many new activities with lots of
+    enthusiasm and then found yourself quickly losing interest in them?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_67:
+  type: Integer
+  description: Have you found that your mood consistently follows the seasons, where
+    you have long periods of depression during the winter but mostly happy periods
+    during the summer?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_68:
+  type: Integer
+  description: Have you had long periods when you were down and depressed, interrupted
+    by brief periods when your mood was normal or slightly happy?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_69:
+  type: Integer
+  description: Have there been times of several days or more when you have struggled
+    to control an urge to cry, have had frequent crying spells, or found yourself
+    crying without really understanding why (other than related to the menstrual cycle)?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_70:
+  type: Integer
+  description: Have there been times of several days or more when almost all sexual
+    interest was lost?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_71:
+  type: Integer
+  description: Have you found yourself at times feeling fearful or suspicious of your
+    environment or people around you?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_72:
+  type: Integer
+  description: Have there been periods of time when you felt a persistent sense of
+    gloom?
+  range:
+  - 0::3
+  notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
+    almost constantly
+  codes:
+    0: Never or hardly ever
+    1: Sometimes
+    2: Often
+    3: Very often or almost constantly
+
+gbi_74:
+  type: Integer
+  description: Have you had (or do you still have) a life-threatening or very serious
+    chronic medical illness (including a physical handicap) in the past year?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+gbi_75:
+  type: Integer
+  description: Have you had any hormonal or endocrine problems, or taken hormones
+    as a treatment, any time in the last five (5) years (not including birth control
+    pills)?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+gbi_76:
+  type: Integer
+  description: Has a close relative of yours died or experienced a life-threatening
+    illness in the past three months?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sup_y_ss_sum:
+  type: Integer
+  description: "7UP sum\r([sup_1_y]:[sup_7_y])\r; Validation: All items must be answered"
+  alias: s7upchildself_sum
+
+sup_y_ss_sum_nm:
+  type: Integer
+  description: '7UP sum: Number Missing Answers'
+  alias: s7upchildself_nm

@@ -1,0 +1,1592 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: candidateguid,pseudo_guid,subject_key,z1
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: child_id,hcpa_id,ibisid,record_id,src_subject_id_kitap,stepid,subject,subjectid,z2
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: consented_study,date_interview_ses,date_pgsg,date_taken,go_date,pgng_date,pgngs_date,pgsg_date,study_day,studyday
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: age_m_consent,candidate_age_in_months
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,sex,z5
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+gng_1:
+  type: Float
+  description: Percentage of number of times subject pressed spacebar when stimulus
+    signifying "go-to-win" was presented, regardless of outcome of trial over total
+    "go-to-win" trials
+  range:
+  - 0::1
+  - -99
+  alias: gowin
+
+gng_2:
+  type: Float
+  description: Percentage of number of times subject pressed spacebar when stimulus
+    signifying "go-to-avoid" was presented, regardless of outcome of trial over total
+    "go-to-avoid" trials
+  range:
+  - 0::1
+  - -99
+  alias: goavoid
+
+gng_3:
+  type: Float
+  description: Percentage of number of times subject did not press spacebar when stimulus
+    signifying "no-go-to-win" was presented, regardless of outcome of trial over total
+    "no-go-to-win" trials
+  range:
+  - 0::1
+  - -99
+  alias: nogowin
+
+gng_4:
+  type: Float
+  description: Percentage of number of times subject did not press spacebar when stimulus
+    signifying "no-go-to-avoid" was presented, regardless of outcome of trial over
+    total "no-go-to-avoid" trials
+  range:
+  - 0::1
+  - -99
+  alias: nogoavoid
+
+wcst_nt:
+  type: Integer
+  description: Number of Trials
+
+positive_gng_1:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the positive pictures:
+    Interested'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+positive_gng_2:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the positive pictures:
+    Excited'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+positive_gng_3:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the positive pictures:
+    Strong'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+positive_gng_4:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the positive pictures:
+    Enthusiastic'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+positive_gng_5:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the positive pictures:
+    Proud'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+positive_gng_6:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the positive pictures:
+    Happy'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+positive_gng_7:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the positive pictures:
+    Inspired'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+positive_gng_8:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the positive pictures:
+    Determined'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+positive_gng_9:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the positive pictures:
+    Peaceful'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+positive_gng_10:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the positive pictures:
+    Calm '
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+negative_gng_1:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the negative pictures:
+    Distressed'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+negative_gng_2:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the negative pictures:
+    Upset'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+negative_gng_3:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the negative pictures:
+    Guilty'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+negative_gng_4:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the negative pictures:
+    Scared'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+negative_gng_5:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the negative pictures:
+    Hostile'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+negative_gng_6:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the negative pictures:
+    Irritable'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+negative_gng_7:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the negative pictures:
+    Threatened'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+negative_gng_8:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the negative pictures:
+    Nervous'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+negative_gng_9:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the negative pictures:
+    Jittery'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+negative_gng_10:
+  type: Integer
+  description: 'Please rate how you remember feeling when you saw the negative pictures:
+    Afraid'
+  range:
+  - 1::5
+  - 88
+  notes: 1 = very slight or not at all; 2 = a little; 3 = moderately; 4 = quite a
+    bit; 5 = extremely; 88 = missing
+  codes:
+    1: very slight or not at all
+    2: a little
+    3: moderately
+    4: quite a bit
+    5: extremely
+    88: missing
+
+aescode:
+  type: Integer
+  description: Staff code number of person completing this form
+  alias: examin
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+  alias: comments_misc_kitap
+
+baseline_a_002:
+  type: String
+  length: 100
+  description: 'Interview Start Time:'
+  alias: go_time
+
+n_correct:
+  type: Integer
+  description: Number of  Correct Responses
+  alias: go_cor0
+
+omissionstscore:
+  type: Float
+  description: Omissions T Score
+  alias: go_omt0
+
+flkr_of_outliers:
+  type: Float
+  description: Total number of outliers
+  alias: go_lap0
+
+ddt_mn_rt:
+  type: Float
+  description: Mean reaction time for all trials
+  alias: go_mea0
+
+ddt_md_rt:
+  type: Float
+  description: Median reaction time for all trials
+  alias: go_mdn0
+
+ddt_sd_rt:
+  type: Float
+  description: Standard deviation of reaction time for all trials
+  alias: go_std0
+
+time_unit:
+  type: String
+  length: 25
+  description: Time Unit
+
+go_err0:
+  type: Integer
+  description: Number of false alarms/errors (reacted when should have done nothing)
+
+go_ert0:
+  type: Float
+  description: Errors/False Alarms T-score
+
+go_omi0:
+  type: Integer
+  description: Number of omissions/misses (did nothing when should have reacted)
+
+go_mdt0:
+  type: Float
+  description: 'Median of reaction time: T-score'
+
+go_stt0:
+  type: Float
+  description: 'Standard Deviation of reaction time: T-score'
+
+version:
+  type: String
+  length: 20
+  description: Version/code of assessment
+
+fixlength:
+  type: Integer
+  description: Length of time fixation cross appeared on the screen before the target
+    letter (seconds)
+
+rewardcolor:
+  type: String
+  length: 10
+  description: Color of potential reward ("win") cue
+
+puncolor:
+  type: String
+  length: 10
+  description: Color of potential loss ("lose") cue
+
+go_rewpun_acc:
+  type: Float
+  description: Overall probability of correctly responding on a Go trial
+  range:
+  - 0::1
+
+nogo_rewpun_acc:
+  type: Float
+  description: 'Overall probability of correctly witholding response on a No Go trial '
+  range:
+  - 0::1
+
+go_rewpun_rt:
+  type: Float
+  description: Mean reaction time on Go trials
+
+nogo_rewpun_rt:
+  type: Float
+  description: Mean reaction time on No Go trials
+
+falsealarmrate:
+  type: Float
+  description: Percentage of incorrect No Go trials (reacted when should not have)
+
+go_pun1_acc:
+  type: Float
+  description: 'Probability of correctly responding on a Go trial with a potential
+    loss of $1. '
+  range:
+  - 0::1
+
+go_pun25_acc:
+  type: Float
+  description: 'Probability of correctly responding on a Go trial with a potential
+    loss of 25c. '
+  range:
+  - 0::1
+
+go_pun5_acc:
+  type: Float
+  description: 'Probability of correctly responding on a Go trial with a potential
+    loss of 5c. '
+  range:
+  - 0::1
+
+go_rew1_acc:
+  type: Float
+  description: Probability of correctly responding on a Go trial with a potential
+    win of $1.
+  range:
+  - 0::1
+
+go_rew25_acc:
+  type: Float
+  description: 'Probability of correctly responding on a Go trial with a potential
+    win of 25c. '
+  range:
+  - 0::1
+
+go_rew5_acc:
+  type: Float
+  description: 'Probability of correctly responding on a Go trial with a potential
+    win of 5c. '
+  range:
+  - 0::1
+
+nogo_pun1_acc:
+  type: Float
+  description: 'Probability of correctly witholding response on a No Go trial with
+    a potential loss of $1. '
+  range:
+  - 0::1
+
+nogo_pun25_acc:
+  type: Float
+  description: 'Probability of correctly witholding response on a No Go trial with
+    a potential loss of 25c. '
+  range:
+  - 0::1
+
+nogo_pun5_acc:
+  type: Float
+  description: 'Probability of correctly witholding response on a No Go trial with
+    a potential loss of 5c. '
+  range:
+  - 0::1
+
+nogo_rew1_acc:
+  type: Float
+  description: 'Probability of correctly witholding response on a No Go trial with
+    a potential win of $1. '
+  range:
+  - 0::1
+
+nogo_rew25_acc:
+  type: Float
+  description: 'Probability of correctly witholding response on a No Go trial with
+    a potential win of 25c. '
+  range:
+  - 0::1
+
+nogo_rew5_acc:
+  type: Float
+  description: Probability of correctly witholding response on a No Go trial with
+    a potential win of 5c.
+  range:
+  - 0::1
+
+go_pun1_rt:
+  type: Float
+  description: 'Reaction time on Go trials with a potential loss of $1. '
+
+go_pun25_rt:
+  type: Float
+  description: 'Reaction time on Go trials with a potential loss of 25c. '
+
+go_pun5_rt:
+  type: Float
+  description: Reaction time on Go trials with a potential loss of 5c.
+
+go_rew1_rt:
+  type: Float
+  description: 'Reaction time on Go trials with a potential win of $1. '
+
+go_rew25_rt:
+  type: Float
+  description: 'Reaction time on Go trials with a potential win of 25c. '
+
+go_rew5_rt:
+  type: Float
+  description: 'Reaction time on Go trials with a potential win of 5c. '
+
+nogo_pun1_rt:
+  type: Float
+  description: Reaction time on incorrect No Go trials with a potential loss of $1.
+
+nogo_pun25_rt:
+  type: Float
+  description: 'Reaction time on incorrect No Go trials with a potential loss of 25c. '
+
+nogo_pun5_rt:
+  type: Float
+  description: 'Reaction time on incorrect No Go trials with a potential loss of 5c. '
+
+nogo_rew1_rt:
+  type: Float
+  description: Reaction time on incorrect No Go trials with a potential win of $1.
+
+nogo_rew25_rt:
+  type: Float
+  description: 'Reaction time on incorrect No Go trials with a potential win of 25c. '
+
+nogo_rew5_rt:
+  type: Float
+  description: 'Reaction time on incorrect No Go trials with a potential win of 5c. '
+
+nogoletter:
+  type: String
+  length: 5
+  description: Letter for which participant was NOT supposed to press the button
+
+data_file1:
+  type: File
+  description: Data file 1
+  alias: file_source,image_file
+
+gng_hitrate:
+  type: Float
+  description: (correct responses on go trials)/(total go trials) in go/no-go task
+  alias: hit_prop
+
+gng_norm_hit_rate:
+  type: Float
+  description: z transformation of hit rate from go/no-go task
+
+gng_falsealarm:
+  type: Float
+  description: (incorrect responses on no-go trials)/(total no-go trials) in go/no-go
+    task
+  alias: fa_prop
+
+gng_norm_false_alarm:
+  type: Float
+  description: z transformation of false alarm task from go/no-go task
+
+gng_dprime:
+  type: Float
+  description: (z transformation of hit rate) - (z transformation of false alarm rate)
+    from go/no-go task
+
+gng_invereff:
+  type: Float
+  description: (average go RT)/(1-false alrm rate) from go/no-go task
+
+gng_zinvereff:
+  type: Float
+  description: z transformation of inverse efficiency from go/no-go task
+
+ncaid:
+  type: Integer
+  description: Primary ID of Neurocognitive Test
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+  alias: siteid
+
+timept:
+  type: Integer
+  description: Time Point
+  notes: 888 = not applicable; 999 = missing
+  alias: timepoint
+  codes:
+    888: not applicable
+    999: missing
+
+testreason:
+  type: String
+  length: 255
+  description: Reason for Testing
+  alias: gradcpt_type
+
+trial:
+  type: Integer
+  description: Trial number
+  range:
+  - 0::400
+  - -777
+  - -999
+  notes: 1 = first; 2= second; 3=third; 4=fourth; 5=fifth; 6=sixth; etc; -777=NA,
+    -999=missing
+  alias: gradcpt_trial
+  codes:
+    1: first
+    2: second
+    3: third
+    4: fourth
+    5: fifth
+    6: sixth
+    -777: NA, -999=missing
+
+gradcpt_stim:
+  type: String
+  length: 100
+  description: Image the Particpant Was Shown
+
+gradcpt_correct:
+  type: Integer
+  description: Go Trials(1) vs. No-Go Trials(0)
+  range:
+  - -1::2
+  notes: -1=NA; 0=No-Go Trial; 1=Go Trial; 2=Scrambled Image (no response required);
+    -1=NA
+  codes:
+    -1: NA
+    0: No-Go Trial
+    1: Go Trial
+    2: Scrambled Image (no response required)
+
+rt:
+  type: Float
+  description: Reaction Time
+  alias: gradcpt_rt
+
+gradcpt_responseassign:
+  type: Integer
+  description: Which Image Participant Responding To
+  range:
+  - -1::2
+  notes: -1=NA; 0=Response Withheld; 1=Transitioning Out; 2=Transitioning In
+  codes:
+    -1: NA
+    0: Response Withheld
+    1: Transitioning Out
+    2: Transitioning In
+
+gradcpt_percentageimagen:
+  type: Float
+  description: Percent of Target Image Visible When Responds
+
+gradcpt_triallength:
+  type: Float
+  description: Time Image Is Displayed (ms)
+
+battery_id:
+  type: Integer
+  description: Identifier of Battery
+  alias: gradcpt_batteryid
+
+testid:
+  type: Integer
+  description: Identifier of Current Test
+  alias: gradcpt_testid
+
+session_id:
+  type: String
+  length: 20
+  description: session ID/screening ID
+  alias: gradcpt_sittingid
+
+cbgroup:
+  type: Integer
+  description: Counterbalancing Group
+  alias: gradcpt_group
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: gradcpt_version
+
+aurora_device:
+  type: Integer
+  description: Device Used
+  range:
+  - 1::6
+  notes: 1=iPad; 2=iPhone; 3=Tablet; 4=Android Smartphone; 5=Desktop; 6=Laptop
+  alias: gradcpt_device
+  codes:
+    1: iPad
+    2: iPhone
+    3: Tablet
+    4: Android Smartphone
+    5: Desktop
+    6: Laptop
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+  alias: fktimepointid,gradcpt_timepoint,visit_name
+
+correctrt_total_mean:
+  type: Float
+  description: Mean reaction time for all correct trials
+  alias: gradcpt_meanrtc
+
+gradcpt_medianrtc:
+  type: Float
+  description: Median Reaction Time For All Correct Trials (ms)
+
+correctrt_total_sd:
+  type: Float
+  description: Standard deviation of the reaction time for all correct trials
+  alias: gradcpt_sdrtc
+
+gradcpt_commission_errors:
+  type: Float
+  description: '% No-Go Trials Where Participant Incorrectly Responded'
+
+gradcpt_omission_errors:
+  type: Float
+  description: '% Go Trials Where Participant Incorrectly Withheld A Response'
+
+deviceserialnumber:
+  type: String
+  length: 200
+  description: device serial number/ID
+  alias: gradcpt_useragent
+
+testduration:
+  type: Integer
+  description: Seconds Taken To Complete Test
+  alias: gradcpt_duration
+
+testrestarts:
+  type: Integer
+  description: Number Of Times Participant Restarted Test
+  alias: gradcpt_reloaded
+
+gradcpt_rtcall:
+  type: String
+  length: 25
+  description: Internal TMB Variable Used To Track Errors
+  notes: '#NAME?'
+
+gradcpt_accuracy:
+  type: Float
+  description: Accuracy of Participant Response
+  range:
+  - -2::1
+  notes: -2=NA;-1=Incorrect Response; 0=Incorrectly Withheld Response; 1=Correct Response;
+    -2=NA; -1=Incorrect Response
+  codes:
+    -2: NA
+    1: Correct Response
+    0: Incorrectly Withheld Response
+    -1: Incorrect Response
+
+session:
+  type: Integer
+  description: Session
+
+commissions_block1:
+  type: Integer
+  description: Go/no-go test commission errors block 1
+  range:
+  - 0::100
+
+commissions_block2:
+  type: Integer
+  description: Go/no-go test commission errors block 2
+  range:
+  - 0::100
+
+commissions_block3:
+  type: Integer
+  description: Go/no-go test commission errors block 3
+  range:
+  - 0::100
+
+commissions_block4:
+  type: Integer
+  description: Go/no-go test commission errors block 4
+  range:
+  - 0::100
+
+mpdat:
+  type: Float
+  description: days from enrollment
+  alias: studyday
+
+timepoint_label:
+  type: String
+  length: 5
+  description: Timepoint/visit label
+
+l2_gng_comms:
+  type: Integer
+  description: 'Level 2:  Go/NoGo Commissions'
+  alias: 2t_gng_comms
+
+l3_gng_error:
+  type: Integer
+  description: 'Level 3:  Go/NoGo Errors'
+
+er_level1:
+  type: Float
+  description: 'Efficiency Ratio: Level 1'
+
+er_level2:
+  type: Float
+  description: 'Efficiency Ratio: Level 2'
+
+er_level3:
+  type: Float
+  description: 'Efficiency Ratio: Level 3'
+
+l2_gng_reject:
+  type: Integer
+  description: 'Level 2:  Go/NoGo Rejections'
+  alias: 2t_gng_reject
+
+l2_gng_omit:
+  type: Integer
+  description: 'Level 2:  Go/NoGo Ommisions'
+  alias: 2t_gng_omit
+
+l2_gng_missed:
+  type: Integer
+  description: 'Level 2:  Go/NoGo Missed Opportunities'
+  alias: 2t_gng_missed
+
+l2_gng_comm_rt:
+  type: Integer
+  description: 'Level 2:  Go/NoGo Commission Reaction Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+  alias: 2t_gng_comm_rt
+
+l2_gng_comm_sd:
+  type: Integer
+  description: 'Level 2:  Go/NoGo Commission Standard Deviation'
+  alias: 2t_gng_comm_sd
+
+l2_gs_rt:
+  type: Integer
+  description: 'Level 2:  Go Stop Reaction Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+  alias: 2t_gs_rt
+
+l2_gs_sd:
+  type: Integer
+  description: 'Level 2:  Go Stop Standard Deviation'
+  alias: 2t_gs_sd
+
+l2_gs_hits:
+  type: Integer
+  description: 'Level 2:  Go Stop Hits'
+  alias: 2t_gs_hits
+
+l2_gs_comms:
+  type: Integer
+  description: 'Level 2:  Go Stop Commissions'
+  alias: 2t_gs_comms
+
+l2_gs_reject:
+  type: Integer
+  description: 'Level 2:  Go Stop Rejections'
+  alias: 2t_gs_reject
+
+l2_gs_omit:
+  type: Integer
+  description: 'Level 2:  Go Stop Ommissions'
+  alias: 2t_gs_omit
+
+l2_gs_missed:
+  type: Integer
+  description: 'Level 2:  Go Stop Missed Opportunities'
+  alias: 2t_gs_missed
+
+l2_gs_comm_rt:
+  type: Integer
+  description: 'Level 2:  Go Stop Commission Reaction Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+  alias: 2t_gs_comm_rt
+
+l2_gs_comm_sd:
+  type: Integer
+  description: 'Level 2:  Go Stop Commission Standard Deviation'
+  alias: 2t_gs_comm_sd
+
+l2_gs_stoptime:
+  type: Integer
+  description: 'Level 2:  Go Stop Stop Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+  alias: 2t_gs_stoptime
+
+l2_gs_failstop:
+  type: Integer
+  description: 'Level 2:  Go Stop Fail Stop Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+  alias: 2t_gs_failstop
+
+l2_gng_pre2error:
+  type: Integer
+  description: 'Level 2:  Go/NoGo Pre2 Error'
+  alias: 2t_gng_pre2error
+
+l2_gng_pre1error:
+  type: Integer
+  description: 'Level 2:  Go/NoGo Pre1 Error'
+  alias: 2t_gng_pre1error
+
+l2_gng_error:
+  type: Integer
+  description: 'Level 2:  Go/NoGo Errors'
+  alias: 2t_gng_error
+
+l2_rt:
+  type: Integer
+  description: 'Level 2:  Go Reaction Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+  alias: 2t_rt
+
+targets_identify:
+  type: Integer
+  description: Targets Identified
+
+lure_identify:
+  type: Integer
+  description: Lures Identified
+
+count_targets:
+  type: Integer
+  description: Count Targets
+
+count_comm:
+  type: Integer
+  description: Count Commissions
+
+count_reject:
+  type: Integer
+  description: Count Rejections
+
+count_omit:
+  type: Integer
+  description: Count Omissions
+
+count_missed:
+  type: Integer
+  description: Count Missed Opportunities
+
+count_missed_targets:
+  type: Integer
+  description: Count Missed Opportunities Targets
+
+rt_target:
+  type: Integer
+  description: Reaction Time Target
+  range:
+  - 0::100000
+  notes: milliseconds
+
+rt_comm:
+  type: Integer
+  description: Reaction Time Commissions
+
+l2_sd:
+  type: Integer
+  description: 'Level 2:  Go Standard Deviation'
+  alias: 2t_sd
+
+code_respt:
+  type: Integer
+  description: Code Response Time
+  range:
+  - 0::100000
+  notes: milliseconds
+
+prestop_present:
+  type: Integer
+  description: Pre-Stop Present Times
+  range:
+  - 0::100000
+  notes: milliseconds
+
+stoptime_fail:
+  type: Integer
+  description: Stop Times Failed
+
+stoptime_success:
+  type: Integer
+  description: Stop Times Succeeded
+
+l1_rt:
+  type: Integer
+  description: 'Level 1:  Go Reaction Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+
+l1_sd:
+  type: Integer
+  description: 'Level 1:  Go Standard Deviation'
+
+l1_hits:
+  type: Integer
+  description: 'Level 1:  Go Hits'
+
+l1_omit:
+  type: Integer
+  description: 'Level 1:  Go Omissions'
+
+l1_gng_rt:
+  type: Integer
+  description: 'Level 1:  Go/NoGo Reaction Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+
+l1_gng_sd:
+  type: Integer
+  description: 'Level 1:  Go/NoGo Standard Deviation'
+
+l2_hits:
+  type: Integer
+  description: 'Level 2:  Go Hits'
+  alias: 2t_hits
+
+l1_gng_hits:
+  type: Integer
+  description: 'Level 1:  Go/NoGo Hits'
+
+l1_gng_comms:
+  type: Integer
+  description: 'Level 1:  Go/NoGo Commissions'
+
+l1_gng_reject:
+  type: Integer
+  description: 'Level 1:  Go/NoGo Rejections'
+
+l1_gng_omit:
+  type: Integer
+  description: 'Level 1:  Go/NoGo Ommisions'
+
+l1_gng_missed:
+  type: Integer
+  description: 'Level 1:  Go/NoGo Missed Opportunities'
+
+l1_gng_comm_rt:
+  type: Integer
+  description: 'Level 1:  Go/NoGo Commission Reaction Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+
+l1_gng_comm_sd:
+  type: Integer
+  description: 'Level 1:  Go/NoGo Commission Standard Deviation'
+
+l1_gs_rt:
+  type: Integer
+  description: 'Level 1:  Go Stop Reaction Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+
+l1_gs_sd:
+  type: Integer
+  description: 'Level 1:  Go Stop Standard Deviation'
+
+l1_gs_hits:
+  type: Integer
+  description: 'Level 1:  Go Stop Hits'
+
+l2_omit:
+  type: Integer
+  description: 'Level 2:  Go Omissions'
+  alias: 2t_omit
+
+l1_gs_comms:
+  type: Integer
+  description: 'Level 1:  Go Stop Commissions'
+
+l1_gs_reject:
+  type: Integer
+  description: 'Level 1:  Go Stop Rejections'
+
+l1_gs_omit:
+  type: Integer
+  description: 'Level 1:  Go Stop Ommissions'
+
+l1_gs_missed:
+  type: Integer
+  description: 'Level 1:  Go Stop Missed Opportunities'
+
+l1_gs_comm_rt:
+  type: Integer
+  description: 'Level 1:  Go Stop Commission Reaction Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+
+l1_gs_comm_sd:
+  type: Integer
+  description: 'Level 1:  Go Stop Commission Standard Deviation'
+
+l1_gs_stoptime:
+  type: Integer
+  description: 'Level 1:  Go Stop Stop Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+
+l1_gs_failstop:
+  type: Integer
+  description: 'Level 1:  Go Stop Fail Stop Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+
+countl1_gng_error:
+  type: Integer
+  description: 'Count Level 1:  Go/NoGo Errors'
+
+l1_gng_pre2error:
+  type: Integer
+  description: 'Level 1:  Go/NoGo Pre2 Error'
+
+l2_gng_rt:
+  type: Integer
+  description: 'Level 2:  Go/NoGo Reaction Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+  alias: 2t_gng_rt
+
+l1_gng_pre1error:
+  type: Integer
+  description: 'Level 1:  Go/NoGo Pre1 Error'
+
+l1_gng_error:
+  type: Integer
+  description: 'Level 1:  Go/NoGo Errors'
+
+count2t_gng_error:
+  type: Integer
+  description: 'Count Level 2:  Go/NoGo Errors'
+
+l3_rt:
+  type: Integer
+  description: 'Level 3:  Go Reaction Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+
+l3_sd:
+  type: Integer
+  description: 'Level 3:  Go Standard Deviation'
+
+l3_hits:
+  type: Integer
+  description: 'Level 3:  Go Hits'
+
+l3_omit:
+  type: Integer
+  description: 'Level 3:  Go Omissions'
+
+l3_gng_rt:
+  type: Integer
+  description: 'Level 3:  Go/NoGo Reaction Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+
+l3_gng_sd:
+  type: Integer
+  description: 'Level 3:  Go/NoGo Standard Deviation'
+
+l3_gng_hits:
+  type: Integer
+  description: 'Level 3:  Go/NoGo Hits'
+
+l2_gng_sd:
+  type: Integer
+  description: 'Level 2:  Go/NoGo Standard Deviation'
+  alias: 2t_gng_sd
+
+l3_gng_comms:
+  type: Integer
+  description: 'Level 3:  Go/NoGo Commissions'
+
+l3_gng_reject:
+  type: Integer
+  description: 'Level 3:  Go/NoGo Rejections'
+
+l3_gng_omit:
+  type: Integer
+  description: 'Level 3:  Go/NoGo Ommisions'
+
+l3_gng_missed:
+  type: Integer
+  description: 'Level 3:  Go/NoGo Missed Opportunities'
+
+l3_gng_comm_rt:
+  type: Integer
+  description: 'Level 3:  Go/NoGo Commission Reaction Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+
+l3_gng_comm_sd:
+  type: Integer
+  description: 'Level 3:  Go/NoGo Commission Standard Deviation'
+
+l3_gs_rt:
+  type: Integer
+  description: 'Level 3:  Go Stop Reaction Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+
+l3_gs_sd:
+  type: Integer
+  description: 'Level 3:  Go Stop Standard Deviation'
+
+l3_gs_hits:
+  type: Integer
+  description: 'Level 3:  Go Stop Hits'
+
+l3_gs_comms:
+  type: Integer
+  description: 'Level 3:  Go Stop Commissions'
+
+l2_gng_hits:
+  type: Integer
+  description: 'Level 2:  Go/NoGo Hits'
+  alias: 2t_gng_hits
+
+l3_gs_reject:
+  type: Integer
+  description: 'Level 3:  Go Stop Rejections'
+
+l3_gs_omit:
+  type: Integer
+  description: 'Level 3:  Go Stop Ommissions'
+
+l3_gs_missed:
+  type: Integer
+  description: 'Level 3:  Go Stop Missed Opportunities'
+
+l3_gs_comm_rt:
+  type: Integer
+  description: 'Level 3:  Go Stop Commission Reaction Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+
+l3_gs_comm_sd:
+  type: Integer
+  description: 'Level 3:  Go Stop Commission Standard Deviation'
+
+l3_gs_stoptime:
+  type: Integer
+  description: 'Level 3:  Go Stop Stop Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+
+l3_gs_failstop:
+  type: Integer
+  description: 'Level 3:  Go Stop Fail Stop Time'
+  range:
+  - 0::100000
+  notes: milliseconds
+
+countl3_gng_error:
+  type: Integer
+  description: 'Count Level 3:  Go/NoGo Errors'
+
+l3_gng_pre2error:
+  type: Integer
+  description: 'Level 3:  Go/NoGo Pre2 Error'
+
+l3_gng_pre1error:
+  type: Integer
+  description: 'Level 3:  Go/NoGo Pre1 Error'
+
+rew_fa_rt:
+  type: Float
+  description: Mean response time (ms) for incorrect previous reward nogo trials (button
+    pressed)
+  range:
+  - 0::800
+
+loss_fa_rt:
+  type: Float
+  description: Mean response time (ms) for incorrect previous loss nogo trials (button
+    pressed)
+  range:
+  - 0::800
+
+pre2_cr_prop:
+  type: Float
+  description: Proportion of (following 2 go trials) nogo trials correct (button not
+    pressed)
+  range:
+  - 0::1
+
+pre2_fa_prop:
+  type: Float
+  description: Proportion of (following 2 go trials) nogo trials incorrect (button
+    pressed)
+  range:
+  - 0::1
+
+pre2_fa_rt:
+  type: Float
+  description: Mean response time (ms) for incorrect (following 2 go trials) nogo
+    trials (button pressed)
+  range:
+  - 0::800
+
+pre3_cr_prop:
+  type: Float
+  description: Proportion of (following 3 go trials) nogo trials correct (button not
+    pressed)
+  range:
+  - 0::1
+
+pre3_fa_prop:
+  type: Float
+  description: Proportion of (following 3 go trials) nogo trials incorrect (button
+    pressed)
+  range:
+  - 0::1
+
+pre3_fa_rt:
+  type: Float
+  description: Mean response time (ms) for incorrect (following 3 go trials) nogo
+    trials (button pressed)
+  range:
+  - 0::800
+
+pre4_cr_prop:
+  type: Float
+  description: Proportion of (following 4 go trials) nogo trials correct (button not
+    pressed)
+  range:
+  - 0::1
+
+pre4_fa_prop:
+  type: Float
+  description: Proportion of (following 4 go trials) nogo trials incorrect (button
+    pressed)
+  range:
+  - 0::1
+
+pre4_fa_rt:
+  type: Float
+  description: Mean response time (ms) for incorrect (following 4 go trials) nogo
+    trials (button pressed)
+  range:
+  - 0::800
+
+miss_prop:
+  type: Float
+  description: Overall proportion of go trials incorrect (button not pressed), incorrect
+    go trials/total go trials
+  range:
+  - 0::1
+
+cr_prop:
+  type: Float
+  description: Overall proportion of nogo trials correct (button not pressed), correct
+    nogo trials/total nogo trials
+  range:
+  - 0::1
+
+fa_rt:
+  type: Float
+  description: Mean response time (ms) for incorrect nogo trials (button pressed)
+  range:
+  - 0::800
+
+rew_cr_prop:
+  type: Float
+  description: Proportion of previous reward nogo trials correct (button not pressed)
+  range:
+  - 0::1
+
+rew_fa_prop:
+  type: Float
+  description: Proportion of previous reward nogo trials incorrect (button pressed)
+  range:
+  - 0::1
+
+loss_cr_prop:
+  type: Float
+  description: Proportion of previous loss nogo trials correct (button not pressed)
+  range:
+  - 0::1
+
+loss_fa_prop:
+  type: Float
+  description: Proportion of previous loss nogo trials incorrect (button pressed)
+  range:
+  - 0::1
+
+bs_cor_go_rt_total:
+  type: Float
+  description: Mean response time for all correct "Go" trials
+  alias: hit_rt
+
+cogbias_state:
+  type: String
+  length: 25
+  description: Event Received at Response Termination
+  alias: gradcpt_state

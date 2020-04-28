@@ -1,0 +1,347 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,record_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: date_of_interview_contact,ipaqdate,v10_ipaq_date,v1_ipaq_date,v7_ipaq_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: age,v10_ipaq_age,v1_ipaq_age,v7_ipaq_age
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: demo_1,gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+ipaq1:
+  type: Integer
+  description: Do you currently have a job or do any unpaid work outside your home
+  range:
+  - 0
+  - 1
+  notes: 0=No;1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ipaq2:
+  type: Integer
+  description: During the last 7 days, on how many days did you do vigorous physical
+    activities like heavy lifting, digging, aerobics, or fast cycling? (# days per
+    week)
+  alias: ipaq1days,ipaq_1111,v10_ipaq_vigorous_daysinpastweek,v1_ipaq_vigorous_daysinpastweek,v7_ipaq_vigorous_daysinpastweek,vigdays
+
+ipaq3a:
+  type: Integer
+  description: How much time did you usually spend doing vigorous physical activities
+    on one of those days? (hours per day)
+  alias: ipaq2hrs,vighours
+
+ipaq3b:
+  type: Integer
+  description: How much time did you usually spend doing vigorous physical activities
+    on one of those days? (minutes per day)
+  notes: 999 = Unknown
+  alias: ipaq2mins,ipaq_1112_mins,v10_ipaq_vigorous_minutesperdayinpastweek,v1_ipaq_vigorous_minutesperdayinpastweek,v7_ipaq_vigorous_minutesperdayinpastweek,vigminutes
+  codes:
+    999: Unknown
+
+ipaq4:
+  type: Integer
+  description: During the last 7 days, on how many days did you do moderate physical
+    activities like carrying light loads, bicycling at a regular pace, or doubles
+    tennis? (# days per week)
+  alias: ipaq3days,ipaq_1113_days,moddays,v10_ipaq_moderate_daysinpastweek,v1_ipaq_moderate_daysinpastweek,v7_ipaq_moderate_daysinpastweek
+
+ipaq5a:
+  type: Integer
+  description: How much time did you usually spend doing moderate physical activities
+    on one of those days? (hours per day)
+  alias: ipaq4hrs,modhours
+
+ipaq5b:
+  type: Integer
+  description: How much time did you usually spend doing moderate physical activities
+    on one of those days? (minutes per day)
+  notes: 999 = Unknown
+  alias: ipaq4mins,ipaq_1114_mins,modminutes,v10_ipaq_moderate_minutesperdayinpastweek,v1_ipaq_moderate_minutesperdayinpastweek,v7_ipaq_moderate_minutesperdayinpastweek
+  codes:
+    999: Unknown
+
+ipaq6:
+  type: Integer
+  description: During the last 7 days, on how many days did you walk for at least
+    ten minutes at a time? (# days per week)
+  alias: ipaq5days,ipaq_1115_days,v10_ipaq_walking_daysinpastweek,v1_ipaq_walking_daysinpastweek,v7_ipaq_walking_daysinpastweek,walkdays
+
+ipaq7a:
+  type: Integer
+  description: How much time did you usually spend walking on one of those days? (hours
+    per day)
+  alias: ipaq6hrs,walkhours
+
+ipaq7b:
+  type: Integer
+  description: How much time did you usually spend walking on one of those days? (minutes
+    per day)
+  notes: 999 = Unknown
+  alias: ipaq6mins,ipaq_1116_mins,v10_ipaq_walking_minutesperdayinpastweek,v1_ipaq_walking_minutesperdayinpastweek,v7_ipaq_walking_minutesperdayinpastweek,walkminutes
+  codes:
+    999: Unknown
+
+ipaq8:
+  type: Integer
+  description: During the last 7 days, on how many days did you travel in a motor
+    vehicle like a train, bus, car, or tram (days per week)
+
+ipaq9a:
+  type: Integer
+  description: How much time did you usually spend on one of those days traveling  in
+    a train, bus, car, tram, or other kind of motor vehicle (hours per day)
+
+ipaq9b:
+  type: Integer
+  description: How much time did you usually spend on one of those days traveling  in
+    a train, bus, car, tram, or other kind of motor vehicle (minutes per day)
+
+ipaq10:
+  type: Integer
+  description: During  the last 7 days , on how many days did you bicycle for at least
+    10 minutes at a time to go from place to place (days per week)
+
+ipaq11a:
+  type: Integer
+  description: How much time did you usually spend on one of those days to bicycle
+    from place to place (hours per week)
+
+ipaq11b:
+  type: Integer
+  description: How much time did you usually spend on one of those days to bicycle
+    from place to place (minutes per week)
+
+ipaq12:
+  type: Integer
+  description: During  the  last 7 days, on how many days did you walk for at least
+    10 minutes at a time to go from place to place (days per week)
+
+ipaq13a:
+  type: Integer
+  description: How much time did you usually spend on one of those days walking from
+    place to place (hours per week)
+
+ipaq13b:
+  type: Integer
+  description: How much time did you usually spend on one of those days walking from
+    place to place (days per week)
+
+ipaq14:
+  type: Integer
+  description: "Think about only those physical activities that you did for at least\
+    \ 10 minutes at a time. \nDuring the last 7 days, on how many days did you do\
+    \ vigorous physical activities like heavy lifting, chopping wood, shoveling snow,\
+    \ or digging in the garden or yard (days per week)"
+
+ipaq15a:
+  type: Integer
+  description: How much time did you usually spend on one of those days doing vigorous
+    physical activities in the garden or yard (hours per day)
+
+ipaq15b:
+  type: Integer
+  description: How much time did you usually spend on one of those days doing vigorous
+    physical activities in the garden or yard (minutes per day)
+
+ipaq16:
+  type: Integer
+  description: Again, think about only those physical activities that you did for
+    at least 10 minutes at a time. During the last 7 days, on how many days did you
+    do moderate activities like carrying light loads, sweeping, washing windows, and
+    raking in the garden or yard (days per week)
+
+ipaq17a:
+  type: Integer
+  description: How much time did you usually spend on one of those days doing moderate
+    physical activities in the garden or yard (hours per day)
+
+ipaq17b:
+  type: Integer
+  description: How much time did you usually spend on one of those days doing moderate
+    physical activities in the garden or yard (minutes per day)
+
+ipaq18:
+  type: Integer
+  description: Once again, think about only those physical activities that you did
+    for at least 10 minutes at a time. During the last 7 days, on how many days did
+    you do moderate activities like carrying light loads, washing windows, scrubbing
+    floors and sweeping inside your home (days per week)
+
+ipaq19a:
+  type: Integer
+  description: How much time did you usually spend on one of those days doing moderate
+    physical activities inside your home (hours per day)
+
+ipaq19b:
+  type: Integer
+  description: How much time did you usually spend on one of those days doing moderate
+    physical activities inside your home (minutes per day)
+
+ipaq20:
+  type: Integer
+  description: Not counting any walking you have already mentioned, during the last
+    7 days, on how many days did you walk for at least 10 minutes at a time in your
+    leisure time (days per week)
+
+ipaq21a:
+  type: Integer
+  description: How much time did you usually spend on one of those days walking in
+    your leisure time (hours per day)
+
+ipaq21b:
+  type: Integer
+  description: How much time did you usually spend on one of those days walking in
+    your leisure time (minutes per day)
+
+ipaq22:
+  type: Integer
+  description: "Think about only those physical activities that you did for at least\
+    \ 10 minutes at a time. \nDuring the last 7 days, on how many days did you do\
+    \ vigorous physical activities like aerobics, running, fast bicycling, or fast\
+    \ swimming in your leisure time (days per week)"
+
+ipaq23a:
+  type: Integer
+  description: How much time did you usually spend on one of those days doing vigorous
+    physical activities in your leisure time (hours per week)
+
+ipaq23b:
+  type: Integer
+  description: How much time did you usually spend on one of those days doing vigorous
+    physical activities in your leisure time (days per week)
+
+ipaq24:
+  type: Integer
+  description: Again, think about only those physical activities that you did for
+    at least 10 minutes at a time. During the last 7 days, on how many days did you
+    do moderate physical activities like bicycling at a regular pace, swimming at
+    a regular pace, and doubles tennis in your leisure time (days per week)
+
+ipaq25a:
+  type: Integer
+  description: How much time did you usually spend on one of those days doing moderate
+    physical activities in your leisure time (hours per day)
+
+ipaq25b:
+  type: Integer
+  description: How much time did you usually spend on one of those days doing moderate
+    physical activities in your leisure time (days per day)
+
+ipaq26a:
+  type: Integer
+  description: During the last 7 days, how much time did you spend sitting on a week
+    day? (hours per day)
+  alias: ipaq7hrs,ipaq7mins,v10_ipaq_sitting_minutesperdayinpastweek,v7_ipaq_sitting_minutesperdayinpastweek
+
+ipaq26n:
+  type: Integer
+  description: During the last 7 days, how much time did you spend sitting on a week
+    day? (minutes per day)
+  notes: 999 = Unknown
+  alias: ipaq_1117_weekday_mins,v1_ipaq_sitting_minutesperdayinpastweek
+  codes:
+    999: Unknown
+
+ipaq27a:
+  type: Integer
+  description: During the last 7 days, how much time did you spend sitting on a weekend
+    day? (hours per day)
+
+ipaq27b:
+  type: Integer
+  description: During the last 7 days, how much time did you spend sitting on a weekend
+    day? (minutes per day)
+
+ipaqsf_cat:
+  type: Integer
+  description: IPAQ Short Form Categorical Score
+  range:
+  - 1::3
+  notes: 1=Low Level of Activity; 2=Moderate Level of Activity; 3=High Level of Activity
+  codes:
+    1: Low Level of Activity
+    2: Moderate Level of Activity
+    3: High Level of Activity
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: version
+
+ipaq_1112_week_mins:
+  type: Integer
+  description: How much time in total would you spend over the last 7 days doing vigorous
+    physical activities? (minutes per week)
+
+ipaq_1114_week_mins:
+  type: Integer
+  description: What is the total amount of time you spent over the last 7 days doing
+    moderate physical activities?? (minutes per week)
+
+ipaq_1116_week_mins:
+  type: Integer
+  description: What is the total amount of time you spent walking over the last 7
+    days? (minutes per week)
+
+ipaq_1117_wed_mins:
+  type: Integer
+  description: What is the total amount of time you spent sitting last Wednesday?
+    (minutes on Wednesday)
+
+completed:
+  type: Integer
+  description: Checks if completed
+  range:
+  - 0::3
+  notes: 0=No; 1=Yes; 2=Yes, lost; 3=Unverified
+  alias: ipaq_complete
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Yes, lost
+    3: Unverified

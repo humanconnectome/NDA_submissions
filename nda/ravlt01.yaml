@@ -1,0 +1,3428 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,id,pea_userid,subject_id
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: pea_assessment_date,v10_ravlt1_date,v2_ravlt1_date,v4_ravlt1_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: v10_ravlt_age,v2_ravlt_age,v4_ravlt_age
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,pea_gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+ravlt_a1_1:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.1 Drum
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.2 Curtain
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_3:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.3 Bell
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_4:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.4 Coffee
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_5:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.5 School
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_6:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.6 Parent
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_7:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.7 Moon
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_8:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.8 Garden
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_9:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.9 Hat
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_10:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.10 Farmer
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_11:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.11 Nose
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_12:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.12 Turkey
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_13:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.13 Color
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_14:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.14 House
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_15:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.15 River
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_total:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1 total
+  range:
+  - 0::15
+  - -9999
+  - -98
+  notes: 0::15 = score range; -9999 = participant did not show; -98 = participant
+    showed but data was not collected
+  alias: v10_ravlt3_la_t1_wordscorrect,v2_ravlt1_la_t1_wordscorrect,v4_ravlt2_la_t1_wordscorrect
+  codes:
+    15: score range
+    -9999: participant did not show
+    -98: participant showed but data was not collected
+
+ravlt_a2_1:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.1 Drum
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.2 Curtain
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_3:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.3 Bell
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_4:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.4 Coffee
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_5:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.5 School
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_6:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.6 Parent
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_7:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.7 Moon
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_8:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.8 Garden
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_9:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.9 Hat
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_10:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.10 Farmer
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_11:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.11 Nose
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_12:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.12 Turkey
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_13:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.13 Color
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_14:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.14 House
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_15:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.15 River
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_total:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2 total
+  range:
+  - 0::15
+  - -9999
+  - -98
+  notes: 0::15 = score range; -9999 = participant did not show; -98 = participant
+    showed but data was not collected
+  alias: v10_ravlt3_la_t2_wordscorrect,v2_ravlt1_la_t2_wordscorrect,v4_ravlt2_la_t2_wordscorrect
+  codes:
+    15: score range
+    -9999: participant did not show
+    -98: participant showed but data was not collected
+
+ravlt_a3_1:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.1 Drum
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.2 Curtain
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_3:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.3 Bell
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_4:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.4 Coffee
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_5:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.5 School
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_6:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.6 Parent
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_7:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.7 Moon
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_8:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.8 Garden
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_9:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.9 Hat
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_10:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.10 Farmer
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_11:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.11 Nose
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_12:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.12 Turkey
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_13:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.13 Color
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_14:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.14 House
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_15:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.15 River
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_total:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3 total
+  range:
+  - 0::15
+  - -9999
+  - -98
+  notes: 0::15 = score range; -9999 = participant did not show; -98 = participant
+    showed but data was not collected
+  alias: v10_ravlt3_la_t3_wordscorrect,v2_ravlt1_la_t3_wordscorrect,v4_ravlt2_la_t3_wordscorrect
+  codes:
+    15: score range
+    -9999: participant did not show
+    -98: participant showed but data was not collected
+
+ravlt_a4_1:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.1 Drum
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.2 Curtain
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_3:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.3 Bell
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_4:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.4 Coffee
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_5:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.5 School
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_6:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.6 Parent
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_7:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.7 Moon
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_8:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.8 Garden
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_9:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.9 Hat
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_10:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.10 Farmer
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_11:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.11 Nose
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_12:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.12 Turkey
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_13:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.13 Color
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_14:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.14 House
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_15:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.15 River
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_total:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4 total
+  range:
+  - 0::15
+  - -9999
+  - -98
+  notes: 0::15 = score range; -9999 = participant did not show; -98 = participant
+    showed but data was not collected
+  alias: v10_ravlt1_la_t4_wordscorrect,v10_ravlt3_la_t4_wordscorrect,v2_ravlt1_la_t4_wordscorrect,v4_ravlt1_la_t4_wordscorrect,v4_ravlt2_la_t4_wordscorrect
+  codes:
+    15: score range
+    -9999: participant did not show
+    -98: participant showed but data was not collected
+
+ravlt_a5_1:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.1 Drum
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.2 Curtain
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_3:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.3 Bell
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_4:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.4 Coffee
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_5:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.5 School
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_6:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.6 Parent
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_7:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.7 Moon
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_8:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.8 Garden
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_9:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.9 Hat
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_10:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.10 Farmer
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_11:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.11 Nose
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_12:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.12 Turker
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_13:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.13 Color
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_14:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.14 House
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_15:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.15 River
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_total:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5 total
+  range:
+  - 0::15
+  - -9999
+  - -98
+  notes: 0::15 = score range; -9999 = participant did not show; -98 = participant
+    showed but data was not collected
+  alias: v10_ravlt1_la_t5_delayed_wordscorrect,v10_ravlt3_la_t5_delayed_wordscorrect,v2_ravlt1_la_t5_delayed_wordscorrect,v4_ravlt1_la_t5_delayed_wordscorrect,v4_ravlt2_la_t5_delayed_wordscorrect
+  codes:
+    15: score range
+    -9999: participant did not show
+    -98: participant showed but data was not collected
+
+ravlt_tot:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Total of Trials A1-A5
+  range:
+  - 0::75
+  - -9999
+  - -98
+  notes: 0::75= score range; -9999 = participant did not show; -98 = participant showed
+    but data was not collected
+  codes:
+    75: score range
+    -9999: participant did not show
+    -98: participant showed but data was not collected
+
+ravlt_b_1:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.1 Desk
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.2 Ranger
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_3:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.3 Bird
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_4:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.4 Shoe
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_5:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.5 Stove
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_6:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.6 Mountain
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_7:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.7 Glasses
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_8:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.8 Towel
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_9:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.9 Cloud
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_10:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.10 Boat
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_11:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.11 Lamb
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_12:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.12 Gun
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_13:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.13 Pencil
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_14:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.14 Church
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_15:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.15 Fish
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_total:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B total
+  range:
+  - 0::15
+  - -9999
+  - -98
+  notes: 0::15 = score range; -9999 = participant did not show; -98 = participant
+    showed but data was not collected
+  alias: v10_ravlt1_lb_wordscorrect,v10_ravlt3_lb_wordscorrect,v2_ravlt1_lb_wordscorrect,v4_ravlt1_lb_wordscorrect,v4_ravlt2_lb_wordscorrect
+  codes:
+    15: score range
+    -9999: participant did not show
+    -98: participant showed but data was not collected
+
+ravlt_a6_1:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.1 Drum
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.2 Curtain
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_3:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.3 Bell
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_4:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.4 Coffee
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_5:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.5 School
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_6:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.6 Parent
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_7:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.7 Moon
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_8:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.8 Garden
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_9:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.9 Hat
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_10:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.10 Farmer
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_11:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.11 Nose
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_12:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.12 Turkey
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_13:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.13 Color
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_14:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.14 House
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_15:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.15 River
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_total:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6 total
+  range:
+  - 0::15
+  - -9999
+  - -98
+  notes: 0::15 = score range; -9999 = participant did not show; -98 = participant
+    showed but data was not collected
+  codes:
+    15: score range
+    -9999: participant did not show
+    -98: participant showed but data was not collected
+
+ravlt_del_1:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY 1 Drum
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY 2 Curtain
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_3:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY 3 Bell
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_4:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY 4 Coffee
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_5:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY 5 School
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_6:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY 6 Parent
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_7:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY 7 Moon
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_8:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY 8 Garden
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_9:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY 9 Hat
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_10:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY 10 Farmer
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_11:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY 11 Nose
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_12:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY 12 Turkey
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_13:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY 13 Color
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_14:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY 14 House
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_15:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY 15 River
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_total:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY total
+  range:
+  - 0::15
+  - -9999
+  - -98
+  notes: 0::15 = score range; -9999 = participant did not show; -98 = participant
+    showed but data was not collected
+  codes:
+    15: score range
+    -9999: participant did not show
+    -98: participant showed but data was not collected
+
+ravlt_hits_1:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS 1 Drum
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS 2 Curtain
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_3:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS 3 Bell
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_4:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS 4 Coffee
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_5:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS 5 School
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_6:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS 6 Parent
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_7:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS 7 Moon
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_8:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS 8 Garden
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_9:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS 9 Hat
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_10:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS 10 Farmer
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_11:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS 11 Nose
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_12:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS 12 Turkey
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_13:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS 13 Color
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_14:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS 14 House
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_15:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS 15 River
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_total:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS total
+  range:
+  - 0::15
+  - -9999
+  - -98
+  notes: 0::15 = score range; -9999 = participant did not show; -98 = participant
+    showed but data was not collected
+  codes:
+    15: score range
+    -9999: participant did not show
+    -98: participant showed but data was not collected
+
+ravlt_falspos:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) False Positives total
+  range:
+  - 0::35
+  - -9999
+  - -98
+  notes: 0::35 = false positive range; -9999 = participant did not show; -98 = participant
+    showed but data was not collected
+  codes:
+    35: false positive range
+    -9999: participant did not show
+    -98: participant showed but data was not collected
+
+ravlt_disc:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Discrimination
+  range:
+  - -15::15
+  - -9999
+  - -98
+  notes: negative score because of false positive values  -9999 = participant did
+    not show; -98 = participant showed but data was not collected
+  codes:
+    -9999: participant did not show
+    -98: participant showed but data was not collected
+
+ravlt_tott:
+  type: Integer
+  required: true
+  description: Rey Auditory Verbal Learning Test (RAVLT) Total T Score
+  range:
+  - 0::100
+  - -9999
+  - -98
+  notes: 0::100 = score range; -9999 = participant did not show; -98 = participant
+    showed but data was not collected
+  codes:
+    100: score range
+    -9999: participant did not show
+    -98: participant showed but data was not collected
+
+ravlt_delt:
+  type: Integer
+  required: true
+  description: Rey Auditory Verbal Learning Test (RAVLT) Delay T Score
+  range:
+  - 0::100
+  - -9999
+  - -98
+  notes: 0::100 = score range; -9999 = participant did not show; -98 = participant
+    showed but data was not collected
+  codes:
+    100: score range
+    -9999: participant did not show
+    -98: participant showed but data was not collected
+
+ravlt_disct:
+  type: Integer
+  required: true
+  description: Rey Auditory Verbal Learning Test (RAVLT) Discrimination T Score
+  range:
+  - -100::100
+  - -9999
+  - -98
+  notes: negative score because of false positive values  -9999 = participant did
+    not show; -98 = participant showed but data was not collected
+  codes:
+    -9999: participant did not show
+    -98: participant showed but data was not collected
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+  alias: eventname
+
+cpthtime:
+  type: String
+  length: 20
+  description: Time tested
+  notes: HH:MM:SS
+
+time_dr:
+  type: String
+  length: 15
+  description: Time of Rating of Delayed Recall
+  notes: hh:mm
+
+status:
+  type: String
+  length: 50
+  description: Status
+  alias: pea_assessment_status
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: pea_assessmentid
+
+pea_ravlt_sd_tc:
+  type: Integer
+  description: RAVLT Short Delay Total Correct
+
+pea_ravlt_sd_trial_i_tc:
+  type: Integer
+  description: RAVLT Short Delay Trial I Total Correct
+
+pea_ravlt_sd_trial_i_tr:
+  type: Integer
+  description: RAVLT Short Delay Trial I Total Repetitions
+
+pea_ravlt_sd_trial_i_ti:
+  type: Integer
+  description: RAVLT Short Delay Trial I Total Intrusions
+
+pea_ravlt_sd_trial_ii_tc:
+  type: Integer
+  description: RAVLT Short Delay Trial II Total Correct
+
+pea_ravlt_sd_trial_ii_tr:
+  type: Integer
+  description: RAVLT Short Delay Trial II Total Repetitions
+
+pea_ravlt_sd_trial_ii_ti:
+  type: Integer
+  description: RAVLT Short Delay Trial II Total Intrusions
+
+pea_ravlt_sd_trial_iii_tc:
+  type: Integer
+  description: RAVLT Short Delay Trial III Total Correct
+
+pea_ravlt_sd_trial_iii_tr:
+  type: Integer
+  description: RAVLT Short Delay Trial III Total Repetitions
+
+pea_ravlt_sd_trial_iii_ti:
+  type: Integer
+  description: RAVLT Short Delay Trial III Total Intrusions
+
+pea_ravlt_sd_trial_iv_tc:
+  type: Integer
+  description: RAVLT Short Delay Trial IV Total Correct
+
+pea_ravlt_sd_trial_iv_tr:
+  type: Integer
+  description: RAVLT Short Delay Trial IV Total Repetitions
+
+pea_ravlt_sd_trial_iv_ti:
+  type: Integer
+  description: RAVLT Short Delay Trial IV Total Intrusions
+
+pea_ravlt_sd_trial_v_tc:
+  type: Integer
+  description: RAVLT Short Delay Trial V Total Correct
+
+pea_ravlt_sd_trial_v_tr:
+  type: Integer
+  description: RAVLT Short Delay Trial V Total Repetitions
+
+pea_ravlt_sd_trial_v_ti:
+  type: Integer
+  description: RAVLT Short Delay Trial V Total Intrusions
+
+pea_ravlt_sd_listb_tc:
+  type: Integer
+  description: RAVLT Short Delay List B Total Correct
+
+pea_ravlt_sd_listb_tr:
+  type: Integer
+  description: RAVLT Short Delay List B Total Repetitions
+
+pea_ravlt_sd_listb_ti:
+  type: Integer
+  description: RAVLT Short Delay List B Total Intrusions
+
+pea_ravlt_sd_trial_vi_tc:
+  type: Integer
+  description: RAVLT Short Delay Trial VI Total Correct
+
+pea_ravlt_sd_trial_vi_tr:
+  type: Integer
+  description: RAVLT Short Delay Trial VI Total Repetitions
+
+pea_ravlt_sd_trial_vi_ti:
+  type: Integer
+  description: RAVLT Short Delay Trial VI Total Intrusions
+
+pea_ravlt_ld_trial_vii_tc:
+  type: Integer
+  description: RAVLT Long Delay Trial VII Total Correct
+
+pea_ravlt_ld_trial_vii_tr:
+  type: Integer
+  description: RAVLT Long Delay Trial VII Total Repetitions
+
+pea_ravlt_ld_trial_vii_ti:
+  type: Integer
+  description: RAVLT Long Delay Trial VII Total Intrusions
+
+pea_ravlt_ld_tc:
+  type: Integer
+  description: RAVLT Long Delay Total Correct
+
+ttt_arms:
+  type: String
+  length: 3
+  description: Treatment arms of this study. Individualized therapy (RECOS program)
+    compared with the more general Cognitive Remediation Therapy (CRT)
+  range:
+  - CRT
+  - REC
+
+ravlt_a1_1_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.1 Book
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_2_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.2 Flower
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_3_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.3 Train
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_4_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.4 Rug
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_5_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.5 Meadow
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_6_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.6  Harp
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_7_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.7 Salt
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_8_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.8 Finger
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_9_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.9 Peach
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_10_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.10 Chimney
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_11_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.11 Button
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_12_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.12 Log
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_13_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.13 Key
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_14_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.14 Rattle
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a1_15_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A1.15 Gold
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_1_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.1 Book
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_2_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.2 Flower
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_3_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.3 Train
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_4_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.4 Rug
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_5_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.5 Meadow
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_6_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.6  Harp
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_7_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.7 Salt
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_8_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.8 Finger
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_9_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.9 Peach
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_10_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.10 Chimney
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_11_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.11 Button
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_12_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.12 Log
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_13_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.13 Key
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_14_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.14 Rattle
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a2_15_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A2.15 Gold
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_1_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.1 Book
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_2_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.2 Flower
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_3_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.3 Train
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_4_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.4 Rug
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_5_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.5 Meadow
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_6_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.6  Harp
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_7_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.7 Salt
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_8_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.8 Finger
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_9_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.9 Peach
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_10_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.10 Chimney
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_11_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.11 Button
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_12_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.12 Log
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_13_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.13 Key
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_14_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.14 Rattle
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a3_15_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A3.15 Gold
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_1_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.1 Book
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_2_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.2 Flower
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_3_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.3 Train
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_4_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.4 Rug
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_5_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.5 Meadow
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_6_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.6  Harp
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_7_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.7 Salt
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_8_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.8 Finger
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_9_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.9 Peach
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_10_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.10 Chimney
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_11_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.11 Button
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_12_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.12 Log
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_13_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.13 Key
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_14_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.14 Rattle
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a4_15_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A4.15 Gold
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_1_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.1 Book
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_2_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.2 Flower
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_3_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.3 Train
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_4_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.4 Rug
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_5_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.5 Meadow
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_6_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.6  Harp
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_7_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.7 Salt
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_8_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.8 Finger
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_9_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.9 Peach
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_10_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.10 Chimney
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_11_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.11 Button
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_12_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.12 Log
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_13_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.13 Key
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_14_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.14 Rattle
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a5_15_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A5.15 Gold
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_1_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.1 Doll
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_2_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.2 Mirror
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_3_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.3 Nail
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_4_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.4 Sailor
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_5_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.5 Heart
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_6_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.6 Desert
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_7_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.7 Face
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_8_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.8 Letter
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_9_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.9 Bed
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_10_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.10 Sky
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_11_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.11 Milk
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_12_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.12 Helmet
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_13_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.13 Music
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_14_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.14 Horse
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_b_15_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial B.15 Road
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_1_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.1 Book
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_2_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.2 Flower
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_3_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.3 Train
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_4_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.4 Rug
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_5_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.5 Meadow
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_6_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.6  Harp
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_7_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.7 Salt
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_8_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.8 Finger
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_9_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.9 Peach
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_10_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.10 Chimney
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_11_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.11 Button
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_12_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.12 Log
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_13_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.13 Key
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_14_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.14 Rattle
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_a6_15_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial A6.15 Gold
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_1_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY Book
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_2_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY Flower
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_3_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY Train
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_4_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY Rug
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_5_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY Meadow
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_6_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY  Harp
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_7_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY Salt
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_8_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY Finger
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_9_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY Peach
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_10_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY Chimney
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_11_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY Button
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_12_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY Log
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_13_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY Key
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_14_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY Rattle
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_del_15_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial DELAY Gold
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_1_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS Book
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_2_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS Flower
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_3_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS Train
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_4_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS Rug
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_5_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS Meadow
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_6_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS  Harp
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_7_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS Salt
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_8_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS Finger
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_9_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS Peach
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_10_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS Chimney
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_11_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS Button
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_12_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS Log
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_13_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS Key
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_14_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS Rattle
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ravlt_hits_15_v2:
+  type: Integer
+  description: Rey Auditory Verbal Learning Test (RAVLT) Trial HITS Gold
+  range:
+  - 0
+  - 1
+  notes: 0= Incorrect; 1= Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+delay_scaled:
+  type: Integer
+  description: RAVLT Short Delay Scaled Score
+
+delay_completion:
+  type: Float
+  description: RAVLT Short Delay Completion time (seconds)
+
+discontinue:
+  type: Integer
+  description: Rules Triggered, Discontinue
+
+reverse:
+  type: Integer
+  description: Rules Triggered, Reverse
+
+recall_correct_trial1:
+  type: Integer
+  description: Trial 1 Free Recall Total Correct
+
+recall_correct_trial2:
+  type: Integer
+  description: Trial 2 Free Recall Total Correct
+
+recall_correct_trial3:
+  type: Integer
+  description: Trial 3 Free Recall Total Correct
+
+recall_correct_trial4:
+  type: Integer
+  description: Trial 4 Free Recall Total Correct
+
+delay_recall_correct:
+  type: Integer
+  description: Short-Delay Free Recall Total Correct
+
+delay_recall_intrusion:
+  type: Integer
+  description: Short Delay Free-Recall Intrusions
+
+delay_total_intrusion:
+  type: Integer
+  description: Short Delay Total Intrusions
+
+delay_total_repetitions:
+  type: Integer
+  description: Short Delay Total Repetitions

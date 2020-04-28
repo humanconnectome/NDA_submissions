@@ -1,0 +1,895 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: scan_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+scan_debrief1:
+  type: Integer
+  description: How comfortable did you feel in the scanner? Did you have any bodily
+    aches, pains, itches, tingling, or other uncomfortable feelings while in the scanner?
+    Was your comfort affected at all by the noise in the scanner?Did you have any
+    bodily aches, pains, itches, tingling, or other uncomfortable feelings while in
+    the scanner?
+  range:
+  - 1::6
+  notes: 1=Very comfortable. 2=Mostly comfortable. 3=Moderately comfortable. 4=Somewhat
+    uncomfortable. 5=Very uncomfortable. 6=Extremely uncomfortable
+  codes:
+    1: Very comfortable. 2=Mostly comfortable. 3=Moderately comfortable. 4=Somewhat
+      uncomfortable. 5=Very uncomfortable. 6=Extremely uncomfortable
+
+scan_debrief2:
+  type: Integer
+  description: Was your comfort affected at all by the noise in the scanner?
+  range:
+  - 0
+  - 1
+  notes: 0= no; 1= yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+scan_debrief3:
+  type: Integer
+  description: How anxious or nervous did you feel in the scanner?
+  range:
+  - 1::5
+  notes: 1=Absent. Pt denies anxiety. No physical symptoms. 2=Mild. Pt self-reports
+    some anxiety, but does not appear anxious and no endorsement of physical symptoms.
+    3=Moderate. Pt self-reports some anxiety and endorses 1-2 physical symptoms. 4=Moderately
+    severe. Pt self-reports high anxiety, endorses 3 or more physical symptoms, and
+    appears anxious. 5=Severe. Answers that they were terrified or frightened. Endorses
+    all physical symptoms. Still appears distressed. (But completed the scan.) Extreme.
+    Unable to tolerate completion of scan due to anxiety.(Level of anxiety)
+  codes:
+    1: Absent. Pt denies anxiety. No physical symptoms. 2=Mild. Pt self-reports some
+      anxiety, but does not appear anxious and no endorsement of physical symptoms.
+      3=Moderate. Pt self-reports some anxiety and endorses 1-2 physical symptoms.
+      4=Moderately severe. Pt self-reports high anxiety, endorses 3 or more physical
+      symptoms, and appears anxious. 5=Severe. Answers that they were terrified or
+      frightened. Endorses all physical symptoms. Still appears distressed. (But completed
+      the scan.) Extreme. Unable to tolerate completion of scan due to anxiety.(Level
+      of anxiety)
+
+scan_debrief4:
+  type: Integer
+  description: Did you feel scared, frightened, or terrified while in the scanner?
+  range:
+  - 0
+  - 1
+  notes: 0= no; 1= yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+scan_debrief5:
+  type: Integer
+  description: Did you feel unable to relax?
+  range:
+  - 0
+  - 1
+  notes: 0= no; 1= yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+scan_debrief6:
+  type: Integer
+  description: Did you have difficulty breathing? Any fear of choking? Was your heart
+    pounding or racing? Did you feel shaky or unsteady? Did you have any hot or cold
+    sweats? Did you have stomach upset?
+  range:
+  - 0
+  - 1
+  notes: 0= no; 1= yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+scan_debrief7:
+  type: Integer
+  description: Did you fear the worst happening?
+  range:
+  - 0
+  - 1
+  notes: 0= no; 1= yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+scan_debrief8:
+  type: Integer
+  description: Did you fear losing control?
+  range:
+  - 0
+  - 1
+  notes: 0= no; 1= yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+scan_debrief9:
+  type: Integer
+  description: Other than the banging or beeping noises from the scanner, did you
+    hear any sounds in the scanner that were unusual? Did you hear any voices while
+    you were in the scanner?
+  range:
+  - 0
+  - 1
+  notes: 0= no; 1= yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+scan_debrief10:
+  type: Integer
+  description: If so, were the voices vague or clear?
+  range:
+  - 0
+  - 1
+  notes: 0= no; 1= yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+scan_debrief11:
+  type: Integer
+  description: Is it possible that the voices were imagined?
+  range:
+  - 0
+  - 1
+  notes: 0= no; 1= yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+scan_debrief12:
+  type: Integer
+  description: Did you hear the voices from inside or outside your head?
+  range:
+  - 0
+  - 1
+  notes: 0= no; 1= yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+scan_debrief13:
+  type: Integer
+  description: Did the voices tell you to do anything?
+  range:
+  - 0
+  - 1
+  notes: 0= no; 1= yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+scan_debrief14:
+  type: Integer
+  description: Did the voices cause you distress?
+  range:
+  - 0
+  - 1
+  notes: 0= no; 1= yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+scan_debrief15:
+  type: String
+  length: 50
+  description: How long did you hear the voices?
+  notes: < 25%, 25-75%, or >75% of the 10-minute resting state scan?
+
+scan_debrief16:
+  type: Integer
+  description: What was your mood like in the scanner? Depressed or sad? High or elated?
+    Normal or even?
+  range:
+  - 1::5
+  notes: 1=Severely depressed. Dominating and persistent feelings of misery, dejection,
+    discouragement, hopelessness, helplessness, worthlessness, pessimism.2= Moderately
+    depressed. Feelings of sadness, decreased sense of self-worth, and discouragement,
+    but not hopeless or helpless. 3= Euthymic. Even mood. Feels neither elated nor
+    sad/depressed. 4=Moderately elevated. Feels better than usual. High level of optimism.
+    5=Euphoric. Elated and expansive. Sense of special-ness or special powers.(Mood
+    in the scanner)
+  codes:
+    1: Severely depressed. Dominating and persistent feelings of misery, dejection,
+      discouragement, hopelessness, helplessness, worthlessness, pessimism.2= Moderately
+      depressed. Feelings of sadness, decreased sense of self-worth, and discouragement,
+      but not hopeless or helpless. 3= Euthymic. Even mood. Feels neither elated nor
+      sad/depressed. 4=Moderately elevated. Feels better than usual. High level of
+      optimism. 5=Euphoric. Elated and expansive. Sense of special-ness or special
+      powers.(Mood in the scanner)
+
+scan_debrief17:
+  type: Integer
+  description: Did you feel that life wasn't worth living?
+  range:
+  - 0
+  - 1
+  notes: 0= no; 1= yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+scan_debrief18:
+  type: Integer
+  description: Did you have thoughts of harming or killing yourself? Or feel as though
+    you'd be better off dead?
+  range:
+  - 1::6
+  notes: 1=Not Present; 2=Very Mild; 3=Mild; 4=Moderately Severe; 5=Severe; 6=Extremely
+    Severe
+  codes:
+    1: Not Present
+    2: Very Mild
+    3: Mild
+    4: Moderately Severe
+    5: Severe
+    6: Extremely Severe
+
+scan_debrief19:
+  type: Integer
+  description: Was there anything you felt guilty about in the scanner?
+  range:
+  - 0
+  - 1
+  notes: 0= no; 1= yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+scan_debrief20:
+  type: Integer
+  description: Were you thinking about past problems?
+  range:
+  - 1::6
+  notes: 1=Not Present; 2=Very Mild; 3=Mild; 4=Moderately Severe; 5=Severe; 6=Extremely
+    Severe
+  codes:
+    1: Not Present
+    2: Very Mild
+    3: Mild
+    4: Moderately Severe
+    5: Severe
+    6: Extremely Severe
+
+scan_debrief21:
+  type: Integer
+  description: Were you feeling irritable or grumpy?
+  range:
+  - 1::6
+  notes: 1=Not Present; 2=Very Mild; 3=Mild; 4=Moderately Severe; 5=Severe; 6=Extremely
+    Severe
+  codes:
+    1: Not Present
+    2: Very Mild
+    3: Mild
+    4: Moderately Severe
+    5: Severe
+    6: Extremely Severe
+
+scan_debrief22:
+  type: Integer
+  description: Did you feel cheerful and on top of the world without any reason?
+  range:
+  - 0
+  - 1
+  notes: 0= no; 1= yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+scan_debrief23:
+  type: Integer
+  description: Did it seem like more than just feeling good? How long did that last?
+  range:
+  - 1::6
+  notes: 1=Not Present; 2=Very Mild; 3=Mild; 4=Moderately Severe; 5=Severe; 6=Extremely
+    Severe
+  codes:
+    1: Not Present
+    2: Very Mild
+    3: Mild
+    4: Moderately Severe
+    5: Severe
+    6: Extremely Severe
+
+scan_debrief24:
+  type: Integer
+  description: Observable physical and motor manifestations of tension, `nervousness'
+    and agitation. Self-reported experiences of tension should be rated under the
+    item on anxiety. Do not rate if restlessness is solely akathisia, but do rate
+    if akathisia is exacerbated by tension.
+  range:
+  - 1::6
+  notes: 1=Not Present; 2=Very Mild; 3=Mild; 4=Moderately Severe; 5=Severe; 6=Extremely
+    Severe
+  codes:
+    1: Not Present
+    2: Very Mild
+    3: Mild
+    4: Moderately Severe
+    5: Severe
+    6: Extremely Severe
+
+scan_debrief25:
+  type: Integer
+  description: UncooperativenessResistance and lack of willingness tocooperate with
+    interview. The uncooperativeness might result from suspiciousness. Rate only uncooperativeness
+    in relation to the interview, not behaviors involving peers or relatives.
+  range:
+  - 1::6
+  notes: 1=Not Present; 2=Very Mild; 3=Mild; 4=Moderately Severe; 5=Severe; 6=Extremely
+    Severe
+  codes:
+    1: Not Present
+    2: Very Mild
+    3: Mild
+    4: Moderately Severe
+    5: Severe
+    6: Extremely Severe
+
+scan_debrief26:
+  type: Integer
+  description: ExcitementHeightened emotional tone, or increased emotional reactivity
+    to interviewer or topics being discussed, as evidenced by increased intensity
+    of facial expressions, voice tone expressive gestures, or increase in speech quantity
+    and speed.
+  range:
+  - 1::6
+  notes: 1=Not Present; 2=Very Mild; 3=Mild; 4=Moderately Severe; 5=Severe; 6=Extremely
+    Severe
+  codes:
+    1: Not Present
+    2: Very Mild
+    3: Mild
+    4: Moderately Severe
+    5: Severe
+    6: Extremely Severe
+
+scan_debrief27:
+  type: Integer
+  description: Degree to which observed sequences of speech and actions are interrupted
+    by stimuli unrelated to the interview. Distractibility is rated when the individual
+    shows a change in the focus of attention as characterized by a pause in speech
+    or a marked shift in gaze. Individual's attention may be drawn to noise in adjoining
+    room, books on a shelf, interviewer's clothing, etc. Do not rate circumstantiality,
+    tangentially or flight of ideas. Also, do not rate rumination with delusional
+    material. Rate even if the distracting stimulus cannot be identified.
+  range:
+  - 1::6
+  notes: 1=Not Present; 2=Very Mild; 3=Mild; 4=Moderately Severe; 5=Severe; 6=Extremely
+    Severe
+  codes:
+    1: Not Present
+    2: Very Mild
+    3: Mild
+    4: Moderately Severe
+    5: Severe
+    6: Extremely Severe
+
+scan_debrief28:
+  type: Integer
+  description: Increase in energy level evidenced inmore frequent movement and/or
+    rapid speech. Do not rate if restlessness is due to akathisia.
+  range:
+  - 1::6
+  notes: 1=Not Present; 2=Very Mild; 3=Mild; 4=Moderately Severe; 5=Severe; 6=Extremely
+    Severe
+  codes:
+    1: Not Present
+    2: Very Mild
+    3: Mild
+    4: Moderately Severe
+    5: Severe
+    6: Extremely Severe
+
+acc1_1:
+  type: Float
+  description: How did you feel in the MRI scanner?  How scared did you feel?
+  range:
+  - 0::10
+  notes: 0=not at all; 10=a lot
+  codes:
+    0: not at all
+    10: a lot
+
+acc1_2:
+  type: Float
+  description: How did you feel in the MRI scanner?  How bored did you feel?
+  range:
+  - 0::10
+  notes: 0=not at all; 10=a lot
+  codes:
+    0: not at all
+    10: a lot
+
+acc1_3:
+  type: Float
+  description: How did you feel in the MRI scanner?  How grumpy did you feel?
+  range:
+  - 0::10
+  notes: 0=not at all; 10=a lot
+  codes:
+    0: not at all
+    10: a lot
+
+acc1_4:
+  type: Float
+  description: How did you feel in the MRI scanner?  How happy did you feel?
+  range:
+  - 0::10
+  notes: 0=not at all; 10=a lot
+  codes:
+    0: not at all
+    10: a lot
+
+acc1_5:
+  type: Float
+  description: How did you feel in the MRI scanner?  How tired did you feel?
+  range:
+  - 0::10
+  notes: 0=not at all; 10=a lot
+  codes:
+    0: not at all
+    10: a lot
+
+acc1_6:
+  type: Float
+  description: How did you feel in the MRI scanner?  How relaxed did you feel?
+  range:
+  - 0::10
+  notes: 0=not at all; 10=a lot
+  codes:
+    0: not at all
+    10: a lot
+
+acc1_7:
+  type: Float
+  description: How did you feel in the MRI scanner?  How sad did you feel?
+  range:
+  - 0::10
+  notes: 0=not at all; 10=a lot
+  codes:
+    0: not at all
+    10: a lot
+
+acc1_8:
+  type: Float
+  description: How did you feel in the MRI scanner?  How interested did you feel?
+  range:
+  - 0::10
+  notes: 0=not at all; 10=a lot
+  codes:
+    0: not at all
+    10: a lot
+
+acc1_9:
+  type: Float
+  description: How did you feel in the MRI scanner?  How alert did you feel?
+  range:
+  - 0::10
+  notes: 0=not at all; 10=a lot
+  codes:
+    0: not at all
+    10: a lot
+
+acc_discomfort:
+  type: Integer
+  description: Did you experience any discomfort in the MRI scanner?
+  range:
+  - 0::1
+  notes: 0=no; 1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+acc_discomfort1:
+  type: String
+  length: 500
+  description: If you felt discomfort in the MRI scanner, please describe what you
+    felt?
+
+acc_discomfort2_1:
+  type: Integer
+  description: How much discomfort did you experience in the MRI scanner?
+  range:
+  - 0::100
+  notes: 0=not at all; 100=a lot
+  codes:
+    0: not at all
+    100: a lot
+
+acc_when:
+  type: String
+  length: 500
+  description: When did you feel these effects of discomfort in the MRI scanner? (During
+    a particular task? Beginning, middle, end?)
+
+acc_duration:
+  type: String
+  length: 500
+  description: How long did these effects of discomfort in the MRI scanner last?
+
+satisfaction1:
+  type: Integer
+  description: How comfortable were you in the scanner?
+  range:
+  - 1::5
+  notes: 1 = I was very uncomfortable the whole scan ; 2 = I was pretty uncomfortable
+    for most of the scan ; 3 = I was not comfortable but I was able to hold still
+    ; 4 = I was fairly comfortable and I could relax after a while ; 5 = I was completely
+    comfortable and found it easy to relax
+  codes:
+    1: I was very uncomfortable the whole scan
+    2: I was pretty uncomfortable for most of the scan
+    3: I was not comfortable but I was able to hold still
+    4: I was fairly comfortable and I could relax after a while
+    5: I was completely comfortable and found it easy to relax
+
+satisfaction1more:
+  type: String
+  length: 250
+  description: Was there any way we could have done more to make you comfortable?
+
+satisfaction2:
+  type: Integer
+  description: How prepared were you (and your child) for your visit?
+  range:
+  - 1::3
+  notes: 1 = I knew what I was supposed to be doing and I was not caught off guard
+    by anything ; 2 = I knew the main parts what was going on = the details were a
+    little unclear ; 3 = I really didn't know what was going to happen in the scan
+  codes:
+    1: I knew what I was supposed to be doing and I was not caught off guard by anything
+    2: I knew the main parts what was going on = the details were a little unclear
+    3: I really didn't know what was going to happen in the scan
+
+satisfaction2more:
+  type: String
+  length: 250
+  description: Was there any way we could have informed you better about the scan?
+
+satisfaction3:
+  type: Integer
+  description: What do you think about the length of the scan?
+  range:
+  - 1::5
+  notes: 1 = It was pretty long ; 2 = It was somewhat long ; 3 = It was an ok length
+    ; 4 = I could have gone on a little longer ; 5 = I could have gone on a lot longer
+  codes:
+    1: It was pretty long
+    2: It was somewhat long
+    3: It was an ok length
+    4: I could have gone on a little longer
+    5: I could have gone on a lot longer
+
+satisfaction4:
+  type: Integer
+  description: What do you think about the people you worked with?
+  range:
+  - 1::4
+  notes: 1 = Everyone was helpful and caring = I felt like I could trust them ; 2
+    = They were nice = but I felt uncomfortable answering  some of the questions ;
+    3 = They didn't seem very helpful = or attentive to me ; 4 = I didn't like some
+    of the people I worked with
+  codes:
+    1: Everyone was helpful and caring = I felt like I could trust them
+    2: They were nice = but I felt uncomfortable answering  some of the questions
+    3: They didn't seem very helpful = or attentive to me
+    4: I didn't like some of the people I worked with
+
+satisfaction4more:
+  type: String
+  length: 250
+  description: Do you have any ideas about how we could be better?
+
+satisfaction5:
+  type: String
+  length: 250
+  description: What part of your visit did you enjoy most? What did you like about
+    it?
+
+satisfaction6:
+  type: String
+  length: 250
+  description: What part of your visit didn't you like? Could we do anything to make
+    it better?
+
+satisfaction7:
+  type: Integer
+  description: Do you think you would like to come back in two years to do everything
+    again?
+  range:
+  - 1::5
+  notes: 1 = I wouldn't want to do it again ; 2 = It would be alright ; 3 = I would
+    probably like to come back ; 4 = I would like to come back ; 5 = I would be really
+    excited to come back
+  codes:
+    1: I wouldn't want to do it again
+    2: It would be alright
+    3: I would probably like to come back
+    4: I would like to come back
+    5: I would be really excited to come back
+
+satisfaction8:
+  type: Integer
+  description: Do you think the compensation was enough for what you were asked to
+    do?
+  range:
+  - 1
+  - 2
+  notes: 1 = I think it was enough ; 2 = I think it could have been more
+  codes:
+    1: I think it was enough
+    2: I think it could have been more
+
+satisfaction9:
+  type: Integer
+  description: Did you have enough breaks?
+  range:
+  - 1::3
+  notes: 1 = I didn't really need breaks ; 2 = There was enough time for breaks ;
+    3 = I could have used more time for breaks
+  codes:
+    1: I didn't really need breaks
+    2: There was enough time for breaks
+    3: I could have used more time for breaks
+
+satisfaction10:
+  type: Integer
+  description: Did you feel like you were able to complete all of our measures?
+  range:
+  - 1::3
+  notes: 1 = I felt like could do everything ; 2 = I could do most things = but some
+    things were difficult ; 3 = I struggled with quite a few things
+  codes:
+    1: I felt like could do everything
+    2: I could do most things = but some things were difficult
+    3: I struggled with quite a few things
+
+satisfaction11:
+  type: Integer
+  description: How reliable was communication with the lab?
+  range:
+  - 1::4
+  notes: 1 = I could always get ahold of someone when I needed to ; 2 = I had to try
+    once or twice = but I connected eventually ; 3 = It was hit or miss ; 4 = I couldn't
+    reach anyone when I needed to
+  codes:
+    1: I could always get ahold of someone when I needed to
+    2: I had to try once or twice = but I connected eventually
+    3: It was hit or miss
+    4: I couldn't reach anyone when I needed to
+
+satisfaction57_7:
+  type: Integer
+  description: How excited would you be to come back and get your brain picture taken
+    again?
+  range:
+  - 1::5
+  notes: 1 = I wouldn't want to do it again ; 2 = It would be ok ; 3 = I would probably
+    like it ; 4 = I would like to come back ; 5 = I would be really excited to come
+    back!
+  codes:
+    1: I wouldn't want to do it again
+    2: It would be ok
+    3: I would probably like it
+    4: I would like to come back
+    5: I would be really excited to come back!
+
+satisfaction57_8:
+  type: Integer
+  description: How did you like the prizes you got?
+  range:
+  - 1::5
+  notes: 1 = I didn't like them ; 2 = They were ok ; 3 = I liked some of them ; 4
+    = I liked them all ; 5 = I really liked all of my prizes
+  codes:
+    1: I didn't like them
+    2: They were ok
+    3: I liked some of them
+    4: I liked them all
+    5: I really liked all of my prizes
+
+satisfaction4a:
+  type: Integer
+  description: How did you feel about your surveys and questionnaires?
+  range:
+  - 1::3
+  notes: 1 = They were too long ; 2 = They were pretty long, but it was ok ; 3 = They
+    weren't too long or too short
+  codes:
+    1: They were too long
+    2: They were pretty long, but it was ok
+    3: They weren't too long or too short
+
+satisfaction8a:
+  type: Integer
+  description: Do you think you and your child would like to come back in a year to
+    do everything again?
+  range:
+  - 1::5
+  notes: 1 = We wouldn't want to do it again ; 2 = It would be alright ; 3 = We would
+    probably like to come back ; 4 = We would like to come back ; 5 = We would be
+    really excited to come back
+  codes:
+    1: We wouldn't want to do it again
+    2: It would be alright
+    3: We would probably like to come back
+    4: We would like to come back
+    5: We would be really excited to come back
+
+satisfaction8b:
+  type: Integer
+  description: Do you like the giftcards and/or prizes you got?
+  range:
+  - 1::3
+  notes: 1 = They were great ; 2 = They were ok ; 3 = They could have been better
+  codes:
+    1: They were great
+    2: They were ok
+    3: They could have been better
+
+satisfaction5a:
+  type: Integer
+  description: How taxing do you think these visits were for your child?
+  range:
+  - 1::3
+  notes: 1 = My child probably found these visits to be very long and difficult ;
+    2 = My child was probably doing ok on these visits ; 3 = My child had no problems
+    whatsoever on these visits
+  codes:
+    1: My child probably found these visits to be very long and difficult
+    2: My child was probably doing ok on these visits
+    3: My child had no problems whatsoever on these visits
+
+satisfaction10a:
+  type: Integer
+  description: Do you think the compensation for your child was enough for what they
+    were asked to do?
+  range:
+  - 1
+  - 2
+  notes: 1 = I think it was enough ; 2 = I think it could have been more
+  codes:
+    1: I think it was enough
+    2: I think it could have been more
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+
+satisfaction7a:
+  type: Integer
+  description: Do you think you would like to come back in a year to do everything
+    again?
+  range:
+  - 1::5
+  notes: 1 = I wouldn't want to do it again ; 2 = It would be alright ; 3 = I would
+    probably like to come back ; 4 = I would like to come back ; 5 = I would be really
+    excited to come back
+  codes:
+    1: I wouldn't want to do it again
+    2: It would be alright
+    3: I would probably like to come back
+    4: I would like to come back
+    5: I would be really excited to come back
+
+satisfaction57_1:
+  type: Integer
+  description: Was it fun getting your brain picture taken?
+  range:
+  - 0::4
+  notes: 0 = Not at all fun ; 1 = Sort of fun ;2 =  A little fun ; 3 = Very fun ;
+    4 = Super fun
+  codes:
+    0: Not at all fun
+    1: Sort of fun
+    2: A little fun
+    3: Very fun
+    4: Super fun
+
+satisfaction57_10:
+  type: Integer
+  description: Did you have enough time for breaks and snacks?
+  range:
+  - 1::3
+  notes: 1 = I didn't really need breaks ; 2 = There was enough time for all the breaks
+    and snacks ; 3 = I could have used more time for breaks and snacks
+  codes:
+    1: I didn't really need breaks
+    2: There was enough time for all the breaks and snacks
+    3: I could have used more time for breaks and snacks
+
+satisfaction57_2:
+  type: Integer
+  description: Was the brain camera scary?
+  range:
+  - 0::4
+  notes: 0 = Not at all scared ; 1 = Sort of scared ;2 =  A little scared ; 3 = Very
+    scared ; 4 = Super scared
+  codes:
+    0: Not at all scared
+    1: Sort of scared
+    2: A little scared
+    3: Very scared
+    4: Super scared
+
+satisfaction57_3:
+  type: Integer
+  description: What do you think about how much time you spent in the brain camera?
+  range:
+  - 1::5
+  notes: 1 = It took too long ; 2 = It was sort of long ; 3 = It wasn't long or short
+    ; 4 = I could have done a little more ; 5 = I could have done a lot more
+  codes:
+    1: It took too long
+    2: It was sort of long
+    3: It wasn't long or short
+    4: I could have done a little more
+    5: I could have done a lot more
+
+satisfaction57_4:
+  type: Integer
+  description: Did you have fun working with us while you were here?
+  range:
+  - 0::4
+  notes: 0 = Not at all fun ; 1 = Sort of fun ;2 =  A little fun ; 3 = Very fun ;
+    4 = Super fun
+  codes:
+    0: Not at all fun
+    1: Sort of fun
+    2: A little fun
+    3: Very fun
+    4: Super fun

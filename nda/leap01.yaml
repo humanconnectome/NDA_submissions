@@ -1,0 +1,2113 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+lan_know:
+  type: Integer
+  description: How many languages do you know?
+  range:
+  - 1::5
+
+lan11:
+  type: String
+  length: 25
+  description: 'Please list all the languages you know in order of dominance: Language
+    1:'
+
+lan12:
+  type: String
+  length: 25
+  description: 'Please list all the languages you know in order of dominance: Language
+    2:'
+
+lan13:
+  type: String
+  length: 25
+  description: 'Please list all the languages you know in order of dominance: Language
+    3:'
+
+lan14:
+  type: String
+  length: 25
+  description: 'Please list all the languages you know in order of dominance: Language
+    4:'
+
+lan15:
+  type: String
+  length: 25
+  description: 'Please list all the languages you know in order of dominance: Language
+    5:'
+
+lan21:
+  type: String
+  length: 25
+  description: 'Please list all the languages you know in order of acquisition (your
+    native language first): Language 1:'
+
+lan22:
+  type: String
+  length: 25
+  description: 'Please list all the languages you know in order of acquisition (your
+    native language first): Language 2:'
+
+lan23:
+  type: String
+  length: 25
+  description: 'Please list all the languages you know in order of acquisition (your
+    native language first): Language 3:'
+
+lan24:
+  type: String
+  length: 25
+  description: 'Please list all the languages you know in order of acquisition (your
+    native language first): Language 4:'
+
+lan25:
+  type: String
+  length: 25
+  description: 'Please list all the languages you know in order of acquisition (your
+    native language first): Language 5:'
+
+lan31:
+  type: Float
+  description: 'Please list what percentage of the time you are currently and on average
+    exposed to each language (Your percentages should add up to 100%) Average Exposure
+    Percentage to Language 1:'
+  range:
+  - 0::100
+
+lan32:
+  type: Float
+  description: 'Please list what percentage of the time you are currently and on average
+    exposed to each language (Your percentages should add up to 100%) Average Exposure
+    Percentage to Language 2:'
+  range:
+  - 0::100
+
+lan33:
+  type: Float
+  description: 'Please list what percentage of the time you are currently and on average
+    exposed to each language (Your percentages should add up to 100%) Average Exposure
+    Percentage to Language 3:'
+  range:
+  - 0::100
+
+lan34:
+  type: Float
+  description: 'Please list what percentage of the time you are currently and on average
+    exposed to each language (Your percentages should add up to 100%) Average Exposure
+    Percentage to Language 4:'
+  range:
+  - 0::100
+
+lan35:
+  type: Float
+  description: 'Please list what percentage of the time you are currently and on average
+    exposed to each language (Your percentages should add up to 100%) Average Exposure
+    Percentage to Language 5:'
+  range:
+  - 0::100
+
+lan3err:
+  type: Float
+  description: Please list what percentage of the time you are currently and on average
+    exposed to each language (Your percentages should add up to 100%) Average Exposure
+    Percentage
+  range:
+  - 0::100
+
+lan41:
+  type: Float
+  description: 'When choosing a language to speak with a person who is equally fluent
+    in all the languages you know, what percentage of time would you choose to speak
+    each language?  Please report percent of total time  (Your percentages should
+    add up to 100%) Language 1 Speaking Percentage:'
+  range:
+  - 0::100
+
+lan42:
+  type: Float
+  description: 'When choosing a language to speak with a person who is equally fluent
+    in all the languages you know, what percentage of time would you choose to speak
+    each language?  Please report percent of total time  (Your percentages should
+    add up to 100%) Language 2 Speaking Percentage:'
+  range:
+  - 0::100
+
+lan43:
+  type: Float
+  description: 'When choosing a language to speak with a person who is equally fluent
+    in all the languages you know, what percentage of time would you choose to speak
+    each language?  Please report percent of total time  (Your percentages should
+    add up to 100%) Language 3 Speaking Percentage:'
+  range:
+  - 0::100
+
+lan44:
+  type: Float
+  description: 'When choosing a language to speak with a person who is equally fluent
+    in all the languages you know, what percentage of time would you choose to speak
+    each language?  Please report percent of total time  (Your percentages should
+    add up to 100%) Language 4 Speaking Percentage:'
+  range:
+  - 0::100
+
+lan45:
+  type: Float
+  description: 'When choosing a language to speak with a person who is equally fluent
+    in all the languages you know, what percentage of time would you choose to speak
+    each language?  Please report percent of total time  (Your percentages should
+    add up to 100%) Language 5 Speaking Percentage:'
+  range:
+  - 0::100
+
+lan4err:
+  type: Float
+  description: When choosing a language to speak with a person who is equally fluent
+    in all the languages you know, what percentage of time would you choose to speak
+    each language?  Please report percent of total time  (Your percentages should
+    add up to 100%) Average Exposure Percentage
+  range:
+  - 0::100
+
+lan511:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 1: Began acquiring Language 1:'
+
+lan512:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 1: Became fluent in Language 1:'
+
+lan513:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 1: Began reading in Language 1:'
+
+lan514:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 1: Became fluent reading in Language
+    1:'
+
+lan521:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 2: Began acquiring Language 2:'
+
+lan522:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 2: Became fluent in Language 2:'
+
+lan523:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 2: Began reading in Language 2:'
+
+lan524:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 2: Became fluent reading in Language
+    2:'
+
+lan531:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 3: Began acquiring Language 3:'
+
+lan532:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 3: Became fluent in Language 3:'
+
+lan533:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 3: Began reading in Language 3:'
+
+lan534:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 3: Became fluent reading in Language
+    3:'
+
+lan541:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 4: Began acquiring Language 4:'
+
+lan542:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 4: Became fluent in Language 4:'
+
+lan543:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 4: Began reading in Language 4:'
+
+lan544:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 4: Became fluent reading in Language
+    4:'
+
+lan_541:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 5: Began acquiring Language 5:'
+
+lan_542:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 5: Became fluent in Language 5:'
+
+lan_543:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 5: Began reading in Language 5:'
+
+lan_544:
+  type: String
+  length: 100
+  description: 'Age when you first: Language 5: Became fluent reading in Language
+    5:'
+
+lan611:
+  type: Integer
+  description: 'On a scale from 0 to 10, please select your level of proficiency in
+    each language: Language 1: Speaking Language 1:'
+  range:
+  - 0::10
+  notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+    ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good ;
+    9 = Excellent ; 10 = Perfect
+  codes:
+    0: None
+    1: Very Low
+    2: Low
+    3: Fair
+    4: Slightly less than adequate
+    5: Adequate
+    6: Slightly more than adequate
+    7: Good
+    8: Very Good
+    9: Excellent
+    10: Perfect
+
+lan612:
+  type: Integer
+  description: 'On a scale from 0 to 10, please select your level of proficiency in
+    each language: Language 1: Understanding spoken Language 1:'
+  range:
+  - 0::10
+  notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+    ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good ;
+    9 = Excellent ; 10 = Perfect
+  codes:
+    0: None
+    1: Very Low
+    2: Low
+    3: Fair
+    4: Slightly less than adequate
+    5: Adequate
+    6: Slightly more than adequate
+    7: Good
+    8: Very Good
+    9: Excellent
+    10: Perfect
+
+lan613:
+  type: Integer
+  description: 'On a scale from 0 to 10, please select your level of proficiency in
+    each language: Language 1: Reading Language 1:'
+  range:
+  - 0::10
+  notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+    ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good ;
+    9 = Excellent ; 10 = Perfect
+  codes:
+    0: None
+    1: Very Low
+    2: Low
+    3: Fair
+    4: Slightly less than adequate
+    5: Adequate
+    6: Slightly more than adequate
+    7: Good
+    8: Very Good
+    9: Excellent
+    10: Perfect
+
+lan621:
+  type: Integer
+  description: 'On a scale from 0 to 10, please select your level of proficiency in
+    each language: Language 2: Speaking Language 2:'
+  range:
+  - 0::10
+  notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+    ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good ;
+    9 = Excellent ; 10 = Perfect
+  codes:
+    0: None
+    1: Very Low
+    2: Low
+    3: Fair
+    4: Slightly less than adequate
+    5: Adequate
+    6: Slightly more than adequate
+    7: Good
+    8: Very Good
+    9: Excellent
+    10: Perfect
+
+lan622:
+  type: Integer
+  description: 'On a scale from 0 to 10, please select your level of proficiency in
+    each language: Language 2: Understanding spoken Language 2:'
+  range:
+  - 0::10
+  notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+    ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good ;
+    9 = Excellent ; 10 = Perfect
+  codes:
+    0: None
+    1: Very Low
+    2: Low
+    3: Fair
+    4: Slightly less than adequate
+    5: Adequate
+    6: Slightly more than adequate
+    7: Good
+    8: Very Good
+    9: Excellent
+    10: Perfect
+
+lan623:
+  type: Integer
+  description: 'On a scale from 0 to 10, please select your level of proficiency in
+    each language: Language 2: Reading Language 2:'
+  range:
+  - 0::10
+  notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+    ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good ;
+    9 = Excellent ; 10 = Perfect
+  codes:
+    0: None
+    1: Very Low
+    2: Low
+    3: Fair
+    4: Slightly less than adequate
+    5: Adequate
+    6: Slightly more than adequate
+    7: Good
+    8: Very Good
+    9: Excellent
+    10: Perfect
+
+lan631:
+  type: Integer
+  description: 'On a scale from 0 to 10, please select your level of proficiency in
+    each language: Language 3: Speaking Language 3:'
+  range:
+  - 0::10
+  notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+    ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good ;
+    9 = Excellent ; 10 = Perfect
+  codes:
+    0: None
+    1: Very Low
+    2: Low
+    3: Fair
+    4: Slightly less than adequate
+    5: Adequate
+    6: Slightly more than adequate
+    7: Good
+    8: Very Good
+    9: Excellent
+    10: Perfect
+
+lan632:
+  type: Integer
+  description: 'On a scale from 0 to 10, please select your level of proficiency in
+    each language: Language 3: Understanding spoken Language 3:'
+  range:
+  - 0::10
+  notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+    ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good ;
+    9 = Excellent ; 10 = Perfect
+  codes:
+    0: None
+    1: Very Low
+    2: Low
+    3: Fair
+    4: Slightly less than adequate
+    5: Adequate
+    6: Slightly more than adequate
+    7: Good
+    8: Very Good
+    9: Excellent
+    10: Perfect
+
+lan633:
+  type: Integer
+  description: 'On a scale from 0 to 10, please select your level of proficiency in
+    each language: Language 3: Reading Language 3:'
+  range:
+  - 0::10
+  notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+    ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good ;
+    9 = Excellent ; 10 = Perfect
+  codes:
+    0: None
+    1: Very Low
+    2: Low
+    3: Fair
+    4: Slightly less than adequate
+    5: Adequate
+    6: Slightly more than adequate
+    7: Good
+    8: Very Good
+    9: Excellent
+    10: Perfect
+
+lan641:
+  type: Integer
+  description: 'On a scale from 0 to 10, please select your level of proficiency in
+    each language: Language 4: Speaking Language 4:'
+  range:
+  - 0::10
+  notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+    ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good ;
+    9 = Excellent ; 10 = Perfect
+  codes:
+    0: None
+    1: Very Low
+    2: Low
+    3: Fair
+    4: Slightly less than adequate
+    5: Adequate
+    6: Slightly more than adequate
+    7: Good
+    8: Very Good
+    9: Excellent
+    10: Perfect
+
+lan642:
+  type: Integer
+  description: 'On a scale from 0 to 10, please select your level of proficiency in
+    each language: Language 4: Understanding spoken Language 4:'
+  range:
+  - 0::10
+  notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+    ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good ;
+    9 = Excellent ; 10 = Perfect
+  codes:
+    0: None
+    1: Very Low
+    2: Low
+    3: Fair
+    4: Slightly less than adequate
+    5: Adequate
+    6: Slightly more than adequate
+    7: Good
+    8: Very Good
+    9: Excellent
+    10: Perfect
+
+lan643:
+  type: Integer
+  description: 'On a scale from 0 to 10, please select your level of proficiency in
+    each language: Language 4: Reading Language 4:'
+  range:
+  - 0::10
+  notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+    ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good ;
+    9 = Excellent ; 10 = Perfect
+  codes:
+    0: None
+    1: Very Low
+    2: Low
+    3: Fair
+    4: Slightly less than adequate
+    5: Adequate
+    6: Slightly more than adequate
+    7: Good
+    8: Very Good
+    9: Excellent
+    10: Perfect
+
+lan_641:
+  type: Integer
+  description: 'On a scale from 0 to 10, please select your level of proficiency in
+    each language: Language 5: Speaking Language 5:'
+  range:
+  - 0::10
+  notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+    ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good ;
+    9 = Excellent ; 10 = Perfect
+  codes:
+    0: None
+    1: Very Low
+    2: Low
+    3: Fair
+    4: Slightly less than adequate
+    5: Adequate
+    6: Slightly more than adequate
+    7: Good
+    8: Very Good
+    9: Excellent
+    10: Perfect
+
+lan_642:
+  type: Integer
+  description: 'On a scale from 0 to 10, please select your level of proficiency in
+    each language: Language 5: Understanding spoken Language 5:'
+  range:
+  - 0::10
+  notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+    ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good ;
+    9 = Excellent ; 10 = Perfect
+  codes:
+    0: None
+    1: Very Low
+    2: Low
+    3: Fair
+    4: Slightly less than adequate
+    5: Adequate
+    6: Slightly more than adequate
+    7: Good
+    8: Very Good
+    9: Excellent
+    10: Perfect
+
+lan_643:
+  type: Integer
+  description: 'On a scale from 0 to 10, please select your level of proficiency in
+    each language: Language 5: Reading Language 5:'
+  range:
+  - 0::10
+  notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+    ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good ;
+    9 = Excellent ; 10 = Perfect
+  codes:
+    0: None
+    1: Very Low
+    2: Low
+    3: Fair
+    4: Slightly less than adequate
+    5: Adequate
+    6: Slightly more than adequate
+    7: Good
+    8: Very Good
+    9: Excellent
+    10: Perfect
+
+lan71:
+  type: Integer
+  description: 'In your perception, how much of a  foreign accent do you have in ___?
+    Foreign Accent in Language 1:'
+  range:
+  - 0::10
+  notes: 0 = None ;  1 = Almost none; 2 = Very Light ; 3 = Light ; 4 = Some ; 5 =
+    Moderate ; 6 = Considerable ; 7 = Heavy ; 8 = Very Heavy ; 9 = Extremely heavy
+    ; 10 = Pervasive
+  codes:
+    0: None
+    1: Almost none
+    2: Very Light
+    3: Light
+    4: Some
+    5: Moderate
+    6: Considerable
+    7: Heavy
+    8: Very Heavy
+    9: Extremely heavy
+    10: Pervasive
+
+lan72:
+  type: Integer
+  description: 'In your perception, how much of a  foreign accent do you have in ___?
+    Foreign Accent in Language 2:'
+  range:
+  - 0::10
+  notes: 0 = None ;  1 = Almost none; 2 = Very Light ; 3 = Light ; 4 = Some ; 5 =
+    Moderate ; 6 = Considerable ; 7 = Heavy ; 8 = Very Heavy ; 9 = Extremely heavy
+    ; 10 = Pervasive
+  codes:
+    0: None
+    1: Almost none
+    2: Very Light
+    3: Light
+    4: Some
+    5: Moderate
+    6: Considerable
+    7: Heavy
+    8: Very Heavy
+    9: Extremely heavy
+    10: Pervasive
+
+lan73:
+  type: Integer
+  description: 'In your perception, how much of a  foreign accent do you have in ___?
+    Foreign Accent in Language 3:'
+  range:
+  - 0::10
+  notes: 0 = None ;  1 = Almost none; 2 = Very Light ; 3 = Light ; 4 = Some ; 5 =
+    Moderate ; 6 = Considerable ; 7 = Heavy ; 8 = Very Heavy ; 9 = Extremely heavy
+    ; 10 = Pervasive
+  codes:
+    0: None
+    1: Almost none
+    2: Very Light
+    3: Light
+    4: Some
+    5: Moderate
+    6: Considerable
+    7: Heavy
+    8: Very Heavy
+    9: Extremely heavy
+    10: Pervasive
+
+lan74:
+  type: Integer
+  description: 'In your perception, how much of a  foreign accent do you have in ___?
+    Foreign Accent in Language 4:'
+  range:
+  - 0::10
+  notes: 0 = None ;  1 = Almost none; 2 = Very Light ; 3 = Light ; 4 = Some ; 5 =
+    Moderate ; 6 = Considerable ; 7 = Heavy ; 8 = Very Heavy ; 9 = Extremely heavy
+    ; 10 = Pervasive
+  codes:
+    0: None
+    1: Almost none
+    2: Very Light
+    3: Light
+    4: Some
+    5: Moderate
+    6: Considerable
+    7: Heavy
+    8: Very Heavy
+    9: Extremely heavy
+    10: Pervasive
+
+lan75:
+  type: Integer
+  description: 'In your perception, how much of a  foreign accent do you have in ___?
+    Foreign Accent in Language 5:'
+  range:
+  - 0::10
+  notes: 0 = None ;  1 = Almost none; 2 = Very Light ; 3 = Light ; 4 = Some ; 5 =
+    Moderate ; 6 = Considerable ; 7 = Heavy ; 8 = Very Heavy ; 9 = Extremely heavy
+    ; 10 = Pervasive
+  codes:
+    0: None
+    1: Almost none
+    2: Very Light
+    3: Light
+    4: Some
+    5: Moderate
+    6: Considerable
+    7: Heavy
+    8: Very Heavy
+    9: Extremely heavy
+    10: Pervasive
+
+lan81:
+  type: Integer
+  description: 'Please rate how frequently others identify you as a  non-native speaker
+    based on your  accent (please use scale below) when you speak Language 1:'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan82:
+  type: Integer
+  description: 'Please rate how frequently others identify you as a  non-native speaker
+    based on your  accent (please use scale below) when you speak Language 2:'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan83:
+  type: Integer
+  description: 'Please rate how frequently others identify you as a  non-native speaker
+    based on your  accent (please use scale below) when you speak Language 3:'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan84:
+  type: Integer
+  description: 'Please rate how frequently others identify you as a  non-native speaker
+    based on your  accent (please use scale below) when you speak Language 4:'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan85:
+  type: Integer
+  description: 'Please rate how frequently others identify you as a  non-native speaker
+    based on your  accent (please use scale below) when you speak Language 5:'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_1:
+  type: Float
+  description: When choosing to read a text available in all your languages, in what
+    percentage of cases would you choose to read it in each of your languages? Assume
+    that the original was written in another language, which is unknown to you. Language
+    1
+  range:
+  - 0::100
+
+lan_2:
+  type: Float
+  description: When choosing to read a text available in all your languages, in what
+    percentage of cases would you choose to read it in each of your languages? Assume
+    that the original was written in another language, which is unknown to you. Language
+    2
+  range:
+  - 0::100
+
+lan_3:
+  type: Float
+  description: When choosing to read a text available in all your languages, in what
+    percentage of cases would you choose to read it in each of your languages? Assume
+    that the original was written in another language, which is unknown to you. Language
+    3
+  range:
+  - 0::100
+
+lan_4:
+  type: Float
+  description: When choosing to read a text available in all your languages, in what
+    percentage of cases would you choose to read it in each of your languages? Assume
+    that the original was written in another language, which is unknown to you. Language
+    4
+  range:
+  - 0::100
+
+lan_5:
+  type: Float
+  description: When choosing to read a text available in all your languages, in what
+    percentage of cases would you choose to read it in each of your languages? Assume
+    that the original was written in another language, which is unknown to you. Language
+    5
+  range:
+  - 0::100
+
+lan_6:
+  type: Float
+  description: When choosing to read a text available in all your languages, in what
+    percentage of cases would you choose to read it in each of your languages? Assume
+    that the original was written in another language, which is unknown to you. Average
+  range:
+  - 0::100
+
+lan_7:
+  type: String
+  length: 50
+  description: 'Please name the cultures with which you identify. (Examples of possible
+    cultures include US-American, Chinese, Jewish-Orthodox, etc.): Culture 1'
+
+lan_8:
+  type: String
+  length: 50
+  description: 'Please name the cultures with which you identify. On a scale from
+    zero to ten, please rate the extent to which you identify with each culture. (Examples
+    of possible cultures include US-American, Chinese, Jewish-Orthodox, etc.): Culture
+    2'
+
+lan_9:
+  type: String
+  length: 50
+  description: 'Please name the cultures with which you identify. On a scale from
+    zero to ten, please rate the extent to which you identify with each culture. (Examples
+    of possible cultures include US-American, Chinese, Jewish-Orthodox, etc.): Culture
+    3'
+
+lan_10:
+  type: String
+  length: 50
+  description: 'Please name the cultures with which you identify. On a scale from
+    zero to ten, please rate the extent to which you identify with each culture. (Examples
+    of possible cultures include US-American, Chinese, Jewish-Orthodox, etc.): Culture
+    4'
+
+lan_11:
+  type: String
+  length: 50
+  description: 'Please name the cultures with which you identify. On a scale from
+    zero to ten, please rate the extent to which you identify with each culture. (Examples
+    of possible cultures include US-American, Chinese, Jewish-Orthodox, etc.): Culture
+    5'
+
+lan_12:
+  type: Integer
+  description: 'On a scale from zero to ten, please rate the extent to which you identify
+    with each culture: Culture 1'
+  range:
+  - 0::10
+  notes: 0 = No identification; 1 = Very low identification; 5 = Moderate identification;
+    10 = Complete identification
+  codes:
+    0: No identification
+    1: Very low identification
+    5: Moderate identification
+    10: Complete identification
+
+lan_13:
+  type: Integer
+  description: 'On a scale from zero to ten, please rate the extent to which you identify
+    with each culture: Culture 2'
+  range:
+  - 0::10
+  notes: 0 = No identification; 1 = Very low identification; 5 = Moderate identification;
+    10 = Complete identification
+  codes:
+    0: No identification
+    1: Very low identification
+    5: Moderate identification
+    10: Complete identification
+
+lan_14:
+  type: Integer
+  description: 'On a scale from zero to ten, please rate the extent to which you identify
+    with each culture: Culture 3'
+  range:
+  - 0::10
+  notes: 0 = No identification; 1 = Very low identification; 5 = Moderate identification;
+    10 = Complete identification
+  codes:
+    0: No identification
+    1: Very low identification
+    5: Moderate identification
+    10: Complete identification
+
+lan_15:
+  type: Integer
+  description: 'On a scale from zero to ten, please rate the extent to which you identify
+    with each culture: Culture 4'
+  range:
+  - 0::10
+  notes: 0 = No identification; 1 = Very low identification; 5 = Moderate identification;
+    10 = Complete identification
+  codes:
+    0: No identification
+    1: Very low identification
+    5: Moderate identification
+    10: Complete identification
+
+lan_16:
+  type: Integer
+  description: 'On a scale from zero to ten, please rate the extent to which you identify
+    with each culture: Culture 5'
+  range:
+  - 0::10
+  notes: 0 = No identification; 1 = Very low identification; 5 = Moderate identification;
+    10 = Complete identification
+  codes:
+    0: No identification
+    1: Very low identification
+    5: Moderate identification
+    10: Complete identification
+
+educat:
+  type: Float
+  description: Number of years in formal education
+  notes: 999=Unknown/Missing
+  alias: lan_17
+  codes:
+    999: Unknown/Missing
+
+lan_18:
+  type: Integer
+  description: Please check your highest education level (or the approximate U.S.
+    equivalent to a degree obtained in another country)
+  range:
+  - 1::9
+  notes: 1 = Less than High School; 2 = High School; 3 = Professional Training; 4
+    = Some College; 5 = College; 6 = Some Graduate School; 7 = Master's; 8 = PhD/MD/JD;
+    9 = Other
+  codes:
+    1: Less than High School
+    2: High School
+    3: Professional Training
+    4: Some College
+    5: College
+    6: Some Graduate School
+    7: Master's
+    8: PhD/MD/JD
+    9: Other
+
+demo_edu_other:
+  type: String
+  length: 100
+  description: 'Education other: specify'
+  alias: lan_19
+
+lan_20:
+  type: String
+  length: 50
+  description: Date of immigration to the United States, if applicable
+  notes: Dates should be given in MM/DD/YYYY format. This free-text field can also
+    accommodate a respondent's best estimate.
+
+lan_21:
+  type: String
+  length: 300
+  description: 'If you have ever lived in another country, please provide name of
+    country and dates of residence:'
+
+lan_22:
+  type: String
+  length: 10
+  description: 'Check all applicable: vision problem, hearing impairment, language
+    disability, or learning disability'
+  notes: 1 = vision problem; 2 = hearing impairment; 3 = language disability; 4 =
+    learning disability
+  codes:
+    1: vision problem
+    2: hearing impairment
+    3: language disability
+    4: learning disability
+
+lan_23:
+  type: String
+  length: 300
+  description: If above difficulties in language acquisition were checked, then please
+    explain (including any corrections)
+
+lan_24:
+  type: Integer
+  description: 'Please list the number of years you spent in each language environment:
+    A country where Language 1 is spoken'
+
+lan_25:
+  type: Integer
+  description: 'Please list the number of years you spent in each language environment:
+    A family where Language 1 is spoken'
+
+lan_26:
+  type: Integer
+  description: 'Please list the number of years you spent in each language environment:
+    A school and/or working environment where Language 1 is spoken'
+
+lan_27:
+  type: Integer
+  description: 'Please list the number of months you spent in each language environment:
+    A country where Language 1 is spoken'
+
+lan_28:
+  type: Integer
+  description: 'Please list the number of months you spent in each language environment:
+    A family where Language 1 is spoken'
+
+lan_29:
+  type: Integer
+  description: 'Please list the number of months you spent in each language environment:
+    A school and/or working environment where Language 1 is spoken'
+
+lan_30:
+  type: Integer
+  description: 'Please list the number of years you spent in each language environment:
+    A country where Language 2 is spoken'
+
+lan_31:
+  type: Integer
+  description: 'Please list the number of years you spent in each language environment:
+    A family where Language 2 is spoken'
+
+lan_32:
+  type: Integer
+  description: 'Please list the number of years you spent in each language environment:
+    A school and/or working environment where Language 2 is spoken'
+
+lan_33:
+  type: Integer
+  description: 'Please list the number of months you spent in each language environment:
+    A country where Language 2 is spoken'
+
+lan_34:
+  type: Integer
+  description: 'Please list the number of months you spent in each language environment:
+    A family where Language 2 is spoken'
+
+lan_35:
+  type: Integer
+  description: 'Please list the number of months you spent in each language environment:
+    A school and/or working environment where Language 2 is spoken'
+
+lan_36:
+  type: Integer
+  description: 'Please list the number of years you spent in each language environment:
+    A country where Language 3 is spoken'
+
+lan_37:
+  type: Integer
+  description: 'Please list the number of years you spent in each language environment:
+    A family where Language 3 is spoken'
+
+lan_38:
+  type: Integer
+  description: 'Please list the number of years you spent in each language environment:
+    A school and/or working environment where Language 3 is spoken'
+
+lan_39:
+  type: Integer
+  description: 'Please list the number of months you spent in each language environment:
+    A country where Language 3 is spoken'
+
+lan_40:
+  type: Integer
+  description: 'Please list the number of months you spent in each language environment:
+    A family where Language 3 is spoken'
+
+lan_41:
+  type: Integer
+  description: 'Please list the number of months you spent in each language environment:
+    A school and/or working environment where Language 3 is spoken'
+
+lan_42:
+  type: Integer
+  description: 'Please list the number of years you spent in each language environment:
+    A country where Language 4 is spoken'
+
+lan_43:
+  type: Integer
+  description: 'Please list the number of years you spent in each language environment:
+    A family where Language 4 is spoken'
+
+lan_44:
+  type: Integer
+  description: 'Please list the number of years you spent in each language environment:
+    A school and/or working environment where Language 4 is spoken'
+
+lan_45:
+  type: Integer
+  description: 'Please list the number of months you spent in each language environment:
+    A country where Language 4 is spoken'
+
+lan_46:
+  type: Integer
+  description: 'Please list the number of months you spent in each language environment:
+    A family where Language 4 is spoken'
+
+lan_47:
+  type: Integer
+  description: 'Please list the number of months you spent in each language environment:
+    A school and/or working environment where Language 4 is spoken'
+
+lan_48:
+  type: Integer
+  description: 'Please list the number of years you spent in each language environment:
+    A country where Language 5 is spoken'
+
+lan_49:
+  type: Integer
+  description: 'Please list the number of years you spent in each language environment:
+    A family where Language 5 is spoken'
+
+lan_50:
+  type: Integer
+  description: 'Please list the number of years you spent in each language environment:
+    A school and/or working environment where Language 5 is spoken'
+
+lan_51:
+  type: Integer
+  description: 'Please list the number of months you spent in each language environment:
+    A country where Language 5 is spoken'
+
+lan_52:
+  type: Integer
+  description: 'Please list the number of months you spent in each language environment:
+    A family where Language 5 is spoken'
+
+lan_53:
+  type: Integer
+  description: 'Please list the number of months you spent in each language environment:
+    A school and/or working environment where Language 5 is spoken'
+
+lan_54:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 1: Interacting with friends'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_55:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 1: Interacting with family'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_56:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 1: Reading'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_57:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 1: Language tapes/self instruction'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_58:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 1: Watching TV'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_59:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 1: Listening to the radio'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_60:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 2: Interacting with friends'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_61:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 2: Interacting with family'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_62:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 2: Reading'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_63:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 2: Language tapes/self instruction'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_64:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 2: Watching TV'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_65:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 2: Listening to the radio'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_66:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 3: Interacting with friends'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_67:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 3: Interacting with family'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_68:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 3: Reading'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_69:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 3: Language tapes/self instruction'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_70:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 3: Watching TV'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_71:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 3: Listening to the radio'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_72:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 4: Interacting with friends'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_73:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 4: Interacting with family'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_74:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 4: Reading'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_75:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 4: Language tapes/self instruction'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_76:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 4: Watching TV'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_77:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 4: Listening to the radio'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_78:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 5: Interacting with friends'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_79:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 5: Interacting with family'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_80:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 5: Reading'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_81:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 5: Language tapes/self instruction'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_82:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 5: Watching TV'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_83:
+  type: Integer
+  description: 'On a scale of zero to ten, please select how much the following factors
+    contributed to you learning Language 5: Listening to the radio'
+  range:
+  - 0::10
+  notes: 0 = Not a contributor; 1 = Minimal contributor; 5 = Moderate contributor;
+    10 = Most important contributor
+  codes:
+    0: Not a contributor
+    1: Minimal contributor
+    5: Moderate contributor
+    10: Most important contributor
+
+lan_84:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 1: Interacting with
+    friends'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_85:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 1: Interacting with
+    family'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_86:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 1: Reading'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_87:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 1: Language lab/self
+    instruction'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_88:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 1: Watching TV'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_89:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 1: Listening to the
+    radio/music'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_90:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 2: Interacting with
+    friends'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_91:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 2: Interacting with
+    family'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_92:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 2: Reading'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_93:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 2: Language lab/self
+    instruction'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_94:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 2: Watching TV'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_95:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 2: Listening to the
+    radio/music'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_96:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 3: Interacting with
+    friends'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_97:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 3: Interacting with
+    family'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_98:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 3: Reading'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_99:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 3: Language lab/self
+    instruction'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_100:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 3: Watching TV'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_101:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 3: Listening to the
+    radio/music'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_102:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 4: Interacting with
+    friends'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_103:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 4: Interacting with
+    family'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_104:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 4: Reading'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_105:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 4: Language lab/self
+    instruction'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_106:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 4: Watching TV'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_107:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 4: Listening to the
+    radio/music'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_108:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 5: Interacting with
+    friends'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_109:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 5: Interacting with
+    family'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_110:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 5: Reading'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_111:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 5: Language lab/self
+    instruction'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_112:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 5: Watching TV'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_113:
+  type: Integer
+  description: 'On a scale of zero to ten, please rate to what extent you are currently
+    exposed to a language in the following contexts:  Language 5: Listening to the
+    radio/music'
+  range:
+  - 0::10
+  notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+  codes:
+    0: Never
+    1: Almost Never
+    5: Half of the Time
+    10: Always
+
+lan_114:
+  type: Integer
+  description: 'Language 1: Understanding Scale'
+
+lan_115:
+  type: Integer
+  description: 'Language 1: Speaking Scale'
+
+lan_116:
+  type: Integer
+  description: 'Language 1: Reading Scale'
+
+lan_117:
+  type: Integer
+  description: 'Language 1: Writing Scale'
+
+lan_118:
+  type: Integer
+  description: 'Language 2: Understanding  Scale'
+
+lan_119:
+  type: Integer
+  description: 'Language 2: Speaking Scale'
+
+lan_120:
+  type: Integer
+  description: 'Language 2: Reading Scale'
+
+lan_121:
+  type: Integer
+  description: 'Language 2: Writing Scale'
+
+lan_122:
+  type: Integer
+  description: 'Language 3: Understanding  Scale'
+
+lan_123:
+  type: Integer
+  description: 'Language 3: Speaking Scale'
+
+lan_124:
+  type: Integer
+  description: 'Language 3: Reading Scale'
+
+lan_125:
+  type: Integer
+  description: 'Language 3: Writing Scale'
+
+lan_126:
+  type: Integer
+  description: 'Language 4: Understanding  Scale'
+
+lan_127:
+  type: Integer
+  description: 'Language 4: Speaking Scale'
+
+lan_128:
+  type: Integer
+  description: 'Language 4: Reading Scale'
+
+lan_129:
+  type: Integer
+  description: 'Language 4: Writing Scale'
+
+lan_130:
+  type: Integer
+  description: 'Language 5: Understanding  Scale'
+
+lan_131:
+  type: Integer
+  description: 'Language 5: Speaking Scale'
+
+lan_132:
+  type: Integer
+  description: 'Language 5: Reading Scale'
+
+lan_133:
+  type: Integer
+  description: 'Language 5: Writing Scale'

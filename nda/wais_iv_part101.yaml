@@ -1,0 +1,5814 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: nimhid
+
+assess_join_var:
+  type: Integer
+  description: Variable used to combine assessments with multiple parts due to the
+    technical limitation of 1000 elements per data structure. Enter the row number
+    of each distinct record.
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: WAIS_IV_SRC_Subject_ID,id,ptid,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: WAIS_IV_interview_date,digit_date,testdate,wais_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: WAIS_IV_interview_age,age
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+  alias: WAIS_IV_comments_misc,digit_comments,ds_notes
+
+scoring_blockdesign_raw:
+  type: Float
+  description: Block Design Raw Score
+  alias: WAIS_IV_Scoring_BlockDesign_Raw
+
+scoring_blockdesign_scaled:
+  type: Float
+  description: Block Design Scaled Score
+  alias: WAIS_IV_Scoring_BlockDesign_Scaled
+
+scoring_blockdesign_full:
+  type: Float
+  description: Block Design Full Scale Score
+  alias: WAIS_IV_Scoring_BlockDesign_Full
+
+scoring_blockdesign_group:
+  type: Float
+  description: Block Design Ref Group Scaled Score
+  alias: WAIS_IV_Scoring_BlockDesign_Group
+
+scoring_similarities_raw:
+  type: Float
+  description: Similarities Raw Score
+  alias: WAIS_IV_Scoring_Similarities_Raw,sim_raw
+
+scoring_similarities_scaled:
+  type: Float
+  description: Similarities Scaled Score
+  alias: WAIS_IV_Scoring_Similarities_Scaled,sim_scaled
+
+scoring_similarities_full:
+  type: Float
+  description: Similarities Full Scale Score
+  alias: WAIS_IV_Scoring_Similarities_Full
+
+scoring_similarities_group:
+  type: Float
+  description: Similarities Ref Group Scaled Score
+  alias: WAIS_IV_Scoring_Similarities_Group
+
+scoring_digitspan_raw:
+  type: Float
+  description: Digit Span Raw Score
+  alias: WAIS_IV_Scoring_DigitSpan_Raw
+
+scoring_digitspan_scaled:
+  type: Float
+  description: Digit Span Scaled Score
+  alias: WAIS_IV_Scoring_DigitSpan_Scaled
+
+scoring_digitspan_full:
+  type: Float
+  description: Digit Span Full Scale Score
+  alias: WAIS_IV_Scoring_DigitSpan_Full
+
+scoring_digitspan_group:
+  type: Float
+  description: Digit Span Ref Group Scaled Score
+  alias: WAIS_IV_Scoring_DigitSpan_Group
+
+scoring_matrixreasoning_raw:
+  type: Float
+  description: Matrix Reasoning Raw Score
+  alias: WAIS_IV_Scoring_MatrixReasoning_Raw,matrix_raw,mr_totalraw
+
+scoring_matrixreasoning_scaled:
+  type: Float
+  description: Matrix Reasoning Scaled Score
+  alias: WAIS_IV_Scoring_MatrixReasoning_Scaled,matrix_scaled
+
+scoring_matrixreasoning_full:
+  type: Float
+  description: Matrix Reasoning Full Scale Score
+  alias: WAIS_IV_Scoring_MatrixReasoning_Full
+
+scoring_matrixreasoning_group:
+  type: Float
+  description: Matrix Reasoning Ref Group Scaled Score
+  alias: WAIS_IV_Scoring_MatrixReasoning_Group
+
+scoring_vocabulary_raw:
+  type: Float
+  description: WAIS. Vocabulary Raw Score
+  alias: WAIS_IV_Scoring_Vocabulary_Raw,voc_totalraw
+
+scoring_vocabulary_scaled:
+  type: Float
+  description: Vocabulary Scaled Score
+  alias: WAIS_IV_Scoring_Vocabulary_Scaled
+
+scoring_vocabulary_full:
+  type: Float
+  description: Vocabulary Full Scale Score
+  alias: WAIS_IV_Scoring_Vocabulary_Full
+
+scoring_vocabulary_group:
+  type: Float
+  description: Vocabulary Ref Group Scaled Score
+  alias: WAIS_IV_Scoring_Vocabulary_Group
+
+scoring_arithmetic_raw:
+  type: Float
+  description: Arithmetic Raw Score
+  alias: WAIS_IV_Scoring_Arithmetic_Raw
+
+scoring_arithmetic_scaled:
+  type: Float
+  description: Arithmetic Scaled Score
+  alias: WAIS_IV_Scoring_Arithmetic_Scaled
+
+scoring_arithmetic_full:
+  type: Float
+  description: Arithmetic Full Scale Score
+  alias: WAIS_IV_Scoring_Arithmetic_Full
+
+scoring_arithmetic_group:
+  type: Float
+  description: Arithmetic Ref Group S Score
+  alias: WAIS_IV_Scoring_Arithmetic_Group
+
+scoring_symbolsearch_raw:
+  type: Float
+  description: Symbol Search Raw Score
+  alias: WAIS_IV_Scoring_SymbolSearch_Raw,symbolsearchrawscore
+
+scoring_symbolsearch_scaled:
+  type: Float
+  description: Symbol Search Scaled Score
+  alias: WAIS_IV_Scoring_SymbolSearch_Scaled,symbolsearchscaledscore
+
+scoring_symbolsearch_full:
+  type: Float
+  description: Symbol Search Full Scale Score
+  alias: WAIS_IV_Scoring_SymbolSearch_Full
+
+scoring_symbolsearch_group:
+  type: Float
+  description: Symbol Search Ref Group Scaled Score
+  alias: WAIS_IV_Scoring_SymbolSearch_Group
+
+scoring_visualpuzzles_raw:
+  type: Float
+  description: Visual Puzzles Raw Score
+  alias: WAIS_IV_Scoring_VisualPuzzles_Raw
+
+scoring_visualpuzzles_scaled:
+  type: Float
+  description: Visual Puzzles Scaled Score
+  alias: WAIS_IV_Scoring_VisualPuzzles_Scaled
+
+scoring_visualpuzzles_full:
+  type: Float
+  description: Visual Puzzles Full Scale Score
+  alias: WAIS_IV_Scoring_VisualPuzzles_Full
+
+scoring_visualpuzzles_group:
+  type: Float
+  description: Visual Puzzles Ref Group Scaled Score
+  alias: WAIS_IV_Scoring_VisualPuzzles_Group
+
+scoring_information_raw:
+  type: Float
+  description: Information Raw Score
+  alias: WAIS_IV_Scoring_Information_Raw
+
+scoring_information_scaled:
+  type: Float
+  description: Information Scaled Score
+  alias: WAIS_IV_Scoring_Information_Scaled
+
+scoring_information_full:
+  type: Float
+  description: Information Full Scale Score
+  alias: WAIS_IV_Scoring_Information_Full
+
+scoring_information_group:
+  type: Float
+  description: Information Ref Group Scaled Score
+  alias: WAIS_IV_Scoring_Information_Group
+
+scoring_coding_raw:
+  type: Float
+  description: Coding Raw Score
+  alias: WAIS_IV_Scoring_Coding_Raw,coding_raw,codingrawscore
+
+scoring_coding_scaled:
+  type: Float
+  description: Coding Scaled Score
+  alias: WAIS_IV_Scoring_Coding_Scaled,coding_scaled,codingscaledscore
+
+scoring_coding_full:
+  type: Float
+  description: Coding Full Scale Score
+  alias: WAIS_IV_Scoring_Coding_Full
+
+scoring_coding_group:
+  type: Float
+  description: Coding Ref Group Scaled Score
+  alias: WAIS_IV_Scoring_Coding_Group
+
+scoring_letnumseq_raw:
+  type: Float
+  description: Letter Number Seq Raw Score
+  alias: WAIS_IV_Scoring_LetNumSeq_Raw
+
+scoring_letnumseq_scaled:
+  type: Float
+  description: Letter Number Seq Scaled Score
+  alias: WAIS_IV_Scoring_LetNumSeq_Scaled
+
+scoring_letnumseq_full:
+  type: Float
+  description: Letter Number Seq Full Scale Score
+  alias: WAIS_IV_Scoring_LetNumSeq_Full
+
+scoring_letnumseq_group:
+  type: Float
+  description: Letter Number Seq Ref Group Scaled Score
+  alias: WAIS_IV_Scoring_LetNumSeq_Group
+
+scoring_figureweights_scaled:
+  type: Float
+  description: Figure Weights Scaled Score
+  alias: WAIS_IV_Scoring_FigureWeights_Scaled
+
+scoring_figureweights_full:
+  type: Float
+  description: Figure Weights Fule Scale Score
+  alias: WAIS_IV_Scoring_FigureWeights_Full
+
+scoring_figureweights_group:
+  type: Float
+  description: Figure Weights Ref Group Scaled Score
+  alias: WAIS_IV_Scoring_FigureWeights_Group
+
+scoring_comprehension_raw:
+  type: Float
+  description: Comprehension Raw Score
+  alias: WAIS_IV_Scoring_Comprehension_Raw
+
+scoring_comprehension_scaled:
+  type: Float
+  description: Comprehension Scaled Score
+  alias: WAIS_IV_Scoring_Comprehension_Scaled
+
+scoring_comprehension_full:
+  type: Float
+  description: Comprehension Full Scale Score
+  alias: WAIS_IV_Scoring_Comprehension_Full
+
+scoring_comprehension_group:
+  type: Float
+  description: Comprehension Ref Group Scaled Score
+  alias: WAIS_IV_Scoring_Comprehension_Group
+
+scoring_cancellation_scaled:
+  type: Float
+  description: Cancellation Scaled Score
+  alias: WAIS_IV_Scoring_Cancellation_Scaled
+
+scoring_cancellation_full:
+  type: Float
+  description: Cancellation Full Scale Score
+  alias: WAIS_IV_Scoring_Cancellation_Full
+
+scoring_cancellation_group:
+  type: Float
+  description: Cancellation Ref Group Scaled Score
+  alias: WAIS_IV_Scoring_Cancellation_Group
+
+scoring_picturecomp_scaled:
+  type: Float
+  description: Picture Completion Scaled Score
+  alias: WAIS_IV_Scoring_PictureComp_Scaled
+
+scoring_picturecomp_full:
+  type: Float
+  description: Picture Completion Full Scale Score
+  alias: WAIS_IV_Scoring_PictureComp_Full
+
+scoring_picturecomp_group:
+  type: Float
+  description: Picture Completion Ref Group Scaled Score
+  alias: WAIS_IV_Scoring_PictureComp_Group
+
+scoring_sum_verb:
+  type: Float
+  description: Sum Scaled Scores Verbal Comp.
+  alias: WAIS_IV_Scoring_Sum_Verb
+
+scoring_sum_perc_rsng:
+  type: Float
+  description: Sum Scaled Scores Perc Rsng
+  alias: WAIS_IV_Scoring_Sum_Perc_Rsng
+
+scoring_sum_work_mem:
+  type: Float
+  description: Sum Scaled Scores Work Mem
+  alias: WAIS_IV_Scoring_Sum_Work_Mem
+
+scoring_sum_proc_speed:
+  type: Float
+  description: Sum Scaed Scores Proc Speed
+  alias: WAIS_IV_Scoring_Sum_Proc_Speed
+
+scoring_sum_full_scale:
+  type: Float
+  description: Sum Scaled Scores Full Scale
+  alias: WAIS_IV_Scoring_Sum_Full_Scale
+
+scoring_subtestverbsi:
+  type: Float
+  description: Subtest Scaled Score Profile - Verbal Comprehension SI
+  alias: WAIS_IV_Scoring_SubtestVerbSI
+
+scoring_subtestverbvc:
+  type: Float
+  description: Subtest Scaled Score Profile - Verbal Comprehension VC
+  alias: WAIS_IV_Scoring_SubtestVerbVC
+
+scoring_subtestverbin:
+  type: Float
+  description: Subtest Scaled Score Profile - Verbal Comprehension IN
+  alias: WAIS_IV_Scoring_SubtestVerbIN
+
+scoring_subtestverbcd:
+  type: Float
+  description: Subtest Scaled Score Profile - Verbal Comprehension CO
+  alias: WAIS_IV_Scoring_SubtestVerbCD
+
+scoring_subtestpercbd:
+  type: Float
+  description: Subtest Scaled Score Profile - Perceptual Reasoning BD
+  alias: WAIS_IV_Scoring_SubtestPercBD
+
+scoring_subtestpercmr:
+  type: Float
+  description: Subtest Scaled Score Profile - Perceptual Reasoning MR
+  alias: WAIS_IV_Scoring_SubtestPercMR
+
+scoring_subtestpercvp:
+  type: Float
+  description: Subtest Scaled Score Profile - Perceptual Reasoning VP
+  alias: WAIS_IV_Scoring_SubtestPercVP
+
+scoring_subtestpercfw:
+  type: Float
+  description: Subtest Scaled Score Profile - Perceptual Reasoning FW
+  alias: WAIS_IV_Scoring_SubtestPercFW
+
+scoring_subtestpercpcm:
+  type: Float
+  description: Subtest Scaled Score Profile - Perceptual Reasoning PCm
+  alias: WAIS_IV_Scoring_SubtestPercPCm
+
+scoring_subtestmemds:
+  type: Float
+  description: Subtest Scaled Score Profile - Working Memory DS
+  alias: WAIS_IV_Scoring_SubtestMemDS
+
+scoring_subtestmemar:
+  type: Float
+  description: Subtest Scaled Score Profile - Working Memory AR
+  alias: WAIS_IV_Scoring_SubtestMemAR
+
+scoring_subtestmemln:
+  type: Float
+  description: Subtest Scaled Score Profile - Working Memory LN
+  alias: WAIS_IV_Scoring_SubtestMemLN
+
+scoring_subtestspeedss:
+  type: Float
+  description: Subtest Scaled Score Profile - Processing Speed SS
+  alias: WAIS_IV_Scoring_SubtestSpeedSS
+
+scoring_subtestspeedcd:
+  type: Float
+  description: Subtest Scaled Score Profile - Processing Speed CD
+  alias: WAIS_IV_Scoring_SubtestSpeedCD
+
+scoring_subtestspeedca:
+  type: Float
+  description: Subtest Scaled Score Profile - Processing Speed CA
+  alias: WAIS_IV_Scoring_SubtestSpeedCA
+
+scoring_conv_sum_verb:
+  type: Float
+  description: Verbal Comprehension Sum of Scaled Scores
+  alias: WAIS_IV_Scoring_Conv_Sum_Verb
+
+scoring_conv_comp_verb:
+  type: Float
+  description: Verbal Comprehension Composite Score VCI
+  alias: WAIS_IV_Scoring_Conv_Comp_Verb
+
+scoring_conv_perc_verb:
+  type: Float
+  description: Verbal Comprehension Percentile Rank
+  alias: WAIS_IV_Scoring_Conv_Perc_Verb
+
+scoring_conv_conf_verb:
+  type: Integer
+  description: Verbal Comprehension Confidence Interval (90% or 95%)
+  range:
+  - 90
+  - 95
+  notes: 90 = 90% Confidence Interval; 95 = 95% Confidence Interval
+  alias: WAIS_IV_Scoring_Conv_Conf_Verb
+  codes:
+    90: 90% Confidence Interval
+    95: 95% Confidence Interval
+
+scoring_conv_sum_perc_rsng:
+  type: Float
+  description: Perceptual Reasoning Sum of Scaled Scores
+  alias: WAIS_IV_Scoring_Conv_Sum_Perc_Rsng
+
+scoring_conv_comp_perc_rsng:
+  type: Float
+  description: Perceptual Reasoning Composite Score PRI
+  alias: WAIS_IV_Scoring_Conv_Comp_Perc_Rsng
+
+scoring_conv_perc_perc_rsng:
+  type: Float
+  description: Perceptual Reasoning Percentile Rank
+  alias: WAIS_IV_Scoring_Conv_Perc_Perc_Rsng
+
+scoring_conv_conf_perc_rsng:
+  type: Integer
+  description: Perceptual Reasoning Confidence Interval (90% or 95%)
+  range:
+  - 90
+  - 95
+  notes: 90 = 90% Confidence Interval; 95 = 95% Confidence Interval
+  alias: WAIS_IV_Scoring_Conv_Conf_Perc_Rsng
+  codes:
+    90: 90% Confidence Interval
+    95: 95% Confidence Interval
+
+scoring_conv_sum_work_mem:
+  type: Float
+  description: Working Memory Sum of Scaled Scores
+  alias: WAIS_IV_Scoring_Conv_Sum_Work_Mem
+
+scoring_conv_comp_work_mem:
+  type: Float
+  description: Working Memory Composite Score WMI
+  alias: WAIS_IV_Scoring_Conv_Comp_Work_Mem
+
+scoring_conv_perc_work_mem:
+  type: Float
+  description: Working Memory Percentile Rank
+  alias: WAIS_IV_Scoring_Conv_Perc_Work_Mem
+
+scoring_conv_conf_work_mem:
+  type: Integer
+  description: Working Memory Confidence Interval (90% or 95%)
+  range:
+  - 90
+  - 95
+  notes: 90 = 90% Confidence Interval; 95 = 95% Confidence Interval
+  alias: WAIS_IV_Scoring_Conv_Conf_Work_Mem
+  codes:
+    90: 90% Confidence Interval
+    95: 95% Confidence Interval
+
+scoring_conv_sum_proc_speed:
+  type: Float
+  description: Processing Speed Sum of Scaled Scores
+  alias: WAIS_IV_Scoring_Conv_Sum_Proc_Speed,processingspeedscaledsum
+
+scoring_conv_comp_proc_speed:
+  type: Float
+  description: Processing Speed Composite Score PSI
+  alias: WAIS_IV_Scoring_Conv_Comp_Proc_Speed,processingspeedcompositescore
+
+scoring_conv_perc_proc_speed:
+  type: Float
+  description: Processing Speed Percentile Rank
+  alias: WAIS_IV_Scoring_Conv_Perc_Proc_Speed
+
+scoring_conv_conf_proc_speed:
+  type: Integer
+  description: Processing Speed Confidence Interval (90% or 95%)
+  range:
+  - 90
+  - 95
+  notes: 90 = 90% Confidence Interval; 95 = 95% Confidence Interval
+  alias: WAIS_IV_Scoring_Conv_Conf_Proc_Speed
+  codes:
+    90: 90% Confidence Interval
+    95: 95% Confidence Interval
+
+scoring_conv_sum_full_scale:
+  type: Float
+  description: Full Scale Sum of Scaled Scores
+  alias: WAIS_IV_Scoring_Conv_Sum_Full_Scale
+
+scoring_conv_comp_full_scale:
+  type: Float
+  description: Full Scale Composite Score FSIQ
+  alias: WAIS_IV_Scoring_Conv_Comp_Full_Scale
+
+scoring_conv_perc_full_scale:
+  type: Float
+  description: Full Scale Percentile
+  alias: WAIS_IV_Scoring_Conv_Perc_Full_Scale
+
+scoring_conv_conf_full_scale:
+  type: Integer
+  description: Full Scale Confidence Interval (90% or 95%)
+  range:
+  - 90
+  - 95
+  notes: 90 = 90% Confidence Interval; 95 = 95% Confidence Interval
+  alias: WAIS_IV_Scoring_Conv_Conf_Full_Scale
+  codes:
+    90: 90% Confidence Interval
+    95: 95% Confidence Interval
+
+scoring_profillevci:
+  type: Float
+  description: Composite Score Profile - VCI
+  range:
+  - 1+
+  alias: WAIS_IV_Scoring_ProfilleVCI,WAIS_VCI
+
+scoring_profilepri:
+  type: Float
+  description: Composite Score Profile - PRI
+  range:
+  - 1+
+  alias: WAIS_IV_Scoring_ProfilePRI,WAIS_PRI
+
+scoring_profillewmi:
+  type: Float
+  description: Composite Score Profile - WMI
+  range:
+  - 1+
+  alias: WAIS_IV_Scoring_ProfilleWMI,WAIS_WMI
+
+scoring_profillepsi:
+  type: Float
+  description: Composite Score Profile - PSI
+  range:
+  - 1+
+  alias: WAIS_IV_Scoring_ProfillePSI,WAIS_PSI
+
+scoring_profilefsiq:
+  type: Float
+  description: Composite Score Profile - FSIQ
+  range:
+  - 1+
+  alias: WAIS_FSIQ,WAIS_IV_Scoring_ProfileFSIQ
+
+analysis_vci_pri_vci:
+  type: Float
+  description: VCI PRI Score1 VCI
+  alias: WAIS_IV_Analysis_VCI_PRI_VCI
+
+analysis_vci_pri_pri:
+  type: Float
+  description: VCI PRI Score2 PRI
+  alias: WAIS_IV_Analysis_VCI_PRI_PRI
+
+analysis_vci_pri_diff:
+  type: Float
+  description: VCI PRI Difference
+  alias: WAIS_IV_Analysis_VCI_PRI_Diff
+
+analysis_vci_pri_crit:
+  type: Float
+  description: VCI PRI Critical Value Value (0.15 or 0.05)
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_VCI_PRI_Crit
+
+analysis_vci_pri_sigdif:
+  type: String
+  length: 50
+  description: VCI PRI Significant Difference (Yes;No)
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_Analysis_VCI_PRI_SigDif
+
+analysis_vci_pri_baserate:
+  type: Float
+  description: VCI PRI Base Rate
+  alias: WAIS_IV_Analysis_VCI_PRI_BaseRate
+
+analysis_vci_wmi_vci:
+  type: Float
+  description: VCI WMI Score1 VCI
+  alias: WAIS_IV_Analysis_VCI_WMI_VCI
+
+analysis_vci_wmi_wmi:
+  type: Float
+  description: VCI WMI Score2 WMI
+  alias: WAIS_IV_Analysis_VCI_WMI_WMI
+
+analysis_vci_wmi_diff:
+  type: Float
+  description: VCI WMI Difference
+  alias: WAIS_IV_Analysis_VCI_WMI_Diff
+
+analysis_vci_wmi_crit:
+  type: Float
+  description: VCI WMI Critical Value Value (0.15 or 0.05)
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_VCI_WMI_Crit
+
+analysis_vci_wmi_sigdif:
+  type: String
+  length: 50
+  description: VCI WMI Significant Difference (Yes;No)
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_Analysis_VCI_WMI_SigDif
+
+analysis_vci_wmi_baserate:
+  type: Float
+  description: VCI WMI Base Rate
+  alias: WAIS_IV_Analysis_VCI_WMI_BaseRate
+
+analysis_vci_psi_vci:
+  type: Float
+  description: VCI PSI Score1 VCI
+  alias: WAIS_IV_Analysis_VCI_PSI_VCI
+
+analysis_vci_psi_psi:
+  type: Float
+  description: VCI PSI Score2 PSI
+  alias: WAIS_IV_Analysis_VCI_PSI_PSI
+
+analysis_vci_psi_diff:
+  type: Float
+  description: VCI PSI Difference
+  alias: WAIS_IV_Analysis_VCI_PSI_Diff
+
+analysis_vci_psi_crit:
+  type: Float
+  description: VCI PSI Critical Value Value (0.15 or 0.05)
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_VCI_PSI_Crit
+
+analysis_vci_psi_sigdif:
+  type: String
+  length: 50
+  description: VCI PSI Significant Difference (Yes;No)
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_Analysis_VCI_PSI_SigDif
+
+analysis_vci_psi_baserate:
+  type: Float
+  description: VCI PSI Base Rate
+  alias: WAIS_IV_Analysis_VCI_PSI_BaseRate
+
+analysis_pri_wmi_pri:
+  type: Float
+  description: PRI WMI Score1 PRI
+  alias: WAIS_IV_Analysis_PRI_WMI_PRI
+
+analysis_pri_wmi_wmi:
+  type: Float
+  description: PRI WMI Score2 WMI
+  alias: WAIS_IV_Analysis_PRI_WMI_WMI
+
+analysis_pri_wmi_diff:
+  type: Float
+  description: PRI WMI Difference
+  alias: WAIS_IV_Analysis_PRI_WMI_Diff
+
+analysis_pri_wmi_crit:
+  type: Float
+  description: PRI WMI Critical Value Value (0.15 or 0.05)
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_PRI_WMI_Crit
+
+analysis_pri_wmi_sigdif:
+  type: String
+  length: 50
+  description: PRI WMI Significant Difference (Yes;No)
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_Analysis_PRI_WMI_SigDif
+
+analysis_pri_wmi_baserate:
+  type: Float
+  description: PRI WMI Base Rate
+  alias: WAIS_IV_Analysis_PRI_WMI_BaseRate
+
+analysis_pri_psi_pri:
+  type: Float
+  description: PRI PSI Score1 PRI
+  alias: WAIS_IV_Analysis_PRI_PSI_PRI
+
+analysis_pri_psi_psi:
+  type: Float
+  description: PRI PSI Score2 PSI
+  alias: WAIS_IV_Analysis_PRI_PSI_PSI
+
+analysis_pri_psi_diff:
+  type: Float
+  description: PRI PSI Difference
+  alias: WAIS_IV_Analysis_PRI_PSI_Diff
+
+analysis_pri_psi_crit:
+  type: Float
+  description: PRI PSI Critical Value Value (0.15 or 0.05)
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_PRI_PSI_Crit
+
+analysis_pri_psi_sigdif:
+  type: String
+  length: 50
+  description: PRI PSI Significant Difference (Yes;No)
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_Analysis_PRI_PSI_SigDif
+
+analysis_pri_psi_baserate:
+  type: Float
+  description: PRI PSI Base Rate
+  alias: WAIS_IV_Analysis_PRI_PSI_BaseRate
+
+analysis_wmi_psi_wmi:
+  type: Float
+  description: WMI PSI Score1 WMI
+  alias: WAIS_IV_Analysis_WMI_PSI_WMI
+
+analysis_wmi_psi_psi:
+  type: Float
+  description: WMI PSI Score2 PSI
+  alias: WAIS_IV_Analysis_WMI_PSI_PSI
+
+analysis_wmi_psi_diff:
+  type: Float
+  description: WMI PSI Difference
+  alias: WAIS_IV_Analysis_WMI_PSI_Diff
+
+analysis_wmi_psi_crit:
+  type: Float
+  description: WMI PSI Critical Value Value (0.15 or 0.05)
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_WMI_PSI_Crit
+
+analysis_wmi_psi_sigdif:
+  type: String
+  length: 50
+  description: WMI PSI Significant Difference (Yes;No)
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_Analysis_WMI_PSI_SigDif
+
+analysis_wmi_psi_baserate:
+  type: Float
+  description: WMI PSI Base Rate
+  alias: WAIS_IV_Analysis_WMI_PSI_BaseRate
+
+analysis_basis_overall_sample:
+  type: String
+  length: 50
+  description: Basis for Comparison - Overall Sample
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_Analysis_Basis_Overall_Sample
+
+analysis_basis_ability_level:
+  type: String
+  length: 50
+  description: Basis for Comparison - Ability Level
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_Analysis_Basis_Ability_Level
+
+analysis_blockdesign_subtest:
+  type: Float
+  description: Block Design Subtest Scaled Score
+  alias: WAIS_IV_Analysis_BlockDesign_Subtest
+
+analysis_blockdesign_mean:
+  type: Float
+  description: Block Design Mean Scaled Score
+  alias: WAIS_IV_Analysis_BlockDesign_Mean
+
+analysis_blockdesign_diff:
+  type: Float
+  description: Block Design Difference from Mean
+  alias: WAIS_IV_Analysis_BlockDesign_Diff
+
+analysis_blockdesign_crit:
+  type: Float
+  description: Block Design Critical Value (0.15 or 0.05)
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_BlockDesign_Crit
+
+analysis_blockdesign_sw:
+  type: String
+  length: 50
+  description: Block Design Strength or Weakness
+  range:
+  - S
+  - W
+  notes: S = Strength; W = Weakness
+  alias: WAIS_IV_Analysis_BlockDesign_SW
+  codes:
+    S: Strength
+    W: Weakness
+
+analysis_blockdesign_baserate:
+  type: Float
+  description: Block Design Base Rate
+  alias: WAIS_IV_Analysis_BlockDesign_BaseRate
+
+analysis_similarities_subtest:
+  type: Float
+  description: Similarities Subtest Scaled Score
+  alias: WAIS_IV_Analysis_Similarities_Subtest
+
+analysis_similarities_mean:
+  type: Float
+  description: Similarities Mean Scaled Score
+  alias: WAIS_IV_Analysis_Similarities_Mean
+
+analysis_similarities_diff:
+  type: Float
+  description: Similarities Difference from Mean
+  alias: WAIS_IV_Analysis_Similarities_Diff
+
+analysis_similarities_crit:
+  type: Float
+  description: Similarities Critical Value (0.15 or 0.05)
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_Similarities_Crit
+
+analysis_similarities_sw:
+  type: String
+  length: 50
+  description: Similarities Strength or Weakness
+  range:
+  - S
+  - W
+  notes: S = Strength; W = Weakness
+  alias: WAIS_IV_Analysis_Similarities_SW
+  codes:
+    S: Strength
+    W: Weakness
+
+analysis_similarities_baserate:
+  type: Float
+  description: Similarities Base Rate
+  alias: WAIS_IV_Analysis_Similarities_BaseRate
+
+analysis_digitspan_subtest:
+  type: Float
+  description: Digit Span Subtest Scaled Score
+  alias: WAIS_IV_Analysis_DigitSpan_Subtest
+
+analysis_digitspan_mean:
+  type: Float
+  description: Digit Span Mean Scaled Score
+  alias: WAIS_IV_Analysis_DigitSpan_Mean
+
+analysis_digitspan_diff:
+  type: Float
+  description: Digit Span Difference from Mean
+  alias: WAIS_IV_Analysis_DigitSpan_Diff
+
+analysis_digitspan_crit:
+  type: Float
+  description: Digit Span Critical Value (0.15 or 0.05)
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_DigitSpan_Crit
+
+analysis_digitspan_sw:
+  type: String
+  length: 50
+  description: Digit Span Strength or Weakness
+  range:
+  - S
+  - W
+  notes: S = Strength; W = Weakness
+  alias: WAIS_IV_Analysis_DigitSpan_SW
+  codes:
+    S: Strength
+    W: Weakness
+
+analysis_digitspan_baserate:
+  type: Float
+  description: Digit Span Base Rate
+  alias: WAIS_IV_Analysis_DigitSpan_BaseRate
+
+analysis_matrixreason_subtest:
+  type: Float
+  description: Matrix Reasoning Subtest Scaled Score
+  alias: WAIS_IV_Analysis_MatrixReason_Subtest
+
+analysis_matrixreason_mean:
+  type: Float
+  description: Matrix Reasoning Mean Scaled Score
+  alias: WAIS_IV_Analysis_MatrixReason_Mean
+
+analysis_matrixreason_diff:
+  type: Float
+  description: Matrix Reasoning Difference from Mean
+  alias: WAIS_IV_Analysis_MatrixReason_Diff
+
+analysis_matrixreason_crit:
+  type: Float
+  description: Matrix Reasoning Critical Value (0.15 or 0.05)
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_MatrixReason_Crit
+
+analysis_matrixreason_sw:
+  type: String
+  length: 50
+  description: Matrix Reasoning Strength or Weakness
+  range:
+  - S
+  - W
+  notes: S = Strength; W = Weakness
+  alias: WAIS_IV_Analysis_MatrixReason_SW
+  codes:
+    S: Strength
+    W: Weakness
+
+analysis_matrixreason_baserate:
+  type: Float
+  description: Matrix Reasoning Base Rate
+  alias: WAIS_IV_Analysis_MatrixReason_BaseRate
+
+analysis_vocabulary_subtest:
+  type: Float
+  description: Vocabulary Subtest Scaled Score
+  alias: WAIS_IV_Analysis_Vocabulary_Subtest
+
+analysis_vocabulary_mean:
+  type: Float
+  description: Vocabulary Mean Scaled Score
+  alias: WAIS_IV_Analysis_Vocabulary_Mean
+
+analysis_vocabulary_diff:
+  type: Float
+  description: Vocabulary Difference from Mean
+  alias: WAIS_IV_Analysis_Vocabulary_Diff
+
+analysis_vocabulary_crit:
+  type: Float
+  description: Vocabulary Critical Value (0.15 or 0.05)
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_Vocabulary_Crit
+
+analysis_vocabulary_sw:
+  type: String
+  length: 50
+  description: Vocabulary Strength or Weakness
+  range:
+  - S
+  - W
+  notes: S = Strength; W = Weakness
+  alias: WAIS_IV_Analysis_Vocabulary_SW
+  codes:
+    S: Strength
+    W: Weakness
+
+analysis_vocabulary_baserate:
+  type: Float
+  description: Vocabulary Base Rate
+  alias: WAIS_IV_Analysis_Vocabulary_BaseRate
+
+analysis_arithmetic_subtest:
+  type: Float
+  description: Arithmetic Subtest Scaled Score
+  alias: WAIS_IV_Analysis_Arithmetic_Subtest
+
+analysis_arithmetic_mean:
+  type: Float
+  description: Arithmetic Mean Scaled Score
+  alias: WAIS_IV_Analysis_Arithmetic_Mean
+
+analysis_arithmetic_diff:
+  type: Float
+  description: Arithmetic Difference from Mean
+  alias: WAIS_IV_Analysis_Arithmetic_Diff
+
+analysis_arithmetic_crit:
+  type: Float
+  description: Arithmetic Critical Value (0.15 or 0.05)
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_Arithmetic_Crit
+
+analysis_arithmetic_sw:
+  type: String
+  length: 50
+  description: Arithmetic Strength or Weakness
+  range:
+  - S
+  - W
+  notes: S = Strength; W = Weakness
+  alias: WAIS_IV_Analysis_Arithmetic_SW
+  codes:
+    S: Strength
+    W: Weakness
+
+analysis_arithmetic_baserate:
+  type: Float
+  description: Arithmetic Base Rate
+  alias: WAIS_IV_Analysis_Arithmetic_BaseRate
+
+analysis_symbolsearch_subtest:
+  type: Float
+  description: Symbol Search Subtest Scaled Score
+  alias: WAIS_IV_Analysis_SymbolSearch_Subtest
+
+analysis_symbolsearch_mean:
+  type: Float
+  description: Symbol Search Mean Scaled Score
+  alias: WAIS_IV_Analysis_SymbolSearch_Mean
+
+analysis_symbolsearch_diff:
+  type: Float
+  description: Symbol Search Difference from Mean
+  alias: WAIS_IV_Analysis_SymbolSearch_Diff
+
+analysis_symbolsearch_crit:
+  type: Float
+  description: Symbol Search Critical Value (0.15 or 0.05)
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_SymbolSearch_Crit
+
+analysis_symbolsearch_sw:
+  type: String
+  length: 50
+  description: Symbol Search Strength or Weakness
+  range:
+  - S
+  - W
+  notes: S = Strength; W = Weakness
+  alias: WAIS_IV_Analysis_SymbolSearch_SW
+  codes:
+    S: Strength
+    W: Weakness
+
+analysis_symbolsearch_baserate:
+  type: Float
+  description: Symbol Search Base Rate
+  alias: WAIS_IV_Analysis_SymbolSearch_BaseRate
+
+analysis_vispuzzles_subtest:
+  type: Float
+  description: Visual Puzzles Subtest Scaled Score
+  alias: WAIS_IV_Analysis_VisPuzzles_Subtest
+
+analysis_vispuzzles_mean:
+  type: Float
+  description: Visual Puzzles Mean Scaled Score
+  alias: WAIS_IV_Analysis_VisPuzzles_Mean
+
+analysis_vispuzzles_diff:
+  type: Float
+  description: Visual Puzzles Difference from Mean
+  alias: WAIS_IV_Analysis_VisPuzzles_Diff
+
+analysis_vispuzzles_crit:
+  type: Float
+  description: Visual Puzzles Critical Value (0.15 or 0.05)
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_VisPuzzles_Crit
+
+analysis_vispuzzles_sw:
+  type: String
+  length: 50
+  description: Visual Puzzles Strength or Weakness
+  range:
+  - S
+  - W
+  notes: S = Strength; W = Weakness
+  alias: WAIS_IV_Analysis_VisPuzzles_SW
+  codes:
+    S: Strength
+    W: Weakness
+
+analysis_vispuzzles_baserate:
+  type: Float
+  description: Visual Puzzles Base Rate
+  alias: WAIS_IV_Analysis_VisPuzzles_BaseRate
+
+analysis_information_subtest:
+  type: Float
+  description: Information Subtest Scaled Score
+  alias: WAIS_IV_Analysis_Information_Subtest
+
+analysis_information_mean:
+  type: Float
+  description: Information Mean Scaled Score
+  alias: WAIS_IV_Analysis_Information_Mean
+
+analysis_information_diff:
+  type: Float
+  description: Information Difference from Mean
+  alias: WAIS_IV_Analysis_Information_Diff
+
+analysis_information_crit:
+  type: Float
+  description: Information Critical Value (0.15 or 0.05)
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_Information_Crit
+
+analysis_information_sw:
+  type: String
+  length: 50
+  description: Information Strength or Weakness
+  range:
+  - S
+  - W
+  notes: S = Strength; W = Weakness
+  alias: WAIS_IV_Analysis_Information_SW
+  codes:
+    S: Strength
+    W: Weakness
+
+analysis_information_baserate:
+  type: Float
+  description: Information Base Rate
+  alias: WAIS_IV_Analysis_Information_BaseRate
+
+analysis_coding_subtest:
+  type: Float
+  description: Coding Subtest Scaled Score
+  alias: WAIS_IV_Analysis_Coding_Subtest
+
+analysis_coding_mean:
+  type: Float
+  description: Coding Mean Scaled Score
+  alias: WAIS_IV_Analysis_Coding_Mean
+
+analysis_coding_diff:
+  type: Float
+  description: Coding Difference from Mean
+  alias: WAIS_IV_Analysis_Coding_Diff
+
+analysis_coding_crit:
+  type: Float
+  description: Coding Critical Value (0.15 or 0.05)
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_Coding_Crit
+
+analysis_coding_sw:
+  type: String
+  length: 50
+  description: Coding Strength or Weakness
+  range:
+  - S
+  - W
+  notes: S = Strength; W = Weakness
+  alias: WAIS_IV_Analysis_Coding_SW
+  codes:
+    S: Strength
+    W: Weakness
+
+analysis_coding_baserate:
+  type: Float
+  description: Coding Base Rate
+  alias: WAIS_IV_Analysis_Coding_BaseRate
+
+analysis_basis_overall_mean:
+  type: String
+  length: 50
+  description: Basis for Comparison - Overall Mean of 10 Core Subtests
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_Analysis_Basis_Overall_Mean
+
+analysis_basis_vcpr_means:
+  type: String
+  length: 50
+  description: Basis for Comparison - Verbal Comprehension and Perceptual Reasoning
+    Means
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_Analysis_Basis_VCPR_Means
+
+analysis_sum_core:
+  type: Float
+  description: Sum of Scaled Score - 10 Core Subtests
+  alias: WAIS_IV_Analysis_Sum_Core
+
+analysis_sum_verb:
+  type: Float
+  description: Sum of Scaled Score  - 3 Verbal Comprehension
+  alias: WAIS_IV_Analysis_Sum_Verb
+
+analysis_sum_perc:
+  type: Float
+  description: Sum of Scaled Score  - 3 Perceptual Reasoning
+  alias: WAIS_IV_Analysis_Sum_Perc
+
+analysis_mean_core:
+  type: Float
+  description: Mean Score - 10 Core Subtests
+  alias: WAIS_IV_Analysis_Mean_Core
+
+analysis_mean_verb:
+  type: Float
+  description: Mean Score - 3 Verbal Comprehension
+  alias: WAIS_IV_Analysis_Mean_Verb
+
+analysis_mean_perc:
+  type: Float
+  description: Mean Score - 3 Perceptual Reasoning
+  alias: WAIS_IV_Analysis_Mean_Perc
+
+analysis_blockdesign_raw:
+  type: Float
+  description: Block Design No Time Bonus Raw Score
+  alias: WAIS_IV_Analysis_BlockDesign_Raw
+
+analysis_blockdesign_scaled:
+  type: Float
+  description: Block Design No Time Bonus Scaled Score
+  alias: WAIS_IV_Analysis_BlockDesign_Scaled
+
+analysis_digitspanfwd_raw:
+  type: Float
+  description: Digit Span Forward Raw Score
+  alias: WAIS_IV_Analysis_DigitSpanFwd_Raw,dsf,dspf_raw
+
+analysis_digitspanfwd_scaled:
+  type: Float
+  description: Digit Span Forward Scaled Score
+  alias: WAIS_IV_Analysis_DigitSpanFwd_Scaled,dspf_scaled
+
+analysis_digitspanbkw_raw:
+  type: Float
+  description: Digit Span Backward Raw Score
+  alias: WAIS_IV_Analysis_DigitSpanBkw_Raw,dsb,dspb_raw
+
+analysis_digitspanbkw_scaled:
+  type: Float
+  description: Digit Span Backward Scaled Score
+  alias: WAIS_IV_Analysis_DigitSpanBkw_Scaled,dspb_scaled
+
+analysis_digitspanseq_raw:
+  type: Float
+  description: Digit Span Sequencing Raw Score
+  alias: WAIS_IV_Analysis_DigitSpanSeq_Raw,dss
+
+analysis_digitspanseq_scaled:
+  type: Float
+  description: Digit Span Sequencing Scaled Score
+  alias: WAIS_IV_Analysis_DigitSpanSeq_Scaled
+
+analysis_disccomp_bd:
+  type: Float
+  description: Block Design - Block Design No Time Bonus Score 1 BD
+  alias: WAIS_IV_Analysis_DiscComp_BD
+
+analysis_disccomp_bdn:
+  type: Float
+  description: Block Design - Block Design No Time Bonus Score 2 BDN
+  alias: WAIS_IV_Analysis_DiscComp_BDN
+
+analysis_disccomp_bd_bdn_diff:
+  type: Float
+  description: Block Design - Block Design No Time Bonus Difference
+  alias: WAIS_IV_Analysis_DiscComp_BD_BDN_Diff
+
+analysis_disccomp_bd_bdn_crit:
+  type: Float
+  description: Block Design - Block Design No Time Bonus Critical Value .15 or .05
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_DiscComp_BD_BDN_Crit
+
+analysis_disccomp_bd_bdn_sig:
+  type: String
+  length: 50
+  description: Block Design - Block Design No Time Bonus Significant Difference
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_Analysis_DiscComp_BD_BDN_Sig
+
+analysis_disccomp_bd_bdn_base:
+  type: Float
+  description: Block Design - Block Design No Time Bonus Base Rate
+  alias: WAIS_IV_Analysis_DiscComp_BD_BDN_Base
+
+analysis_disccomp_dsf:
+  type: Float
+  description: Digit Span Forward - Digit Span Backward Score 1 BD
+  alias: WAIS_IV_Analysis_DiscComp_DSF
+
+analysis_disccomp_dsb:
+  type: Float
+  description: Digit Span Forward - Digit Span Backward Score 2 BDN
+  alias: WAIS_IV_Analysis_DiscComp_DSB
+
+analysis_disccomp_dsf_dsb_diff:
+  type: Float
+  description: Digit Span Forward - Digit Span Backward Difference
+  alias: WAIS_IV_Analysis_DiscComp_DSF_DSB_Diff
+
+analysis_disccomp_dsf_dsb_crit:
+  type: Float
+  description: Digit Span Forward - Digit Span Backward Critical Value .15 or .05
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_DiscComp_DSF_DSB_Crit
+
+analysis_disccomp_dsf_dsb_sig:
+  type: String
+  length: 50
+  description: Digit Span Forward - Digit Span Backward Significant Difference
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_Analysis_DiscComp_DSF_DSB_Sig
+
+analysis_disccomp_dsf_dsb_base:
+  type: Float
+  description: Digit Span Forward - Digit Span Backward Base Rate
+  alias: WAIS_IV_Analysis_DiscComp_DSF_DSB_Base
+
+analysis_disccomp_dsf_ss:
+  type: Float
+  description: Digit Span Forward - Digit Span Sequencing Score 1 BD
+  alias: WAIS_IV_Analysis_DiscComp_DSF_SS
+
+analysis_disccomp_dss_ss:
+  type: Float
+  description: Digit Span Forward - Digit Span Sequencing Score 2 BDN
+  alias: WAIS_IV_Analysis_DiscComp_DSS_SS
+
+analysis_disccomp_dsf_dss_diff:
+  type: Float
+  description: Digit Span Forward - Digit Span Sequencing Difference
+  alias: WAIS_IV_Analysis_DiscComp_DSF_DSS_Diff
+
+analysis_disccomp_dsf_dss_crit:
+  type: Float
+  description: Digit Span Forward - Digit Span Sequencing Critical Value .15 or .05
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_DiscComp_DSF_DSS_Crit
+
+analysis_disccomp_dsf_dss_sig:
+  type: String
+  length: 50
+  description: Digit Span Forward - Digit Span Sequencing Significant Difference
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_Analysis_DiscComp_DSF_DSS_Sig
+
+analysis_disccomp_dsf_dss_base:
+  type: Float
+  description: Digit Span Forward - Digit Span Sequencing Base Rate
+  alias: WAIS_IV_Analysis_DiscComp_DSF_DSS_Base
+
+analysis_disccomp_dsb_ss:
+  type: Float
+  description: Digit Span Backward - Digit Span Sequencing Score 1 BD
+  alias: WAIS_IV_Analysis_DiscComp_DSB_SS
+
+analysis_disccomp_dss:
+  type: Float
+  description: Digit Span Backward - Digit Span Sequencing Score 2 BDN
+  alias: WAIS_IV_Analysis_DiscComp_DSS
+
+analysis_disccomp_dsb_dss_diff:
+  type: Float
+  description: Digit Span Backward - Digit Span Sequencing Difference
+  alias: WAIS_IV_Analysis_DiscComp_DSB_DSS_Diff
+
+analysis_disccomp_dsb_dss_crit:
+  type: Float
+  description: Digit Span Backward - Digit Span Sequencing Critical Value .15 or .05
+  range:
+  - 0.15
+  - 0.05
+  alias: WAIS_IV_Analysis_DiscComp_DSB_DSS_Crit
+
+analysis_disccomp_dsb_dss_sig:
+  type: String
+  length: 50
+  description: Digit Span Backward - Digit Span Sequencing Significant Difference
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_Analysis_DiscComp_DSB_DSS_Sig
+
+analysis_disccomp_dsb_dss_base:
+  type: Float
+  description: Digit Span Backward - Digit Span Sequencing Base Rate
+  alias: WAIS_IV_Analysis_DiscComp_DSB_DSS_Base
+
+analysis_rsbsconv_ldsf_raw:
+  type: Float
+  description: Longest Digit Span Forward (LDSF) Raw Score
+  alias: WAIS_IV_Analysis_RSBSConv_LDSF_Raw
+
+analysis_rsbsconv_ldsf_base:
+  type: Float
+  description: Longest Digit Span Forward (LDSF) Base Rate
+  alias: WAIS_IV_Analysis_RSBSConv_LDSF_Base
+
+analysis_rsbsconv_ldsb_raw:
+  type: Float
+  description: Longest Digit Span Backward (LDSB) Raw Score
+  alias: WAIS_IV_Analysis_RSBSConv_LDSB_Raw
+
+analysis_rsbsconv_ldsb_base:
+  type: Float
+  description: Longest Digit Span Backward (LDSB) Base Rate
+  alias: WAIS_IV_Analysis_RSBSConv_LDSB_Base
+
+analysis_rsbsconv_ldss_raw:
+  type: Float
+  description: Longest Digit Span Sequence (LDSS) Raw Score
+  alias: WAIS_IV_Analysis_RSBSConv_LDSS_Raw
+
+analysis_rsbsconv_ldss_base:
+  type: Float
+  description: Longest Digit Span Sequence (LDSS) Base Rate
+  alias: WAIS_IV_Analysis_RSBSConv_LDSS_Base
+
+analysis_rsbsconv_llns_raw:
+  type: Float
+  description: Longest LN Sequence (LLNS) Raw Score
+  alias: WAIS_IV_Analysis_RSBSConv_LLNS_Raw
+
+analysis_rsbsconv_llns_base:
+  type: Float
+  description: Longest LN Sequence (LLNS) Base Rate
+  alias: WAIS_IV_Analysis_RSBSConv_LLNS_Base
+
+analysis_rawdsc_ldsf_ldsb_1:
+  type: Float
+  description: Raw Score Discrepancy Comparison. LDSF - LDSB Score 1
+  alias: WAIS_IV_Analysis_RawDsc_LDSF_LDSB_1
+
+analysis_rawdsc_ldsf_ldsb_2:
+  type: Float
+  description: Raw Score Discrepancy Comparison. LDSF - LDSB Score 2
+  alias: WAIS_IV_Analysis_RawDsc_LDSF_LDSB_2
+
+analysis_rawdsc_ldsf_ldsb_diff:
+  type: Float
+  description: Raw Score Discrepancy Comparison. LDSF - LDSB Difference
+  alias: WAIS_IV_Analysis_RawDsc_LDSF_LDSB_Diff
+
+analysis_rawdsc_ldsf_ldsb_base:
+  type: Float
+  description: Raw Score Discrepancy Comparison. LDSF - LDSB Base Rate
+  alias: WAIS_IV_Analysis_RawDsc_LDSF_LDSB_Base
+
+analysis_rawdsc_ldsf_ldss_1:
+  type: Float
+  description: Raw Score Discrepancy Comparison. LDSF - LDSS Score 1
+  alias: WAIS_IV_Analysis_RawDsc_LDSF_LDSS_1
+
+analysis_rawdsc_ldsf_ldss_2:
+  type: Float
+  description: Raw Score Discrepancy Comparison. LDSF - LDSS Score 2
+  alias: WAIS_IV_Analysis_RawDsc_LDSF_LDSS_2
+
+analysis_rawdsc_ldsf_ldss_diff:
+  type: Float
+  description: Raw Score Discrepancy Comparison. LDSF - LDSS Difference
+  alias: WAIS_IV_Analysis_RawDsc_LDSF_LDSS_Diff
+
+analysis_rawdsc_ldsf_ldss_base:
+  type: Float
+  description: Raw Score Discrepancy Comparison. LDSF - LDSS Base Rate
+  alias: WAIS_IV_Analysis_RawDsc_LDSF_LDSS_Base
+
+analysis_rawdsc_ldsb_ldss_1:
+  type: Float
+  description: Raw Score Discrepancy Comparison. LDSB - LDSS Score 1
+  alias: WAIS_IV_Analysis_RawDsc_LDSB_LDSS_1
+
+analysis_rawdsc_ldsb_ldss_2:
+  type: Float
+  description: Raw Score Discrepancy Comparison. LDSB - LDSS Score 2
+  alias: WAIS_IV_Analysis_RawDsc_LDSB_LDSS_2
+
+analysis_rawdsc_ldsb_ldss_diff:
+  type: Float
+  description: Raw Score Discrepancy Comparison. LDSB - LDSS Difference
+  alias: WAIS_IV_Analysis_RawDsc_LDSB_LDSS_Diff
+
+analysis_rawdsc_ldsb_ldss_base:
+  type: Float
+  description: Raw Score Discrepancy Comparison. LDSB - LDSS Base Rate
+  alias: WAIS_IV_Analysis_RawDsc_LDSB_LDSS_Base
+
+blockdesign_1b:
+  type: String
+  length: 50
+  description: Design 1
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_1
+
+blockdesign_1b_constrdes1:
+  type: String
+  length: 50
+  description: Design 1 Constructed Design Trial 1
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_1_ConstrDes1
+
+blockdesign_1b_constrdes2:
+  type: String
+  length: 50
+  description: Design 1 Constructed Design Trial 2
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_1_ConstrDes2
+
+blockdesign_1b_comptime1:
+  type: Integer
+  description: Design 1 Completion Time 1
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_1_CompTime1
+
+blockdesign_1b_comptime2:
+  type: Integer
+  description: Design 1 Completion Time 2
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_1_CompTime2
+
+blockdesign_1b_correct:
+  type: String
+  length: 50
+  description: Design 1 CorrectDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_1_Correct
+
+blockdesign_1b_score:
+  type: Integer
+  description: Design 1 Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_BlockDesign_1_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+blockdesign_2b:
+  type: String
+  length: 50
+  description: Design 2
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_2
+
+blockdesign_2b_constrdes1:
+  type: String
+  length: 50
+  description: Design 2 Constructed Design Trial 1
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_2_ConstrDes1
+
+blockdesign_2b_constrdes2:
+  type: String
+  length: 50
+  description: Design 2 Constructed Design Trial 2
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_2_ConstrDes2
+
+blockdesign_2b_comptime1:
+  type: Integer
+  description: Design 2 Completion Time 1
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_2_CompTime1
+
+blockdesign_2b_comptime2:
+  type: Integer
+  description: Design 2 Completion Time 2
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_2_CompTime2
+
+blockdesign_2b_correct:
+  type: String
+  length: 50
+  description: Design 2 CorrectDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_2_Correct
+
+blockdesign_2b_score:
+  type: Integer
+  description: Design 2 Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_BlockDesign_2_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+blockdesign_3b:
+  type: String
+  length: 50
+  description: Design 3
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_3
+
+blockdesign_3b_constrdes1:
+  type: String
+  length: 50
+  description: Design 3 Constructed Design Trial 1
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_3_ConstrDes1
+
+blockdesign_3b_constrdes2:
+  type: String
+  length: 50
+  description: Design 3 Constructed Design Trial 2
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_3_ConstrDes2
+
+blockdesign_3b_comptime1:
+  type: Integer
+  description: Design 3 Completion Time 1
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_3_CompTime1
+
+blockdesign_3b_comptime2:
+  type: Integer
+  description: Design 3 Completion Time 2
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_3_CompTime2
+
+blockdesign_3b_correct:
+  type: String
+  length: 50
+  description: Design 3 CorrectDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_3_Correct
+
+blockdesign_3b_score:
+  type: Integer
+  description: Design 3 Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_BlockDesign_3_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+blockdesign_4b:
+  type: String
+  length: 50
+  description: Design 4
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_4
+
+blockdesign_4b_constrdes1:
+  type: String
+  length: 50
+  description: Design 4 Constructed Design Trial 1
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_4_ConstrDes1
+
+blockdesign_4b_constrdes2:
+  type: String
+  length: 50
+  description: Design 4 Constructed Design Trial 2
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_4_ConstrDes2
+
+blockdesign_4b_comptime1:
+  type: Integer
+  description: Design 4 Completion Time 1
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_4_CompTime1
+
+blockdesign_4b_comptime12:
+  type: Integer
+  description: Design 4 Completion Time 2
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_4_CompTime12
+
+blockdesign_4b_correct:
+  type: String
+  length: 50
+  description: Design 4 CorrectDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_4_Correct
+
+blockdesign_4b_score:
+  type: Integer
+  description: Design 4 Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_BlockDesign_4_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+blockdesign_5b:
+  type: String
+  length: 50
+  description: Design 5
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_5
+
+blockdesign_5b_constrdes:
+  type: String
+  length: 50
+  description: Design 5 ConstructedDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_5_ConstrDes
+
+blockdesign_5b_comptime:
+  type: Integer
+  description: Design 5 Completion
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_5_CompTime
+
+blockdesign_5b_correct:
+  type: String
+  length: 50
+  description: Design 5 CorrectDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_5_Correct
+
+blockdesign_5b_score:
+  type: Integer
+  description: Design 5 Score
+  range:
+  - 0
+  - 4
+  notes: 0 = Fail; 4 = Correct
+  alias: WAIS_IV_BlockDesign_5_Score
+  codes:
+    0: Fail
+    4: Correct
+
+blockdesign_6b:
+  type: String
+  length: 50
+  description: Design 6
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_6
+
+blockdesign_6b_constrdes:
+  type: String
+  length: 50
+  description: Design 6 ConstructedDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_6_ConstrDes
+
+blockdesign_6b_comptime:
+  type: Integer
+  description: Design 6 Completion
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_6_CompTime
+
+blockdesign_6b_correct:
+  type: String
+  length: 50
+  description: Design 6 CorrectDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_6_Correct
+
+blockdesign_6b_score:
+  type: Integer
+  description: Design 6 Score
+  range:
+  - 0
+  - 4
+  notes: 0 = Fail; 4 = Correct
+  alias: WAIS_IV_BlockDesign_6_Score
+  codes:
+    0: Fail
+    4: Correct
+
+blockdesign_7b:
+  type: String
+  length: 50
+  description: Design 7
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_7
+
+blockdesign_7b_constrdes:
+  type: String
+  length: 50
+  description: Design 7 ConstructedDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_7_ConstrDes
+
+blockdesign_7b_comptime:
+  type: Integer
+  description: Design 7 Completion
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_7_CompTime
+
+blockdesign_7b_correct:
+  type: String
+  length: 50
+  description: Design 7 CorrectDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_7_Correct
+
+blockdesign_7b_score:
+  type: Integer
+  description: Design 7 Score
+  range:
+  - 0
+  - 4
+  notes: 0 = Fail; 4 = Correct
+  alias: WAIS_IV_BlockDesign_7_Score
+  codes:
+    0: Fail
+    4: Correct
+
+blockdesign_8b:
+  type: String
+  length: 50
+  description: Design 8
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_8
+
+blockdesign_8b_constrdes:
+  type: String
+  length: 50
+  description: Design 8 ConstructedDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_8_ConstrDes
+
+blockdesign_8b_comptime:
+  type: Integer
+  description: Design 8 Completion
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_8_CompTime
+
+blockdesign_8b_correct:
+  type: String
+  length: 50
+  description: Design 8 CorrectDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_8_Correct
+
+blockdesign_8b_score:
+  type: Integer
+  description: Design 8 Score
+  range:
+  - 0
+  - 4
+  notes: 0 = Fail; 4 = Correct
+  alias: WAIS_IV_BlockDesign_8_Score
+  codes:
+    0: Fail
+    4: Correct
+
+blockdesign_9b:
+  type: String
+  length: 50
+  description: Design 9
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_9
+
+blockdesign_9b_constrdes:
+  type: String
+  length: 50
+  description: Design 9 ConstructedDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_9_ConstrDes
+
+blockdesign_9b_comptime:
+  type: Integer
+  description: Design 9 Completion
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_9_CompTime
+
+blockdesign_9b_correct:
+  type: String
+  length: 50
+  description: Design 9 CorrectDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_9_Correct
+
+blockdesign_9b_score:
+  type: Integer
+  description: Design 9 Score
+  range:
+  - 0
+  - 4
+  - 5
+  - 6
+  - 7
+  notes: 0 = Fail; 4 = Correct in 31-60 seconds; 5 = Correct in 21-30 seconds; 6 =
+    Correct in 11-20 seconds; 7 = Correct in 1-10 seconds
+  alias: WAIS_IV_BlockDesign_9_Score
+  codes:
+    0: Fail
+    4: Correct in 31-60 seconds
+    5: Correct in 21-30 seconds
+    6: Correct in 11-20 seconds
+    7: Correct in 1-10 seconds
+
+blockdesign_10b:
+  type: String
+  length: 50
+  description: Design 10
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_10
+
+blockdesign_10b_constrdes:
+  type: String
+  length: 50
+  description: Design 10 ConstructedDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_10_ConstrDes
+
+blockdesign_10b_comptime:
+  type: Integer
+  description: Design 10 Completion
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_10_CompTime
+
+blockdesign_10b_correct:
+  type: String
+  length: 50
+  description: Design 10 CorrectDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_10_Correct
+
+blockdesign_10b_score:
+  type: Integer
+  description: Design 10 Score
+  range:
+  - 0
+  - 4
+  - 5
+  - 6
+  - 7
+  notes: 0 = Fail; 4 = Correct in 31-60 seconds; 5 = Correct in 21-30 seconds; 6 =
+    Correct in 11-20 seconds; 7 = Correct in 1-10 seconds
+  alias: WAIS_IV_BlockDesign_10_Score
+  codes:
+    0: Fail
+    4: Correct in 31-60 seconds
+    5: Correct in 21-30 seconds
+    6: Correct in 11-20 seconds
+    7: Correct in 1-10 seconds
+
+blockdesign_11b:
+  type: String
+  length: 50
+  description: Design 11
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_11
+
+blockdesign_11b_constrdes:
+  type: String
+  length: 50
+  description: Design 11 ConstructedDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_11_ConstrDes
+
+blockdesign_11b_comptime:
+  type: Integer
+  description: Design 11 Completion
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_11_CompTime
+
+blockdesign_11b_correct:
+  type: String
+  length: 50
+  description: Design 11 CorrectDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_11_Correct
+
+blockdesign_11b_score:
+  type: Integer
+  description: Design 11 Score
+  range:
+  - 0
+  - 4
+  - 5
+  - 6
+  - 7
+  notes: 0 = Fail; 4 = Correct in 76-120 seconds; 5 = Correct in 61-75 seconds; 6
+    = Correct in 31-60 seconds; 7 = Correct in 1-30 seconds
+  alias: WAIS_IV_BlockDesign_11_Score
+  codes:
+    0: Fail
+    4: Correct in 76-120 seconds
+    5: Correct in 61-75 seconds
+    6: Correct in 31-60 seconds
+    7: Correct in 1-30 seconds
+
+blockdesign_12b:
+  type: String
+  length: 50
+  description: Design 12
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_12
+
+blockdesign_12b_constrdes:
+  type: String
+  length: 50
+  description: Design 12 ConstructedDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_12_ConstrDes
+
+blockdesign_12b_comptime:
+  type: Integer
+  description: Design 12 Completion
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_12_CompTime
+
+blockdesign_12b_correct:
+  type: String
+  length: 50
+  description: Design 12 CorrectDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_12_Correct
+
+blockdesign_12b_score:
+  type: Integer
+  description: Design 12 Score
+  range:
+  - 0
+  - 4
+  - 5
+  - 6
+  - 7
+  notes: 0 = Fail; 4 = Correct in 76-120 seconds; 5 = Correct in 61-75 seconds; 6
+    = Correct in 31-60 seconds; 7 = Correct in 1-30 seconds
+  alias: WAIS_IV_BlockDesign_12_Score
+  codes:
+    0: Fail
+    4: Correct in 76-120 seconds
+    5: Correct in 61-75 seconds
+    6: Correct in 31-60 seconds
+    7: Correct in 1-30 seconds
+
+blockdesign_13b:
+  type: String
+  length: 50
+  description: Design 13
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_13
+
+blockdesign_13b_constrdes:
+  type: String
+  length: 50
+  description: Design 13 ConstructedDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_13_ConstrDes
+
+blockdesign_13b_comptime:
+  type: Integer
+  description: Design 13 Completion
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_13_CompTime
+
+blockdesign_13b_correct:
+  type: String
+  length: 50
+  description: Design 13 CorrectDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_13_Correct
+
+blockdesign_13b_score:
+  type: Integer
+  description: Design 13 Score
+  range:
+  - 0
+  - 4
+  - 5
+  - 6
+  - 7
+  notes: 0 = Fail; 4 = Correct in 76-120 seconds; 5 = Correct in 61-75 seconds; 6
+    = Correct in 31-60 seconds; 7 = Correct in 1-30 seconds
+  alias: WAIS_IV_BlockDesign_13_Score
+  codes:
+    0: Fail
+    4: Correct in 76-120 seconds
+    5: Correct in 61-75 seconds
+    6: Correct in 31-60 seconds
+    7: Correct in 1-30 seconds
+
+blockdesign_14b:
+  type: String
+  length: 50
+  description: Design 14
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_14
+
+blockdesign_14b_constrdes:
+  type: String
+  length: 50
+  description: Design 14 ConstructedDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_14_ConstrDes
+
+blockdesign_14b_comptime:
+  type: Integer
+  description: Design 14 Completion
+  range:
+  - 1+
+  alias: WAIS_IV_BlockDesign_14_CompTime
+
+blockdesign_14b_correct:
+  type: String
+  length: 50
+  description: Design 14 CorrectDesign
+  range:
+  - 'Yes'
+  - 'No'
+  alias: WAIS_IV_BlockDesign_14_Correct
+
+blockdesign_14b_score:
+  type: Integer
+  description: Design 14 Score
+  range:
+  - 0
+  - 4
+  - 5
+  - 6
+  - 7
+  notes: 0 = Fail; 4 = Correct in 76-120 seconds; 5 = Correct in 61-75 seconds; 6
+    = Correct in 31-60 seconds; 7 = Correct in 1-30 seconds
+  alias: WAIS_IV_BlockDesign_14_Score
+  codes:
+    0: Fail
+    4: Correct in 76-120 seconds
+    5: Correct in 61-75 seconds
+    6: Correct in 31-60 seconds
+    7: Correct in 1-30 seconds
+
+blockdesign_nobonustimescore:
+  type: Float
+  description: Block Design No Bonus Time (BDN) Total Raw Score
+  range:
+  - 0::48
+  alias: WAIS_IV_BlockDesign_NoBonusTimeScore
+
+similarities_s_resp:
+  type: String
+  length: 50
+  description: S. Two - Seven - Response
+  alias: WAIS_IV_Similarities_S_Resp
+
+similarities_s_score:
+  type: Integer
+  description: S. Two - Seven - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_S_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_1_resp:
+  type: String
+  length: 50
+  description: 1. Fork - Spoon - Response
+  alias: WAIS_IV_Similarities_1_Resp
+
+similarities_1_score:
+  type: Integer
+  description: 1. Fork - Spoon - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_1_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_2_resp:
+  type: String
+  length: 50
+  description: 2. Yellow - Green - Response
+  alias: WAIS_IV_Similarities_2_Resp
+
+similarities_2_score:
+  type: Integer
+  description: 2. Yellow - Green - Score
+  range:
+  - 0
+  - 1
+  - 2
+  - 4
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_2_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_3_resp:
+  type: String
+  length: 50
+  description: 3. Carrots - Broccoli - Response
+  alias: WAIS_IV_Similarities_3_Resp
+
+similarities_3_score:
+  type: Integer
+  description: 3. Carrots - Broccoli - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_3_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_4_resp:
+  type: String
+  length: 50
+  description: 4. Horse - Tiger - Response
+  alias: WAIS_IV_Similarities_4_Resp
+
+similarities_4_score:
+  type: Integer
+  description: 4. Horse - Tiger - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_4_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_5_resp:
+  type: String
+  length: 50
+  description: 5. Piano - Drum - Response
+  alias: WAIS_IV_Similarities_5_Resp
+
+similarities_5_score:
+  type: Integer
+  description: 5. Piano - Drum - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_5_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_6_resp:
+  type: String
+  length: 50
+  description: 6. Boat - Automobile - Response
+  alias: WAIS_IV_Similarities_6_Resp
+
+similarities_6_score:
+  type: Integer
+  description: 6. Boat - Automobile - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_6_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_7_resp:
+  type: String
+  length: 50
+  description: 7. Nose - Tongue - Response
+  alias: WAIS_IV_Similarities_7_Resp
+
+similarities_7_score:
+  type: Integer
+  description: 7. Nose - Tongue - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_7_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_8_resp:
+  type: String
+  length: 50
+  description: 8. Food - Gasoline - Response
+  alias: WAIS_IV_Similarities_8_Resp
+
+similarities_8_score:
+  type: Integer
+  description: 8. Food - Gasoline - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_8_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_9_resp:
+  type: String
+  length: 50
+  description: 9. Badge - Crown - Response
+  alias: WAIS_IV_Similarities_9_Resp
+
+similarities_9_score:
+  type: Integer
+  description: 9. Badge - Crown - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_9_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_10_resp:
+  type: String
+  length: 50
+  description: 10. Bud - Baby - Response
+  alias: WAIS_IV_Similarities_10_Resp
+
+similarities_10_score:
+  type: Integer
+  description: 10. Bud - Baby - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_10_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_11_resp:
+  type: String
+  length: 50
+  description: 11. Music - Tides - Response
+  alias: WAIS_IV_Similarities_11_Resp
+
+similarities_11_score:
+  type: Integer
+  description: 11. Music - Tides - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_11_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_12_resp:
+  type: String
+  length: 50
+  description: 12. Poem - Statue - Response
+  alias: WAIS_IV_Similarities_12_Resp
+
+similarities_12_score:
+  type: Integer
+  description: 12. Poem - Statue - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_12_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_13_resp:
+  type: String
+  length: 50
+  description: 13. Anchor - Fence - Response
+  alias: WAIS_IV_Similarities_13_Resp
+
+similarities_13_score:
+  type: Integer
+  description: 13. Anchor - Fence - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_13_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_14_resp:
+  type: String
+  length: 50
+  description: 14. Wish - Expect - Response
+  alias: WAIS_IV_Similarities_14_Resp
+
+similarities_14_score:
+  type: Integer
+  description: 14. Wish - Expect - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_14_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_15_resp:
+  type: String
+  length: 50
+  description: 15. Acceptance - Denial - Response
+  alias: WAIS_IV_Similarities_15_Resp
+
+similarities_15_score:
+  type: Integer
+  description: 15. Acceptance - Denial - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_15_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_16_resp:
+  type: String
+  length: 50
+  description: 16. Always - Never - Response
+  alias: WAIS_IV_Similarities_16_Resp
+
+similarities_16_score:
+  type: Integer
+  description: 16. Always - Never - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_16_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_17_resp:
+  type: String
+  length: 50
+  description: 17. Enemy - Friend - Response
+  alias: WAIS_IV_Similarities_17_Resp
+
+similarities_17_score:
+  type: Integer
+  description: 17. Enemy - Friend - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_17_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_18_resp:
+  type: String
+  length: 50
+  description: 18. Allow - Restrict - Response
+  alias: WAIS_IV_Similarities_18_Resp
+
+similarities_18_score:
+  type: Integer
+  description: 18. Allow - Restrict - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Similarities_18_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+similarities_totalrawscore_b:
+  type: Integer
+  description: Similarities Total Raw Score
+  range:
+  - 0::36
+  alias: WAIS_IV_Similarities_TotalRawScore
+
+digitspanfwd_1_1_resp:
+  type: String
+  length: 50
+  description: '"Item 1, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanFwd_1_1_Resp,f1a
+
+digitspanfwd_1_1_score:
+  type: Integer
+  description: '"Item 1, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanFwd_1_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanfwd_1_2_resp:
+  type: String
+  length: 50
+  description: '"Item 1, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanFwd_1_2_Resp,f1b
+
+digitspanfwd_1_2_score:
+  type: Integer
+  description: '"Item 1, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanFwd_1_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanfwd_1_score:
+  type: Integer
+  description: Item 1 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanFwd_1_Score,ds_forward1,sum_of_forward_1
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanfwd_2_1_resp:
+  type: String
+  length: 50
+  description: '"Item 2, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanFwd_2_1_Resp,f2a
+
+digitspanfwd_2_1_score:
+  type: Integer
+  description: '"Item 2, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanFwd_2_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanfwd_2_2_resp:
+  type: String
+  length: 50
+  description: '"Item 2, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanFwd_2_2_Resp,f2b
+
+digitspanfwd_2_2_score:
+  type: Integer
+  description: '"Item 2, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanFwd_2_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanfwd_2_score:
+  type: Integer
+  description: Item 2 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanFwd_2_Score,ds_forward2,sum_of_forward_2
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanfwd_3_1_resp:
+  type: String
+  length: 50
+  description: '"Item 3, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanFwd_3_1_Resp,f3a
+
+digitspanfwd_3_1_score:
+  type: Integer
+  description: '"Item 3, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanFwd_3_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanfwd_3_2_resp:
+  type: String
+  length: 50
+  description: '"Item 3, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanFwd_3_2_Resp,f3b
+
+digitspanfwd_3_2_score:
+  type: Integer
+  description: '"Item 3, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanFwd_3_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanfwd_3_score:
+  type: Integer
+  description: Item 3 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanFwd_3_Score,ds_forward3,sum_of_forward_3
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanfwd_4_1_resp:
+  type: String
+  length: 50
+  description: '"Item 4, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanFwd_4_1_Resp,f4a
+
+digitspanfwd_4_1_score:
+  type: Integer
+  description: '"Item 4, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanFwd_4_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanfwd_4_2_resp:
+  type: String
+  length: 50
+  description: '"Item 4, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanFwd_4_2_Resp,f4b
+
+digitspanfwd_4_2_score:
+  type: Integer
+  description: '"Item 4, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanFwd_4_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanfwd_4_score:
+  type: Integer
+  description: Item 4 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanFwd_4_Score,ds_forward4,sum_of_forward_4
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanfwd_5_1_resp:
+  type: String
+  length: 50
+  description: '"Item 5, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanFwd_5_1_Resp,f5a
+
+digitspanfwd_5_1_score:
+  type: Integer
+  description: '"Item 5, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanFwd_5_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanfwd_5_2_resp:
+  type: String
+  length: 50
+  description: '"Item 5, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanFwd_5_2_Resp,f5b
+
+digitspanfwd_5_2_score:
+  type: Integer
+  description: '"Item 5, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanFwd_5_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanfwd_5_score:
+  type: Integer
+  description: Item 5 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanFwd_5_Score,ds_forward5,sum_of_forward_5
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanfwd_6_1_resp:
+  type: String
+  length: 50
+  description: '"Item 6, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanFwd_6_1_Resp,f6a
+
+digitspanfwd_6_1_score:
+  type: Integer
+  description: '"Item 6, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanFwd_6_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanfwd_6_2_resp:
+  type: String
+  length: 50
+  description: '"Item 6, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanFwd_6_2_Resp,f6b
+
+digitspanfwd_6_2_score:
+  type: Integer
+  description: '"Item 6, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanFwd_6_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanfwd_6_score:
+  type: Integer
+  description: Item 6 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanFwd_6_Score,ds_forward6,sum_of_forward_6
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanfwd_7_1_resp:
+  type: String
+  length: 50
+  description: '"Item 7, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanFwd_7_1_Resp,f7a
+
+digitspanfwd_7_1_score:
+  type: Integer
+  description: '"Item 7, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanFwd_7_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanfwd_7_2_resp:
+  type: String
+  length: 50
+  description: '"Item 7, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanFwd_7_2_Resp,f7b
+
+digitspanfwd_7_2_score:
+  type: Integer
+  description: '"Item 7, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanFwd_7_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanfwd_7_score:
+  type: Integer
+  description: Item 7 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanFwd_7_Score,ds_forward7,sum_of_forward_7
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanfwd_8_1_resp:
+  type: String
+  length: 50
+  description: '"Item 8, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanFwd_8_1_Resp,f8a
+
+digitspanfwd_8_1_score:
+  type: Integer
+  description: '"Item 8, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanFwd_8_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanfwd_8_2_resp:
+  type: String
+  length: 50
+  description: '"Item 8, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanFwd_8_2_Resp,f8b
+
+digitspanfwd_8_2_score:
+  type: Integer
+  description: '"Item 8, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanFwd_8_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanfwd_8_score:
+  type: Integer
+  description: Item 8 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanFwd_8_Score,ds_forward8,sum_of_forward_8
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanfwd_ldsf_score:
+  type: Float
+  description: LDSF
+  range:
+  - 0::9
+  alias: WAIS_IV_DigitSpanFwd_LDSF_Score
+
+digitspanbkw_s_1_resp:
+  type: String
+  length: 50
+  description: '"Item S, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_S_1_Resp
+
+digitspanbkw_s_2_resp:
+  type: String
+  length: 50
+  description: '"Item S, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_S_2_Resp
+
+digitspanbkw_1_1_resp:
+  type: String
+  length: 50
+  description: '"Item 1, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_1_1_Resp,b1a
+
+digitspanbkw_1_1_score:
+  type: Integer
+  description: '"Item 1, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanBkw_1_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanbkw_1_2_resp:
+  type: String
+  length: 50
+  description: '"Item 1, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_1_2_Resp,b1b
+
+digitspanbkw_1_2_score:
+  type: Integer
+  description: '"Item 1, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanBkw_1_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanbkw_1_score:
+  type: Integer
+  description: Item 1 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanBkw_1_Score,ds_backward1,sum_of_backward_1
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanbkw_2_1_resp:
+  type: String
+  length: 50
+  description: '"Item 2, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_2_1_Resp,b2a
+
+digitspanbkw_2_1_score:
+  type: Integer
+  description: '"Item 2, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanBkw_2_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanbkw_2_2_resp:
+  type: String
+  length: 50
+  description: '"Item 2, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_2_2_Resp,b2b
+
+digitspanbkw_2_2_score:
+  type: Integer
+  description: '"Item 2, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanBkw_2_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanbkw_2_score:
+  type: Integer
+  description: Item 2 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanBkw_2_Score,ds_backward2,sum_of_backward_2
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanbkw_3_1_resp:
+  type: String
+  length: 50
+  description: '"Item 3, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_3_1_Resp,b3a
+
+digitspanbkw_3_1_score:
+  type: Integer
+  description: '"Item 3, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanBkw_3_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanbkw_3_2_resp:
+  type: String
+  length: 50
+  description: '"Item 3, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_3_2_Resp,b3b
+
+digitspanbkw_3_2_score:
+  type: Integer
+  description: '"Item 3, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanBkw_3_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanbkw_3_score:
+  type: Integer
+  description: Item 3 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanBkw_3_Score,ds_backward3,sum_of_backward_3
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanbkw_4_1_resp:
+  type: String
+  length: 50
+  description: '"Item 4, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_4_1_Resp,b4a
+
+digitspanbkw_4_1_score:
+  type: Integer
+  description: '"Item 4, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanBkw_4_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanbkw_4_2_resp:
+  type: String
+  length: 50
+  description: '"Item 4, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_4_2_Resp,b4b
+
+digitspanbkw_4_2_score:
+  type: Integer
+  description: '"Item 4, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanBkw_4_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanbkw_4_score:
+  type: Integer
+  description: Item 4 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanBkw_4_Score,ds_backward4,sum_of_backward_4
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanbkw_5_1_resp:
+  type: String
+  length: 50
+  description: '"Item 5, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_5_1_Resp,b5a
+
+digitspanbkw_5_1_score:
+  type: Integer
+  description: '"Item 5, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanBkw_5_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanbkw_5_2_resp:
+  type: String
+  length: 50
+  description: '"Item 5, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_5_2_Resp,b5b
+
+digitspanbkw_5_2_score:
+  type: Integer
+  description: '"Item 5, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanBkw_5_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanbkw_5_score:
+  type: Integer
+  description: Item 5 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanBkw_5_Score,ds_backward5,sum_of_backward_5
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanbkw_6_1_resp:
+  type: String
+  length: 50
+  description: '"Item 6, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_6_1_Resp,b6a
+
+digitspanbkw_6_1_score:
+  type: Integer
+  description: '"Item 6, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanBkw_6_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanbkw_6_2_resp:
+  type: String
+  length: 50
+  description: '"Item 6, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_6_2_Resp,b6b
+
+digitspanbkw_6_2_score:
+  type: Integer
+  description: '"Item 6, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanBkw_6_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanbkw_6_score:
+  type: Integer
+  description: Item 6 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanBkw_6_Score,ds_backward6,sum_of_backward_6
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanbkw_7_1_resp:
+  type: String
+  length: 50
+  description: '"Item 7, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_7_1_Resp,b7a
+
+digitspanbkw_7_1_score:
+  type: Integer
+  description: '"Item 7, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanBkw_7_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanbkw_7_2_resp:
+  type: String
+  length: 50
+  description: '"Item 7, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_7_2_Resp,b7b
+
+digitspanbkw_7_2_score:
+  type: Integer
+  description: '"Item 7, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanBkw_7_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanbkw_7_score:
+  type: Integer
+  description: Item 7 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanBkw_7_Score,ds_backward7,sum_of_backward_7
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanbkw_8_1_resp:
+  type: String
+  length: 50
+  description: '"Item 8, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_8_1_Resp,b8a
+
+digitspanbkw_8_1_score:
+  type: Integer
+  description: '"Item 8, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanBkw_8_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanbkw_8_2_resp:
+  type: String
+  length: 50
+  description: '"Item 8, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanBkw_8_2_Resp,b8b
+
+digitspanbkw_8_2_score:
+  type: Integer
+  description: '"Item 8, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanBkw_8_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanbkw_8_score:
+  type: Integer
+  description: Item 8 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanBkw_8_Score,ds_backward8,sum_of_backward_8
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanbkw_ldsb_score:
+  type: Float
+  description: LDSB
+  range:
+  - 0::8
+  alias: WAIS_IV_DigitSpanBkw_LDSB_Score
+
+digitspanseq_s_1_resp:
+  type: String
+  length: 50
+  description: '"Item S, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_S_1_Resp
+
+digitspanseq_s_2_resp:
+  type: String
+  length: 50
+  description: '"Item S, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_S_2_Resp
+
+digitspanseq_1_1_resp:
+  type: String
+  length: 50
+  description: '"Item 1, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_1_1_Resp,s1a
+
+digitspanseq_1_1_score:
+  type: Integer
+  description: '"Item 1, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanSeq_1_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanseq_1_2_resp:
+  type: String
+  length: 50
+  description: '"Item 1, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_1_2_Resp,s1b
+
+digitspanseq_1_2_score:
+  type: Integer
+  description: '"Item 1, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanSeq_1_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanseq_1_score:
+  type: Integer
+  description: Item 1 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanSeq_1_Score,sum_of_sequencing_1
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanseq_2_1_resp:
+  type: String
+  length: 50
+  description: '"Item 2, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_2_1_Resp,s2a
+
+digitspanseq_2_1_score:
+  type: Integer
+  description: '"Item 2, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanSeq_2_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanseq_2_2_resp:
+  type: String
+  length: 50
+  description: '"Item 2, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_2_2_Resp,s2b
+
+digitspanseq_2_2_score:
+  type: Integer
+  description: '"Item 2, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanSeq_2_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanseq_2_score:
+  type: Integer
+  description: Item 2 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanSeq_2_Score,sum_of_sequencing_2
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanseq_3_1_resp:
+  type: String
+  length: 50
+  description: '"Item 3, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_3_1_Resp,s3a
+
+digitspanseq_3_1_score:
+  type: Integer
+  description: '"Item 3, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanSeq_3_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanseq_3_2_resp:
+  type: String
+  length: 50
+  description: '"Item 3, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_3_2_Resp,s3b
+
+digitspanseq_3_2_score:
+  type: Integer
+  description: '"Item 3, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanSeq_3_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanseq_3_score:
+  type: Integer
+  description: Item 3 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanSeq_3_Score,sum_of_sequencing_3
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanseq_4_1_resp:
+  type: String
+  length: 50
+  description: '"Item 4, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_4_1_Resp,s4a
+
+digitspanseq_4_1_score:
+  type: Integer
+  description: '"Item 4, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanSeq_4_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanseq_4_2_resp:
+  type: String
+  length: 50
+  description: '"Item 4, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_4_2_Resp,s4b
+
+digitspanseq_4_2_score:
+  type: Integer
+  description: '"Item 4, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanSeq_4_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanseq_4_score:
+  type: Integer
+  description: Item 4 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanSeq_4_Score,sum_of_sequencing_4
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanseq_5_1_resp:
+  type: String
+  length: 50
+  description: '"Item 5, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_5_1_Resp,s5a
+
+digitspanseq_5_1_score:
+  type: Integer
+  description: '"Item 5, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanSeq_5_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanseq_5_2_resp:
+  type: String
+  length: 50
+  description: '"Item 5, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_5_2_Resp,s5b
+
+digitspanseq_5_2_score:
+  type: Integer
+  description: '"Item 5, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanSeq_5_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanseq_5_score:
+  type: Integer
+  description: Item 5 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanSeq_5_Score,sum_of_sequencing_5
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanseq_6_1_resp:
+  type: String
+  length: 50
+  description: '"Item 6, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_6_1_Resp,s6a
+
+digitspanseq_6_1_score:
+  type: Integer
+  description: '"Item 6, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanSeq_6_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanseq_6_2_resp:
+  type: String
+  length: 50
+  description: '"Item 6, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_6_2_Resp,s6b
+
+digitspanseq_6_2_score:
+  type: Integer
+  description: '"Item 6, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanSeq_6_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanseq_6_score:
+  type: Integer
+  description: Item 6 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanSeq_6_Score,sum_of_sequencing_6
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanseq_7_1_resp:
+  type: String
+  length: 50
+  description: '"Item 7, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_7_1_Resp,s7a
+
+digitspanseq_7_1_score:
+  type: Integer
+  description: '"Item 7, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanSeq_7_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanseq_7_2_resp:
+  type: String
+  length: 50
+  description: '"Item 7, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_7_2_Resp,s7b
+
+digitspanseq_7_2_score:
+  type: Integer
+  description: '"Item 7, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanSeq_7_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanseq_7_score:
+  type: Integer
+  description: Item 7 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanSeq_7_Score,sum_of_sequencing_7
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanseq_8_1_resp:
+  type: String
+  length: 50
+  description: '"Item 8, Trial 1 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_8_1_Resp,s8a
+
+digitspanseq_8_1_score:
+  type: Integer
+  description: '"Item 8, Trial 1 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanSeq_8_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanseq_8_2_resp:
+  type: String
+  length: 50
+  description: '"Item 8, Trial 2 - Response"'
+  alias: WAIS_IV_DigitSpanSeq_8_2_Resp,s8b
+
+digitspanseq_8_2_score:
+  type: Integer
+  description: '"Item 8, Trial 2 - Score"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_DigitSpanSeq_8_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+digitspanseq_8_score:
+  type: Integer
+  description: Item 8 - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = One trial correct; 2 = Both trials correct
+  alias: WAIS_IV_DigitSpanSeq_8_Score,sum_of_sequencing_8
+  codes:
+    0: Fail
+    1: One trial correct
+    2: Both trials correct
+
+digitspanseq_ldsb_score:
+  type: Float
+  description: LDSS
+  range:
+  - 0::9
+  alias: WAIS_IV_DigitSpanSeq_LDSB_Score
+
+matrixreasoning_a_resp:
+  type: Integer
+  description: Item A Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_A_Resp
+
+matrixreasoning_b_resp:
+  type: Integer
+  description: Item B Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_B_Resp
+
+matrixreasoning_1_resp:
+  type: Integer
+  description: Item 1 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_1_Resp
+
+matrixreasoning_1_score:
+  type: Integer
+  description: Item 1 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_2_resp:
+  type: Integer
+  description: Item 2 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_2_Resp
+
+matrixreasoning_2_score:
+  type: Integer
+  description: Item 2 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_3_resp:
+  type: Integer
+  description: Item 3 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_3_Resp
+
+matrixreasoning_3_score:
+  type: Integer
+  description: Item 3 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_3_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_4_resp:
+  type: Integer
+  description: Item 4 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_4_Resp
+
+matrixreasoning_4_score:
+  type: Integer
+  description: Item 4 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_4_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_5_resp:
+  type: Integer
+  description: Item 5 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_5_Resp
+
+matrixreasoning_5_score:
+  type: Integer
+  description: Item 5 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_5_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_6_resp:
+  type: Integer
+  description: Item 6 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_6_Resp
+
+matrixreasoning_6_score:
+  type: Integer
+  description: Item 6 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_6_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_7_resp:
+  type: Integer
+  description: Item 7 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_7_Resp
+
+matrixreasoning_7_score:
+  type: Integer
+  description: Item 7 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_7_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_8_resp:
+  type: Integer
+  description: Item 8 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_8_Resp
+
+matrixreasoning_8_score:
+  type: Integer
+  description: Item 8 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_8_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_9_resp:
+  type: Integer
+  description: Item 9 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_9_Resp
+
+matrixreasoning_9_score:
+  type: Integer
+  description: Item 9 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_9_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_10_resp:
+  type: Integer
+  description: Item 10 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_10_Resp
+
+matrixreasoning_10_score:
+  type: Integer
+  description: Item 10 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_10_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_11_resp:
+  type: Integer
+  description: Item 11 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_11_Resp
+
+matrixreasoning_11_score:
+  type: Integer
+  description: Item 11 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_11_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_12_resp:
+  type: Integer
+  description: Item 12 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_12_Resp
+
+matrixreasoning_12_score:
+  type: Integer
+  description: Item 12 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_12_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_13_resp:
+  type: Integer
+  description: Item 13 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_13_Resp
+
+matrixreasoning_13_score:
+  type: Integer
+  description: Item 13 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_13_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_14_resp:
+  type: Integer
+  description: Item 14 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_14_Resp
+
+matrixreasoning_14_score:
+  type: Integer
+  description: Item 14 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_14_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_15_resp:
+  type: Integer
+  description: Item 15 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_15_Resp
+
+matrixreasoning_15_score:
+  type: Integer
+  description: Item 15 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_15_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_16_resp:
+  type: Integer
+  description: Item 16 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_16_Resp
+
+matrixreasoning_16_score:
+  type: Integer
+  description: Item 16 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_16_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_17_resp:
+  type: Integer
+  description: Item 17 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_17_Resp
+
+matrixreasoning_17_score:
+  type: Integer
+  description: Item 17 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_17_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_18_resp:
+  type: Integer
+  description: Item 18 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_18_Resp
+
+matrixreasoning_18_score:
+  type: Integer
+  description: Item 18 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_18_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_19_resp:
+  type: Integer
+  description: Item 19 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_19_Resp
+
+matrixreasoning_19_score:
+  type: Integer
+  description: Item 19 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_19_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_20_resp:
+  type: Integer
+  description: Item 20 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_20_Resp
+
+matrixreasoning_20_score:
+  type: Integer
+  description: Item 20 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_20_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_21_resp:
+  type: Integer
+  description: Item 21 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_21_Resp
+
+matrixreasoning_21_score:
+  type: Integer
+  description: Item 21 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_21_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_22_resp:
+  type: Integer
+  description: Item 22 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_22_Resp
+
+matrixreasoning_22_score:
+  type: Integer
+  description: Item 22 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_22_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_23_resp:
+  type: Integer
+  description: Item 23 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_23_Resp
+
+matrixreasoning_23_score:
+  type: Integer
+  description: Item 23 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_23_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_24_resp:
+  type: Integer
+  description: Item 24 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_24_Resp
+
+matrixreasoning_24_score:
+  type: Integer
+  description: Item 24 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_24_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_25_resp:
+  type: Integer
+  description: Item 25 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_25_Resp
+
+matrixreasoning_25_score:
+  type: Integer
+  description: Item 25 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_25_Score
+  codes:
+    0: Fail
+    1: Correct
+
+matrixreasoning_26_resp:
+  type: Integer
+  description: Item 26 Response
+  range:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  notes: Examinee's response
+  alias: WAIS_IV_MatrixReasoning_26_Resp
+
+matrixreasoning_26_score:
+  type: Integer
+  description: Item 26 Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_MatrixReasoning_26_Score
+  codes:
+    0: Fail
+    1: Correct
+
+vocabulary_1_resp:
+  type: String
+  length: 100
+  description: 1. Book - Response
+  alias: WAIS_IV_Vocabulary_1_Resp
+
+vocabulary_1_score:
+  type: Integer
+  description: 1. Book - Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_Vocabulary_1_Score
+  codes:
+    0: Fail
+    1: Correct
+
+vocabulary_2_resp:
+  type: String
+  length: 100
+  description: 2. Airplane - Response
+  alias: WAIS_IV_Vocabulary_2_Resp
+
+vocabulary_2_score:
+  type: Integer
+  description: 2. Airplane - Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_Vocabulary_2_Score
+  codes:
+    0: Fail
+    1: Correct
+
+vocabulary_3_resp:
+  type: String
+  length: 100
+  description: 3. Basket - Response
+  alias: WAIS_IV_Vocabulary_3_Resp
+
+vocabulary_3_score:
+  type: Integer
+  description: 3. Basket - Score
+  range:
+  - 0
+  - 1
+  notes: 0 = Fail; 1 = Correct
+  alias: WAIS_IV_Vocabulary_3_Score
+  codes:
+    0: Fail
+    1: Correct
+
+vocabulary_4_resp:
+  type: String
+  length: 100
+  description: 4. Bed - Response
+  alias: WAIS_IV_Vocabulary_4_Resp
+
+vocabulary_4_score:
+  type: Integer
+  description: 4. Bed - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_4_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_5_resp:
+  type: String
+  length: 100
+  description: 5. Apple - Response
+  alias: WAIS_IV_Vocabulary_5_Resp
+
+vocabulary_5_score:
+  type: Integer
+  description: 5. Apple - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_5_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_6_resp:
+  type: String
+  length: 100
+  description: 6. Glove - Response
+  alias: WAIS_IV_Vocabulary_6_Resp
+
+vocabulary_6_score:
+  type: Integer
+  description: 6. Glove - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_6_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_7_resp:
+  type: String
+  length: 100
+  description: 7. Breakfast - Response
+  alias: WAIS_IV_Vocabulary_7_Resp
+
+vocabulary_7_score:
+  type: Integer
+  description: 7. Breakfast - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_7_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_8_resp:
+  type: String
+  length: 100
+  description: 8. Curious - Response
+  alias: WAIS_IV_Vocabulary_8_Resp
+
+vocabulary_8_score:
+  type: Integer
+  description: 8. Curious - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_8_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_9_resp:
+  type: String
+  length: 100
+  description: 9. Assemble - Response
+  alias: WAIS_IV_Vocabulary_9_Resp
+
+vocabulary_9_score:
+  type: Integer
+  description: 9. Assemble - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_9_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_10_resp:
+  type: String
+  length: 100
+  description: 10. Consume - Response
+  alias: WAIS_IV_Vocabulary_10_Resp
+
+vocabulary_10_score:
+  type: Integer
+  description: 10. Consume - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_10_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_11_resp:
+  type: String
+  length: 100
+  description: 11. Terminate - Response
+  alias: WAIS_IV_Vocabulary_11_Resp
+
+vocabulary_11_score:
+  type: Integer
+  description: 11. Terminate - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_11_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_12_resp:
+  type: String
+  length: 100
+  description: 12. Tranquil - Response
+  alias: WAIS_IV_Vocabulary_12_Resp
+
+vocabulary_12_score:
+  type: Integer
+  description: 12. Tranquil - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_12_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_13_resp:
+  type: String
+  length: 100
+  description: 13. Ponder - Response
+  alias: WAIS_IV_Vocabulary_13_Resp
+
+vocabulary_13_score:
+  type: Integer
+  description: 13. Ponder - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_13_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_14_resp:
+  type: String
+  length: 100
+  description: 14. Reluctant - Response
+  alias: WAIS_IV_Vocabulary_14_Resp
+
+vocabulary_14_score:
+  type: Integer
+  description: 14. Reluctant - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_14_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_15_resp:
+  type: String
+  length: 100
+  description: 15. Confide - Response
+  alias: WAIS_IV_Vocabulary_15_Resp
+
+vocabulary_15_score:
+  type: Integer
+  description: 15. Confide - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_15_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_16_resp:
+  type: String
+  length: 100
+  description: 16. Remorse - Response
+  alias: WAIS_IV_Vocabulary_16_Resp
+
+vocabulary_16_score:
+  type: Integer
+  description: 16. Remorse - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_16_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_17_resp:
+  type: String
+  length: 100
+  description: 17. Plagiarize - Response
+  alias: WAIS_IV_Vocabulary_17_Resp
+
+vocabulary_17_score:
+  type: Integer
+  description: 17. Plagiarize - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_17_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_18_resp:
+  type: String
+  length: 100
+  description: 18. Acute - Response
+  alias: WAIS_IV_Vocabulary_18_Resp
+
+vocabulary_18_score:
+  type: Integer
+  description: 18. Acute - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_18_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_19_resp:
+  type: String
+  length: 100
+  description: 19. Generate - Response
+  alias: WAIS_IV_Vocabulary_19_Resp
+
+vocabulary_19_score:
+  type: Integer
+  description: 19. Generate - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_19_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_20_resp:
+  type: String
+  length: 100
+  description: 20. Compassion - Response
+  alias: WAIS_IV_Vocabulary_20_Resp
+
+vocabulary_20_score:
+  type: Integer
+  description: 20. Compassion - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_20_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_21_resp:
+  type: String
+  length: 100
+  description: 21. Tangible - Response
+  alias: WAIS_IV_Vocabulary_21_Resp
+
+vocabulary_21_score:
+  type: Integer
+  description: 21. Tangible - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_21_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_22_resp:
+  type: String
+  length: 100
+  description: 22. Evolve - Response
+  alias: WAIS_IV_Vocabulary_22_Resp
+
+vocabulary_22_score:
+  type: Integer
+  description: 22. Evolve - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_22_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_23_resp:
+  type: String
+  length: 100
+  description: 23. Diverse - Response
+  alias: WAIS_IV_Vocabulary_23_Resp
+
+vocabulary_23_score:
+  type: Integer
+  description: 23. Diverse - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_23_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_24_resp:
+  type: String
+  length: 100
+  description: 24. Fortitude - Response
+  alias: WAIS_IV_Vocabulary_24_Resp
+
+vocabulary_24_score:
+  type: Integer
+  description: 24. Fortitude - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_24_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_25_resp:
+  type: String
+  length: 100
+  description: 25. Ominous - Response
+  alias: WAIS_IV_Vocabulary_25_Resp
+
+vocabulary_25_score:
+  type: Integer
+  description: 25. Ominous - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_25_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_26_resp:
+  type: String
+  length: 100
+  description: 26. Encumber - Response
+  alias: WAIS_IV_Vocabulary_26_Resp
+
+vocabulary_26_score:
+  type: Integer
+  description: 26. Encumber - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_26_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_27_resp:
+  type: String
+  length: 100
+  description: 27. Audacious - Response
+  alias: WAIS_IV_Vocabulary_27_Resp
+
+vocabulary_27_score:
+  type: Integer
+  description: 27. Audacious - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_27_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_28_resp:
+  type: String
+  length: 100
+  description: 28. Tirade - Response
+  alias: WAIS_IV_Vocabulary_28_Resp
+
+vocabulary_28_score:
+  type: Integer
+  description: 28. Tirade - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_28_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_29_resp:
+  type: String
+  length: 100
+  description: 29. Pragmatic - Response
+  alias: WAIS_IV_Vocabulary_29_Resp
+
+vocabulary_29_score:
+  type: Integer
+  description: 29. Pragmatic - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_29_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+vocabulary_30_resp:
+  type: String
+  length: 100
+  description: 30. Palliate - Response
+  alias: WAIS_IV_Vocabulary_30_Resp
+
+vocabulary_30_score:
+  type: Integer
+  description: 30. Palliate - Score
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = Fail; 1 = Partially correct; 2 = Correct
+  alias: WAIS_IV_Vocabulary_30_Score
+  codes:
+    0: Fail
+    1: Partially correct
+    2: Correct
+
+days_baseline:
+  type: Integer
+  description: Days since baseline
+  alias: daywais
+
+assbdic:
+  type: String
+  length: 5
+  description: Assessment Point
+  range:
+  - D
+  - 14
+  - E
+  - 24
+  - LB
+  - 36
+  - 72
+  - 96
+  - 120
+  - 9
+  - B
+  - 3
+  - 7
+  - 144
+  - 168
+  - 192
+  - C
+  notes: D=MTA baseline assessment; 14=MTA 14 month assessment; E=MTA early termination
+    assessment; B = MTA Pre-Baseline Screening Assessment (579/579); 09 = MTA 9 Month
+    Assessment (530/530); 24=MTA 24 month assessment; LB=LNCG baseline assessment;
+    36=MTA and LNCG 3 year assessment; 72=MTA and LNCG 6 year assessment; 96=MTA and
+    LNCG 8 year assessment; 03 = MTA 3 Month Assessment (438/687);120=MTA and LNCG
+    10 year assessment; 7= 7th Grade Assessment (221/276); 144 = MTA & LNCG 12 Month
+    Assessment (578/578); 168 = MTA & LNCG 14 Month Assessment (585/585); 192 = MTA
+    & LNCG 16 Month Assessment (505/505); C = MTA Pre-Baseline Screening Assessment
+    (78/78)
+  alias: asswais
+  codes:
+    D: MTA baseline assessment
+    14: MTA 14 month assessment
+    E: MTA early termination assessment
+    B: MTA Pre-Baseline Screening Assessment (579/579)
+    9: MTA 9 Month Assessment (530/530)
+    24: MTA 24 month assessment
+    LB: LNCG baseline assessment
+    36: MTA and LNCG 3 year assessment
+    72: MTA and LNCG 6 year assessment
+    96: MTA and LNCG 8 year assessment
+    3: MTA 3 Month Assessment (438/687)
+    120: MTA and LNCG 10 year assessment
+    7: 7th Grade Assessment (221/276)
+    144: MTA & LNCG 12 Month Assessment (578/578)
+    168: MTA & LNCG 14 Month Assessment (585/585)
+    192: MTA & LNCG 16 Month Assessment (505/505)
+    C: MTA Pre-Baseline Screening Assessment (78/78)
+
+relationship:
+  type: Integer
+  description: Relationship of respondent to individual
+  range:
+  - 1::93
+  - -999
+  notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
+    (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
+    Speech and language therapist; 8 = Behavioral therapist; 9 = Paraprofessional;
+    10 = Aide; 11 = Principal; 12 = Administrator; 13 = 90=Other; 14 = Content teacher;
+    15 = Parent center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father;
+    19=Foster mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother;
+    24 = Step-father; 25=Aunt; 26=Uncle; 27=Missing Data; 28=Both parents;31= Grandmother
+    from mother side; 32= Grandfather from mother side; 33= Grandmother from father
+    side; 34= Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39=
+    female caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
+    44=Friend; 45=Parent; 46=Significant other; 47=Sibling; 48=Son/Daughter; 49=Son-in-law/Daughter-in
+    law; 50=Other Relative; 51=Paid caregiver; 52=Friends; 53=Roommate; 54=Supervisor;
+    55=mother's boyfriend; 56=other parental figure; 57=Summary; 58=counselor ; 59
+    = other female relative; 60 = other male relative; 61 = non-relative ; 62=Maternal
+    Aunt; 63=Maternal Uncle; 64=Maternal Cousin; 65 = Paternal Aunt; 66=Paternal Uncle;
+    67=Paternal Cousin ; 68=Biological/Adoptive Mother and Grandmother; 69=Biological/Adoptive
+    Mother and Stepmother and Grandmother; 70=Biological/Adoptive Mother and Grandmother
+    and Foster Father; 71=Biological/Adoptive Mother and Stepmother and Foster Mother;
+    72=Biological/Adoptive Mother and Foster Mother; 73=Biological/Adoptive Mother
+    and Biological/Adoptive Father; 74=Biological/Adoptive Mother and Stepmother and
+    Biological/Adoptive Father; 75=Biological/Adoptive Mother and Other; 76=Biological/Adoptive
+    Mother and Stepmother and Stepfather; 77=Biological/Adoptive Mother and Stepfather;
+    78=Biological/Adoptive Mother and Grandfather; 79=Biological/Adoptive Mother and
+    Stepmother and Foster Father; 80=Biological/Adoptive Mother and Stepmother; 81=Guardian,
+    female; 82=Other female; 83=Guardian, male; 84=Other male; 85=Other/Grandparent/Nanny;
+    86 = Mother, Father, Guardian; 87 = Daughter, son, grandchild; 88 = Professional
+    (e.g., social worker, nurse, therapist, psychiatrist, or group home staff);  -999=Missing;
+    89 = Biological parent; 91 = Stepparent; 92 = Adoptive parent; 93 = Foster parent
+  alias: relwais
+  codes:
+    1: Biological mom
+    2: Biological dad
+    3: Grandparent
+    4: Special education (sped) teacher
+    5: General education teacher
+    6: Occupational therapist
+    7: Speech and language therapist
+    8: Behavioral therapist
+    9: Paraprofessional
+    10: Aide
+    11: Principal
+    12: Administrator
+    13: 90=Other
+    14: Content teacher
+    15: Parent center director
+    16: Self
+    17: Adoptive mother
+    18: Adoptive father
+    19: Foster mother
+    20: Foster father
+    21: Grandmother
+    22: Grandfather
+    23: Step-mother
+    24: Step-father
+    25: Aunt
+    26: Uncle
+    27: Missing Data
+    28: Both parents
+    31: Grandmother from mother side
+    32: Grandfather from mother side
+    33: Grandmother from father side
+    34: Grandfather from father side
+    36: Brother
+    37: Sister
+    38: Cousin
+    39: female caregiver
+    40: male caregiver
+    41: Female child
+    42: Male child
+    43: Spouse/Mate
+    44: Friend
+    45: Parent
+    46: Significant other
+    47: Sibling
+    48: Son/Daughter
+    49: Son-in-law/Daughter-in law
+    50: Other Relative
+    51: Paid caregiver
+    52: Friends
+    53: Roommate
+    54: Supervisor
+    55: mother's boyfriend
+    56: other parental figure
+    57: Summary
+    58: counselor
+    59: other female relative
+    60: other male relative
+    61: non-relative
+    62: Maternal Aunt
+    63: Maternal Uncle
+    64: Maternal Cousin
+    65: Paternal Aunt
+    66: Paternal Uncle
+    67: Paternal Cousin
+    68: Biological/Adoptive Mother and Grandmother
+    69: Biological/Adoptive Mother and Stepmother and Grandmother
+    70: Biological/Adoptive Mother and Grandmother and Foster Father
+    71: Biological/Adoptive Mother and Stepmother and Foster Mother
+    72: Biological/Adoptive Mother and Foster Mother
+    73: Biological/Adoptive Mother and Biological/Adoptive Father
+    74: Biological/Adoptive Mother and Stepmother and Biological/Adoptive Father
+    75: Biological/Adoptive Mother and Other
+    76: Biological/Adoptive Mother and Stepmother and Stepfather
+    77: Biological/Adoptive Mother and Stepfather
+    78: Biological/Adoptive Mother and Grandfather
+    79: Biological/Adoptive Mother and Stepmother and Foster Father
+    80: Biological/Adoptive Mother and Stepmother
+    81: Guardian, female
+    82: Other female
+    83: Guardian, male
+    84: Other male
+    85: Other/Grandparent/Nanny
+    86: Mother, Father, Guardian
+    87: Daughter, son, grandchild
+    88: Professional (e.g., social worker, nurse, therapist, psychiatrist, or group
+      home staff)
+    -999: Missing
+    89: Biological parent
+    91: Stepparent
+    92: Adoptive parent
+    93: Foster parent
+
+actbdic:
+  type: Integer
+  description: Active status
+  range:
+  - 0::5
+  notes: 0=Inactive-Data collected after the 14 month treatment phase/after early
+    termination from treatment phase/prior to treatment phase; 1=Active-Data collected
+    during the 14 month treatment phase while subject received originally assigned
+    treatment regardless of degree of compliance; 2=Active-This is the last active
+    assessment for subjects who were about to violate treatment arm by receiving alternate
+    treatment; 3=Active-This is the last active assessment for subjects who were about
+    to leave the study by moving away;4=Yes, Active; 5=No, Not Active
+  alias: actwais
+  codes:
+    0: Inactive-Data collected after the 14 month treatment phase/after early termination
+      from treatment phase/prior to treatment phase
+    1: Active-Data collected during the 14 month treatment phase while subject received
+      originally assigned treatment regardless of degree of compliance
+    2: Active-This is the last active assessment for subjects who were about to violate
+      treatment arm by receiving alternate treatment
+    3: Active-This is the last active assessment for subjects who were about to leave
+      the study by moving away
+    4: Yes, Active
+    5: No, Not Active
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+  alias: sitenum
+
+sjtyp:
+  type: Integer
+  description: Subject type
+  range:
+  - 1
+  - 2
+  notes: 1=MTA randomized trial subject; 2=Local normative comparison group (LNCG)
+    subject
+  codes:
+    1: MTA randomized trial subject
+    2: Local normative comparison group (LNCG) subject
+
+iq1info:
+  type: Float
+  description: Information subset
+
+iq2voc:
+  type: Float
+  description: Vocabulary subset
+
+iq3picc:
+  type: Float
+  description: Picture completion subtest
+
+iq4bloc:
+  type: Float
+  description: Block design subtest
+
+iqlang:
+  type: Integer
+  description: Questionable validity of test based on language
+  range:
+  - 1
+  - 2
+  notes: 1=No; 2=Yes
+  codes:
+    1: 'No'
+    2: 'Yes'
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+
+scoring_conv_confidence_wm:
+  type: String
+  length: 10
+  description: Working Memory Confidence Interval-range
+
+scoring_conv_confidence_ps:
+  type: String
+  length: 10
+  description: Processing Speed Confidence Interval- range
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+mr_time1:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 1. Item 1: Completion Time'
+
+mr_time1_s:
+  type: Integer
+  description: 'Matrix Reasoning: 1. Item 1: Completion Time (in second)'
+
+mr_time2:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 2. Item 2: Completion Time'
+
+mr_time2_s:
+  type: Integer
+  description: 'Matrix Reasoning: 2. Item 2: Completion Time (in second)'
+
+mr_time3:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 3. Item 3: Completion Time'
+
+mr_time3_s:
+  type: Integer
+  description: 'Matrix Reasoning: 3. Item 3: Completion Time (in second)'
+
+mr_time4:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 4. Item 4: Completion Time'
+
+mr_time4_s:
+  type: Integer
+  description: 'Matrix Reasoning: 4. Item 4: Completion Time (in second)'
+
+mr_time5:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 5. Item 5: Completion Time'
+
+mr_time5_s:
+  type: Integer
+  description: 'Matrix Reasoning: 5. Item 5: Completion Time (in second)'
+
+mr_time6:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 6. Item 6: Completion Time'
+
+mr_time6_s:
+  type: Integer
+  description: 'Matrix Reasoning: 6. Item 6: Completion Time (in second)'
+
+mr_time7:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 7. Item 7: Completion Time'
+
+mr_time7_s:
+  type: Integer
+  description: 'Matrix Reasoning: 7. Item 7: Completion Time (in second)'
+
+mr_time8:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 8. Item 8: Completion Time'
+
+mr_time8_s:
+  type: Integer
+  description: 'Matrix Reasoning: 8. Item 8: Completion Time (in second)'
+
+mr_time9:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 9. Item 9: Completion Time'
+
+mr_time9_s:
+  type: Integer
+  description: 'Matrix Reasoning: 9. Item 9: Completion Time (in second)'
+
+mr_time10:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 10. Item 10: Completion Time'
+
+mr_time10_s:
+  type: Integer
+  description: 'Matrix Reasoning: 10. Item 10: Completion Time (in second)'
+
+mr_time11:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 11. Item 11: Completion Time'
+
+mr_time11_s:
+  type: Integer
+  description: 'Matrix Reasoning: 11. Item 11: Completion Time (in second)'
+
+mr_time12:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 12. Item 12: Completion Time'
+
+mr_time12_s:
+  type: Integer
+  description: 'Matrix Reasoning: 12. Item 12: Completion Time (in second)'
+
+mr_time13:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 13. Item 13: Completion Time'
+
+mr_time13_s:
+  type: Integer
+  description: 'Matrix Reasoning: 13. Item 13: Completion Time (in second)'
+
+mr_time14:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 14. Item 14: Completion Time'
+
+mr_time14_s:
+  type: Integer
+  description: 'Matrix Reasoning: 14. Item 14: Completion Time (in second)'
+
+mr_time15:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 15. Item 15: Completion Time'
+
+mr_time15_s:
+  type: Integer
+  description: 'Matrix Reasoning: 15. Item 15: Completion Time (in second)'
+
+mr_time16:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 16. Item 16: Completion Time'
+
+mr_time16_s:
+  type: Integer
+  description: 'Matrix Reasoning: 16. Item 16: Completion Time (in second)'
+
+mr_time17:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 17. Item 17: Completion Time'
+
+mr_time17_s:
+  type: Integer
+  description: 'Matrix Reasoning: 17. Item 17: Completion Time (in second)'
+
+mr_time18:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 18. Item 18: Completion Time'
+
+mr_time18_s:
+  type: Integer
+  description: 'Matrix Reasoning: 18. Item 18: Completion Time (in second)'
+
+mr_time19:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 19. Item 19: Completion Time'
+
+mr_time19_s:
+  type: Integer
+  description: 'Matrix Reasoning: 19. Item 19: Completion Time (in second)'
+
+mr_time20:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 20. Item 20: Completion Time'
+
+mr_time20_s:
+  type: Integer
+  description: 'Matrix Reasoning: 20. Item 20: Completion Time (in second)'
+
+mr_time21:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 21. Item 21: Completion Time'
+
+mr_time21_s:
+  type: Integer
+  description: 'Matrix Reasoning: 21. Item 21: Completion Time (in second)'
+
+mr_time22:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 22. Item 22: Completion Time'
+
+mr_time22_s:
+  type: Integer
+  description: 'Matrix Reasoning: 22. Item 22: Completion Time (in second)'
+
+mr_time23:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 23. Item 23: Completion Time'
+
+mr_time23_s:
+  type: Integer
+  description: 'Matrix Reasoning: 23. Item 23: Completion Time (in second)'
+
+mr_time24:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 24. Item 24: Completion Time'
+
+mr_time24_s:
+  type: Integer
+  description: 'Matrix Reasoning: 24. Item 24: Completion Time (in second)'
+
+mr_time25:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 25. Item 25: Completion Time'
+
+mr_time25_s:
+  type: Integer
+  description: 'Matrix Reasoning: 25. Item 25: Completion Time (in second)'
+
+mr_time26:
+  type: String
+  length: 10
+  description: 'Matrix Reasoning: 26. Item 26: Completion Time'
+
+mr_time26_s:
+  type: Integer
+  description: 'Matrix Reasoning: 26. Item 26: Completion Time (in second)'
+
+visit_num:
+  type: Integer
+  description: Visit number
+  range:
+  - 1::3
+  notes: 1=Baseline, 2=12 Month, 3=24 Month
+  codes:
+    1: Baseline, 2=12 Month, 3=24 Month
+
+wais_estiq:
+  type: Float
+  description: Estimated Full Scale IQ score from Similarities/Matrix Reasoning dyad
+    aged-scaled score sums
+  range:
+  - 52::138
+
+wais_p:
+  type: Integer
+  description: Subtest Type Prompt (P),Total
+
+matrixreasoning_sample_a_resp:
+  type: Integer
+  description: WAIS-IV Matrix Reasoning Sample Item A
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+matrixreasoning_sample_b_resp:
+  type: Integer
+  description: WAIS-IV Matrix Reasoning Sample Item B
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+discontinue:
+  type: Integer
+  description: Rules Triggered, Discontinue
+
+reverse:
+  type: Integer
+  description: Rules Triggered, Reverse
+
+subtesttypenr:
+  type: Integer
+  description: Subtest Type No Response (NR),Total
+  alias: wais_nr
+
+subtesttypedk:
+  type: Float
+  description: Subtest Type Don't Know (DK),Total
+  alias: wais_dk
+
+matrix_completion:
+  type: Float
+  description: Matrix Reasoning Completion time (seconds)

@@ -1,0 +1,4049 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: guid_r03
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: child_id,sid_r03,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: lvdate_r03
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: childage_r03
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: childgender_r03,gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+respondent:
+  type: String
+  length: 20
+  description: Respondent
+  range:
+  - Mother
+  - Father
+  - Both
+  - Other
+  - Parent
+  - Teacher
+
+cbq01:
+  type: Integer
+  description: Seems to always be in a big hurry to get from one place to another
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq01_r03,cbq1
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq02:
+  type: Integer
+  description: Likes going down high slides or other adventurous activities
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq08_r03,cbq4
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq03:
+  type: Integer
+  description: '"Likes the sound of words, as in nursery rhymes"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq151_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq04:
+  type: Integer
+  description: Gets so worked up before an exciting event that s/he has trouble sitting
+    still
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq10_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq05:
+  type: Integer
+  description: Seems to listen to even quiet sounds
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq52_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq06:
+  type: Integer
+  description: Cries sadly when a favorite toy gets lost or broken
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq18_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq07:
+  type: Integer
+  description: Rarely gets irritated when s/he makes a mistake
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq19_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq08:
+  type: Integer
+  description: Calms down quickly following an exciting event
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq27_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq09:
+  type: Integer
+  description: Seems to be at ease with almost any person
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq23_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq10:
+  type: Integer
+  description: '"When s/he sees a toy s/he wants, gets very excited about getting
+    it"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq24_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq11:
+  type: Integer
+  description: Likes being sung to
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq146_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq12:
+  type: Integer
+  description: Tends to run rather than walk from room to room
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq25_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq13:
+  type: Integer
+  description: Has a hard time following instructions
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq32_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq14:
+  type: Integer
+  description: Notices the smoothness or roughness of objects she touches
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq09_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq15:
+  type: Integer
+  description: Enjoys taking warm baths
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq54_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq16:
+  type: Integer
+  description: Has temper tantrums when s/he doesn't get what s/he wants
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq34_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq17:
+  type: Integer
+  description: '"When s/he wants to do something, s/he talks about little else"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq35_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq18:
+  type: Integer
+  description: Doesn't care for rough and rowdy games.
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq30_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq19:
+  type: Integer
+  description: '"When practicing an activity, has a hard time keeping her/his mind
+    on it"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq38_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq20:
+  type: Integer
+  description: '"Tends to feel ""down"" at the end of an exciting day"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq39_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq21:
+  type: Integer
+  description: '"If upset, cheers up quickly when s/he thinks about something else"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq118_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq22:
+  type: Integer
+  description: Acts very friendly and outgoing with new children
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq45_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq23:
+  type: Integer
+  description: Will move from one task to another without completing any of them
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq47_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq24:
+  type: Integer
+  description: Usually doesn't comment on changes in parents' appearance
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq28_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq25:
+  type: Integer
+  description: '"Moves about actively (runs, climbs, jumps) when playing in the house"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq48_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq26:
+  type: Integer
+  description: Is afraid of loud noises
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq50_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq27:
+  type: Integer
+  description: Has a hard time settling down after an exciting activity
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq53_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq28:
+  type: Integer
+  description: '"Joins others quickly and comfortably, even when they are strangers"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq57_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq29:
+  type: Integer
+  description: Does not like to take chances for the fun and excitement of it
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq51_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq30:
+  type: Integer
+  description: Falls asleep within ten minutes of going to bed at night
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq103_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq31:
+  type: Integer
+  description: Gets quite frustrated when prevented from doing something s/he wants
+    to do
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq62_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq32:
+  type: Integer
+  description: Seems to forget a bump or scrape after a couple of minutes
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq85_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq33:
+  type: Integer
+  description: Becomes upset when loved relatives or friends are getting ready to
+    leave following a visit
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq64_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq34:
+  type: Integer
+  description: Is not afraid of the dark
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq70_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq35:
+  type: Integer
+  description: Does not usually become tearful when tired
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq72_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq36:
+  type: Integer
+  description: Comments when a parent has changed his/her appearance
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq65_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq37:
+  type: Integer
+  description: Doesn't care much for quiet games
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq86_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq38:
+  type: Integer
+  description: Can wait before entering into new activities if s/he is asked to
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq75_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq39:
+  type: Integer
+  description: Gets angry when s/he can't find something s/he wants to play with
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq78_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq40:
+  type: Integer
+  description: Her/his feelings are easily hurt by what parents say
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq81_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq41:
+  type: Integer
+  description: Enjoys exciting and suspenseful TV shows
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq100_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq42:
+  type: Integer
+  description: Is very frightened by nightmares
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq91_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq43:
+  type: Integer
+  description: Has difficulty waiting in line for something
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq93_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq44:
+  type: Integer
+  description: Enjoys sitting on parent's lap
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq174_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq45:
+  type: Integer
+  description: Becomes tearful when told to do something s/he does not want to do
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq94_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq46:
+  type: Integer
+  description: Becomes very excited while planning for trips
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq96_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq47:
+  type: Integer
+  description: Rarely cries for more than a couple of minutes at a time
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq177_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq48:
+  type: Integer
+  description: Prefers quiet activities to active games
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely true of your child; 2 = Quite true of your child; 3 = Slightly
+    true of your child; 4 = Neither true nor false of your child; 5 = Slightly untrue
+    of your child; 6 = Quite untrue of your child; 7 = Extremely untrue of your child;
+    -9 = Not applicable
+  alias: cbq102_r03
+  codes:
+    1: Extremely true of your child
+    2: Quite true of your child
+    3: Slightly true of your child
+    4: Neither true nor false of your child
+    5: Slightly untrue of your child
+    6: Quite untrue of your child
+    7: Extremely untrue of your child
+    -9: Not applicable
+
+cbq49:
+  type: Integer
+  description: Notices when parents are wearing new clothing
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq31_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq50:
+  type: Integer
+  description: Acts shy around new people
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq106_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq51:
+  type: Integer
+  description: '"Has trouble sitting still when s/he is told to (at movies, church,
+    etc.)"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq108_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq52:
+  type: Integer
+  description: Rarely cries when s/he hears a sad story
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq109_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq53:
+  type: Integer
+  description: Rarely becomes upset when watching a sad event in a TVshow
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq112_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq54:
+  type: Integer
+  description: Is quickly aware of some new item in the living room
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq98_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq55:
+  type: Integer
+  description: '"Becomes very excited before an outing (e.g. picnic, party)"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq117_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq56:
+  type: Integer
+  description: Is comfortable asking other children to play
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq119_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq57:
+  type: Integer
+  description: Enjoys looking at picture books
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq133_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq58:
+  type: Integer
+  description: Enjoys meeting Santa Claus or other strangers in costumes
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq107_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq59:
+  type: Integer
+  description: '"When drawing or coloring in a book, shows strong concentration"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq125_r03,cbq3
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq60:
+  type: Integer
+  description: Plays games slowly and deliberately
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq126_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq61:
+  type: Integer
+  description: Sometimes appears downcast for no reason
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq127_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq62:
+  type: Integer
+  description: Likes to go high and fast when pushed on a swing
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq139_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq63:
+  type: Integer
+  description: Becomes easily frustrated when tired
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq128_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq64:
+  type: Integer
+  description: Talks easily to new people
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq129_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq65:
+  type: Integer
+  description: Is very difficult to soothe when s/he has become upset
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq150_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq66:
+  type: Integer
+  description: Is afraid of the dark
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq130_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq67:
+  type: Integer
+  description: Enjoys riding a tricycle or bicycle fast and recklessly
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq182_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq68:
+  type: Integer
+  description: '"Is usually pretty calm before leaving on an outing (e.g., picnic,
+    party)"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq69:
+  type: Integer
+  description: Is good at following instructions
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq136_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq70:
+  type: Integer
+  description: '"Is rarely frightened by ""monsters"" seen on TV or at movies"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq138_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq71:
+  type: Integer
+  description: '"When building or putting something together, becomes very involved
+    in what s/he is doing, and works for long periods"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq144_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq72:
+  type: Integer
+  description: Does not seem to notice parents' facial expressions
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq122_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq73:
+  type: Integer
+  description: '"Isn''t interested in watching quiet TV shows such as ""Mister Rogers"""'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq111_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq74:
+  type: Integer
+  description: Doesn't enjoy being read to very much
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq66_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq75:
+  type: Integer
+  description: Rarely becomes discouraged when s/he has trouble making something work
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq149_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq76:
+  type: Integer
+  description: Rarely protests when another child takes his/her toy away
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq156_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq77:
+  type: Integer
+  description: '"When angry about something, s/he tends to stay upset for ten minutes
+    or longer"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq68_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq78:
+  type: Integer
+  description: Doesn't usually react to different textures in food
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq142_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq79:
+  type: Integer
+  description: Is not afraid of heights
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq161_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq80:
+  type: Integer
+  description: Shows great excitement when opening a present
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq166_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq81:
+  type: Integer
+  description: '"Can easily stop an activity when s/he is told ""no."""'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq168_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq82:
+  type: Integer
+  description: '"Enjoys activities such as being chased, spun around by the arms,
+    etc."'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq67_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq83:
+  type: Integer
+  description: Is easily distracted when listening to a story
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq171_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq84:
+  type: Integer
+  description: '"Is full of energy, even in the evening"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq172_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq85:
+  type: Integer
+  description: Changes from being upset to feeling much better within a few minutes
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq92_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq86:
+  type: Integer
+  description: '"Easily gets irritated when s/he has trouble with some task (e.g.,
+    building, drawing, dressing)"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq173_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq87:
+  type: Integer
+  description: Enjoys exploring new places
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq124_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq88:
+  type: Integer
+  description: Enjoys just being talked to
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq113_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq89:
+  type: Integer
+  description: Gets angry when called in from play before she is ready to quit
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq181_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq90:
+  type: Integer
+  description: '"Enjoys ""snuggling up"" next to a parent or baby-sitter"'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq76_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq91:
+  type: Integer
+  description: Is usually able to resist temptation when told sthe is not supposed
+    to do something
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq185_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq92:
+  type: Integer
+  description: Has a hard time going back to sleep after waking in the night
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq167_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq93:
+  type: Integer
+  description: Has difficulty sitting still at dinner
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq187_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq94:
+  type: Integer
+  description: Enjoys being in crowds of people
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq77_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq95:
+  type: Integer
+  description: Likes to sit quietly and watch people do things
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq192_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq96:
+  type: Integer
+  description: '"Doesn''t usually notice odors such as perfume, smoke, cooking, etc."'
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq170_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq97:
+  type: Integer
+  description: Gets mad when provoked by other children
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq193_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq98:
+  type: Integer
+  description: Has a hard time concentrating on an activity when there are distracting
+    noises
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq195_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq99:
+  type: Integer
+  description: Notices even little specks of dirt on objects
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq154_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq100:
+  type: Integer
+  description: Gets angry when told s/he has to go to bed
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbclyng32b_r03,cbq02_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq101:
+  type: Integer
+  description: Can lower his/her voice when asked to do so
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbclyng46b_r03,cbq04_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq_3:
+  type: Integer
+  description: Is not very bothered by pain
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbclyng54b_r03,cbq05_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq103:
+  type: Integer
+  description: Is hard to get her/his attention when s/he is concentrating on something
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbclyng76b_r03,cbq06_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq104:
+  type: Integer
+  description: Sometimes prefers to watch rather than join other children playing
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbclyng80b_r03,cbq07_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq105:
+  type: Integer
+  description: Laughs a lot at jokes and silly happenings
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbclyng24b_r03,cbq11_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq106:
+  type: Integer
+  description: Rarely enjoys just being talked to
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbclyng31b_r03,cbq12_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq107:
+  type: Integer
+  description: Usually rushes into an activity without thinking about it
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbclyng57b_r03,cbq13_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq108:
+  type: Integer
+  description: Has a hard time settling down for a nap
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbclyng65b_r03,cbq14_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq109:
+  type: Integer
+  description: Is not afraid of large dogs and/or other animals
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbclyng74b_r03,cbq15_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq110:
+  type: Integer
+  description: When picking up toys or other jobs, usually keeps at the task until
+    it's done
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbclyng92b_r03,cbq16_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq111:
+  type: Integer
+  description: Is comfortable in situations where s/he will be meeting others
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq17_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq112:
+  type: Integer
+  description: Is good at games like "Simon Says," "Mother, May I?" and "Red Light,
+    Green Light."
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq20_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq_9:
+  type: Integer
+  description: Becomes quite uncomfortable when cold
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq21_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq_10:
+  type: Integer
+  description: Likes to play so wild and recklessly
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq22_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq115:
+  type: Integer
+  description: Sometimes interrupts others when they are speaking
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq26_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq116:
+  type: Integer
+  description: Can easily shift from one activity to another
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq29_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq117:
+  type: Integer
+  description: Is afraid of elevators
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq33_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq118:
+  type: Integer
+  description: Enjoys sitting quietly in the sunshine
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq36_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq119:
+  type: Integer
+  description: Gets embarrassed when strangers pay a lot of attention to her/him
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq37_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq_17:
+  type: Integer
+  description: Is afraid of burglars or the boogie man
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq40_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq_18:
+  type: Integer
+  description: When outside often sits quietly
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq41_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq122:
+  type: Integer
+  description: Can be "cheered up" by talking about something s/he is interested in
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq42_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq123:
+  type: Integer
+  description: Enjoys funny stories but usually doesn't laugh at them
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq43_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq124:
+  type: Integer
+  description: Tends to become sad if the family's plans don't work out
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq44_r03,cbq8
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq125:
+  type: Integer
+  description: Decides what s/he wants very quickly and goes after it
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq46_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq126:
+  type: Integer
+  description: Dislikes having nails cut
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq49_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq127:
+  type: Integer
+  description: Seems to feel depressed when unable to accomplish some task
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq55_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq128:
+  type: Integer
+  description: Smiles and laughs during play with parents
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq56_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq129:
+  type: Integer
+  description: Doesn't worry about injections by the doctor
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq58_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq_28:
+  type: Integer
+  description: Often rushes into new situations
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq59_r03,cbq7
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq131:
+  type: Integer
+  description: Doesn't like to go down high slides at the amusement park or playground
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq60_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq_29:
+  type: Integer
+  description: Is quite upset by a little cut or bruise
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq5,cbq61_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq133:
+  type: Integer
+  description: Prepares for trips and outings by planning things s/he will need
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq6,cbq63_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq134:
+  type: Integer
+  description: Has strong desires for certain kinds of foods
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq69_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq135:
+  type: Integer
+  description: Takes a long time in approaching new situations
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely true of your child; 2 = Quite true of your child; 3 = Slightly
+    true of your child; 4 = Neither true nor false of your child; 5 = Slightly untrue
+    of your child; 6 = Quite untrue of your child; 7 = Extremely untrue of your child;
+    -9 = Not applicable
+  alias: cbq71_r03
+  codes:
+    1: Extremely true of your child
+    2: Quite true of your child
+    3: Slightly true of your child
+    4: Neither true nor false of your child
+    5: Slightly untrue of your child
+    6: Quite untrue of your child
+    7: Extremely untrue of your child
+    -9: Not applicable
+
+cbq136:
+  type: Integer
+  description: Gets mad when even mildly criticized
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq73_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq137:
+  type: Integer
+  description: Is sometimes shy even around people s/he has known a long time
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely true of your child; 2 = Quite true of your child; 3 = Slightly
+    true of your child; 4 = Neither true nor false of your child; 5 = Slightly untrue
+    of your child; 6 = Quite untrue of your child; 7 = Extremely untrue of your child;
+    -9 = Not applicable
+  alias: cbq74_r03
+  codes:
+    1: Extremely true of your child
+    2: Quite true of your child
+    3: Slightly true of your child
+    4: Neither true nor false of your child
+    5: Slightly untrue of your child
+    6: Quite untrue of your child
+    7: Extremely untrue of your child
+    -9: Not applicable
+
+cbq138:
+  type: Integer
+  description: Usually stops and thinks things over before deciding to do something
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq79_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq_41:
+  type: Integer
+  description: Is afraid of fire
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq80_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq140:
+  type: Integer
+  description: Her/his feelings are not easily hurt by what parents say
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq03_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq141:
+  type: Integer
+  description: Looks forward strongly to the visit of loved relatives
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq82_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq142:
+  type: Integer
+  description: Usually has a serious expression, even during play
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq83_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq143:
+  type: Integer
+  description: Doesn't usually comment on people's facial features, such as size of
+    nose or mouth
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq84_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq144:
+  type: Integer
+  description: Is bothered by light or color that is too bright
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq87_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq145:
+  type: Integer
+  description: Sometimes sits quietly for long periods in the house
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq88_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq146:
+  type: Integer
+  description: Sometimes seems nervous when talking to adults s/he has just met
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq89_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq147:
+  type: Integer
+  description: Is slow and unhurried in deciding what to do next
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely true of your child; 2 = Quite true of your child; 3 = Slightly
+    true of your child; 4 = Neither true nor false of your child; 5 = Slightly untrue
+    of your child; 6 = Quite untrue of your child; 7 = Extremely untrue of your child;
+    -9 = Not applicable
+  alias: cbq90_r03
+  codes:
+    1: Extremely true of your child
+    2: Quite true of your child
+    3: Slightly true of your child
+    4: Neither true nor false of your child
+    5: Slightly untrue of your child
+    6: Quite untrue of your child
+    7: Extremely untrue of your child
+    -9: Not applicable
+
+cbq148:
+  type: Integer
+  description: Has a lot of trouble stopping an activity when called to do something
+    else
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq95_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq149:
+  type: Integer
+  description: Finds rough materials uncomfortable, such as wool against his/her skin
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq97_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq150:
+  type: Integer
+  description: Hardly ever laughs out loud during play with other children
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq99_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq_49:
+  type: Integer
+  description: Is not very upset at minor cuts or bruises
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely true of your child; 2 = Quite true of your child; 3 = Slightly
+    true of your child; 4 = Neither true nor false of your child; 5 = Slightly untrue
+    of your child; 6 = Quite untrue of your child; 7 = Extremely untrue of your child;
+    -9 = Not applicable
+  alias: cbq101_r03
+  codes:
+    1: Extremely true of your child
+    2: Quite true of your child
+    3: Slightly true of your child
+    4: Neither true nor false of your child
+    5: Slightly untrue of your child
+    6: Quite untrue of your child
+    7: Extremely untrue of your child
+    -9: Not applicable
+
+cbq152:
+  type: Integer
+  description: Tends to say first thing that comes to mind, without stopping to think
+    about it
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq104_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq153:
+  type: Integer
+  description: Usually comments if someone has an unusual voice
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq105_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq154:
+  type: Integer
+  description: Sometimes smiles or giggles playing by her/himself
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq110_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq155:
+  type: Integer
+  description: When eager to go outside, sometimes rushes out without putting on the
+    right clothes
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq114_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq156:
+  type: Integer
+  description: Is bothered by bathwater that is too hot or too cold
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq115_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq157:
+  type: Integer
+  description: Is able to resist laughing or smiling when it isn't appropriate
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq116_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq158:
+  type: Integer
+  description: Rarely gets upset when told s/he has to go to bed
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq120_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq159:
+  type: Integer
+  description: Rarely smiles and laughs when playing with pets
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq121_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq160:
+  type: Integer
+  description: Rarely runs or moves quickly in the house
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq123_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq161:
+  type: Integer
+  description: Is usually pretty calm before going on an outing (e.g., picnic, party)
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq131_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq162:
+  type: Integer
+  description: Is likely to cry when even a little bit hurt
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq132_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq163:
+  type: Integer
+  description: Is easy to soothe when s/he is upset
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq134_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq164:
+  type: Integer
+  description: 'Doesnt often giggle or act "silly" '
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq135_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq165:
+  type: Integer
+  description: Approaches slowly places where s/he might hurt her/himself
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq137_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq166:
+  type: Integer
+  description: 'Gets irritable about having to eat food s/he doesn''t like '
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq140_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq167:
+  type: Integer
+  description: Becomes distressed when hair is combed
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq141_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq168:
+  type: Integer
+  description: Sometimes turns away shyly from new acquaintances
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely true of your child; 2 = Quite true of your child; 3 = Slightly
+    true of your child; 4 = Neither true nor false of your child; 5 = Slightly untrue
+    of your child; 6 = Quite untrue of your child; 7 = Extremely untrue of your child;
+    -9 = Not applicable
+  alias: cbq143_r03
+  codes:
+    1: Extremely true of your child
+    2: Quite true of your child
+    3: Slightly true of your child
+    4: Neither true nor false of your child
+    5: Slightly untrue of your child
+    6: Quite untrue of your child
+    7: Extremely untrue of your child
+    -9: Not applicable
+
+cbq169:
+  type: Integer
+  description: Sits quietly in bath
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq145_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq170:
+  type: Integer
+  description: Approaches places s/he has been told are dangerous slowly and cautiously
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq147_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq171:
+  type: Integer
+  description: Gets very enthusiastic about the things s/he does
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq148_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq_77:
+  type: Integer
+  description: Smiles a lot at people
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq152_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq173:
+  type: Integer
+  description: Plays actively outdoors with other children
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq153_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq174:
+  type: Integer
+  description: When s/he sees a toy or game s/he wants, is eager to have it right
+    then
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq155_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq175:
+  type: Integer
+  description: Cries when given an injection
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq157_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq176:
+  type: Integer
+  description: Seems completely at ease with almost any group
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq158_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq_78:
+  type: Integer
+  description: Dislikes rough and rowdy games
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq159_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq178:
+  type: Integer
+  description: Has difficulty leaving a project s/has begun
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq160_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq179:
+  type: Integer
+  description: Is not very careful and cautious in crossing streets
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq162_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq180:
+  type: Integer
+  description: Often laughs out loud in play with other children
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq163_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq_94:
+  type: Integer
+  description: Enjoys gentle rhythmic activities
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq164_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq182:
+  type: Integer
+  description: Rarely laughs aloud while watching TV or movie comedies
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq165_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq183:
+  type: Integer
+  description: Is among the last children to try out a new activity
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq169_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq184:
+  type: Integer
+  description: Doesn't become very excited about upcoming television programs
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq175_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq185:
+  type: Integer
+  description: Is rarely afraid of sleeping alone in a room
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq176_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq186:
+  type: Integer
+  description: Is bothered by loud or scratchy sounds
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq178_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq187:
+  type: Integer
+  description: Smiles at friendly strangers
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq179_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq188:
+  type: Integer
+  description: Has an easy time leaving play to come to dinner
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq180_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq189:
+  type: Integer
+  description: Is "slow to warm up" to others
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq183_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq190:
+  type: Integer
+  description: Sometimes doesn't seem to hear me when I talk to her/him
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq184_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq191:
+  type: Integer
+  description: Sometimes becomes absorbed in a picture book and looks at it for a
+    long time
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq186_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq192:
+  type: Integer
+  description: Remains pretty calm about upcoming desserts like ice cream
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq188_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq193:
+  type: Integer
+  description: Gets nervous about going to the dentist
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq189_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq194:
+  type: Integer
+  description: Hardly ever complains when ill with a cold
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely true of your child; 2 = Quite true of your child; 3 = Slightly
+    true of your child; 4 = Neither true nor false of your child; 5 = Slightly untrue
+    of your child; 6 = Quite untrue of your child; 7 = Extremely untrue of your child;
+    -9 = Not applicable
+  alias: cbq190_r03
+  codes:
+    1: Extremely true of your child
+    2: Quite true of your child
+    3: Slightly true of your child
+    4: Neither true nor false of your child
+    5: Slightly untrue of your child
+    6: Quite untrue of your child
+    7: Extremely untrue of your child
+    -9: Not applicable
+
+cbq195:
+  type: Integer
+  description: Looks forward to family outings, but does not get too excited about
+    them
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq191_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq196:
+  type: Integer
+  description: Smiles when looking at a picture book
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue; 2 = Quite untrue; 3 = Slightly untrue; 4 = Neither
+    true nor false; 5 = Slightly true; 6 = Quite true; 7 = Extremely true; -9 = Not
+    applicable
+  alias: cbq194_r03
+  codes:
+    1: Extremely untrue
+    2: Quite untrue
+    3: Slightly untrue
+    4: Neither true nor false
+    5: Slightly true
+    6: Quite true
+    7: Extremely true
+    -9: Not applicable
+
+cbq028:
+  type: Integer
+  description: Likes rough and rowdy games
+  range:
+  - 1::7
+  - -9
+  notes: 1 = Extremely untrue of your child; 2 = Quite untrue of your child; 3 = Slightly
+    untrue of your child; 4 = Neither true nor false of your child; 5 = Slightly untrue
+    of your child; 6 = Quite true of your child; 7 = Extremely true of your child;
+    -9 = Not applicable
+  codes:
+    1: Extremely untrue of your child
+    2: Quite untrue of your child
+    3: Slightly untrue of your child
+    4: Neither true nor false of your child
+    5: Slightly untrue of your child
+    6: Quite true of your child
+    7: Extremely true of your child
+    -9: Not applicable
+
+cbqscale1:
+  type: Float
+  description: Surgency Scale
+  notes: 1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34
+  alias: cbq_surgency
+
+cbqscale2:
+  type: Float
+  description: Negative Affect Scale
+  notes: 2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35
+  alias: cbq_negaff
+
+cbqscale3:
+  type: Float
+  description: Effortful Control Scale
+  notes: 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36
+  alias: cbq_effcon

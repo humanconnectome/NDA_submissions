@@ -1,0 +1,2364 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: candidateguid,guid,nimhid,pseudo_guid,subject_key,z1
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: CATIEID,bid,case_id,clinical_barcode,ibisid,id,ptid,randid,record_id,stepid,subj,subject_id,subjectid,subjid,subnum,z2
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: ans_date,bl_visit_date,consented_study,date_interview_ses,date_vitals,date_vitals2_d6c,hwv_doa,intvdate,sdate,testdate,v10_avs_date,v1_avs_date,v2_avs_date,v3_avs_date,v4_avs_date,v5_avs_date,v6_avs_date,v7_avs_date,v8_avs_date,v9_avs_date,visit_date,vitaldt
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: bslage,ch_age,dema1,intvage,v10_avs_age,v1_avs_age,v2_avs_age,v3_avs_age,v4_avs_age,v5_avs_age,v6_avs_age,v7_avs_age,v8_avs_age,v9_avs_age
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: ch_sex,dema2,gender,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+bas_time:
+  type: String
+  length: 10
+  description: time of baseline exam
+
+blood_ps_base:
+  type: Integer
+  description: baseline systolic blood pressure
+  alias: syst1,systolicbp,vsfa2,vssa4
+
+blood_pd_base:
+  type: Integer
+  description: baseline diastolic blood pressure
+  alias: dias1,diastolicbp,vsfa3,vssa5
+
+heart_rate_base:
+  type: Float
+  description: baseline heart rate
+  alias: ch_hr_baseline,heart_rate,heart_rate_base1_3y,heart_rate_base1_5y,heart_rate_base1_7y,heart_rate_base2_3y,heart_rate_base2_5y,heart_rate_base2_7y,pulserate,vsfa4,vssa6
+
+temp_base:
+  type: Integer
+  description: baseline temperature
+
+post_time_20min:
+  type: String
+  length: 10
+  description: time of 20 min post exam
+
+blood_ps_20min:
+  type: Integer
+  description: 20 min post blood pressure systolic
+
+blood_pd_20min:
+  type: Integer
+  description: 20 min post blood pressure diastolic
+
+heart_rate_20min:
+  type: Integer
+  description: 20 min post heart rate
+
+temp_20min:
+  type: String
+  length: 10
+  description: 20 min post temperature
+
+debrief_time:
+  type: String
+  length: 10
+  description: time of debrief exam
+
+blood_ps_debrief:
+  type: Integer
+  description: debrief systolic blood pressure
+
+blood_pd_debrief:
+  type: Integer
+  description: debrief diastolic blood pressure
+
+heart_rate_debrief:
+  type: Integer
+  description: debrief heart rate
+
+temp_debrief:
+  type: Integer
+  description: debrief temperature
+
+vital_compdt:
+  type: Date
+  description: Date Assessment Completed
+
+vital_collect:
+  type: Integer
+  description: Was any data collected for this form?
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes; 0 = No
+  alias: vitaldon
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+height_met:
+  type: Float
+  description: Height - Metric Unit
+  alias: Vital_Ht,c_height,ch_height_baseline,ht_cm,hwb_cm,hwv_height_cm,svshght,v10_avs_height,v1_avs_height,v2_avs_height,v3_avs_height,v4_avs_height,v5_avs_height,v6_avs_height,v7_avs_height,v8_avs_height,v9_avs_height,vs_htm,vssa2a,vtl003
+
+weight_met:
+  type: Float
+  description: Weight - Metric Unit
+  alias: Vital_Wt,blvswght,c_weight,ch_weight_baseline,hwb_kg,hwv_weight_kg,svswght,v10_avs_weight,v1_avs_weight,v2_avs_weight,v3_avs_weight,v4_avs_weight,v5_avs_weight,v6_avs_weight,v7_avs_weight,v8_avs_weight,v9_avs_weight,vs_wtk,vsfa1,vssa1,vtl002,wt_kg,wtkg
+
+temperature:
+  type: Float
+  description: Temperature (degrees Fahrenheit)
+  range:
+  - 0::300
+  alias: Vital_Temper,hwv_temp_f,temp,temp_f,vstemp,vtl001,vtl005
+
+vital_sysbp:
+  type: Float
+  description: Blood Pressure (sitting for 3 minutes)mmHg (systolic)
+  range:
+  - 0::500
+  - 999
+  notes: 999=NK/missing
+  alias: SYS,sbpsit,sitbpsys,systolic,systsit,vs_bpsyssit,vtl002a,vtl005a
+  codes:
+    999: NK/missing
+
+vital_diabp:
+  type: Integer
+  description: Blood Pressure (sitting for 3 minutes)mmHg (diastolic)
+  range:
+  - 0::500
+  alias: DIA,diastolic,diastsit,dpbsit,sitbpdia,vs_bpdiasit,vtl002b,vtl005b
+
+vital_pulse:
+  type: Integer
+  description: Pulse (sitting for 3 minutes)beats/min
+  range:
+  - 0::300
+  alias: hrsit,hwv_pulse,sitpuls,vs_pulsesit,vtl005c
+
+phase_ct:
+  type: String
+  length: 20
+  description: Current Phase. Phase patient was in at the time of the assessment Phase
+    4 refers to the follow-up phase.
+  range:
+  - Pre-Rand
+  - Phase 1/1A
+  - Phase 2
+  - Phase 3
+  - Phase 4
+  - Phase 1B
+  - Open-Choice Phase
+  - Screening
+  - Phase 1
+  alias: phase
+
+bmi:
+  type: Float
+  description: body mass index of subject
+  alias: blbmi,c_bmi,ch_bmi_baseline,current_bmi,hwb_ckbmilb,hwv_bmi_m,hwv_bmi_nm,scrnbmi,vs_bmi,vssa3
+
+waist:
+  type: Float
+  description: 5. Waist
+  notes: inches
+  alias: ch_wc_baseline,hwv_waist_circum_inch,vsfa5a,vsfa6a,vssa7a
+
+hips:
+  type: Float
+  description: 6. Hips
+  notes: inches; 999=Legitimately skipped
+  alias: vsfa7a,vssa8a
+  codes:
+    999: Legitimately skipped
+
+wh_ratio:
+  type: Float
+  description: 7. Waist/Hip Ratio
+  alias: waist_height_ratio
+
+base1b_a:
+  type: Integer
+  description: Flag Baseline Phase 1B Visit - All Vital
+  range:
+  - 0
+  - 1
+  notes: 0=No;1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+base2_a:
+  type: Integer
+  description: Flag Baseline Phase 2 Visit - All Vitals
+  range:
+  - 0
+  - 1
+  notes: 0=No;1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+base3_a:
+  type: Integer
+  description: Flag Baseline Phase 3 Visit - All Vitals
+  range:
+  - 0
+  - 1
+  notes: 0=No;1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+last1_a:
+  type: Integer
+  description: Flag Last Phase 1/1A Visit - All Vitals
+  range:
+  - 0
+  - 1
+  notes: 0=No;1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+last1b_a:
+  type: Integer
+  description: Flag Last Phase 1B Visit All Vitals
+  range:
+  - 0
+  - 1
+  notes: 0=No;1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+last2_a:
+  type: Integer
+  description: Flag Last Phase 2 Visit - All Vitals
+  range:
+  - 0
+  - 1
+  notes: 0=No;1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+last3_a:
+  type: Integer
+  description: Flag Last Phase 3 Visit - All Vitals
+  range:
+  - 0
+  - 1
+  notes: 0=No;1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+b1_wt:
+  type: Integer
+  description: Phase 1/1A Baseline Weight
+  notes: value for assessment at phase-specific baseline; retained across all records
+    for that assessment.
+  alias: weight
+
+b1b_wt:
+  type: Integer
+  description: Phase 1B Baseline Weight
+  notes: value for assessment at phase-specific baseline; retained across all records
+    for that assessment.
+
+b2_wt:
+  type: Integer
+  description: Phase 2 Baseline Weight
+  notes: value for assessment at phase-specific baseline; retained across all records
+    for that assessment.
+
+b3_wt:
+  type: Integer
+  description: Phase 3 Baseline Weight
+  notes: value for assessment at phase-specific baseline; retained across all records
+    for that assessment.
+
+c_wt:
+  type: Integer
+  description: Phase-Specific CFB Weight
+  notes: '"Phase-specific change (within each phase, change is calculated from that
+    phase''s baseline measurement)"'
+
+p_gain:
+  type: Float
+  description: Phase Specific Percent Wt Gain
+  notes: Phase-specific percent weight gain (100 * C_WT / phase- specific baseline
+    weight)
+
+bmi_cat:
+  type: Integer
+  description: Body Mass Index Categorized
+  range:
+  - 1::6
+  notes: 1 = Underweight (BMI < 18.5); 2 = Normal (BMI 18.5-24.9); 3 = Overweight
+    (BMI 25-29.9); 4 = Obesity I (BMI 30-34.9); 5 = Obesity II (BMI 35-39.9); 6 =
+    Obesity III (BMI >=40)
+  codes:
+    1: Underweight (BMI < 18.5)
+    2: Normal (BMI 18.5-24.9)
+    3: Overweight (BMI 25-29.9)
+    4: Obesity I (BMI 30-34.9)
+    5: Obesity II (BMI 35-39.9)
+    6: Obesity III (BMI >=40)
+
+visitid:
+  type: Integer
+  description: MetaTrial Visit ID
+  notes: 'System variable: unique code for each type of visit -use to merge files'
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+  alias: int1,session,timept,visit_name,visitnum,vtypvs
+
+truncvis:
+  type: Integer
+  description: Truncated Visit Number
+  notes: '"Created variable: provides a numeric visit number for all visits, including
+    unscheduled and end of phase"'
+
+visday:
+  type: Integer
+  description: Number of days from study baseline to date of visit
+  alias: vsfa0b
+
+base1:
+  type: Integer
+  description: Flag Baseline Phase 1/1A Visit
+  notes: 1=Yes for all records meeting this criteria
+  codes:
+    1: Yes for all records meeting this criteria
+
+base1b:
+  type: Integer
+  description: Flag Baseline Phase 1B Visit
+  notes: 1=Yes for all records meeting this criteria
+  codes:
+    1: Yes for all records meeting this criteria
+
+base2:
+  type: Integer
+  description: Flag Baseline Phase 2 Visit
+  notes: 1=Yes for all records meeting this criteria
+  codes:
+    1: Yes for all records meeting this criteria
+
+base3:
+  type: Integer
+  description: Flag Baseline Phase 3 Visit
+  notes: 1=Yes for all records meeting this criteria
+  codes:
+    1: Yes for all records meeting this criteria
+
+last1:
+  type: Integer
+  description: Flag Last Phase 1/1A Visit
+  notes: 1=Yes for all records meeting this criteria
+  codes:
+    1: Yes for all records meeting this criteria
+
+last1b:
+  type: Integer
+  description: Flag Last Phase 1B Visit
+  notes: 1=Yes for all records meeting this criteria
+  codes:
+    1: Yes for all records meeting this criteria
+
+last2:
+  type: Integer
+  description: Flag Last Phase 2 Visit
+  notes: 1=Yes for all records meeting this criteria
+  codes:
+    1: Yes for all records meeting this criteria
+
+last3:
+  type: Integer
+  description: Flag Last Phase 3 Visit
+  notes: 1=Yes for all records meeting this criteria
+  codes:
+    1: Yes for all records meeting this criteria
+
+heart_rate:
+  type: Integer
+  description: heart rate
+  alias: HEART,heart_rate2_bd6,hr
+
+height_std:
+  type: Float
+  description: Height - Standard Unit
+  notes: -1 = Not known
+  alias: HEIGHT,current_height,height,height_in_inches,heightin,ht,ht_cm,vsfa1a,vssa1a,vtl011
+  codes:
+    -1: Not known
+
+weight_std:
+  type: Float
+  description: Weight - Standard Unit
+  notes: -1 = Not known
+  alias: WEIGHT,current_weight,vsfa2a,vssa2d,weight,weight_in_lbs,weight_in_lbs2_311,wt,wt_kg
+  codes:
+    -1: Not known
+
+vtl004a:
+  type: Integer
+  description: Standing Systolic Blood pressure (mm/Hg)
+  range:
+  - 0::300
+  alias: stnbpsys,syststand,vs_bpsysstand,vsstbp1,vtl007a,vtl008a
+
+vtl004b:
+  type: Integer
+  description: Standing Diastolic Blood pressure (mm/Hg)
+  range:
+  - 0::200
+  alias: diaststand,stnbpdia,vs_bpdiastand,vsstbp2,vtl007b,vtl008b
+
+vtl004c:
+  type: Integer
+  description: Standing Pulse (bpm)
+  range:
+  - 0::300
+  alias: hrstand,stnpuls,vs_pulsestand,vtl008,vtl009
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+  alias: hwv_notes,vitals_comment,vtl006
+
+days_baseline:
+  type: Integer
+  description: Days since baseline
+  alias: bsldays,dayvital
+
+assbdic:
+  type: String
+  length: 5
+  description: Assessment Point
+  range:
+  - D
+  - 14
+  - E
+  - 24
+  - LB
+  - 36
+  - 72
+  - 96
+  - 120
+  - 9
+  - B
+  - 3
+  - 7
+  - 144
+  - 168
+  - 192
+  - C
+  notes: D=MTA baseline assessment; 14=MTA 14 month assessment; E=MTA early termination
+    assessment; B = MTA Pre-Baseline Screening Assessment (579/579); 09 = MTA 9 Month
+    Assessment (530/530); 24=MTA 24 month assessment; LB=LNCG baseline assessment;
+    36=MTA and LNCG 3 year assessment; 72=MTA and LNCG 6 year assessment; 96=MTA and
+    LNCG 8 year assessment; 03 = MTA 3 Month Assessment (438/687);120=MTA and LNCG
+    10 year assessment; 7= 7th Grade Assessment (221/276); 144 = MTA & LNCG 12 Month
+    Assessment (578/578); 168 = MTA & LNCG 14 Month Assessment (585/585); 192 = MTA
+    & LNCG 16 Month Assessment (505/505); C = MTA Pre-Baseline Screening Assessment
+    (78/78)
+  alias: assvital
+  codes:
+    D: MTA baseline assessment
+    14: MTA 14 month assessment
+    E: MTA early termination assessment
+    B: MTA Pre-Baseline Screening Assessment (579/579)
+    9: MTA 9 Month Assessment (530/530)
+    24: MTA 24 month assessment
+    LB: LNCG baseline assessment
+    36: MTA and LNCG 3 year assessment
+    72: MTA and LNCG 6 year assessment
+    96: MTA and LNCG 8 year assessment
+    3: MTA 3 Month Assessment (438/687)
+    120: MTA and LNCG 10 year assessment
+    7: 7th Grade Assessment (221/276)
+    144: MTA & LNCG 12 Month Assessment (578/578)
+    168: MTA & LNCG 14 Month Assessment (585/585)
+    192: MTA & LNCG 16 Month Assessment (505/505)
+    C: MTA Pre-Baseline Screening Assessment (78/78)
+
+relationship:
+  type: Integer
+  description: Relationship of respondent to individual
+  range:
+  - 1::93
+  - -999
+  notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
+    (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
+    Speech and language therapist; 8 = Behavioral therapist; 9 = Paraprofessional;
+    10 = Aide; 11 = Principal; 12 = Administrator; 13 = 90=Other; 14 = Content teacher;
+    15 = Parent center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father;
+    19=Foster mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother;
+    24 = Step-father; 25=Aunt; 26=Uncle; 27=Missing Data; 28=Both parents;31= Grandmother
+    from mother side; 32= Grandfather from mother side; 33= Grandmother from father
+    side; 34= Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39=
+    female caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
+    44=Friend; 45=Parent; 46=Significant other; 47=Sibling; 48=Son/Daughter; 49=Son-in-law/Daughter-in
+    law; 50=Other Relative; 51=Paid caregiver; 52=Friends; 53=Roommate; 54=Supervisor;
+    55=mother's boyfriend; 56=other parental figure; 57=Summary; 58=counselor ; 59
+    = other female relative; 60 = other male relative; 61 = non-relative ; 62=Maternal
+    Aunt; 63=Maternal Uncle; 64=Maternal Cousin; 65 = Paternal Aunt; 66=Paternal Uncle;
+    67=Paternal Cousin ; 68=Biological/Adoptive Mother and Grandmother; 69=Biological/Adoptive
+    Mother and Stepmother and Grandmother; 70=Biological/Adoptive Mother and Grandmother
+    and Foster Father; 71=Biological/Adoptive Mother and Stepmother and Foster Mother;
+    72=Biological/Adoptive Mother and Foster Mother; 73=Biological/Adoptive Mother
+    and Biological/Adoptive Father; 74=Biological/Adoptive Mother and Stepmother and
+    Biological/Adoptive Father; 75=Biological/Adoptive Mother and Other; 76=Biological/Adoptive
+    Mother and Stepmother and Stepfather; 77=Biological/Adoptive Mother and Stepfather;
+    78=Biological/Adoptive Mother and Grandfather; 79=Biological/Adoptive Mother and
+    Stepmother and Foster Father; 80=Biological/Adoptive Mother and Stepmother; 81=Guardian,
+    female; 82=Other female; 83=Guardian, male; 84=Other male; 85=Other/Grandparent/Nanny;
+    86 = Mother, Father, Guardian; 87 = Daughter, son, grandchild; 88 = Professional
+    (e.g., social worker, nurse, therapist, psychiatrist, or group home staff);  -999=Missing;
+    89 = Biological parent; 91 = Stepparent; 92 = Adoptive parent; 93 = Foster parent
+  alias: infrmnt2,relvital
+  codes:
+    1: Biological mom
+    2: Biological dad
+    3: Grandparent
+    4: Special education (sped) teacher
+    5: General education teacher
+    6: Occupational therapist
+    7: Speech and language therapist
+    8: Behavioral therapist
+    9: Paraprofessional
+    10: Aide
+    11: Principal
+    12: Administrator
+    13: 90=Other
+    14: Content teacher
+    15: Parent center director
+    16: Self
+    17: Adoptive mother
+    18: Adoptive father
+    19: Foster mother
+    20: Foster father
+    21: Grandmother
+    22: Grandfather
+    23: Step-mother
+    24: Step-father
+    25: Aunt
+    26: Uncle
+    27: Missing Data
+    28: Both parents
+    31: Grandmother from mother side
+    32: Grandfather from mother side
+    33: Grandmother from father side
+    34: Grandfather from father side
+    36: Brother
+    37: Sister
+    38: Cousin
+    39: female caregiver
+    40: male caregiver
+    41: Female child
+    42: Male child
+    43: Spouse/Mate
+    44: Friend
+    45: Parent
+    46: Significant other
+    47: Sibling
+    48: Son/Daughter
+    49: Son-in-law/Daughter-in law
+    50: Other Relative
+    51: Paid caregiver
+    52: Friends
+    53: Roommate
+    54: Supervisor
+    55: mother's boyfriend
+    56: other parental figure
+    57: Summary
+    58: counselor
+    59: other female relative
+    60: other male relative
+    61: non-relative
+    62: Maternal Aunt
+    63: Maternal Uncle
+    64: Maternal Cousin
+    65: Paternal Aunt
+    66: Paternal Uncle
+    67: Paternal Cousin
+    68: Biological/Adoptive Mother and Grandmother
+    69: Biological/Adoptive Mother and Stepmother and Grandmother
+    70: Biological/Adoptive Mother and Grandmother and Foster Father
+    71: Biological/Adoptive Mother and Stepmother and Foster Mother
+    72: Biological/Adoptive Mother and Foster Mother
+    73: Biological/Adoptive Mother and Biological/Adoptive Father
+    74: Biological/Adoptive Mother and Stepmother and Biological/Adoptive Father
+    75: Biological/Adoptive Mother and Other
+    76: Biological/Adoptive Mother and Stepmother and Stepfather
+    77: Biological/Adoptive Mother and Stepfather
+    78: Biological/Adoptive Mother and Grandfather
+    79: Biological/Adoptive Mother and Stepmother and Foster Father
+    80: Biological/Adoptive Mother and Stepmother
+    81: Guardian, female
+    82: Other female
+    83: Guardian, male
+    84: Other male
+    85: Other/Grandparent/Nanny
+    86: Mother, Father, Guardian
+    87: Daughter, son, grandchild
+    88: Professional (e.g., social worker, nurse, therapist, psychiatrist, or group
+      home staff)
+    -999: Missing
+    89: Biological parent
+    91: Stepparent
+    92: Adoptive parent
+    93: Foster parent
+
+actbdic:
+  type: Integer
+  description: Active status
+  range:
+  - 0::5
+  notes: 0=Inactive-Data collected after the 14 month treatment phase/after early
+    termination from treatment phase/prior to treatment phase; 1=Active-Data collected
+    during the 14 month treatment phase while subject received originally assigned
+    treatment regardless of degree of compliance; 2=Active-This is the last active
+    assessment for subjects who were about to violate treatment arm by receiving alternate
+    treatment; 3=Active-This is the last active assessment for subjects who were about
+    to leave the study by moving away;4=Yes, Active; 5=No, Not Active
+  alias: actvital
+  codes:
+    0: Inactive-Data collected after the 14 month treatment phase/after early termination
+      from treatment phase/prior to treatment phase
+    1: Active-Data collected during the 14 month treatment phase while subject received
+      originally assigned treatment regardless of degree of compliance
+    2: Active-This is the last active assessment for subjects who were about to violate
+      treatment arm by receiving alternate treatment
+    3: Active-This is the last active assessment for subjects who were about to leave
+      the study by moving away
+    4: Yes, Active
+    5: No, Not Active
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+  alias: site_no,site_uid,siteid,sitenum
+
+sjtyp:
+  type: Integer
+  description: Subject type
+  range:
+  - 1
+  - 2
+  notes: 1=MTA randomized trial subject; 2=Local normative comparison group (LNCG)
+    subject
+  codes:
+    1: MTA randomized trial subject
+    2: Local normative comparison group (LNCG) subject
+
+age:
+  type: String
+  length: 20
+  description: 'Age (years: months: days)'
+
+respct:
+  type: Float
+  description: Respirations per minute
+  alias: respiratoryrate
+
+cough:
+  type: Integer
+  description: Cough
+  range:
+  - 1
+  - 2
+  notes: 1=No; 2=Yes
+  codes:
+    1: 'No'
+    2: 'Yes'
+
+wheeze:
+  type: Integer
+  description: Wheeze
+  range:
+  - 1
+  - 2
+  notes: 1=No; 2=Yes
+  codes:
+    1: 'No'
+    2: 'Yes'
+
+othresp:
+  type: Integer
+  description: Other respiratory abnormality
+  range:
+  - 1
+  - 2
+  notes: 1=No; 2=Yes
+  codes:
+    1: 'No'
+    2: 'Yes'
+
+tics5:
+  type: Integer
+  description: Count of tics per 5 minutes
+  notes: 0=Tics present but less than one in 5 minutes
+  codes:
+    0: Tics present but less than one in 5 minutes
+
+vocal:
+  type: Integer
+  description: Vocal tic
+  range:
+  - 1
+  - 2
+  notes: 1=No; 2=Yes
+  codes:
+    1: 'No'
+    2: 'Yes'
+
+motor:
+  type: Integer
+  description: Motor tic
+  range:
+  - 1::3
+  notes: 1=No; 2=Yes; 3=Current
+  codes:
+    1: 'No'
+    2: 'Yes'
+    3: Current
+
+simple:
+  type: Integer
+  description: Simple tic
+  range:
+  - 1
+  - 2
+  notes: 1=No; 2=Yes
+  codes:
+    1: 'No'
+    2: 'Yes'
+
+complex:
+  type: Integer
+  description: Complex tic
+  range:
+  - 1
+  - 2
+  notes: 1=No; 2=Yes
+  codes:
+    1: 'No'
+    2: 'Yes'
+
+single:
+  type: Integer
+  description: Single tic
+  range:
+  - 1
+  - 2
+  notes: 1=No; 2=Yes
+  codes:
+    1: 'No'
+    2: 'Yes'
+
+mult:
+  type: Integer
+  description: Multiple tics
+  range:
+  - 1
+  - 2
+  notes: 1=No; 2=Yes
+  codes:
+    1: 'No'
+    2: 'Yes'
+
+facial:
+  type: Integer
+  description: Movement Severity Score-facial and oral
+  notes: 'Created variable with 20% missing data rule applied: Sum of AIMS01-AIMS04'
+
+othtic:
+  type: Integer
+  description: Other location of tic
+  range:
+  - 1
+  - 2
+  notes: 1=No; 2=Yes
+  codes:
+    1: 'No'
+    2: 'Yes'
+
+ptawar:
+  type: Integer
+  description: Is patient aware of tic?
+  range:
+  - 1
+  - 2
+  notes: 1=No; 2=Yes
+  codes:
+    1: 'No'
+    2: 'Yes'
+
+parawar:
+  type: Integer
+  description: Is parent aware of tic?
+  range:
+  - 1
+  - 2
+  notes: 1=No; 2=Yes
+  codes:
+    1: 'No'
+    2: 'Yes'
+
+ticsev:
+  type: Integer
+  description: Tic severity
+  range:
+  - 1::4
+  notes: 1=Clinically insignificant; 2=Bothersome; 3=Impairing; 4=Handicapping
+  codes:
+    1: Clinically insignificant
+    2: Bothersome
+    3: Impairing
+    4: Handicapping
+
+eyer:
+  type: Float
+  description: Visual acuity right eye 20/_
+
+eyel:
+  type: Float
+  description: Visual acuity left eye 20/_
+
+earr:
+  type: Integer
+  description: Hearing right ear
+  range:
+  - 1
+  - 2
+  notes: 1=Normal; 2=Impaired
+  codes:
+    1: Normal
+    2: Impaired
+
+earl:
+  type: Integer
+  description: Hearing left ear
+  range:
+  - 1
+  - 2
+  notes: 1=Normal; 2=Impaired
+  codes:
+    1: Normal
+    2: Impaired
+
+heent:
+  type: String
+  length: 10
+  description: Heent exam
+  range:
+  - normal
+  - abnormal
+  - other
+
+endo:
+  type: Integer
+  description: Endocrine exam
+  range:
+  - 1::3
+  notes: 1=Wide range of normal variability; 2=Abnormal by exam; 3=Abnormal by history
+    only
+  codes:
+    1: Wide range of normal variability
+    2: Abnormal by exam
+    3: Abnormal by history only
+
+card:
+  type: Integer
+  description: Cardiac/circulatory exam
+  range:
+  - 1::3
+  notes: 1=Wide range of normal variability; 2=Abnormal by exam; 3=Abnormal by history
+    only
+  codes:
+    1: Wide range of normal variability
+    2: Abnormal by exam
+    3: Abnormal by history only
+
+abdom:
+  type: Integer
+  description: Abdomen/gastrointestinal exam
+  range:
+  - 1::3
+  notes: 1=Wide range of normal variability; 2=Abnormal by exam; 3=Abnormal by history
+    only
+  codes:
+    1: Wide range of normal variability
+    2: Abnormal by exam
+    3: Abnormal by history only
+
+skin:
+  type: Integer
+  description: Skin exam
+  range:
+  - 0::5
+  notes: 1=Wide range of normal variability; 2=Abnormal by exam; 3=Abnormal by history
+    only; 0=Not done; 4=Normal; 5=Abnormal
+  codes:
+    1: Wide range of normal variability
+    2: Abnormal by exam
+    3: Abnormal by history only
+    0: Not done
+    4: Normal
+    5: Abnormal
+
+musc:
+  type: Integer
+  description: Musculoskeletal exam
+  range:
+  - 1::3
+  notes: 1=Wide range of normal variability; 2=Abnormal by exam; 3=Abnormal by history
+    only
+  codes:
+    1: Wide range of normal variability
+    2: Abnormal by exam
+    3: Abnormal by history only
+
+neur:
+  type: Integer
+  description: Neurological exam
+  range:
+  - 1::3
+  notes: 1=Wide range of normal variability; 2=Abnormal by exam; 3=Abnormal by history
+    only
+  codes:
+    1: Wide range of normal variability
+    2: Abnormal by exam
+    3: Abnormal by history only
+
+respir:
+  type: Integer
+  description: Respiratory exam
+  range:
+  - 1::3
+  notes: 1=Wide range of normal variability; 2=Abnormal by exam; 3=Abnormal by history
+    only
+  alias: resp
+  codes:
+    1: Wide range of normal variability
+    2: Abnormal by exam
+    3: Abnormal by history only
+
+alc_breath:
+  type: Float
+  description: Alcohol Breathalyzer Reading
+
+carbon_mon_breath:
+  type: String
+  length: 25
+  description: Carbon Monoxide Breathalyzer Reading
+
+positive_drugs0:
+  type: Integer
+  description: Positive for No elicit drugs
+  range:
+  - 0::1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+positive_drugs1:
+  type: Integer
+  description: Positive for Cotinine
+  range:
+  - 0::1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+positive_drugs2:
+  type: Integer
+  description: Positive for COC
+  range:
+  - 0::1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+positive_drugs3:
+  type: Integer
+  description: Positive for AMP
+  range:
+  - 0::1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+positive_drugs4:
+  type: Integer
+  description: Positive for mAMP
+  range:
+  - 0::1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+positive_drugs5:
+  type: Integer
+  description: Positive for THC
+  range:
+  - 0::1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+positive_drugs6:
+  type: Integer
+  description: Positive for MTD
+  range:
+  - 0::1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+positive_drugs7:
+  type: Integer
+  description: Positive for OPI
+  range:
+  - 0::1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+positive_drugs8:
+  type: Integer
+  description: Positive for PCP
+  range:
+  - 0::1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+positive_drugs9:
+  type: Integer
+  description: Positive for BAR
+  range:
+  - 0::1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+positive_drugs10:
+  type: Integer
+  description: Positive for BZO
+  range:
+  - 0::1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+current_medication:
+  type: String
+  length: 300
+  description: subject's current medications
+  alias: medications
+
+bp:
+  type: String
+  length: 25
+  description: Blood Pressure
+  alias: blood_pressure,blood_pressure2_1e7,bpressure,ch_bp_baseline
+
+pulse:
+  type: Float
+  description: Pulse
+
+trt_grp:
+  type: String
+  length: 10
+  description: Treatment Group Assignment
+  range:
+  - 1
+  - 1AO
+  - 1CT
+  - 2
+  - 3
+  notes: 1=Group 1 first 8 weeks; 1AO=Group 1 8 week add on; 1CT=Group 1 8 week cross
+    taper; 2=Group 2; 3=Group 3
+  codes:
+    1: Group 1 first 8 weeks
+    2: Group 2
+    3: Group 3
+
+etype:
+  type: String
+  length: 10
+  description: Rating Period
+  range:
+  - BSL
+  - WK1
+  - WK2
+  - WK3
+  - WK4
+  - WK5
+  - WK6
+  - WK7
+  - WK8
+  - WK9
+  - WK10
+  - WK11
+  - WK12
+  - WK13
+  - WK14
+  - WK15
+  - WK16
+  notes: BSL=Baseline; WK1-WK16=Weeks 1-16
+  codes:
+    BSL: Baseline
+
+respond_detail_oth_spec:
+  type: String
+  length: 255
+  description: Respondent details
+  alias: informnt
+
+hwb_bmipct:
+  type: Float
+  description: BMI percentile
+  alias: bmi_perc_baseline
+
+hwb_bslkg:
+  type: Float
+  description: Baseline weight (kg)
+  notes: Same as "Today's weight" at baseline
+  alias: blwtkg,wght1
+
+hwb_ckgainkg:
+  type: Float
+  description: Weight gain
+
+hwb_pct_gain:
+  type: Float
+  description: Calculated percent weight gain
+  notes: Between baseline and this rating period
+
+hwb_bp1_hwb_bp2:
+  type: String
+  length: 25
+  description: Blood pressure - right arm after sitting for 1 minute
+
+hwb_pulse:
+  type: Float
+  description: Pulse - right arm after sitting for 1 minute
+
+fseqno:
+  type: Integer
+  description: Sequence Number
+  range:
+  - 0::999
+  notes: 'The FSEQNO variable in the ADJ form has a special interpretation compared
+    to other forms.
+
+    For example, ADJ FSEQNO of ''1'' can be thought of as being ''001'', FSEQNO of
+    ''2'' can be thought of as
+
+    being ''002'', and FSEQNO of ''3'' can be thought of as being ''003''.
+
+    The first digit of FSEQNO relates to the corresponding ENF sequence number at
+    that visit and the third
+
+    digit relates to the specific adjudicator who completed the adjudication form.'
+
+vssa2b:
+  type: Float
+  description: Repeat standing height measurement to confirm
+  range:
+  - 0::150
+  notes: in inches
+
+vssa2c:
+  type: Float
+  description: Computed average height
+  range:
+  - 0::150
+  notes: in inches
+
+vssa7b:
+  type: Float
+  description: Repeat waist measurement to confirm
+  range:
+  - 0::150
+  notes: in inches
+  alias: vsfa5b,wstcirc2
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: form_id,form_name,formid,vers
+
+vsfa5:
+  type: Integer
+  description: Is this a quarterly follow-up (with labs) or discontinuation visit?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+vsfa6b:
+  type: Float
+  description: Repeat waist measurement to confirm
+  range:
+  - 0::1000
+
+daysrz:
+  type: Integer
+  description: days since randomization
+  alias: date,visitdt,vsfa0ba,vssa0b
+
+blwt:
+  type: Float
+  description: Baseline weight in pounds
+  alias: hwv_weight_lbs
+
+chwt:
+  type: Float
+  description: Change from baseline in weight in lbs
+
+chwtkg:
+  type: Float
+  description: Change from baseline in weight in kg
+
+pchwtkg:
+  type: Float
+  description: Percent change in weight
+
+bsln_bmi:
+  type: Float
+  description: Baseline BMI
+
+chng_bmi:
+  type: Float
+  description: change from baseline in bmi
+
+study:
+  type: String
+  length: 100
+  description: Study
+  alias: studyid
+
+completed:
+  type: Integer
+  description: Checks if completed
+  range:
+  - 0::3
+  notes: 0=No; 1=Yes; 2=Yes, lost; 3=Unverified
+  alias: formcomp,tstst
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Yes, lost
+    3: Unverified
+
+subtrial_name:
+  type: Integer
+  description: Name of subtrial
+  range:
+  - 1::3
+  notes: 1=Crossover; 2=Guanfacine; 3= Open Label MPH
+  codes:
+    1: Crossover
+    2: Guanfacine
+    3: Open Label MPH
+
+q19_a2c:
+  type: Float
+  description: 'Head circumference: Centimeters'
+  alias: head_circumference,head_circumfrence,vit_q06
+
+caffcoff:
+  type: Integer
+  description: Cups coffee
+
+cafftea:
+  type: Float
+  description: Cups tea
+
+caffsoda:
+  type: Integer
+  description: Soda (12-oz)
+
+caffchoc:
+  type: Integer
+  description: Chocolate (1-oz)
+
+session_id:
+  type: String
+  length: 20
+  description: session ID/screening ID
+  alias: screeningid,session
+
+vshgtcm:
+  type: Float
+  description: Vital Signs Height in centimeters for BMI
+
+vsstbpsi:
+  type: Float
+  description: Initial Blood Pressure Systolic Standing
+
+vsstbpdi:
+  type: Float
+  description: Initial Blood Pressure Diastolic Standing
+
+vssubpsi:
+  type: Float
+  description: Initial Blood Pressure Systolic Supine
+
+vssubpdi:
+  type: Float
+  description: Initial Blood Pressure Diastolic Supine
+
+vssthri:
+  type: Float
+  description: Initial Heart Rate Standing
+
+vssuhri:
+  type: Float
+  description: Initial Heart Rate Supine
+
+vssubp1:
+  type: Float
+  description: Blood Pressure Systolic Supine
+  alias: vs_bpsysly
+
+vssubp2:
+  type: Float
+  description: Blood Pressure Diastolic Supine
+  alias: vs_bpdialy
+
+vssthr:
+  type: Float
+  description: Heart Rate Standing
+
+vssuhr:
+  type: Float
+  description: Heart Rate Supine
+
+stbps15:
+  type: Float
+  description: 15 minute Blood Pressure Systolic Standing
+
+stbpd15:
+  type: Float
+  description: 15 minute Blood Pressure Diastolic Standing
+
+subps15:
+  type: Float
+  description: 15 minute Blood Pressure Systolic Supine
+  alias: syst2
+
+subpd15:
+  type: Float
+  description: 15 minute Blood Pressure Diastolic Supine
+  alias: dias2
+
+vssthr15:
+  type: Float
+  description: 15 minute Heart Rate Standing
+
+vssuhr15:
+  type: Float
+  description: 15 minute Heart Rate Supine
+
+stbps30:
+  type: Float
+  description: 30 minute Blood Pressure Systolic Standing
+
+stbpd30:
+  type: Float
+  description: 30 minute Blood Pressure Diastolic Standing
+
+subps30:
+  type: Float
+  description: 30 minute Blood Pressure Systolic Supine
+  alias: syst3
+
+subpd30:
+  type: Float
+  description: 30 minute Blood Pressure Diastolic Supine
+  alias: dias3
+
+vssthr30:
+  type: Float
+  description: 30 minute Heart Rate Standing
+
+vssuhr30:
+  type: Float
+  description: 30 minute Heart Rate Supine
+
+positive_drugs11:
+  type: Integer
+  description: Positive for OXY
+  range:
+  - 0::1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+positive_drugs12:
+  type: Integer
+  description: Positive for MDMA
+  range:
+  - 0::1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+positive_drugs13:
+  type: Integer
+  description: Positive for PPX
+  range:
+  - 0::1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+c_waist:
+  type: Float
+  description: Waist (cm)
+  alias: hwv_waist_circum_cm,v10_avs_waistcircum,v2_avs_waistcircum,vs_waistcirc,wstcirc1
+
+visnum:
+  type: Float
+  description: Numeric Visit Number
+  notes: '-1.5 = Pre-Screening; -1 = Screening; 0 = Baseline; ## = Visit ## (from
+    1 to 10); Whole numbers = standard monthly visits; #.001 - #.009 = Unscheduled;
+    #.1 = End of Phase 1; #.2 = End of Phase 2; #.3 = End of Phase 3; #.4 = End of
+    Open Choice Phase; #.5 = End of Study; #.6 = Genetic Analysis; 1000=all visits'
+  alias: visit_number_vitals
+  codes:
+    -1.5: Pre-Screening
+    -1: Screening
+    0: Baseline
+    9: Unscheduled
+    1: End of Phase 1
+    2: End of Phase 2
+    3: End of Phase 3
+    4: End of Open Choice Phase
+    5: End of Study
+    6: Genetic Analysis
+    1000: all visits
+
+lastoc:
+  type: Integer
+  description: Flag Last Open Choice Phase Visit
+  range:
+  - 1
+  notes: 1=Yes for all records meeting this criteria
+  codes:
+    1: Yes for all records meeting this criteria
+
+baseoc:
+  type: Integer
+  description: 'Flag Baseline Open
+
+    Choice Phase Visit'
+  range:
+  - 1
+  notes: 1=Yes for all records meeting this criteria
+  codes:
+    1: Yes for all records meeting this criteria
+
+boc_wt:
+  type: Integer
+  description: Open choice Baseline Weight
+  notes: value for assessment at phase-specific baseline; retained across all records
+    for that assessment.
+
+vtl004:
+  type: Integer
+  description: Respiratory Rate sitting (breaths/min)
+  range:
+  - 0::60
+  - -9
+  notes: ' -9=Unknown'
+  codes:
+    -9: Unknown
+
+vtl010:
+  type: Integer
+  description: Respiratory Rate standing (breaths/min)
+
+vtlq1:
+  type: String
+  length: 10
+  description: Time Vital Signs taken
+  alias: hwv_time
+
+vtl007:
+  type: Float
+  description: Height in inches
+  alias: height,hwv_height_inch
+
+mhf_23:
+  type: Integer
+  description: Checks if physical exam was administered
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: exam
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+week:
+  type: Float
+  description: Week in level/study
+  notes: 99=week 10-week 14
+  alias: intid
+  codes:
+    99: week 10-week 14
+
+vis_type:
+  type: Integer
+  description: Visit type
+  range:
+  - 0::2
+  notes: 1=Phone; 0=doctor's office; 2=No, not phone interview
+  alias: phone
+  codes:
+    1: Phone
+    0: doctor's office
+    2: No, not phone interview
+
+blood_ps:
+  type: Integer
+  description: systolic blood pressure
+  alias: bp_syst,bpsystolic,hwv_bp_systolic
+
+blood_pd:
+  type: Integer
+  description: diastolic blood pressure
+  alias: bp_dias,bpdiastolic,diastoli,hwv_bp_diastolic
+
+date_updated:
+  type: Date
+  description: Date record updated
+  alias: edit_date
+
+vsfa7b:
+  type: Float
+  description: Repeat hip measurement to confirm
+  notes: 999=Legitimately skipped
+  alias: vssa8b
+  codes:
+    999: Legitimately skipped
+
+vstmpth:
+  type: String
+  length: 10
+  description: Time Point Hours
+  alias: timehh
+
+vstmptm:
+  type: String
+  length: 10
+  description: Time Point Minutes
+  alias: timemm
+
+intrt:
+  type: Integer
+  description: Treatment Status Code
+  range:
+  - 0::2
+  notes: 0=Baseline; 1=In Treatment; 2=In Follow-up
+  codes:
+    0: Baseline
+    1: In Treatment
+    2: In Follow-up
+
+trtgrp_p:
+  type: Integer
+  description: Treatment Group
+  range:
+  - 1
+  - 2
+  notes: 1=Long-Acting Injectable Risperidone Microspheres; 2=Second Generation Oral
+    Antipsychotic Medication
+  codes:
+    1: Long-Acting Injectable Risperidone Microspheres
+    2: Second Generation Oral Antipsychotic Medication
+
+days_visit1:
+  type: Integer
+  description: Days from Visit 1
+  alias: dav1vs
+
+premorbidweight:
+  type: Integer
+  description: Premorbid body weight (Baseline only) lbs
+
+study_id:
+  type: Integer
+  description: Study ID number
+  notes: 46=Acute Phase; 47=Stabilization Phase
+  codes:
+    46: Acute Phase
+    47: Stabilization Phase
+
+subj_pos:
+  type: String
+  length: 20
+  description: Position of subject
+  notes: Sitting; Supine; Prone; Standing
+  alias: bpposit
+
+cardio_respratecount:
+  type: String
+  length: 50
+  description: Respiratory Rate - Count
+  alias: respiration,resprate
+
+arith_temperature_ct:
+  type: String
+  length: 50
+  description: Temperature
+  alias: temp,temp_count
+
+tempunit:
+  type: String
+  length: 20
+  description: Temperature Unit
+  range:
+  - Fahrenheit
+  - Celsius
+  alias: hwv_temp_unit
+
+attend:
+  type: Integer
+  description: Attended Evaluation
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 1=Yes; 0=No; -9=Unknown
+  codes:
+    1: 'Yes'
+    0: 'No'
+    -9: Unknown
+
+body_temp_f:
+  type: Float
+  description: Body Temperature Fahrenheit
+
+ci_enrolled:
+  type: Integer
+  description: Participant enrolled
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sitedatasource_1:
+  type: Integer
+  description: 'Source of Data: Site'
+  range:
+  - 0
+  - 1
+  - -888
+  - -999
+  notes: 0=False; 1=True; -888=Not Applicable; -999=Missing;
+  codes:
+    0: 'False'
+    1: 'True'
+    -888: Not Applicable
+    -999: Missing
+
+sitedatasource_phone:
+  type: Integer
+  description: 'Source of Data: Telephone'
+  range:
+  - 0
+  - 1
+  - -888
+  - -999
+  notes: 0=False; 1=True; -888=Not Applicable; -999=Missing;
+  codes:
+    0: 'False'
+    1: 'True'
+    -888: Not Applicable
+    -999: Missing
+
+sitedatasource_physician:
+  type: Integer
+  description: 'Source of Data: Physician'
+  range:
+  - 0
+  - 1
+  - -888
+  - -999
+  notes: 0=False; 1=True; -888=Not Applicable; -999=Missing;
+  codes:
+    0: 'False'
+    1: 'True'
+    -888: Not Applicable
+    -999: Missing
+
+comments:
+  type: String
+  length: 4000
+  description: Comments about assessment
+
+doa_futdt:
+  type: String
+  length: 20
+  description: Future date entered (Assessment)
+  alias: hwv_doa_futdt
+
+dode:
+  type: String
+  length: 10
+  description: Date of Data Entry
+  alias: hwv_dode
+
+dode_futdt:
+  type: String
+  length: 20
+  description: Future date entered (Data Entry)
+  alias: hwv_dode_futdt
+
+form_completed:
+  type: Integer
+  description: Was the form completed?
+  range:
+  - 1::4
+  notes: 1=Yes; 2=No; 3=Unverified; 4 = N/A-Not in age range
+  alias: hwv_form_complete
+  codes:
+    1: 'Yes'
+    2: 'No'
+    3: Unverified
+    4: N/A-Not in age range
+
+form_explain:
+  type: Integer
+  description: Why was this form not completed?
+  range:
+  - 86::99
+  notes: '99=Participant unable to complete due to cognitive impairment; 98=Participant
+    unable to complete due to physical impairment; 97=Participant refused to begin/finish;
+    96=Participant completed but with less than best effort; 95=Participant unable
+    to be contacted; 94=Participant deceased; 93=Participant withdrew consent; 92=Time
+    constraints; 91=Rater forgot to administer; 90=Missed appointment; 89=Participant
+    was terminated from study; 88=Other;87 = Not Done (reason unspecified); 86 = Not
+    Applicable '
+  alias: hwv_explain
+  codes:
+    99: Participant unable to complete due to cognitive impairment
+    98: Participant unable to complete due to physical impairment
+    97: Participant refused to begin/finish
+    96: Participant completed but with less than best effort
+    95: Participant unable to be contacted
+    94: Participant deceased
+    93: Participant withdrew consent
+    92: Time constraints
+    91: Rater forgot to administer
+    90: Missed appointment
+    89: Participant was terminated from study
+    88: Other
+    87: Not Done (reason unspecified)
+    86: Not Applicable
+
+other_reason_nc:
+  type: String
+  length: 100
+  description: Other reason form was not completed
+  alias: hwv_other_reason_nc
+
+assessment_complete:
+  type: Integer
+  description: Complete?
+  range:
+  - 0::2
+  notes: 0=Incomplete; 1=Unverified; 2=Complete
+  alias: heightweightvitals_complete
+  codes:
+    0: Incomplete
+    1: Unverified
+    2: Complete
+
+monthsbl:
+  type: Float
+  description: Actual number of months from Baseline
+
+fatmass:
+  type: Float
+  description: Fat Mass, %
+
+fatpct:
+  type: Float
+  description: Fat percentage, %
+
+v1_avs_1st_systolic:
+  type: Integer
+  description: First Reading Systolic BP (mmHg)
+  alias: systolic,v10_avs_1st_systolic,v2_avs_1st_systolic,v3_avs_1st_systolic,v4_avs_1st_systolic,v5_avs_1st_systolic,v6_avs_1st_systolic,v7_avs_1st_systolic,v8_avs_1st_systolic,v9_avs_1st_systolic
+
+v1_avs_1st_diastolic:
+  type: Integer
+  description: First Reading Diastolic BP (mmHg)
+  alias: v10_avs_1st_diastolic,v2_avs_1st_diastolic,v3_avs_1st_diastolic,v4_avs_1st_diastolic,v5_avs_1st_diastolic,v6_avs_1st_diastolic,v7_avs_1st_diastolic,v8_avs_1st_diastolic,v9_avs_1st_diastolic
+
+v1_avs_1st_pulserate:
+  type: Integer
+  description: First Reading Pulse Rate (beats/min)
+  alias: pulse1,v10_avs_1st_pulserate,v2_avs_1st_pulserate,v3_avs_1st_pulserate,v4_avs_1st_pulserate,v5_avs_1st_pulserate,v6_avs_1st_pulserate,v7_avs_1st_pulserate,v8_avs_1st_pulserate,v9_avs_1st_pulserate
+
+v1_avs_2ndt_systolic:
+  type: Integer
+  description: Second Reading Systolic BP (mmHg)
+  alias: v10_avs_2nd_systolic,v2_avs_2nd_systolic,v3_avs_2nd_systolic,v4_avs_2nd_systolic,v5_avs_2nd_systolic,v6_avs_2nd_systolic,v7_avs_2nd_systolic,v8_avs_2nd_systolic,v9_avs_2nd_systolic
+
+v1_avs_2nd_diastolic:
+  type: Integer
+  description: Second Reading Diastolic BP (mmHg)
+  alias: v10_avs_2nd_diastolic,v2_avs_2nd_diastolic,v3_avs_2nd_diastolic,v4_avs_2nd_diastolic,v5_avs_2nd_diastolic,v6_avs_2nd_diastolic,v7_avs_2nd_diastolic,v8_avs_2nd_diastolic,v9_avs_2nd_diastolic
+
+v1_avs_2nd_pulserate:
+  type: Integer
+  description: Second Reading Pulse Rate (beats/min)
+  alias: pulse2,v10_avs_2nd_pulserate,v2_avs_2nd_pulserate,v3_avs_2nd_pulserate,v4_avs_2nd_pulserate,v5_avs_2nd_pulserate,v6_avs_2nd_pulserate,v7_avs_2nd_pulserate,v8_avs_2nd_pulserate,v9_avs_2nd_pulserate
+
+v1_avs_3rd_systolic:
+  type: Integer
+  description: Third Reading Systolic BP (mmHg)
+  alias: v10_avs_3rd_systolic,v2_avs_3rd_systolic,v3_avs_3rd_systolic,v4_avs_3rd_systolic,v5_avs_3rd_systolic,v6_avs_3rd_systolic,v7_avs_3rd_systolic,v8_avs_3rd_systolic,v9_avs_3rd_systolic
+
+v1_avs_3rd_diastolic:
+  type: Integer
+  description: Third Reading Diastolic BP (mmHg)
+  alias: v10_avs_3rd_diastolic,v2_avs_3rd_diastolic,v3_avs_3rd_diastolic,v4_avs_3rd_diastolic,v5_avs_3rd_diastolic,v6_avs_3rd_diastolic,v7_avs_3rd_diastolic,v8_avs_3rd_diastolic,v9_avs_3rd_diastolic
+
+v1_avs_3rd_pulserate:
+  type: Integer
+  description: Third Reading Pulse Rate (beats/min)
+  alias: pulse3,v10_avs_3rd_pulserate,v2_avs_3rd_pulserate,v3_avs_3rd_pulserate,v4_avs_3rd_pulserate,v5_avs_3rd_pulserate,v6_avs_3rd_pulserate,v7_avs_3rd_pulserate,v8_avs_3rd_pulserate,v9_avs_3rd_pulserate
+
+v1_avs_average_sysbp:
+  type: Integer
+  description: Average Systolic Blood Pressure (mmHg)
+  alias: systmean,v10_avs_average_sysbp,v2_avs_average_sysbp,v3_avs_average_sysbp,v4_avs_average_sysbp,v5_avs_average_sysbp,v6_avs_average_sysbp,v7_avs_average_sysbp,v8_avs_average_sysbp,v9_avs_average_sysbp
+
+v1_avs_average_diasbp:
+  type: Integer
+  description: Average Diastolic Blood Pressure (mmHg)
+  alias: diastmean,v10_avs_average_diasbp,v2_avs_average_diasbp,v3_avs_average_diasbp,v4_avs_average_diasbp,v5_avs_average_diasbp,v6_avs_average_diasbp,v7_avs_average_diasbp,v8_avs_average_diasbp,v9_avs_average_diasbp
+
+v1_avs_average_pulserate:
+  type: Integer
+  description: Average Pulse Rate (beats/min)
+  alias: pulsemean,v10_avs_average_pulserate,v2_avs_average_pulserate,v3_avs_average_pulserate,v4_avs_average_pulserate,v5_avs_average_pulserate,v6_avs_average_pulserate,v7_avs_average_pulserate,v8_avs_average_pulserate,v9_avs_average_pulserate
+
+c_hip:
+  type: Float
+  description: Hip circumference, cm
+  alias: v10_avs_hipcircum,v2_avs_hipcircum,vs_hipcircum
+
+aescode:
+  type: Integer
+  description: Staff code number of person completing this form
+  alias: vitalsf_u_collected_by
+
+visualacuity:
+  type: Integer
+  description: Visual acuity (both eyes)
+
+vs_sftricep:
+  type: Float
+  description: mean tricep  skinfold thickness(mm)
+
+vs_sfsubscap:
+  type: Float
+  description: mean subscapular skinfold thickness (mm)
+
+htdzy:
+  type: Integer
+  description: 'Heart: Dizziness on standing'
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: vs_dizziness
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+vs_pulsely:
+  type: Float
+  description: pulse lying
+
+me2:
+  type: Integer
+  description: Status
+  range:
+  - 0
+  - 1
+  notes: 0 = Past [Inactive]; 1 = Active
+  codes:
+    0: Past [Inactive]
+    1: Active
+
+lineno:
+  type: Integer
+  description: Line number (lines per participant)
+  range:
+  - 0::150
+
+rand_num:
+  type: Integer
+  description: Randomization Number
+  range:
+  - 0::2
+
+armused:
+  type: Integer
+  description: 'Which arm was used? (Note: right arm should be used as the default)'
+  range:
+  - 1
+  - 2
+  notes: 1= Right; 2=Left
+  alias: ch_arm_baseline
+  codes:
+    1: Right
+    2: Left
+
+cuffsize:
+  type: Integer
+  description: What cuff size was used
+  range:
+  - 1::4
+  notes: 1= Small; 2= Medium; 3= Large; 4= Thigh
+  codes:
+    1: Small
+    2: Medium
+    3: Large
+    4: Thigh
+
+wstdiff:
+  type: Integer
+  description: Are waist measurment 1 and measurement 2 >0.5cm apart?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1= Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+wstcirc3:
+  type: Integer
+  description: Waist circumference (in centimeters) measurement 3
+
+t1bmizy:
+  type: Float
+  description: BMI z-score
+  alias: bmi_z_score
+
+vtl010a:
+  type: Integer
+  description: Has there been a change in orthostatic vitals from sitting to standing
+    that excludes the subject from the study?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+timept:
+  type: Integer
+  description: Time Point
+  notes: 888 = not applicable; 999 = missing
+  alias: timepoint
+  codes:
+    888: not applicable
+    999: missing
+
+heart_rate_cogchal1_3y:
+  type: Integer
+  description: cognitive challenge heart rate
+  alias: heart_rate_cogchal2_3y,heart_rate_cogchal_5y,heart_rate_cogchal_7y
+
+heart_rate_cogcont_3y:
+  type: Integer
+  description: cognitive control heart rate
+  alias: heart_rate_cogcont_5y,heart_rate_cogcont_7y
+
+heart_rate_emotechal_3y:
+  type: Integer
+  description: emotional challenge heart rate
+  alias: heart_rate_emotechal_5y,heart_rate_emotechal_7y
+
+heart_rate_emotecont_3y:
+  type: Integer
+  description: emotional control heart rate
+  alias: heart_rate_emotecont_5y,heart_rate_emotecont_7y
+
+heart_rate_phychal_3y:
+  type: Integer
+  description: physical challenge heart rate
+  alias: heart_rate_phychal_5y,heart_rate_phychal_7y
+
+heart_rate_phycont_3y:
+  type: Integer
+  description: physical control heart rate
+  alias: heart_rate_phycont_5y,heart_rate_phycont_7y
+
+heart_rate_socchal_5y:
+  type: Integer
+  description: social challenge heart rate
+  alias: heart_rate_socchal_7y
+
+heart_rate_soccont1_5y:
+  type: Integer
+  description: social control heart rate
+  alias: heart_rate_soccont1_7y,heart_rate_soccont2_5y,heart_rate_soccont2_7y
+
+visual_acuity:
+  type: Integer
+  description: Smallest size that they were able to read correctly.
+  range:
+  - 1::9
+  notes: 1=4.0 m/160 in; 2=2.0 m/80 in; 3=1.4 m/56 in; 4=1.2 m/48 in; 5=1.0 m/40 in;
+    6=80 cm/32 in; 7=60 cm/24 in; 8=50 cm/20 in; 9=40 cm/16 in
+  codes:
+    1: 4.0 m/160 in
+    2: 2.0 m/80 in
+    3: 1.4 m/56 in
+    4: 1.2 m/48 in
+    5: 1.0 m/40 in
+    6: 80 cm/32 in
+    7: 60 cm/24 in
+    8: 50 cm/20 in
+    9: 40 cm/16 in
+
+wk_heart_rate_com:
+  type: String
+  length: 250
+  description: Heart rate. Comments
+  alias: hr_follow_up_comments,hr_screening_comments
+
+regmense:
+  type: Integer
+  description: Regular menstrual periods
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=No;1=Yes; 999=NA
+  alias: lmp,lmp_follow_up
+  codes:
+    0: 'No'
+    1: 'Yes'
+    999: NA
+
+mnstrdt:
+  type: Date
+  description: Date of Last Menstrual Period
+  alias: lmp_date,lmp_follow_up_date
+
+mchq_18:
+  type: String
+  length: 100
+  description: Do you have regular menstrual cycles. If no, explain
+  alias: no_lmp_follow_up_comments
+
+bp_screening_status:
+  type: Integer
+  description: Blood Pressure Results
+  range:
+  - 1
+  - 2
+  notes: 1= Normal; 2= Abnormal
+  codes:
+    1: Normal
+    2: Abnormal
+
+bp_screening_comments:
+  type: String
+  length: 200
+  description: Blood Pressure Comments
+
+hr_screening_status:
+  type: Integer
+  description: Heart Rate Results
+  range:
+  - 1
+  - 2
+  notes: 1= Normal; 2= Abnormal
+  codes:
+    1: Normal
+    2: Abnormal
+
+no_lmp_why:
+  type: String
+  length: 200
+  description: If no last menstrual period, please explain why
+
+laba5:
+  type: Float
+  description: Hdl Cholesterol (Mg/Dl)
+  notes: ' -9=Unknown'
+  alias: hdl
+  codes:
+    -9: Unknown
+
+rsptc_no:
+  type: Float
+  description: Blood value - Total Cholesterol (mg/dL)
+  notes: ' -9=Unknown'
+  alias: cholesterol
+  codes:
+    -9: Unknown
+
+scq_02_a:
+  type: Integer
+  description: High Blood pressure treatment
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: hypertension
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+smoke_past:
+  type: Integer
+  description: Child ever smoked?
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 1 = Yes; 0 = No; 9 = Unknown
+  alias: smoking
+  codes:
+    1: 'Yes'
+    0: 'No'
+    9: Unknown
+
+cr2:
+  type: Integer
+  description: Diabetes Mellitus
+  range:
+  - 0
+  - 1
+  notes: 0 = No current diabetes or random BS < 220;1 = Diagnosis of diabetes or random
+    BS >220
+  alias: diabetes
+  codes:
+    0: No current diabetes or random BS < 220
+    1: Diagnosis of diabetes or random BS >220
+
+risk_total:
+  type: Integer
+  description: 10-Year Risk of Heart Attack Total
+  range:
+  - 0::500
+
+vascular_age:
+  type: Integer
+  description: Heart/Vascular Age in years
+  range:
+  - 0::100
+
+hr_time2:
+  type: Float
+  description: heart rate (bpm) at time point 2
+
+hr_time3:
+  type: Float
+  description: heart rate (bpm) at time point 3
+
+hr_time4:
+  type: Float
+  description: heart rate (bpm) at time point 4
+
+moi:
+  type: Integer
+  description: Method of Injury
+  range:
+  - 1::8
+  notes: 1= Motor Vehicle Crash; 2= Gun Shot; 3= Stab; 4= Fall; 5= Pedestrian Struck;
+    6= Motorcycle Crash; 7= Crush Injury; 8= Other
+  codes:
+    1: Motor Vehicle Crash
+    2: Gun Shot
+    3: Stab
+    4: Fall
+    5: Pedestrian Struck
+    6: Motorcycle Crash
+    7: Crush Injury
+    8: Other
+
+moi_other:
+  type: String
+  length: 200
+  description: 'Method of Injury: Specify other'
+
+injusry_ss:
+  type: Integer
+  description: Injury Severity Score
+
+blooddtm:
+  type: String
+  length: 25
+  description: Date and Time of Blood Draw
+
+blood_draw_4:
+  type: Integer
+  description: Was re-draw needed?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1= Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+activ_level:
+  type: Integer
+  description: Activity Level During Hospitalization
+  range:
+  - 1::3
+  notes: 1= Bedridden; 2= Ambulatory with Help; 3= Ambulatory Independently
+  codes:
+    1: Bedridden
+    2: Ambulatory with Help
+    3: Ambulatory Independently
+
+nida_y_tobaco_type:
+  type: Float
+  description: Smoking status
+  range:
+  - 0
+  - 1
+  - 2
+  - 2.1
+  - 2.2
+  - 2.3
+  - 2.31
+  notes: 0 = Never smoker; 1 = Non-Smoker; 2 = Smoker; 2.1 = Current Every-Day Smoker
+    ; 2.2 = Current Some-Day Smoker ; 2.3 = Former Smoker ; 2.31 = Former Smoker Heavier
+    Past Exposure
+  codes:
+    0: Never smoker
+    1: Non-Smoker
+    2: Smoker
+    2.1: Current Every-Day Smoker
+    2.2: Current Some-Day Smoker
+    2.3: Former Smoker
+    2.31: Former Smoker Heavier Past Exposure
+
+resp_source:
+  type: Integer
+  description: Respondent Source
+  range:
+  - 1::6
+  notes: 1= subject; 2= parent; 3= clinician; 4= teacher; 5= trainer; 6= fidelity
+    reviewer
+  alias: source
+  codes:
+    1: subject
+    2: parent
+    3: clinician
+    4: teacher
+    5: trainer
+    6: fidelity reviewer
+
+validity:
+  type: String
+  length: 13
+  description: Valdity rating
+  range:
+  - 'Yes'
+  - 'No'
+  - Questionnable
+
+temp_site:
+  type: Integer
+  description: Temperature Site
+  range:
+  - 1
+  - 2
+  notes: 1= Ear; 2= Oral
+  codes:
+    1: Ear
+    2: Oral

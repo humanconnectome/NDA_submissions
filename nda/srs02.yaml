@@ -1,0 +1,1637 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: SRS_2005_SRC_Subject_ID,case_id,child_id,demo_study_id,individual,measure_individual,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: SRS_2005_interview_date,date_of_evaluation,measure_date_of_evaluation,visit_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: SRS_2005_interview_age,bslage,eval_age_months,measure_eval_age_months
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+  alias: SRS_2005_comments_misc
+
+respond:
+  type: Integer
+  required: true
+  description: Respondent
+  range:
+  - 1::5
+  - 999
+  notes: 1 = Parent; 2 = Teacher; 3=Self; 4= Other; 5= Significant other; 999 = Not
+    available
+  alias: SRS_2005_Respond
+  codes:
+    1: Parent
+    2: Teacher
+    3: Self
+    4: Other
+    5: Significant other
+    999: Not available
+
+respond_detail:
+  type: Integer
+  required: true
+  description: Respondent detail
+  range:
+  - 1::8
+  - 999
+  notes: 1 = Mother; 2 = Father; 3 = Other relative or custodial adult; 4 = Teacher
+    or caregiver; 5 = Other specialist; 6 = Other; 7 = Child; 8= Spouse; 999 = Not
+    available
+  alias: SRS_2005_Respond_Detail,infrmnt2,rel_child,srs_who
+  codes:
+    1: Mother
+    2: Father
+    3: Other relative or custodial adult
+    4: Teacher or caregiver
+    5: Other specialist
+    6: Other
+    7: Child
+    8: Spouse
+    999: Not available
+
+respond_detail_oth_spec:
+  type: String
+  length: 255
+  description: Respondent details
+  alias: SRS_2005_Respond_Detail_oth_spec,informnt
+
+invalid:
+  type: Integer
+  description: Was the data collection invalid
+  range:
+  - 0
+  - 1
+  - 2
+  notes: 0 = No; 1 = Yes, missing responses; 2 = Invalid respondent
+  alias: SRS_2005_invalid
+  codes:
+    0: 'No'
+    1: Yes, missing responses
+    2: Invalid respondent
+
+missing:
+  type: Integer
+  description: '"Number of responses missing (left blank). Greater than 6 is considered
+    unscorable by the publisher. If record was scored by SCANTRON, missing values
+    were recoded and might be missing on the form. Non-SCANTRON records have a (-1)
+    for missing values."'
+  alias: SRS_2005_missing
+
+male_raw1:
+  type: String
+  length: 50
+  description: 'Raw Score: Social Awareness'
+  alias: SRS_2005_male_raw1,awareness
+
+male_raw2:
+  type: String
+  length: 50
+  description: 'Raw Score: Social Cognition'
+  alias: SRS_2005_male_raw2,cognition
+
+male_raw3:
+  type: String
+  length: 50
+  description: 'Raw Score: Social Communication'
+  alias: SRS_2005_male_raw3,communication
+
+male_raw4:
+  type: String
+  length: 50
+  description: 'Raw Score: Social Motivation'
+  alias: SRS_2005_male_raw4,motivation
+
+male_raw5:
+  type: String
+  length: 50
+  description: 'Raw Score: Autistic Mannerisms'
+  alias: SRS_2005_male_raw5,mannerisms
+
+male_tscore1:
+  type: String
+  length: 50
+  description: 'T-Score: Social Awareness'
+  alias: SRS_2005_male_tscore1
+
+male_tscore2:
+  type: String
+  length: 50
+  description: 'T-Score: Social Cognition'
+  alias: SRS_2005_male_tscore2
+
+male_tscore3:
+  type: String
+  length: 50
+  description: 'T-Score: Social Communication'
+  alias: SRS_2005_male_tscore3
+
+male_tscore4:
+  type: String
+  length: 50
+  description: 'T-Score: Social Motivation'
+  alias: SRS_2005_male_tscore4
+
+male_tscore5:
+  type: String
+  length: 50
+  description: 'T-Score: Autistic Mannerisms'
+  alias: SRS_2005_male_tscore5
+
+male_rawscoreall:
+  type: String
+  length: 50
+  required: Conditional
+  condition: sex == 'm'
+  description: Total Raw Score
+  alias: SRS_2005_male_rawscoreall,total
+
+male_tscoreall:
+  type: String
+  length: 50
+  required: Conditional
+  condition: sex == 'm'
+  description: Total T-Score
+  alias: SRS_2005_male_tscoreall
+
+female_raw1:
+  type: String
+  length: 50
+  description: 'Raw Score: Social Awareness'
+  alias: SRS_2005_female_raw1,awareness,awareness_f
+
+female_raw2:
+  type: String
+  length: 50
+  description: 'Raw Score: Social Cognition'
+  alias: SRS_2005_female_raw2,cognition,cognition_f
+
+female_raw3:
+  type: String
+  length: 50
+  description: 'Raw Score: Social Communication'
+  alias: SRS_2005_female_raw3,communication,communication_f
+
+female_raw4:
+  type: String
+  length: 50
+  description: 'Raw Score: Social Motivation'
+  alias: SRS_2005_female_raw4,motivation,motivation_f
+
+female_raw5:
+  type: String
+  length: 50
+  description: 'Raw Score: Autistic Mannerisms'
+  alias: SRS_2005_female_raw5,mannerisms,mannerisms_f
+
+female_tscore1:
+  type: String
+  length: 50
+  description: 'T-Score: Social Awareness'
+  alias: SRS_2005_female_tscore1,awareness_t_score
+
+female_tscore2:
+  type: String
+  length: 50
+  description: 'T-Score: Social Cognition'
+  alias: SRS_2005_female_tscore2,cognition_t_score
+
+female_tscore3:
+  type: String
+  length: 50
+  description: 'T-Score: Social Communication'
+  alias: SRS_2005_female_tscore3,communication_t_score
+
+female_tscore4:
+  type: String
+  length: 50
+  description: 'T-Score: Social Motivation'
+  alias: SRS_2005_female_tscore4,mannerisms_t_score
+
+female_tscore5:
+  type: String
+  length: 50
+  description: 'T-Score: Autistic Mannerisms'
+  alias: SRS_2005_female_tscore5,motivation_t_score
+
+female_rawscoreall:
+  type: String
+  length: 50
+  required: Conditional
+  condition: sex == 'f'
+  description: Total Raw Score
+  alias: SRS_2005_female_rawscoreall,total,total_f
+
+female_tscoreall:
+  type: String
+  length: 50
+  required: Conditional
+  condition: sex == 'f'
+  description: Total T-Score
+  alias: SRS_2005_female_tscoreall,t_score
+
+parentreport_1:
+  type: Integer
+  description: 1. Seems much more fidgety in social situations than when alone (P/S).
+    Seems much more uncomfortable in social situations than when alone (A)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A
+  alias: SRS_2005_ParentReport_1,q01_fidgety,q01_uncomfortable_social,social_umcomfort,srs1_1,srs_800_q1,srs_parent_1,srs_parent_raw_q01_fidgety,srs_q_1,srs_y1,srsa1,srsitm1
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+
+parentreport_2:
+  type: Integer
+  description: 2. Expressions on his or her face don't match what he or she is saying
+    (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_2,expression_match_say,q02_expressions_match,q02_expressions_match,srs1_2,srs_800_q2,srs_parent_2,srs_parent_raw_q02_expressions_match,srs_q_2,srs_y2,srsa2,srsitm2
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_3:
+  type: Integer
+  description: 3. Seems self-confident when interacting with others (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_3,q03_self_confident,q03_self_confident,self_confident_interact,srs1_3,srs_800_q3,srs_parent_3,srs_parent_raw_q03_self_confident,srs_q_3,srs_y3,srsa3,srsitm3
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_4:
+  type: Integer
+  description: 4. When under stress, he or she shows rigid or inflexible patterns
+    of behavior that seem odd. (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_4,q04_stress,q04_under_stress,srs1_4,srs_800_q4,srs_parent_4,srs_parent_raw_q04_under_stress,srs_q_4,srs_y4,srsa4,srsitm4,stress_rigid_pattern
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_5:
+  type: Integer
+  description: 5. Doesn't recognize when others are trying to take advantage of him
+    or her (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_5,q05_recognize_take_advantage,q05_taking_advantage,srs1_5,srs_800_q5,srs_parent_5,srs_parent_raw_q05_recognize_take_advantage,srs_q_5,srs_y5,srsa5,srsitm5,taken_advantage
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_6:
+  type: Integer
+  description: 6. Would rather be alone than with others (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_6,bealone,q06_rather_alone,q06_rather_alone,srs1_6,srs_800_q6,srs_parent_6,srs_parent_raw_q06_rather_alone,srs_q_6,srs_y6,srsa6,srsitm6
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_7:
+  type: Integer
+  description: 7. Is aware of what others are thinking or feeling (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_7,aware_think_feel,q07_aware,q07_aware_others,srs2_7,srs_800_q7,srs_parent_7,srs_parent_raw_q07_aware_others,srs_q_7,srs_y7,srsa7,srsitm7
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_8:
+  type: Integer
+  description: 8. Behaves in ways that seem strange or bizarre (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_8,q08_behaves_bizarre,q08_behaves_strange,srs2_8,srs_800_q8,srs_parent_8,srs_parent_raw_q08_behaves_strange,srs_q_8,srs_y8,srsa8,srsitm8,strange
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_9:
+  type: Integer
+  description: 9. Clings to adults, seems too dependent on them (P/S). Seems too dependent
+    on others for help with meeting basic needs (A)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_9,dependent_cling_adult,q09_clings_dependent,q09_dependent,srs2_9,srs_800_q9,srs_parent_9,srs_parent_raw_q09_clings_dependent,srs_q_9,srs_y9,srsa9,srsitm9
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_10:
+  type: Integer
+  description: 10. Takes things too literally and doesn't get the real meaning of
+    a conversation (A/S). Unable to pick up on any of the meaning of conversations
+    of older children or adults (P).
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_10,q10_things_literally,q10_things_literally,srs2_10,srs_800_q10,srs_parent_10,srs_parent_raw_q10_things_literally,srs_q_10,srs_y10,srsa10,srsitm10,take_literal_meaning
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_11:
+  type: Integer
+  description: 11. Has good self-confidence (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_11,q11_self_confidence,q11_self_confidence,selfconf,srs2_11,srs_800_q11,srs_parent_11,srs_parent_raw_q11_self_confidence,srs_q_11,srs_y11,srsa11,srsitm11
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_12:
+  type: Integer
+  description: 12. Is able to communicate his or her feelings to others (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_12,communicate_feeling,q12_communicate_feelings,q12_communicate_feelings,srs2_12,srs_800_q12,srs_parent_12,srs_parent_raw_q12_communicate_feelings,srs_q_12,srs_y12,srsa12,srsitm12
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_13:
+  type: Integer
+  description: 13. Is awkward in turn-taking interactions with peers (e.g., doesn't
+    seem to understand the give-and-take of conversations) (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_13,q13_turn_taking,q13_turn_taking,srs3_13,srs_800_q13,srs_parent_13,srs_parent_raw_q13_turn_taking,srs_q_13,srs_y13,srsa13,srsitm13,take_turn_awkward
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_14:
+  type: Integer
+  description: 14. Is not well coordinated (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_14,coord_trouble,q14_coordinated,q14_well_coordinated,srs3_14,srs_800_q14,srs_parent_14,srs_parent_raw_q14_well_coordinated,srs_q_14,srs_y14,srsa14,srsitm14
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_15:
+  type: Integer
+  description: 15. Is able to understand the meaning of other people's tone of voice
+    and facial expressions (P/S). Recognizes and appropriately responds to changes
+    in other people's tone of voice and facial expressions (A)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_15,q15_meaning_tone,q15_responds_face_tone,respond_tone_expression,srs3_15,srs_800_q15,srs_parent_15,srs_parent_raw_q15_meaning_tone,srs_q_15,srs_y15,srsa15,srsitm15
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_16:
+  type: Integer
+  description: 16. Avoids eye contact or has unusual eye contact (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_16,eye_contact,q16_eye_contact,q16_eye_contact,srs3_16,srs_800_q16,srs_parent_16,srs_parent_raw_q16_eye_contact,srs_q_16,srs_y16,srsa16,srsitm16
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_17:
+  type: Integer
+  description: 17. Recognizes when something is unfair (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_17,q17_recognizes_unfair,q17_recognizes_unfamiliar,srs3_17,srs_800_q17,srs_parent_17,srs_parent_raw_q17_recognizes_unfair,srs_q_17,srs_y17,srsa17,srsitm17,unfair
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_18:
+  type: Integer
+  description: 18. Has difficulty making friends, even when trying his or her best
+    (A/S). When on the playground or in a groupo with other young children, child
+    does not attempt to interact with other children (P).
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_18,diff_make_frnd,q18_difficulty_friends,q18_making_friends,srs3_18,srs_800_q18,srs_parent_18,srs_parent_raw_q18_making_friends,srs_q_18,srs_y18,srsa18,srsitm18
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_19:
+  type: Integer
+  description: 19. Gets frustrated trying to get ideas across in conversations (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_19,frustrate_idea_across,q19_frustrated_conversation,q19_frustrated_conversation,srs4_19,srs_800_q19,srs_parent_19,srs_parent_raw_q19_frustrated_conversation,srs_q_19,srs_y19,srsa19,srsitm19
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_20:
+  type: Integer
+  description: 20. Shows unusual sensory interests (A). Shows unusual sensory interests
+    (for example, mouthing or spinning objects) or strange ways of playing with toys
+    (S). Has a strange way of playing with a toy (P).
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_20,q20_sensory_interests,q20_sensory_interests,srs4_20,srs_800_q20,srs_parent_20,srs_parent_raw_q20_sensory_interests,srs_q_20,srs_y20,srsa20,srsitm20,unusual_sense_interst
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_21:
+  type: Integer
+  description: 21. Is able to imitate others' actions (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_21,imitate_othrs,q21_imitate,q21_imitate_others,srs4_21,srs_800_q21,srs_parent_21,srs_parent_raw_q21_imitate_others,srs_q_21,srs_y21,srsa21,srsitm21
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_22:
+  type: Integer
+  description: 22. Plays appropriately with children his or her age (P/S). Interacts
+    appropriately with other adults (A)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_22,q22_interacts_adults,q22_plays_appropriately,social_inter,srs4_22,srs_800_q22,srs_parent_22,srs_parent_raw_q22_plays_appropriately,srs_q_22,srs_y22,srsa22,srsitm22
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_23:
+  type: Integer
+  description: 23. Does not join group activities unless told to do so (P/S). Does
+    not join group activities or social events unless forced to do so (A)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_23,join_group_act,q23_group_activities,q23_join_activities,srs4_23,srs_800_q23,srs_parent_23,srs_parent_raw_q23_join_activities,srs_q_23,srs_y23,srsa23,srsitm23
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_24:
+  type: Integer
+  description: 24. Has more difficulty than others with changes is his or her routine.
+    (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_24,diff_change_route,q24_changes_routine,q24_difficulty_routine,srs4_24,srs_800_q24,srs_parent_24,srs_parent_raw_q24_changes_routine,srs_q_24,srs_y24,srsa24,srsitm24
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_25:
+  type: Integer
+  description: 25. Doesn't seem to mind being out of step with or "not on the came
+    wavelength" as others. (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_25,mind_not_wavelngth,q25_not_same_wavelength,q25_same_wavelength,srs5_25,srs_800_q25,srs_parent_25,srs_parent_raw_q25_same_wavelength,srs_q_25,srs_y25,srsa25,srsitm25
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_26:
+  type: Integer
+  description: 26. Offers comfort to other when they are sad. (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_26,comfort_sad,q26_comfort_others,q26_comforts_others,srs5_26,srs_800_q26,srs_parent_26,srs_parent_raw_q26_comforts_others,srs_q_26,srs_y26,srsa26,srsitm26
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_27:
+  type: Integer
+  description: 27. Avoids starting social interactions with peers or adults. (P/S)
+    Avoids starting social interactions with other adults (A)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_27,avoid_social_adult,q27_avoids_adults,q27_avoids_social,srs5_27,srs_800_q27,srs_parent_27,srs_parent_raw_q27_avoids_social,srs_q_27,srs_y27,srsa27,srsitm27
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_28:
+  type: Integer
+  description: 28. Thinks or talk about the same thing over and over. (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_28,q28_same_thing,q28_talk_same_thing,srs5_28,srs_800_q28,srs_parent_28,srs_parent_raw_q28_same_thing,srs_q_28,srs_y28,srsa28,srsitm28,think_same_thing
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_29:
+  type: Integer
+  description: 29. Is regarded by the others as odd or weird. (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_29,q29_regarded_odd,q29_regarded_weird,regard_odd,srs5_29,srs_800_q29,srs_parent_29,srs_parent_raw_q29_regarded_odd,srs_q_29,srs_y29,srsa29,srsitm29
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_30:
+  type: Integer
+  description: 30. Becomes upset in a situation with lots of things going on. (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_30,q30_upset,q30_upset_situation,srs5_30,srs_800_q30,srs_parent_30,srs_parent_raw_q30_upset,srs_q_30,srs_y30,srsa30,srsitm30,upset_lot_going_on
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_31:
+  type: Integer
+  description: 31. Can't get his or her mind off something once he or she starts thinking
+    about it. (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_31,mind_off_something,q31_get_mind_off,q31_mind_something,srs6_31,srs_800_q31,srs_parent_31,srs_parent_raw_q31_mind_something,srs_q_31,srs_y31,srsa31,srsitm31
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_32:
+  type: Integer
+  description: 32. Has good personal hygiene (A/S). Wants to be changed when diaper
+    or underwear is soiled or wet (P).
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_32,hygiene_good,q32_hygiene,q32_hygiene,srs6_32,srs_800_q32,srs_parent_32,srs_parent_raw_q32_hygiene,srs_q_32,srs_y32,srsa32,srsitm32
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_33:
+  type: Integer
+  description: 33. Is socially awkward, even when trying to be polite (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_33,q33_socially_awkward,q33_socially_awkward,social_awkward_polite,srs6_33,srs_800_q33,srs_parent_33,srs_parent_raw_q33_socially_awkward,srs_q_33,srs_y33,srsa33,srsitm33
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_34:
+  type: Integer
+  description: 34. Avoids people who want to be emotionally close to him or her (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_34,avoid_ppl_emotion,q34_avoids_close,q34_avoids_people,srs6_34,srs_800_q34,srs_parent_34,srs_parent_raw_q34_avoids_people,srs_q_34,srs_y34,srsa34,srsitm34
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_35:
+  type: Integer
+  description: 35. Has trouble keeping up with the flow of a normal conversation (A/S).
+    Has trouble keeping up with the flow of normal interaction with other children
+    (P).
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_35,q35_normal_conversations,q35_trouble_conversation,srs6_35,srs_800_q35,srs_parent_35,srs_parent_raw_q35_normal_conversations,srs_q_35,srs_y35,srsa35,srsitm35,trouble_flow_conversation
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_36:
+  type: Integer
+  description: 36. Has difficulty relating to adults (P/S). Has difficulty relating
+    to family members (A)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_36,q36_difficulty_family,q36_relating_adults,realte_othr_adult,srs6_36,srs_800_q36,srs_parent_36,srs_parent_raw_q36_relating_adults,srs_q_36,srs_y36,srsa36,srsitm36
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_37:
+  type: Integer
+  description: 37. Has difficulty relating to peers. (P/S) Has difficulty relating
+    to other adults (A)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_37,diff_relate_peer,q37_difficulty_adults,q37_relating_peers,srs7_37,srs_800_q37,srs_parent_37,srs_parent_raw_q37_relating_peers,srs_q_37,srs_y37,srsa37,srsitm37
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_38:
+  type: Integer
+  description: 38. Responds appropriately to mood changes in others (e.g., when a
+    friend's mood changes from happy to sad) (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_38,q38_mood_others,q38_responds_mood,respond_mood_change,srs7_38,srs_800_q38,srs_parent_38,srs_parent_raw_q38_mood_others,srs_q_38,srs_y38,srsa38,srsitm38
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_39:
+  type: Integer
+  description: 39. Has an unusually narrow range of interests (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_39,narrow_range_interest,q39_narrow_interests,q39_range_interests,srs7_39,srs_800_q39,srs_parent_39,srs_parent_raw_q39_narrow_interests,srs_q_39,srs_y39,srsa39,srsitm39
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_40:
+  type: Integer
+  description: 40. Is imaginative without losing touch with reality (A/S). Is imaginative,
+    good at pretending (without losing touch with reality) (P).
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_40,imagin_lose_reality,q40_imaginative,q40_imaginative,srs7_40,srs_800_q40,srs_parent_40,srs_parent_raw_q40_imaginative,srs_q_40,srs_y40,srsa40,srsitm40
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_41:
+  type: Integer
+  description: 41. Wanders aimlessly from one activity to another. (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_41,q41_wanders_aimlessly,q41_wanders_aimlessly,srs7_41,srs_800_q41,srs_parent_41,srs_parent_raw_q41_wanders_aimlessly,srs_q_41,srs_y41,srsa41,srsitm41,wander_act
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_42:
+  type: Integer
+  description: 42. Seems overly sensitive to sounds, textures, or smells (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_42,q42_sensitive_sounds,q42_sensitve_to_sound,sense_sound_texture,srs7_42,srs_800_q42,srs_parent_42,srs_parent_raw_q42_sensitive_sounds,srs_q_42,srs_y42,srsa42,srsitm42
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_43:
+  type: Integer
+  description: 43. Separates easily from caregivers (P/S). Enjoys and is competent
+    with small talk (casual conversation with others) (A)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_43,q43_enjoys_small_talk,q43_separates_caregivers,separate_caregiver,srs8_43,srs_800_q43,srs_parent_43,srs_parent_raw_q43_separates_caregivers,srs_q_43,srs_y43,srsa43,srsitm43
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_44:
+  type: Integer
+  description: 44. Doesn't understand how events relate to one another (cause and
+    effect) the way others his or her age do (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_44,q44_cause_effect,q44_events_related,srs8_44,srs_800_q44,srs_parent_44,srs_parent_raw_q44_events_related,srs_q_44,srs_y44,srsa44,srsitm44,understand_event_relate
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_45:
+  type: Integer
+  description: 45. Focuses his or her attention to where others are looking or listening
+    (P/S). Generally gets interested in what others nearby are paying attention to
+    (A)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_45,focus_attn_othr,q45_attention_others,q45_interested_others_attention,srs8_45,srs_800_q45,srs_parent_45,srs_parent_raw_q45_attention_others,srs_q_45,srs_y45,srsa45,srsitm45
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_46:
+  type: Integer
+  description: 46. Has overly serious facial expressions (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A. POSITIVE CODED ITEM; 77=refused; 99=missing
+  alias: SRS_2005_ParentReport_46,q46_overly_serious,q46_serious_facial,serious_face_expression,srs8_46,srs_800_q46,srs_parent_46,srs_parent_raw_q46_overly_serious,srs_q_46,srs_y46,srsa46,srsitm46
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A. POSITIVE CODED ITEM
+    77: refused
+    99: missing
+
+parentreport_47:
+  type: Integer
+  description: 47. Is too silly or laughs inappropriately (P/S). Laughs at inappropriate
+    times (A)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_47,laugh_inappropriate,q47_laughs_inappropriately,q47_laughs_inaproppriately,srs8_47,srs_800_q47,srs_parent_47,srs_parent_raw_q47_laughs_inappropriately,srs_q_47,srs_y47,srsa47,srsitm47
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_48:
+  type: Integer
+  description: 48. Has a sense of humor, understands jokes  (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_48,q48_humor,q48_humor,sense_humor,srs8_48,srs_800_q48,srs_parent_48,srs_parent_raw_q48_humor,srs_q_48,srs_y48,srsa48,srsitm48
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_49:
+  type: Integer
+  description: 49. Does extremely well at a few tasks, but does not do as well at
+    most other tasks (P/S). Does extremely well at a few intellectual or computational
+    tasks, but does not do as well at most other tasks (A)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_49,q49_few_tasks,q49_savant,srs9_49,srs_800_q49,srs_parent_49,srs_parent_raw_q49_few_tasks,srs_q_49,srs_y49,srsa49,srsitm49,tasks_not_well
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_50:
+  type: Integer
+  description: 50. Has repetitive, odd behaviors (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_50,odd_behaviors,q50_behavior_repetative,q50_repetitive_behavior,srs9_50,srs_800_q50,srs_parent_50,srs_parent_raw_q50_repetitive_behavior,srs_q_50,srs_y50,srsa50,srsitm50
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_51:
+  type: Integer
+  description: 51. Has difficulty answering questions directly and ends up talking
+    around the subject (A/S). Responds to clear, direct questions in ways that don't
+    seem to make any sense (P).
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_51,q51_difficulty_answering,q51_questions_directly,srs9_51,srs_800_q51,srs_parent_51,srs_parent_raw_q51_questions_directly,srs_q_51,srs_y51,srsa51,srsitm51,talk_around_subject
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_52:
+  type: Integer
+  description: 52. Knows when he or she is talking too loud or making too much noise
+    (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_52,q52_knows_too_loud,q52_too_loud,srs9_52,srs_800_q52,srs_parent_52,srs_parent_raw_q52_too_loud,srs_q_52,srs_y52,srsitm52,talk_loud
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_53:
+  type: Integer
+  description: 53. Talks to people with an unusual tone of voice (e.g., talks like
+    a robot or like he or she is giving a lecture) (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_53,q53_unusual_tone,q53_unusual_tone,srs9_53,srs_800_q53,srs_parent_53,srs_parent_raw_q53_unusual_tone,srs_q_53,srs_y53,srsa53,srsitm53,talk_unusual_voice
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_54:
+  type: Integer
+  description: 54. Seems to react to people as if they are objects (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_54,q54_people_as_objects,q54_people_objects,react_ppl_object,srs9_54,srs_800_q54,srs_parent_54,srs_parent_raw_q54_people_objects,srs_q_54,srs_y54,srsa54,srsitm54
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_55:
+  type: Integer
+  description: 55. Knows when he or she is too close to someone or is invading someone's
+    space (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_55,know_invade_space,q55_knows_too_close,q55_personal_space,srs10_55,srs_800_q55,srs_parent_55,srs_parent_raw_q55_knows_too_close,srs_q_55,srs_y55,srsa55,srsitm55
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_56:
+  type: Integer
+  description: 56. Walks in between two people who are talking (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_56,q56_walks_between,q56_walks_between_people,srs10_56,srs_800_q56,srs_parent_56,srs_parent_raw_q56_walks_between,srs_q_56,srs_y56,srsa56,srsitm56,walk_between_ppl_talk
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_57:
+  type: Integer
+  description: 57. Gets teased a lot (S). lsolative; tends not to leave his or her
+    home (A). Other children do not like to play with him or her (P).
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_57,q57_isloative,q57_teased,srs10_57,srs_800_q57,srs_parent_57,srs_parent_raw_q57_teased,srs_q_57,srs_y57,srsa57,srsitm57,teased_2
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_58:
+  type: Integer
+  description: 58. Concentrates too much on parts of things rather than seeing the
+    whole picture. (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_58,concentrate_part,q58_concentrates_parts,q58_concentrates_parts,srs10_58,srs_800_q58,srs_parent_58,srs_parent_raw_q58_concentrates_parts,srs_q_58,srs_y58,srsa58,srsitm58
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_59:
+  type: Integer
+  description: 59. Is overly suspicious (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_59,q59_overly_suspicious,q59_suspicious,srs10_59,srs_800_q59,srs_parent_59,srs_parent_raw_q59_overly_suspicious,srs_q_59,srs_y59,srsa59,srsitm59,suspicious
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_60:
+  type: Integer
+  description: 60. Is emotionally distant, doesn't show his or her feelings (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_60,emotion_distant,q60_emotionally_distant,q60_emotionally_distant,srs10_60,srs_800_q60,srs_parent_60,srs_parent_raw_q60_emotionally_distant,srs_q_60,srs_y60,srsa60,srsitm60
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_61:
+  type: Integer
+  description: 61. Is inflexible, has a hard time changing his or her mind (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_61,inflexible_mind,q61_inflexible,q61_inflexible,srs11_61,srs_800_q61,srs_parent_61,srs_parent_raw_q61_inflexible,srs_q_61,srs_y61,srsa61,srsitm61
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_62:
+  type: Integer
+  description: 62. Gives unusual or illogical reasons for doing things (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_62,illogical_reason,q62_illogical_reasons,q62_illogical_reasons,srs11_62,srs_800_q62,srs_parent_62,srs_parent_raw_q62_illogical_reasons,srs_q_62,srs_y62,srsa62,srsitm62
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_63:
+  type: Integer
+  description: 63. Touches others in an unusual way (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_63,q63_greets_unusual_way,q63_touchs_unusual,srs11_63,srs_800_q63,srs_parent_63,srs_parent_raw_q63_touchs_unusual,srs_q_63,srs_y63,srsa63,srsitm63,touch_unusual_way
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_64:
+  type: Integer
+  description: 64. Is too tense in social settings (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_64,q64_tense,q64_tense_social,srs11_64,srs_800_q64,srs_parent_64,srs_parent_raw_q64_tense_social,srs_q_64,srs_y64,srsa64,srsitm64,tense_social_set
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+parentreport_65:
+  type: Integer
+  description: 65. Stares or gazes off into space (P/A/S)
+  range:
+  - 1::4
+  - 999
+  - 77
+  - 88
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true;
+    999=N/A; 77-refused; 88=missing
+  alias: SRS_2005_ParentReport_65,q65_stares_into_space,q65_stares_space,srs11_65,srs_800_q65,srs_parent_65,srs_parent_raw_q65_stares_space,srs_q_65,srs_y65,srsa65,srsitm65,stares
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true
+    999: N/A
+    88: missing
+
+phenotype:
+  type: String
+  length: 200
+  required: true
+  description: Phenotype/diagnosis for the subject
+  alias: which_group
+
+srs_score:
+  type: Float
+  description: Social Reciprocity Scale score
+  notes: Calculated
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+  alias: site_no
+
+trt_grp:
+  type: String
+  length: 10
+  description: Treatment Group Assignment
+  range:
+  - 1
+  - 1AO
+  - 1CT
+  - 2
+  - 3
+  notes: 1=Group 1 first 8 weeks; 1AO=Group 1 8 week add on; 1CT=Group 1 8 week cross
+    taper; 2=Group 2; 3=Group 3
+  codes:
+    1: Group 1 first 8 weeks
+    2: Group 2
+    3: Group 3
+
+days_baseline:
+  type: Integer
+  description: Days since baseline
+  alias: bsldays
+
+etype:
+  type: String
+  length: 10
+  description: Rating Period
+  range:
+  - BSL
+  - WK1
+  - WK2
+  - WK3
+  - WK4
+  - WK5
+  - WK6
+  - WK7
+  - WK8
+  - WK9
+  - WK10
+  - WK11
+  - WK12
+  - WK13
+  - WK14
+  - WK15
+  - WK16
+  notes: BSL=Baseline; WK1-WK16=Weeks 1-16
+  codes:
+    BSL: Baseline
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+
+srsa52:
+  type: Integer
+  description: I get overly loud without realizing it.
+  range:
+  - 1::4
+  notes: 1 = Not true; 2 = Sometimes true; 3 = Often true; 4 = Almost always true
+  codes:
+    1: Not true
+    2: Sometimes true
+    3: Often true
+    4: Almost always true

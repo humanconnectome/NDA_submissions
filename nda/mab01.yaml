@@ -1,0 +1,3666 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: child_id,demo_study_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: visit_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+matern_age_mo:
+  type: Integer
+  description: Mother's age at pregnancy (months)
+
+matern_age_fa:
+  type: Integer
+  description: Father's age at maternal pregnancy (months)
+
+preg_numberof:
+  type: Integer
+  description: Total number of pregnancies by biological mother
+  alias: matern_no_preg
+
+matern_no_births:
+  type: Integer
+  description: Total number of live births.
+
+matern_thrt_loss:
+  type: Integer
+  description: Was there any threat to losing your child?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_twins:
+  type: Integer
+  description: Was it a twin pregnancy?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_caff:
+  type: Integer
+  description: Did you drink any caffeinated beverages (coffee, tea or soda with caffeine)
+    during your pregnancy (including before you knew you were pregnant)?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_caff_preg:
+  type: String
+  length: 15
+  description: 'At which time during your pregnancy did you drink caffeinated beverages?  Mark
+    all that apply:'
+  notes: 1 = Before you knew you were pregnant ; 2 = During the first trimester (months
+    0-3) ; 3 = During the second trimester (months 4-6) ; 4 = During the third trimester
+    (months 7-9)
+  codes:
+    1: Before you knew you were pregnant
+    2: During the first trimester (months 0-3)
+    3: During the second trimester (months 4-6)
+    4: During the third trimester (months 7-9)
+
+matern_caff_days:
+  type: Integer
+  description: During the time(s) [the participant] specified above, how many days
+    per week did you drink a caffeinated beverage, on average?
+  range:
+  - 1::6
+  notes: 1 = Every day ; 2 = 5-6 ; 3 = 3-4 ; 4 = 2 ; 5 = 1 ; 6 = Less often
+  codes:
+    1: Every day
+    2: 5-6
+    3: 3-4
+    4: '2'
+    5: '1'
+    6: Less often
+
+matern_caff_drinks:
+  type: Integer
+  description: During the time(s) [the participant] specified above, how many cups
+    of coffee, glasses of tea, bottles/cans of caffeinated sodas per day did you drink,
+    on average, on those days when you drank any caffeinated beverages?
+  range:
+  - 1::12
+  notes: 11 = Less than 1 ; 1 = 1 ; 2 = 2 ; 3 = 3 ; 4 = 4 ; 5 = 5 ; 6 = 6 ; 7 = 7
+    ; 8 = 8 ; 9 = 9 ; 10 = 10 ; 12 = More than 10
+  codes:
+    11: Less than 1
+    1: '1'
+    2: '2'
+    3: '3'
+    4: '4'
+    5: '5'
+    6: '6'
+    7: '7'
+    8: '8'
+    9: '9'
+    10: '10'
+    12: More than 10
+
+matern_cigs:
+  type: Integer
+  description: Did you smoke cigarettes during your pregnancy (including before you
+    knew you were pregnant)?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_cigs_preg:
+  type: String
+  length: 15
+  description: 'At which time during your pregnancy did you smoke cigarettes?  Mark
+    all that apply:'
+  notes: 1 = Before you knew you were pregnant ; 2 = During the first trimester (months
+    0-3) ; 3 = During the second trimester (months 4-6) ; 4 = During the third trimester
+    (months 7-9)
+  codes:
+    1: Before you knew you were pregnant
+    2: During the first trimester (months 0-3)
+    3: During the second trimester (months 4-6)
+    4: During the third trimester (months 7-9)
+
+matern_cigs_days:
+  type: Integer
+  description: During the time(s) [the participant] specified above, how many days
+    per week did you smoke, on average?
+  range:
+  - 1::6
+  notes: 1 = Every day ; 2 = 5-6 ; 3 = 3-4 ; 4 = 2 ; 5 = 1 ; 6 = Less often
+  codes:
+    1: Every day
+    2: 5-6
+    3: 3-4
+    4: '2'
+    5: '1'
+    6: Less often
+
+matern_cigs_no:
+  type: Integer
+  description: During the time(s) [the participant] specified above, how many cigarettes
+    did you smoke each day on those days when you smoked?
+  range:
+  - 1::9
+  notes: 1 = 1-5 ; 2 = 6-10 ; 3 = 11-15 ; 4 = 16-20 ; 5 = 20-25 ; 6 = 26-30 ; 7 =
+    31-35 ; 8 = 36-40 ; 9 = 40 or more
+  codes:
+    1: 1-5
+    2: 6-10
+    3: 11-15
+    4: 16-20
+    5: 20-25
+    6: 26-30
+    7: 31-35
+    8: 36-40
+    9: 40 or more
+
+matern_cigs_before:
+  type: Integer
+  description: Did you smoke cigarettes before your pregnancy?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_cigs_before_when:
+  type: Integer
+  description: When was the last time you smoked before the pregnancy?
+  range:
+  - 1::5
+  notes: 1 = Just before you found out you were pregnant ; 2 = Between 0 and 3 months
+    before the pregnancy ; 3 = Between 3 and 6 months before the pregnancy ; 4 = Between
+    6 and 12 months before the pregnancy ; 5 = Longer than 12 months before the pregnancy
+  codes:
+    1: Just before you found out you were pregnant
+    2: Between 0 and 3 months before the pregnancy
+    3: Between 3 and 6 months before the pregnancy
+    4: Between 6 and 12 months before the pregnancy
+    5: Longer than 12 months before the pregnancy
+
+matern_cigs_before_days:
+  type: Integer
+  description: During the time specified above (before pregnancy), how many days per
+    week did you smoke, on average?
+  range:
+  - 1::6
+  notes: 1 = Every day ; 2 = 5-6 ; 3 = 3-4 ; 4 = 2 ; 5 = 1 ; 6 = Less often
+  codes:
+    1: Every day
+    2: 5-6
+    3: 3-4
+    4: '2'
+    5: '1'
+    6: Less often
+
+matern_cigs_before_no:
+  type: Integer
+  description: During the time specified above (before pregnancy), how many cigarettes
+    did you smoke each day on those days when you smoked?
+  range:
+  - 1::9
+  notes: 1 = 1-5 ; 2 = 6-10 ; 3 = 11-15 ; 4 = 16-20 ; 5 = 20-25 ; 6 = 26-30 ; 7 =
+    31-35 ; 8 = 36-40 ; 9 = 40 or more
+  codes:
+    1: 1-5
+    2: 6-10
+    3: 11-15
+    4: 16-20
+    5: 20-25
+    6: 26-30
+    7: 31-35
+    8: 36-40
+    9: 40 or more
+
+matern_cigs_after:
+  type: Integer
+  description: Did you smoke cigarettes after your pregnancy?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_cigs_after_when:
+  type: Integer
+  description: When and for how long after your pregnancy did you smoke cigarettes?
+  range:
+  - 1::5
+  notes: 1 = From the birth of your child until the present ; 2 = From the birth of
+    your child until your child was 2 years old ; 3 = From the birth of your child
+    until your child was 1 year old ; 4 = Since you stopped breastfeeding your child
+    until the present ; 5 = Other time period and duration
+  codes:
+    1: From the birth of your child until the present
+    2: From the birth of your child until your child was 2 years old
+    3: From the birth of your child until your child was 1 year old
+    4: Since you stopped breastfeeding your child until the present
+    5: Other time period and duration
+
+matern_cigs_after_when_other:
+  type: String
+  length: 100
+  description: 'If you smoked cigarettes after your pregnancy for another time period
+    and duration, please specify:'
+
+matern_cigs_after_days:
+  type: Integer
+  description: During the time specified above (after pregnancy), how many days per
+    week did you smoke, on average?
+  range:
+  - 1::6
+  notes: 1 = Every day ; 2 = 5-6 ; 3 = 3-4 ; 4 = 2 ; 5 = 1 ; 6 = Less often
+  codes:
+    1: Every day
+    2: 5-6
+    3: 3-4
+    4: '2'
+    5: '1'
+    6: Less often
+
+matern_cigs_after_no:
+  type: Integer
+  description: During the time specified above (after pregnancy), how many cigarettes
+    did you smoke each day on those days when you smoked?
+  range:
+  - 1::9
+  notes: 1 = 1-5 ; 2 = 6-10 ; 3 = 11-15 ; 4 = 16-20 ; 5 = 20-25 ; 6 = 26-30 ; 7 =
+    31-35 ; 8 = 36-40 ; 9 = 40 or more
+  codes:
+    1: 1-5
+    2: 6-10
+    3: 11-15
+    4: 16-20
+    5: 20-25
+    6: 26-30
+    7: 31-35
+    8: 36-40
+    9: 40 or more
+
+matern_cigs_any:
+  type: Integer
+  description: Does anyone living in the home with your child smoke cigarettes regularly
+    (regular smoking means smoking at least once per week for at least 2 months in
+    a row)?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_cigs_any_days:
+  type: Integer
+  description: If anyone living in the home with your child smokes cigarettes regularly,
+    how many days per week does that person smoke, on average?
+  range:
+  - 1::6
+  notes: 1 = Every day ; 2 = 5-6 ; 3 = 3-4 ; 4 = 2 ; 5 = 1 ; 6 = Less often
+  codes:
+    1: Every day
+    2: 5-6
+    3: 3-4
+    4: '2'
+    5: '1'
+    6: Less often
+
+matern_cigs_any_no:
+  type: Integer
+  description: If anyone living in the home with your child smokes cigarettes regularly,
+    how many cigarettes does that person smoke each day on those days when he/she
+    smokes?
+  range:
+  - 1::9
+  notes: 1 = 1-5 ; 2 = 6-10 ; 3 = 11-15 ; 4 = 16-20 ; 5 = 20-25 ; 6 = 26-30 ; 7 =
+    31-35 ; 8 = 36-40 ; 9 = 40 or more
+  codes:
+    1: 1-5
+    2: 6-10
+    3: 11-15
+    4: 16-20
+    5: 20-25
+    6: 26-30
+    7: 31-35
+    8: 36-40
+    9: 40 or more
+
+matern_alcoh:
+  type: Integer
+  description: Did you drink any alcohol (beer, wine, liquor) during your pregnancy
+    (including before you knew you were pregnant)?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_alcoh_when:
+  type: String
+  length: 15
+  description: 'At which time during your pregnancy did you drink alcohol?  Mark all
+    that apply:'
+  notes: 1 = Before you knew you were pregnant ; 2 = During the first trimester (months
+    0-3) ; 3 = During the second trimester (months 4-6) ; 4 = During the third trimester
+    (months 7-9)
+  codes:
+    1: Before you knew you were pregnant
+    2: During the first trimester (months 0-3)
+    3: During the second trimester (months 4-6)
+    4: During the third trimester (months 7-9)
+
+matern_alcoh_how_oftn:
+  type: Integer
+  description: During the time(s) [the participant] specified above, how often did
+    you have any alcohol?
+  range:
+  - 1::9
+  notes: 1 = 1-2 days ; 2 = 3-8 days ; 3 = 1 day per month ; 4 = 2-3 days per month
+    ; 5 = 1 day per week ; 6 = 2 days per week ; 7 = 3-4 days per week ; 8 = 5-6 days
+    per week ; 9 = Every day
+  codes:
+    1: 1-2 days
+    2: 3-8 days
+    3: 1 day per month
+    4: 2-3 days per month
+    5: 1 day per week
+    6: 2 days per week
+    7: 3-4 days per week
+    8: 5-6 days per week
+    9: Every day
+
+matern_alcoh_no:
+  type: Integer
+  description: During the time(s) [the participant] specified above, how many alcoholic
+    drinks did you typically have on those days when you drank alcohol (one drink
+    is defined as a regular can or bottle of beer, glass of wine, or a shot of liquor)?
+  range:
+  - 1::10
+  notes: 1 = 1-2 ; 2 = 3-4 ; 3 = 5-6 ; 4 = 7-8 ; 5 = 9-11 ; 6 = 12-15 ; 7 = 16-18
+    ; 8 = 19-24 ; 9 = 25-30 ; 10 = 31 or more
+  codes:
+    1: 1-2
+    2: 3-4
+    3: 5-6
+    4: 7-8
+    5: 9-11
+    6: 12-15
+    7: 16-18
+    8: 19-24
+    9: 25-30
+    10: 31 or more
+
+matern_marij:
+  type: Integer
+  description: Did you smoke (or ingest) marijuana during your pregnancy (including
+    before you knew you were pregnant) ?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_marij_when:
+  type: String
+  length: 15
+  description: 'At which time during your pregnancy did you use marijuana?  Mark all
+    that apply:'
+  notes: 1 = Before you knew you were pregnant ; 2 = During the first trimester (months
+    0-3) ; 3 = During the second trimester (months 4-6) ; 4 = During the third trimester
+    (months 7-9)
+  codes:
+    1: Before you knew you were pregnant
+    2: During the first trimester (months 0-3)
+    3: During the second trimester (months 4-6)
+    4: During the third trimester (months 7-9)
+
+matern_marij_days:
+  type: Integer
+  description: During the time(s) [the participant] specified above, how many days
+    per week did you use marijuana, on average?
+  range:
+  - 1::6
+  notes: 1 = Every day ; 2 = 5-6 ; 3 = 3-4 ; 4 = 2 ; 5 = 1 ; 6 = Less often
+  codes:
+    1: Every day
+    2: 5-6
+    3: 3-4
+    4: '2'
+    5: '1'
+    6: Less often
+
+matern_marij_before:
+  type: Integer
+  description: Did you smoke (or ingest) marijuana before your pregnancy?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_marij_before_when:
+  type: Integer
+  description: When was the last time you used marijuana before the pregnancy?
+  range:
+  - 1::5
+  notes: 1 = Just before you found out you were pregnant ; 2 = Between 0 and 3 months
+    before the pregnancy ; 3 = Between 3 and 6 months before the pregnancy ; 4 = Between
+    6 and 12 months before the pregnancy ; 5 = Longer than 12 months before the pregnancy
+  codes:
+    1: Just before you found out you were pregnant
+    2: Between 0 and 3 months before the pregnancy
+    3: Between 3 and 6 months before the pregnancy
+    4: Between 6 and 12 months before the pregnancy
+    5: Longer than 12 months before the pregnancy
+
+matern_marij_before_days:
+  type: Integer
+  description: During the time specified above (before pregnancy), how many days per
+    week did you use marijuana, on average?
+  range:
+  - 1::6
+  notes: 1 = Every day ; 2 = 5-6 ; 3 = 3-4 ; 4 = 2 ; 5 = 1 ; 6 = Less often
+  codes:
+    1: Every day
+    2: 5-6
+    3: 3-4
+    4: '2'
+    5: '1'
+    6: Less often
+
+matern_marij_after:
+  type: Integer
+  description: Did you smoke (or ingest) marijuana after your pregnancy?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_marij_after_when:
+  type: Integer
+  description: When and for how long after your pregnancy did you use marijuana?
+  range:
+  - 1::5
+  notes: 1 = From the birth of your child until the present ; 2 = From the birth of
+    your child until your child was 2 years old ; 3 = From the birth of your child
+    until your child was 1 year old ; 4 = Since you stopped breastfeeding your child
+    until the present ; 5 = Any other time period and duration of that period
+  codes:
+    1: From the birth of your child until the present
+    2: From the birth of your child until your child was 2 years old
+    3: From the birth of your child until your child was 1 year old
+    4: Since you stopped breastfeeding your child until the present
+    5: Any other time period and duration of that period
+
+matern_marij_after_when_spec:
+  type: String
+  length: 200
+  description: 'Used marijuana after pregnancy for other time/duration: Please specify:'
+
+matern_mari_after_days:
+  type: Integer
+  description: During the time specified above (after pregnancy), how many days per
+    week did you smoke marijuana, on average?
+  range:
+  - 1::6
+  notes: 1 = Every day ; 2 = 5-6 ; 3 = 3-4 ; 4 = 2 ; 5 = 1 ; 6 = Less often
+  codes:
+    1: Every day
+    2: 5-6
+    3: 3-4
+    4: '2'
+    5: '1'
+    6: Less often
+
+matern_preg_meds:
+  type: String
+  length: 70
+  description: Did you take any of the following medications during pregnancy (including
+    before you knew you were pregnant)?
+  notes: '1 = Anti-asthmatics ; 2 = Anti-hypertensives ; 3 = Anti-nausea agents ;
+    4 = Antibiotics ; 5 = Antihistiamines ; 6 = Anti-depressants ; 7 = Anti-anxiety
+    ; 8 = Anti-psychotics ; 9 = Fenoterol (asthma therapy) ; 10 = Hormones: oral contraceptive
+    pill ; 11 = Hormones: Thyroid hormone (thyroxin) ; 12 = Migraine medications ;
+    13 = Pain medications (other than Tylenol and Ibuprofen) ; 14 = Preterm labor
+    medication ; 15 = Pitocin ; 16 = Steroids ; 17 = Other'
+  codes:
+    1: Anti-asthmatics
+    2: Anti-hypertensives
+    3: Anti-nausea agents
+    4: Antibiotics
+    5: Antihistiamines
+    6: Anti-depressants
+    7: Anti-anxiety
+    8: Anti-psychotics
+    9: Fenoterol (asthma therapy)
+    10: 'Hormones: oral contraceptive pill'
+    11: 'Hormones: Thyroid hormone (thyroxin)'
+    12: Migraine medications
+    13: Pain medications (other than Tylenol and Ibuprofen)
+    14: Preterm labor medication
+    15: Pitocin
+    16: Steroids
+    17: Other
+
+matern_preg_meds_oth:
+  type: String
+  length: 300
+  description: 'If other medications were taken during pregnancy, please specify:'
+
+ros_10:
+  type: Integer
+  description: Were you diagnosed with gestational diabetes?
+  range:
+  - 0::1
+  - -99
+  - 77
+  - 88
+  notes: 0=No; 1=Yes;  -99=NA; 77=Refused; 88=Missing
+  alias: matern_gest_diabetes
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -99: NA
+    77: Refused
+    88: Missing
+
+matern_gest_diabetes_rx:
+  type: Integer
+  description: 'If you were diagnosed with gestational diabetes, was it controlled
+    by:'
+  range:
+  - 1::3
+  notes: 1 = diet ; 2 = insulin ; 3 = oral medication
+  codes:
+    1: diet
+    2: insulin
+    3: oral medication
+
+preg_bleeding:
+  type: String
+  length: 50
+  description: Did mother experience excessive bleeding during pregnancy?
+  range:
+  - 'Yes'
+  - 'No'
+  - 999
+  alias: matern_vag_bleed
+
+matern_vag_bleed_expl:
+  type: String
+  length: 300
+  description: 'If abnormal vaginal bleeding during this pregnancy, please explain:'
+
+devhx_10a3_p:
+  type: Integer
+  description: During the pregnancy with this child, did you/biological mother have
+    any of the following conditions? Severe nausea and vomiting extending past the
+    6th month or accompanied by weight loss? /?N?useas y v?mitos severos que continuaron
+    hasta despu?s del 6.? mes de embarazo o que estuvieron acompa?ados de una p?rdida
+    de peso?
+  range:
+  - 1
+  - 0
+  - 999
+  notes: 1 = Yes /S?; 0 = No /No; 999 = Don't know/ No lo s?
+  alias: matern_nausea
+  codes:
+    1: Yes /S?
+    0: No /No
+    999: Don't know/ No lo s?
+
+matern_nausea_expl:
+  type: String
+  length: 300
+  description: 'If excessive nausea and vomiting during this pregnancy, please explain:'
+
+matern_pre_ecl:
+  type: Integer
+  description: Did you experience Pre-eclampsia (abnormally high blood pressure)?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_malnutri:
+  type: Integer
+  description: Did you experience maternal malnutrition?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_slow_growth:
+  type: Integer
+  description: Were you ever told that your child was growing more slowly than expected
+    prior to birth?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_trauma:
+  type: String
+  length: 30
+  description: Did you experience any trauma during this pregnancy? Mark all that
+    apply.
+  notes: 1 = Emotional abuse ; 2 = Physical abuse ; 3 = Loss of a loved one ; 4 =
+    Falls ; 5 = Car accident ; 6 = Witness of emotional abuse, but not personally
+    experienced ; 7 = Witness of physical abuse, but not personally experienced ;
+    8 = Prefer not to say ; 9 = Other
+  codes:
+    1: Emotional abuse
+    2: Physical abuse
+    3: Loss of a loved one
+    4: Falls
+    5: Car accident
+    6: Witness of emotional abuse, but not personally experienced
+    7: Witness of physical abuse, but not personally experienced
+    8: Prefer not to say
+    9: Other
+
+matern_trauma_oth:
+  type: String
+  length: 300
+  description: 'If other trauma was experienced during this pregnancy, please specify:'
+
+matern_med_ill:
+  type: String
+  length: 40
+  description: Are you currently being treated for any medical or mental illness?
+    Mark all that apply.
+  notes: 1 = ADHD ; 2 = Asthma ; 3 = Anxiety ; 4 = Depression ; 5 = Diabetes ; 6 =
+    Heart Disease ; 7 = High blood pressure ; 8 = High cholesterol ; 9 = Migraines
+    ; 10 = OCD ; 11 = Other
+  codes:
+    1: ADHD
+    2: Asthma
+    3: Anxiety
+    4: Depression
+    5: Diabetes
+    6: Heart Disease
+    7: High blood pressure
+    8: High cholesterol
+    9: Migraines
+    10: OCD
+    11: Other
+
+matern_med_ill_oth:
+  type: String
+  length: 300
+  description: 'Please specify other medical or mental illness you are being treated
+    for:'
+
+matern_gest:
+  type: Integer
+  description: Gestation at birth (full term usually 40 weeks).
+  range:
+  - 1::3
+  notes: 1 = Preterm ; 2 = Term ; 3 = Postterm
+  codes:
+    1: Preterm
+    2: Term
+    3: Postterm
+
+matern_gest_wks:
+  type: Integer
+  description: Number of weeks gestation at birth?
+
+matern_preterm_lbr:
+  type: Integer
+  description: Did you experience preterm labor?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_preterm_lbr_meds:
+  type: Integer
+  description: If you experienced preterm labor, did you require medication?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_preterm_meds_inhib:
+  type: Integer
+  description: If you experienced preterm labor, was the labor inhibited with medication?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_memb_rupt:
+  type: Integer
+  description: Did you experience premature or prolonged rupture of the membranes?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_infect_fld:
+  type: Integer
+  description: Did you have an infection in your amniotic fluid?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_sev_pclamps:
+  type: Integer
+  description: Did you experience severe pre-eclampsia (high blood pressure and excessive
+    swelling)?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ex_iiie_del_breech_malpresent:
+  type: String
+  length: 2
+  description: '"Screening and Exclusion Form (0:0 to 4:5 y:m) Question IIIE Breech
+    or malpresentation during delivery of the Child of Interest (COI) (not exclusionary
+    with planned c-section) (Y=Yes, N=No, NA=Not Available)"'
+  range:
+  - Y
+  - N
+  - NA
+  notes: Y = Yes; N = No; NA = Not available
+  alias: matern_breech
+  codes:
+    Y: 'Yes'
+    N: 'No'
+    NA: Not available
+
+matern_cord_comp:
+  type: Integer
+  description: Was the umbilical cord compressed?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_fet_dist:
+  type: Integer
+  description: Did your child experience fetal distress?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_fet_distr_des:
+  type: String
+  length: 300
+  description: 'If your child experienced fetal distress, please describe:'
+
+matern_del_type:
+  type: Integer
+  description: Type of delivery?
+  range:
+  - 1
+  - 2
+  notes: 1 = Normal labor ; 2 = Cesarean section
+  codes:
+    1: Normal labor
+    2: Cesarean section
+
+ldnb_cemergency:
+  type: String
+  length: 50
+  description: For C section - Why was the c-section performed - Emergency
+  range:
+  - 'Yes'
+  - 'No'
+  alias: matern_c_sec_emerg
+
+matern_traum_del:
+  type: Integer
+  description: Was this a traumatic delivery?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_traum_del_expl:
+  type: String
+  length: 300
+  description: 'If this was a traumatic delivery, please explain:'
+
+matern_born_bef_hosp:
+  type: Integer
+  description: Was your child born before admission to the hospital?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+forceps_vacuum:
+  type: String
+  length: 3
+  description: were forceps or a vacuum used to aid delivery
+  range:
+  - 'yes'
+  - 'no'
+  - 999
+  alias: matern_forc
+
+matern_asp:
+  type: Integer
+  description: Did your child aspirate meconium at birth?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_apgar_sc:
+  type: Integer
+  description: What was your child's Apgar score at immediately after birth?
+  range:
+  - 1::10
+  notes: 1 = 1 ; 2 = 2 ; 3 = 3 ; 4 = 4 ; 5 = 5 ; 6 = 6 ; 7 = 7 ; 8 = 8 ; 9 = 9 ; 10
+    = 10
+  codes:
+    1: '1'
+    2: '2'
+    3: '3'
+    4: '4'
+    5: '5'
+    6: '6'
+    7: '7'
+    8: '8'
+    9: '9'
+    10: '10'
+
+info_apgar5:
+  type: String
+  length: 50
+  description: Apgars 5 min.
+  alias: matern_apgar_5min
+
+matern_lab_inj:
+  type: Integer
+  description: Did you or your child suffer from any physical injury during labor
+    and/or delivery beyond that expected from a typical delivery?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_brth_wt:
+  type: String
+  length: 25
+  description: What was your child's birth weight (lbs, oz)?
+
+matern_sz_gest_age:
+  type: Integer
+  description: Was your child any of the following?
+  range:
+  - 1::3
+  notes: 1 = SGA = small for gestational age (for newborn baby whose weight is lower
+    than 2500 grams or 5.51 lbs). ; 2 = AGA = Appropriate for gestational age (2500
+    - 4000 grams or 5.51-8.82 lbs) ; 3 = LGA = Large for gestational age (>4000 grams
+    or >8.82 lbs)
+  codes:
+    1: SGA = small for gestational age (for newborn baby whose weight is lower than
+      2500 grams or 5.51 lbs).
+    2: AGA = Appropriate for gestational age (2500 - 4000 grams or 5.51-8.82 lbs)
+    3: LGA = Large for gestational age (>4000 grams or >8.82 lbs)
+
+matern_hypotherm:
+  type: Integer
+  description: 'Did your child experience any of the following: Hypothermia (low body
+    temperature)?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_hypogly:
+  type: Integer
+  description: 'Did your child experience any of the following: Hypoglycemia (low
+    blood sugar)?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_jaund:
+  type: Integer
+  description: 'Did your child experience any of the following: Neonatal jaundice
+    (yellowing of the skin)?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_jaund_rx:
+  type: Integer
+  description: If your child experienced neonatal jaundice, how was it treated?
+  range:
+  - 1::3
+  notes: 1 = No treatment ; 2 = Light treatment ; 3 = Plasma exchange
+  codes:
+    1: No treatment
+    2: Light treatment
+    3: Plasma exchange
+
+matern_breath_probs:
+  type: Integer
+  description: 'Did your child experience any of the following: Breathing problems?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_pneum:
+  type: Integer
+  description: 'Did your child experience any of the following: Pneumonia?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_int_bleed:
+  type: Integer
+  description: 'Did your child experience any of the following: Intracranial bleeding
+    (bleeding into the brain)?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_stom_probs:
+  type: Integer
+  description: 'Did your child experience any of the following: Necrotizing enterocolitis
+    (severe stomach problems)?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_vent:
+  type: Integer
+  description: 'Did your child experience any of the following: Ventilator'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_nicu:
+  type: Integer
+  description: 'Did your child experience any of the following: NICU admission?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_nicu_days:
+  type: Integer
+  description: If your child was admitted to the NICU, duration of stay in days.
+
+nb_motfeed:
+  type: String
+  length: 50
+  description: Did the birth mother breast feed the baby
+  range:
+  - 'No'
+  - 'Yes'
+  - Don't Know
+  alias: matern_brstfed
+
+matern_brstfed_time:
+  type: String
+  length: 100
+  description: If you breast fed, how long?
+
+matern_formula:
+  type: Integer
+  description: Did your baby take formula?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+matern_formula_brand:
+  type: String
+  length: 50
+  description: If your baby took formula, what formula?
+
+matern_formula_time:
+  type: String
+  length: 100
+  description: If your baby took formula, for how long?
+
+matern_hld_head:
+  type: Integer
+  description: 'At what age (in months) did your child complete the following tasks:
+    Hold head up'
+
+roll_over:
+  type: Integer
+  description: At what age (in months) did your child first learn to roll over
+  alias: matern_rll_ovr
+
+matern_toy_reach:
+  type: Integer
+  description: 'At what age (in months) did your child complete the following tasks:
+    Reached for toy'
+
+matern_sat_up:
+  type: Integer
+  description: 'At what age (in months) did your child complete the following tasks:
+    Sat up alone'
+
+matern_fing_fed:
+  type: Integer
+  description: 'At what age (in months) did your child complete the following tasks:
+    Finger fed'
+
+matern_crawl:
+  type: Integer
+  description: 'At what age (in months) did your child complete the following tasks:
+    Crawled'
+
+matern_pull_to_stand:
+  type: Integer
+  description: 'At what age (in months) did your child complete the following tasks:
+    Pulled self to standing'
+
+matern_walk:
+  type: Integer
+  description: 'At what age (in months) did your child complete the following tasks:
+    Walked'
+
+matern_slf_fed:
+  type: Integer
+  description: 'At what age (in months) did your child complete the following tasks:
+    Used utensils to feed self'
+
+matern_tlk_wrd_combo:
+  type: Integer
+  description: 'At what age (in months) did your child complete the following tasks:
+    Talked in 2-3 word combinations'
+
+cocaine_gestation:
+  type: String
+  length: 5
+  description: 'During pregnancy, did birth mother:  Use Cocaine, Crack, or Free base'
+  range:
+  - 'Yes'
+  - 'No'
+  - 999
+  notes: 999 = Don't Know
+  alias: devhx_9_coc_crack
+  codes:
+    999: Don't Know
+
+devhis_8_other4_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    4: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_other4_amt
+
+devhis_8_other4_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    4: How many times per week?'
+  alias: devhx_8_other4_tmswk
+
+devhis_8_other5_name:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    5: '
+  alias: devhx_8_other5_name
+
+devhis_8_other5_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    5: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_other5_amt
+
+devhis_8_other5_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    5: How many times per week?'
+  alias: devhx_8_other5_tmswk
+
+devhis_8_other6_name:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    6: '
+  alias: devhx_8_other6_name
+
+devhis_8_other6_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    6: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_other6_amt
+
+devhis_8_other6_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    6: How many times per week?'
+  alias: devhx_8_other6_tmswk
+
+devhis_8_other7_name:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    7: '
+  alias: devhx_8_other7_name
+
+devhis_8_other7_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    7: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_other7_amt
+
+presmed_alcohol:
+  type: String
+  length: 50
+  description: In this pregnancy, did the birth mother do any of the following activities
+    - Drink alcohol
+  range:
+  - 'Yes'
+  - 'No'
+  - 999
+  notes: 999 = Don't Know
+  alias: devhx_9_alcohol
+  codes:
+    999: Don't Know
+
+devhis_8_other7_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    7: How many times per week?'
+  alias: devhx_8_other7_tmswk
+
+devhis_8_other8_name:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    8: '
+  alias: devhx_8_other8_name
+
+devhis_8_other8_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    8: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_other8_amt
+
+devhis_8_other8_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    8: How many times per week?'
+  alias: devhx_8_other8_tmswk
+
+devhis_8_other9_name:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    9: '
+  alias: devhx_8_other9_name
+
+devhis_8_other9_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    9: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_other9_amt
+
+devhis_8_other9_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    9: How many times per week?'
+  alias: devhx_8_other9_tmswk
+
+devhis_8_other10_name:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    10: '
+  alias: devhx_8_other10_name
+
+devhis_8_other10_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    10: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_other10_amt
+
+devhis_8_other10_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    10: How many times per week?'
+  alias: devhx_8_other10_tmswk
+
+preg4_2:
+  type: Integer
+  description: During your most recent pregnancy, did you have any of the following
+    health conditions? - High blood pressure (that started during this pregnancy),
+    pre-eclampsia or eclampsia
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0 = No; 1 = Yes; 999 = Missing
+  alias: devhx_10c_p
+  codes:
+    0: 'No'
+    1: 'Yes'
+    999: Missing
+
+devhis_8_other11_name:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    11: '
+  alias: devhx_8_other11_name
+
+devhis_8_other11_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    11: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_other11_amt
+
+devhis_8_other11_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    11: How many times per week?'
+  alias: devhx_8_other11_tmswk
+
+devhis_8_other12_name:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    12: '
+  alias: devhx_8_other12_name
+
+devhis_8_other12_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    12: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_other12_amt
+
+devhis_8_other12_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    12: How many times per week?'
+  alias: devhx_8_other12_tmswk
+
+devhis_8_other13_name:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    13: '
+  alias: devhx_8_other13_name
+
+devhis_8_other13_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    13: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_other13_amt
+
+devhis_8_other13_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    13: How many times per week?'
+  alias: devhx_8_other13_tmswk
+
+devhis_8_other14_name:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    14: '
+  alias: devhx_8_other14_name
+
+demo_preg_meds:
+  type: Integer
+  description: Did the biological mother use prescription medications during pregnancy?
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 1=Yes; 0=No; 3=Don't Know
+  alias: devhx_9_prescript_medyn
+  codes:
+    1: 'Yes'
+    0: 'No'
+    3: Don't Know
+
+devhis_8_other14_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    14: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_other14_amt
+
+devhis_8_other14_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    14: How many times per week?'
+  alias: devhx_8_other14_tmswk
+
+devhis_8_other15_name:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    15: '
+  alias: devhx_8_other15_name
+
+devhis_8_other15_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    15: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_other15_amt
+
+devhis_8_other15_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    15: How many times per week?'
+  alias: devhx_8_other15_tmswk
+
+devhis_9_prescript_med:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant, did she use: Prescription
+    medications? If yes, how many?'
+  notes: '999 = Don''''t know '
+  alias: devhx_9_prescript_med
+  codes:
+    999: Don''t know
+
+devhis_9_med1:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: NAME OF
+    MEDICATION 1:'
+  alias: devhx_9_med1
+
+devhis_9_med1_dose:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    1: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_9_med1_dose
+
+devhis_9_med1_frqcy:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    1: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_9_med1_frqcy
+
+devhis_9_med2:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: NAME OF
+    MEDICATION 2:'
+  alias: devhx_9_med2
+
+ph_11:
+  type: Integer
+  description: Was your child born prematurely?
+  range:
+  - 0::1
+  - 9998
+  - 999
+  notes: 0 = No (If No, please go to Question 12); 1 = Yes; 9998 = Did not answer;
+    999 = Don't Know
+  alias: devhx_12a_p
+  codes:
+    0: No (If No, please go to Question 12)
+    1: 'Yes'
+    9998: Did not answer
+    999: Don't Know
+
+devhis_9_med2_dose:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    2: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_9_med2_dose
+
+devhis_9_med2_frqcy:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    2: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_9_med2_frqcy
+
+devhis_9_med3:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: NAME OF
+    MEDICATION 3:'
+  alias: devhx_9_med3
+
+devhis_9_med3_dose:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    3: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_9_med3_dose
+
+devhis_9_med3_frqcy:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    3: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_9_med3_frqcy
+
+devhis_9_med4:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: NAME OF
+    MEDICATION 4:'
+  alias: devhx_9_med4
+
+devhis_9_med4_dose:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    4: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_9_med4_dose
+
+devhis_9_med4_frqcy:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    4: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_9_med4_frqcy
+
+devhis_9_med5:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: NAME OF
+    MEDICATION 5:'
+  alias: devhx_9_med5
+
+devhis_9_med5_dose:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    5: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_9_med5_dose
+
+child_twin:
+  type: Integer
+  description: 2.2. Does this child have a twin?
+  range:
+  - 1
+  - 2
+  - 99
+  notes: 1= Yes ; 2= No ; 99= D/K
+  alias: devhx_5_p
+  codes:
+    1: 'Yes'
+    2: 'No'
+    99: D/K
+
+devhis_9_med5_frqcy:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    5: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_9_med5_frqcy
+
+devhis_9_med6:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: NAME OF
+    MEDICATION 6:'
+  alias: devhx_9_med6
+
+devhis_9_med6_dose:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    6: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_9_med6_dose
+
+devhis_9_med6_frqcy:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    6: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_9_med6_frqcy
+
+devhis_9_med7:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: NAME OF
+    MEDICATION 7:'
+  alias: devhx_9_med7
+
+devhis_9_med7_dose:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    7: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_9_med7_dose
+
+devhis_9_med7_frqcy:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    7: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_9_med7_frqcy
+
+devhis_9_med8:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: NAME OF
+    MEDICATION 8:'
+  alias: devhx_9_med8
+
+devhis_9_med8_dose:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    8: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_9_med8_dose
+
+devhis_9_med8_frqcy:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    8: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_9_med8_frqcy
+
+bio_mother:
+  type: Integer
+  description: Are you the Child''s Biological Mother?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: devhx_1_p
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+devhis_9_med9:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: NAME OF
+    MEDICATION 9:'
+  alias: devhx_9_med9
+
+devhis_9_med9_dose:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    9: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_9_med9_dose
+
+devhis_9_med9_frqcy:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    9: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_9_med9_frqcy
+
+devhis_9_med10:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: NAME OF
+    MEDICATION 10:'
+  alias: devhx_9_med10
+
+devhis_9_med10_dose:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    10: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_9_med10_dose
+
+devhis_9_med10_frqcy:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    10: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_9_med10_frqcy
+
+devhis_9_med11:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: NAME OF
+    MEDICATION 11:'
+  alias: devhx_9_med11
+
+devhis_9_med11_dose:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    11: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_9_med11_dose
+
+devhis_9_med11_frqcy:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    11: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_9_med11_frqcy
+
+devhis_9_med12:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: NAME OF
+    MEDICATION 12:'
+  alias: devhx_9_med12
+
+how_long_pregnant:
+  type: Float
+  description: 5. How far along were you/mother when you/mother found out you/mother
+    were pregnant with (child)? (Weeks)
+  notes: 999 = Don't Know
+  alias: devhx_7_p
+  codes:
+    999: Don't Know
+
+devhis_9_med12_dose:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    12: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_9_med12_dose
+
+devhis_9_med12_frqcy:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    12: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_9_med12_frqcy
+
+devhis_9_med13:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: NAME OF
+    MEDICATION 13:'
+  alias: devhx_9_med13
+
+devhis_9_med13_dose:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    13: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_9_med13_dose
+
+devhis_9_med13_frqcy:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    13: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_9_med13_frqcy
+
+devhis_9_med14:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: NAME OF
+    MEDICATION 14:'
+  alias: devhx_9_med14
+
+devhis_9_med14_dose:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    14: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_9_med14_dose
+
+devhis_9_med14_frqcy:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    14: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_9_med14_frqcy
+
+devhis_9_med15:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: NAME OF
+    MEDICATION 15:'
+  alias: devhx_9_med15
+
+devhis_9_med15_dose:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    15: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_9_med15_dose
+
+birth_weight_oz:
+  type: Float
+  description: Birth weight ounces
+  alias: devhx_2b_p
+
+devhis_9_med15_frqcy:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Medication
+    15: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_9_med15_frqcy
+
+devhis_9_cigs_per_day:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Tobacco:
+    How much?'
+  notes: (cigarettes/day)
+  alias: devhx_9_cigs_per_day
+
+devhis_9_alchohol_max:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Alcohol:
+    Maximum drinks in one sitting?'
+  alias: devhx_9_alchohol_max
+
+devhis_9_alchohol_avg:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Alcohol:
+    Average drinks per/week:'
+  alias: devhx_9_alchohol_avg
+
+devhis_9_alcohol_effects:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Alcohol:
+    How many drinks did it take to feel the effects of alcohol?'
+  alias: devhx_9_alcohol_effects
+
+devhis_9_marijuana_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Marijuana
+    used? How much marijuana?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_marijuana_amt
+
+devhis_9_marijuana_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Marijuana
+    used? How many times per week?'
+  alias: devhx_9_marijuana_tmswk
+
+devhis_9_coc_crack_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Cocaine/Crack
+    used? How much cocaine/crack?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_coc_crack_amt
+
+devhis_9_coc_crack_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Cocaine/Crack
+    used? How many times per week?'
+  alias: devhx_9_coc_crack_tmswk
+
+devhis_9_her_morph_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Heroin/Morphine
+    used? How much heroin/morphine?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_her_morph_amt
+
+birth_weight_lbs:
+  type: Float
+  description: Birth weight pounds
+  alias: devhx_2_p
+
+devhis_9_her_morph_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Heroin/Morphine
+    used? How many times per week?'
+  alias: devhx_9_her_morph_tmswk
+
+devhis_9_oxycont:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Oxycontin
+    used? '
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = yes ; 0 = no ; 999 = Don''''t know '
+  alias: devhx_9_oxycont
+  codes:
+    1: 'yes'
+    0: 'no'
+    999: Don''t know
+
+devhis_9_oxycont_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Oxycontin
+    used? How much oxycontin?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_oxycont_amt
+
+devhis_9_oxycont_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Oxycontin
+    used? How many times per week?'
+  alias: devhx_9_oxycont_tmswk
+
+devhis_9_other_drugs:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Any other
+    drugs used?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = yes ; 0 = no ; 999 = Don''''t know '
+  alias: devhx_9_other_drugs
+  codes:
+    1: 'yes'
+    0: 'no'
+    999: Don''t know
+
+devhis_9_other_drugs_amt:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Any other
+    drugs used? If so, how many drugs?'
+  alias: devhx_9_other_drugs_amt
+
+devhis_9_other1_name:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 1: '
+  alias: devhx_9_other1_name
+
+devhis_9_other1_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 1: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_other1_amt
+
+devhis_9_other1_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 1: How many times per week?'
+  alias: devhx_9_other1_tmswk
+
+devhis_9_other2_name:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 2: '
+  alias: devhx_9_other2_name
+
+devhis_3_p:
+  type: Float
+  description: How old was the biological mother (if you are the biological mother,
+    then it''s you) when s/he was born?
+  notes: Don''t know = 999
+  alias: devhx_3_p
+
+devhis_9_other2_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 2: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_other2_amt
+
+devhis_9_other2_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 2: How many times per week?'
+  alias: devhx_9_other2_tmswk
+
+devhis_9_other3_name:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 3: '
+  alias: devhx_9_other3_name
+
+devhis_9_other3_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 3: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_other3_amt
+
+devhis_9_other3_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 3: How many times per week?'
+  alias: devhx_9_other3_tmswk
+
+devhis_9_other4_name:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 4: '
+  alias: devhx_9_other4_name
+
+devhis_9_other4_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 4: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_other4_amt
+
+devhis_9_other4_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 4: How many times per week?'
+  alias: devhx_9_other4_tmswk
+
+devhis_9_other5_name:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 5: '
+  alias: devhx_9_other5_name
+
+devhis_9_other5_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 5: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_other5_amt
+
+devhis_4_p:
+  type: Float
+  description: How old was the biological father (if you are the biological father,
+    then it''s you) when s/he was born?
+  notes: Don''t know = 999
+  alias: devhx_4_p
+
+devhis_9_other5_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 5: How many times per week?'
+  alias: devhx_9_other5_tmswk
+
+devhis_9_other6_name:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 6: '
+  alias: devhx_9_other6_name
+
+devhis_9_other6_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 6: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_other6_amt
+
+devhis_9_other6_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 6: How many times per week?'
+  alias: devhx_9_other6_tmswk
+
+devhis_9_other7_name:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 7: '
+  alias: devhx_9_other7_name
+
+devhis_9_other7_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 7: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_other7_amt
+
+devhis_9_other7_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 7: How many times per week?'
+  alias: devhx_9_other7_tmswk
+
+devhis_9_other8_name:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 8: '
+  alias: devhx_9_other8_name
+
+devhis_9_other8_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 8: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_other8_amt
+
+devhis_9_other8_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 8: How many times per week?'
+  alias: devhx_9_other8_tmswk
+
+devhis_6_p:
+  type: Integer
+  description: Was your pregnancy with this child a planned pregnancy?
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_6_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_9_other9_name:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 9: '
+  alias: devhx_9_other9_name
+
+devhis_9_other9_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 9: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_other9_amt
+
+devhis_9_other9_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 9: How many times per week?'
+  alias: devhx_9_other9_tmswk
+
+devhis_9_other10_name:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 10: '
+  alias: devhx_9_other10_name
+
+devhis_9_other10_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 10: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_other10_amt
+
+devhis_9_other10_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 10: How many times per week?'
+  alias: devhx_9_other10_tmswk
+
+devhis_9_other11_name:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 11: '
+  alias: devhx_9_other11_name
+
+devhis_9_other11_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 11: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_other11_amt
+
+devhis_9_other11_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 11: How many times per week?'
+  alias: devhx_9_other11_tmswk
+
+devhis_9_other12_name:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 12: '
+  alias: devhx_9_other12_name
+
+devhis_8_prescript_medyn:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child, did she use: Prescription medications?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_8_prescript_medyn
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_9_other12_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 12: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_other12_amt
+
+devhis_9_other12_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 12: How many times per week?'
+  alias: devhx_9_other12_tmswk
+
+devhis_9_other13_name:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 13: '
+  alias: devhx_9_other13_name
+
+devhis_9_other13_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 13: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_other13_amt
+
+devhis_9_other13_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 13: How many times per week?'
+  alias: devhx_9_other13_tmswk
+
+devhis_9_other14_name:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 14: '
+  alias: devhx_9_other14_name
+
+devhis_9_other14_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 14: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_other14_amt
+
+devhis_9_other14_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 14: How many times per week?'
+  alias: devhx_9_other14_tmswk
+
+devhis_9_other15_name:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 15: '
+  alias: devhx_9_other15_name
+
+devhis_9_other15_amt:
+  type: String
+  length: 100
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 15: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_9_other15_amt
+
+devhis_8_prescript_med:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child, did she use: Prescription medications?
+    If yes, how many?'
+  notes: '999 = Don''''t know '
+  alias: devhx_8_prescript_med
+  codes:
+    999: Don''t know
+
+devhis_9_other15_tmswk:
+  type: Integer
+  description: 'Once the biological mother knew she was pregnant: Specify: Drug use?
+    Name of drug 15: How many times per week?'
+  alias: devhx_9_other15_tmswk
+
+devhis_caffeine_11:
+  type: Integer
+  description: Did you/biological mother have any caffeine during pregnancy (from
+    conception until delivery)?
+  range:
+  - 0
+  - 1
+  - -888
+  - 999
+  notes: '1 = yes ; 0 = no ; 999 = Don''''t know ; -888 = Not applicable '
+  alias: devhx_caffeine_11
+  codes:
+    1: 'yes'
+    0: 'no'
+    999: Don''t know
+    -888: Not applicable
+
+devhis_caffeine_amt:
+  type: Integer
+  description: If you/biological mother had caffeine during pregnancy (from conception
+    until delivery) How much caffeine/day?
+  notes: (cups/day)
+  alias: devhx_caffeine_amt
+
+devhis_10a_p:
+  type: Integer
+  description: 'During the pregnancy with this child, did you/biological mother have:
+    Severe nausea and vomiting extending past the 6th month or accompanied by weight
+    loss?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_10a_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_10b_p:
+  type: Integer
+  description: 'During the pregnancy with this child, did you/biological mother have:
+    Heavy bleeding requiring bed rest or special treatment?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_10b_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_10d_p:
+  type: Integer
+  description: 'During the pregnancy with this child, did you/biological mother have:
+    Severe gall bladder attack?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_10d_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_10e_p:
+  type: Integer
+  description: 'During the pregnancy with this child, did you/biological mother have:
+    Persistent proteinuria?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_10e_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_10f_p:
+  type: Integer
+  description: 'During the pregnancy with this child, did you/biological mother have:
+    Rubella (German measles) during first 3 months of pregnancy?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_10f_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_10_p:
+  type: Integer
+  description: 'During the pregnancy with this child, did you/biological mother have:
+    Urinary tract infections?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_10_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_10i_p:
+  type: Integer
+  description: 'During the pregnancy with this child, did you/biological mother have:
+    Pregnancy-related diabetes?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_10i_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_8_med1:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: NAME OF MEDICATION 1:'
+  alias: devhx_8_med1
+
+devhis_10j_p:
+  type: Integer
+  description: 'During the pregnancy with this child, did you/biological mother have:
+    Pregnancy-related high blood pressure?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_10j_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_10k_p:
+  type: Integer
+  description: 'During the pregnancy with this child, did you/biological mother have:
+    Previa, abruptio, or other problems with the placenta?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_10k_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_10l_p:
+  type: Integer
+  description: 'During the pregnancy with this child, did you/biological mother have:
+    An accident or injury requiring medical care?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_10l_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_10m_p:
+  type: Integer
+  description: 'During the pregnancy with this child, did you/biological mother have:
+    Any other conditions requiring medical care'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_10m_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_11_p:
+  type: Integer
+  description: About how many times did you/biological mother see a doctor or other
+    medical professional for prenatal care during this pregnancy?
+  notes: (Routine care = 14)(Don''t know = 999)
+  alias: devhx_11_p
+
+devhis_12_p:
+  type: Integer
+  description: About how many weeks premature was the child when they were born?
+  notes: '1 - 12 = weeks 1 - 12; 13 = greater than 12 ; 999 = Don''''t know example:
+    full term = 40 weeks; born at 36 weeks = 4 weeks premature; born at 32 weeks =
+    8 weeks premature '
+  alias: devhx_12_p
+  codes:
+    12: weeks 1 - 12
+    13: greater than 12
+    999: 'Don''''t know example: full term = 40 weeks'
+
+devhis_14b_p:
+  type: Integer
+  description: 'Did your child have any of the following complications at birth: Slow
+    heart beat?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_14b_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_14c_p:
+  type: Integer
+  description: 'Did your child have any of the following complications at birth: Did
+    not breathe at first?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_14c_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_14d_p:
+  type: Integer
+  description: 'Did your child have any of the following complications at birth: Convulsions?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_14d_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_14e_p:
+  type: Integer
+  description: 'Did your child have any of the following complications at birth: Jaundice
+    needing treatment?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_14e_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_8_med1_dose:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 1: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_8_med1_dose
+
+devhis_14f_p:
+  type: Integer
+  description: 'Did your child have any of the following complications at birth: Required
+    oxygen?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_14f_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_14g_p:
+  type: Integer
+  description: 'Did your child have any of the following complications at birth: Required
+    blood transfusion?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_14g_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_14h_p:
+  type: Integer
+  description: 'Did your child have any of the following complications at birth: Rh
+    incompatibility?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_14h_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_15:
+  type: Integer
+  description: For how many days after birth was your child in an incubator?
+  notes: If he/she was never in an incubator, enter 0. Don''t know = 999
+  alias: devhx_15
+
+devhis_16_p:
+  type: Integer
+  description: About how many days in the first 12 months of life, did your child
+    have a fever of 104 degrees or greater?
+  notes: If none, enter 0. Don''t know = 999
+  alias: devhx_16_p
+
+devhis_17_p:
+  type: Integer
+  description: About how many days in the first 12 months of life did your child have
+    any infections or serious illnesses?
+  notes: If none, enter 0. Don''t know = 999
+  alias: devhx_17_p
+
+devhis_18_p:
+  type: Float
+  description: For how many months was your child breast fed?
+  notes: If he/she was not breast fed, enter 0, 1 year = 12 months, 2 years = 24 months,
+    3 years = 36 months, etc. Don''t know = 999
+  alias: devhx_18_p
+
+devhis_19a_p:
+  type: Float
+  description: 'At approximately what age (number of months) was your child FIRST
+    able to do each of the following: Roll over?'
+  notes: CDC Average = 4 months [late at six months]  Don''t know = 999
+  alias: devhx_19a_p
+
+devhis_19b_p:
+  type: Float
+  description: 'At approximately what age (number of months) was your child FIRST
+    able to do each of the following: Sit without assistance?'
+  notes: CDC Average = 9 months,  Don''t know = 999
+  alias: devhx_19b_p
+
+devhis_19c_p:
+  type: Float
+  description: 'At approximately what age (number of months) was your child FIRST
+    able to do each of the following: Walk without assistance?'
+  notes: CDC Average = 18 months, Don''t know = 999
+  alias: devhx_19c_p
+
+devhis_8_med1_frqcy:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 1: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_8_med1_frqcy
+
+devhis_19d_p:
+  type: Float
+  description: 'At approximately what age (number of months) was your child FIRST
+    able to do each of the following: Say his/her first word?'
+  notes: CDC average = 1 year (if count mama/dada), Don''t know = 999
+  alias: devhx_19d_p
+
+devhis_20_p:
+  type: Integer
+  description: Would you say your child''s motor development (sitting, crawling, walking)
+    was earlier, average, or later than most other children?
+  range:
+  - 1::5
+  - 999
+  notes: '1 = Much earlier ; 2 = Somewhat earlier ; 3 = About average ; 4 = Somewhat
+    later ; 5 = Much later ; 999 = Don''''t know '
+  alias: devhx_20_p
+  codes:
+    1: Much earlier
+    2: Somewhat earlier
+    3: About average
+    4: Somewhat later
+    5: Much later
+    999: Don''t know
+
+devhis_21_p:
+  type: Integer
+  description: Would you say your child''s speech development was earlier, average,
+    or later than most other children?
+  range:
+  - 1::5
+  - 999
+  notes: '1 = Much earlier ; 2 = Somewhat earlier ; 3 = About average ; 4 = Somewhat
+    later ; 5 = Much later ; 999 = Don''''t know '
+  alias: devhx_21_p
+  codes:
+    1: Much earlier
+    2: Somewhat earlier
+    3: About average
+    4: Somewhat later
+    5: Much later
+    999: Don''t know
+
+devhis_22_p:
+  type: Integer
+  description: Has your child ever wet the bed at night?
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = Yes ; 0 = No ; 999 = Don''''t know '
+  alias: devhx_22_p
+  codes:
+    1: 'Yes'
+    0: 'No'
+    999: Don''t know
+
+devhis_23_p:
+  type: Integer
+  description: At what age (in years) did your child stop wetting the bed at night?
+  notes: If he/she still wets the bed, enter 999, Don''t know = 0
+  alias: devhx_23_p
+
+devhis_8_med2:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: NAME OF MEDICATION 2:'
+  alias: devhx_8_med2
+
+devhis_8_med2_dose:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 2: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_8_med2_dose
+
+quesmoth_momvit:
+  type: String
+  length: 50
+  description: In this pregnancy did the birth mother take prenatal vitamins?
+  range:
+  - 'No'
+  - 'Yes'
+  - Don't Know
+  alias: devhx_10
+
+devhis_8_med2_frqcy:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 2: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_8_med2_frqcy
+
+devhis_8_med3:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: NAME OF MEDICATION 3:'
+  alias: devhx_8_med3
+
+devhis_8_med3_dose:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 3: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_8_med3_dose
+
+devhis_8_med3_frqcy:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 3: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_8_med3_frqcy
+
+devhis_8_med4:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: NAME OF MEDICATION 4:'
+  alias: devhx_8_med4
+
+devhis_8_med4_dose:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 4: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_8_med4_dose
+
+devhis_8_med4_frqcy:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 4: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_8_med4_frqcy
+
+devhis_8_med5:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: NAME OF MEDICATION 5:'
+  alias: devhx_8_med5
+
+devhis_8_med5_dose:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 5: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_8_med5_dose
+
+devhis_8_med5_frqcy:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 5: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_8_med5_frqcy
+
+presmed_smoke:
+  type: String
+  length: 50
+  description: In this pregnancy, did the birth mother do any of the following activities
+    - Smoke cigarettes or other tobacco products
+  range:
+  - 'Yes'
+  - 'No'
+  - 999
+  notes: 999=NA/missing
+  alias: devhx_9_tobacco
+  codes:
+    999: NA/missing
+
+devhis_8_med6:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: NAME OF MEDICATION 6:'
+  alias: devhx_8_med6
+
+devhis_8_med6_dose:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 6: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_8_med6_dose
+
+devhis_8_med6_frqcy:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 6: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_8_med6_frqcy
+
+devhis_8_med7:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: NAME OF MEDICATION 7:'
+  alias: devhx_8_med7
+
+devhis_8_med7_dose:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 7: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_8_med7_dose
+
+devhis_8_med7_frqcy:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 7: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_8_med7_frqcy
+
+devhis_8_med8:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: NAME OF MEDICATION 8:'
+  alias: devhx_8_med8
+
+devhis_8_med8_dose:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 8: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_8_med8_dose
+
+devhis_8_med8_frqcy:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 8: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_8_med8_frqcy
+
+devhis_8_med9:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: NAME OF MEDICATION 9:'
+  alias: devhx_8_med9
+
+fs_v1_q39_c_section_birth:
+  type: String
+  length: 2
+  description: 'Full Screener (Visit 1): Q39 c-section delivery. Comment field to
+    be added in future release.'
+  range:
+  - Y
+  - N
+  - NA
+  - DK
+  notes: Y = Yes; N = No; NA = Not available; DK = Don't Know
+  alias: devhx_13_p
+  codes:
+    Y: 'Yes'
+    N: 'No'
+    NA: Not available
+    DK: Don't Know
+
+devhis_8_med9_dose:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 9: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_8_med9_dose
+
+devhis_8_med9_frqcy:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 9: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_8_med9_frqcy
+
+devhis_8_med10:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: NAME OF MEDICATION 10:'
+  alias: devhx_8_med10
+
+devhis_8_med10_dose:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 10: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_8_med10_dose
+
+devhis_8_med10_frqcy:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 10: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_8_med10_frqcy
+
+devhis_8_med11:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: NAME OF MEDICATION 11:'
+  alias: devhx_8_med11
+
+devhis_8_med11_dose:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 11: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_8_med11_dose
+
+devhis_8_med11_frqcy:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 11: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_8_med11_frqcy
+
+devhis_8_med12:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: NAME OF MEDICATION 12:'
+  alias: devhx_8_med12
+
+devhis_8_med12_dose:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 12: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_8_med12_dose
+
+neo_cyanosis:
+  type: String
+  length: 50
+  description: Did cyanosis occur after delivery?
+  range:
+  - 'Yes'
+  - 'No'
+  - 999
+  alias: devhx_14a_p
+
+devhis_8_med12_frqcy:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 12: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_8_med12_frqcy
+
+devhis_8_med13:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: NAME OF MEDICATION 13:'
+  alias: devhx_8_med13
+
+devhis_8_med13_dose:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 13: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_8_med13_dose
+
+devhis_8_med13_frqcy:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 13: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_8_med13_frqcy
+
+devhis_8_med14:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: NAME OF MEDICATION 14:'
+  alias: devhx_8_med14
+
+devhis_8_med14_dose:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 14: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_8_med14_dose
+
+devhis_8_med14_frqcy:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 14: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_8_med14_frqcy
+
+devhis_8_med15:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: NAME OF MEDICATION 15:'
+  alias: devhx_8_med15
+
+devhis_8_med15_dose:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 15: HOW MUCH?'
+  notes: (mg, IU, etc.) (Write the decimal in the tenths place, such as 0.5mg.) (999
+    if don''t know.)
+  alias: devhx_8_med15_dose
+
+devhis_8_med15_frqcy:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Medication 15: HOW OFTEN?'
+  notes: ' _Time(s)/_(Day, Week, Month) (such as 1/Day, 1/Week, 1/Month) (999 if don''''t
+    know.)'
+  alias: devhx_8_med15_frqcy
+
+marijuan:
+  type: String
+  length: 5
+  description: 'During pregnancy, did birth mother:  Smoke marijuana or hashish (THC)'
+  range:
+  - 'Yes'
+  - 'No'
+  - 999
+  notes: 999 = Don't Know
+  alias: devhx_9_marijuana
+  codes:
+    999: Don't Know
+
+devhis_8_tobacco:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Tobacco used?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = yes ; 0 = no ; 999 = Don''''t know '
+  alias: devhx_8_tobacco
+  codes:
+    1: 'yes'
+    0: 'no'
+    999: Don''t know
+
+devhis_8_cigs_per_day:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Tobacco: How much?'
+  notes: (cigarettes/day)
+  alias: devhx_8_cigs_per_day
+
+devhis_8_alcohol:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Alcohol used?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = yes ; 0 = no ; 999 = Don''''t know '
+  alias: devhx_8_alcohol
+  codes:
+    1: 'yes'
+    0: 'no'
+    999: Don''t know
+
+devhis_8_alchohol_max:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Alcohol: Maximum drinks
+    in one sitting?'
+  alias: devhx_8_alchohol_max
+
+devhis_8_alchohol_avg:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Alcohol: Average drinks
+    per/week:'
+  alias: devhx_8_alchohol_avg
+
+devhis_8_alcohol_effects:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Alcohol: How many drinks
+    did it take to feel the effects of alcohol?'
+  alias: devhx_8_alcohol_effects
+
+devhis_8_marijuana:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Marijuana used? '
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = yes ; 0 = no ; 999 = Don''''t know '
+  alias: devhx_8_marijuana
+  codes:
+    1: 'yes'
+    0: 'no'
+    999: Don''t know
+
+devhis_8_marijuana_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Marijuana used? How much
+    marijuana?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_marijuana_amt
+
+devhis_8_marijuana_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Marijuana used? How many
+    times per week?'
+  alias: devhx_8_marijuana_tmswk
+
+devhis_8_coc_crack:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Cocaine/Crack used? '
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = yes ; 0 = no ; 999 = Don''''t know '
+  alias: devhx_8_coc_crack
+  codes:
+    1: 'yes'
+    0: 'no'
+    999: Don''t know
+
+quesmoth_probanemia:
+  type: String
+  length: 50
+  description: Anemia
+  range:
+  - 'Yes'
+  - 'No'
+  - Don't Know
+  alias: devhx_10g_p
+
+devhis_8_coc_crack_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Cocaine/Crack used? How
+    much cocaine/crack?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_coc_crack_amt
+
+devhis_8_coc_crack_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Cocaine/Crack used? How
+    many times per week?'
+  alias: devhx_8_coc_crack_tmswk
+
+devhis_8_her_morph:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Heroin/Morphine used? '
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = yes ; 0 = no ; 999 = Don''''t know '
+  alias: devhx_8_her_morph
+  codes:
+    1: 'yes'
+    0: 'no'
+    999: Don''t know
+
+devhis_8_her_morph_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Heroin/Morphine used? How
+    much heroin/morphine?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_her_morph_amt
+
+devhis_8_her_morph_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Heroin/Morphine used? How
+    many times per week?'
+  alias: devhx_8_her_morph_tmswk
+
+devhis_8_oxycont:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Oxycontin used? '
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = yes ; 0 = no ; 999 = Don''''t know '
+  alias: devhx_8_oxycont
+  codes:
+    1: 'yes'
+    0: 'no'
+    999: Don''t know
+
+devhis_8_oxycont_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Oxycontin used? How much
+    oxycontin?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_oxycont_amt
+
+devhis_8_oxycont_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Oxycontin used? How many
+    times per week?'
+  alias: devhx_8_oxycont_tmswk
+
+devhis_8_other_drugs:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Any other drugs used?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: '1 = yes ; 0 = no ; 999 = Don''''t know '
+  alias: devhx_8_other_drugs
+  codes:
+    1: 'yes'
+    0: 'no'
+    999: Don''t know
+
+devhis_8_other_drugs_amt:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Any other drugs used? If
+    so, how many drugs?'
+  alias: devhx_8_other_drugs_amt
+
+heroin_gestation:
+  type: String
+  length: 5
+  description: 'During pregnancy, did birth mother:  Use Heroin (includes speed balling
+    (heroin and cocaine injected together)'
+  range:
+  - 'Yes'
+  - 'No'
+  - 999
+  notes: 999 = Don't Know
+  alias: devhx_9_her_morph
+  codes:
+    999: Don't Know
+
+devhis_8_other1_name:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    1: '
+  alias: devhx_8_other1_name
+
+devhis_8_other1_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    1: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_other1_amt
+
+devhis_8_other1_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    1: How many times per week?'
+  alias: devhx_8_other1_tmswk
+
+devhis_8_other2_name:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    2: '
+  alias: devhx_8_other2_name
+
+devhis_8_other2_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    2: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_other2_amt
+
+devhis_8_other2_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    2: How many times per week?'
+  alias: devhx_8_other2_tmswk
+
+devhis_8_other3_name:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    3: '
+  alias: devhx_8_other3_name
+
+devhis_8_other3_amt:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    3: How much?'
+  notes: (mg/day) ( 1g=1000mg) (999 if don''t know)
+  alias: devhx_8_other3_amt
+
+devhis_8_other3_tmswk:
+  type: Integer
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    3: How many times per week?'
+  alias: devhx_8_other3_tmswk
+
+devhis_8_other4_name:
+  type: String
+  length: 100
+  description: 'Before the biological mother found out she was pregnant, but while
+    she might have been pregnant with this child: Specify: Drug use? Name of drug
+    4: '
+  alias: devhx_8_other4_name

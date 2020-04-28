@@ -1,0 +1,965 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: child_id,id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: adate
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: age
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+
+fes_1:
+  type: Integer
+  description: Family members really help and support one another.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_1
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_2:
+  type: Integer
+  description: We often seem to be killing time at home.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_11
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_3:
+  type: Integer
+  description: We put a lot of energy into what we do at home.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_21
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_4:
+  type: Integer
+  description: There is a feeling of togetherness in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_31
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_5:
+  type: Integer
+  description: We rarely volunteer when something has to be done at home.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_41
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_6:
+  type: Integer
+  description: Family members really back each other up.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_51
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_7:
+  type: Integer
+  description: There is very little group spirit in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_61
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_8:
+  type: Integer
+  description: We really get along well with each other.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_71
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_9:
+  type: Integer
+  description: There is plenty of time and attention for everyone in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_81
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_10:
+  type: Integer
+  description: We feel it is important to be the best at whatever you do.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_5
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_11:
+  type: Integer
+  description: Getting ahead in life is very important in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_15
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_12:
+  type: Integer
+  description: How much money a person makes is not very important to us.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_25
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_13:
+  type: Integer
+  description: We believe in competition and may the best man win.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_35
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_14:
+  type: Integer
+  description: We always strive to do things just a little better the next time.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_45
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_15:
+  type: Integer
+  description: Family members rarely worry about job promotions, school grades, etc.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_55
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_16:
+  type: Integer
+  description: In our family, we dont try that hard to succeed.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_65
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_17:
+  type: Integer
+  description: Work before play is the rule in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_75
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_18:
+  type: Integer
+  description: Family members are often compared with others as to how well they are
+    doing at work or school.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_85
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_19:
+  type: Integer
+  description: Family members attend church, synagogue, or Sunday School fairly often.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_8
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_20:
+  type: Integer
+  description: We dont say prayers in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_18
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_21:
+  type: Integer
+  description: We often talk about the religious meaning of Christmas, Passover, or
+    other holidays.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_28
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_22:
+  type: Integer
+  description: We dont believe in heaven or hell.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_38
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_23:
+  type: Integer
+  description: Family members have strict ideas about what is right and wrong.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_48
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_24:
+  type: Integer
+  description: We believe there are some things you just have to take on faith.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_58
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_25:
+  type: Integer
+  description: In our family each person has different ideas about what is right and
+    wrong.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_68
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_26:
+  type: Integer
+  description: The Bible is a very important book in our home.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_78
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_27:
+  type: Integer
+  description: Family members believe that if you sin you will be punished.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_88
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_28:
+  type: Integer
+  description: Activities in our family are pretty carefully planned.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_9
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_29:
+  type: Integer
+  description: We are generally very neat and orderly.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_19
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_30:
+  type: Integer
+  description: Its often hard to find things when you need them in our household.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_29
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_31:
+  type: Integer
+  description: Being on time is very important in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_39
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_32:
+  type: Integer
+  description: People change their minds often in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_49
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_33:
+  type: Integer
+  description: Family members make sure their rooms are neat.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_59
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_34:
+  type: Integer
+  description: Each persons duties are clearly defined in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_69
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_35:
+  type: Integer
+  description: Money is not handled very carefully in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_79
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_36:
+  type: Integer
+  description: Dishes are usually done immediately after eating.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_89
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_37:
+  type: Integer
+  description: Family members are rarely ordered around.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_10
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_38:
+  type: Integer
+  description: There are very few rules to follow in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_20
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_39:
+  type: Integer
+  description: There is one family member who makes most of the decisions.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_30
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_40:
+  type: Integer
+  description: There are set ways of doing things at home.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_40
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_41:
+  type: Integer
+  description: There is a strong emphasis on following rules in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_50
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_42:
+  type: Integer
+  description: Everyone has an equal say in family decisions.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_60
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_43:
+  type: Integer
+  description: We can do whatever we want to in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_70
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_44:
+  type: Integer
+  description: Rules are pretty inflexible in our household.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_80
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_45:
+  type: Integer
+  description: You cant get away with much in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  alias: fesp_90
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_c:
+  type: Integer
+  description: Cohesion Subscale
+  range:
+  - 0::9
+
+fes_ex:
+  type: Integer
+  description: Expressiveness Subscale
+  range:
+  - 0::9
+
+fes_con:
+  type: Integer
+  description: Conflict Subscale
+  range:
+  - 0::9
+
+fes_ind:
+  type: Integer
+  description: Independence Subscale
+  range:
+  - 0::9
+
+fes_ao:
+  type: Integer
+  description: Achievement Orientation Subscale
+  range:
+  - 0::9
+
+fes_ico:
+  type: Integer
+  description: Intellectual-Cultural Orientation Subscale
+  range:
+  - 0::9
+
+fes_aro:
+  type: Integer
+  description: Active-Recreational Orientation Subscale
+  range:
+  - 0::9
+
+fes_mre:
+  type: Integer
+  description: Moral-Religious Emphasis Subscale
+  range:
+  - 0::9
+
+fes_org:
+  type: Integer
+  description: Organization Subscale
+  range:
+  - 0::9
+
+fes_ctl:
+  type: Integer
+  description: Control Subscale
+  range:
+  - 0::9
+
+conflict_y5:
+  type: Integer
+  description: Family members often criticize each other
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+conflict_y6:
+  type: Integer
+  description: Family members sometimes hit each other
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+conflict_y7:
+  type: Integer
+  description: If there's a disagreement in our family, we try hard to smooth things
+    over and keep the peace
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+conflict_y8:
+  type: Integer
+  description: Family members often try to one-up or outdo each other
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+conflict_y9:
+  type: Integer
+  description: In our family, we believe you don't ever get anywhere by raising your
+    voice
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+fpnh_mom:
+  type: String
+  length: 100
+  description: 'Family Psychiatric and Neurological History: Do either of your parents
+    have any of the following conditions? Mother:'
+  notes: 1 = Schizophrenia or Psychosis ; 2 = Depression  ; 3 = Bipolar Disorder ;
+    4 = Anxiety that needed treatment ; 5 = Drug or Alcohol Problems ; 6 = Alzheimer's
+    Disease or Dementia ; 7 = Parkinson's Disease  ; 8 = Tourette's Syndrome  ; 9
+    = NONE OF THE ABOVE
+  codes:
+    1: Schizophrenia or Psychosis
+    2: Depression
+    3: Bipolar Disorder
+    4: Anxiety that needed treatment
+    5: Drug or Alcohol Problems
+    6: Alzheimer's Disease or Dementia
+    7: Parkinson's Disease
+    8: Tourette's Syndrome
+    9: NONE OF THE ABOVE
+
+fpnh_dad:
+  type: String
+  length: 100
+  description: 'Family Psychiatric and Neurological History: Do either of your parents
+    have any of the following conditions? Father:'
+  notes: 1 = Schizophrenia or Psychosis ; 2 = Depression  ; 3 = Bipolar Disorder ;
+    4 = Anxiety that needed treatment ; 5 = Drug or Alcohol Problems ; 6 = Alzheimer's
+    Disease or Dementia ; 7 = Parkinson's Disease  ; 8 = Tourette's Syndrome  ; 9
+    = NONE OF THE ABOVE
+  codes:
+    1: Schizophrenia or Psychosis
+    2: Depression
+    3: Bipolar Disorder
+    4: Anxiety that needed treatment
+    5: Drug or Alcohol Problems
+    6: Alzheimer's Disease or Dementia
+    7: Parkinson's Disease
+    8: Tourette's Syndrome
+    9: NONE OF THE ABOVE
+
+data_about:
+  type: String
+  length: 25
+  description: When you answered these questions, who did you have in mind?
+
+about_other:
+  type: String
+  length: 25
+  description: When you answered these questions, who did you have in mind? Specify
+    other person
+
+famenv_1:
+  type: Integer
+  description: We fight a lot in our family
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: conflict_p1
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+famenv_2:
+  type: Integer
+  description: Family members rarely become openly angry
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: conflict_p2
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+famenv_3:
+  type: Integer
+  description: Family members sometimes get so angry they throw things
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: conflict_p3
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+famenv_4:
+  type: Integer
+  description: Family-members hardly ever lose their tempers
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: conflict_p4
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+famenv_5:
+  type: Integer
+  description: Family members often criticize each other
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: conflict_p5
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+famenv_6:
+  type: Integer
+  description: Family members sometimes hit each other
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: conflict_p6
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+famenv_7:
+  type: Integer
+  description: If there's a disagreement in our family, we try hard to smooth things
+    over and keep the peace
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: conflict_p7
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+famenv_8:
+  type: Integer
+  description: Family members often try to one-up or outdo each other
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: conflict_p8
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+famenv_9:
+  type: Integer
+  description: In our family, we believe you don't ever get anywhere by raising your
+    voice
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  alias: conflict_p9
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+aescode:
+  type: Integer
+  description: Staff code number of person completing this form
+
+start_time:
+  type: String
+  length: 50
+  description: Trial Start Time
+
+stoptime:
+  type: String
+  length: 10
+  description: Stop time
+
+conflict_y1:
+  type: Integer
+  description: We fight a lot in our family
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+conflict_y2:
+  type: Integer
+  description: Family members rarely become openly angry
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+conflict_y3:
+  type: Integer
+  description: Family members sometimes get so angry they throw things
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+conflict_y4:
+  type: Integer
+  description: Family-members hardly ever lose their tempers
+  range:
+  - 0
+  - 1
+  notes: 1 = Yes ; 0 = No
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+fes_y_ss_fc:
+  type: Integer
+  description: 'Conflict Subscale from the Family Environment Scale Sum of Youth Report
+    (RAW Score): fes_youth_q1 + fes_youth_q2 + fes_youth_q3 + fes_youth_q4 + fes_youth_q5
+    + fes_youth_q6 + fes_youth_q7 + fes_youth_q8 + fes_youth_q9; Validation: Minimum
+    of five items answered'
+  notes: 'Note that the scores for items that are reversed scored already reflect
+    this scoring (fes_youth_q1, fes_youth_q4, fes_youth_q7, fes_youth_q9). Moos, R.
+    H., and  Moos, B. S. (1994)  Family Environment Scale manual (3rd ed.). Palo Alto,
+    CA: Consulting Psychologists Press.'
+  alias: conflict_raw
+
+fes_y_ss_fc_na:
+  type: Integer
+  description: 'Conflict Subscale from the Family Environment Scale, Sum of Youth
+    Report: Number Answered'
+  alias: conflict_na
+
+fes_y_ss_fc_nm:
+  type: Integer
+  description: 'Conflict Subscale from the Family Environment Scale, Sum of Youth
+    Report: Number Missing Answers'
+  alias: conflict_nm
+
+fes_y_ss_fc_pr:
+  type: Float
+  description: 'Conflict Subscale from the Family Environment Scale, Sum of Youth
+    Report: Prorated Score (Based on minimum of five items answered): [fes_y_ss_fc]*[fes_y_ss_fc_nt]
+    /[fes_y_ss_fc_na]'
+  alias: conflict_pr

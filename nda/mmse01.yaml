@@ -1,0 +1,899 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: catieid,id,labid,subject,subjid
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: mmse_date,testdate,wratdate
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: agemonths
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+
+visitid:
+  type: Integer
+  description: MetaTrial Visit ID
+  notes: 'System variable: unique code for each type of visit -use to merge files'
+
+mmse01:
+  type: Integer
+  description: What is today's date?
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: date,mmse1_1,mmse4,mmse_3
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse02:
+  type: Integer
+  description: What is the year?
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: mmse1,mmse1_2,mmse_1,year,year1
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse03:
+  type: Integer
+  description: What is the month?
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: mmse1_3,mmse3,mmse_5,month,monthx
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse04:
+  type: Integer
+  description: What day of the week is today?
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: day,day1,mmse1_4,mmse5,mmse_4
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse05:
+  type: Integer
+  description: What season is it?
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: mmse1_5,mmse2,mmse_2,season
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse06:
+  type: Integer
+  description: What is the name of this hospital (clinic, place)?
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: hospital,mmse1_6,mmse9,mmse_9
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse07:
+  type: Integer
+  description: What floor are we on?
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: floor,mmse10_1,mmse1_7,mmse_10
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse08:
+  type: Integer
+  description: What town or city are we in?
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: city,mmse1_8,mmse8,mmse_8
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse09:
+  type: Integer
+  description: What county (district, borough, area)
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: borough,mmse1_9,mmse_7
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse10:
+  type: Integer
+  description: 'What state are we
+
+    in?'
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: address,mmse1_10,mmse_6
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse11:
+  type: Integer
+  description: Ball
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: immediate1,mmse2_1
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse12:
+  type: Integer
+  description: Flag
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: immediate2,mmse2_2
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse13:
+  type: Integer
+  description: Tree
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: immediate3,mmse2_3
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse13a:
+  type: Integer
+  description: Enter number of trials
+  range:
+  - 0::6
+  notes: (null)
+  alias: mmse2_trials
+
+mmse14:
+  type: Integer
+  description: D
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: backwards1,mmse3b_1
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse15:
+  type: Integer
+  description: L
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: backwards2,mmse3b_2
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse16:
+  type: Integer
+  description: R
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: backwards3,mmse3b_3
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse17:
+  type: Integer
+  description: O
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: backwards4,mmse3b_4
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse18:
+  type: Integer
+  description: W
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: backwards5,mmse3b_5
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse19:
+  type: Integer
+  description: Ball
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: delayed1,mmse4_1,mmse_19
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse20:
+  type: Integer
+  description: Flag
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: delayed2,mmse4_2,mmse_20
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse21:
+  type: Integer
+  description: Tree
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: delayed3,mmse4_3,mmse_21
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse22:
+  type: Integer
+  description: Show the subject a wrist watch and and ask, "What is this?" If the
+    subject fives a function, say, "Yes, but what is this called" or "What is its
+    name?"
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: mmse14_1,mmse5a_1,mmse_22,naming1
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse23:
+  type: Integer
+  description: Repeat for pencil
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: mmse15_1,mmse5a_2,mmse_23,naming2
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse24:
+  type: Integer
+  description: 'Say Repeat after me: no ifs, ands, or buts."'
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: mmse16_1,mmse5b,mmse_24,repetition
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse25:
+  type: Integer
+  description: 'Take paper in right
+
+    hand, and put it on the floor.'
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: mmse5c_1,mmse_25,takes
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse26:
+  type: Integer
+  description: Folds paper in half
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: folds,mmse5c_2,mmse_26
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse27:
+  type: Integer
+  description: Puts paper on floor
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: mmse5c_3,mmse_27,puts
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse28:
+  type: Integer
+  description: Present the piece of paper that reads CLOSE YOUR EYES and say, "Read
+    this and do what it says." Score correct only if the subject closes his/her eyes.
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: mmse17_1,mmse5d,mmse_28,reading
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse29:
+  type: Integer
+  description: 'Give the subject a blank piece of paper and say,
+    "Write a sentence." If needed, prompt the subject:
+    "Write a sentence about the weather."'
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: mmse18_1,mmse5e,mmse_29,writing
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse30:
+  type: Integer
+  description: Present the subject with the Construction Stimulus page. Say, "Copy
+    this design." Do not allow erasure. The subject may request a second attempt.
+    (Clearly labelk the first and second attempts.)
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: copying,mmse19_1,mmse5f,mmse_30
+  codes:
+    0: Incorrect
+    1: Correct
+
+visnum:
+  type: Float
+  description: Numeric Visit Number
+  notes: '-1.5 = Pre-Screening; -1 = Screening; 0 = Baseline; ## = Visit ## (from
+    1 to 10); Whole numbers = standard monthly visits; #.001 - #.009 = Unscheduled;
+    #.1 = End of Phase 1; #.2 = End of Phase 2; #.3 = End of Phase 3; #.4 = End of
+    Open Choice Phase; #.5 = End of Study; #.6 = Genetic Analysis; 1000=all visits'
+  codes:
+    -1.5: Pre-Screening
+    -1: Screening
+    0: Baseline
+    9: Unscheduled
+    1: End of Phase 1
+    2: End of Phase 2
+    3: End of Phase 3
+    4: End of Open Choice Phase
+    5: End of Study
+    6: Genetic Analysis
+    1000: all visits
+
+phase_ct:
+  type: String
+  length: 20
+  description: Current Phase. Phase patient was in at the time of the assessment Phase
+    4 refers to the follow-up phase.
+  range:
+  - Pre-Rand
+  - Phase 1/1A
+  - Phase 2
+  - Phase 3
+  - Phase 4
+  - Phase 1B
+  - Open-Choice Phase
+  - Screening
+  - Phase 1
+  alias: phase
+
+mmse_ts:
+  type: Integer
+  description: MMSE Total Score
+  range:
+  - 0::30
+  notes: 'Created variable with 20% missing data rule applied: Sum of (MMSE01 through
+    MMSE30), not including MMSE13A'
+  alias: _score,mmse_tot,mmse_total,mmsetot,mmsetotal
+
+base1:
+  type: Integer
+  description: Flag Baseline Phase 1/1A Visit
+  notes: 1=Yes for all records meeting this criteria
+  codes:
+    1: Yes for all records meeting this criteria
+
+last1:
+  type: Integer
+  description: Flag Last Phase 1/1A Visit
+  notes: 1=Yes for all records meeting this criteria
+  codes:
+    1: Yes for all records meeting this criteria
+
+base_ts:
+  type: Float
+  description: Baseline Total Score
+  notes: Scare at Phase 1 baselline
+
+c_ts:
+  type: Float
+  description: Changed from Baseline ADAS Total Score
+  notes: Change from Phase 1 baseline
+
+mmse20_1:
+  type: Integer
+  description: "20. Observe in which hand the subject held the pencil (or ask if the\
+    \ patient is right or left-handed). Take a piece of clean, letter-size paper;\
+    \ hold it up in front of the subject. \nTAKE THIS PAPER IN YOUR RIGHT/ LEFT HAND,\
+    \ (opposite to dominant hand) FOLD IT IN HALF ONCE WITH BOTH HANDS, AND PUT THE\
+    \ PAPER DOWN ON THE FLOOR.\nTakes paper in RIGHT hand , Folds it in half once\
+    \ with both hands , Puts it on FLOOR \nScore 1 point for each instruction correctly\
+    \ executed. Maximum of 3 points."
+  range:
+  - 0::3
+  notes: >-
+    0 = subject did none: took paper in non-dominant hand, folded it in half
+    once with both hands, put the paper down on the floor
+
+    1 = subject did only one: took paper in non-dominant hand, folded it in half once
+    with both hands, put the paper down on the floor
+
+    2 = subject did only two: took paper in non-dominant hand, folded it in half once
+    with both hands, put the paper down on the floor
+
+    3 = subject did all three: took paper in non-dominant hand, folded it in half
+    once with both hands, put the paper down on the floor
+  codes:
+    0: >-
+      subject did none: took paper in non-dominant hand, folded it in half once
+      with both hands, put the paper down on the floor
+    1: >-
+      subject did only one: took paper in non-dominant hand, folded it in half
+      once with both hands, put the paper down on the floor
+    2: >-
+      subject did only two: took paper in non-dominant hand, folded it in half
+      once with both hands, put the paper down on the floor
+    3: >-
+      subject did all three: took paper in non-dominant hand, folded it in half
+      once with both hands, put the paper down on the floor
+
+mmse11_1:
+  type: Integer
+  description: '11. I AM GOING TO NAME THREE OBJECTS. AFTER I HAVE SAID ALL THREE
+    OBJECTS I WANT YOU TO REPEAT THEM. REMEMBER WHAT THEY ARE BECAUSE I AM GOING TO
+    ASK YOU TO NAME THEM AGAIN IN A FEW MINUTES. Say the items slowly at one second
+    intervals. APPLE TABLE PENNY
+
+    Say: PLEASE REPEAT THE THREE ITEMS FOR ME.
+
+    Score 1 point for each correct and exact reply on the first attempt. If subject
+    did not repeat all three, repeat until they are learned or up to a maximum of
+    5 times, but only score first attempt. Number of trials '
+  range:
+  - 1::3
+  notes: '1 = named one object
+
+    2 = named two objects
+
+    3 = named three objects'
+  codes:
+    1: named one object
+    2: named two objects
+    3: named three objects
+
+mmse12_1:
+  type: Integer
+  description: "12. I AM GOING TO ASK YOU TO DO SOME SUBTRACTION. THINK OF THE NUMBER\
+    \ 7. SUBTRACT 7 FROM 100. After first response, whether it is correct or incorrect,\
+    \ say NOW SUBTRACT 7 FROM THAT AND KEEP GOING.\nOnce subject starts, do not interrupt.\
+    \ Allow him/her to proceed until five subtractions have been made. Repeat the\
+    \ instruction \"KEEP SUBTRACTING SEVEN FROM WHAT IS LEFT\" a maximum of three\
+    \ times.\nScore 1 point for each correct subtraction - see scoring guidelines\
+    \ \nSPELL THE WORD \"WORLD\". Only repeat to a maximum of three times, until the\
+    \ subject understands. You may help the subject to spell \"world\" correctly.\
+    \ If s/he cannot spell \"world\" even with assistance, score 0.\nNOW SPELL IT\
+    \ BACKWARDS, PLEASE. (write down subject's reply): See scoring guide in the manual\
+    \ D L R O W"
+  range:
+  - 0::5
+  - 8
+  notes: "0 = zero correct subtractions or backward spellings\r; 1 = one correct subtraction\
+    \ or backward spelling\r; 2 = two correct subtractions or backward spellings\r\
+    ; 3 = three correct subtractions or backward spellings\r; 4 = four correct subtractions\
+    \ or backward spellings\r; 5 = five correct subtractions or backward spellings;\
+    \ 8=refused"
+  codes:
+    0: zero correct subtractions or backward spellings
+    1: one correct subtraction or backward spelling
+    2: two correct subtractions or backward spellings
+    3: three correct subtractions or backward spellings
+    4: four correct subtractions or backward spellings
+    5: five correct subtractions or backward spellings
+    8: refused
+
+mmse13_1:
+  type: Integer
+  description: "13. NOW WHAT WERE THE 3 OBJECTS THAT I ASKED YOU TO REMEMBER? Score\
+    \ 1 point for each correct response regardless of order. Do not cue subjects for\
+    \ the objects. \nAPPLE TABLE PENNY"
+  range:
+  - 0::3
+  notes: "0=none; 1 = named one object\r; 2 = named two objects\r; 3 = named three\
+    \ objects"
+  codes:
+    0: none
+    1: named one object
+    2: named two objects
+    3: named three objects
+
+mmse6_1:
+  type: Integer
+  description: What country are we in?
+  range:
+  - 0
+  - 1
+  notes: '0 = does not know country we are in
+
+    1 = knows country we are in'
+  codes:
+    0: does not know country we are in
+    1: knows country we are in'
+
+mmse7_1:
+  type: Integer
+  description: What province/state/county are we in?
+  range:
+  - 0
+  - 1
+  notes: '0 = does not know province/state/county we are in
+
+    1 = knows province/state/county we are in'
+  codes:
+    0: does not know province/state/county we are in
+    1: knows province/state/county we are in
+
+study_id:
+  type: Integer
+  description: Study ID number
+  notes: 46=Acute Phase; 47=Stabilization Phase
+  codes:
+    46: Acute Phase
+    47: Stabilization Phase
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+
+week:
+  type: Float
+  description: Week in level/study
+  notes: 99=week 10-week 14
+  alias: intid
+  codes:
+    99: week 10-week 14
+
+mms14:
+  type: Integer
+  description: Attention calculation backward from 100
+  range:
+  - 0
+  - 1
+  - 8
+  notes: Ask the patient to begin with 100 and count backward by sevens. Stop after
+    five subtractions.  Score the total number of correct answers. 8= refused
+  alias: mmse3a_1,mmse_14
+  codes:
+    8: refused
+
+mms15:
+  type: Integer
+  description: Attention calculation backward from 93
+  range:
+  - 0
+  - 1
+  - 8
+  notes: Ask the patient to begin with 93 and count backward by sevens.  Score the
+    total number of correct answers. 8= refused
+  alias: mmse3a_2,mmse_15
+  codes:
+    8: refused
+
+mms16:
+  type: Integer
+  description: Attention calculation backward from 86
+  range:
+  - 0
+  - 1
+  - 8
+  notes: Ask the patient to begin with 86 and count backward by sevens.  Score the
+    total number of correct answers. 8= refused
+  alias: mmse3a_3,mmse_16
+  codes:
+    8: refused
+
+mms17:
+  type: Integer
+  description: Attention calculation backward from 79
+  range:
+  - 0
+  - 1
+  - 8
+  notes: Ask the patient to begin with 79 and count backward by sevens.  Score the
+    total number of correct answers. 8= refused
+  alias: mmse3a_4,mmse_17
+  codes:
+    8: refused
+
+mms18:
+  type: Integer
+  description: Attention calculation backward from 72
+  range:
+  - 0
+  - 1
+  - 8
+  notes: Ask the patient to begin with 72 and count backward by sevens.  Score the
+    total number of correct answers. 8= refused
+  alias: mmse3a_5,mmse_18
+  codes:
+    8: refused
+
+mmses3:
+  type: Integer
+  description: Attention and Calculation alternative Score
+  range:
+  - 0::5
+  notes: 'ATTENTION AND CALCULATION alternative - If the patient cannot or will not
+    perform the subtraction task, ask the patient to spell the word "world" backwards.
+    The score is the number of letters in correct order (e.g., dlrow=5, dlorw=3).  Administer
+    both, enter the higher of the 2 scores.  '
+
+mmses4:
+  type: Integer
+  description: Attention and Calculation Higher Score
+  range:
+  - 0::5
+  notes: 'ATTENTION AND CALCULATION alternative - If the patient cannot or will not
+    perform the subtraction task, ask the patient to spell the word "world" backwards.
+    The score is the number of letters in correct order (e.g., dlrow=5, dlorw=3).  Administer
+    both, enter the higher of the 2 scores.   '
+  alias: high_tot,mmse3c
+
+days_baseline:
+  type: Integer
+  description: Days since baseline
+
+me2:
+  type: Integer
+  description: Status
+  range:
+  - 0
+  - 1
+  notes: 0 = Past [Inactive]; 1 = Active
+  codes:
+    0: Past [Inactive]
+    1: Active
+
+aescode:
+  type: Integer
+  description: Staff code number of person completing this form
+  alias: mmse_interviewer
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+  alias: mmse_comments
+
+dode:
+  type: String
+  length: 10
+  description: Date of Data Entry
+  alias: mmse_entered
+
+orient_tot:
+  type: Integer
+  description: Orientation Total
+
+mmse_11:
+  type: Integer
+  description: 'Registration: "Ball"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct - Trial is registration, not delayed recall
+  codes:
+    0: Incorrect
+    1: Correct - Trial is registration, not delayed recall
+
+mmse_12:
+  type: Integer
+  description: 'Registration: "Flag"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct - Trial is registration, not delayed recall
+  codes:
+    0: Incorrect
+    1: Correct - Trial is registration, not delayed recall
+
+mmse_13:
+  type: Integer
+  description: 'Registration: "Tree"'
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct - Trial is registration, not delayed recall
+  codes:
+    0: Incorrect
+    1: Correct - Trial is registration, not delayed recall
+
+reg_tot:
+  type: Integer
+  description: Registration Total
+
+att_calc_tot:
+  type: Integer
+  description: Attention & Calculation Total
+  alias: mmse3a_sum
+
+alt_tot:
+  type: Integer
+  description: Alternative "WORLD" Spelled Backward
+  range:
+  - 0::5
+  alias: mmse3b_sum
+
+recall_tot:
+  type: Integer
+  description: Recall Total
+
+lang_tot:
+  type: Integer
+  description: Language Total
+
+tomal_wsr_trial1_apple:
+  type: Integer
+  description: Word Selective Reminding Trial 1 Apple
+  range:
+  - 0
+  - 1
+  notes: 0 = Did not recall; 1 = Recalled
+  alias: apple_recall
+  codes:
+    0: Did not recall
+    1: Recalled
+
+repeatx:
+  type: Integer
+  description: Repeated all three words?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+table_recall:
+  type: Integer
+  description: Recalled Table?
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+penny_recall:
+  type: Integer
+  description: Recalled Penny?
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse_less25:
+  type: Integer
+  description: 'MMSE score of 25 or below on the first visit (if 14 or older) '
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'

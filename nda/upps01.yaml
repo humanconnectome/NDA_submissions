@@ -1,0 +1,2320 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+prem_1:
+  type: Integer
+  description: I have a reserved and cautious attitude toward life.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+  alias: upps1
+
+prem_2:
+  type: Integer
+  description: My thinking is usually careful and purposeful.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+  alias: t_upps_2
+
+prem_3:
+  type: Integer
+  description: I am not one of those people who blurt out things without thinking.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+prem_4:
+  type: Integer
+  description: I like to stop and think things over before I do them.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+  alias: thinkthingsover
+
+prem_5:
+  type: Integer
+  description: I don't like to start a project until I know exactly how to proceed.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+prem_6:
+  type: Integer
+  description: I tend to value and follow a rational, "sensible" approach to things.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+prem_7:
+  type: Integer
+  description: I usually make up my mind through careful reasoning.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+prem_8:
+  type: Integer
+  description: I am a cautious person.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+  alias: t_upps_7
+
+prem_9:
+  type: Integer
+  description: Before I get into a new situation I like to find out what to expect
+    from it.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+prem_10:
+  type: Integer
+  description: I usually think carefully before doing anything.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+  alias: thinkcarefully
+
+prem_11:
+  type: Integer
+  description: Before making up my mind, I consider all the advantages and disadvantages.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+urg_1:
+  type: Integer
+  description: I have trouble controlling my impulses.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+  alias: upps2
+
+urg_2:
+  type: Integer
+  description: I have trouble resisting my cravings for food, cigarettes, etc.;.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+urg_3:
+  type: Integer
+  description: I often get involved in things I later wish I could get out of.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+urg_4:
+  type: Integer
+  description: When I feel bad, I will often do things I later regret in order to
+    make myself feel better now.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+urg_5:
+  type: Integer
+  description: Sometimes when I feel bad, I can't seem to stop what I am doing even
+    though it is making me feel worse.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+urg_6:
+  type: Integer
+  description: When I am upset I often act without thinking.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+  alias: actwithoutthinkupset,t_upps_8
+
+urg_7:
+  type: Integer
+  description: When I feel rejected, I will often say things that I later regret.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+  alias: feelingrejected
+
+urg_8:
+  type: Integer
+  description: It is hard for me to resist acting on my feelings.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+  alias: t_upps_3
+
+urg_9:
+  type: Integer
+  description: I often make matters worse because I act without thinking when I am
+    upset.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+urg_10:
+  type: Integer
+  description: In the heat of an argument, I will often say things that I later regret.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+urg_11:
+  type: Integer
+  description: I am always able to keep my feelings under control
+  range:
+  - 1::5
+  notes: Never =5; Almost Never =4;Sometimes =3; Almost all the time =3; All the time
+    =1
+
+urg_12:
+  type: Integer
+  description: Sometimes I do things on impulse that I later regret
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+sensseek_1:
+  type: Integer
+  description: I generally seek new and exciting experiences and sensations.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+  alias: upps3
+
+sensseek_2:
+  type: Integer
+  description: I'll try anything once.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+sensseek_3:
+  type: Integer
+  description: I like sports and games in which you have to choose your next move
+    very quickly.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+sensseek_4:
+  type: Integer
+  description: I would enjoy water skiing.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+sensseek_5:
+  type: Integer
+  description: I quite enjoy taking risks.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+  alias: t_upps_5
+
+sensseek_6:
+  type: Integer
+  description: I would enjoy parachute jumping.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+sensseek_7:
+  type: Integer
+  description: I welcome new and exciting experiences and sensations, even if they
+    are a little frightening and unconventional.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+sensseek_8:
+  type: Integer
+  description: I would like to learn to fly an airplane.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+sensseek_9:
+  type: Integer
+  description: I sometimes like doing things that are a bit frightening.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+sensseek_10:
+  type: Integer
+  description: I would enjoy the sensation of skiing very fast down a high mountain
+    slope.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+sensseek_11:
+  type: Integer
+  description: I would like to go scuba diving.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+sensseek_12:
+  type: Integer
+  description: I would enjoy fast driving.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+sensseek_13:
+  type: Integer
+  description: I sometimes like doing dangerous things just because they are dangerous.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+  alias: t_upps_1
+
+persev_1:
+  type: Integer
+  description: I generally like to see things through to the end.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+  alias: seethingsthrough,upps4
+
+persev_2:
+  type: Integer
+  description: I tend to give up easily
+  range:
+  - 1::5
+  notes: Never =5; Almost Never =4;Sometimes =3; Almost all the time =3; All the time
+    =1
+
+persev_3:
+  type: Integer
+  description: Unfinished tasks really bother me.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+  alias: unfinishedtasks
+
+persev_4:
+  type: Integer
+  description: Once I get going on something I hate to stop.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+persev_5:
+  type: Integer
+  description: I concentrate easily.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+persev_6:
+  type: Integer
+  description: I finish what I start.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+persev_7:
+  type: Integer
+  description: I'm pretty good about pacing myself so as to get things done on time.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+
+persev_8:
+  type: Integer
+  description: I am a productive person who always gets the job done.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+  alias: t_upps_4
+
+persev_9:
+  type: Integer
+  description: Once I start a project, I almost always finish it.
+  range:
+  - 1::5
+  notes: Never =1; Almost Never =2;Sometimes =3; Almost all the time =4; All the time
+    =5
+  alias: t_upps_6
+
+persev_10:
+  type: Integer
+  description: There are so many little jobs that need to be done that I sometimes
+    just ignore them all
+  range:
+  - 1::5
+  notes: Never =5; Almost Never =4;Sometimes =3; Almost all the time =3; All the time
+    =1
+
+premed_score:
+  type: Float
+  description: UPPS Premeditation score
+  alias: premeditation_score,supps_lackpremed_rs,upps_lack_premeditation,upps_plan,upps_premed
+
+urg_score:
+  type: Float
+  description: UPPS Urgency score
+  alias: supps_posurg_rs,urgency_total
+
+senseek_score:
+  type: Float
+  description: UPPS Sensation seeking score
+  alias: phenx_upps-p_sensationseeking,sensation_seeking_score,upps_sens,upps_sensation_seeking
+
+persev_score:
+  type: Float
+  description: UPPS Perseverance score
+  alias: perseverance_score,supps_lackpersev_rs,upps_lack_perserverance,upps_prsv
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+
+upps_p1:
+  type: Integer
+  description: I have a reserved and cautious attitude toward life.
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40800,upps-p_1
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p2:
+  type: Integer
+  description: I have trouble controlling my impulses.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40801,upps-p_2
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p3:
+  type: Integer
+  description: I generally seek new and exciting experiences and sensations.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40802,upps-p_3
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p4:
+  type: Integer
+  description: 'Parent: Your child likes to see things through to the end. / Child:
+    I generally like to see things through to the end.'
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40803,upps-p_4,upps3_y
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p5:
+  type: Integer
+  description: When I am very happy, I can?t seem to stop myself from doing things
+    that can have bad consequences.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40804,upps-p_5,upps37_y,upps5
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p6:
+  type: Integer
+  description: My thinking is usually careful and purposeful.
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40805,upps-p_6,upps6
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p7:
+  type: Integer
+  description: I have trouble resisting my cravings (for food, cigarettes, etc.).
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40806,upps-p_7,upps7
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p8:
+  type: Integer
+  description: I'll try anything once.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40807,upps-p_8,upps8
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p9:
+  type: Integer
+  description: I tend to give up easily.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40808,upps-p_9,upps9
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p10:
+  type: Integer
+  description: When I am in great mood, I tend to get into situations that could cause
+    me problems.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40809,upps-p_10,upps10,upps35_y
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p11:
+  type: Integer
+  description: I am not one of those people who blurt out things without thinking.
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40810,upps-p_11,upps11
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p12:
+  type: Integer
+  description: I often get involved in things I later wish I could get out of.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40811,upps-p_12,upps12
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p13:
+  type: Integer
+  description: I like sports and games in which you have to choose your next move
+    very quickly.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40812,upps-p_13,upps13
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p14:
+  type: Integer
+  description: 'Parent: Your child gets upset when he/she is not finished with things.
+    / Child: Unfinished tasks really bother me.'
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40813,upps-p_14,upps14,upps5_y
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p15:
+  type: Integer
+  description: When I am very happy, I tend to do things that may cause problems in
+    my life.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40814,upps-p_15,upps15
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p16:
+  type: Integer
+  description: 'Parent: Your child likes to stop and think about something before
+    he/she does it. / Child: I like to stop and think things over before I do them.'
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40815,upps-p_16,upps16,upps6_y
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p17:
+  type: Integer
+  description: 'When I feel bad, I will often do things I later regret in order to
+    make myself feel better now.  '
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40816,upps-p_17,upps17,upps7_y
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p18:
+  type: Integer
+  description: 'Parent: Your child would like water skiing. / Child: I would enjoy
+    water skiing.'
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40817,upps-p_18,upps18
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p19:
+  type: Integer
+  description: 'Parent: Once your child gets going on something he/she hates to stop.
+    / Child: Once I get going on something I hate to stop.'
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40818,upps-p_19,upps19,upps9_y
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p20:
+  type: Integer
+  description: I tend to lose control when I am in a great mood.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40819,losecontrol,upps-p_20,upps20,upps39_y
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p21:
+  type: Integer
+  description: 'Parent: Your child likes to know just what to do before he/she starts
+    a project. / Child: I don''t like to start a project until I know exactly how
+    to proceed.'
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40820,upps-p_21,upps21
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p22:
+  type: Integer
+  description: Sometimes when I feel bad, I can?t seem to stop what I am doing even
+    though it is making me feel worse.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40821,upps-p_22,upps11_y,upps22
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p23:
+  type: Integer
+  description: 'Parent: Your child enjoys taking risks. / Child: I quite enjoy taking
+    risks.'
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40822,upps-p_23,upps12_y,upps23
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p24:
+  type: Integer
+  description: I concentrate easily.
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40823,upps-p_24,upps24
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p25:
+  type: Integer
+  description: When I am really ecstatic, I tend to get out of control.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40824,upps-p_25,upps25
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p26:
+  type: Integer
+  description: I would enjoy parachute jumping.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40825,upps-p_26,upps26
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p27:
+  type: Integer
+  description: 'Parent: Your child finishes what he/she starts. / Child: I finish
+    what I start.'
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40826,upps-p_27,upps15_y,upps27
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p28:
+  type: Integer
+  description: 'Parent: Your child tries to take a careful approach to things. / Child:
+    I tend to value and follow a rational, sensible approach to things.'
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40827,upps-p_28,upps16_y,upps28
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p29:
+  type: Integer
+  description: When I am upset I often act without thinking.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40828,upps-p_29,upps17_y,upps29
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p30:
+  type: Integer
+  description: Others would say I make bad choices when I am extremely happy about
+    something.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40829,upps-p_30,upps30
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p31:
+  type: Integer
+  description: I welcome new and exciting experiences and sensations, even if they
+    are a little frightening and unconventional.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40830,upps-p_31,upps18_y,upps31
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p32:
+  type: Integer
+  description: 'Parent: Your child tends to get things done on time. / Child: I am
+    able to pace myself so as to get things done on time.'
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40831,upps-p_32,upps19_y,upps32
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p33:
+  type: Integer
+  description: I usually make up my mind through careful reasoning.
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40832,upps-p_33,upps33
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p34:
+  type: Integer
+  description: When I feel rejected, I will often say things that I later regret.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40833,upps-p_34,upps20_y,upps34
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p35:
+  type: Integer
+  description: Others are shocked or worried about the things I do when I am feeling
+    very excited.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40834,upps-p_35,upps35
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p36:
+  type: Integer
+  description: I would like to learn to fly an airplane.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40835,upps-p_36,upps21_y,upps36
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p37:
+  type: Integer
+  description: 'Parent: Your child is a person who always gets the job done. / Child:
+    I am a person who always gets the job done.'
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40836,upps-p_37,upps22_y,upps37
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p38:
+  type: Integer
+  description: 'Parent: Your child is very careful. / Child: I am a cautious person.'
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40837,upps-p_38,upps23_y,upps38
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p39:
+  type: Integer
+  description: It is hard for me to resist acting on my feelings.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40838,upps-p_39,upps39
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p40:
+  type: Integer
+  description: When I get really happy about something, I tend
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40839,upps-p_40,upps37_y,upps40
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p41:
+  type: Integer
+  description: I sometimes like doing things that are a bit frightening.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40840,upps-p_41,upps41
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p42:
+  type: Integer
+  description: 'Parent: Your child almost always finishes projects that he/she starts.
+    / Child: I almost always finish projects that I start.'
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40841,upps-p_42,upps24_y,upps42
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p43:
+  type: Integer
+  description: 'Parent: Your child likes to know what to expect, before doing something
+    new. / Child: Before I get into a new situation I like to find out what to expect
+    from it.'
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40842,upps-p_43,upps43
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p44:
+  type: Integer
+  description: I often make matters worse because I act without thinking when I am
+    upset.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40843,upps-p_44,upps44
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p45:
+  type: Integer
+  description: When overjoyed, I feel like I can?t stop myself from going overboard.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40844,upps-p_45,upps45
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p46:
+  type: Integer
+  description: I would enjoy the sensation of skiing very fast down a high mountain
+    slope.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40845,upps-p_46,upps27_y,upps46
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p47:
+  type: Integer
+  description: Sometimes there are so many little things to be done that I just ignore
+    them all.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40846,upps-p_47,upps47
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p48:
+  type: Integer
+  description: I usually think carefully before doing anything.
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40847,upps-p_48,upps28_y,upps48
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p49:
+  type: Integer
+  description: When I am really excited, I tend not to think of the consequences of
+    my actions.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40849,upps-p_49,upps49
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p50:
+  type: Integer
+  description: In the heat of an argument, I will often say things that I later regret.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40850,upps-p_50,upps50
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p51:
+  type: Integer
+  description: I would like to go scuba diving.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40851,upps-p_51,upps51
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p52:
+  type: Integer
+  description: I tend to act without thinking when I am really excited.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40852,actwithoutthinkexcited,upps-p_52,upps52
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p53:
+  type: Integer
+  description: I always keep my feelings under control.
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40853,upps-p_53,upps53
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p54:
+  type: Integer
+  description: When I am really happy, I often find myself in situations that I normally
+    wouldn?t be comfortable with.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40854,upps-p_54,upps54
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p55:
+  type: Integer
+  description: Before making up my mind, I consider all the advantages and disadvantages.
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  alias: 40848,upps-p_55,upps55
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+upps_p56:
+  type: Integer
+  description: I would enjoy fast driving.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40855,upps-p_56,upps56
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p57:
+  type: Integer
+  description: When I am very happy, I feel like it is ok to give in to cravings or
+    overindulge.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40856,upps-p_57,upps36_y,upps57
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p58:
+  type: Integer
+  description: Sometimes I do impulsive things that I later regret.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40857,upps-p_58,upps58
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_p59:
+  type: Integer
+  description: I am surprised at the things I do while in a great mood.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  alias: 40858,upps-p_59,upps59
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+upps_negu:
+  type: Float
+  description: Negative Urgency score
+  alias: neg_urgency_score,phenx_upps-p_negativeurgency,supps_negurg_rs,upps_neg,upps_neg_urgency
+
+upps_posu:
+  type: Float
+  description: Positive Urgency score
+  alias: phenx_upps-p_positiveurgency,pos_urgency_score,pum_total,upps_pos,upps_pos_urgency
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+
+upps_tot:
+  type: Integer
+  description: Total Impulsivity score
+  alias: supps_impulsive_rs
+
+fspgod:
+  type: String
+  length: 70
+  description: Subject's gender OTHER describe
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+  alias: siteid
+
+timept:
+  type: Integer
+  description: Time Point
+  notes: 888 = not applicable; 999 = missing
+  alias: timepoint
+  codes:
+    888: not applicable
+    999: missing
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+
+losecontrol:
+  type: Integer
+  description: 'Short Impulse Behavior Scale: Lose Control When Great Mood'
+  range:
+  - 1::5
+  - -7
+  - -8
+  notes: Never =5; Almost Never =4;Sometimes =3; Almost all the time =3; All the time
+    =1; -8=DON'T KNOW; -7=REFUSED
+  codes:
+    -8: DON'T KNOW
+    -7: REFUSED
+
+actwithoutthinkexcited:
+  type: Integer
+  description: 'Short Impulse Behavior Scale: Act Without Think When Excited'
+  range:
+  - 1::5
+  - -7
+  - -8
+  notes: Never =5; Almost Never =4;Sometimes =3; Almost all the time =3; All the time
+    =1; -8=DON'T KNOW; -7=REFUSED
+  codes:
+    -8: DON'T KNOW
+    -7: REFUSED
+
+pum_1:
+  type: Integer
+  description: 'Others are shocked or worried about the things I do when I am feeling
+    very excited.  '
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+pum_2:
+  type: Integer
+  description: When overjoyed, I feel like I can't stop myself from going overboard.
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+pum_3:
+  type: Integer
+  description: When I am really excited, I tend not to think of the consequences of
+    my actions.
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+pum_4:
+  type: Integer
+  description: I tend to act without thinking when I am really excited.
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+pum_5:
+  type: Integer
+  description: When I am really happy, I often find myself in situations that I normally
+    wouldn't be comfortable with.
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+pum_6:
+  type: Integer
+  description: When I am very happy, I feel like it is OK to give in to cravings or
+    overindulge.
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+pum_7:
+  type: Integer
+  description: I am surprised at the things I do while in a great mood.
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+reflexrxnfeelings_1:
+  type: Integer
+  description: I generally act on my feelings instantly
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+reflexrxnfeelings_2:
+  type: Integer
+  description: My emotions turn into actions quickly
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+reflexrxnfeelings_3:
+  type: Integer
+  description: When I want something, I take it fast
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+reflexrxnfeelings_4:
+  type: Integer
+  description: When I feel a desire, I act on it immediately
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+reflexrxnfeelings_5:
+  type: Integer
+  description: When I have an emotional reaction to something, I often act without
+    thinking
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+reflexrxnfeelings_6:
+  type: Integer
+  description: I react impulsively to my feelings
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+reflexrxnfeelings_7:
+  type: Integer
+  description: When I feel filled with enthusiasm about something, I charge into motion
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+urgency_1:
+  type: Integer
+  description: I have trouble controlling my impulses
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+urgency_2:
+  type: Integer
+  description: I have trouble resisting my cravings (for food, cigarettes, etc)
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+urgency_3:
+  type: Integer
+  description: I often get involved in things I later wish I could get out of
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+urgency_4:
+  type: Integer
+  description: When I feel bad, I will often do things I later regret in order to
+    make myself feel better now
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+urgency_5:
+  type: Integer
+  description: Sometimes when I feel bad, I can't seem to stop what I am doing even
+    though it is making me feel worse
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+urgency_6:
+  type: Integer
+  description: When I am upset I often act without thinking
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+urgency_7:
+  type: Integer
+  description: When I feel rejected, I will often say things that I later regret
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+urgency_8:
+  type: Integer
+  description: It is hard for me to resist acting on my feelings
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+urgency_9:
+  type: Integer
+  description: I often make matters worse because I act without thinking when I am
+    upset
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+urgency_10:
+  type: Integer
+  description: In the heat of an argument, I will often say things that I later regret
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+urgency_11:
+  type: Integer
+  description: I am always able to keep my feelings under control
+  range:
+  - 1::5
+  notes: 1 = I agree a lot; 2 = I agree a little; 3 = I neither agree nor disagree;
+    4 = I disagree a little; 5 = I disagree a lot
+  codes:
+    1: I agree a lot
+    2: I agree a little
+    3: I neither agree nor disagree
+    4: I disagree a little
+    5: I disagree a lot
+
+urgency_12:
+  type: Integer
+  description: Sometimes I do things on impulse that I later regret
+  range:
+  - 1::5
+  notes: 1 = I disagree a lot; 2 = I disagree a little; 3 = I neither agree nor disagree;
+    4 = I agree a little; 5 = I agree a lot
+  codes:
+    1: I disagree a lot
+    2: I disagree a little
+    3: I neither agree nor disagree
+    4: I agree a little
+    5: I agree a lot
+
+reflexrxnfeelings_total:
+  type: Float
+  description: Mean of Reflex Reactions to Feelings items
+
+fta_total:
+  type: Float
+  description: Mean of Reflexive Reaction to Feelings, Positive Urgency, & Negative
+    Urgency
+
+phenx_upps_p_8:
+  type: Integer
+  description: I would like water skiing.
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_8
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_9:
+  type: Integer
+  description: Once I get going on something I hate to stop.
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_9
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_10:
+  type: Integer
+  description: I like to know just what to do before I start a project.
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_10
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_11:
+  type: Integer
+  description: 'Parent: Sometimes when your child feels bad, he/she keeps doing something
+    even though it is making him/her feel worse. / Child: Sometimes when I feel bad
+    I keep doing something, even though it is making me feel worse'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_11
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_12:
+  type: Integer
+  description: I enjoy taking risks.
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_12
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_13:
+  type: Integer
+  description: 'Parent: It is easy for your child to think hard. / Child: It is easy
+    for me to think hard.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_13
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_14:
+  type: Integer
+  description: 'Parent: Your child would like parachute jumping. / Child: I would
+    like parachute jumping.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_14
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_15:
+  type: Integer
+  description: I finish what I start.
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_15
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_16:
+  type: Integer
+  description: I try to take a careful approach to things.
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_16
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_17:
+  type: Integer
+  description: 'Parent: When your child is upset he/she often acts without thinking.
+    / Child: When I am upset I often act without thinking.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_17
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_18:
+  type: Integer
+  description: 'Parent: Your child likes new, thrilling things, even if they are a
+    little scary. / Child: I like new, thrilling things, even if they are a little
+    scary.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_18
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_19:
+  type: Integer
+  description: I tend to get things done on time.
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_19
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_20:
+  type: Integer
+  description: 'Parent: When your child feels rejected, he/she often says things that
+    he/she later regrets. / Child: When I feel rejected I often say things that I
+    later regret.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_20
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_21:
+  type: Integer
+  description: 'Parent: Your child would like to learn to fly an airplane. / Child:
+    I would like to learn to fly an airplane.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_21
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_22:
+  type: Integer
+  description: I am a person who always gets the job done.
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_22
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_23:
+  type: Integer
+  description: I am very careful.
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_23
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_24:
+  type: Integer
+  description: I almost always finished projects that I start.
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_24
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_25:
+  type: Integer
+  description: I like to know what to expect before doing something new.
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_25
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_26:
+  type: Integer
+  description: 'Parent: Your child often makes matters worse because he/she acts without
+    thinking when he/she is upset. / Child: I often make matters worse because I act
+    without thinking when I am upset.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_26
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_27:
+  type: Integer
+  description: 'Parent: Your child would like to ski very fast down a high mountain
+    slope. / Child: I would like to ski very fast down a high mountain slope.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_27
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_1:
+  type: Integer
+  description: 'Parent: If your child feels like doing something, he/she tends to
+    do it, even if it''s bad. / Child: If I feel like doing something I tend to do
+    it, even if it?s bad.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_1
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_28:
+  type: Integer
+  description: 'Parent: Your child tends to stop and think before doing things.  /
+    Child: I tend to stop and think before doing things.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_28
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_29:
+  type: Integer
+  description: 'Parent: Before making a choice, your child tends to think about both
+    the good things and the bad things about the choice. / Child: Before making a
+    choice, I tend to think about both the good things and the bad things about the
+    choice.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_29
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_30:
+  type: Integer
+  description: 'Parent: When your child is mad, he/she sometimes says things that
+    he/she later regrets.    / Child: When I am mad I sometimes say thing that I later
+    regret.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_30
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_31:
+  type: Integer
+  description: 'Parent: Your child would enjoy fast driving. / Child: I would enjoy
+    fast driving.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_31
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_32:
+  type: Integer
+  description: 'Parent: Sometimes your child does crazy things he/she later regrets.
+    / Child: Sometimes I do crazy things I later regret.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_32
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_33:
+  type: Integer
+  description: 'Parent: When your child is very happy, he/she can''t stop themselves
+    from going overboard. / Child: When I am very happy I can?t stop myself from going
+    overboard.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_33
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_34:
+  type: Integer
+  description: 'Parent: When your child is really thrilled, he/she tends not to think
+    about the results of his/her actions. / Child: When I am really thrilled I tend
+    not to think about the results. '
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_34
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_35:
+  type: Integer
+  description: 'Parent: When your child is in a great mood, he/she tends to do things
+    that could cause him/her problems. / Child: When I am in a great mood I tend to
+    do things that could cause me problems.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_35
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_36:
+  type: Integer
+  description: 'Parent: My child tends to act without thinking when he/she is very,
+    very happy. / Child: I tend to act without thinking when I am very, very happy.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_36
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_37:
+  type: Integer
+  description: 'Parent: When your child gets really happy about something, he/she
+    tends to do things that can lead to trouble. / Child: When I get really happy
+    about something I tend to do things that can lead to trouble. '
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_37
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_2:
+  type: Integer
+  description: 'Parent: Your child likes new, thrilling things to happen. / Child:
+    I like new, thrilling things to happen.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_2
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_38:
+  type: Integer
+  description: 'Parent: When your child is really happy, he/she tends to get out of
+    control.  / Child: When I am really happy I tend to get out of control.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_38
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_39:
+  type: Integer
+  description: 'Parent: My child tends to lose control when he/she is in a great mood.
+    / Child: I tend to lose control when I am in a great mood.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_39
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_40:
+  type: Integer
+  description: 'Parent: When your child is very happy, he/she tends to do thing that
+    may cause problems in his/her life. / Child: When I am very happy I tend do things
+    that may cause problems in my life.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_40
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_3:
+  type: Integer
+  description: I like to see things through the end.
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_3
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_4:
+  type: Integer
+  description: 'Parent: Your child tends to blurt out things without thinking. / Child:
+    I tend to blurt out things without thinking.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_4
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_5:
+  type: Integer
+  description: I am upset when I am not finished with things.
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_5
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_6:
+  type: Integer
+  description: I like to stop and think about something before I do it.
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_6
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+phenx_upps_p_7:
+  type: Integer
+  description: 'Parent: When your child feels bad, he/she often does things he/she
+    later regrets in order to make themselves feel better now. / Child: When I feel
+    bad I often do things I later regret in order to make myself feel better now.'
+  range:
+  - 1::4
+  notes: 1=Not at all like me; 2= Not like me; 3=Somewhat like me; 4=Very much like
+    me
+  alias: phenx_upps-p_7
+  codes:
+    1: Not at all like me
+    2: Not like me
+    3: Somewhat like me
+    4: Very much like me
+
+upps_plan:
+  type: Integer
+  description: Lack of planning

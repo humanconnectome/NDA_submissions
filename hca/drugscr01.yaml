@@ -1,0 +1,5888 @@
+elements:
+
+- rename: caffeine_session
+  name: caffeine_session
+  source: hcpa
+  nda:
+    type: String
+    length: 35
+    description: 'Sessions Completed (Caffeine):'
+    notes: List up to 6 sessions
+  redcap:
+    form: external_measures
+    section: <font size='+0.05'><center>Caffeine</center></font>
+    type: checkbox
+    label: <font size=2.5>Sessions:</font>
+    choices:
+      1: Session 1
+      2: Session 2
+      3: Session 3
+      4: Session 4
+      5: Session 5
+      6: Session 6
+    alignment: LH
+
+- rename: version_form
+  name: No equivalent - used to indicate session/day
+  request: Please have sessions' data share columns, one column for each unique question.
+    This will require copying/pasting 'subjectkey' - 'sex' to align with the stacked
+    data. The rows can be labeled by session/day with the 'version_form' column. If
+    sessions are stored in separate files, then you can load them for submission together.
+    Our Validation and Upload Tool will merge them automatically.
+  source: hcpa
+  nda:
+    type: String
+    length: 121
+    description: Form used/assessment name
+    alias: form
+
+- rename: caffeine_s1yn
+  name: caffeine_s1yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: caffeine_s2yn,caffeine_s3yn,caffeine_s4yn,caffeine_s5yn,caffeine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 1</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[caffeine_session(1)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1
+  name: caffeine_s1
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: caffeine_s2,caffeine_s3,caffeine_s4,caffeine_s5,caffeine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[caffeine_session(1)]=''1'' and [caffeine_s1yn]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1pretype
+  name: caffeine_s1pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 110
+    description: 'Caffeine: Caffeine most recently used prior to visit: Type: '
+    alias: caffeine_s2pretype,caffeine_s3pretype,caffeine_s4pretype,caffeine_s5pretype,caffeine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Type: </p>'
+    branching: '[caffeine_s1(1)]=''1'''
+
+- rename: caffeine_s1pretime
+  name: caffeine_s1pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine most recently used prior to visit: Time:'
+    alias: caffeine_s2pretime,caffeine_s3pretime,caffeine_s4pretime,caffeine_s5pretime,caffeine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Time:</p>'
+    validation: time
+    branching: '[caffeine_s1(1)]=''1'''
+
+- rename: caffeine_s1preday
+  name: caffeine_s1preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Caffeine most recently used prior to visit: Same day/Prior
+      Day'
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: caffeine_s2preday,caffeine_s3preday,caffeine_s4preday,caffeine_s5preday,caffeine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 1: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[caffeine_s1(1)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1vsttype1
+  name: caffeine_s1vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 60
+    description: 'Caffeine: Caffeine used during visit: Type 1: '
+    alias: caffeine_s2vsttype1,caffeine_s3vsttype1,caffeine_s4vsttype1,caffeine_s5vsttype1,caffeine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Type 1: </p>'
+    branching: '[caffeine_s1(2)]=''1'''
+
+- rename: caffeine_s1vsttime1
+  name: caffeine_s1vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 1:'
+    alias: caffeine_s2vsttime1,caffeine_s3vsttime1,caffeine_s4vsttime1,caffeine_s5vsttime1,caffeine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Time 1:</p>'
+    validation: time
+    branching: '[caffeine_s1(2)]=''1'''
+
+- rename: caffeine_s1vsttype2
+  name: caffeine_s1vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Type 2: '
+    alias: caffeine_s2vsttype2,caffeine_s3vsttype2,caffeine_s4vsttype2,caffeine_s5vsttype2,caffeine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Type 2: </p>'
+    branching: '[caffeine_s1(2)]=''1'''
+
+- rename: caffeine_s1vsttime2
+  name: caffeine_s1vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 2:'
+    alias: caffeine_s2vsttime2,caffeine_s3vsttime2,caffeine_s4vsttime2,caffeine_s5vsttime2,caffeine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Time 2:</p>'
+    validation: time
+    branching: '[caffeine_s1(2)]=''1'''
+
+- rename: caffeine_s1yn
+  name: caffeine_s2yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: caffeine_s2yn,caffeine_s3yn,caffeine_s4yn,caffeine_s5yn,caffeine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 2</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[caffeine_session(2)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1
+  name: caffeine_s2
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: caffeine_s2,caffeine_s3,caffeine_s4,caffeine_s5,caffeine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[caffeine_session(2)]=''1'' and [caffeine_s2yn]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1pretype
+  name: caffeine_s2pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 110
+    description: 'Caffeine: Caffeine most recently used prior to visit: Type: '
+    alias: caffeine_s2pretype,caffeine_s3pretype,caffeine_s4pretype,caffeine_s5pretype,caffeine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Type: </p>'
+    branching: '[caffeine_s2(1)]=''1'''
+
+- rename: caffeine_s1pretime
+  name: caffeine_s2pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine most recently used prior to visit: Time:'
+    alias: caffeine_s2pretime,caffeine_s3pretime,caffeine_s4pretime,caffeine_s5pretime,caffeine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Time:</p>'
+    validation: time
+    branching: '[caffeine_s2(1)]=''1'''
+
+- rename: caffeine_s1preday
+  name: caffeine_s2preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Caffeine most recently used prior to visit: Same day/Prior
+      Day'
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: caffeine_s2preday,caffeine_s3preday,caffeine_s4preday,caffeine_s5preday,caffeine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 2: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[caffeine_s2(1)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1vsttype1
+  name: caffeine_s2vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 60
+    description: 'Caffeine: Caffeine used during visit: Type 1: '
+    alias: caffeine_s2vsttype1,caffeine_s3vsttype1,caffeine_s4vsttype1,caffeine_s5vsttype1,caffeine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Type 1: </p>'
+    branching: '[caffeine_s2(2)]=''1'''
+
+- rename: caffeine_s1vsttime1
+  name: caffeine_s2vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 1:'
+    alias: caffeine_s2vsttime1,caffeine_s3vsttime1,caffeine_s4vsttime1,caffeine_s5vsttime1,caffeine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Time 1:</p>'
+    validation: time
+    branching: '[caffeine_s2(2)]=''1'''
+
+- rename: caffeine_s1vsttype2
+  name: caffeine_s2vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Type 2: '
+    alias: caffeine_s2vsttype2,caffeine_s3vsttype2,caffeine_s4vsttype2,caffeine_s5vsttype2,caffeine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Type 2: </p>'
+    branching: '[caffeine_s2(2)]=''1'''
+
+- rename: caffeine_s1vsttime2
+  name: caffeine_s2vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 2:'
+    alias: caffeine_s2vsttime2,caffeine_s3vsttime2,caffeine_s4vsttime2,caffeine_s5vsttime2,caffeine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Time 2:</p>'
+    validation: time
+    branching: '[caffeine_s2(2)]=''1'''
+
+- rename: caffeine_s1yn
+  name: caffeine_s3yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: caffeine_s2yn,caffeine_s3yn,caffeine_s4yn,caffeine_s5yn,caffeine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 3</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[caffeine_session(3)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1
+  name: caffeine_s3
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: caffeine_s2,caffeine_s3,caffeine_s4,caffeine_s5,caffeine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[caffeine_session(3)]=''1'' and [caffeine_s3yn]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1pretype
+  name: caffeine_s3pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 110
+    description: 'Caffeine: Caffeine most recently used prior to visit: Type: '
+    alias: caffeine_s2pretype,caffeine_s3pretype,caffeine_s4pretype,caffeine_s5pretype,caffeine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Type: </p>'
+    branching: '[caffeine_s3(1)]=''1'''
+
+- rename: caffeine_s1pretime
+  name: caffeine_s3pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine most recently used prior to visit: Time:'
+    alias: caffeine_s2pretime,caffeine_s3pretime,caffeine_s4pretime,caffeine_s5pretime,caffeine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Time:</p>'
+    validation: time
+    branching: '[caffeine_s3(1)]=''1'''
+
+- rename: caffeine_s1preday
+  name: caffeine_s3preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Caffeine most recently used prior to visit: Same day/Prior
+      Day'
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: caffeine_s2preday,caffeine_s3preday,caffeine_s4preday,caffeine_s5preday,caffeine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 3: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[caffeine_s3(1)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1vsttype1
+  name: caffeine_s3vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 60
+    description: 'Caffeine: Caffeine used during visit: Type 1: '
+    alias: caffeine_s2vsttype1,caffeine_s3vsttype1,caffeine_s4vsttype1,caffeine_s5vsttype1,caffeine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Type 1: </p>'
+    branching: '[caffeine_s3(2)]=''1'''
+
+- rename: caffeine_s1vsttime1
+  name: caffeine_s3vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 1:'
+    alias: caffeine_s2vsttime1,caffeine_s3vsttime1,caffeine_s4vsttime1,caffeine_s5vsttime1,caffeine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Time 1:</p>'
+    validation: time
+    branching: '[caffeine_s3(2)]=''1'''
+
+- rename: caffeine_s1vsttype2
+  name: caffeine_s3vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Type 2: '
+    alias: caffeine_s2vsttype2,caffeine_s3vsttype2,caffeine_s4vsttype2,caffeine_s5vsttype2,caffeine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Type 2: </p>'
+    branching: '[caffeine_s3(2)]=''1'''
+
+- rename: caffeine_s1vsttime2
+  name: caffeine_s3vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 2:'
+    alias: caffeine_s2vsttime2,caffeine_s3vsttime2,caffeine_s4vsttime2,caffeine_s5vsttime2,caffeine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Time 2:</p>'
+    validation: time
+    branching: '[caffeine_s3(2)]=''1'''
+
+- rename: caffeine_s1yn
+  name: caffeine_s4yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: caffeine_s2yn,caffeine_s3yn,caffeine_s4yn,caffeine_s5yn,caffeine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 4</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[caffeine_session(4)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1
+  name: caffeine_s4
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: caffeine_s2,caffeine_s3,caffeine_s4,caffeine_s5,caffeine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[caffeine_session(4)]=''1'' and [caffeine_s4yn]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1pretype
+  name: caffeine_s4pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 110
+    description: 'Caffeine: Caffeine most recently used prior to visit: Type: '
+    alias: caffeine_s2pretype,caffeine_s3pretype,caffeine_s4pretype,caffeine_s5pretype,caffeine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Type: </p>'
+    branching: '[caffeine_s4(1)]=''1'''
+
+- rename: caffeine_s1pretime
+  name: caffeine_s4pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine most recently used prior to visit: Time:'
+    alias: caffeine_s2pretime,caffeine_s3pretime,caffeine_s4pretime,caffeine_s5pretime,caffeine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Time:</p>'
+    validation: time
+    branching: '[caffeine_s4(1)]=''1'''
+
+- rename: caffeine_s1preday
+  name: caffeine_s4preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Caffeine most recently used prior to visit: Same day/Prior
+      Day'
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: caffeine_s2preday,caffeine_s3preday,caffeine_s4preday,caffeine_s5preday,caffeine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 4: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[caffeine_s4(1)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1vsttype1
+  name: caffeine_s4vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 60
+    description: 'Caffeine: Caffeine used during visit: Type 1: '
+    alias: caffeine_s2vsttype1,caffeine_s3vsttype1,caffeine_s4vsttype1,caffeine_s5vsttype1,caffeine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Type 1: </p>'
+    branching: '[caffeine_s4(2)]=''1'''
+
+- rename: caffeine_s1vsttime1
+  name: caffeine_s4vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 1:'
+    alias: caffeine_s2vsttime1,caffeine_s3vsttime1,caffeine_s4vsttime1,caffeine_s5vsttime1,caffeine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Time 1:</p>'
+    validation: time
+    branching: '[caffeine_s4(2)]=''1'''
+
+- rename: caffeine_s1vsttype2
+  name: caffeine_s4vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Type 2: '
+    alias: caffeine_s2vsttype2,caffeine_s3vsttype2,caffeine_s4vsttype2,caffeine_s5vsttype2,caffeine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Type 2: </p>'
+    branching: '[caffeine_s4(2)]=''1'''
+
+- rename: caffeine_s1vsttime2
+  name: caffeine_s4vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 2:'
+    alias: caffeine_s2vsttime2,caffeine_s3vsttime2,caffeine_s4vsttime2,caffeine_s5vsttime2,caffeine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Time 2:</p>'
+    validation: time
+    branching: '[caffeine_s4(2)]=''1'''
+
+- rename: caffeine_s1yn
+  name: caffeine_s5yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: caffeine_s2yn,caffeine_s3yn,caffeine_s4yn,caffeine_s5yn,caffeine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 5</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[caffeine_session(5)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1
+  name: caffeine_s5
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: caffeine_s2,caffeine_s3,caffeine_s4,caffeine_s5,caffeine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[caffeine_session(5)]=''1'' and [caffeine_s5yn]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1pretype
+  name: caffeine_s5pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 110
+    description: 'Caffeine: Caffeine most recently used prior to visit: Type: '
+    alias: caffeine_s2pretype,caffeine_s3pretype,caffeine_s4pretype,caffeine_s5pretype,caffeine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Type: </p>'
+    branching: '[caffeine_s5(1)]=''1'''
+
+- rename: caffeine_s1pretime
+  name: caffeine_s5pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine most recently used prior to visit: Time:'
+    alias: caffeine_s2pretime,caffeine_s3pretime,caffeine_s4pretime,caffeine_s5pretime,caffeine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Time:</p>'
+    validation: time
+    branching: '[caffeine_s5(1)]=''1'''
+
+- rename: caffeine_s1preday
+  name: caffeine_s5preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Caffeine most recently used prior to visit: Same day/Prior
+      Day'
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: caffeine_s2preday,caffeine_s3preday,caffeine_s4preday,caffeine_s5preday,caffeine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 5: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[caffeine_s5(1)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1vsttype1
+  name: caffeine_s5vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 60
+    description: 'Caffeine: Caffeine used during visit: Type 1: '
+    alias: caffeine_s2vsttype1,caffeine_s3vsttype1,caffeine_s4vsttype1,caffeine_s5vsttype1,caffeine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Type 1: </p>'
+    branching: '[caffeine_s5(2)]=''1'''
+
+- rename: caffeine_s1vsttime1
+  name: caffeine_s5vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 1:'
+    alias: caffeine_s2vsttime1,caffeine_s3vsttime1,caffeine_s4vsttime1,caffeine_s5vsttime1,caffeine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Time 1:</p>'
+    validation: time
+    branching: '[caffeine_s5(2)]=''1'''
+
+- rename: caffeine_s1vsttype2
+  name: caffeine_s5vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Type 2: '
+    alias: caffeine_s2vsttype2,caffeine_s3vsttype2,caffeine_s4vsttype2,caffeine_s5vsttype2,caffeine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Type 2: </p>'
+    branching: '[caffeine_s5(2)]=''1'''
+
+- rename: caffeine_s1vsttime2
+  name: caffeine_s5vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 2:'
+    alias: caffeine_s2vsttime2,caffeine_s3vsttime2,caffeine_s4vsttime2,caffeine_s5vsttime2,caffeine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Time 2:</p>'
+    validation: time
+    branching: '[caffeine_s5(2)]=''1'''
+
+- rename: caffeine_s1yn
+  name: caffeine_s6yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: caffeine_s2yn,caffeine_s3yn,caffeine_s4yn,caffeine_s5yn,caffeine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 6</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[caffeine_session(6)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1
+  name: caffeine_s6
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: caffeine_s2,caffeine_s3,caffeine_s4,caffeine_s5,caffeine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[caffeine_session(6)]=''1'' and [caffeine_s6yn]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1pretype
+  name: caffeine_s6pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 110
+    description: 'Caffeine: Caffeine most recently used prior to visit: Type: '
+    alias: caffeine_s2pretype,caffeine_s3pretype,caffeine_s4pretype,caffeine_s5pretype,caffeine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Type: </p>'
+    branching: '[caffeine_s6(1)]=''1'''
+
+- rename: caffeine_s1pretime
+  name: caffeine_s6pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine most recently used prior to visit: Time:'
+    alias: caffeine_s2pretime,caffeine_s3pretime,caffeine_s4pretime,caffeine_s5pretime,caffeine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Time:</p>'
+    validation: time
+    branching: '[caffeine_s6(1)]=''1'''
+
+- rename: caffeine_s1preday
+  name: caffeine_s6preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Caffeine most recently used prior to visit: Same day/Prior
+      Day'
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: caffeine_s2preday,caffeine_s3preday,caffeine_s4preday,caffeine_s5preday,caffeine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 6: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[caffeine_s6(1)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1vsttype1
+  name: caffeine_s6vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 60
+    description: 'Caffeine: Caffeine used during visit: Type 1: '
+    alias: caffeine_s2vsttype1,caffeine_s3vsttype1,caffeine_s4vsttype1,caffeine_s5vsttype1,caffeine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Type 1: </p>'
+    branching: '[caffeine_s6(2)]=''1'''
+
+- rename: caffeine_s1vsttime1
+  name: caffeine_s6vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 1:'
+    alias: caffeine_s2vsttime1,caffeine_s3vsttime1,caffeine_s4vsttime1,caffeine_s5vsttime1,caffeine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Time 1:</p>'
+    validation: time
+    branching: '[caffeine_s6(2)]=''1'''
+
+- rename: caffeine_s1vsttype2
+  name: caffeine_s6vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Type 2: '
+    alias: caffeine_s2vsttype2,caffeine_s3vsttype2,caffeine_s4vsttype2,caffeine_s5vsttype2,caffeine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Type 2: </p>'
+    branching: '[caffeine_s6(2)]=''1'''
+
+- rename: caffeine_s1vsttime2
+  name: caffeine_s6vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 2:'
+    alias: caffeine_s2vsttime2,caffeine_s3vsttime2,caffeine_s4vsttime2,caffeine_s5vsttime2,caffeine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Time 2:</p>'
+    validation: time
+    branching: '[caffeine_s6(2)]=''1'''
+
+- rename: nicotine_session
+  name: nicotine_session
+  source: hcpa
+  nda:
+    type: String
+    length: 35
+    description: 'Sessions Completed (Nicotine):'
+    notes: List up to 6 sessions
+  redcap:
+    form: external_measures
+    section: <font size='+0.05'><center>Nicotine</center></font>
+    type: checkbox
+    label: <font size=2.5>Sessions:</font>
+    choices:
+      1: Session 1
+      2: Session 2
+      3: Session 3
+      4: Session 4
+      5: Session 5
+      6: Session 6
+    alignment: LH
+
+- rename: nicotine_s1yn
+  name: nicotine_s1yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: nicotine_s2yn,nicotine_s3yn,nicotine_s4yn,nicotine_s5yn,nicotine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 1</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[nicotine_session(1)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1
+  name: nicotine_s1
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: nicotine_s2,nicotine_s3,nicotine_s4,nicotine_s5,nicotine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[nicotine_session(1)]=''1'' and [nicotine_s1yn]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1pretype
+  name: nicotine_s1pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Type: '
+    alias: nicotine_s2pretype,nicotine_s3pretype,nicotine_s4pretype,nicotine_s5pretype,nicotine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Type: </p>'
+    branching: '[nicotine_s1(1)]=''1'''
+
+- rename: nicotine_s1pretime
+  name: nicotine_s1pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Time:'
+    alias: nicotine_s2pretime,nicotine_s3pretime,nicotine_s4pretime,nicotine_s5pretime,nicotine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Time:</p>'
+    validation: time
+    branching: '[nicotine_s1(1)]=''1'''
+
+- rename: nicotine_s1preday
+  name: nicotine_s1preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Nicotine most recently used prior to visit: Same day/Prior
+      Day'
+    range:
+    - 0
+    - 1
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: nicotine_s2preday,nicotine_s3preday,nicotine_s4preday,nicotine_s5preday,nicotine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 1: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[nicotine_s1(1)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1vsttype1
+  name: nicotine_s1vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 1: '
+    alias: nicotine_s2vsttype1,nicotine_s3vsttype1,nicotine_s4vsttype1,nicotine_s5vsttype1,nicotine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Type 1: </p>'
+    branching: '[nicotine_s1(2)]=''1'''
+
+- rename: nicotine_s1vsttime1
+  name: nicotine_s1vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 1:'
+    alias: nicotine_s2vsttime1,nicotine_s3vsttime1,nicotine_s4vsttime1,nicotine_s5vsttime1,nicotine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Time 1:</p>'
+    validation: time
+    branching: '[nicotine_s1(2)]=''1'''
+
+- rename: nicotine_s1vsttype2
+  name: nicotine_s1vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 2: '
+    alias: nicotine_s2vsttype2,nicotine_s3vsttype2,nicotine_s4vsttype2,nicotine_s5vsttype2,nicotine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Type 2: </p>'
+    branching: '[nicotine_s1(2)]=''1'''
+
+- rename: nicotine_s1vsttime2
+  name: nicotine_s1vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 2:'
+    alias: nicotine_s2vsttime2,nicotine_s3vsttime2,nicotine_s4vsttime2,nicotine_s5vsttime2,nicotine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Time 2:</p>'
+    validation: time
+    branching: '[nicotine_s1(2)]=''1'''
+
+- rename: nicotine_s1yn
+  name: nicotine_s2yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: nicotine_s2yn,nicotine_s3yn,nicotine_s4yn,nicotine_s5yn,nicotine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 2</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[nicotine_session(2)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1
+  name: nicotine_s2
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: nicotine_s2,nicotine_s3,nicotine_s4,nicotine_s5,nicotine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[nicotine_session(2)]=''1'' and [nicotine_s2yn]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1pretype
+  name: nicotine_s2pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Type: '
+    alias: nicotine_s2pretype,nicotine_s3pretype,nicotine_s4pretype,nicotine_s5pretype,nicotine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Type: </p>'
+    branching: '[nicotine_s2(1)]=''1'''
+
+- rename: nicotine_s1pretime
+  name: nicotine_s2pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Time:'
+    alias: nicotine_s2pretime,nicotine_s3pretime,nicotine_s4pretime,nicotine_s5pretime,nicotine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Time:</p>'
+    validation: time
+    branching: '[nicotine_s2(1)]=''1'''
+
+- rename: nicotine_s1preday
+  name: nicotine_s2preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Nicotine most recently used prior to visit: Same day/Prior
+      Day'
+    range:
+    - 0
+    - 1
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: nicotine_s2preday,nicotine_s3preday,nicotine_s4preday,nicotine_s5preday,nicotine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 2: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[nicotine_s2(1)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1vsttype1
+  name: nicotine_s2vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 1: '
+    alias: nicotine_s2vsttype1,nicotine_s3vsttype1,nicotine_s4vsttype1,nicotine_s5vsttype1,nicotine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Type 1: </p>'
+    branching: '[nicotine_s2(2)]=''1'''
+
+- rename: nicotine_s1vsttime1
+  name: nicotine_s2vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 1:'
+    alias: nicotine_s2vsttime1,nicotine_s3vsttime1,nicotine_s4vsttime1,nicotine_s5vsttime1,nicotine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Time 1:</p>'
+    validation: time
+    branching: '[nicotine_s2(2)]=''1'''
+
+- rename: nicotine_s1vsttype2
+  name: nicotine_s2vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 2: '
+    alias: nicotine_s2vsttype2,nicotine_s3vsttype2,nicotine_s4vsttype2,nicotine_s5vsttype2,nicotine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Type 2: </p>'
+    branching: '[nicotine_s2(2)]=''1'''
+
+- rename: nicotine_s1vsttime2
+  name: nicotine_s2vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 2:'
+    alias: nicotine_s2vsttime2,nicotine_s3vsttime2,nicotine_s4vsttime2,nicotine_s5vsttime2,nicotine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Time 2:</p>'
+    validation: time
+    branching: '[nicotine_s2(2)]=''1'''
+
+- rename: nicotine_s1yn
+  name: nicotine_s3yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: nicotine_s2yn,nicotine_s3yn,nicotine_s4yn,nicotine_s5yn,nicotine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 3</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[nicotine_session(3)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1
+  name: nicotine_s3
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: nicotine_s2,nicotine_s3,nicotine_s4,nicotine_s5,nicotine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[nicotine_session(3)]=''1'' and [nicotine_s3yn]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1pretype
+  name: nicotine_s3pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Type: '
+    alias: nicotine_s2pretype,nicotine_s3pretype,nicotine_s4pretype,nicotine_s5pretype,nicotine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Type: </p>'
+    branching: '[nicotine_s3(1)]=''1'''
+
+- rename: nicotine_s1pretime
+  name: nicotine_s3pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Time:'
+    alias: nicotine_s2pretime,nicotine_s3pretime,nicotine_s4pretime,nicotine_s5pretime,nicotine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Time:</p>'
+    validation: time
+    branching: '[nicotine_s3(1)]=''1'''
+
+- rename: nicotine_s1preday
+  name: nicotine_s3preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Nicotine most recently used prior to visit: Same day/Prior
+      Day'
+    range:
+    - 0
+    - 1
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: nicotine_s2preday,nicotine_s3preday,nicotine_s4preday,nicotine_s5preday,nicotine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 3: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[nicotine_s3(1)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1vsttype1
+  name: nicotine_s3vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 1: '
+    alias: nicotine_s2vsttype1,nicotine_s3vsttype1,nicotine_s4vsttype1,nicotine_s5vsttype1,nicotine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Type 1: </p>'
+    branching: '[nicotine_s3(2)]=''1'''
+
+- rename: nicotine_s1vsttime1
+  name: nicotine_s3vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 1:'
+    alias: nicotine_s2vsttime1,nicotine_s3vsttime1,nicotine_s4vsttime1,nicotine_s5vsttime1,nicotine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Time 1:</p>'
+    validation: time
+    branching: '[nicotine_s3(2)]=''1'''
+
+- rename: nicotine_s1vsttype2
+  name: nicotine_s3vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 2: '
+    alias: nicotine_s2vsttype2,nicotine_s3vsttype2,nicotine_s4vsttype2,nicotine_s5vsttype2,nicotine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Type 2: </p>'
+    branching: '[nicotine_s3(2)]=''1'''
+
+- rename: nicotine_s1vsttime2
+  name: nicotine_s3vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 2:'
+    alias: nicotine_s2vsttime2,nicotine_s3vsttime2,nicotine_s4vsttime2,nicotine_s5vsttime2,nicotine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Time 2:</p>'
+    validation: time
+    branching: '[nicotine_s3(2)]=''1'''
+
+- rename: nicotine_s1yn
+  name: nicotine_s4yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: nicotine_s2yn,nicotine_s3yn,nicotine_s4yn,nicotine_s5yn,nicotine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 4</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[nicotine_session(4)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1
+  name: nicotine_s4
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: nicotine_s2,nicotine_s3,nicotine_s4,nicotine_s5,nicotine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[nicotine_session(4)]=''1'' and [nicotine_s4yn]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1pretype
+  name: nicotine_s4pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Type: '
+    alias: nicotine_s2pretype,nicotine_s3pretype,nicotine_s4pretype,nicotine_s5pretype,nicotine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Type: </p>'
+    branching: '[nicotine_s4(1)]=''1'''
+
+- rename: nicotine_s1pretime
+  name: nicotine_s4pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Time:'
+    alias: nicotine_s2pretime,nicotine_s3pretime,nicotine_s4pretime,nicotine_s5pretime,nicotine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Time:</p>'
+    validation: time
+    branching: '[nicotine_s4(1)]=''1'''
+
+- rename: nicotine_s1preday
+  name: nicotine_s4preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Nicotine most recently used prior to visit: Same day/Prior
+      Day'
+    range:
+    - 0
+    - 1
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: nicotine_s2preday,nicotine_s3preday,nicotine_s4preday,nicotine_s5preday,nicotine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 4: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[nicotine_s4(1)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1vsttype1
+  name: nicotine_s4vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 1: '
+    alias: nicotine_s2vsttype1,nicotine_s3vsttype1,nicotine_s4vsttype1,nicotine_s5vsttype1,nicotine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Type 1: </p>'
+    branching: '[nicotine_s4(2)]=''1'''
+
+- rename: nicotine_s1vsttime1
+  name: nicotine_s4vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 1:'
+    alias: nicotine_s2vsttime1,nicotine_s3vsttime1,nicotine_s4vsttime1,nicotine_s5vsttime1,nicotine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Time 1:</p>'
+    validation: time
+    branching: '[nicotine_s4(2)]=''1'''
+
+- rename: nicotine_s1vsttype2
+  name: nicotine_s4vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 2: '
+    alias: nicotine_s2vsttype2,nicotine_s3vsttype2,nicotine_s4vsttype2,nicotine_s5vsttype2,nicotine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Type 2: </p>'
+    branching: '[nicotine_s4(2)]=''1'''
+
+- rename: nicotine_s1vsttime2
+  name: nicotine_s4vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 2:'
+    alias: nicotine_s2vsttime2,nicotine_s3vsttime2,nicotine_s4vsttime2,nicotine_s5vsttime2,nicotine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Time 2:</p>'
+    validation: time
+    branching: '[nicotine_s4(2)]=''1'''
+
+- rename: nicotine_s1yn
+  name: nicotine_s5yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: nicotine_s2yn,nicotine_s3yn,nicotine_s4yn,nicotine_s5yn,nicotine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 5</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[nicotine_session(5)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1
+  name: nicotine_s5
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: nicotine_s2,nicotine_s3,nicotine_s4,nicotine_s5,nicotine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[nicotine_session(5)]=''1'' and [nicotine_s5yn]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1pretype
+  name: nicotine_s5pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Type: '
+    alias: nicotine_s2pretype,nicotine_s3pretype,nicotine_s4pretype,nicotine_s5pretype,nicotine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Type: </p>'
+    branching: '[nicotine_s5(1)]=''1'''
+
+- rename: nicotine_s1pretime
+  name: nicotine_s5pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Time:'
+    alias: nicotine_s2pretime,nicotine_s3pretime,nicotine_s4pretime,nicotine_s5pretime,nicotine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Time:</p>'
+    validation: time
+    branching: '[nicotine_s5(1)]=''1'''
+
+- rename: nicotine_s1preday
+  name: nicotine_s5preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Nicotine most recently used prior to visit: Same day/Prior
+      Day'
+    range:
+    - 0
+    - 1
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: nicotine_s2preday,nicotine_s3preday,nicotine_s4preday,nicotine_s5preday,nicotine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 5: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[nicotine_s5(1)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1vsttype1
+  name: nicotine_s5vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 1: '
+    alias: nicotine_s2vsttype1,nicotine_s3vsttype1,nicotine_s4vsttype1,nicotine_s5vsttype1,nicotine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Type 1: </p>'
+    branching: '[nicotine_s5(2)]=''1'''
+
+- rename: nicotine_s1vsttime1
+  name: nicotine_s5vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 1:'
+    alias: nicotine_s2vsttime1,nicotine_s3vsttime1,nicotine_s4vsttime1,nicotine_s5vsttime1,nicotine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Time 1:</p>'
+    validation: time
+    branching: '[nicotine_s5(2)]=''1'''
+
+- rename: nicotine_s1vsttype2
+  name: nicotine_s5vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 2: '
+    alias: nicotine_s2vsttype2,nicotine_s3vsttype2,nicotine_s4vsttype2,nicotine_s5vsttype2,nicotine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Type 2: </p>'
+    branching: '[nicotine_s5(2)]=''1'''
+
+- rename: nicotine_s1vsttime2
+  name: nicotine_s5vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 2:'
+    alias: nicotine_s2vsttime2,nicotine_s3vsttime2,nicotine_s4vsttime2,nicotine_s5vsttime2,nicotine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Time 2:</p>'
+    validation: time
+    branching: '[nicotine_s5(2)]=''1'''
+
+- rename: nicotine_s1yn
+  name: nicotine_s6yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: nicotine_s2yn,nicotine_s3yn,nicotine_s4yn,nicotine_s5yn,nicotine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 6</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[nicotine_session(6)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1
+  name: nicotine_s6
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: nicotine_s2,nicotine_s3,nicotine_s4,nicotine_s5,nicotine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[nicotine_session(6)]=''1'' and [nicotine_s6yn]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1pretype
+  name: nicotine_s6pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Type: '
+    alias: nicotine_s2pretype,nicotine_s3pretype,nicotine_s4pretype,nicotine_s5pretype,nicotine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Type: </p>'
+    branching: '[nicotine_s6(1)]=''1'''
+
+- rename: nicotine_s1pretime
+  name: nicotine_s6pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Time:'
+    alias: nicotine_s2pretime,nicotine_s3pretime,nicotine_s4pretime,nicotine_s5pretime,nicotine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Time:</p>'
+    validation: time
+    branching: '[nicotine_s6(1)]=''1'''
+
+- rename: nicotine_s1preday
+  name: nicotine_s6preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Nicotine most recently used prior to visit: Same day/Prior
+      Day'
+    range:
+    - 0
+    - 1
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: nicotine_s2preday,nicotine_s3preday,nicotine_s4preday,nicotine_s5preday,nicotine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 6: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[nicotine_s6(1)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1vsttype1
+  name: nicotine_s6vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 1: '
+    alias: nicotine_s2vsttype1,nicotine_s3vsttype1,nicotine_s4vsttype1,nicotine_s5vsttype1,nicotine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Type 1: </p>'
+    branching: '[nicotine_s6(2)]=''1'''
+
+- rename: nicotine_s1vsttime1
+  name: nicotine_s6vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 1:'
+    alias: nicotine_s2vsttime1,nicotine_s3vsttime1,nicotine_s4vsttime1,nicotine_s5vsttime1,nicotine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Time 1:</p>'
+    validation: time
+    branching: '[nicotine_s6(2)]=''1'''
+
+- rename: nicotine_s1vsttype2
+  name: nicotine_s6vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 2: '
+    alias: nicotine_s2vsttype2,nicotine_s3vsttype2,nicotine_s4vsttype2,nicotine_s5vsttype2,nicotine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Type 2: </p>'
+    branching: '[nicotine_s6(2)]=''1'''
+
+- rename: nicotine_s1vsttime2
+  name: nicotine_s6vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 2:'
+    alias: nicotine_s2vsttime2,nicotine_s3vsttime2,nicotine_s4vsttime2,nicotine_s5vsttime2,nicotine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Time 2:</p>'
+    validation: time
+    branching: '[nicotine_s6(2)]=''1'''
+
+- rename: alc
+  name: alc
+  source: hcpa
+  nda:
+    type: String
+    length: 20
+    description: 'Alcohol and Drugs: Alcohol Testing:'
+    notes: List up to 6 days
+  redcap:
+    form: external_measures
+    section: <font size='+0.05'><center>Alcohol and Drug</center></font>
+    type: checkbox
+    label: <p><font size=2.5>Alcohol Testing:</font></p>
+    choices:
+      1: Day 1
+      2: Day 2
+      3: Day 3
+      4: Day 4
+      5: Day 5
+      6: Day 6
+    alignment: LH
+
+- rename: alc_breath1
+  name: alc_breath1
+  source: hcpa
+  nda:
+    type: String
+    length: 10
+    description: 'Alcohol and Drugs: Alcohol Day 1 Breathalyzer Rating:'
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 40px''>Alcohol Day 1 Breathalyzer Rating:</p>'
+    branching: '[alc(1)]=''1'''
+
+- rename: alc_breath2
+  name: alc_breath2
+  source: hcpa
+  nda:
+    type: String
+    length: 10
+    description: 'Alcohol and Drugs: Alcohol Day 2 Breathalyzer Rating:'
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 40px''>Alcohol Day 2 Breathalyzer Rating:</p>'
+    branching: '[alc(2)]=''1'''
+
+- rename: alc_breath3
+  name: alc_breath3
+  source: hcpa
+  nda:
+    type: String
+    length: 10
+    description: 'Alcohol and Drugs: Alcohol Day 3 Breathalyzer Rating:'
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 40px''>Alcohol Day 3 Breathalyzer Rating:</p>'
+    branching: '[alc(3)]=''1'''
+
+- rename: alc_breath4
+  name: alc_breath4
+  source: hcpa
+  nda:
+    type: String
+    length: 10
+    description: 'Alcohol and Drugs: Alcohol Day 4 Breathalyzer Rating:'
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 40px''>Alcohol Day 4 Breathalyzer Rating:</p>'
+    branching: '[alc(4)]=''1'''
+
+- rename: alc_breath5
+  name: alc_breath5
+  source: hcpa
+  nda:
+    type: String
+    length: 10
+    description: 'Alcohol and Drugs: Alcohol Day 5 Breathalyzer Rating:'
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 40px''>Alcohol Day 5 Breathalyzer Rating:</p>'
+    branching: '[alc(5)]=''1'''
+
+- rename: alc_breath6
+  name: alc_breath6
+  source: hcpa
+  nda:
+    type: String
+    length: 10
+    description: 'Alcohol and Drugs: Alcohol Day 6 Breathalyzer Rating:'
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 40px''>Alcohol Day 6 Breathalyzer Rating:</p>'
+    branching: '[alc(6)]=''1'''
+
+- rename: drug
+  name: drug
+  source: hcpa
+  nda:
+    type: String
+    length: 20
+    description: 'Alcohol and Drugs: Drug Testing'
+    notes: List up to 6 days
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: <p><font size=2.5>Drug Testing</font></p>
+    choices:
+      1: Day 1
+      2: Day 2
+      3: Day 3
+      4: Day 4
+      5: Day 5
+      6: Day 6
+    alignment: LH
+
+- rename: drug1_1
+  name: drug1_1
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Cocaine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_1,drug3_1,drug4_1,drug5_1,drug6_1
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 1 Cocaine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(1)]=''1'''
+    alignment: RH
+
+- rename: drug1_2
+  name: drug1_2
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: THC'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_2,drug3_2,drug4_2,drug5_2,drug6_2
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 1 THC</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(1)]=''1'''
+    alignment: RH
+
+- rename: drug1_3
+  name: drug1_3
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Opiates'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_3,drug3_3,drug4_3,drug5_3,drug6_3
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 1 Opiates</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(1)]=''1'''
+    alignment: RH
+
+- rename: drug1_4
+  name: drug1_4
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_4,drug3_4,drug4_4,drug5_4,drug6_4
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 1 Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(1)]=''1'''
+    alignment: RH
+
+- rename: drug1_5
+  name: drug1_5
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Meth Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_5,drug3_5,drug4_5,drug5_5,drug6_5
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 1 Meth Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(1)]=''1'''
+    alignment: RH
+
+- rename: drug1_6
+  name: drug1_6
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Oxycontin'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_6,drug3_6,drug4_6,drug5_6,drug6_6
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 1 Oxycontin</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(1)]=''1'''
+    alignment: RH
+
+- rename: drug1_1
+  name: drug2_1
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Cocaine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_1,drug3_1,drug4_1,drug5_1,drug6_1
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 2 Cocaine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(2)]=''1'''
+    alignment: RH
+
+- rename: drug1_2
+  name: drug2_2
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: THC'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_2,drug3_2,drug4_2,drug5_2,drug6_2
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 2 THC</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(2)]=''1'''
+    alignment: RH
+
+- rename: drug1_3
+  name: drug2_3
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Opiates'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_3,drug3_3,drug4_3,drug5_3,drug6_3
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 2 Opiates</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(2)]=''1'''
+    alignment: RH
+
+- rename: drug1_4
+  name: drug2_4
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_4,drug3_4,drug4_4,drug5_4,drug6_4
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 2 Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(2)]=''1'''
+    alignment: RH
+
+- rename: drug1_5
+  name: drug2_5
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Meth Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_5,drug3_5,drug4_5,drug5_5,drug6_5
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 2 Meth Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(2)]=''1'''
+    alignment: RH
+
+- rename: drug1_6
+  name: drug2_6
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Oxycontin'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_6,drug3_6,drug4_6,drug5_6,drug6_6
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 2 Oxycontin</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(2)]=''1'''
+    alignment: RH
+
+- rename: drug1_1
+  name: drug3_1
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Cocaine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_1,drug3_1,drug4_1,drug5_1,drug6_1
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 3 Cocaine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(3)]='1')
+    alignment: RH
+
+- rename: drug1_2
+  name: drug3_2
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: THC'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_2,drug3_2,drug4_2,drug5_2,drug6_2
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 3 THC</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(3)]='1')
+    alignment: RH
+
+- rename: drug1_3
+  name: drug3_3
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Opiates'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_3,drug3_3,drug4_3,drug5_3,drug6_3
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 3 Opiates</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(3)]='1')
+    alignment: RH
+
+- rename: drug1_4
+  name: drug3_4
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_4,drug3_4,drug4_4,drug5_4,drug6_4
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 3 Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(3)]='1')
+    alignment: RH
+
+- rename: drug1_5
+  name: drug3_5
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Meth Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_5,drug3_5,drug4_5,drug5_5,drug6_5
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 3 Meth Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(3)]='1')
+    alignment: RH
+
+- rename: drug1_6
+  name: drug3_6
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Oxycontin'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_6,drug3_6,drug4_6,drug5_6,drug6_6
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 3 Oxycontin</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(3)]='1')
+    alignment: RH
+
+- rename: drug1_1
+  name: drug4_1
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Cocaine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_1,drug3_1,drug4_1,drug5_1,drug6_1
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 4 Cocaine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(4)]='1')
+    alignment: RH
+
+- rename: drug1_2
+  name: drug4_2
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: THC'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_2,drug3_2,drug4_2,drug5_2,drug6_2
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 4 THC</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(4)]='1')
+    alignment: RH
+
+- rename: drug1_3
+  name: drug4_3
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Opiates'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_3,drug3_3,drug4_3,drug5_3,drug6_3
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 4 Opiates</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(4)]='1')
+    alignment: RH
+
+- rename: drug1_4
+  name: drug4_4
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_4,drug3_4,drug4_4,drug5_4,drug6_4
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 4 Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(4)]='1')
+    alignment: RH
+
+- rename: drug1_5
+  name: drug4_5
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Meth Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_5,drug3_5,drug4_5,drug5_5,drug6_5
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 4 Meth Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(4)]='1')
+    alignment: RH
+
+- rename: drug1_6
+  name: drug4_6
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Oxycontin'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_6,drug3_6,drug4_6,drug5_6,drug6_6
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 4 Oxycontin</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(4)]='1')
+    alignment: RH
+
+- rename: drug1_1
+  name: drug5_1
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Cocaine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_1,drug3_1,drug4_1,drug5_1,drug6_1
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 5 Cocaine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(5)]=''1'''
+    alignment: RH
+
+- rename: drug1_2
+  name: drug5_2
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: THC'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_2,drug3_2,drug4_2,drug5_2,drug6_2
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 5 THC</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(5)]=''1'''
+    alignment: RH
+
+- rename: drug1_3
+  name: drug5_3
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Opiates'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_3,drug3_3,drug4_3,drug5_3,drug6_3
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 5 Opiates</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(5)]=''1'''
+    alignment: RH
+
+- rename: drug1_4
+  name: drug5_4
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_4,drug3_4,drug4_4,drug5_4,drug6_4
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 5 Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(5)]=''1'''
+    alignment: RH
+
+- rename: drug1_5
+  name: drug5_5
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Meth Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_5,drug3_5,drug4_5,drug5_5,drug6_5
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 5 Meth Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(5)]=''1'''
+    alignment: RH
+
+- rename: drug1_6
+  name: drug5_6
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Oxycontin'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_6,drug3_6,drug4_6,drug5_6,drug6_6
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 5 Oxycontin</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(5)]=''1'''
+    alignment: RH
+
+- rename: drug1_1
+  name: drug6_1
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Cocaine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_1,drug3_1,drug4_1,drug5_1,drug6_1
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 6 Cocaine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(6)]=''1'''
+    alignment: RH
+
+- rename: drug1_2
+  name: drug6_2
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: THC'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_2,drug3_2,drug4_2,drug5_2,drug6_2
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 6 THC</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(6)]=''1'''
+    alignment: RH
+
+- rename: drug1_3
+  name: drug6_3
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Opiates'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_3,drug3_3,drug4_3,drug5_3,drug6_3
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 6 Opiates</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(6)]=''1'''
+    alignment: RH
+
+- rename: drug1_4
+  name: drug6_4
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_4,drug3_4,drug4_4,drug5_4,drug6_4
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 6 Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(6)]=''1'''
+    alignment: RH
+
+- rename: drug1_5
+  name: drug6_5
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Meth Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_5,drug3_5,drug4_5,drug5_5,drug6_5
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 6 Meth Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(6)]=''1'''
+    alignment: RH
+
+- rename: drug1_6
+  name: drug6_6
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Oxycontin'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_6,drug3_6,drug4_6,drug5_6,drug6_6
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 6 Oxycontin</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(6)]=''1'''
+    alignment: RH
+
+- rename: caffeine_session
+  name: caffeine_session
+  source: hcpa
+  nda:
+    type: String
+    length: 35
+    description: 'Sessions Completed (Caffeine):'
+    notes: List up to 6 sessions
+  redcap:
+    form: external_measures
+    section: <font size='+0.05'><center>Caffeine</center></font>
+    type: checkbox
+    label: <font size=2.5>Sessions:</font>
+    choices:
+      1: Session 1
+      2: Session 2
+      3: Session 3
+      4: Session 4
+      5: Session 5
+      6: Session 6
+    alignment: LH
+
+- rename: version_form
+  name: dummy_var18
+  request: 'Please have sessions'' data share columns, one column for each unique
+    question...The rows can be labeled by session/day with the ''version_form'' column. '
+  source: hcpa
+  nda:
+    type: String
+    length: 121
+    description: Form used/assessment name
+    alias: form
+
+- rename: caffeine_s1yn
+  name: caffeine_s1yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: caffeine_s2yn,caffeine_s3yn,caffeine_s4yn,caffeine_s5yn,caffeine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 1</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[caffeine_session(1)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1
+  name: caffeine_s1
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: caffeine_s2,caffeine_s3,caffeine_s4,caffeine_s5,caffeine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[caffeine_session(1)]=''1'' and [caffeine_s1yn]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1pretype
+  name: caffeine_s1pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 110
+    description: 'Caffeine: Caffeine most recently used prior to visit: Type: '
+    alias: caffeine_s2pretype,caffeine_s3pretype,caffeine_s4pretype,caffeine_s5pretype,caffeine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Type: </p>'
+    branching: '[caffeine_s1(1)]=''1'''
+
+- rename: caffeine_s1pretime
+  name: caffeine_s1pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine most recently used prior to visit: Time:'
+    alias: caffeine_s2pretime,caffeine_s3pretime,caffeine_s4pretime,caffeine_s5pretime,caffeine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Time:</p>'
+    validation: time
+    branching: '[caffeine_s1(1)]=''1'''
+
+- rename: caffeine_s1preday
+  name: caffeine_s1preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Caffeine most recently used prior to visit: Same day/Prior
+      Day'
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: caffeine_s2preday,caffeine_s3preday,caffeine_s4preday,caffeine_s5preday,caffeine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 1: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[caffeine_s1(1)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1vsttype1
+  name: caffeine_s1vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 60
+    description: 'Caffeine: Caffeine used during visit: Type 1: '
+    alias: caffeine_s2vsttype1,caffeine_s3vsttype1,caffeine_s4vsttype1,caffeine_s5vsttype1,caffeine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Type 1: </p>'
+    branching: '[caffeine_s1(2)]=''1'''
+
+- rename: caffeine_s1vsttime1
+  name: caffeine_s1vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 1:'
+    alias: caffeine_s2vsttime1,caffeine_s3vsttime1,caffeine_s4vsttime1,caffeine_s5vsttime1,caffeine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Time 1:</p>'
+    validation: time
+    branching: '[caffeine_s1(2)]=''1'''
+
+- rename: caffeine_s1vsttype2
+  name: caffeine_s1vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Type 2: '
+    alias: caffeine_s2vsttype2,caffeine_s3vsttype2,caffeine_s4vsttype2,caffeine_s5vsttype2,caffeine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Type 2: </p>'
+    branching: '[caffeine_s1(2)]=''1'''
+
+- rename: caffeine_s1vsttime2
+  name: caffeine_s1vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 2:'
+    alias: caffeine_s2vsttime2,caffeine_s3vsttime2,caffeine_s4vsttime2,caffeine_s5vsttime2,caffeine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Time 2:</p>'
+    validation: time
+    branching: '[caffeine_s1(2)]=''1'''
+
+- rename: caffeine_s1yn
+  name: caffeine_s2yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: caffeine_s2yn,caffeine_s3yn,caffeine_s4yn,caffeine_s5yn,caffeine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 2</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[caffeine_session(2)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1
+  name: caffeine_s2
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: caffeine_s2,caffeine_s3,caffeine_s4,caffeine_s5,caffeine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[caffeine_session(2)]=''1'' and [caffeine_s2yn]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1pretype
+  name: caffeine_s2pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 110
+    description: 'Caffeine: Caffeine most recently used prior to visit: Type: '
+    alias: caffeine_s2pretype,caffeine_s3pretype,caffeine_s4pretype,caffeine_s5pretype,caffeine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Type: </p>'
+    branching: '[caffeine_s2(1)]=''1'''
+
+- rename: caffeine_s1pretime
+  name: caffeine_s2pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine most recently used prior to visit: Time:'
+    alias: caffeine_s2pretime,caffeine_s3pretime,caffeine_s4pretime,caffeine_s5pretime,caffeine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Time:</p>'
+    validation: time
+    branching: '[caffeine_s2(1)]=''1'''
+
+- rename: caffeine_s1preday
+  name: caffeine_s2preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Caffeine most recently used prior to visit: Same day/Prior
+      Day'
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: caffeine_s2preday,caffeine_s3preday,caffeine_s4preday,caffeine_s5preday,caffeine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 2: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[caffeine_s2(1)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1vsttype1
+  name: caffeine_s2vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 60
+    description: 'Caffeine: Caffeine used during visit: Type 1: '
+    alias: caffeine_s2vsttype1,caffeine_s3vsttype1,caffeine_s4vsttype1,caffeine_s5vsttype1,caffeine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Type 1: </p>'
+    branching: '[caffeine_s2(2)]=''1'''
+
+- rename: caffeine_s1vsttime1
+  name: caffeine_s2vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 1:'
+    alias: caffeine_s2vsttime1,caffeine_s3vsttime1,caffeine_s4vsttime1,caffeine_s5vsttime1,caffeine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Time 1:</p>'
+    validation: time
+    branching: '[caffeine_s2(2)]=''1'''
+
+- rename: caffeine_s1vsttype2
+  name: caffeine_s2vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Type 2: '
+    alias: caffeine_s2vsttype2,caffeine_s3vsttype2,caffeine_s4vsttype2,caffeine_s5vsttype2,caffeine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Type 2: </p>'
+    branching: '[caffeine_s2(2)]=''1'''
+
+- rename: caffeine_s1vsttime2
+  name: caffeine_s2vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 2:'
+    alias: caffeine_s2vsttime2,caffeine_s3vsttime2,caffeine_s4vsttime2,caffeine_s5vsttime2,caffeine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Time 2:</p>'
+    validation: time
+    branching: '[caffeine_s2(2)]=''1'''
+
+- rename: caffeine_s1yn
+  name: caffeine_s3yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: caffeine_s2yn,caffeine_s3yn,caffeine_s4yn,caffeine_s5yn,caffeine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 3</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[caffeine_session(3)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1
+  name: caffeine_s3
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: caffeine_s2,caffeine_s3,caffeine_s4,caffeine_s5,caffeine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[caffeine_session(3)]=''1'' and [caffeine_s3yn]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1pretype
+  name: caffeine_s3pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 110
+    description: 'Caffeine: Caffeine most recently used prior to visit: Type: '
+    alias: caffeine_s2pretype,caffeine_s3pretype,caffeine_s4pretype,caffeine_s5pretype,caffeine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Type: </p>'
+    branching: '[caffeine_s3(1)]=''1'''
+
+- rename: caffeine_s1pretime
+  name: caffeine_s3pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine most recently used prior to visit: Time:'
+    alias: caffeine_s2pretime,caffeine_s3pretime,caffeine_s4pretime,caffeine_s5pretime,caffeine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Time:</p>'
+    validation: time
+    branching: '[caffeine_s3(1)]=''1'''
+
+- rename: caffeine_s1preday
+  name: caffeine_s3preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Caffeine most recently used prior to visit: Same day/Prior
+      Day'
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: caffeine_s2preday,caffeine_s3preday,caffeine_s4preday,caffeine_s5preday,caffeine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 3: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[caffeine_s3(1)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1vsttype1
+  name: caffeine_s3vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 60
+    description: 'Caffeine: Caffeine used during visit: Type 1: '
+    alias: caffeine_s2vsttype1,caffeine_s3vsttype1,caffeine_s4vsttype1,caffeine_s5vsttype1,caffeine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Type 1: </p>'
+    branching: '[caffeine_s3(2)]=''1'''
+
+- rename: caffeine_s1vsttime1
+  name: caffeine_s3vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 1:'
+    alias: caffeine_s2vsttime1,caffeine_s3vsttime1,caffeine_s4vsttime1,caffeine_s5vsttime1,caffeine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Time 1:</p>'
+    validation: time
+    branching: '[caffeine_s3(2)]=''1'''
+
+- rename: caffeine_s1vsttype2
+  name: caffeine_s3vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Type 2: '
+    alias: caffeine_s2vsttype2,caffeine_s3vsttype2,caffeine_s4vsttype2,caffeine_s5vsttype2,caffeine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Type 2: </p>'
+    branching: '[caffeine_s3(2)]=''1'''
+
+- rename: caffeine_s1vsttime2
+  name: caffeine_s3vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 2:'
+    alias: caffeine_s2vsttime2,caffeine_s3vsttime2,caffeine_s4vsttime2,caffeine_s5vsttime2,caffeine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Time 2:</p>'
+    validation: time
+    branching: '[caffeine_s3(2)]=''1'''
+
+- rename: caffeine_s1yn
+  name: caffeine_s4yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: caffeine_s2yn,caffeine_s3yn,caffeine_s4yn,caffeine_s5yn,caffeine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 4</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[caffeine_session(4)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1
+  name: caffeine_s4
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: caffeine_s2,caffeine_s3,caffeine_s4,caffeine_s5,caffeine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[caffeine_session(4)]=''1'' and [caffeine_s4yn]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1pretype
+  name: caffeine_s4pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 110
+    description: 'Caffeine: Caffeine most recently used prior to visit: Type: '
+    alias: caffeine_s2pretype,caffeine_s3pretype,caffeine_s4pretype,caffeine_s5pretype,caffeine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Type: </p>'
+    branching: '[caffeine_s4(1)]=''1'''
+
+- rename: caffeine_s1pretime
+  name: caffeine_s4pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine most recently used prior to visit: Time:'
+    alias: caffeine_s2pretime,caffeine_s3pretime,caffeine_s4pretime,caffeine_s5pretime,caffeine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Time:</p>'
+    validation: time
+    branching: '[caffeine_s4(1)]=''1'''
+
+- rename: caffeine_s1preday
+  name: caffeine_s4preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Caffeine most recently used prior to visit: Same day/Prior
+      Day'
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: caffeine_s2preday,caffeine_s3preday,caffeine_s4preday,caffeine_s5preday,caffeine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 4: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[caffeine_s4(1)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1vsttype1
+  name: caffeine_s4vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 60
+    description: 'Caffeine: Caffeine used during visit: Type 1: '
+    alias: caffeine_s2vsttype1,caffeine_s3vsttype1,caffeine_s4vsttype1,caffeine_s5vsttype1,caffeine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Type 1: </p>'
+    branching: '[caffeine_s4(2)]=''1'''
+
+- rename: caffeine_s1vsttime1
+  name: caffeine_s4vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 1:'
+    alias: caffeine_s2vsttime1,caffeine_s3vsttime1,caffeine_s4vsttime1,caffeine_s5vsttime1,caffeine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Time 1:</p>'
+    validation: time
+    branching: '[caffeine_s4(2)]=''1'''
+
+- rename: caffeine_s1vsttype2
+  name: caffeine_s4vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Type 2: '
+    alias: caffeine_s2vsttype2,caffeine_s3vsttype2,caffeine_s4vsttype2,caffeine_s5vsttype2,caffeine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Type 2: </p>'
+    branching: '[caffeine_s4(2)]=''1'''
+
+- rename: caffeine_s1vsttime2
+  name: caffeine_s4vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 2:'
+    alias: caffeine_s2vsttime2,caffeine_s3vsttime2,caffeine_s4vsttime2,caffeine_s5vsttime2,caffeine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Time 2:</p>'
+    validation: time
+    branching: '[caffeine_s4(2)]=''1'''
+
+- rename: caffeine_s1yn
+  name: caffeine_s5yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: caffeine_s2yn,caffeine_s3yn,caffeine_s4yn,caffeine_s5yn,caffeine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 5</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[caffeine_session(5)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1
+  name: caffeine_s5
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: caffeine_s2,caffeine_s3,caffeine_s4,caffeine_s5,caffeine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[caffeine_session(5)]=''1'' and [caffeine_s5yn]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1pretype
+  name: caffeine_s5pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 110
+    description: 'Caffeine: Caffeine most recently used prior to visit: Type: '
+    alias: caffeine_s2pretype,caffeine_s3pretype,caffeine_s4pretype,caffeine_s5pretype,caffeine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Type: </p>'
+    branching: '[caffeine_s5(1)]=''1'''
+
+- rename: caffeine_s1pretime
+  name: caffeine_s5pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine most recently used prior to visit: Time:'
+    alias: caffeine_s2pretime,caffeine_s3pretime,caffeine_s4pretime,caffeine_s5pretime,caffeine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Time:</p>'
+    validation: time
+    branching: '[caffeine_s5(1)]=''1'''
+
+- rename: caffeine_s1preday
+  name: caffeine_s5preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Caffeine most recently used prior to visit: Same day/Prior
+      Day'
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: caffeine_s2preday,caffeine_s3preday,caffeine_s4preday,caffeine_s5preday,caffeine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 5: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[caffeine_s5(1)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1vsttype1
+  name: caffeine_s5vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 60
+    description: 'Caffeine: Caffeine used during visit: Type 1: '
+    alias: caffeine_s2vsttype1,caffeine_s3vsttype1,caffeine_s4vsttype1,caffeine_s5vsttype1,caffeine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Type 1: </p>'
+    branching: '[caffeine_s5(2)]=''1'''
+
+- rename: caffeine_s1vsttime1
+  name: caffeine_s5vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 1:'
+    alias: caffeine_s2vsttime1,caffeine_s3vsttime1,caffeine_s4vsttime1,caffeine_s5vsttime1,caffeine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Time 1:</p>'
+    validation: time
+    branching: '[caffeine_s5(2)]=''1'''
+
+- rename: caffeine_s1vsttype2
+  name: caffeine_s5vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Type 2: '
+    alias: caffeine_s2vsttype2,caffeine_s3vsttype2,caffeine_s4vsttype2,caffeine_s5vsttype2,caffeine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Type 2: </p>'
+    branching: '[caffeine_s5(2)]=''1'''
+
+- rename: caffeine_s1vsttime2
+  name: caffeine_s5vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 2:'
+    alias: caffeine_s2vsttime2,caffeine_s3vsttime2,caffeine_s4vsttime2,caffeine_s5vsttime2,caffeine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Time 2:</p>'
+    validation: time
+    branching: '[caffeine_s5(2)]=''1'''
+
+- rename: caffeine_s1yn
+  name: caffeine_s6yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: caffeine_s2yn,caffeine_s3yn,caffeine_s4yn,caffeine_s5yn,caffeine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 6</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[caffeine_session(6)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1
+  name: caffeine_s6
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: caffeine_s2,caffeine_s3,caffeine_s4,caffeine_s5,caffeine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[caffeine_session(6)]=''1'' and [caffeine_s6yn]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1pretype
+  name: caffeine_s6pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 110
+    description: 'Caffeine: Caffeine most recently used prior to visit: Type: '
+    alias: caffeine_s2pretype,caffeine_s3pretype,caffeine_s4pretype,caffeine_s5pretype,caffeine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Type: </p>'
+    branching: '[caffeine_s6(1)]=''1'''
+
+- rename: caffeine_s1pretime
+  name: caffeine_s6pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine most recently used prior to visit: Time:'
+    alias: caffeine_s2pretime,caffeine_s3pretime,caffeine_s4pretime,caffeine_s5pretime,caffeine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Time:</p>'
+    validation: time
+    branching: '[caffeine_s6(1)]=''1'''
+
+- rename: caffeine_s1preday
+  name: caffeine_s6preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Caffeine: Caffeine most recently used prior to visit: Same day/Prior
+      Day'
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: caffeine_s2preday,caffeine_s3preday,caffeine_s4preday,caffeine_s5preday,caffeine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 6: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[caffeine_s6(1)]=''1'''
+    alignment: RH
+
+- rename: caffeine_s1vsttype1
+  name: caffeine_s6vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 60
+    description: 'Caffeine: Caffeine used during visit: Type 1: '
+    alias: caffeine_s2vsttype1,caffeine_s3vsttype1,caffeine_s4vsttype1,caffeine_s5vsttype1,caffeine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Type 1: </p>'
+    branching: '[caffeine_s6(2)]=''1'''
+
+- rename: caffeine_s1vsttime1
+  name: caffeine_s6vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 1:'
+    alias: caffeine_s2vsttime1,caffeine_s3vsttime1,caffeine_s4vsttime1,caffeine_s5vsttime1,caffeine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Time 1:</p>'
+    validation: time
+    branching: '[caffeine_s6(2)]=''1'''
+
+- rename: caffeine_s1vsttype2
+  name: caffeine_s6vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Type 2: '
+    alias: caffeine_s2vsttype2,caffeine_s3vsttype2,caffeine_s4vsttype2,caffeine_s5vsttype2,caffeine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Type 2: </p>'
+    branching: '[caffeine_s6(2)]=''1'''
+
+- rename: caffeine_s1vsttime2
+  name: caffeine_s6vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Caffeine: Caffeine used during visit: Time 2:'
+    alias: caffeine_s2vsttime2,caffeine_s3vsttime2,caffeine_s4vsttime2,caffeine_s5vsttime2,caffeine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Time 2:</p>'
+    validation: time
+    branching: '[caffeine_s6(2)]=''1'''
+
+- rename: nicotine_session
+  name: nicotine_session
+  source: hcpa
+  nda:
+    type: String
+    length: 35
+    description: 'Sessions Completed (Nicotine):'
+    notes: List up to 6 sessions
+  redcap:
+    form: external_measures
+    section: <font size='+0.05'><center>Nicotine</center></font>
+    type: checkbox
+    label: <font size=2.5>Sessions:</font>
+    choices:
+      1: Session 1
+      2: Session 2
+      3: Session 3
+      4: Session 4
+      5: Session 5
+      6: Session 6
+    alignment: LH
+
+- rename: nicotine_s1yn
+  name: nicotine_s1yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: nicotine_s2yn,nicotine_s3yn,nicotine_s4yn,nicotine_s5yn,nicotine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 1</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[nicotine_session(1)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1
+  name: nicotine_s1
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: nicotine_s2,nicotine_s3,nicotine_s4,nicotine_s5,nicotine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[nicotine_session(1)]=''1'' and [nicotine_s1yn]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1pretype
+  name: nicotine_s1pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Type: '
+    alias: nicotine_s2pretype,nicotine_s3pretype,nicotine_s4pretype,nicotine_s5pretype,nicotine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Type: </p>'
+    branching: '[nicotine_s1(1)]=''1'''
+
+- rename: nicotine_s1pretime
+  name: nicotine_s1pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Time:'
+    alias: nicotine_s2pretime,nicotine_s3pretime,nicotine_s4pretime,nicotine_s5pretime,nicotine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Time:</p>'
+    validation: time
+    branching: '[nicotine_s1(1)]=''1'''
+
+- rename: nicotine_s1preday
+  name: nicotine_s1preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Nicotine most recently used prior to visit: Same day/Prior
+      Day'
+    range:
+    - 0
+    - 1
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: nicotine_s2preday,nicotine_s3preday,nicotine_s4preday,nicotine_s5preday,nicotine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 1: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[nicotine_s1(1)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1vsttype1
+  name: nicotine_s1vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 1: '
+    alias: nicotine_s2vsttype1,nicotine_s3vsttype1,nicotine_s4vsttype1,nicotine_s5vsttype1,nicotine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Type 1: </p>'
+    branching: '[nicotine_s1(2)]=''1'''
+
+- rename: nicotine_s1vsttime1
+  name: nicotine_s1vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 1:'
+    alias: nicotine_s2vsttime1,nicotine_s3vsttime1,nicotine_s4vsttime1,nicotine_s5vsttime1,nicotine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Time 1:</p>'
+    validation: time
+    branching: '[nicotine_s1(2)]=''1'''
+
+- rename: nicotine_s1vsttype2
+  name: nicotine_s1vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 2: '
+    alias: nicotine_s2vsttype2,nicotine_s3vsttype2,nicotine_s4vsttype2,nicotine_s5vsttype2,nicotine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Type 2: </p>'
+    branching: '[nicotine_s1(2)]=''1'''
+
+- rename: nicotine_s1vsttime2
+  name: nicotine_s1vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 2:'
+    alias: nicotine_s2vsttime2,nicotine_s3vsttime2,nicotine_s4vsttime2,nicotine_s5vsttime2,nicotine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 1: Time 2:</p>'
+    validation: time
+    branching: '[nicotine_s1(2)]=''1'''
+
+- rename: nicotine_s1yn
+  name: nicotine_s2yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: nicotine_s2yn,nicotine_s3yn,nicotine_s4yn,nicotine_s5yn,nicotine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 2</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[nicotine_session(2)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1
+  name: nicotine_s2
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: nicotine_s2,nicotine_s3,nicotine_s4,nicotine_s5,nicotine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[nicotine_session(2)]=''1'' and [nicotine_s2yn]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1pretype
+  name: nicotine_s2pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Type: '
+    alias: nicotine_s2pretype,nicotine_s3pretype,nicotine_s4pretype,nicotine_s5pretype,nicotine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Type: </p>'
+    branching: '[nicotine_s2(1)]=''1'''
+
+- rename: nicotine_s1pretime
+  name: nicotine_s2pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Time:'
+    alias: nicotine_s2pretime,nicotine_s3pretime,nicotine_s4pretime,nicotine_s5pretime,nicotine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Time:</p>'
+    validation: time
+    branching: '[nicotine_s2(1)]=''1'''
+
+- rename: nicotine_s1preday
+  name: nicotine_s2preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Nicotine most recently used prior to visit: Same day/Prior
+      Day'
+    range:
+    - 0
+    - 1
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: nicotine_s2preday,nicotine_s3preday,nicotine_s4preday,nicotine_s5preday,nicotine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 2: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[nicotine_s2(1)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1vsttype1
+  name: nicotine_s2vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 1: '
+    alias: nicotine_s2vsttype1,nicotine_s3vsttype1,nicotine_s4vsttype1,nicotine_s5vsttype1,nicotine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Type 1: </p>'
+    branching: '[nicotine_s2(2)]=''1'''
+
+- rename: nicotine_s1vsttime1
+  name: nicotine_s2vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 1:'
+    alias: nicotine_s2vsttime1,nicotine_s3vsttime1,nicotine_s4vsttime1,nicotine_s5vsttime1,nicotine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Time 1:</p>'
+    validation: time
+    branching: '[nicotine_s2(2)]=''1'''
+
+- rename: nicotine_s1vsttype2
+  name: nicotine_s2vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 2: '
+    alias: nicotine_s2vsttype2,nicotine_s3vsttype2,nicotine_s4vsttype2,nicotine_s5vsttype2,nicotine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Type 2: </p>'
+    branching: '[nicotine_s2(2)]=''1'''
+
+- rename: nicotine_s1vsttime2
+  name: nicotine_s2vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 2:'
+    alias: nicotine_s2vsttime2,nicotine_s3vsttime2,nicotine_s4vsttime2,nicotine_s5vsttime2,nicotine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 2: Time 2:</p>'
+    validation: time
+    branching: '[nicotine_s2(2)]=''1'''
+
+- rename: nicotine_s1yn
+  name: nicotine_s3yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: nicotine_s2yn,nicotine_s3yn,nicotine_s4yn,nicotine_s5yn,nicotine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 3</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[nicotine_session(3)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1
+  name: nicotine_s3
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: nicotine_s2,nicotine_s3,nicotine_s4,nicotine_s5,nicotine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[nicotine_session(3)]=''1'' and [nicotine_s3yn]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1pretype
+  name: nicotine_s3pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Type: '
+    alias: nicotine_s2pretype,nicotine_s3pretype,nicotine_s4pretype,nicotine_s5pretype,nicotine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Type: </p>'
+    branching: '[nicotine_s3(1)]=''1'''
+
+- rename: nicotine_s1pretime
+  name: nicotine_s3pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Time:'
+    alias: nicotine_s2pretime,nicotine_s3pretime,nicotine_s4pretime,nicotine_s5pretime,nicotine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Time:</p>'
+    validation: time
+    branching: '[nicotine_s3(1)]=''1'''
+
+- rename: nicotine_s1preday
+  name: nicotine_s3preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Nicotine most recently used prior to visit: Same day/Prior
+      Day'
+    range:
+    - 0
+    - 1
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: nicotine_s2preday,nicotine_s3preday,nicotine_s4preday,nicotine_s5preday,nicotine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 3: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[nicotine_s3(1)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1vsttype1
+  name: nicotine_s3vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 1: '
+    alias: nicotine_s2vsttype1,nicotine_s3vsttype1,nicotine_s4vsttype1,nicotine_s5vsttype1,nicotine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Type 1: </p>'
+    branching: '[nicotine_s3(2)]=''1'''
+
+- rename: nicotine_s1vsttime1
+  name: nicotine_s3vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 1:'
+    alias: nicotine_s2vsttime1,nicotine_s3vsttime1,nicotine_s4vsttime1,nicotine_s5vsttime1,nicotine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Time 1:</p>'
+    validation: time
+    branching: '[nicotine_s3(2)]=''1'''
+
+- rename: nicotine_s1vsttype2
+  name: nicotine_s3vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 2: '
+    alias: nicotine_s2vsttype2,nicotine_s3vsttype2,nicotine_s4vsttype2,nicotine_s5vsttype2,nicotine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Type 2: </p>'
+    branching: '[nicotine_s3(2)]=''1'''
+
+- rename: nicotine_s1vsttime2
+  name: nicotine_s3vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 2:'
+    alias: nicotine_s2vsttime2,nicotine_s3vsttime2,nicotine_s4vsttime2,nicotine_s5vsttime2,nicotine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 3: Time 2:</p>'
+    validation: time
+    branching: '[nicotine_s3(2)]=''1'''
+
+- rename: nicotine_s1yn
+  name: nicotine_s4yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: nicotine_s2yn,nicotine_s3yn,nicotine_s4yn,nicotine_s5yn,nicotine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 4</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[nicotine_session(4)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1
+  name: nicotine_s4
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: nicotine_s2,nicotine_s3,nicotine_s4,nicotine_s5,nicotine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[nicotine_session(4)]=''1'' and [nicotine_s4yn]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1pretype
+  name: nicotine_s4pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Type: '
+    alias: nicotine_s2pretype,nicotine_s3pretype,nicotine_s4pretype,nicotine_s5pretype,nicotine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Type: </p>'
+    branching: '[nicotine_s4(1)]=''1'''
+
+- rename: nicotine_s1pretime
+  name: nicotine_s4pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Time:'
+    alias: nicotine_s2pretime,nicotine_s3pretime,nicotine_s4pretime,nicotine_s5pretime,nicotine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Time:</p>'
+    validation: time
+    branching: '[nicotine_s4(1)]=''1'''
+
+- rename: nicotine_s1preday
+  name: nicotine_s4preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Nicotine most recently used prior to visit: Same day/Prior
+      Day'
+    range:
+    - 0
+    - 1
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: nicotine_s2preday,nicotine_s3preday,nicotine_s4preday,nicotine_s5preday,nicotine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 4: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[nicotine_s4(1)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1vsttype1
+  name: nicotine_s4vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 1: '
+    alias: nicotine_s2vsttype1,nicotine_s3vsttype1,nicotine_s4vsttype1,nicotine_s5vsttype1,nicotine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Type 1: </p>'
+    branching: '[nicotine_s4(2)]=''1'''
+
+- rename: nicotine_s1vsttime1
+  name: nicotine_s4vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 1:'
+    alias: nicotine_s2vsttime1,nicotine_s3vsttime1,nicotine_s4vsttime1,nicotine_s5vsttime1,nicotine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Time 1:</p>'
+    validation: time
+    branching: '[nicotine_s4(2)]=''1'''
+
+- rename: nicotine_s1vsttype2
+  name: nicotine_s4vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 2: '
+    alias: nicotine_s2vsttype2,nicotine_s3vsttype2,nicotine_s4vsttype2,nicotine_s5vsttype2,nicotine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Type 2: </p>'
+    branching: '[nicotine_s4(2)]=''1'''
+
+- rename: nicotine_s1vsttime2
+  name: nicotine_s4vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 2:'
+    alias: nicotine_s2vsttime2,nicotine_s3vsttime2,nicotine_s4vsttime2,nicotine_s5vsttime2,nicotine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 4: Time 2:</p>'
+    validation: time
+    branching: '[nicotine_s4(2)]=''1'''
+
+- rename: nicotine_s1yn
+  name: nicotine_s5yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: nicotine_s2yn,nicotine_s3yn,nicotine_s4yn,nicotine_s5yn,nicotine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 5</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[nicotine_session(5)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1
+  name: nicotine_s5
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: nicotine_s2,nicotine_s3,nicotine_s4,nicotine_s5,nicotine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[nicotine_session(5)]=''1'' and [nicotine_s5yn]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1pretype
+  name: nicotine_s5pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Type: '
+    alias: nicotine_s2pretype,nicotine_s3pretype,nicotine_s4pretype,nicotine_s5pretype,nicotine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Type: </p>'
+    branching: '[nicotine_s5(1)]=''1'''
+
+- rename: nicotine_s1pretime
+  name: nicotine_s5pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Time:'
+    alias: nicotine_s2pretime,nicotine_s3pretime,nicotine_s4pretime,nicotine_s5pretime,nicotine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Time:</p>'
+    validation: time
+    branching: '[nicotine_s5(1)]=''1'''
+
+- rename: nicotine_s1preday
+  name: nicotine_s5preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Nicotine most recently used prior to visit: Same day/Prior
+      Day'
+    range:
+    - 0
+    - 1
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: nicotine_s2preday,nicotine_s3preday,nicotine_s4preday,nicotine_s5preday,nicotine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 5: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[nicotine_s5(1)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1vsttype1
+  name: nicotine_s5vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 1: '
+    alias: nicotine_s2vsttype1,nicotine_s3vsttype1,nicotine_s4vsttype1,nicotine_s5vsttype1,nicotine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Type 1: </p>'
+    branching: '[nicotine_s5(2)]=''1'''
+
+- rename: nicotine_s1vsttime1
+  name: nicotine_s5vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 1:'
+    alias: nicotine_s2vsttime1,nicotine_s3vsttime1,nicotine_s4vsttime1,nicotine_s5vsttime1,nicotine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Time 1:</p>'
+    validation: time
+    branching: '[nicotine_s5(2)]=''1'''
+
+- rename: nicotine_s1vsttype2
+  name: nicotine_s5vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 2: '
+    alias: nicotine_s2vsttype2,nicotine_s3vsttype2,nicotine_s4vsttype2,nicotine_s5vsttype2,nicotine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Type 2: </p>'
+    branching: '[nicotine_s5(2)]=''1'''
+
+- rename: nicotine_s1vsttime2
+  name: nicotine_s5vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 2:'
+    alias: nicotine_s2vsttime2,nicotine_s3vsttime2,nicotine_s4vsttime2,nicotine_s5vsttime2,nicotine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 5: Time 2:</p>'
+    validation: time
+    branching: '[nicotine_s5(2)]=''1'''
+
+- rename: nicotine_s1yn
+  name: nicotine_s6yn
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session Complete?'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = N/A
+    alias: nicotine_s2yn,nicotine_s3yn,nicotine_s4yn,nicotine_s5yn,nicotine_s6yn
+    codes:
+      1: 'Yes'
+      0: N/A
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Session 6</p>'
+    choices:
+      1: 'Yes'
+      0: N/A
+    branching: '[nicotine_session(6)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1
+  name: nicotine_s6
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Session complete when:'
+    range:
+    - 1
+    - 2
+    notes: 1 = Prior to visit ; 2 = During Visit
+    alias: nicotine_s2,nicotine_s3,nicotine_s4,nicotine_s5,nicotine_s6
+    codes:
+      1: Prior to visit
+      2: During Visit
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: '<p style=''margin-left: 40px''>When:</p>'
+    choices:
+      1: Prior to visit
+      2: During Visit
+    branching: '[nicotine_session(6)]=''1'' and [nicotine_s6yn]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1pretype
+  name: nicotine_s6pretype
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Type: '
+    alias: nicotine_s2pretype,nicotine_s3pretype,nicotine_s4pretype,nicotine_s5pretype,nicotine_s6pretype
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Type: </p>'
+    branching: '[nicotine_s6(1)]=''1'''
+
+- rename: nicotine_s1pretime
+  name: nicotine_s6pretime
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine most recently used prior to visit: Time:'
+    alias: nicotine_s2pretime,nicotine_s3pretime,nicotine_s4pretime,nicotine_s5pretime,nicotine_s6pretime
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Time:</p>'
+    validation: time
+    branching: '[nicotine_s6(1)]=''1'''
+
+- rename: nicotine_s1preday
+  name: nicotine_s6preday
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Nicotine: Nicotine most recently used prior to visit: Same day/Prior
+      Day'
+    range:
+    - 0
+    - 1
+    notes: 1 = Same day ; 0 = Prior Day
+    alias: nicotine_s2preday,nicotine_s3preday,nicotine_s4preday,nicotine_s5preday,nicotine_s6preday
+    codes:
+      1: Same day
+      0: Prior Day
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 120px''>Session 6: Same day/Prior Day</p>'
+    choices:
+      1: Same day
+      0: Prior Day
+    branching: '[nicotine_s6(1)]=''1'''
+    alignment: RH
+
+- rename: nicotine_s1vsttype1
+  name: nicotine_s6vsttype1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 1: '
+    alias: nicotine_s2vsttype1,nicotine_s3vsttype1,nicotine_s4vsttype1,nicotine_s5vsttype1,nicotine_s6vsttype1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Type 1: </p>'
+    branching: '[nicotine_s6(2)]=''1'''
+
+- rename: nicotine_s1vsttime1
+  name: nicotine_s6vsttime1
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 1:'
+    alias: nicotine_s2vsttime1,nicotine_s3vsttime1,nicotine_s4vsttime1,nicotine_s5vsttime1,nicotine_s6vsttime1
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Time 1:</p>'
+    validation: time
+    branching: '[nicotine_s6(2)]=''1'''
+
+- rename: nicotine_s1vsttype2
+  name: nicotine_s6vsttype2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Type 2: '
+    alias: nicotine_s2vsttype2,nicotine_s3vsttype2,nicotine_s4vsttype2,nicotine_s5vsttype2,nicotine_s6vsttype2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Type 2: </p>'
+    branching: '[nicotine_s6(2)]=''1'''
+
+- rename: nicotine_s1vsttime2
+  name: nicotine_s6vsttime2
+  source: hcpa
+  nda:
+    type: String
+    length: 30
+    description: 'Nicotine: Nicotine used during visit: Time 2:'
+    alias: nicotine_s2vsttime2,nicotine_s3vsttime2,nicotine_s4vsttime2,nicotine_s5vsttime2,nicotine_s6vsttime2
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 120px''>Session 6: Time 2:</p>'
+    validation: time
+    branching: '[nicotine_s6(2)]=''1'''
+
+- rename: alc
+  name: alc
+  source: hcpa
+  nda:
+    type: String
+    length: 20
+    description: 'Alcohol and Drugs: Alcohol Testing:'
+    notes: List up to 6 days
+  redcap:
+    form: external_measures
+    section: <font size='+0.05'><center>Alcohol and Drug</center></font>
+    type: checkbox
+    label: <p><font size=2.5>Alcohol Testing:</font></p>
+    choices:
+      1: Day 1
+      2: Day 2
+      3: Day 3
+      4: Day 4
+      5: Day 5
+      6: Day 6
+    alignment: LH
+
+- rename: alc_breath1
+  name: alc_breath1
+  source: hcpa
+  nda:
+    type: String
+    length: 10
+    description: 'Alcohol and Drugs: Alcohol Day 1 Breathalyzer Rating:'
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 40px''>Alcohol Day 1 Breathalyzer Rating:</p>'
+    branching: '[alc(1)]=''1'''
+
+- rename: alc_breath2
+  name: alc_breath2
+  source: hcpa
+  nda:
+    type: String
+    length: 10
+    description: 'Alcohol and Drugs: Alcohol Day 2 Breathalyzer Rating:'
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 40px''>Alcohol Day 2 Breathalyzer Rating:</p>'
+    branching: '[alc(2)]=''1'''
+
+- rename: alc_breath3
+  name: alc_breath3
+  source: hcpa
+  nda:
+    type: String
+    length: 10
+    description: 'Alcohol and Drugs: Alcohol Day 3 Breathalyzer Rating:'
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 40px''>Alcohol Day 3 Breathalyzer Rating:</p>'
+    branching: '[alc(3)]=''1'''
+
+- rename: alc_breath4
+  name: alc_breath4
+  source: hcpa
+  nda:
+    type: String
+    length: 10
+    description: 'Alcohol and Drugs: Alcohol Day 4 Breathalyzer Rating:'
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 40px''>Alcohol Day 4 Breathalyzer Rating:</p>'
+    branching: '[alc(4)]=''1'''
+
+- rename: alc_breath5
+  name: alc_breath5
+  source: hcpa
+  nda:
+    type: String
+    length: 10
+    description: 'Alcohol and Drugs: Alcohol Day 5 Breathalyzer Rating:'
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 40px''>Alcohol Day 5 Breathalyzer Rating:</p>'
+    branching: '[alc(5)]=''1'''
+
+- rename: alc_breath6
+  name: alc_breath6
+  source: hcpa
+  nda:
+    type: String
+    length: 10
+    description: 'Alcohol and Drugs: Alcohol Day 6 Breathalyzer Rating:'
+  redcap:
+    form: external_measures
+    type: text
+    label: '<p style=''margin-left: 40px''>Alcohol Day 6 Breathalyzer Rating:</p>'
+    branching: '[alc(6)]=''1'''
+
+- rename: drug
+  name: drug
+  source: hcpa
+  nda:
+    type: String
+    length: 20
+    description: 'Alcohol and Drugs: Drug Testing'
+    notes: List up to 6 days
+  redcap:
+    form: external_measures
+    type: checkbox
+    label: <p><font size=2.5>Drug Testing</font></p>
+    choices:
+      1: Day 1
+      2: Day 2
+      3: Day 3
+      4: Day 4
+      5: Day 5
+      6: Day 6
+    alignment: LH
+
+- rename: drug1_1
+  name: drug1_1
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Cocaine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_1,drug3_1,drug4_1,drug5_1,drug6_1
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 1 Cocaine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(1)]=''1'''
+    alignment: RH
+
+- rename: drug1_2
+  name: drug1_2
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: THC'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_2,drug3_2,drug4_2,drug5_2,drug6_2
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 1 THC</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(1)]=''1'''
+    alignment: RH
+
+- rename: drug1_3
+  name: drug1_3
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Opiates'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_3,drug3_3,drug4_3,drug5_3,drug6_3
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 1 Opiates</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(1)]=''1'''
+    alignment: RH
+
+- rename: drug1_4
+  name: drug1_4
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_4,drug3_4,drug4_4,drug5_4,drug6_4
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 1 Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(1)]=''1'''
+    alignment: RH
+
+- rename: drug1_5
+  name: drug1_5
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Meth Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_5,drug3_5,drug4_5,drug5_5,drug6_5
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 1 Meth Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(1)]=''1'''
+    alignment: RH
+
+- rename: drug1_6
+  name: drug1_6
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Oxycontin'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_6,drug3_6,drug4_6,drug5_6,drug6_6
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 1 Oxycontin</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(1)]=''1'''
+    alignment: RH
+
+- rename: drug1_1
+  name: drug2_1
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Cocaine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_1,drug3_1,drug4_1,drug5_1,drug6_1
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 2 Cocaine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(2)]=''1'''
+    alignment: RH
+
+- rename: drug1_2
+  name: drug2_2
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: THC'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_2,drug3_2,drug4_2,drug5_2,drug6_2
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 2 THC</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(2)]=''1'''
+    alignment: RH
+
+- rename: drug1_3
+  name: drug2_3
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Opiates'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_3,drug3_3,drug4_3,drug5_3,drug6_3
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 2 Opiates</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(2)]=''1'''
+    alignment: RH
+
+- rename: drug1_4
+  name: drug2_4
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_4,drug3_4,drug4_4,drug5_4,drug6_4
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 2 Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(2)]=''1'''
+    alignment: RH
+
+- rename: drug1_5
+  name: drug2_5
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Meth Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_5,drug3_5,drug4_5,drug5_5,drug6_5
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 2 Meth Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(2)]=''1'''
+    alignment: RH
+
+- rename: drug1_6
+  name: drug2_6
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Oxycontin'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_6,drug3_6,drug4_6,drug5_6,drug6_6
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 2 Oxycontin</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(2)]=''1'''
+    alignment: RH
+
+- rename: drug1_1
+  name: drug3_1
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Cocaine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_1,drug3_1,drug4_1,drug5_1,drug6_1
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 3 Cocaine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(3)]='1')
+    alignment: RH
+
+- rename: drug1_2
+  name: drug3_2
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: THC'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_2,drug3_2,drug4_2,drug5_2,drug6_2
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 3 THC</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(3)]='1')
+    alignment: RH
+
+- rename: drug1_3
+  name: drug3_3
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Opiates'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_3,drug3_3,drug4_3,drug5_3,drug6_3
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 3 Opiates</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(3)]='1')
+    alignment: RH
+
+- rename: drug1_4
+  name: drug3_4
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_4,drug3_4,drug4_4,drug5_4,drug6_4
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 3 Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(3)]='1')
+    alignment: RH
+
+- rename: drug1_5
+  name: drug3_5
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Meth Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_5,drug3_5,drug4_5,drug5_5,drug6_5
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 3 Meth Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(3)]='1')
+    alignment: RH
+
+- rename: drug1_6
+  name: drug3_6
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Oxycontin'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_6,drug3_6,drug4_6,drug5_6,drug6_6
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 3 Oxycontin</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(3)]='1')
+    alignment: RH
+
+- rename: drug1_1
+  name: drug4_1
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Cocaine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_1,drug3_1,drug4_1,drug5_1,drug6_1
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 4 Cocaine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(4)]='1')
+    alignment: RH
+
+- rename: drug1_2
+  name: drug4_2
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: THC'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_2,drug3_2,drug4_2,drug5_2,drug6_2
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 4 THC</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(4)]='1')
+    alignment: RH
+
+- rename: drug1_3
+  name: drug4_3
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Opiates'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_3,drug3_3,drug4_3,drug5_3,drug6_3
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 4 Opiates</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(4)]='1')
+    alignment: RH
+
+- rename: drug1_4
+  name: drug4_4
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_4,drug3_4,drug4_4,drug5_4,drug6_4
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 4 Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(4)]='1')
+    alignment: RH
+
+- rename: drug1_5
+  name: drug4_5
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Meth Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_5,drug3_5,drug4_5,drug5_5,drug6_5
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 4 Meth Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(4)]='1')
+    alignment: RH
+
+- rename: drug1_6
+  name: drug4_6
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Oxycontin'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_6,drug3_6,drug4_6,drug5_6,drug6_6
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 4 Oxycontin</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: ([drug(4)]='1')
+    alignment: RH
+
+- rename: drug1_1
+  name: drug5_1
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Cocaine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_1,drug3_1,drug4_1,drug5_1,drug6_1
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 5 Cocaine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(5)]=''1'''
+    alignment: RH
+
+- rename: drug1_2
+  name: drug5_2
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: THC'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_2,drug3_2,drug4_2,drug5_2,drug6_2
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 5 THC</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(5)]=''1'''
+    alignment: RH
+
+- rename: drug1_3
+  name: drug5_3
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Opiates'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_3,drug3_3,drug4_3,drug5_3,drug6_3
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 5 Opiates</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(5)]=''1'''
+    alignment: RH
+
+- rename: drug1_4
+  name: drug5_4
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_4,drug3_4,drug4_4,drug5_4,drug6_4
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 5 Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(5)]=''1'''
+    alignment: RH
+
+- rename: drug1_5
+  name: drug5_5
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Meth Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_5,drug3_5,drug4_5,drug5_5,drug6_5
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 5 Meth Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(5)]=''1'''
+    alignment: RH
+
+- rename: drug1_6
+  name: drug5_6
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Oxycontin'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_6,drug3_6,drug4_6,drug5_6,drug6_6
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 5 Oxycontin</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(5)]=''1'''
+    alignment: RH
+
+- rename: drug1_1
+  name: drug6_1
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Cocaine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_1,drug3_1,drug4_1,drug5_1,drug6_1
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 6 Cocaine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(6)]=''1'''
+    alignment: RH
+
+- rename: drug1_2
+  name: drug6_2
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: THC'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_2,drug3_2,drug4_2,drug5_2,drug6_2
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 6 THC</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(6)]=''1'''
+    alignment: RH
+
+- rename: drug1_3
+  name: drug6_3
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Opiates'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_3,drug3_3,drug4_3,drug5_3,drug6_3
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 6 Opiates</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(6)]=''1'''
+    alignment: RH
+
+- rename: drug1_4
+  name: drug6_4
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_4,drug3_4,drug4_4,drug5_4,drug6_4
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 6 Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(6)]=''1'''
+    alignment: RH
+
+- rename: drug1_5
+  name: drug6_5
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Meth Amphetamine'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_5,drug3_5,drug4_5,drug5_5,drug6_5
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 6 Meth Amphetamine</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(6)]=''1'''
+    alignment: RH
+
+- rename: drug1_6
+  name: drug6_6
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Alcohol and Drugs: Drug test done on Day 1: Oxycontin'
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    alias: drug2_6,drug3_6,drug4_6,drug5_6,drug6_6
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: external_measures
+    type: radio
+    label: '<p style=''margin-left: 40px''>Day 6 Oxycontin</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[drug(6)]=''1'''
+    alignment: RH

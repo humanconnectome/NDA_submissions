@@ -1,0 +1,1405 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - hcpa
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - hcpa
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - hcpa
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - hcpa
+
+- name: gender
+  rename: sex
+  source:
+  - hcpa
+
+
+- rename: lan_know
+  name: lan_know
+  source: hcpa
+  nda:
+    type: Integer
+    description: How many languages do you know?
+    range:
+    - 1::5
+  redcap:
+    form: language_qustionnaire
+    section: <font size='+0.5'><center>HCP-A Language Experience and Proficiency Questionnaire</center></font>
+    type: radio
+    label: <p>How many languages do you know?</p>
+    choices:
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+    alignment: RH
+
+- rename: lan11
+  name: lan11
+  source: hcpa
+  nda:
+    type: String
+    length: 25
+    description: 'Please list all the languages you know in order of dominance: Language
+      1:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 40px''>Language 1:</p>'
+    branching: '[lan_know]>1'
+
+- rename: lan12
+  name: lan12
+  source: hcpa
+  nda:
+    type: String
+    length: 25
+    description: 'Please list all the languages you know in order of dominance: Language
+      2:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 40px''>Language 2:</p>'
+    branching: '[lan_know]>=2'
+
+- rename: lan13
+  name: lan13
+  source: hcpa
+  nda:
+    type: String
+    length: 25
+    description: 'Please list all the languages you know in order of dominance: Language
+      3:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 40px''>Language 3:</p>'
+    branching: '[lan_know]>=3'
+
+- rename: lan14
+  name: lan14
+  source: hcpa
+  nda:
+    type: String
+    length: 25
+    description: 'Please list all the languages you know in order of dominance: Language
+      4:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 40px''>Language 4:</p>'
+    branching: '[lan_know]>=4'
+
+- rename: lan21
+  name: lan21
+  source: hcpa
+  nda:
+    type: String
+    length: 25
+    description: 'Please list all the languages you know in order of acquisition (your
+      native language first): Language 1:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 40px''>Language 1:</p>'
+    branching: '[lan_know]>1'
+
+- rename: lan22
+  name: lan22
+  source: hcpa
+  nda:
+    type: String
+    length: 25
+    description: 'Please list all the languages you know in order of acquisition (your
+      native language first): Language 2:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 40px''>Language 2:</p>'
+    branching: '[lan_know]>=2'
+
+- rename: lan23
+  name: lan23
+  source: hcpa
+  nda:
+    type: String
+    length: 25
+    description: 'Please list all the languages you know in order of acquisition (your
+      native language first): Language 3:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 40px''>Language 3:</p>'
+    branching: '[lan_know]>=3'
+
+- rename: lan24
+  name: lan24
+  source: hcpa
+  nda:
+    type: String
+    length: 25
+    description: 'Please list all the languages you know in order of acquisition (your
+      native language first): Language 4:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 40px''>Language 4:</p>'
+    branching: '[lan_know]>=4'
+
+- rename: lan31
+  name: lan31
+  source: hcpa
+  nda:
+    type: Float
+    description: 'Please list what percentage of the time you are currently and on
+      average exposed to each language (Your percentages should add up to 100%) Average
+      Exposure Percentage to Language 1:'
+    range:
+    - 0::100
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 40px''><font size=1.5>Average Expose Percantage
+      to</font> [lan11]:</p>'
+    note: number
+    validation: number
+    branching: '[lan_know]>1'
+
+- rename: lan32
+  name: lan32
+  source: hcpa
+  nda:
+    type: Float
+    description: 'Please list what percentage of the time you are currently and on
+      average exposed to each language (Your percentages should add up to 100%) Average
+      Exposure Percentage to Language 2:'
+    range:
+    - 0::100
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 40px''><font size=1.5>Average Expose Percantage
+      to</font> [lan12]:</p>'
+    note: number
+    validation: number
+    branching: '[lan_know]>=2'
+
+- rename: lan33
+  name: lan33
+  source: hcpa
+  nda:
+    type: Float
+    description: 'Please list what percentage of the time you are currently and on
+      average exposed to each language (Your percentages should add up to 100%) Average
+      Exposure Percentage to Language 3:'
+    range:
+    - 0::100
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 40px''><font size=1.5>Average Expose Percantage
+      to</font> [lan13]:</p>'
+    note: number
+    validation: number
+    branching: '[lan_know]>=3'
+
+- rename: lan34
+  name: lan34
+  source: hcpa
+  nda:
+    type: Float
+    description: 'Please list what percentage of the time you are currently and on
+      average exposed to each language (Your percentages should add up to 100%) Average
+      Exposure Percentage to Language 4:'
+    range:
+    - 0::100
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 40px''><font size=1.5>Average Expose Percantage
+      to</font> [lan14]:</p>'
+    note: number
+    validation: number
+    branching: '[lan_know]>=4'
+
+- rename: lan3err
+  name: lan3err
+  source: hcpa
+  nda:
+    type: Float
+    description: Please list what percentage of the time you are currently and on
+      average exposed to each language (Your percentages should add up to 100%) Average
+      Exposure Percentage
+    range:
+    - 0::100
+  redcap:
+    form: language_qustionnaire
+    type: calc
+    label: Average Expose Percantage
+    choices: sum(if([lan31]='NaN', 'NaN', [lan31]), if([lan32]='NaN', 'NaN', [lan32]),
+      if([lan33]='NaN', 'NaN', [lan33]), if([lan34]='NaN', 'NaN', [lan34]))
+    annotation: '@HIDDEN'
+
+- rename: lan41
+  name: lan41
+  source: hcpa
+  nda:
+    type: Float
+    description: 'When choosing a language to speak with a person who is equally fluent
+      in all the languages you know, what percentage of time would you choose to speak
+      each language?  Please report percent of total time  (Your percentages should
+      add up to 100%) Language 1 Speaking Percentage:'
+    range:
+    - 0::100
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 40px''>[lan11] <font size=1.5>Speaking Percentage</font>:</p>'
+    note: number
+    validation: number
+    branching: '[lan_know]>1'
+
+- rename: lan42
+  name: lan42
+  source: hcpa
+  nda:
+    type: Float
+    description: 'When choosing a language to speak with a person who is equally fluent
+      in all the languages you know, what percentage of time would you choose to speak
+      each language?  Please report percent of total time  (Your percentages should
+      add up to 100%) Language 2 Speaking Percentage:'
+    range:
+    - 0::100
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 40px''>[lan12] <font size=1.5>Speaking Percentage</font>:</p>'
+    note: number
+    validation: number
+    branching: '[lan_know]>=2'
+
+- rename: lan43
+  name: lan43
+  source: hcpa
+  nda:
+    type: Float
+    description: 'When choosing a language to speak with a person who is equally fluent
+      in all the languages you know, what percentage of time would you choose to speak
+      each language?  Please report percent of total time  (Your percentages should
+      add up to 100%) Language 3 Speaking Percentage:'
+    range:
+    - 0::100
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 40px''>[lan13] <font size=1.5>Speaking Percentage</font>:</p>'
+    note: number
+    validation: number
+    branching: '[lan_know]>=3'
+
+- rename: lan44
+  name: lan44
+  source: hcpa
+  nda:
+    type: Float
+    description: 'When choosing a language to speak with a person who is equally fluent
+      in all the languages you know, what percentage of time would you choose to speak
+      each language?  Please report percent of total time  (Your percentages should
+      add up to 100%) Language 4 Speaking Percentage:'
+    range:
+    - 0::100
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 40px''>[lan14] <font size=1.5>Speaking Percentage</font>:</p>'
+    note: number
+    validation: number
+    branching: '[lan_know]>=4'
+
+- rename: lan4err
+  name: lan4err
+  source: hcpa
+  nda:
+    type: Float
+    description: When choosing a language to speak with a person who is equally fluent
+      in all the languages you know, what percentage of time would you choose to speak
+      each language?  Please report percent of total time  (Your percentages should
+      add up to 100%) Average Exposure Percentage
+    range:
+    - 0::100
+  redcap:
+    form: language_qustionnaire
+    type: calc
+    label: Average Expose Percantage
+    choices: sum(if([lan41]='NaN', 'NaN', [lan41]), if([lan42]='NaN', 'NaN', [lan42]),
+      if([lan43]='NaN', 'NaN', [lan43]), if([lan44]='NaN', 'NaN', [lan44]))
+    annotation: '@HIDDEN'
+
+- rename: lan511
+  name: lan511
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'Age when you first: Language 1: Began acquiring Language 1:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 80px''><i>Began acquiring [lan11]:</i></p>'
+    note: number
+    validation: number
+    branching: '[lan_know]>1'
+
+- rename: lan512
+  name: lan512
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'Age when you first: Language 1: Became fluent in Language 1:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 80px''><i>Became fluent in [lan11]:</i></p>'
+    note: number; If N/A, fill in 999.
+    validation: number
+    branching: '[lan_know]>1'
+
+- rename: lan513
+  name: lan513
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'Age when you first: Language 1: Began reading in Language 1:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 80px''><i>Began reading in [lan11]:</i></p>'
+    note: number; If N/A, fill in 999.
+    validation: number
+    branching: '[lan_know]>1'
+
+- rename: lan514
+  name: lan514
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'Age when you first: Language 1: Became fluent reading in Language
+      1:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 80px''><i>Became fluent reading in [lan11]:</i></p>'
+    note: number; If N/A, fill in 999.
+    validation: number
+    branching: '[lan_know]>1'
+
+- rename: lan521
+  name: lan521
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'Age when you first: Language 2: Began acquiring Language 2:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 80px''><i>Began acquiring [lan12]:</i></p>'
+    note: number
+    validation: number
+    branching: '[lan_know]>=2'
+
+- rename: lan522
+  name: lan522
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'Age when you first: Language 2: Became fluent in Language 2:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 80px''><i>Became fluent in [lan12]:</i></p>'
+    note: number; If N/A, fill in 999.
+    validation: number
+    branching: '[lan_know]>=2'
+
+- rename: lan523
+  name: lan523
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'Age when you first: Language 2: Began reading in Language 2:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 80px''><i>Began reading in [lan12]:</i></p>'
+    note: number; If N/A, fill in 999.
+    validation: number
+    branching: '[lan_know]>=2'
+
+- rename: lan524
+  name: lan524
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'Age when you first: Language 2: Became fluent reading in Language
+      2:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 80px''><i>Became fluent reading in [lan12]:</i></p>'
+    note: number; If N/A, fill in 999.
+    validation: number
+    branching: '[lan_know]>=2'
+
+- rename: lan531
+  name: lan531
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'Age when you first: Language 3: Began acquiring Language 3:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 80px''><i>Began acquiring [lan13]:</i></p>'
+    note: number
+    validation: number
+    branching: '[lan_know]>=3'
+
+- rename: lan532
+  name: lan532
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'Age when you first: Language 3: Became fluent in Language 3:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 80px''><i>Became fluent in [lan13]:</i></p>'
+    note: number; If N/A, fill in 999.
+    validation: number
+    branching: '[lan_know]>=3'
+
+- rename: lan533
+  name: lan533
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'Age when you first: Language 3: Began reading in Language 3:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 80px''><i>Began reading in [lan13]:</i></p>'
+    note: number; If N/A, fill in 999.
+    validation: number
+    branching: '[lan_know]>=3'
+
+- rename: lan534
+  name: lan534
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'Age when you first: Language 3: Became fluent reading in Language
+      3:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 80px''><i>Became fluent reading in [lan13]:</i></p>'
+    note: number; If N/A, fill in 999.
+    validation: number
+    branching: '[lan_know]>=3'
+
+- rename: lan541
+  name: lan541
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'Age when you first: Language 4: Began acquiring Language 4:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 80px''><i>Began acquiring [lan14]:</i></p>'
+    note: number
+    validation: number
+    branching: '[lan_know]>=4'
+
+- rename: lan542
+  name: lan542
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'Age when you first: Language 4: Became fluent in Language 4:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 80px''><i>Became fluent in [lan14]:</i></p>'
+    note: number; If N/A, fill in 999.
+    validation: number
+    branching: '[lan_know]>=4'
+
+- rename: lan543
+  name: lan543
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'Age when you first: Language 4: Began reading in Language 4:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 80px''><i>Began reading in [lan14]:</i></p>'
+    note: number; If N/A, fill in 999.
+    validation: number
+    branching: '[lan_know]>=4'
+
+- rename: lan544
+  name: lan544
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'Age when you first: Language 4: Became fluent reading in Language
+      4:'
+  redcap:
+    form: language_qustionnaire
+    type: text
+    label: '<p style=''margin-left: 80px''><i>Became fluent reading in [lan14]:</i></p>'
+    note: number; If N/A, fill in 999.
+    validation: number
+    branching: '[lan_know]>=4'
+
+- rename: lan611
+  name: lan611
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'On a scale from 0 to 10, please select your level of proficiency
+      in each language: Language 1: Speaking Language 1:'
+    range:
+    - 0::10
+    notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+      ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good
+      ; 9 = Excellent ; 10 = Perfect
+    codes:
+      0: None
+      1: Very Low
+      2: Low
+      3: Fair
+      4: Slightly less than adequate
+      5: Adequate
+      6: Slightly more than adequate
+      7: Good
+      8: Very Good
+      9: Excellent
+      10: Perfect
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 80px''><i>Speaking [lan11]:</i></p>'
+    choices:
+      0: 0 None
+      1: 1 Very Low
+      2: 2 Low
+      3: 3 Fair
+      4: '4'
+      5: 5 Adequate
+      6: '6'
+      7: 7 Good
+      8: 8 Very Good
+      9: 9 Excellent
+      10: 10 Perfect
+    branching: '[lan_know]>1'
+
+- rename: lan612
+  name: lan612
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'On a scale from 0 to 10, please select your level of proficiency
+      in each language: Language 1: Understanding spoken Language 1:'
+    range:
+    - 0::10
+    notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+      ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good
+      ; 9 = Excellent ; 10 = Perfect
+    codes:
+      0: None
+      1: Very Low
+      2: Low
+      3: Fair
+      4: Slightly less than adequate
+      5: Adequate
+      6: Slightly more than adequate
+      7: Good
+      8: Very Good
+      9: Excellent
+      10: Perfect
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 80px''><i>Understanding spoken [lan11]:</i></p>'
+    choices:
+      0: 0 None
+      1: 1 Very Low
+      2: 2 Low
+      3: 3 Fair
+      4: '4'
+      5: 5 Adequate
+      6: '6'
+      7: 7 Good
+      8: 8 Very Good
+      9: 9 Excellent
+      10: 10 Perfect
+    branching: '[lan_know]>1'
+
+- rename: lan613
+  name: lan613
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'On a scale from 0 to 10, please select your level of proficiency
+      in each language: Language 1: Reading Language 1:'
+    range:
+    - 0::10
+    notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+      ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good
+      ; 9 = Excellent ; 10 = Perfect
+    codes:
+      0: None
+      1: Very Low
+      2: Low
+      3: Fair
+      4: Slightly less than adequate
+      5: Adequate
+      6: Slightly more than adequate
+      7: Good
+      8: Very Good
+      9: Excellent
+      10: Perfect
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 80px''><i>Reading [lan11]:</i></p>'
+    choices:
+      0: 0 None
+      1: 1 Very Low
+      2: 2 Low
+      3: 3 Fair
+      4: '4'
+      5: 5 Adequate
+      6: '6'
+      7: 7 Good
+      8: 8 Very Good
+      9: 9 Excellent
+      10: 10 Perfect
+    branching: '[lan_know]>1'
+
+- rename: lan621
+  name: lan621
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'On a scale from 0 to 10, please select your level of proficiency
+      in each language: Language 2: Speaking Language 2:'
+    range:
+    - 0::10
+    notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+      ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good
+      ; 9 = Excellent ; 10 = Perfect
+    codes:
+      0: None
+      1: Very Low
+      2: Low
+      3: Fair
+      4: Slightly less than adequate
+      5: Adequate
+      6: Slightly more than adequate
+      7: Good
+      8: Very Good
+      9: Excellent
+      10: Perfect
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 80px''><i>Speaking [lan12]:</i></p>'
+    choices:
+      0: 0 None
+      1: 1 Very Low
+      2: 2 Low
+      3: 3 Fair
+      4: '4'
+      5: 5 Adequate
+      6: '6'
+      7: 7 Good
+      8: 8 Very Good
+      9: 9 Excellent
+      10: 10 Perfect
+    branching: '[lan_know]>=2'
+
+- rename: lan622
+  name: lan622
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'On a scale from 0 to 10, please select your level of proficiency
+      in each language: Language 2: Understanding spoken Language 2:'
+    range:
+    - 0::10
+    notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+      ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good
+      ; 9 = Excellent ; 10 = Perfect
+    codes:
+      0: None
+      1: Very Low
+      2: Low
+      3: Fair
+      4: Slightly less than adequate
+      5: Adequate
+      6: Slightly more than adequate
+      7: Good
+      8: Very Good
+      9: Excellent
+      10: Perfect
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 80px''><i>Understanding spoken [lan12]:</i></p>'
+    choices:
+      0: 0 None
+      1: 1 Very Low
+      2: 2 Low
+      3: 3 Fair
+      4: '4'
+      5: 5 Adequate
+      6: '6'
+      7: 7 Good
+      8: 8 Very Good
+      9: 9 Excellent
+      10: 10 Perfect
+    branching: '[lan_know]>=2'
+
+- rename: lan623
+  name: lan623
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'On a scale from 0 to 10, please select your level of proficiency
+      in each language: Language 2: Reading Language 2:'
+    range:
+    - 0::10
+    notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+      ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good
+      ; 9 = Excellent ; 10 = Perfect
+    codes:
+      0: None
+      1: Very Low
+      2: Low
+      3: Fair
+      4: Slightly less than adequate
+      5: Adequate
+      6: Slightly more than adequate
+      7: Good
+      8: Very Good
+      9: Excellent
+      10: Perfect
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 80px''><i>Reading [lan12]:</i></p>'
+    choices:
+      0: 0 None
+      1: 1 Very Low
+      2: 2 Low
+      3: 3 Fair
+      4: '4'
+      5: 5 Adequate
+      6: '6'
+      7: 7 Good
+      8: 8 Very Good
+      9: 9 Excellent
+      10: 10 Perfect
+    branching: '[lan_know]>=2'
+
+- rename: lan631
+  name: lan631
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'On a scale from 0 to 10, please select your level of proficiency
+      in each language: Language 3: Speaking Language 3:'
+    range:
+    - 0::10
+    notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+      ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good
+      ; 9 = Excellent ; 10 = Perfect
+    codes:
+      0: None
+      1: Very Low
+      2: Low
+      3: Fair
+      4: Slightly less than adequate
+      5: Adequate
+      6: Slightly more than adequate
+      7: Good
+      8: Very Good
+      9: Excellent
+      10: Perfect
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 80px''><i>Speaking [lan13]:</i></p>'
+    choices:
+      0: 0 None
+      1: 1 Very Low
+      2: 2 Low
+      3: 3 Fair
+      4: '4'
+      5: 5 Adequate
+      6: '6'
+      7: 7 Good
+      8: 8 Very Good
+      9: 9 Excellent
+      10: 10 Perfect
+    branching: '[lan_know]>=3'
+
+- rename: lan632
+  name: lan632
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'On a scale from 0 to 10, please select your level of proficiency
+      in each language: Language 3: Understanding spoken Language 3:'
+    range:
+    - 0::10
+    notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+      ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good
+      ; 9 = Excellent ; 10 = Perfect
+    codes:
+      0: None
+      1: Very Low
+      2: Low
+      3: Fair
+      4: Slightly less than adequate
+      5: Adequate
+      6: Slightly more than adequate
+      7: Good
+      8: Very Good
+      9: Excellent
+      10: Perfect
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 80px''><i>Understanding spoken [lan13]:</i></p>'
+    choices:
+      0: 0 None
+      1: 1 Very Low
+      2: 2 Low
+      3: 3 Fair
+      4: '4'
+      5: 5 Adequate
+      6: '6'
+      7: 7 Good
+      8: 8 Very Good
+      9: 9 Excellent
+      10: 10 Perfect
+    branching: '[lan_know]>=3'
+
+- rename: lan633
+  name: lan633
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'On a scale from 0 to 10, please select your level of proficiency
+      in each language: Language 3: Reading Language 3:'
+    range:
+    - 0::10
+    notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+      ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good
+      ; 9 = Excellent ; 10 = Perfect
+    codes:
+      0: None
+      1: Very Low
+      2: Low
+      3: Fair
+      4: Slightly less than adequate
+      5: Adequate
+      6: Slightly more than adequate
+      7: Good
+      8: Very Good
+      9: Excellent
+      10: Perfect
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 80px''><i>Reading [lan13]:</i></p>'
+    choices:
+      0: 0 None
+      1: 1 Very Low
+      2: 2 Low
+      3: 3 Fair
+      4: '4'
+      5: 5 Adequate
+      6: '6'
+      7: 7 Good
+      8: 8 Very Good
+      9: 9 Excellent
+      10: 10 Perfect
+    branching: '[lan_know]>=3'
+
+- rename: lan641
+  name: lan641
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'On a scale from 0 to 10, please select your level of proficiency
+      in each language: Language 4: Speaking Language 4:'
+    range:
+    - 0::10
+    notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+      ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good
+      ; 9 = Excellent ; 10 = Perfect
+    codes:
+      0: None
+      1: Very Low
+      2: Low
+      3: Fair
+      4: Slightly less than adequate
+      5: Adequate
+      6: Slightly more than adequate
+      7: Good
+      8: Very Good
+      9: Excellent
+      10: Perfect
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 80px''><i>Speaking [lan14]:</i></p>'
+    choices:
+      0: 0 None
+      1: 1 Very Low
+      2: 2 Low
+      3: 3 Fair
+      4: '4'
+      5: 5 Adequate
+      6: '6'
+      7: 7 Good
+      8: 8 Very Good
+      9: 9 Excellent
+      10: 10 Perfect
+    branching: '[lan_know]>=4'
+
+- rename: lan642
+  name: lan642
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'On a scale from 0 to 10, please select your level of proficiency
+      in each language: Language 4: Understanding spoken Language 4:'
+    range:
+    - 0::10
+    notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+      ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good
+      ; 9 = Excellent ; 10 = Perfect
+    codes:
+      0: None
+      1: Very Low
+      2: Low
+      3: Fair
+      4: Slightly less than adequate
+      5: Adequate
+      6: Slightly more than adequate
+      7: Good
+      8: Very Good
+      9: Excellent
+      10: Perfect
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 80px''><i>Understanding spoken [lan14]:</i></p>'
+    choices:
+      0: 0 None
+      1: 1 Very Low
+      2: 2 Low
+      3: 3 Fair
+      4: '4'
+      5: 5 Adequate
+      6: '6'
+      7: 7 Good
+      8: 8 Very Good
+      9: 9 Excellent
+      10: 10 Perfect
+    branching: '[lan_know]>=4'
+
+- rename: lan643
+  name: lan643
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'On a scale from 0 to 10, please select your level of proficiency
+      in each language: Language 4: Reading Language 4:'
+    range:
+    - 0::10
+    notes: 0 = None ; 1 = Very Low ; 2 = Low ; 3 = Fair ; 4 = Slightly less than adequate
+      ; 5 = Adequate ; 6 = Slightly more than adequate ; 7 = Good ; 8 = Very Good
+      ; 9 = Excellent ; 10 = Perfect
+    codes:
+      0: None
+      1: Very Low
+      2: Low
+      3: Fair
+      4: Slightly less than adequate
+      5: Adequate
+      6: Slightly more than adequate
+      7: Good
+      8: Very Good
+      9: Excellent
+      10: Perfect
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 80px''><i>Reading [lan14]:</i></p>'
+    choices:
+      0: 0 None
+      1: 1 Very Low
+      2: 2 Low
+      3: 3 Fair
+      4: '4'
+      5: 5 Adequate
+      6: '6'
+      7: 7 Good
+      8: 8 Very Good
+      9: 9 Excellent
+      10: 10 Perfect
+    branching: '[lan_know]>=4'
+
+- rename: lan71
+  name: lan71
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'In your perception, how much of a  foreign accent do you have in
+      ___? Foreign Accent in Language 1:'
+    range:
+    - 0::10
+    notes: 0 = None ;  1 = Almost none; 2 = Very Light ; 3 = Light ; 4 = Some ; 5
+      = Moderate ; 6 = Considerable ; 7 = Heavy ; 8 = Very Heavy ; 9 = Extremely heavy
+      ; 10 = Pervasive
+    codes:
+      0: None
+      1: Almost none
+      2: Very Light
+      3: Light
+      4: Some
+      5: Moderate
+      6: Considerable
+      7: Heavy
+      8: Very Heavy
+      9: Extremely heavy
+      10: Pervasive
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 40px''><font size=1.5>Foreign Accent in </font>[lan11]:</p>'
+    choices:
+      0: 0 None
+      1: '1'
+      2: 2 Very Light
+      3: 3 Light
+      4: 4 Some
+      5: 5 Moderate
+      6: 6 Considerable
+      7: 7 Heavy
+      8: 8 Very Heavy
+      9: '9'
+      10: 10 Pervasive
+    branching: '[lan_know]>1'
+
+- rename: lan72
+  name: lan72
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'In your perception, how much of a  foreign accent do you have in
+      ___? Foreign Accent in Language 2:'
+    range:
+    - 0::10
+    notes: 0 = None ;  1 = Almost none; 2 = Very Light ; 3 = Light ; 4 = Some ; 5
+      = Moderate ; 6 = Considerable ; 7 = Heavy ; 8 = Very Heavy ; 9 = Extremely heavy
+      ; 10 = Pervasive
+    codes:
+      0: None
+      1: Almost none
+      2: Very Light
+      3: Light
+      4: Some
+      5: Moderate
+      6: Considerable
+      7: Heavy
+      8: Very Heavy
+      9: Extremely heavy
+      10: Pervasive
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 40px''><font size=1.5>Foreign Accent in </font>[lan12]:</p>'
+    choices:
+      0: 0 None
+      1: '1'
+      2: 2 Very Light
+      3: 3 Light
+      4: 4 Some
+      5: 5 Moderate
+      6: 6 Considerable
+      7: 7 Heavy
+      8: 8 Very Heavy
+      9: '9'
+      10: 10 Pervasive
+    branching: '[lan_know]>=2'
+
+- rename: lan73
+  name: lan73
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'In your perception, how much of a  foreign accent do you have in
+      ___? Foreign Accent in Language 3:'
+    range:
+    - 0::10
+    notes: 0 = None ;  1 = Almost none; 2 = Very Light ; 3 = Light ; 4 = Some ; 5
+      = Moderate ; 6 = Considerable ; 7 = Heavy ; 8 = Very Heavy ; 9 = Extremely heavy
+      ; 10 = Pervasive
+    codes:
+      0: None
+      1: Almost none
+      2: Very Light
+      3: Light
+      4: Some
+      5: Moderate
+      6: Considerable
+      7: Heavy
+      8: Very Heavy
+      9: Extremely heavy
+      10: Pervasive
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 40px''><font size=1.5>Foreign Accent in </font>[lan13]:</p>'
+    choices:
+      0: 0 None
+      1: '1'
+      2: 2 Very Light
+      3: 3 Light
+      4: 4 Some
+      5: 5 Moderate
+      6: 6 Considerable
+      7: 7 Heavy
+      8: 8 Very Heavy
+      9: '9'
+      10: 10 Pervasive
+    branching: '[lan_know]>=3'
+
+- rename: lan74
+  name: lan74
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'In your perception, how much of a  foreign accent do you have in
+      ___? Foreign Accent in Language 4:'
+    range:
+    - 0::10
+    notes: 0 = None ;  1 = Almost none; 2 = Very Light ; 3 = Light ; 4 = Some ; 5
+      = Moderate ; 6 = Considerable ; 7 = Heavy ; 8 = Very Heavy ; 9 = Extremely heavy
+      ; 10 = Pervasive
+    codes:
+      0: None
+      1: Almost none
+      2: Very Light
+      3: Light
+      4: Some
+      5: Moderate
+      6: Considerable
+      7: Heavy
+      8: Very Heavy
+      9: Extremely heavy
+      10: Pervasive
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 40px''><font size=1.5>Foreign Accent in </font>[lan14]:</p>'
+    choices:
+      0: 0 None
+      1: '1'
+      2: 2 Very Light
+      3: 3 Light
+      4: 4 Some
+      5: 5 Moderate
+      6: 6 Considerable
+      7: 7 Heavy
+      8: 8 Very Heavy
+      9: '9'
+      10: 10 Pervasive
+    branching: '[lan_know]>=4'
+
+- rename: lan81
+  name: lan81
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Please rate how frequently others identify you as a  non-native
+      speaker based on your  accent (please use scale below) when you speak Language
+      1:'
+    range:
+    - 0::10
+    notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+    codes:
+      0: Never
+      1: Almost Never
+      5: Half of the Time
+      10: Always
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 40px''><font size=1.5>Frequency</font> when you
+      speak [lan11]:</p>'
+    choices:
+      0: 0 Never
+      1: 1 Almost Never
+      2: '2'
+      3: '3'
+      4: '4'
+      5: 5 Half of the Time
+      6: '6'
+      7: '7'
+      8: '8'
+      9: '9'
+      10: 10 Always
+    branching: '[lan_know]>1'
+
+- rename: lan82
+  name: lan82
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Please rate how frequently others identify you as a  non-native
+      speaker based on your  accent (please use scale below) when you speak Language
+      2:'
+    range:
+    - 0::10
+    notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+    codes:
+      0: Never
+      1: Almost Never
+      5: Half of the Time
+      10: Always
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 40px''><font size=1.5>Frequency</font> when you
+      speak [lan12]:</p>'
+    choices:
+      0: 0 Never
+      1: 1 Almost Never
+      2: '2'
+      3: '3'
+      4: '4'
+      5: 5 Half of the Time
+      6: '6'
+      7: '7'
+      8: '8'
+      9: '9'
+      10: 10 Always
+    branching: '[lan_know]>=2'
+
+- rename: lan83
+  name: lan83
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Please rate how frequently others identify you as a  non-native
+      speaker based on your  accent (please use scale below) when you speak Language
+      3:'
+    range:
+    - 0::10
+    notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+    codes:
+      0: Never
+      1: Almost Never
+      5: Half of the Time
+      10: Always
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 40px''><font size=1.5>Frequency</font> when you
+      speak [lan13]:</p>'
+    choices:
+      0: 0 Never
+      1: 1 Almost Never
+      2: '2'
+      3: '3'
+      4: '4'
+      5: 5 Half of the Time
+      6: '6'
+      7: '7'
+      8: '8'
+      9: '9'
+      10: 10 Always
+    branching: '[lan_know]>=3'
+
+- rename: lan84
+  name: lan84
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Please rate how frequently others identify you as a  non-native
+      speaker based on your  accent (please use scale below) when you speak Language
+      4:'
+    range:
+    - 0::10
+    notes: 0 = Never ; 1 = Almost Never ; 5 = Half of the Time ; 10 = Always
+    codes:
+      0: Never
+      1: Almost Never
+      5: Half of the Time
+      10: Always
+  redcap:
+    form: language_qustionnaire
+    type: dropdown
+    label: '<p style=''margin-left: 40px''><font size=1.5>Frequency</font> when you
+      speak [lan14]:</p>'
+    choices:
+      0: 0 Never
+      1: 1 Almost Never
+      2: '2'
+      3: '3'
+      4: '4'
+      5: 5 Half of the Time
+      6: '6'
+      7: '7'
+      8: '8'
+      9: '9'
+      10: 10 Always
+    branching: '[lan_know]>=4'

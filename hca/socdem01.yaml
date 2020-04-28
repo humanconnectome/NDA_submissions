@@ -1,0 +1,543 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - ssaga
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - ssaga
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - ssaga
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - ssaga
+
+- name: gender
+  rename: sex
+  source:
+  - ssaga
+
+
+- rename: fspgod
+  name: dm2
+  request: Please convert numeric codes to the text strings they represent.
+  old_code: studydata.dm2=studydata.dm2.str.replace('1','Male'); studydata.dm2=studydata.dm2.str.replace('2','Female')
+  func: convert_all_to_text
+  source: ssaga
+  nda:
+    type: String
+    length: 70
+    description: Subject's gender OTHER describe
+    alias: dm2,p_gender,p_gender_different,sub_gender
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p>DM2
+
+      What is the gender with which you most closely identify?</p>'
+    choices:
+      1: Male
+      2: Female
+    alignment: RH
+
+- rename: das1ms
+  name: dm9
+  request: Please convert numeric codes to the text strings they represent.
+  old_code: studydata.dm9=studydata.dm9.str.replace('1', 'MARRIED'); studydata.dm9=studydata.dm9.str.replace('2','WIDOWED');
+    studydata.dm9=studydata.dm9.str.replace('3', 'SEPARATED'); studydata.dm9=studydata.dm9.str.replace('4',
+    'DIVORCED'); studydata.dm9=studydata.dm9.str.replace('5', 'NEVER MARRIED'); studydata.dm9=studydata.dm9.str.replace('6',
+    'LIVING AS MARRIED')
+  source: ssaga
+  func: convert_all_to_text
+  nda:
+    type: String
+    length: 200
+    description: Marital status
+    alias: b3,dm9,marital_stat,marital_status,p_marriage,sub_marriage
+  redcap:
+    form: ssaga
+    type: radio
+    label: "<p>DM9\nAre you presently married or are you widowed, separated, divorced,\
+      \ living as married, or have you never been married?\n<p style=\"margin-left:\
+      \ 40px\"><strong>CODE RELIGIOUS ANNULMENT AS DIVORCED.  \nCODE LEGAL ANNULMENT\
+      \ AS NEVER MARRIED.</strong></p></p>"
+    choices:
+      1: MARRIED
+      2: WIDOWED
+      3: SEPARATED
+      4: DIVORCED
+      5: NEVER MARRIED
+      6: LIVING AS MARRIED
+
+- rename: dm9_wyr
+  name: dm9_wyr
+  source: ssaga
+  nda:
+    type: String
+    length: 10
+    description: What year were you widowed?
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 40px">What year were you widowed?</p>'
+    note: number
+    validation: number
+    branching: '[dm9]=''2'''
+
+- rename: qa18
+  name: dm11
+  source: ssaga
+  nda:
+    type: Integer
+    description: Section A - Demographics. A18. How many times have you been legally
+      married?
+    notes: '#=TIMES'
+    alias: dm11
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p>DM11
+
+      How many times have you been legally married?</p>'
+    note: number
+    validation: number
+    branching: '[dm9]<>5'
+
+- rename: qa19
+  name: dm12
+  source: ssaga
+  nda:
+    type: Integer
+    description: Section A - Demographics. A19. How many times have you been divorced?
+    alias: dm12
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p>DM12
+
+      (So you''ve never been, how many times have you been) divorced?
+
+      <strong>IF NEVER, CODE 0.</strong></p>'
+    note: number
+    validation: number
+    branching: '[dm9]<>5'
+
+- rename: pregnancy_no
+  name: dm14
+  source: ssaga
+  nda:
+    type: Integer
+    description: 1. How many times have you/ (child)'s mother been pregnant?
+    alias: dm14
+  redcap:
+    form: ssaga
+    type: text
+    label: <p>How many times have you been pregnant?</p>
+    note: number
+    validation: number
+    branching: '[dm1]=''2'' '
+
+- rename: qa22
+  name: dm14_kidnum
+  source: ssaga
+  nda:
+    type: Integer
+    description: Section A - Demographics. A22. How many children have you (fathered/given
+      birth to)?  That is, not including adopted, foster, or step children.
+    notes: '#=# CHILDREN'
+    alias: dm14_kidnum
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 40px">C. How many children have you had, not counting
+      any who are yours by adoption, who are stepchildren, or who were stillborn?</p>'
+    note: number
+    validation: number
+    branching: '[dm1]=''1'' or ([dm1]=''2'' and [dm14]>=1)'
+
+- rename: bkgrnd_education
+  name: dm15
+  request: Please convert numeric codes to the text strings they represent.
+  func: convert_all_to_text
+  source: ssaga
+  nda:
+    type: String
+    length: 1020
+    description: Subject's education (school and preschool)
+    alias: b5,cbcl_grade_in_school,demo_childs_edu,demog_07,dm15,education,education_status,p_grade,participant_education,sub_grade
+  redcap:
+    form: ssaga
+    type: dropdown
+    label: "<p>DM15 \r\nWhat is the highest grade in school you completed?\r\nCODE\
+      \ ACTUAL GRADE (0-17).\r\n<p style=\"margin-left: 40px\">TECHNICAL SCHOOL OR\
+      \ 1 YR COLLEGE..........13\r\n2 YRS COLLEGE..................................................14\r\
+      \n3 YRS COLLEGE..................................................15\r\n4 YRS\
+      \ COLLEGE:  B.A., B.S..................................16\r\nGRADUATE: M.A.,\
+      \ M.S., J.D., M.D., Ph.D...........17\r\n</p></p>"
+    choices:
+      0: '0'
+      1: 1ST
+      2: 2ND
+      3: 3RD
+      4: 4TH
+      5: 5TH
+      6: 6TH
+      7: 7TH
+      8: 8TH
+      9: 9TH
+      10: 10TH
+      11: 11TH
+      12: 12TH
+      13: TECHNICAL SCHOOL OR 1 YR COLLEGE
+      14: 2 YRS COLLEGE
+      15: 3 YRS COLLEGE
+      16: '4 YRS COLLEGE: B.A., B.S.'
+      17: 'GRADUATE SCHOOL: M.A., M.S., J.D., M.D., Ph.D'
+
+- rename: sh_hs
+  name: dm15a
+  request: Please recode 1 as 0 (for "No").
+  recode:
+    5: 1
+    1: 0
+  source: ssaga
+  nda:
+    type: Integer
+    description: Subject has a High School Diploma
+    range:
+    - 0
+    - 1
+    notes: 1=Yes; 0=No
+    alias: dm15a
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p style="margin-left: 40px">A. Do you have a high school diploma?</p>'
+    choices:
+      1: 'No'
+      5: 'Yes'
+    branching: '[dm15]>0 and [dm15]<=12'
+    alignment: RH
+
+- rename: test_ged
+  name: dm15b
+  request: Please recode 1 as 0 (for "No").
+  source: ssaga
+  recode:
+    5: 1
+    1: 0
+  nda:
+    type: Integer
+    description: Did you pass a high school equivalency test?
+    range:
+    - 0
+    - 1
+    - 9
+    notes: 0 = No; 1 = Yes; 9 = Missing
+    alias: dm15b
+    codes:
+      0: 'No'
+      1: 'Yes'
+      9: Missing
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p style="margin-left: 40px">B. Did you pass a high school equivalency
+      test (GED)?</p>'
+    choices:
+      1: 'No'
+      5: 'Yes'
+    branching: '[dm15a]=''1'''
+    alignment: RH
+
+- rename: ed_1_y
+  name: dm15e
+  request: Please recode 1 as 0 (for "No").
+  source: ssaga
+  recode:
+    5: 1
+    1: 0
+  nda:
+    type: Integer
+    description: Are you currently in school?
+    range:
+    - 0
+    - 1
+    notes: 0= No; 1= Yes
+    alias: dm15e
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p style="margin-left: 40px">E. Are you currently in school, in a program
+      leading to a degree?</p>'
+    choices:
+      1: 'No'
+      5: 'Yes'
+    alignment: RH
+
+- rename: dm15f
+  name: dm15f
+  source: ssaga
+  nda:
+    type: Integer
+    description: What is the highest grade in school your mother completed?
+    range:
+    - 0::17
+    - 9999
+    notes: '0 = Unschooled ; 1 = 1ST ; 2 = 2ND ; 3 = 3RD ; 4 = 4TH ; 5 = 5TH ; 6 =
+      6TH ; 7 = 7TH ; 8 = 8TH ; 9 = 9TH ; 10 = 10TH ; 11 = 11TH ; 12 = 12TH ; 13 =
+      TECHNICAL SCHOOL OR 1 YR COLLEGE ; 14 = 2 YRS COLLEGE ; 15 = 3 YRS COLLEGE ;
+      16 = 4 YRS COLLEGE: B.A., B.S ; 17 = GRADUATE SCHOOL: M.A., M.S., J.D., M.D.,
+      Ph.D ; 9999 = Don''t know'
+    codes:
+      0: Unschooled
+      1: 1ST
+      2: 2ND
+      3: 3RD
+      4: 4TH
+      5: 5TH
+      6: 6TH
+      7: 7TH
+      8: 8TH
+      9: 9TH
+      10: 10TH
+      11: 11TH
+      12: 12TH
+      13: TECHNICAL SCHOOL OR 1 YR COLLEGE
+      14: 2 YRS COLLEGE
+      15: 3 YRS COLLEGE
+      16: '4 YRS COLLEGE: B.A., B.S'
+      17: 'GRADUATE SCHOOL: M.A., M.S., J.D., M.D., Ph.D'
+      9999: Don't know
+  redcap:
+    form: ssaga
+    type: dropdown
+    label: '<p style="margin-left: 40px">F. What is the highest grade in school your
+      mother completed?</p>'
+    choices:
+      0: '0'
+      1: 1ST
+      2: 2ND
+      3: 3RD
+      4: 4TH
+      5: 5TH
+      6: 6TH
+      7: 7TH
+      8: 8TH
+      9: 9TH
+      10: 10TH
+      11: 11TH
+      12: 12TH
+      13: TECHNICAL SCHOOL OR 1 YR COLLEGE
+      14: 2 YRS COLLEGE
+      15: 3 YRS COLLEGE
+      16: '4 YRS COLLEGE: B.A., B.S'
+      17: 'GRADUATE SCHOOL: M.A., M.S., J.D., M.D., Ph.D'
+      9999: Don't know
+
+- rename: dm15g
+  name: dm15g
+  source: ssaga
+  nda:
+    type: Integer
+    description: What is the highest grade in school your father completed?
+    range:
+    - 0::17
+    - 9999
+    notes: '0 = Unschooled ; 1 = 1ST ; 2 = 2ND ; 3 = 3RD ; 4 = 4TH ; 5 = 5TH ; 6 =
+      6TH ; 7 = 7TH ; 8 = 8TH ; 9 = 9TH ; 10 = 10TH ; 11 = 11TH ; 12 = 12TH ; 13 =
+      TECHNICAL SCHOOL OR 1 YR COLLEGE ; 14 = 2 YRS COLLEGE ; 15 = 3 YRS COLLEGE ;
+      16 = 4 YRS COLLEGE: B.A., B.S ; 17 = GRADUATE SCHOOL: M.A., M.S., J.D., M.D.,
+      Ph.D ; 9999 = Don''t know'
+    codes:
+      0: Unschooled
+      1: 1ST
+      2: 2ND
+      3: 3RD
+      4: 4TH
+      5: 5TH
+      6: 6TH
+      7: 7TH
+      8: 8TH
+      9: 9TH
+      10: 10TH
+      11: 11TH
+      12: 12TH
+      13: TECHNICAL SCHOOL OR 1 YR COLLEGE
+      14: 2 YRS COLLEGE
+      15: 3 YRS COLLEGE
+      16: '4 YRS COLLEGE: B.A., B.S'
+      17: 'GRADUATE SCHOOL: M.A., M.S., J.D., M.D., Ph.D'
+      9999: Don't know
+  redcap:
+    form: ssaga
+    type: dropdown
+    label: '<p style="margin-left: 40px">G. What is the highest grade in school your
+      father completed?</p>'
+    choices:
+      0: '0'
+      1: 1ST
+      2: 2ND
+      3: 3RD
+      4: 4TH
+      5: 5TH
+      6: 6TH
+      7: 7TH
+      8: 8TH
+      9: 9TH
+      10: 10TH
+      11: 11TH
+      12: 12TH
+      13: TECHNICAL SCHOOL OR 1 YR COLLEGE
+      14: 2 YRS COLLEGE
+      15: 3 YRS COLLEGE
+      16: '4 YRS COLLEGE: B.A., B.S'
+      17: 'GRADUATE SCHOOL: M.A., M.S., J.D., M.D., Ph.D'
+      9999: Don't know
+
+- rename: dm__16
+  name: dm16
+  source: ssaga
+  nda:
+    type: Float
+    description: Now I want to ask you about work for pay.  In the past twelve months,
+      how many months have you been employed? COUNT SELF-EMPLOYMENT OR SALARIED. IF
+      NONE, CODE 0. IF LESS THAN 1 MONTH, CODE 1.
+    alias: dm16
+  redcap:
+    form: ssaga
+    type: text
+    label: "<p>DM16 \r\nNow I want to ask you about work for pay.  In the past twelve\
+      \ months, how many months have you been employed?\r\n<p style=\"margin-left:\
+      \ 40px\">COUNT SELF-EMPLOYMENT OR SALARIED.\r\nIF NONE, CODE 0.\r\nIF LESS THAN\
+      \ 1 MONTH, CODE 1.</p></p>"
+    note: number
+    validation: number
+    val_min: 0.0
+    val_max: 12.0
+
+- rename: eo4
+  name: dm17
+  request: Please recode 1 as 0 (for "No").
+  source: ssaga
+  recode:
+    5: 1
+    1: 0
+  nda:
+    type: Integer
+    description: Are you currently working at a job or business for pay
+    range:
+    - 0
+    - 1
+    - 9
+    notes: 0=No; 1=Yes; 9 = Missing
+    alias: dm17,work
+    codes:
+      0: 'No'
+      1: 'Yes'
+      9: Missing
+  redcap:
+    form: ssaga
+    type: radio
+    label: "<p>DM17 \nAre you employed now?</p>"
+    choices:
+      1: 'No'
+      5: 'Yes'
+    alignment: RH
+
+- rename: a2b_yn
+  name: dm17a
+  request: Please recode 1 as 0 (for "No").
+  recode:
+    5: 1
+    1: 0
+  source: ssaga
+  nda:
+    type: Integer
+    description: Do you do any of the following kinds of work? Working a full-time
+      paying job?
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    alias: dm17a
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p style="margin-left: 40px">A. Do you work full-time?</p>'
+    choices:
+      1: 'No'
+      5: 'Yes'
+    branching: '[dm17]=''5'''
+    alignment: RH
+
+- rename: annual_fam_inc
+  name: dm17b
+  source: ssaga
+  nda:
+    type: String
+    length: 200
+    description: What was your best estimate of the total income of all family members
+      from all sources, before taxes, in last year? PX011101_Annual_Family_Income
+    notes: -999999 =  Don't know or don't want to say
+    alias: ann_fam_income,de015m,dm17b,family_income,household_income,income,salary,sub_income_fam
+    codes:
+      -999999: Don't know or don't want to say
+  redcap:
+    form: ssaga
+    type: text
+    label: "<p style=\"margin-left: 40px\">B. What is your current household gross\
+      \ income?\r\n<p style=\"margin-left: 80px\">Please state your TOTAL COMBINED\
+      \ FAMILY INCOME for the past 12 months? \r\nThis should include income (before\
+      \ taxes and deductions) from all sources, wages, rent from properties, social\
+      \ security, disability and/or veteran's benefits, unemployment benefits, workman's\
+      \ compensation, help from relatives (including child payments and alimony),\
+      \ and so on. </p></p>\r\n"
+    note: Enter Amount in Whole Dollars with No $ or Commas.
+    validation: number
+
+- rename: household_number_in_house
+  name: dm17c
+  source: ssaga
+  nda:
+    type: Integer
+    description: Number of people living in primary residence for subject (proband)
+    alias: de019m,demog_06,dm17c,family_size,house_size,sub_income_fampl
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 40px">C. What is your current household size?</p>'
+    note: the number of persons
+    validation: number
+
+- rename: comments_misc
+  name: dm_notes
+  source: ssaga
+  nda:
+    type: String
+    length: 4000
+    description: Miscellaneous comments on study, interview, methodology relevant
+      to this form data
+    alias: dm_notes
+  redcap:
+    form: ssaga
+    type: notes
+    label: <p>DEMOGRAPHICS NOTES:</p>

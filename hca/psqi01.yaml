@@ -1,0 +1,731 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - hcpa
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - hcpa
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - hcpa
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - hcpa
+
+- name: gender
+  rename: sex
+  source:
+  - hcpa
+
+
+- rename: psqip1
+  name: psqi1
+  source: hcpa
+  nda:
+    type: String
+    length: 50
+    description: 'Parent: During the past month, when has your child usually gone
+      to bed?     Child/Self: During the past month when have you usually gone to
+      bed? '
+    notes: ' -9=incomplete'
+    alias: psi_bedtime,psq1,psqi1,psqi_01,psqi_1,psqi_q01,psqic2
+    codes:
+      -9: incomplete
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: "<p>1. During the past month, when have you usually gone to bed at night?\
+      \ USUAL BED TIME:________\r\n(Use military time, for example, 9:30pm should\
+      \ be entered as 21:30)</p>"
+    validation: time
+
+- rename: psqip2
+  name: psqi2
+  source: hcpa
+  nda:
+    type: String
+    length: 50
+    description: 'Parent: During the past month, how long (in minutes) has it taken
+      your child to fall asleep each night?     Child/Self: During the past month
+      how long (in minutes) has it taken you to / fall asleep each night?'
+    notes: ' -9=incomplete'
+    alias: psq2,psq_minutes,psqi2,psqi_02,psqi_2,psqi_q02,psqic3,psqinh_02
+    codes:
+      -9: incomplete
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: <p>2. During the past month, how long has it usually taken you to fall
+      asleep each night? NUMBER OF MINUTES:________</p>
+    validation: integer
+
+- rename: psqip3
+  name: psqi3
+  request: Please rename this column 'psqip3' to avoid a naming conflict.
+  source: hcpa
+  nda:
+    type: String
+    length: 50
+    description: 'Parent: During the past month, when has your child usually gotten
+      up in the morning?     Child/Self: During the past month when have you usually
+      gotten up in the / morning?'
+    notes: ' -9=incomplete'
+    alias: psq3,psq_gettingup,psqi3,psqi_03,psqi_3,psqi_q03,psqic4,psqinh_03
+    codes:
+      -9: incomplete
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: "<p>3. During the past month, when have you usually gotten up in the morning?\
+      \ USUAL GETTING UP TIME:________\r\n(Use military time, for example, 9:30pm\
+      \ should be entered as 21:30)</p>"
+    validation: time
+
+- rename: psqip4
+  name: psqi4
+  request: Please enter number of hours as a decimal; Please rename this column 'psqip4'
+    to avoid a naming conflict.
+  source: hcpa
+  nda:
+    type: String
+    length: 50
+    description: 'Parent: During the past month, how many hours of actual sleep does
+      your child get at night? (This may be different than the number of hours your
+      child spends in bed.)     Child/Self: During the past month how many hours of
+      actual sleep do you get at / night?'
+    notes: ' -9=incomplete'
+    alias: psi_hours,psqi4,psqi_04,psqi_4,psqi_q04,psqic5,psqinh_04
+    codes:
+      -9: incomplete
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: <p>4. During the past month, how many hours of actual sleep did you get
+      at night? (This may be different than the number of hours you spend in bed.)
+      HOURS OF SLEEP PER NIGHT:________</p>
+    validation: number
+
+- rename: psqip6a_1
+  name: psqi5a
+  request: Please increment 0::3 scale to 1::4.
+  source: hcpa
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  nda:
+    type: Integer
+    description: 'Parent: During the past month, how often has your child had trouble
+      sleeping because he/she Cannot get to sleep within 30 minutes.     Child/Self:
+      During the past month, how often have you had trouble sleeping / because you
+      -Cannot get to sleep within 30 minutes'
+    range:
+    - 1::4
+    - -99
+    - 77
+    - 88
+    notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+      a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+    alias: psq_5a,psqi5a,psqi_05a,psqi_5a,psqi_q05a,psqic7a_1,psqinh_06a
+    codes:
+      1: Not during the past month
+      2: Less than once a week
+      3: Once or twice a week
+      4: Three or more times a week
+      -99: N/A
+      77: Refused
+      88: Missing
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>(a) Cannot get to sleep within 30 minutes</p>'
+    choices:
+      0: Not during the past month
+      1: Less than once a week
+      2: Once or twice a week
+      3: Three or more times a week
+    matrix: psqi
+
+- rename: psqip6a_2
+  name: psqi5b
+  request: Please increment 0::3 scale to 1::4.
+  source: hcpa
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  nda:
+    type: Integer
+    description: 'Parent: During the past month, how often has your child had trouble
+      sleeping because he/she Wakes up in the middle of the night or early morning.     Child/Self:
+      During the past month, how often have you had trouble sleeping / because you
+      -Wake up in the middle of the night or early morning'
+    range:
+    - 1::4
+    - -99
+    - 77
+    - 88
+    notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+      a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+    alias: psq_5b,psqi5b,psqi_05b,psqi_5b,psqi_q05b,psqic7a_2,psqinh_06b
+    codes:
+      1: Not during the past month
+      2: Less than once a week
+      3: Once or twice a week
+      4: Three or more times a week
+      -99: N/A
+      77: Refused
+      88: Missing
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>(b) Wake up in the middle of the night
+      or early morning</p>'
+    choices:
+      0: Not during the past month
+      1: Less than once a week
+      2: Once or twice a week
+      3: Three or more times a week
+    matrix: psqi
+
+- rename: psqip6a_3
+  name: psqi5c
+  request: Please increment 0::3 scale to 1::4.
+  source: hcpa
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  nda:
+    type: Integer
+    description: 'Parent: During the past month, how often has your child had trouble
+      sleeping because he/she Has to get up to use the bathroom.     Child/Self: During
+      the past month, how often have you had trouble sleeping / because you -Have
+      to get up to use the bathroom'
+    range:
+    - 1::4
+    - -99
+    - 77
+    - 88
+    notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+      a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+    alias: csq_psqi_5c,psq_5c,psqi5c,psqi_05c,psqi_5c,psqi_q05c,psqic7a_3,psqinh_06c,psqu_5c
+    codes:
+      1: Not during the past month
+      2: Less than once a week
+      3: Once or twice a week
+      4: Three or more times a week
+      -99: N/A
+      77: Refused
+      88: Missing
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>(c) Have to get up to use the bathroom</p>'
+    choices:
+      0: Not during the past month
+      1: Less than once a week
+      2: Once or twice a week
+      3: Three or more times a week
+    matrix: psqi
+
+- rename: psqip6a_4
+  name: psqi5d
+  request: Please increment 0::3 scale to 1::4.
+  source: hcpa
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  nda:
+    type: Integer
+    description: 'Parent: During the past month, how often has your child had trouble
+      sleeping because he/she Cannot breathe comfortably.     Child/Self: During the
+      past month, how often have you had trouble sleeping / because you -Cannot breathe
+      comfortably'
+    range:
+    - 1::4
+    - -99
+    - 77
+    - 88
+    notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+      a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+    alias: csq_psqi_5d,psq_5d,psqi5d,psqi_05d,psqi_5d,psqi_q05d,psqic7a_4,psqinh_06d
+    codes:
+      1: Not during the past month
+      2: Less than once a week
+      3: Once or twice a week
+      4: Three or more times a week
+      -99: N/A
+      77: Refused
+      88: Missing
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>(d) Cannot breathe comfortably</p>'
+    choices:
+      0: Not during the past month
+      1: Less than once a week
+      2: Once or twice a week
+      3: Three or more times a week
+    matrix: psqi
+
+- rename: psqip6a_5
+  name: psqi5e
+  request: Please increment 0::3 scale to 1::4.
+  source: hcpa
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  nda:
+    type: Integer
+    description: 'Parent: During the past month, how often has your child had trouble
+      sleeping because he/she Cough or snore loudly.     Child/Self: During the past
+      month, how often have you had trouble sleeping / because you -Cough or snore
+      loudly'
+    range:
+    - 1::4
+    - -99
+    - 77
+    - 88
+    notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+      a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+    alias: csq_psqi_5e,psq_5e,psqi5e,psqi_05e,psqi_5e,psqi_q05e,psqic7a_5,psqinh_06e
+    codes:
+      1: Not during the past month
+      2: Less than once a week
+      3: Once or twice a week
+      4: Three or more times a week
+      -99: N/A
+      77: Refused
+      88: Missing
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>(e) Cough or snore loudly</p>'
+    choices:
+      0: Not during the past month
+      1: Less than once a week
+      2: Once or twice a week
+      3: Three or more times a week
+    matrix: psqi
+
+- rename: psqip6b_1
+  name: psqi5f
+  request: Please increment 0::3 scale to 1::4.
+  source: hcpa
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  nda:
+    type: Integer
+    description: 'Parent: During the past month, how often has your child had trouble
+      sleeping because he/she Feels too cold.     Child/Self: During the past month,
+      how often have you had trouble sleeping / because you -Feel too cold'
+    range:
+    - 1::4
+    - -99
+    - 77
+    - 88
+    notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+      a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+    alias: csq_psqi_5f,psq_5f,psqi5f,psqi_05f,psqi_5f,psqi_q05f,psqic7b_1,psqic7b_6,psqinh_06f,psqip6b_6
+    codes:
+      1: Not during the past month
+      2: Less than once a week
+      3: Once or twice a week
+      4: Three or more times a week
+      -99: N/A
+      77: Refused
+      88: Missing
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>(f) Feel too cold</p>'
+    choices:
+      0: Not during the past month
+      1: Less than once a week
+      2: Once or twice a week
+      3: Three or more times a week
+    matrix: psqi
+
+- rename: psqip6b_2
+  name: psqi5g
+  request: Please increment 0::3 scale to 1::4.
+  source: hcpa
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  nda:
+    type: Integer
+    description: 'Parent: During the past month, how often has your child had trouble
+      sleeping because he/she Feels too hot.     Child/Self: During the past month,
+      how often have you had trouble sleeping / because you -Feel too hot'
+    range:
+    - 1::4
+    - -99
+    - 77
+    - 88
+    notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+      a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+    alias: csq_psqi_5g,psq_5g,psqi5g,psqi_05g,psqi_5g,psqi_q05g,psqic7b_2,psqic7b_7,psqip6b_7
+    codes:
+      1: Not during the past month
+      2: Less than once a week
+      3: Once or twice a week
+      4: Three or more times a week
+      -99: N/A
+      77: Refused
+      88: Missing
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>(g) Feel too hot</p>'
+    choices:
+      0: Not during the past month
+      1: Less than once a week
+      2: Once or twice a week
+      3: Three or more times a week
+    matrix: psqi
+
+- rename: psqip6b_3
+  name: psqi5h
+  request: Please increment 0::3 scale to 1::4.
+  source: hcpa
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  nda:
+    type: Integer
+    description: 'Parent: During the past month, how often has your child had trouble
+      sleeping because he/she Has bad dreams.     Child/Self: During the past month,
+      how often have you had trouble sleeping / because you -Had bad dreams'
+    range:
+    - 1::4
+    - -99
+    - 77
+    - 88
+    notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+      a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+    alias: csq_psqi_5h,psq_5h,psqi5h,psqi_05h,psqi_5h,psqi_q05h,psqic7b_3,psqic7b_8,psqinh_06g,psqip6b_8
+    codes:
+      1: Not during the past month
+      2: Less than once a week
+      3: Once or twice a week
+      4: Three or more times a week
+      -99: N/A
+      77: Refused
+      88: Missing
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>(h) Had bad dreams</p>'
+    choices:
+      0: Not during the past month
+      1: Less than once a week
+      2: Once or twice a week
+      3: Three or more times a week
+    matrix: psqi
+
+- rename: psqip6b_4
+  name: psqi5i
+  request: Please increment 0::3 scale to 1::4.
+  source: hcpa
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  nda:
+    type: Integer
+    description: 'Parent: During the past month, how often has your child had trouble
+      sleeping because he/she Has pain.     Child/Self: During the past month, how
+      often have you had trouble sleeping / because you -Have pain'
+    range:
+    - 1::4
+    - -99
+    - 77
+    - 88
+    notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+      a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+    alias: csq_psqi_5j,psq_5i,psqi5i,psqi_05i,psqi_5i,psqi_q05i,psqic7b_4,psqic7b_9,psqinh_06h,psqip6b_9
+    codes:
+      1: Not during the past month
+      2: Less than once a week
+      3: Once or twice a week
+      4: Three or more times a week
+      -99: N/A
+      77: Refused
+      88: Missing
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>(i) Have pain</p>'
+    choices:
+      0: Not during the past month
+      1: Less than once a week
+      2: Once or twice a week
+      3: Three or more times a week
+    matrix: psqi
+
+- rename: psqi5jalt
+  name: psqi5j
+  request: Please rename this column 'psqi5jalt' to avoid a naming conflict.
+  source: hcpa
+  recode:
+    2: 0
+  nda:
+    type: Integer
+    description: Are there any other reasons you have had trouble sleeping in the
+      past month?
+    range:
+    - 0
+    - 1
+    notes: 0=No; 1=Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>(j) Are there any other reasons you have
+      had trouble sleeping in the past month?</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+
+- rename: psqi5j_1
+  name: psqi5j_1
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'Are there any other reasons you have had trouble sleeping in the
+      past month? If YES, please describe:'
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 80px''>(j.1) If YES, please describe:</p>'
+    branching: '[psqi5j]=''1'''
+
+- rename: psqi5j_2
+  name: psqi5j_2
+  source: hcpa
+  nda:
+    type: Integer
+    description: How often during the past month have you had trouble sleeping because
+      of this?
+    range:
+    - 1::4
+    notes: 1=Less than once a week; 2=Once or twice a week; 3=Three times or more
+      a week
+    codes:
+      1: Less than once a week
+      2: Once or twice a week
+      3: Three times or more a week
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 80px''>(j.2) How often during the past month have
+      you had trouble sleeping because of this?</p>'
+    choices:
+      1: Less than once a week
+      2: Once or twice a week
+      3: Three or more times a week
+    branching: '[psqi5j]=''1'''
+
+- rename: psqpi8
+  name: psqi6
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Parent: During the past month, how would you rate your child''s
+      sleep quality overall?     Child/Self: During the past month, how would you
+      rate your sleep quality overall?'
+    range:
+    - 1::4
+    - -99
+    - 77
+    - 88
+    notes: 1= Very good ; 2= Fairly good ; 3= Fairly bad ; 4= Very bad ; -99= N/A
+      ; 77= Refused ; 88= Missing
+    alias: psq9,psq_quality,psqi6,psqi_06,psqi_6,psqi_q06,psqic11,psqinh_07,psqpi6
+    codes:
+      1: Very good
+      2: Fairly good
+      3: Fairly bad
+      4: Very bad
+      -99: N/A
+      77: Refused
+      88: Missing
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: <p>6. During the past month, how would you rate your sleep quality overall?</p>
+    choices:
+      1: Very good
+      2: Fairly good
+      3: Fairly bad
+      4: Very bad
+
+- rename: psqpi7_1
+  name: psqi7
+  request: Please increment 0::3 scale to 1::4.
+  source: hcpa
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  nda:
+    type: Integer
+    description: 'Parent: During the past month, how often has your child taken medicine
+      (prescribed or "over the counter") to help him/her sleep?     Child/Self: During
+      the past month how often have you taken medicine (prescribed or "over the counter")
+      to help you sleep?'
+    range:
+    - 1::4
+    - -99
+    - 77
+    - 88
+    notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+      a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+    alias: psq_meds,psqi7,psqi_07,psqi_6,psqi_7,psqi_q07,psqic8,psqinh_08,psqpi7
+    codes:
+      1: Not during the past month
+      2: Less than once a week
+      3: Once or twice a week
+      4: Three or more times a week
+      -99: N/A
+      77: Refused
+      88: Missing
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: <p>7. During the past month, how often have you taken medicine (prescribed
+      or 'over the counter') to help you sleep?</p>
+    choices:
+      0: Not during the past month
+      1: Less than once a week
+      2: Once or twice a week
+      3: Three or more times a week
+
+- rename: psqpi7_2
+  name: psqi8
+  request: Please increment 0::3 scale to 1::4.
+  source: hcpa
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    3: 4
+  nda:
+    type: Integer
+    description: 'Parent: During the past month, how often has your child had trouble
+      staying awake while driving, eating meals, or engaging in social activity?     Child/Self:
+      During the past month, how often have you had trouble staying awake / while
+      driving, eating meals, or engaging in social activity?'
+    range:
+    - 1::4
+    - -99
+    - 77
+    - 88
+    notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
+      a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
+    alias: psq_activities,psqi8,psqi_7,psqi_8,psqi_q08,psqic9,psqinh_09
+    codes:
+      1: Not during the past month
+      2: Less than once a week
+      3: Once or twice a week
+      4: Three or more times a week
+      -99: N/A
+      77: Refused
+      88: Missing
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: <p>8. During the past month, how often have you had trouble staying awake
+      while driving, eating meals, or engaging in social activity?</p>
+    choices:
+      0: Not during the past month
+      1: Less than once a week
+      2: Once or twice a week
+      3: Three or more times a week
+
+- rename: psqi_9
+  name: psqi9
+  source: hcpa
+  nda:
+    type: Integer
+    description: During the past month, how much of a problem has it been for you
+      to keep up enough enthusiasm to get things done?
+    range:
+    - 1::4
+    notes: 1=No problem at all; 2=Only a very slight problem; 3=Somewhat of a problem;
+      4=A very big problem
+    alias: psq_enthusiasm,psqi9
+    codes:
+      1: No problem at all
+      2: Only a very slight problem
+      3: Somewhat of a problem
+      4: A very big problem
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: <p>9. During the past month, how much of a problem has it been for you
+      to keep up enough enthusiasm to get things done?</p>
+    choices:
+      1: No problem at all
+      2: Only a very slight problem
+      3: Somewhat of a problem
+      4: A very big problem
+
+- rename: parent_sleep20
+  name: psqi10
+  request: Please rename this column 'parent_sleep20' to avoid a naming conflict.
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Parent: Does your child have a bed partner (e.g., a sibling) or
+      share their bedroom with someone? / Child or Self-report: Do you have a bed
+      partner or share your bedroom with someone?'
+    range:
+    - 1::4
+    notes: 1=No bed partner or roommate; 2=Partner/ roommate in other room; 3=Partner
+      in same room, but not same bed; 4=Partner in same bed
+    alias: psqi10alt
+    codes:
+      1: No bed partner or roommate
+      2: Partner/ roommate in other room
+      3: Partner in same room, but not same bed
+      4: Partner in same bed
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: <p>10. Do you have a bed partner or roommate?</p>
+    choices:
+      1: No bed partner or roommate
+      2: Partner/roommate in other room
+      3: Partner in same room, but not same bed
+      4: Partner in same bed

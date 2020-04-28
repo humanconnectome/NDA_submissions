@@ -1,0 +1,84 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - ssaga
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - ssaga
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - ssaga
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - ssaga
+
+- name: gender
+  rename: sex
+  source:
+  - ssaga
+
+- name: ps1
+  rename: chat8
+  recode:
+    1: 0
+    5: 1
+  source:
+  - ssaga
+
+- name: ps1_specify
+  rename: chat52
+  source:
+  - ssaga
+
+- name: ps2
+  rename: chat17
+  recode:
+    1: 0
+    5: 1
+  source:
+  - ssaga
+
+- name: ps2_specify
+  rename: chat107
+  source:
+  - ssaga
+
+- name: ps5
+  rename: psref_al
+  recode:
+    1: 1
+    5: 3
+  source:
+  - ssaga
+
+- name: ps5_specify
+  rename: caarms1p1_q5
+  source:
+  - ssaga
+
+- name: ps8
+  rename: ps_8
+  recode:
+    1: 0
+    5: 1
+  source:
+  - ssaga
+
+- name: ps8_specify
+  rename: caarms1p1_q12
+  source:
+  - ssaga
+
+- name: ps_notes
+  rename: comments_misc
+  source:
+  - ssaga

@@ -1,0 +1,316 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - hcpa
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - hcpa
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - hcpa
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - hcpa
+
+- name: gender
+  rename: sex
+  source:
+  - hcpa
+
+
+- rename: moca_edu
+  name: moca_edu
+  source: hcpa
+  nda:
+    type: Integer
+    description: Years of education completed
+    range:
+    - 1::21
+    - 77
+    - 99
+    notes: '0= never attended/kindergarten only;  1= 1st grade; 2= 2nd grade; 3= 3rd
+      grade; 4= 4th grade; 5= 5th grade; 6= 6th grade; 7= 7th grade; 8= 8th grade;
+      9= 9th grade; 10= 10th grade; 11= 11th grade; 12= 12th grade, no diploma; 13=
+      high school graduate; 14= GED or equivalent; 15= some college, no degree; 16=
+      associate degree: occupational, technical, or vocational program; 17= associate
+      degree: academic program; 18= bachelor''s degree (BA, AB, BS, BBA); 19= master''s
+      degree (MA,  MS, MENG, MED, MBA); 20= professional school degree (MD, DDS, DVM,
+      JD); 21= doctoral degree (PhD, EDD); 77= refused; 99= don''t know'
+    codes:
+      0: never attended/kindergarten only
+      1: 1st grade
+      2: 2nd grade
+      3: 3rd grade
+      4: 4th grade
+      5: 5th grade
+      6: 6th grade
+      7: 7th grade
+      8: 8th grade
+      9: 9th grade
+      10: 10th grade
+      11: 11th grade
+      12: 12th grade, no diploma
+      13: high school graduate
+      14: GED or equivalent
+      15: some college, no degree
+      16: 'associate degree: occupational, technical, or vocational program'
+      17: 'associate degree: academic program'
+      18: bachelor's degree (BA, AB, BS, BBA)
+      19: master's degree (MA,  MS, MENG, MED, MBA)
+      20: professional school degree (MD, DDS, DVM, JD)
+      21: doctoral degree (PhD, EDD)
+      77: refused
+      99: don't know
+  redcap:
+    form: intake_interview_1
+    section: <font size='+0.5'><center>MONTREAL COGNITIVE ASSESSMENT (MOCA)</center></font>
+    type: dropdown
+    label: 'Years of education completed:'
+    choices:
+      0: NEVER ATTENDED/KINDERGARTEN ONLY;
+      1: 1ST GRADE;
+      2: 2ND GRADE;
+      3: 3RD GRADE;
+      4: 4TH GRADE;
+      5: 5TH GRADE;
+      6: 6TH GRADE;
+      7: 7TH GRADE;
+      8: 8TH GRADE;
+      9: 9TH GRADE;
+      10: 10TH GRADE;
+      11: 11TH GRADE;
+      12: 12TH GRADE, NO DIPLOMA;
+      13: HIGH SCHOOL GRADUATE;
+      14: GED OR EQUIVALENT;
+      15: SOME COLLEGE, NO DEGREE;
+      16: 'ASSOCIATE DEGREE: OCCUPATIONAL, TECHNICAL, OR VOCATIONAL PROGRAM;'
+      17: 'ASSOCIATE DEGREE: ACADEMIC PROGRAM;'
+      18: 'BACHELOR''S DEGREE (EXAMPLE: BA, AB, BS, BBA);'
+      19: 'MASTER''S DEGREE (EXAMPLE: MA, MS, MEng, MEd, MBA);'
+      20: 'PROFESSIONAL SCHOOL DEGREE (EXAMPLE: MD, DDS, DVM, JD);'
+      21: DOCTORAL DEGREE (EXAMPLE:PhD, EdD);
+      77: REFUSED;
+      99: DON'T KNOW
+    alignment: LV
+
+- rename: visuospatial_executive
+  name: moca1
+  source: hcpa
+  nda:
+    type: Integer
+    description: Trail, cube, and clock drawings
+    range:
+    - 0::5
+    alias: vse
+  redcap:
+    form: intake_interview_1
+    type: text
+    label: VISUOSPATIAL/EXECUTIVE POINTS
+    note: _/5
+    validation: integer
+    val_min: 0.0
+    val_max: 5.0
+    alignment: LV
+
+- rename: naming
+  name: moca2
+  source: hcpa
+  nda:
+    type: Integer
+    description: Animal name recall task
+    range:
+    - 0::3
+    alias: n
+  redcap:
+    form: intake_interview_1
+    type: text
+    label: NAMING POINTS
+    note: _/3
+    validation: integer
+    val_min: 0.0
+    val_max: 3.0
+    alignment: LV
+
+- rename: attention_digit
+  name: moca3
+  source: hcpa
+  nda:
+    type: Integer
+    description: Repeating digits score
+    range:
+    - 0::2
+  redcap:
+    form: intake_interview_1
+    type: text
+    label: ATTENTION - Digits
+    note: _/2
+    validation: integer
+    val_min: 0.0
+    val_max: 2.0
+    alignment: LV
+
+- rename: attention_letter
+  name: moca4
+  source: hcpa
+  nda:
+    type: Integer
+    description: Letter tapping score
+    range:
+    - 0
+    - 1
+  redcap:
+    form: intake_interview_1
+    type: text
+    label: ATTENTION - Letters
+    note: _/1
+    validation: integer
+    val_min: 0.0
+    val_max: 1.0
+    alignment: LV
+
+- rename: attention_subtraction
+  name: moca5
+  source: hcpa
+  nda:
+    type: Integer
+    description: Serial 7 subtraction score
+    range:
+    - 0::3
+  redcap:
+    form: intake_interview_1
+    type: text
+    label: ATTENTION - Subtraction
+    note: _/3
+    validation: integer
+    val_min: 0.0
+    val_max: 3.0
+    alignment: LV
+
+- rename: mull_el_rs2
+  name: moca6
+  source: hcpa
+  nda:
+    type: Integer
+    description: Repeats sentences II
+    range:
+    - 0
+    - 1
+    - 2
+    notes: 0 = Fail; 1 = Repeats one sentence; 2 = Repeats two sentences
+    alias: language_repetition
+    codes:
+      0: Fail
+      1: Repeats one sentence
+      2: Repeats two sentences
+  redcap:
+    form: intake_interview_1
+    type: text
+    label: LANGUAGE - Repeat
+    note: _/2
+    validation: integer
+    val_min: 0.0
+    val_max: 2.0
+    alignment: LV
+
+- rename: language_letter
+  name: moca7
+  source: hcpa
+  nda:
+    type: Integer
+    description: Maximal one-minute recall of words beginning with 'F'
+    range:
+    - 0
+    - 1
+  redcap:
+    form: intake_interview_1
+    type: text
+    label: LANGUAGE - Fluency/ Name maximum number of words in one minute that begin
+      with the letter F
+    note: _/1
+    validation: integer
+    val_min: 0.0
+    val_max: 1.0
+    alignment: LV
+
+- rename: abstraction
+  name: moca8
+  source: hcpa
+  nda:
+    type: Integer
+    description: Similarity between object pairs
+    range:
+    - 0::2
+    alias: ab
+  redcap:
+    form: intake_interview_1
+    type: text
+    label: ABSTRACTION
+    note: _/2
+    validation: integer
+    val_min: 0.0
+    val_max: 2.0
+    alignment: LV
+
+- rename: delayed_recall
+  name: moca9
+  source: hcpa
+  nda:
+    type: Integer
+    description: Points for uncued recall
+    range:
+    - 0::5
+  redcap:
+    form: intake_interview_1
+    type: text
+    label: DELAYED RECALL
+    note: _/5
+    validation: integer
+    val_min: 0.0
+    val_max: 5.0
+    alignment: LV
+
+- rename: orientation
+  name: moca10
+  source: hcpa
+  nda:
+    type: Integer
+    description: Orientation to time and location
+    range:
+    - 0::6
+    alias: o
+  redcap:
+    form: intake_interview_1
+    type: text
+    label: ORIENTATION
+    note: _/6
+    validation: integer
+    val_min: 0.0
+    val_max: 6.0
+    alignment: LV
+
+- rename: moca_total
+  name: moca_sum
+  source: hcpa
+  nda:
+    type: Integer
+    description: Montreal Cognitive Assessment Total Score
+    range:
+    - 0::30
+    alias: moca_sum
+  redcap:
+    form: intake_interview_1
+    type: calc
+    label: 'MOCA Total:'
+    choices: sum((if([moca1]='', 0, [moca1])),  (if([moca2]='', 0, [moca2])),  (if([moca3]='',
+      0, [moca3])),  (if([moca4]='', 0, [moca4])),  (if([moca5]='', 0, [moca5])),  (if([moca6]='',
+      0, [moca6])),  (if([moca7]='', 0, [moca7])),  (if([moca8]='', 0, [moca8])),  (if([moca9]='',
+      0, [moca9])),  (if([moca10]='', 0, [moca10])),  (if([moca_edu]<'15', 1, '0')))

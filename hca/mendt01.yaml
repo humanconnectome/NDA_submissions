@@ -1,0 +1,838 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - hcpa
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - hcpa
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - hcpa
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - hcpa
+
+- name: gender
+  rename: sex
+  source:
+  - hcpa
+
+
+- rename: medication1_dosage
+  name: med1_dose
+  source: hcpa
+  nda:
+    type: String
+    length: 150
+    description: First medication dosage
+    notes: 0 = No medication; 999 = Missing
+    alias: med1_dose,med_1d,npmed_drug1_str_dose,pmed_drug1_str_dose,rxhx_dose
+    codes:
+      0: No medication
+      999: Missing
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>[med1] Dose:</p>'
+    note: '(mg, IU, etc.)
+
+      Write the decimal one of the digits'
+    branching: '[med_num]>=1'
+
+- rename: medication10_dose
+  name: med10_dose
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Medication 10 dose last taken
+    alias: med10_dose
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>[med10] Dose:</p>'
+    note: '(mg, IU, etc.)
+
+      Write the decimal one of the digits'
+    branching: '[med_num]>=10'
+
+- rename: medication11_dosage
+  name: med11_dose
+  source: hcpa
+  nda:
+    type: Float
+    description: medication 11 dosage
+    alias: med11_dose,med_11d
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>[med11] Dose:</p>'
+    note: '(mg, IU, etc.)
+
+      Write the decimal one of the digits'
+    branching: '[med_num]>=11'
+
+- rename: medication12_dosage
+  name: med12_dose
+  source: hcpa
+  nda:
+    type: Float
+    description: medication 12 dosage
+    alias: med12_dose,med_12d
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>[med12] Dose:</p>'
+    note: '(mg, IU, etc.)
+
+      Write the decimal one of the digits'
+    branching: '[med_num]>=12'
+
+- rename: medication13_dosage
+  name: med13_dose
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Medication 13 dosage
+    alias: med13_dose,med_13d
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>[med13] Dose:</p>'
+    note: '(mg, IU, etc.)
+
+      Write the decimal one of the digits'
+    branching: '[med_num]>=13'
+
+- rename: medication14_dosage
+  name: med14_dose
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Medication 14 dosage
+    alias: med14_dose,med_14d
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>[med14] Dose:</p>'
+    note: '(mg, IU, etc.)
+
+      Write the decimal one of the digits'
+    branching: '[med_num]>=14'
+
+- rename: medication15_dosage
+  name: med15_dose
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Medication 15 dosage
+    alias: med15_dose
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>[med15] Dose:</p>'
+    note: '(mg, IU, etc.)
+
+      Write the decimal one of the digits'
+    branching: '[med_num]>=15'
+
+- rename: medication2_dosage
+  name: med2_dose
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Second medication dosage
+    notes: 0 = No medication; 999 = Missing
+    alias: med2_dose,med_2d,npmed_drug2_str_dose,pmed_drug2_str_dose
+    codes:
+      0: No medication
+      999: Missing
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>[med2] Dose:</p>'
+    note: '(mg, IU, etc.)
+
+      Write the decimal one of the digits'
+    branching: '[med_num]>=2'
+
+- rename: medication3_dosage
+  name: med3_dose
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Third medication dosage
+    notes: 0 = No medication; 999 = Missing
+    alias: med3_dose,med_3d,npmed_drug3_str_dose,pmed_drug3_str_dose
+    codes:
+      0: No medication
+      999: Missing
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>[med3] Dose:</p>'
+    note: '(mg, IU, etc.)
+
+      Write the decimal one of the digits'
+    branching: '[med_num]>=3'
+
+- rename: medication4_dosage
+  name: med4_dose
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Fourth  medication dosage
+    notes: 0 = No medication; 999 = Missing
+    alias: med4_dose,med_4d,npmed_drug4_str_dose,pmed_drug4_str_dose
+    codes:
+      0: No medication
+      999: Missing
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>[med4] Dose:</p>'
+    note: '(mg, IU, etc.)
+
+      Write the decimal one of the digits'
+    branching: '[med_num]>=4'
+
+- rename: medication5_dosage
+  name: med5_dose
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Fifth medication dosage
+    notes: 0 = No medication; 999 = Missing
+    alias: med5_dose,med_5d,npmed_drug5_str_dose,pmed_drug5_str_dose
+    codes:
+      0: No medication
+      999: Missing
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>[med5] Dose:</p>'
+    note: '(mg, IU, etc.)
+
+      Write the decimal one of the digits'
+    branching: '[med_num]>=5'
+
+- rename: medication6_dosage
+  name: med6_dose
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Sixth medication dosage
+    notes: 0 = No medication; 999 = Missing
+    alias: med6_dose,med_6d,npmed_drug6_str_dose,pmed_drug6_str_dose
+    codes:
+      0: No medication
+      999: Missing
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>[med6] Dose:</p>'
+    note: '(mg, IU, etc.)
+
+      Write the decimal one of the digits'
+    branching: '[med_num]>=6'
+
+- rename: medication7_dosage
+  name: med7_dose
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Seventh medication dosage
+    notes: 0 = No medication; 999 = Missing
+    alias: med7_dose,med_7d,npmed_drug7_str_dose,pmed_drug7_str_dose
+    codes:
+      0: No medication
+      999: Missing
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>[med7] Dose:</p>'
+    note: '(mg, IU, etc.)
+
+      Write the decimal one of the digits'
+    branching: '[med_num]>=7'
+
+- rename: medication8_dosage
+  name: med8_dose
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Eighth medication dosage
+    notes: 0 = No medication; 999 = Missing
+    alias: med8_dose,med_8d,npmed_drug8_str_dose,pmed_drug8_str_dose
+    codes:
+      0: No medication
+      999: Missing
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>[med8] Dose:</p>'
+    note: '(mg, IU, etc.)
+
+      Write the decimal one of the digits'
+    branching: '[med_num]>=8'
+
+- rename: medication9_dosage
+  name: med9_dose
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Ninth medication dosage
+    alias: med9_dose,med_9d,npmed_drug9_str_dose,pmed_drug9_str_dose
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>[med9] Dose:</p>'
+    note: '(mg, IU, etc.)
+
+      Write the decimal one of the digits'
+    branching: '[med_num]>=9'
+
+- rename: othmed0a
+  name: med_yn
+  source: hcpa
+  recode:
+    2: 0
+  nda:
+    type: Integer
+    description: Did the patient take any medications
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    alias: med_yn
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: intake_interview_2
+    section: <font size='+0.5'><center>List of Current Medications</center></font>
+    type: radio
+    label: <p><font size=2.5>Are you taking any medication, either prescription or
+      over-the-counter. </font>These include pills, liquid medications; skin patches,
+      eye drops, creams, salves, inhalers and injections. Please don't inlcude vitamins
+      or supplements.</p>
+    choices:
+      1: 'Yes'
+      2: 'No'
+    alignment: LH
+
+- rename: num_meds
+  name: med_num
+  source: hcpa
+  nda:
+    type: Integer
+    description: Number of medications
+    alias: med_num
+  redcap:
+    form: intake_interview_2
+    type: dropdown
+    label: '<p style=''margin-left: 40px''>How many?</p>'
+    choices:
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+      6: '6'
+      7: '7'
+      8: '8'
+      9: '9'
+      10: '10'
+      11: '11'
+      12: '12'
+      13: '13'
+      14: '14'
+      15: '15'
+    branching: '[med_yn]=''1'''
+
+- rename: medication1_frequency
+  name: med1_frqcy
+  source: hcpa
+  nda:
+    type: String
+    length: 60
+    description: First medication frequency
+    alias: med1_frqcy,med_freq,medlist_frequency,npmed_drug1_frequency,pmed_drug1_frequency,rxhx_freq,scidmed4_1d
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>How often do you take [med1]?</p>'
+    note: _Time(s)/_(Day, Week, Month)
+    branching: '[med_num]>=1'
+
+- rename: medication10_frequency
+  name: med10_frqcy
+  source: hcpa
+  nda:
+    type: String
+    length: 50
+    description: Tenth medication frequency
+    alias: med10_frqcy,npmed_drug10_frequency,pmed_drug10_frequency
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>How often do you take [med10]?</p>'
+    note: _Time(s)/_(Day, Week, Month)
+    branching: '[med_num]>=10'
+
+- rename: phi217
+  name: med11_frqcy
+  source: hcpa
+  nda:
+    type: String
+    length: 50
+    description: Physical Medication 11 Schedule
+    alias: med11_frqcy
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>How often do you take [med11]?</p>'
+    note: _Time(s)/_(Day, Week, Month)
+    branching: '[med_num]>=11'
+
+- rename: med12_frqcy
+  name: med12_frqcy
+  source: hcpa
+  nda:
+    type: String
+    length: 10
+    description: How often do you take [med12]?
+    notes: Time(s)/(Day, Week, Month)
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>How often do you take [med12]?</p>'
+    note: _Time(s)/_(Day, Week, Month)
+    branching: '[med_num]>=12'
+
+- rename: med13_frqcy
+  name: med13_frqcy
+  source: hcpa
+  nda:
+    type: String
+    length: 10
+    description: How often do you take [med13]?
+    notes: Time(s)/(Day, Week, Month)
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>How often do you take [med13]?</p>'
+    note: _Time(s)/_(Day, Week, Month)
+    branching: '[med_num]>=13'
+
+- rename: med14_frqcy
+  name: med14_frqcy
+  source: hcpa
+  nda:
+    type: String
+    length: 10
+    description: How often do you take [med14]?
+    notes: Time(s)/(Day, Week, Month)
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>How often do you take [med14]?</p>'
+    note: _Time(s)/_(Day, Week, Month)
+    branching: '[med_num]>=14'
+
+- rename: med15_frqcy
+  name: med15_frqcy
+  source: hcpa
+  nda:
+    type: String
+    length: 10
+    description: How often do you take [med15]?
+    notes: Time(s)/(Day, Week, Month)
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>How often do you take [med15]?</p>'
+    note: _Time(s)/_(Day, Week, Month)
+    branching: '[med_num]>=15'
+
+- rename: medication2_frequency
+  name: med2_frqcy
+  source: hcpa
+  nda:
+    type: String
+    length: 50
+    description: Second medication frequency
+    alias: med2_frqcy,npmed_drug2_frequency,pmed_drug2_frequency,scidmed4_2d
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>How often do you take [med2]?</p>'
+    note: _Time(s)/_(Day, Week, Month)
+    branching: '[med_num]>=2'
+
+- rename: medication3_frequency
+  name: med3_frqcy
+  source: hcpa
+  nda:
+    type: String
+    length: 70
+    description: Third medication frequency
+    alias: med3_frqcy,npmed_drug3_frequency,pmed_drug3_frequency,scidmed4_3d
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>How often do you take [med3]?</p>'
+    note: _Time(s)/_(Day, Week, Month)
+    branching: '[med_num]>=3'
+
+- rename: medication4_frequency
+  name: med4_frqcy
+  source: hcpa
+  nda:
+    type: String
+    length: 50
+    description: Fourth medication frequency
+    alias: med4_frqcy,npmed_drug4_frequency,pmed_drug4_frequency,scidmed4_4d
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>How often do you take [med4]?</p>'
+    note: _Time(s)/_(Day, Week, Month)
+    branching: '[med_num]>=4'
+
+- rename: medication5_frequency
+  name: med5_frqcy
+  source: hcpa
+  nda:
+    type: String
+    length: 50
+    description: Fifth medication frequency
+    alias: med5_frqcy,npmed_drug5_frequency,pmed_drug5_frequency,scidmed4_5d
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>How often do you take [med5]?</p>'
+    note: _Time(s)/_(Day, Week, Month)
+    branching: '[med_num]>=5'
+
+- rename: medication6_frequency
+  name: med6_frqcy
+  source: hcpa
+  nda:
+    type: String
+    length: 50
+    description: Sixth medication frequency
+    alias: med6_frqcy,npmed_drug6_frequency,pmed_drug6_frequency,scidmed4_6d
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>How often do you take [med6]?</p>'
+    note: _Time(s)/_(Day, Week, Month)
+    branching: '[med_num]>=6'
+
+- rename: medication7_frequency
+  name: med7_frqcy
+  source: hcpa
+  nda:
+    type: String
+    length: 50
+    description: Seventh medication frequency
+    alias: med7_frqcy,npmed_drug7_frequency,pmed_drug7_frequency
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>How often do you take [med7]?</p>'
+    note: _Time(s)/_(Day, Week, Month)
+    branching: '[med_num]>=7'
+
+- rename: medication8_frequency
+  name: med8_frqcy
+  source: hcpa
+  nda:
+    type: String
+    length: 50
+    description: Eighth medication frequency
+    alias: med8_frqcy,npmed_drug8_frequency,pmed_drug8_frequency
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>How often do you take [med8]?</p>'
+    note: _Time(s)/_(Day, Week, Month)
+    branching: '[med_num]>=8'
+
+- rename: medication9_frequency
+  name: med9_frqcy
+  source: hcpa
+  nda:
+    type: String
+    length: 50
+    description: Ninth medication frequency
+    alias: med9_frqcy,npmed_drug9_frequency,pmed_drug9_frequency
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 160px''>How often do you take [med9]?</p>'
+    note: _Time(s)/_(Day, Week, Month)
+    branching: '[med_num]>=9'
+
+- rename: medication1_name
+  name: med1
+  source: hcpa
+  nda:
+    type: String
+    length: 500
+    description: Name first medication that the participant has taken
+    notes: 0 = No medication; 999= Legitimately skipped
+    alias: med1,med_1n,name1,npmed_drug1_name,pmed_drug1_name,rxhx_medname,scidmed4_1a
+    codes:
+      0: No medication
+      999: Legitimately skipped
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 120px''>Medication 1:</p>'
+    branching: '[med_num]>=1'
+
+- rename: medication_10_name
+  name: med10
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: specify med 10
+    alias: med10,med_10n
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 120px''>Medication 10:</p>'
+    branching: '[med_num]>=10'
+
+- rename: medication11_name
+  name: med11
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Medication 11 name
+    alias: med11
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 120px''>Medication 11:</p>'
+    branching: '[med_num]>=11'
+
+- rename: medication12_name
+  name: med12
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Med name12
+    alias: med12
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 120px''>Medication 12:</p>'
+    branching: '[med_num]>=12'
+
+- rename: medication13_name
+  name: med13
+  source: hcpa
+  nda:
+    type: String
+    length: 500
+    description: Medication 13 name
+    alias: med13
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 120px''>Medication 13:</p>'
+    branching: '[med_num]>=13'
+
+- rename: medication14_name
+  name: med14
+  source: hcpa
+  nda:
+    type: String
+    length: 500
+    description: Medication 14 name
+    alias: med14
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 120px''>Medication 14:</p>'
+    branching: '[med_num]>=14'
+
+- rename: medication15_name
+  name: med15
+  source: hcpa
+  nda:
+    type: String
+    length: 500
+    description: Medication 15 name
+    alias: med15
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 120px''>Medication 15:</p>'
+    branching: '[med_num]>=15'
+
+- rename: medication2_name
+  name: med2
+  source: hcpa
+  nda:
+    type: String
+    length: 200
+    description: Name second medication that the participant has taken
+    notes: 0 = No medication; 999= Legitimately skipped
+    alias: med2,med_2n,name2,npmed_drug2_name,pmed_drug2_name,scidmed4_2a
+    codes:
+      0: No medication
+      999: Legitimately skipped
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 120px''>Medication 2:</p>'
+    branching: '[med_num]>=2'
+
+- rename: medication3_name
+  name: med3
+  source: hcpa
+  nda:
+    type: String
+    length: 150
+    description: Name third medication that the participant has taken
+    notes: 0 = No medication; 999= Legitimately skipped
+    alias: med3,med_3n,name3,npmed_drug3_name,pmed_drug3_name,scidmed4_3a
+    codes:
+      0: No medication
+      999: Legitimately skipped
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 120px''>Medication 3:</p>'
+    branching: '[med_num]>=3'
+
+- rename: medication4_name
+  name: med4
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Name fourth medication that the participant has taken
+    notes: 0 = No medication; 999= Legitimately skipped
+    alias: med4,med_4n,name4,npmed_drug4_name,pmed_drug4_name,scidmed4_4a
+    codes:
+      0: No medication
+      999: Legitimately skipped
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 120px''>Medication 4:</p>'
+    branching: '[med_num]>=4'
+
+- rename: medication5_name
+  name: med5
+  source: hcpa
+  nda:
+    type: String
+    length: 500
+    description: Name fifth medication that the participant has taken
+    notes: 0 = No medication; 999= Legitimately skipped
+    alias: med5,med_5n,name5,npmed_drug5_name,pmed_drug5_name,scidmed4_5a
+    codes:
+      0: No medication
+      999: Legitimately skipped
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 120px''>Medication 5:</p>'
+    branching: '[med_num]>=5'
+
+- rename: medication6_name
+  name: med6
+  source: hcpa
+  nda:
+    type: String
+    length: 500
+    description: Name sixth medication that the participant has taken
+    notes: 0 = No medication; 999= Legitimately skipped
+    alias: med6,med_6n,name6,npmed_drug6_name,pmed_drug6_name,scidmed4_6a
+    codes:
+      0: No medication
+      999: Legitimately skipped
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 120px''>Medication 6:</p>'
+    branching: '[med_num]>=6'
+
+- rename: medication7_name
+  name: med7
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Name seventh medication that the participant has taken
+    notes: 0 = No medication; 999= Legitimately skipped
+    alias: med7,med_7n,name7,npmed_drug7_name,pmed_drug7_name
+    codes:
+      0: No medication
+      999: Legitimately skipped
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 120px''>Medication 7:</p>'
+    branching: '[med_num]>=7'
+
+- rename: medication8_name
+  name: med8
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Name eighth medication that the participant has taken
+    notes: 0 = No medication; 999= Legitimately skipped
+    alias: med8,med_8n,name8,npmed_drug8_name,pmed_drug8_name
+    codes:
+      0: No medication
+      999: Legitimately skipped
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 120px''>Medication 8:</p>'
+    branching: '[med_num]>=8'
+
+- rename: medication9_name
+  name: med9
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Name ninth medication that the participant has taken
+    alias: med9,med_9n,npmed_drug9_name,pmed_drug9_name
+  redcap:
+    form: intake_interview_2
+    type: text
+    label: '<p style=''margin-left: 120px''>Medication 9:</p>'
+    branching: '[med_num]>=9'

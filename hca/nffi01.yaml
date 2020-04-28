@@ -1,0 +1,1901 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - hcpa
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - hcpa
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - hcpa
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - hcpa
+
+- name: gender
+  rename: sex
+  source:
+  - hcpa
+
+
+- rename: nffi_1
+  name: neo1
+  source: hcpa
+  nda:
+    type: Integer
+    description: I am not a worrier.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_01,neo_01,neo_ne1,worrier
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 1. I am not a worrier.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo0
+
+- rename: nffi_2
+  name: neo2
+  source: hcpa
+  nda:
+    type: Integer
+    description: I like to have a lot of people around me.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_02,neo_02,peopleme
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 2. I like to have a lot of people around me.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo0
+
+- rename: nffi_3
+  name: neo3
+  source: hcpa
+  nda:
+    type: Integer
+    description: I don't like to waste my time daydreaming.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: daydream,neo2_03,neo_03
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 3. I don't like to waste my time daydreaming.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo0
+
+- rename: nffi_4
+  name: neo4
+  source: hcpa
+  nda:
+    type: Integer
+    description: I try to be courteous to everyone I meet.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: crteous,neo2_04,neo_04
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 4. I try to be courteous to everyone I meet.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo0
+
+- rename: nffi_5
+  name: neo5
+  source: hcpa
+  nda:
+    type: Integer
+    description: I keep my belongings clean and neat.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: cleaneat,neo2_05,neo_05
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 5. I keep my belongings clean and neat.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo0
+
+- rename: nffi_6
+  name: neo6
+  source: hcpa
+  nda:
+    type: Integer
+    description: I often feel inferior to others.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: inferior,neo2_06,neo_06,neo_ne2
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 6. I often feel inferior to others.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo0
+
+- rename: nffi_7
+  name: neo7
+  source: hcpa
+  nda:
+    type: Integer
+    description: I laugh easily.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: laugh,neo2_07,neo_07
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 7. I laugh easily.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo0
+
+- rename: nffi_8
+  name: neo8
+  source: hcpa
+  nda:
+    type: Integer
+    description: OnceI find the right way to do something, I stick to It.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_08,neo_08,rightway
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 8. Once I find the right way to do something, I stick to it.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo0
+
+- rename: nffi_9
+  name: neo9
+  source: hcpa
+  nda:
+    type: Integer
+    description: I often getInto arguments with my family and co-workers.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: argument,neo2_9a,neo_09
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 9. I often get into arguments with my family and co-workers.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo0
+
+- rename: nffi_10
+  name: neo10
+  source: hcpa
+  nda:
+    type: Integer
+    description: I'm pretty good about pacing myself so as to get things done on time.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_10,neo_10,pace
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 10. I'm pretty good about pacing myself so as to get things done on time.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo0
+
+- rename: nffi_11
+  name: neo11
+  source: hcpa
+  nda:
+    type: Integer
+    description: When I'm under a great deal of stress, sometimesI feel likeI'm going
+      to pieces.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_11,neo_11,neo_ne3,stress
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 11. When I'm under a great deal of stress, sometimes I feel like I'm going
+      to pieces.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo1
+
+- rename: nffi_12
+  name: neo12
+  source: hcpa
+  nda:
+    type: Integer
+    description: I don't consider myself especially "light-hearted".
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: lighthrt,neo2_12,neo_12
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 12. I don't consider myself especially 'light-hearted.'
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo1
+
+- rename: nffi_13
+  name: neo13
+  source: hcpa
+  nda:
+    type: Integer
+    description: I amIntrigued by the patternsI findIn art and nature.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: artnture,neo2_13,neo_13
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 13. I am intrigued by the patterns I find in art and nature.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo1
+
+- rename: nffi_14
+  name: neo14
+  source: hcpa
+  nda:
+    type: Integer
+    description: Some people thinkI'm selfish and egotistical.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_14,neo_14,selfish
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 14. Some people think I'm selfish and egotistical.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo1
+
+- rename: nffi_15
+  name: neo15
+  source: hcpa
+  nda:
+    type: Integer
+    description: I am not a very methodical person.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: methdcal,neo2_15,neo_15
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: '15. No, I am not a very methodical person. '
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo1
+
+- rename: nffi_16
+  name: neo16
+  source: hcpa
+  nda:
+    type: Integer
+    description: I rarely feel lonely or blue.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: feelblue,neo2_16,neo_16,neo_ne4
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: '16. I rarely feel lonely or blue. '
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo1
+
+- rename: nffi_17
+  name: neo17
+  source: hcpa
+  nda:
+    type: Integer
+    description: I really enjoy talking to people.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: enjytalk,neo2_17,neo_17
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: '17. I really enjoy talking to people. '
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo1
+
+- rename: nffi_18
+  name: neo18
+  source: hcpa
+  nda:
+    type: Integer
+    description: I believe letting students hear controversial speakers can only confuse
+      and mislead them.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: mislead,neo2_18,neo_18
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 18. I believe letting students hear controversial speakers can only confuse
+      and mislead them.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo1
+
+- rename: nffi_19
+  name: neo19
+  source: hcpa
+  nda:
+    type: Integer
+    description: I would rather cooperate with others than compete with them.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: compete,neo2_19,neo_19
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 19. I would rather cooperate with others than compete with them.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo1
+
+- rename: nffi_20
+  name: neo20
+  source: hcpa
+  nda:
+    type: Integer
+    description: I try to perform all the tasks assigned to me conscientiously.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: dotasks,neo2_20,neo_20
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 20. I try to perform all the tasks assigned to me conscientiously.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo1
+
+- rename: nffi_21
+  name: neo21
+  source: hcpa
+  nda:
+    type: Integer
+    description: I often feel tense and jittery.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: jittery,neo2_21,neo_21,neo_ne5
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 21. I often feel tense and jittery.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo2
+
+- rename: nffi_22
+  name: neo22
+  source: hcpa
+  nda:
+    type: Integer
+    description: I like to be where the action is.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: action,neo2_22,neo_22
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 22. I like to be where the action is.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo2
+
+- rename: nffi_23
+  name: neo23
+  source: hcpa
+  nda:
+    type: Integer
+    description: Poetry has little or no effect on me.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_23,neo_23,poetry
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: '23. Poetry has little or no effect on me. '
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo2
+
+- rename: nffi_24
+  name: neo24
+  source: hcpa
+  nda:
+    type: Integer
+    description: I tend to be cynical and skeptical of others' intentions.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: cynical,neo2_24,neo_24
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: '24. I tend to be cynical and skeptical of others'' intentions. '
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo2
+
+- rename: nffi_25
+  name: neo25
+  source: hcpa
+  nda:
+    type: Integer
+    description: I have a clear set of goals and work toward them in an orderly fashion.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_25,neo_25,setgoal
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 25. I have a clear set of goals and work toward them in an orderly fashion.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo2
+
+- rename: nffi_26
+  name: neo26
+  source: hcpa
+  nda:
+    type: Integer
+    description: Sometimes I feel completely worthless.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_26,neo_26,neo_ne6,worthles
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 26. Sometime I feel completely worthless.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo2
+
+- rename: nffi_27
+  name: neo27
+  source: hcpa
+  nda:
+    type: Integer
+    description: I usually prefer to do things alone.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: doalone,neo2_27,neo_27
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 27. I usually prefer to do things alone.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo2
+
+- rename: nffi_28
+  name: neo28
+  source: hcpa
+  nda:
+    type: Integer
+    description: I often try new and foreign foods.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_28,neo_28,newfood
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 28. I often try new and foreign foods.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo2
+
+- rename: nffi_29
+  name: neo29
+  source: hcpa
+  nda:
+    type: Integer
+    description: I believe that most people will take advantage of youIf you let them.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: advntage,neo2_29,neo_29
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 29. I believe that most people will take advantage of you if you let them.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo2
+
+- rename: nffi_30
+  name: neo30
+  source: hcpa
+  nda:
+    type: Integer
+    description: I waste a lot of time before settling down to work.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_30,neo_30,wstetime
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 30. I waste a lot of time before settling down to work.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo2
+
+- rename: nffi_31
+  name: neo31
+  source: hcpa
+  nda:
+    type: Integer
+    description: I rarely feel fearful or anxious.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: feelfear,neo2_31,neo_31,neo_ne7
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 31. I rarely feel fearful or anxious.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo3
+
+- rename: nffi_32
+  name: neo32
+  source: hcpa
+  nda:
+    type: Integer
+    description: I often feel asIfI'm bursting with energy.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: feelengy,neo2_32,neo_32
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: '32. I often feel as if I''m bursting with energy. '
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo3
+
+- rename: nffi_33
+  name: neo33
+  source: hcpa
+  nda:
+    type: Integer
+    description: I seldom notice the moods or feelings that different environments
+      produce.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: feelmood,neo2_33,neo_33
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 33. I seldom notice the moods or feelings that different environments produce.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo3
+
+- rename: nffi_34
+  name: neo34
+  source: hcpa
+  nda:
+    type: Integer
+    description: Most people I know like me.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: likeme,neo2_34,neo_34
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 34. Most people I know like me.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo3
+
+- rename: nffi_35
+  name: neo35
+  source: hcpa
+  nda:
+    type: Integer
+    description: I work hard to accomplish my goals.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_35,neo_35,workhard
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 35. I work hard to accomplish my goals.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo3
+
+- rename: nffi_36
+  name: neo36
+  source: hcpa
+  nda:
+    type: Integer
+    description: I often get angry at the way people treat me.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_36,neo_36,neo_ne8,treatme
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 36. I often get angry at the way people treat me.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo3
+
+- rename: nffi_37
+  name: neo37
+  source: hcpa
+  nda:
+    type: Integer
+    description: I am a cheerful, high-spirited person.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: highsprt,neo2_37,neo_37
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 37. I am a cheerful, high-spirited person.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo3
+
+- rename: nffi_38
+  name: neo38
+  source: hcpa
+  nda:
+    type: Integer
+    description: I believe we should look to our religious authorities for decisions
+      on moral issues.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: moraliss,neo2_38,neo_38
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 38. I believe we should look to our religious authorities for decisions
+      on moral issues.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo3
+
+- rename: nffi_39
+  name: neo39
+  source: hcpa
+  nda:
+    type: Integer
+    description: Some people think of me as cold and calculating.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: coldcalc,neo2_39,neo_39
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 39. Some people think of me as cold and calculating.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo3
+
+- rename: nffi_40
+  name: neo40
+  source: hcpa
+  nda:
+    type: Integer
+    description: When I make a commitment,I can always be counted on to follow through.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: counton,neo2_40,neo_40
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 40. When I make a commitment, I can always be counted on to follow through.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo3
+
+- rename: nffi_41
+  name: neo41
+  source: hcpa
+  nda:
+    type: Integer
+    description: Too often when things go wrong,I get discouraged and feel like giving
+      up.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: gowrong,neo2_41,neo_41,neo_ne9
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 41. Too often, when things go wrong, I get discouraged and feel like giving
+      up.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo4
+
+- rename: nffi_42
+  name: neo42
+  source: hcpa
+  nda:
+    type: Integer
+    description: I am not a cheerful optimist.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_42,neo_42,optimist
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 42. I am not a cheerful optimist.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo4
+
+- rename: nffi_43
+  name: neo43
+  source: hcpa
+  nda:
+    type: Integer
+    description: Sometimes whenI am reading poetry or looking at a work of art, I
+      feel a chill or wave of excitement.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_43,neo_43,workart
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 43. Sometimes when I am reading poetry or looking at a work of art, I feel
+      a chill or wave of excitement.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo4
+
+- rename: nffi_44
+  name: neo44
+  source: hcpa
+  nda:
+    type: Integer
+    description: I'm hard-headed and tough-mindedIn my attitudes.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: hardhead,neo2_44,neo_44
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 44. I'm hard-headed and tough-minded in my attitudes.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo4
+
+- rename: nffi_45
+  name: neo45
+  source: hcpa
+  nda:
+    type: Integer
+    description: SometimesI'm not as dependable or reliable asI should be.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_45,neo_45,reliable
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 45. Sometimes I'm not as dependable or reliable as I should be.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo4
+
+- rename: nffi_46
+  name: neo46
+  source: hcpa
+  nda:
+    type: Integer
+    description: I am seldom sad or depressed.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_46,neo_46,neo_ne10,saddepr
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 46. I am seldom sad or depressed.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo4
+
+- rename: nffi_47
+  name: neo47
+  source: hcpa
+  nda:
+    type: Integer
+    description: My lifeIs fast-paced.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: fastpace,neo2_47,neo_47
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 47. My life is fast-paced.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo4
+
+- rename: nffi_48
+  name: neo48
+  source: hcpa
+  nda:
+    type: Integer
+    description: I have little interest in speculating on the nature of the universe
+      or the human condition.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_48,neo_48,universe
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 48. I have little interest in speculating on the nature of the universe
+      or the human condition.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo4
+
+- rename: nffi_49
+  name: neo49
+  source: hcpa
+  nda:
+    type: Integer
+    description: I generally try to be thoughtful and considerate.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_49,neo_49,thoughtf
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 49. I generally try to be thoughtful and considerate.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo4
+
+- rename: nffi_50
+  name: neo50
+  source: hcpa
+  nda:
+    type: Integer
+    description: I am a productive person who always gets the job done.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: jobdone,neo2_50,neo_50
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 50. I am a productive person who always gets the job done.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo4
+
+- rename: nffi_51
+  name: neo51
+  source: hcpa
+  nda:
+    type: Integer
+    description: I often feel helpless and want someone else to solve my problems.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_51,neo_51,neo_ne11,solvprob
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 51. I often feel helpless and want someone else to solve my problems.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo5
+
+- rename: nffi_52
+  name: neo52
+  source: hcpa
+  nda:
+    type: Integer
+    description: I am a very active person.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: active,neo2_52,neo_52
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 52. I am a very active person
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo5
+
+- rename: nffi_53
+  name: neo53
+  source: hcpa
+  nda:
+    type: Integer
+    description: I have a lot of intellectual curiosity.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: icurious,neo2_53,neo_53
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 53. I have a lot of intellectual curiosity.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo5
+
+- rename: nffi_54
+  name: neo54
+  source: hcpa
+  nda:
+    type: Integer
+    description: If I don't like people, I let them know it.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: dontlike,neo2_54,neo_54
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 54. If I don't like people, I let them know it.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo5
+
+- rename: nffi_55
+  name: neo55
+  source: hcpa
+  nda:
+    type: Integer
+    description: I never seem to be able to get organized.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_55,neo_55,organizd
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 55. I never seem to be able to get organized.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo5
+
+- rename: nffi_56
+  name: neo56
+  source: hcpa
+  nda:
+    type: Integer
+    description: At timesI have been so ashamedI just want to hide.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: ashamed,neo2_56,neo_56,neo_ne12
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 56. At times I have been so ashamed I just want to hide.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo5
+
+- rename: nffi_57
+  name: neo57
+  source: hcpa
+  nda:
+    type: Integer
+    description: I would rather go my own way than be a leader of others.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: leader,neo2_57,neo_57
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 57. I would rather go my own way than be a leader of others.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo5
+
+- rename: nffi_58
+  name: neo58
+  source: hcpa
+  nda:
+    type: Integer
+    description: I often enjoy playing with theories or abstractIdeas.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: abstract,neo2_58,neo_58
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 58. I often enjoy playing with theories or abstract ideas.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo5
+
+- rename: nffi_59
+  name: neo59
+  source: hcpa
+  nda:
+    type: Integer
+    description: If necessary, I am willing to manipulate people to get what I want.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: manipul,neo2_59,neo_59
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 59. If necessary, I am willing to manipulate people to get what I want.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo5
+
+- rename: nffi_60
+  name: neo60
+  source: hcpa
+  nda:
+    type: Integer
+    description: I strive for excellence in everything I do.
+    range:
+    - 1::5
+    - -7
+    notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree;
+      -7=Refused
+    alias: neo2_60,neo_60,strive
+    codes:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly agree
+      -7: Refused
+  redcap:
+    form: hcpa_block_2
+    type: radio
+    label: 60. I strive for excellence in everything I do.
+    choices:
+      1: Strongly Disagree
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: Strongly Agree
+    matrix: neo5

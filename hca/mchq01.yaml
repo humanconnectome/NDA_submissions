@@ -1,0 +1,679 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - hcpa
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - hcpa
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - hcpa
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - hcpa
+
+- name: gender
+  rename: sex
+  source:
+  - hcpa
+
+
+- rename: rev_endohypothyroidism
+  name: mstrl1a
+  source: hcpa
+  func: convert_all_to_text
+  nda:
+    type: String
+    length: 50
+    description: Hypothyroidism
+    range:
+    - 'Yes'
+    - 'No'
+    - NK
+    notes: NK = Not known
+    alias: mstrl1a
+    codes:
+      NK: Not known
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>A. Hypothyroidism</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[visit_1_arm_1][gender]=''2'''
+    matrix: hypo
+
+- rename: hyperthyroid
+  name: mstrl1b
+  source: hcpa
+  func: convert_all_to_text
+  nda:
+    type: String
+    length: 20
+    description: Hyperthyroidism
+    range:
+    - 'Yes'
+    - 'No'
+    - 999
+    notes: 999=NA/missing
+    alias: mstrl1b
+    codes:
+      999: NA/missing
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>B. Hyperthyroidism</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[visit_1_arm_1][gender]=''2'''
+    matrix: hypo
+
+- rename: scq_24_a
+  name: mstrl1c
+  source: hcpa
+  recode:
+    2: 0
+  nda:
+    type: Integer
+    description: Has a doctor ever told you that you have-Any other endocrine or hormone
+      problem
+    range:
+    - 0
+    - 1
+    notes: 0 = No;1 = Yes
+    alias: mstrl1c
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>C. Other Endocrine problem</p>'
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[visit_1_arm_1][gender]=''2'''
+    matrix: hypo
+
+- rename: hypoage
+  name: mstrl1a_age
+  source: hcpa
+  nda:
+    type: String
+    length: 50
+    description: age diagnosed hypothyroidism
+    alias: mstrl1a_age
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 40px''>Hypothyroidism Age at onset</p>'
+    validation: integer
+    val_min: 1.0
+    val_max: 100.0
+    branching: '[mstrl1a]=''1'''
+
+- rename: hyperage
+  name: mstrl1b_age
+  source: hcpa
+  nda:
+    type: String
+    length: 50
+    description: age diagnosed hyperthyroidism
+    alias: mstrl1b_age
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 40px''>Hyperthyroidism Age at onset</p>'
+    validation: integer
+    val_min: 1.0
+    val_max: 100.0
+    branching: '[mstrl1b]=''1'''
+
+- rename: mhx016b
+  name: mstrl1c_age
+  request: 'Please prepend "Age (in years) at onset: " to participant responses.'
+  source: hcpa
+  func: prepend_age_at_onset
+  nda:
+    type: String
+    length: 250
+    description: 'If YES, Enter onset/resolved date indicate ongoing with treatment
+      or not. If NOT EVALUATED, explain or describe below: Endocrine disorder'
+    alias: mstrl1c_age
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 40px''>Other Endocrine problem Age at onset</p>'
+    validation: integer
+    val_min: 1.0
+    val_max: 100.0
+    branching: '[mstrl1c]=''1'''
+
+- rename: mchq_17
+  name: mstrl2
+  source: hcpa
+  nda:
+    type: Integer
+    description: Do you have regular menstrual cycles?
+    range:
+    - 1
+    - 2
+    - 888
+    - 999
+    notes: 1=Yes; 2=No; 888=N/A; 999=missing data
+    alias: mstrl2
+    codes:
+      1: 'Yes'
+      2: 'No'
+      888: N/A
+      999: missing data
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: <p>2. Do you have regular menstrual cycles?</p>
+    choices:
+      1: 'Yes'
+      2: 'No'
+    branching: '[visit_1_arm_1][gender]=''2'''
+    alignment: RH
+
+- rename: mchq_18
+  name: mstrl2_reason
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: Do you have regular menstrual cycles. If no, explain
+    alias: mstrl2_reason
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 20px''>IF NO, Explain: </p>'
+    branching: '[visit_1_arm_1][gender]=''2'' and [mstrl2]=''2'''
+
+- rename: femenst
+  name: mstrl2_age
+  source: hcpa
+  nda:
+    type: Float
+    description: Age (in years) at First Menstrual Period
+    range:
+    - 1::100
+    - 888
+    - 999
+    notes: 888=N/A; 999=missing data
+    alias: gynecological_hist_9,mchq_19,mstrl2_age
+    codes:
+      888: N/A
+      999: missing data
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 20px''>At what age did your menstrual cycle begin?   _____
+      years</p>'
+    validation: integer
+    val_min: 1.0
+    val_max: 100.0
+    branching: '[visit_1_arm_1][gender]=''2'''
+
+- rename: mchq_21
+  name: mstrl2_cycle
+  source: hcpa
+  nda:
+    type: Integer
+    description: About how long is your entire cycle?
+    range:
+    - 1
+    - 2
+    - 3
+    notes: 1= less than every 25 days; 2= between 25-35 days; 3= more than every 35
+      days
+    alias: mstrl2_cycle
+    codes:
+      1: less than every 25 days
+      2: between 25-35 days
+      3: more than every 35 days
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 20px''>About how long is (was) your entire cycle?
+      (i.e. how long between start dates) </p>'
+    choices:
+      1: Less than every 25 days
+      2: Between 25-35 days
+      3: More than every 35 days
+    branching: '[visit_1_arm_1][gender]=''2'''
+
+- rename: meau_01b
+  name: mstrl2_last
+  source: hcpa
+  nda:
+    type: Date
+    description: When was the first day of your last menstrual period?
+    alias: mchq_38,mcq_01,mcq_04,mstrl2_last
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 20px''>What was the first day of your most recent
+      menstrual cycle? </p>'
+    note: mm-dd-yyyy
+    validation: date_mdy
+    branching: '[visit_1_arm_1][gender]=''2'''
+
+- rename: straw1
+  name: straw1
+  source: hcpa
+  nda:
+    type: Integer
+    description: Have you had a period in the past year (12 months)?
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: hcpa_block_1
+    section: <font size='+0.5'><center>STRAW+10</center></font>
+    type: radio
+    label: <p>1. Have you had a period in the past year (12 months)?</p>
+    choices:
+      1: 'Yes'
+      0: 'No'
+    branching: '[visit_1_arm_1][gender]=''2'''
+    alignment: RH
+
+- rename: straw1a
+  name: straw1a
+  source: hcpa
+  nda:
+    type: Integer
+    description: When was your last period? Choose one of the following.
+    range:
+    - 1::4
+    notes: 1 = less than two years ago ; 2 = 2-3 years ago ; 3 = 3-6 years ago ; 4
+      = more than 6 years ago
+    codes:
+      1: less than two years ago
+      2: 2-3 years ago
+      3: 3-6 years ago
+      4: more than 6 years ago
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>1a) When was your last period? Choose one
+      of the following.</p>'
+    choices:
+      1: 1a1) less than two years ago
+      2: 1a2) 2-3 years ago
+      3: 1a3) 3-6 years ago
+      4: 1a4) more than 6 years ago
+    branching: '[visit_1_arm_1][gender]=''2'' and [straw1]=''0'''
+
+- rename: straw1b
+  name: straw1b
+  source: hcpa
+  nda:
+    type: Integer
+    description: Why do you think your periods stopped? Please choose the best answer
+      below. (read through all).
+    range:
+    - 1::7
+    - 999
+    notes: 1 = They stopped naturally as a I grew older and became postmenopausal
+      - done with 'the change'? ; 2 = I have had a hysterectomy or endometrial ablation.
+      ; 3 = I am pregnant or breast feeding. ; 4 = I am taking medications such as
+      a birth control injection or an intrauterine device (eg, Mirena IUD) that makes
+      my periods stop. ; 5 = I had chemotherapy and/or other treatments for cancer,
+      and my periods stopped. ; 6 = I have dramatic weight loss (for example due to
+      HIV or other medical condition or stressful/traumatic life experience) and my
+      periods stopped. ; 7 = Other ; 999 = Don't know
+    codes:
+      1: They stopped naturally as a I grew older and became postmenopausal - done
+        with 'the change'?
+      2: I have had a hysterectomy or endometrial ablation.
+      3: I am pregnant or breast feeding.
+      4: I am taking medications such as a birth control injection or an intrauterine
+        device (eg, Mirena IUD) that makes my periods stop.
+      5: I had chemotherapy and/or other treatments for cancer, and my periods stopped.
+      6: I have dramatic weight loss (for example due to HIV or other medical condition
+        or stressful/traumatic life experience) and my periods stopped.
+      7: Other
+      999: Don't know
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>1b) Why do you think your periods stopped?
+      Please choose the best answer below. (read through all).</p>'
+    choices:
+      1: 1b1) They stopped naturally as a I grew older and became postmenopausal -
+        done with 'the change'?
+      2: 1b2) I have had a hysterectomy or endometrial ablation.
+      3: 1b3) I am pregnant or breast feeding.
+      4: 1b4) I am taking medications such as a birth control injection or an intrauterine
+        device (eg, Mirena IUD) that makes my periods stop.
+      5: 1b5) I had chemotherapy and/or other treatments for cancer, and my periods
+        stopped.
+      6: 1b6) I have dramatic weight loss (for example due to HIV or other medical
+        condition or stressful/traumatic life experience) and my periods stopped.
+      7: 1b7) Other
+      999: 1b7) Don't know
+    branching: '[visit_1_arm_1][gender]=''2'' and [straw1]=''0'''
+
+- rename: straw1b_other
+  name: straw1b_other
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'If other reason you think your periods stopped, fill in: '
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 80px''>If other, fill in: </p>'
+    branching: '[visit_1_arm_1][gender]=''2'' and [straw1b]=''7'''
+
+- rename: straw2
+  name: straw2
+  source: hcpa
+  nda:
+    type: Integer
+    description: In the past 12 months, have you skipped or missed a period? In other
+      words, have you ever gone 60 days, or two months, without a period?
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: <p>2. In the past 12 months, have you skipped or missed a period? In other
+      words, have you ever gone 60 days, or two months, without a period?</p>
+    choices:
+      1: 'Yes'
+      0: 'No'
+    branching: '[visit_1_arm_1][gender]=''2'' and [straw1]=''1'''
+    alignment: RH
+
+- rename: straw2a
+  name: straw2a
+  source: hcpa
+  nda:
+    type: Integer
+    description: Did you skip periods because you are getting older? (yes/no/don't
+      know)
+    range:
+    - 0
+    - 1
+    - 999
+    notes: 1 = Yes ; 0 = No ; 999 = Don't Know
+    codes:
+      1: 'Yes'
+      0: 'No'
+      999: Don't Know
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>2a) Did you skip periods because you are
+      getting older?
+
+      (yes/no/don''t know)</p>'
+    choices:
+      1: 'Yes'
+      0: 'No'
+      999: Don't Know
+    branching: '[visit_1_arm_1][gender]=''2'' and [straw2]=''1'''
+    alignment: RH
+
+- rename: straw2b
+  name: straw2b
+  source: hcpa
+  nda:
+    type: Integer
+    description: Choose one of the following reasons why you skipped periods.
+    range:
+    - 1::5
+    - 999
+    notes: 1 = I am/was pregnant or breast feeding. ; 2 = I have had a hysterectomy
+      or endometrial ablation. ; 3 = I am/was taking medications such as a birth control
+      injection that makes my periods stop. ; 4 = I had chemotherapy and my periods
+      stopped. ; 5 = Other ; 999 = Don't know
+    codes:
+      1: I am/was pregnant or breast feeding.
+      2: I have had a hysterectomy or endometrial ablation.
+      3: I am/was taking medications such as a birth control injection that makes
+        my periods stop.
+      4: I had chemotherapy and my periods stopped.
+      5: Other
+      999: Don't know
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>2b) Choose one of the following reasons
+      why you skipped periods.</p>'
+    choices:
+      1: I am/was pregnant or breast feeding.
+      2: I have had a hysterectomy or endometrial ablation.
+      3: I am/was taking medications such as a birth control injection that makes
+        my periods stop.
+      4: I had chemotherapy and my periods stopped.
+      5: Other
+      999: Don't know
+    branching: '[visit_1_arm_1][gender]=''2'' and [straw2a]=''0'' or [straw2a]=''999'' '
+
+- rename: straw2b_other
+  name: straw2b_other
+  source: hcpa
+  nda:
+    type: String
+    length: 100
+    description: 'If other reason you have skipped periods, fill in: '
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 80px''>If other, fill in: </p>'
+    branching: '[visit_1_arm_1][gender]=''2'' and [straw2b]=''5'''
+
+- rename: straw3
+  name: straw3
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Have you noticed that your period comes earlier or later than you
+      expected? '
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: <p>Have you noticed that your period comes earlier or later than you expected?
+      </p>
+    choices:
+      1: 'Yes'
+      0: 'No'
+    branching: '[visit_1_arm_1][gender]=''2'' and [straw2]=''0'''
+    alignment: RH
+
+- rename: straw3a
+  name: straw3a
+  source: hcpa
+  nda:
+    type: Integer
+    description: Has your period come late or early by at least a week?
+    range:
+    - 0
+    - 1
+    - 999
+    notes: 1 = Yes ; 0 = No ; 999 = Don't Know
+    codes:
+      1: 'Yes'
+      0: 'No'
+      999: Don't Know
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>3a) Has your period come late or early
+      by at least a week?</p>'
+    choices:
+      1: 'Yes'
+      0: 'No'
+      999: Don't Know
+    branching: '[visit_1_arm_1][gender]=''2'' and [straw3]=''1'''
+    alignment: RH
+
+- rename: straw3b
+  name: straw3b
+  source: hcpa
+  nda:
+    type: Integer
+    description: 'Did your period come late or early by at least a week two times
+      or more over the past year (12 months)? '
+    range:
+    - 0
+    - 1
+    notes: 1 = Yes ; 0 = No
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>3b) Did that happen two times or more over
+      the past year (12 months)? </p>'
+    choices:
+      1: 'Yes'
+      0: 'No'
+    branching: '[visit_1_arm_1][gender]=''2'' and [straw3a]=''1'''
+    alignment: RH
+
+- rename: straw4a
+  name: straw4a
+  source: hcpa
+  nda:
+    type: Integer
+    description: Have you noticed that the length of your period (# of bleeding days)
+      is shorter or longer than usual for you?
+    range:
+    - 0
+    - 1
+    - 999
+    notes: 1 = Yes ; 0 = No ; 999 = Don't Know
+    codes:
+      1: 'Yes'
+      0: 'No'
+      999: Don't Know
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>4a) Have you noticed that the length of
+      your period (# of bleeding days) is shorter or longer than usual for you?</p>'
+    choices:
+      1: 'Yes'
+      0: 'No'
+      999: Don't Know
+    branching: '[visit_1_arm_1][gender]=''2'' and [straw3]=''0'' or ([straw3a]=''0''
+      or [straw3a]=''999'')  or [straw3b]=''0'''
+    alignment: RH
+
+- rename: straw4b
+  name: straw4b
+  source: hcpa
+  nda:
+    type: Integer
+    description: Have you noticed that the amount of bleeding during your period is
+      more or less compared to what is normal for you?
+    range:
+    - 0
+    - 1
+    - 999
+    notes: 1 = Yes ; 0 = No ; 999 = Don't Know
+    codes:
+      1: 'Yes'
+      0: 'No'
+      999: Don't Know
+  redcap:
+    form: hcpa_block_1
+    type: radio
+    label: '<p style=''margin-left: 40px''>4b) Have you noticed that the amount of
+      bleeding during your period is more or less compared to what is normal for you?</p>'
+    choices:
+      1: 'Yes'
+      0: 'No'
+      999: Don't Know
+    branching: '[visit_1_arm_1][gender]=''2'' and [straw3]=''0'' or ([straw3a]=''0''
+      or [straw3a]=''999'')  or [straw3b]=''0'''
+    alignment: RH
+
+- rename: straw_code
+  name: straw_code
+  source: hcpa
+  nda:
+    type: Float
+    description: 'Stages of Reproductive Aging Workshop (STRAW) code'
+    range:
+    - 1.11
+    - 1.12
+    - 1.13
+    - 1.14
+    - 1.21
+    - 1.22
+    - 2
+    - 2.2
+    - 3
+    - 4.1
+    - 4.2
+    notes: '1.11 = Postmenopausal: plus 1a; 1.12 = Postmenopausal: plus 1b ; 1.13
+      = Postmenopausal:  plus 1c; 1.14 = Postmenopausal: plus 2; 1.21 = Postmenopausal;
+      1.22 = No periods for 12 months other reason; 2 = Late Transition; 2.2 = Skipped
+      periods not necessarily due to natural menopause; 3 = Early Transition ; 4.1
+      = Late Reproductive (i.e., late premenopausal); 4.2 = Reproductive(i.e., premenopausal)
+      - codes are explained in https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3580996/'
+    codes:
+      1.11: 'Postmenopausal: plus 1a'
+      1.12: 'Postmenopausal: plus 1b'
+      1.13: 'Postmenopausal:  plus 1c'
+      1.14: 'Postmenopausal: plus 2'
+      1.21: Postmenopausal
+      1.22: No periods for 12 months other reason
+      2: Late Transition
+      2.2: Skipped periods not necessarily due to natural menopause
+      3: Early Transition
+      4.1: Late Reproductive (i.e., late premenopausal)
+      4.2: Reproductive(i.e., premenopausal) - codes are explained in https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3580996/
+  redcap:
+    form: hcpa_block_1
+    type: calc
+    label: "<font size=2.5>CODE:</font>\r\n1.11, Postmenopausal +1a\r\n1.12, Postmenopausal\
+      \ +1b \r\n1.13, Postmenopausal +1c\r\n1.14,  Postmenopausal +2\r\n1.21, Postmenopausal\r\
+      \n1.22, No periods for 12 months other reason\r\n2,      Late Transition\r\n\
+      2.2,   Skipped periods not necessarily due to natural menopause\r\n3,      Early\
+      \ Transition \r\n4.1,   Late Reproductive (i.e., late premenopausal)\r\n4.2,\
+      \   Reproductive(i.e., premenopausal)"
+    choices: max( (if([straw1a]='1', 1.11, 'NaN')), (if([straw1a]='2', 1.12, 'NaN')),
+      (if([straw1a]='3', 1.13, 'NaN')), (if([straw1a]='4', 1.14, 'NaN')), (if([straw1b]='1',
+      1.21, 'NaN')), (if(([straw1b]>=2 and [straw1b]<=6), 1.22, 'NaN')), (if([straw2a]='1',
+      2, 'NaN')), (if([straw2b]>=1, 2.20, 'NaN')), (if([straw3b]='1', 3, 'NaN')),
+      (if([straw4a]='1', 4.10, 'NaN')), (if([straw4b]='1', 4.10, 'NaN')), (if(([straw4a]='0'
+      and [straw4b]='0'), 4.20, 'NaN')))
+    branching: '[visit_1_arm_1][gender]=''2'''
+    annotation: '@HIDDEN-SURVEY'

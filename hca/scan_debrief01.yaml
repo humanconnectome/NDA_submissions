@@ -1,0 +1,335 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - hcpa
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - hcpa
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - hcpa
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - hcpa
+
+- name: gender
+  rename: sex
+  source:
+  - hcpa
+
+
+- rename: satisfaction1
+  name: satisfaction1
+  source: hcpa
+  nda:
+    type: Integer
+    description: How comfortable were you in the scanner?
+    range:
+    - 1::5
+    notes: 1 = I was very uncomfortable the whole scan ; 2 = I was pretty uncomfortable
+      for most of the scan ; 3 = I was not comfortable but I was able to hold still
+      ; 4 = I was fairly comfortable and I could relax after a while ; 5 = I was completely
+      comfortable and found it easy to relax
+    codes:
+      1: I was very uncomfortable the whole scan
+      2: I was pretty uncomfortable for most of the scan
+      3: I was not comfortable but I was able to hold still
+      4: I was fairly comfortable and I could relax after a while
+      5: I was completely comfortable and found it easy to relax
+  redcap:
+    form: participant_satisfaction_survey
+    section: '<font size=''+0.5''><center>HCPA
+
+      Participant Satisfaction Survey
+
+      </center></font>'
+    type: radio
+    label: How comfortable were you in the scanner?
+    choices:
+      1: 1. I was very uncomfortable the whole scan
+      2: 2. I was pretty uncomfortable for most of the scan
+      3: 3. I was not comfortable but I was able to hold still
+      4: 4. I was fairly comfortable and I could relax after a while
+      5: 5. I was completely comfortable and found it easy to relax
+
+- rename: satisfaction1more
+  name: satisfaction1more
+  source: hcpa
+  nda:
+    type: String
+    length: 250
+    description: Was there any way we could have done more to make you comfortable?
+  redcap:
+    form: participant_satisfaction_survey
+    type: notes
+    label: Was there any way we could have done more to make you comfortable?
+    branching: '[satisfaction1]>=1 and [satisfaction1]<5'
+
+- rename: satisfaction2
+  name: satisfaction2
+  source: hcpa
+  nda:
+    type: Integer
+    description: How prepared were you (and your child) for your visit?
+    range:
+    - 1::3
+    notes: 1 = I knew what I was supposed to be doing and I was not caught off guard
+      by anything ; 2 = I knew the main parts what was going on = the details were
+      a little unclear ; 3 = I really didn't know what was going to happen in the
+      scan
+    codes:
+      1: I knew what I was supposed to be doing and I was not caught off guard by
+        anything
+      2: I knew the main parts what was going on = the details were a little unclear
+      3: I really didn't know what was going to happen in the scan
+  redcap:
+    form: participant_satisfaction_survey
+    type: radio
+    label: Did you feel prepared for the scan?
+    choices:
+      1: 1. I knew what I was supposed to be doing and I was not caught off guard
+        by anything
+      2: 2. I knew the main parts what was going on, the details were a little unclear
+      3: 3. I really didn't know what was going to happen in the scan
+
+- rename: satisfaction2more
+  name: satisfaction2more
+  source: hcpa
+  nda:
+    type: String
+    length: 250
+    description: Was there any way we could have informed you better about the scan?
+  redcap:
+    form: participant_satisfaction_survey
+    type: notes
+    label: Was there any way we could have informed you better about the scan?
+    branching: '[satisfaction2]>=2'
+
+- rename: satisfaction3
+  name: satisfaction3
+  source: hcpa
+  nda:
+    type: Integer
+    description: What do you think about the length of the scan?
+    range:
+    - 1::5
+    notes: 1 = It was pretty long ; 2 = It was somewhat long ; 3 = It was an ok length
+      ; 4 = I could have gone on a little longer ; 5 = I could have gone on a lot
+      longer
+    codes:
+      1: It was pretty long
+      2: It was somewhat long
+      3: It was an ok length
+      4: I could have gone on a little longer
+      5: I could have gone on a lot longer
+  redcap:
+    form: participant_satisfaction_survey
+    type: radio
+    label: What do you think about the length of the scan?
+    choices:
+      1: 1. It was pretty long
+      2: 2. It was somewhat long
+      3: 3. It was an ok length
+      4: 4. I could have gone on a little longer
+      5: 5. I could have gone on a lot longer
+
+- rename: satisfaction4
+  name: satisfaction4
+  source: hcpa
+  nda:
+    type: Integer
+    description: What do you think about the people you worked with?
+    range:
+    - 1::4
+    notes: 1 = Everyone was helpful and caring = I felt like I could trust them ;
+      2 = They were nice = but I felt uncomfortable answering  some of the questions
+      ; 3 = They didn't seem very helpful = or attentive to me ; 4 = I didn't like
+      some of the people I worked with
+    codes:
+      1: Everyone was helpful and caring = I felt like I could trust them
+      2: They were nice = but I felt uncomfortable answering  some of the questions
+      3: They didn't seem very helpful = or attentive to me
+      4: I didn't like some of the people I worked with
+  redcap:
+    form: participant_satisfaction_survey
+    type: radio
+    label: What do you think about the people you worked with?
+    choices:
+      1: 1. Everyone was helpful and caring, I felt like I could trust them
+      2: 2. They were nice, but I felt uncomfortable answering  some of the questions
+      3: 3. They didn't seem very helpful, or attentive to me
+      4: 4. I didn't like some of the people I worked with
+
+- rename: satisfaction4more
+  name: satisfaction4more
+  source: hcpa
+  nda:
+    type: String
+    length: 250
+    description: Do you have any ideas about how we could be better?
+  redcap:
+    form: participant_satisfaction_survey
+    type: notes
+    label: Do you have any ideas about how we could be better?
+    branching: '[satisfaction4]>=2'
+
+- rename: satisfaction5
+  name: satisfaction5
+  source: hcpa
+  nda:
+    type: String
+    length: 250
+    description: What part of your visit did you enjoy most? What did you like about
+      it?
+  redcap:
+    form: participant_satisfaction_survey
+    type: notes
+    label: What part of your visit did you enjoy most? What did you like about it?
+
+- rename: satisfaction6
+  name: satisfaction6
+  source: hcpa
+  nda:
+    type: String
+    length: 250
+    description: What part of your visit didn't you like? Could we do anything to
+      make it better?
+  redcap:
+    form: participant_satisfaction_survey
+    type: notes
+    label: What part of your visit didn't you like? Could we do anything to make it
+      better?
+
+- rename: satisfaction7
+  name: satisfaction7
+  source: hcpa
+  nda:
+    type: Integer
+    description: Do you think you would like to come back in two years to do everything
+      again?
+    range:
+    - 1::5
+    notes: 1 = I wouldn't want to do it again ; 2 = It would be alright ; 3 = I would
+      probably like to come back ; 4 = I would like to come back ; 5 = I would be
+      really excited to come back
+    codes:
+      1: I wouldn't want to do it again
+      2: It would be alright
+      3: I would probably like to come back
+      4: I would like to come back
+      5: I would be really excited to come back
+  redcap:
+    form: participant_satisfaction_survey
+    type: radio
+    label: Do you think you would like to come back in two years to do everything
+      again?
+    choices:
+      1: 1. I wouldn't want to do it again
+      2: 2. It would be alright
+      3: 3. I would probably like to come back
+      4: 4. I would like to come back
+      5: 5. I would be really excited to come back
+    branching: '[visit] = ''1'''
+
+- rename: satisfaction8
+  name: satisfaction8
+  source: hcpa
+  nda:
+    type: Integer
+    description: Do you think the compensation was enough for what you were asked
+      to do?
+    range:
+    - 1
+    - 2
+    notes: 1 = I think it was enough ; 2 = I think it could have been more
+    codes:
+      1: I think it was enough
+      2: I think it could have been more
+  redcap:
+    form: participant_satisfaction_survey
+    type: radio
+    label: Do you think the compensation was enough for what you were asked to do?
+    choices:
+      1: 1. I think it was enough
+      2: 2. I think it could have been more
+
+- rename: satisfaction9
+  name: satisfaction9
+  source: hcpa
+  nda:
+    type: Integer
+    description: Did you have enough breaks?
+    range:
+    - 1::3
+    notes: 1 = I didn't really need breaks ; 2 = There was enough time for breaks
+      ; 3 = I could have used more time for breaks
+    codes:
+      1: I didn't really need breaks
+      2: There was enough time for breaks
+      3: I could have used more time for breaks
+  redcap:
+    form: participant_satisfaction_survey
+    type: radio
+    label: Did you have enough breaks?
+    choices:
+      1: 1. I didn't really need breaks
+      2: 2. There was enough time for breaks
+      3: 3. I could have used more time for breaks
+
+- rename: satisfaction10
+  name: satisfaction10
+  source: hcpa
+  nda:
+    type: Integer
+    description: Did you feel like you were able to complete all of our measures?
+    range:
+    - 1::3
+    notes: 1 = I felt like could do everything ; 2 = I could do most things = but
+      some things were difficult ; 3 = I struggled with quite a few things
+    codes:
+      1: I felt like could do everything
+      2: I could do most things = but some things were difficult
+      3: I struggled with quite a few things
+  redcap:
+    form: participant_satisfaction_survey
+    type: radio
+    label: Did you feel like you were able to complete all of our measures?
+    choices:
+      1: 1. I felt like could do everything
+      2: 2. I could do most things, but some things were difficult
+      3: 3. I struggled with quite a few things
+
+- rename: satisfaction11
+  name: satisfaction11
+  source: hcpa
+  nda:
+    type: Integer
+    description: How reliable was communication with the lab?
+    range:
+    - 1::4
+    notes: 1 = I could always get ahold of someone when I needed to ; 2 = I had to
+      try once or twice = but I connected eventually ; 3 = It was hit or miss ; 4
+      = I couldn't reach anyone when I needed to
+    codes:
+      1: I could always get ahold of someone when I needed to
+      2: I had to try once or twice = but I connected eventually
+      3: It was hit or miss
+      4: I couldn't reach anyone when I needed to
+  redcap:
+    form: participant_satisfaction_survey
+    type: radio
+    label: How reliable was communication with the lab?
+    choices:
+      1: 1. I could always get ahold of someone when I needed to
+      2: 2. I had to try once or twice, but I connected eventually
+      3: 3. It was hit or miss
+      4: 4. I couldn't reach anyone when I needed to

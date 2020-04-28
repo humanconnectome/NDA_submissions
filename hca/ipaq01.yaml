@@ -1,0 +1,238 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - hcpa
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - hcpa
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - hcpa
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - hcpa
+
+- name: gender
+  rename: sex
+  source:
+  - hcpa
+
+
+- rename: ipaq2
+  name:
+  - ipaq1
+  - ipaq1days
+  code: return x.where(x == 0, y)
+  source: hcpa
+  request: Please withhold "ipaq1" column, but add the code of 0 to the count of days
+    in the companion ("ipaq1days") column (still indicates the activity was not done).
+  nda:
+    type: Integer
+    description: During the last 7 days, on how many days did you do vigorous physical
+      activities like heavy lifting, digging, aerobics, or fast cycling? (# days per
+      week)
+    alias: ipaq1days,ipaq_1111,v10_ipaq_vigorous_daysinpastweek,v1_ipaq_vigorous_daysinpastweek,v7_ipaq_vigorous_daysinpastweek,vigdays
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 40px''>Days per week:</p>'
+    validation: number
+    val_min: 1.0
+    val_max: 7.0
+    branching: '[ipaq1]=''1'''
+
+- rename: ipaq3a
+  name: ipaq2hrs
+  source: hcpa
+  nda:
+    type: Integer
+    description: How much time did you usually spend doing vigorous physical activities
+      on one of those days? (hours per day)
+    alias: ipaq2hrs,vighours
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 40px''>Hours per day:</p>'
+    validation: number
+    val_min: 0.0
+    val_max: 24.0
+    branching: '[ipaq1]=''1'''
+
+- rename: ipaq3b
+  name: ipaq2mins
+  source: hcpa
+  nda:
+    type: Integer
+    description: How much time did you usually spend doing vigorous physical activities
+      on one of those days? (minutes per day)
+    notes: 999 = Unknown
+    alias: ipaq2mins,ipaq_1112_mins,v10_ipaq_vigorous_minutesperdayinpastweek,v1_ipaq_vigorous_minutesperdayinpastweek,v7_ipaq_vigorous_minutesperdayinpastweek,vigminutes
+    codes:
+      999: Unknown
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 40px''>Minutes per day:</p>'
+    validation: number
+    val_min: 0.0
+    val_max: 60.0
+    branching: '[ipaq1]=''1'''
+
+- rename: ipaq4
+  name:
+  - ipaq3
+  - ipaq3days
+  code: return x.where(x == 0, y)
+  source: hcpa
+  nda:
+    type: Integer
+    description: During the last 7 days, on how many days did you do moderate physical
+      activities like carrying light loads, bicycling at a regular pace, or doubles
+      tennis? (# days per week)
+    alias: ipaq3days,ipaq_1113_days,moddays,v10_ipaq_moderate_daysinpastweek,v1_ipaq_moderate_daysinpastweek,v7_ipaq_moderate_daysinpastweek
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 40px''>Days per week:</p>'
+    validation: number
+    val_min: 1.0
+    val_max: 7.0
+    branching: '[ipaq3]=''1'''
+
+- rename: ipaq5a
+  name: ipaq4hrs
+  source: hcpa
+  nda:
+    type: Integer
+    description: How much time did you usually spend doing moderate physical activities
+      on one of those days? (hours per day)
+    alias: ipaq4hrs,modhours
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 40px''>Hours per day:</p>'
+    validation: number
+    val_min: 0.0
+    val_max: 24.0
+    branching: '[ipaq3]=''1'''
+
+- rename: ipaq5b
+  name: ipaq4mins
+  source: hcpa
+  nda:
+    type: Integer
+    description: How much time did you usually spend doing moderate physical activities
+      on one of those days? (minutes per day)
+    notes: 999 = Unknown
+    alias: ipaq4mins,ipaq_1114_mins,modminutes,v10_ipaq_moderate_minutesperdayinpastweek,v1_ipaq_moderate_minutesperdayinpastweek,v7_ipaq_moderate_minutesperdayinpastweek
+    codes:
+      999: Unknown
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 40px''>Minutes per day:</p>'
+    validation: number
+    val_min: 0.0
+    val_max: 60.0
+    branching: '[ipaq3]=''1'''
+
+- rename: ipaq6
+  name:
+  - ipaq5
+  - ipaq5days
+  code: return x.where(x == 0, y)
+  source: hcpa
+  nda:
+    type: Integer
+    description: During the last 7 days, on how many days did you walk for at least
+      ten minutes at a time? (# days per week)
+    alias: ipaq5days,ipaq_1115_days,v10_ipaq_walking_daysinpastweek,v1_ipaq_walking_daysinpastweek,v7_ipaq_walking_daysinpastweek,walkdays
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 40px''>Days per week:</p>'
+    validation: number
+    val_min: 1.0
+    val_max: 7.0
+    branching: '[ipaq5]=''1'''
+
+- rename: ipaq7a
+  name: ipaq6hrs
+  source: hcpa
+  nda:
+    type: Integer
+    description: How much time did you usually spend walking on one of those days?
+      (hours per day)
+    alias: ipaq6hrs,walkhours
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 40px''>Hours per day:</p>'
+    validation: number
+    val_min: 0.0
+    val_max: 24.0
+    branching: '[ipaq5]=''1'''
+
+- rename: ipaq7b
+  name: ipaq6mins
+  source: hcpa
+  nda:
+    type: Integer
+    description: How much time did you usually spend walking on one of those days?
+      (minutes per day)
+    notes: 999 = Unknown
+    alias: ipaq6mins,ipaq_1116_mins,v10_ipaq_walking_minutesperdayinpastweek,v1_ipaq_walking_minutesperdayinpastweek,v7_ipaq_walking_minutesperdayinpastweek,walkminutes
+    codes:
+      999: Unknown
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 40px''>Minutes per day:</p>'
+    validation: number
+    val_min: 0.0
+    val_max: 60.0
+    branching: '[ipaq5]=''1'''
+
+- rename: ipaq26a
+  name: ipaq7hrs
+  old_code: studydata.loc[studydata.ipaq7=='0','ipaq7days']=0
+  source: hcpa
+  nda:
+    type: Integer
+    description: During the last 7 days, how much time did you spend sitting on a
+      week day? (hours per day)
+    alias: ipaq7hrs,ipaq7mins,v10_ipaq_sitting_minutesperdayinpastweek,v7_ipaq_sitting_minutesperdayinpastweek
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 40px''>Hours per day:</p>'
+    validation: number
+    val_min: 0.0
+    val_max: 24.0
+    branching: '[ipaq7]=''1'''
+
+- rename: ipaq26n
+  name: ipaq7mins
+  source: hcpa
+  nda:
+    type: Integer
+    description: During the last 7 days, how much time did you spend sitting on a
+      week day? (hours per day)
+    alias: ipaq7hrs,ipaq7mins,v10_ipaq_sitting_minutesperdayinpastweek,v7_ipaq_sitting_minutesperdayinpastweek
+  redcap:
+    form: hcpa_block_1
+    type: text
+    label: '<p style=''margin-left: 40px''>Minutes per day:</p>'
+    validation: number
+    val_min: 0.0
+    val_max: 60.0
+    branching: '[ipaq7]=''1'''

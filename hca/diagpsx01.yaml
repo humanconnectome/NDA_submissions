@@ -1,0 +1,58 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - ssaga
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - ssaga
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - ssaga
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - ssaga
+
+- name: gender
+  rename: sex
+  source:
+  - ssaga
+
+- name: oc1
+  rename: dem_18p
+  recode:
+    1: 0
+    5: 1
+  source:
+  - ssaga
+
+- name: oc1b
+  rename: qj3b
+  source:
+  - ssaga
+
+- name: oc1c
+  rename: oc1c
+  recode:
+    1: 0
+    5: 1
+  source:
+  - ssaga
+
+- name: oc_notes
+  rename: behavior
+  source:
+  - ssaga
+
+- name: oc_notes_general
+  rename: comments_misc
+  source:
+  - ssaga

@@ -258,6 +258,7 @@ elements:
 - rename: meau_01b
   name: mstrl2_last
   source: hcpa
+  func: format_date
   nda:
     type: Date
     description: When was the first day of your last menstrual period?

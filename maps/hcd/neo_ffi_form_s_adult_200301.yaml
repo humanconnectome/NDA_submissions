@@ -818,30 +818,35 @@ elements:
 
 - rename: neo_n
   name: neo_n
+  code: return x.fillna(999)
   source:
     - child
     - teen
 
 - rename: neo_e
   name: neo_e
+  code: return x.fillna(999)
   source:
     - child
     - teen
 
 - rename: neo_o
   name: neo_o
+  code: return x.fillna(999)
   source:
     - child
     - teen
 
 - rename: neo_a
   name: neo_a
+  code: return x.fillna(999)
   source:
     - child
     - teen
 
 - rename: neo_c
   name: neo_c
+  code: return x.fillna(999)
   source:
     - child
     - teen

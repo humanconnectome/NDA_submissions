@@ -1,5 +1,31 @@
 elements:
 
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - hcpa
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - hcpa
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - hcpa
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - hcpa
+
+- name: gender
+  rename: sex
+  source:
+  - hcpa
+
 - rename: caffeine_session
   name: caffeine_session
   source: hcpa

@@ -1,5 +1,43 @@
 elements:
 
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - qint
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - qint
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - qint
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - qint
+
+- name: gender
+  rename: sex
+  source:
+  - qint
+
+- rename: ravlt_delt
+  source: qint
+  code: return -98
+
+- rename: ravlt_disct
+  source: qint
+  code: return -98
+
+- rename: ravlt_tott
+  source: qint
+  code: return -98
+
 - rename: pea_ravlt_sd_tc
   name: ravlt_pea_ravlt_sd_tc
   source: qint

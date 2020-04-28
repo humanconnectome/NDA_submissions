@@ -24,7 +24,7 @@ def parent2child(df, keep_withdrawn=False):
 
 class RedcapLoader:
 
-    def __init__(self, name, definitions_dir="./dd"):
+    def __init__(self, name, definitions_dir="./definitions/"):
         self.name = name
         self.Y = EasyYaml()
         self.directory = definitions_dir

@@ -2,3 +2,5 @@
 **/*.pkl
 **/*.ipynb
 creds/
+.bk.*/
+.*cache

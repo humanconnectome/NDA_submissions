@@ -26,13 +26,6 @@ elements:
   source:
   - hcpa
 
-- rename: version_form
-  request: Please have sessions' data share columns, one column for each unique question.
-    This will require copying/pasting 'subjectkey' - 'sex' to align with the stacked
-    data. The rows can be labeled by session/day with the 'version_form' column. If
-    sessions are stored in separate files, then you can load them for submission together.
-    Our Validation and Upload Tool will merge them automatically.
-
 - rename: caffeine_session
   name: caffeine_session
   source: hcpa
@@ -73,183 +66,183 @@ elements:
   name: caffeine_s1vsttime2
   source: hcpa
 
-- rename: caffeine_s1yn
+- rename: caffeine_s2yn
   name: caffeine_s2yn
   source: hcpa
 
-- rename: caffeine_s1
+- rename: caffeine_s2
   name: caffeine_s2
   source: hcpa
 
-- rename: caffeine_s1pretype
+- rename: caffeine_s2pretype
   name: caffeine_s2pretype
   source: hcpa
 
-- rename: caffeine_s1pretime
+- rename: caffeine_s2pretime
   name: caffeine_s2pretime
   source: hcpa
 
-- rename: caffeine_s1preday
+- rename: caffeine_s2preday
   name: caffeine_s2preday
   source: hcpa
 
-- rename: caffeine_s1vsttype1
+- rename: caffeine_s2vsttype1
   name: caffeine_s2vsttype1
   source: hcpa
 
-- rename: caffeine_s1vsttime1
+- rename: caffeine_s2vsttime1
   name: caffeine_s2vsttime1
   source: hcpa
 
-- rename: caffeine_s1vsttype2
+- rename: caffeine_s2vsttype2
   name: caffeine_s2vsttype2
   source: hcpa
 
-- rename: caffeine_s1vsttime2
+- rename: caffeine_s2vsttime2
   name: caffeine_s2vsttime2
   source: hcpa
 
-- rename: caffeine_s1yn
+- rename: caffeine_s3yn
   name: caffeine_s3yn
   source: hcpa
 
-- rename: caffeine_s1
+- rename: caffeine_s3
   name: caffeine_s3
   source: hcpa
 
-- rename: caffeine_s1pretype
+- rename: caffeine_s3pretype
   name: caffeine_s3pretype
   source: hcpa
 
-- rename: caffeine_s1pretime
+- rename: caffeine_s3pretime
   name: caffeine_s3pretime
   source: hcpa
 
-- rename: caffeine_s1preday
+- rename: caffeine_s3preday
   name: caffeine_s3preday
   source: hcpa
 
-- rename: caffeine_s1vsttype1
+- rename: caffeine_s3vsttype1
   name: caffeine_s3vsttype1
   source: hcpa
 
-- rename: caffeine_s1vsttime1
+- rename: caffeine_s3vsttime1
   name: caffeine_s3vsttime1
   source: hcpa
 
-- rename: caffeine_s1vsttype2
+- rename: caffeine_s3vsttype2
   name: caffeine_s3vsttype2
   source: hcpa
 
-- rename: caffeine_s1vsttime2
+- rename: caffeine_s3vsttime2
   name: caffeine_s3vsttime2
   source: hcpa
 
-- rename: caffeine_s1yn
+- rename: caffeine_s4yn
   name: caffeine_s4yn
   source: hcpa
 
-- rename: caffeine_s1
+- rename: caffeine_s4
   name: caffeine_s4
   source: hcpa
 
-- rename: caffeine_s1pretype
+- rename: caffeine_s4pretype
   name: caffeine_s4pretype
   source: hcpa
 
-- rename: caffeine_s1pretime
+- rename: caffeine_s4pretime
   name: caffeine_s4pretime
   source: hcpa
 
-- rename: caffeine_s1preday
+- rename: caffeine_s4preday
   name: caffeine_s4preday
   source: hcpa
 
-- rename: caffeine_s1vsttype1
+- rename: caffeine_s4vsttype1
   name: caffeine_s4vsttype1
   source: hcpa
 
-- rename: caffeine_s1vsttime1
+- rename: caffeine_s4vsttime1
   name: caffeine_s4vsttime1
   source: hcpa
 
-- rename: caffeine_s1vsttype2
+- rename: caffeine_s4vsttype2
   name: caffeine_s4vsttype2
   source: hcpa
 
-- rename: caffeine_s1vsttime2
+- rename: caffeine_s4vsttime2
   name: caffeine_s4vsttime2
   source: hcpa
 
-- rename: caffeine_s1yn
+- rename: caffeine_s5yn
   name: caffeine_s5yn
   source: hcpa
 
-- rename: caffeine_s1
+- rename: caffeine_s5
   name: caffeine_s5
   source: hcpa
 
-- rename: caffeine_s1pretype
+- rename: caffeine_s5pretype
   name: caffeine_s5pretype
   source: hcpa
 
-- rename: caffeine_s1pretime
+- rename: caffeine_s5pretime
   name: caffeine_s5pretime
   source: hcpa
 
-- rename: caffeine_s1preday
+- rename: caffeine_s5preday
   name: caffeine_s5preday
   source: hcpa
 
-- rename: caffeine_s1vsttype1
+- rename: caffeine_s5vsttype1
   name: caffeine_s5vsttype1
   source: hcpa
 
-- rename: caffeine_s1vsttime1
+- rename: caffeine_s5vsttime1
   name: caffeine_s5vsttime1
   source: hcpa
 
-- rename: caffeine_s1vsttype2
+- rename: caffeine_s5vsttype2
   name: caffeine_s5vsttype2
   source: hcpa
 
-- rename: caffeine_s1vsttime2
+- rename: caffeine_s5vsttime2
   name: caffeine_s5vsttime2
   source: hcpa
 
-- rename: caffeine_s1yn
+- rename: caffeine_s6yn
   name: caffeine_s6yn
   source: hcpa
 
-- rename: caffeine_s1
+- rename: caffeine_s6
   name: caffeine_s6
   source: hcpa
 
-- rename: caffeine_s1pretype
+- rename: caffeine_s6pretype
   name: caffeine_s6pretype
   source: hcpa
 
-- rename: caffeine_s1pretime
+- rename: caffeine_s6pretime
   name: caffeine_s6pretime
   source: hcpa
 
-- rename: caffeine_s1preday
+- rename: caffeine_s6preday
   name: caffeine_s6preday
   source: hcpa
 
-- rename: caffeine_s1vsttype1
+- rename: caffeine_s6vsttype1
   name: caffeine_s6vsttype1
   source: hcpa
 
-- rename: caffeine_s1vsttime1
+- rename: caffeine_s6vsttime1
   name: caffeine_s6vsttime1
   source: hcpa
 
-- rename: caffeine_s1vsttype2
+- rename: caffeine_s6vsttype2
   name: caffeine_s6vsttype2
   source: hcpa
 
-- rename: caffeine_s1vsttime2
+- rename: caffeine_s6vsttime2
   name: caffeine_s6vsttime2
   source: hcpa
 
@@ -293,183 +286,183 @@ elements:
   name: nicotine_s1vsttime2
   source: hcpa
 
-- rename: nicotine_s1yn
+- rename: nicotine_s2yn
   name: nicotine_s2yn
   source: hcpa
 
-- rename: nicotine_s1
+- rename: nicotine_s2
   name: nicotine_s2
   source: hcpa
 
-- rename: nicotine_s1pretype
+- rename: nicotine_s2pretype
   name: nicotine_s2pretype
   source: hcpa
 
-- rename: nicotine_s1pretime
+- rename: nicotine_s2pretime
   name: nicotine_s2pretime
   source: hcpa
 
-- rename: nicotine_s1preday
+- rename: nicotine_s2preday
   name: nicotine_s2preday
   source: hcpa
 
-- rename: nicotine_s1vsttype1
+- rename: nicotine_s2vsttype1
   name: nicotine_s2vsttype1
   source: hcpa
 
-- rename: nicotine_s1vsttime1
+- rename: nicotine_s2vsttime1
   name: nicotine_s2vsttime1
   source: hcpa
 
-- rename: nicotine_s1vsttype2
+- rename: nicotine_s2vsttype2
   name: nicotine_s2vsttype2
   source: hcpa
 
-- rename: nicotine_s1vsttime2
+- rename: nicotine_s2vsttime2
   name: nicotine_s2vsttime2
   source: hcpa
 
-- rename: nicotine_s1yn
+- rename: nicotine_s3yn
   name: nicotine_s3yn
   source: hcpa
 
-- rename: nicotine_s1
+- rename: nicotine_s3
   name: nicotine_s3
   source: hcpa
 
-- rename: nicotine_s1pretype
+- rename: nicotine_s3pretype
   name: nicotine_s3pretype
   source: hcpa
 
-- rename: nicotine_s1pretime
+- rename: nicotine_s3pretime
   name: nicotine_s3pretime
   source: hcpa
 
-- rename: nicotine_s1preday
+- rename: nicotine_s3preday
   name: nicotine_s3preday
   source: hcpa
 
-- rename: nicotine_s1vsttype1
+- rename: nicotine_s3vsttype1
   name: nicotine_s3vsttype1
   source: hcpa
 
-- rename: nicotine_s1vsttime1
+- rename: nicotine_s3vsttime1
   name: nicotine_s3vsttime1
   source: hcpa
 
-- rename: nicotine_s1vsttype2
+- rename: nicotine_s3vsttype2
   name: nicotine_s3vsttype2
   source: hcpa
 
-- rename: nicotine_s1vsttime2
+- rename: nicotine_s3vsttime2
   name: nicotine_s3vsttime2
   source: hcpa
 
-- rename: nicotine_s1yn
+- rename: nicotine_s4yn
   name: nicotine_s4yn
   source: hcpa
 
-- rename: nicotine_s1
+- rename: nicotine_s4
   name: nicotine_s4
   source: hcpa
 
-- rename: nicotine_s1pretype
+- rename: nicotine_s4pretype
   name: nicotine_s4pretype
   source: hcpa
 
-- rename: nicotine_s1pretime
+- rename: nicotine_s4pretime
   name: nicotine_s4pretime
   source: hcpa
 
-- rename: nicotine_s1preday
+- rename: nicotine_s4preday
   name: nicotine_s4preday
   source: hcpa
 
-- rename: nicotine_s1vsttype1
+- rename: nicotine_s4vsttype1
   name: nicotine_s4vsttype1
   source: hcpa
 
-- rename: nicotine_s1vsttime1
+- rename: nicotine_s4vsttime1
   name: nicotine_s4vsttime1
   source: hcpa
 
-- rename: nicotine_s1vsttype2
+- rename: nicotine_s4vsttype2
   name: nicotine_s4vsttype2
   source: hcpa
 
-- rename: nicotine_s1vsttime2
+- rename: nicotine_s4vsttime2
   name: nicotine_s4vsttime2
   source: hcpa
 
-- rename: nicotine_s1yn
+- rename: nicotine_s5yn
   name: nicotine_s5yn
   source: hcpa
 
-- rename: nicotine_s1
+- rename: nicotine_s5
   name: nicotine_s5
   source: hcpa
 
-- rename: nicotine_s1pretype
+- rename: nicotine_s5pretype
   name: nicotine_s5pretype
   source: hcpa
 
-- rename: nicotine_s1pretime
+- rename: nicotine_s5pretime
   name: nicotine_s5pretime
   source: hcpa
 
-- rename: nicotine_s1preday
+- rename: nicotine_s5preday
   name: nicotine_s5preday
   source: hcpa
 
-- rename: nicotine_s1vsttype1
+- rename: nicotine_s5vsttype1
   name: nicotine_s5vsttype1
   source: hcpa
 
-- rename: nicotine_s1vsttime1
+- rename: nicotine_s5vsttime1
   name: nicotine_s5vsttime1
   source: hcpa
 
-- rename: nicotine_s1vsttype2
+- rename: nicotine_s5vsttype2
   name: nicotine_s5vsttype2
   source: hcpa
 
-- rename: nicotine_s1vsttime2
+- rename: nicotine_s5vsttime2
   name: nicotine_s5vsttime2
   source: hcpa
 
-- rename: nicotine_s1yn
+- rename: nicotine_s6yn
   name: nicotine_s6yn
   source: hcpa
 
-- rename: nicotine_s1
+- rename: nicotine_s6
   name: nicotine_s6
   source: hcpa
 
-- rename: nicotine_s1pretype
+- rename: nicotine_s6pretype
   name: nicotine_s6pretype
   source: hcpa
 
-- rename: nicotine_s1pretime
+- rename: nicotine_s6pretime
   name: nicotine_s6pretime
   source: hcpa
 
-- rename: nicotine_s1preday
+- rename: nicotine_s6preday
   name: nicotine_s6preday
   source: hcpa
 
-- rename: nicotine_s1vsttype1
+- rename: nicotine_s6vsttype1
   name: nicotine_s6vsttype1
   source: hcpa
 
-- rename: nicotine_s1vsttime1
+- rename: nicotine_s6vsttime1
   name: nicotine_s6vsttime1
   source: hcpa
 
-- rename: nicotine_s1vsttype2
+- rename: nicotine_s6vsttype2
   name: nicotine_s6vsttype2
   source: hcpa
 
-- rename: nicotine_s1vsttime2
+- rename: nicotine_s6vsttime2
   name: nicotine_s6vsttime2
   source: hcpa
 
@@ -507,144 +500,180 @@ elements:
 
 - rename: drug1_1
   name: drug1_1
+  recode: {2: 0}
   source: hcpa
 
 - rename: drug1_2
   name: drug1_2
+  recode: {2: 0}
   source: hcpa
 
 - rename: drug1_3
   name: drug1_3
+  recode: {2: 0}
   source: hcpa
 
 - rename: drug1_4
   name: drug1_4
+  recode: {2: 0}
   source: hcpa
 
 - rename: drug1_5
   name: drug1_5
+  recode: {2: 0}
   source: hcpa
 
 - rename: drug1_6
   name: drug1_6
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_1
+- rename: drug2_1
   name: drug2_1
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_2
+- rename: drug2_2
   name: drug2_2
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_3
+- rename: drug2_3
   name: drug2_3
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_4
+- rename: drug2_4
   name: drug2_4
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_5
+- rename: drug2_5
   name: drug2_5
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_6
+- rename: drug2_6
   name: drug2_6
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_1
+- rename: drug3_1
   name: drug3_1
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_2
+- rename: drug3_2
   name: drug3_2
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_3
+- rename: drug3_3
   name: drug3_3
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_4
+- rename: drug3_4
   name: drug3_4
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_5
+- rename: drug3_5
   name: drug3_5
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_6
+- rename: drug3_6
   name: drug3_6
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_1
+- rename: drug4_1
   name: drug4_1
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_2
+- rename: drug4_2
   name: drug4_2
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_3
+- rename: drug4_3
   name: drug4_3
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_4
+- rename: drug4_4
   name: drug4_4
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_5
+- rename: drug4_5
   name: drug4_5
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_6
+- rename: drug4_6
   name: drug4_6
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_1
+- rename: drug5_1
   name: drug5_1
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_2
+- rename: drug5_2
   name: drug5_2
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_3
+- rename: drug5_3
   name: drug5_3
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_4
+- rename: drug5_4
   name: drug5_4
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_5
+- rename: drug5_5
   name: drug5_5
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_6
+- rename: drug5_6
   name: drug5_6
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_1
+- rename: drug6_1
   name: drug6_1
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_2
+- rename: drug6_2
   name: drug6_2
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_3
+- rename: drug6_3
   name: drug6_3
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_4
+- rename: drug6_4
   name: drug6_4
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_5
+- rename: drug6_5
   name: drug6_5
+  recode: {2: 0}
   source: hcpa
 
-- rename: drug1_6
+- rename: drug6_6
   name: drug6_6
+  recode: {2: 0}
   source: hcpa

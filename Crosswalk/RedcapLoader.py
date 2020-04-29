@@ -31,10 +31,6 @@ class RedcapLoader:
         self.dd = {}
         self.load_definitions()
 
-        # load data dictionary
-        # with open('redcap/redcap.pkl', 'rb') as fd:
-        #     self.dd = pickle.load(fd)[self.name]
-
     def load_definitions(self):
         filename = path.join(self.directory, self.name + '.yaml')
         self.dd = self.Y(filename)

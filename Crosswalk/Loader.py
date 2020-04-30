@@ -194,3 +194,20 @@ class QintLoader(RedcapLoader):
     def _post_load_hook_(self, df):
         df = df.rename(columns={"subjectid": "subject"})
         return super()._post_load_hook_(df)
+
+
+class SsagaLoader(RedcapLoader):
+    def __init__(self, definitions_dir="./definitions/"):
+        super().__init__('ssaga', definitions_dir)
+
+    def _fields_hook_(self, fields):
+        return fields + ['hcpa_id']
+
+    def _load_hook_(self, fields):
+        redcap = CachedRedcap()
+        df = redcap(self.get_source_name(), list(fields))
+        return df
+
+    def _post_load_hook_(self, df):
+        df = df.rename(columns={"hcpa_id": "subject"})
+        return super()._post_load_hook_(df)

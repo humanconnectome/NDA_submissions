@@ -44,7 +44,7 @@ class Loader:
         """
         return fields
 
-    def _create_shadow_dataframe(df, fields):
+    def _create_shadow_dataframe(self, df, fields):
         """
         Create a shadow dataframe which for example contains the text
         labels for coded fields.

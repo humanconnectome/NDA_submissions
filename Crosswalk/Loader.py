@@ -42,7 +42,11 @@ class Loader:
         """
         Notify the user if any of the requested fields are missing or unavailable.
         """
-        return fields
+        diff = set(fields).difference(df.columns)
+        if diff:
+            print(self.name, 'Some columns were unavailable: ', diff)
+
+        return diff
 
     def _create_shadow_dataframe(self, df, fields):
         """

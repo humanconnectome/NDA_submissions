@@ -1,6 +1,6 @@
 import pandas as pd
 
-from ccf.box import LifespanBox
+from ccf.box import CachedBox
 
 
 class BoxLoader:
@@ -8,14 +8,14 @@ class BoxLoader:
     def __init__(self, name, boxid=None):
         self.name = name
         self.boxid = boxid
-        self.box = LifespanBox('./')
+        self.box = CachedBox(cache='./')
 
     def get_source_name(self):
         return self.name
 
     def load(self, fields):
         to_get = fields
-        df = pd.read_csv(self.box.readFile(self.boxid))
+        df = self.box.read_csv(self.boxid)
         rosetta = pd.read_csv('UnrelatedHCAHCD_w_STG_Image_and_pseudo_GUID09_27_2019.csv')
         rosetta = rosetta[['subjectped', 'nda_guid', 'nda_interview_age', 'nda_interview_date', 'nda_gender']]
         rosetta.columns = ['subject', 'subjectkey', 'interview_age', 'interview_date', 'gender']

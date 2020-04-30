@@ -1,6 +1,6 @@
 import pandas as pd
 
-from ccf.redcap import RedcapTable
+from ccf.redcap import CachedRedcap
 
 
 class QintLoader:
@@ -15,8 +15,8 @@ class QintLoader:
         fields = list(fields)
         fields.append("subjectid")
         to_get = fields
-        table = RedcapTable.get_table_by_name(self.name)
-        df = table.get_frame(fields)
+        redcap = CachedRedcap()
+        df = redcap(self.name, fields)
         rosetta = pd.read_csv('UnrelatedHCAHCD_w_STG_Image_and_pseudo_GUID09_27_2019.csv')
         rosetta = rosetta[['subjectped', 'nda_guid', 'nda_interview_age', 'nda_interview_date', 'nda_gender']]
         rosetta.columns = ['subject', 'subjectkey', 'interview_age', 'interview_date', 'gender']

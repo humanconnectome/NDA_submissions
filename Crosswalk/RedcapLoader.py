@@ -1,7 +1,7 @@
 from os import path
 import pandas as pd
 from ccf.easy_yaml import EasyYaml
-from ccf.redcap import get_behavioral
+from ccf.redcap import CachedRedcap
 
 source_map = {
     'child': 'hc.pkl',
@@ -55,7 +55,8 @@ class RedcapLoader:
         # to_get.append('interview_age')
         if self.get_source_name() == 'parent':
             fields += ['child_id']
-        df = get_behavioral(self.get_source_name(), fields)
+        redcap = CachedRedcap()
+        df = redcap.get_behavioral(self.get_source_name(), fields)
         if self.get_source_name() == 'parent':
             df = parent2child(df)
 

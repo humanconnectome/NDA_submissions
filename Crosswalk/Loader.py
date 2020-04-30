@@ -157,3 +157,23 @@ class RedcapLoader(Loader):
             DF[name] = X
 
         return df, DF
+
+
+class ParentLoader(RedcapLoader):
+    def __init__(self, definitions_dir="./definitions/"):
+        super().__init__('parent', definitions_dir)
+
+    def _fields_hook_(self, fields):
+        return fields + ['child_id']
+
+    def _post_load_hook_(self, df):
+        df = df \
+            .drop(columns=['subjectid']) \
+            .rename(columns={'child_id': 'subjectid'})
+
+        df[['subject', 'flagged']] = df.subjectid.str.split('_', 1, expand=True)
+
+        # remove withdrawn
+        df = df[df.flagged.isna()]
+
+        return super()._post_load_hook_(df)

@@ -1,0 +1,336 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - ssaga
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - ssaga
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - ssaga
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - ssaga
+
+- name: gender
+  rename: sex
+  source:
+  - ssaga
+
+- rename: yrbsms_14
+  name: su1
+  recode:
+    1: 0
+    5: 1
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: Have you ever seriously thought about killing yourself?
+    range:
+    - 0
+    - 1
+    notes: 1= Yes; 0= No
+    alias: su1
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: ssaga
+    type: radio
+    label: <p>Have you ever thought about killing yourself?</p>
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[dp15b]<>5'
+    alignment: RH
+
+- rename: su1a
+  name: su1a
+  recode:
+    1: 0
+    5: 1
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: Earlier you told me that you'd thought about taking your own life,
+      Did those thoughts persist for at least 7 days in a row?
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<div style="margin-left: 40px">Did those thoughts persist for at least
+      7 days in a row?</div>'
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[dp15b]=''5'' or [su1]=''5'''
+    alignment: RH
+
+- rename: suic_plan_ever
+  name: su1b
+  recode:
+    1: 0
+    5: 1
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: Have you ever actually made a plan to kill yourself? PX640501_Suicide_Plan_Ever
+    range:
+    - 0
+    - 1
+    notes: 0=No; 1=Yes
+    alias: su1b
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p style="margin-left: 40px">B. Did you have a plan? (Did you actually
+      consider a way to take your life?)</p>'
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[dp15c]<>''5'' and ([dp15b]=''5'' or [su1]=''5'')'
+    alignment: RH
+
+- rename: cssrs_005b
+  name: su1c
+  source:
+  - ssaga
+  nda:
+    type: String
+    length: 2800
+    description: 'Subject has suicidal ideation with intent and plan: Describe'
+    alias: su1c
+  redcap:
+    form: ssaga
+    type: notes
+    label: '<div style="margin-left: 40px">What were you going to do? SPECIFY:</div>'
+    branching: '[dp15c]=''5'' or [su1b]=''5'''
+
+- rename: phenx_sib_120
+  name: su1d_ageon
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: How old were you the first time this happened? PX640104_PlanTo_KillYourself_FirstTimeAge_UnableToRead
+    notes: years
+    alias: su1d_ageon
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 80px">AGE ONS:</p>'
+    note: number
+    validation: number
+    branching: '[dp15c]=''1'' or [su1a]=''5'' or [su1]=''5'''
+
+- rename: phenx_sib_123
+  name: su1d_agerec
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: How old were you the last time this experience happened to you? PX640104_PlanTo_KillYourself_LastTimeAge_UnableToRead
+    alias: su1d_agerec
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 80px">AGE REC:</p>'
+    note: number
+    validation: number
+    branching: '[dp15c]=''1'' or [su1a]=''5'' or [su1]=''5'''
+
+- rename: yrbsms_16
+  name: su2
+  recode:
+    1: 0
+    5: 1
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: Have you ever tried to kill yourself?
+    range:
+    - 0
+    - 1
+    notes: 1= Yes; 0= No
+    alias: su2
+    codes:
+      1: 'Yes'
+      0: 'No'
+  redcap:
+    form: ssaga
+    type: radio
+    label: <p>Have you ever tried to kill yourself?</p>
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[dp15d]<>5'
+    alignment: RH
+
+- rename: mini_b18_a
+  name: su2a
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: 'Did you ever make a suicide attempt (try to kill yourself)?: If
+      yes, how many times?'
+    alias: su2a
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 40px">How many times (did you try to kill yourself)?</p>'
+    branching: '[dp15d]=''5'' or [su2]=''5'''
+
+- rename: phenx_sib_88
+  name: su2b_ageon
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: 'How old were you the first time?  INTERVIEWER: EXPERIENCE C IS "YOU
+      TRIED TO KILL YOURSELF" PX640104_TriedTo_KillYourself_FirstAge_AbleToRead'
+    notes: years
+    alias: su2b_ageon
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 80px">AGE ONS:</p>'
+    note: number
+    validation: number
+    branching: '[dp15d]=''5'' or [su2]=''5'''
+
+- rename: phenx_sib_129
+  name: su2b_agerec
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: How old were you (when/the last time) you tried to kill yourself?
+      PX640104_TriedTo_KillYourself_LastTimeAge_UnableToRead
+    alias: su2b_agerec
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 80px">AGE REC:</p>'
+    note: number
+    validation: number
+    branching: '[dp15d]=''5'' or [su2]=''5'''
+
+- rename: harmsq3
+  name: su12
+  recode:
+    1: 0
+    5: 1
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: Did you do anything to hurt yourself?
+    range:
+    - 0
+    - 1
+    notes: 0 = No;1 = Yes
+    alias: su12
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p>SU12
+
+      (Other than when you tried to take your own life,) did you ever hurt yourself
+      on purpose, for example, by cutting or burning yourself?</p>'
+    choices:
+      1: 'NO'
+      5: 'YES'
+    alignment: RH
+
+- rename: sitbi_65
+  name: su12a
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: How many  times in your life have you engaged in  non-suicidal self-injury
+      (NSSI)?
+    alias: su12a
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 40px">A. How many times?</p>'
+    note: number
+    validation: number
+    branching: '[su12]=''5'''
+
+- rename: isas_s1q3a
+  name: su12b_ageon
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: 'At what age did you: First harm yourself?'
+    notes: years
+    alias: su12b_ageon
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 80px">AGE ONS:</p>'
+    note: number
+    validation: number
+    branching: '[su12]=''5'''
+
+- rename: su12b_agerec
+  name: su12b_agerec
+  source:
+  - ssaga
+  nda:
+    type: String
+    length: 20
+    description: Other than when you tried to take your own life, did you ever hurt
+      yourself on purpose, for example, by cutting or burning yourself? If yes, Age
+      at most recent instance
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 80px">AGE REC:</p>'
+    note: number
+    validation: number
+    branching: '[su12]=''5'''
+
+- rename: comments_misc
+  name: su_notes
+  source:
+  - ssaga
+  nda:
+    type: String
+    length: 4000
+    description: Miscellaneous comments on study, interview, methodology relevant
+      to this form data
+    alias: su_notes
+  redcap:
+    form: ssaga
+    type: notes
+    label: <p>SUICIDE NOTES:</p>

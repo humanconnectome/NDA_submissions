@@ -1,0 +1,1391 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: age,edds23
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: edds22,gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+visnum:
+  type: Float
+  description: Numeric Visit Number
+  notes: '-1.5 = Pre-Screening; -1 = Screening; 0 = Baseline; ## = Visit ## (from
+    1 to 10); Whole numbers = standard monthly visits; #.001 - #.009 = Unscheduled;
+    #.1 = End of Phase 1; #.2 = End of Phase 2; #.3 = End of Phase 3; #.4 = End of
+    Open Choice Phase; #.5 = End of Study; #.6 = Genetic Analysis; 1000=all visits'
+  codes:
+    -1.5: Pre-Screening
+    -1: Screening
+    0: Baseline
+    9: Unscheduled
+    1: End of Phase 1
+    2: End of Phase 2
+    3: End of Phase 3
+    4: End of Open Choice Phase
+    5: End of Study
+    6: Genetic Analysis
+    1000: all visits
+
+visit:
+  type: String
+  length: 50
+  description: Visit name
+  alias: assessment
+
+rhanded:
+  type: Integer
+  description: Are you right handed?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+fspgod:
+  type: String
+  length: 70
+  description: Subject's gender OTHER describe
+
+race:
+  type: String
+  length: 30
+  description: Race of study subject
+  range:
+  - American Indian/Alaska Native
+  - Asian
+  - Hawaiian or Pacific Islander
+  - Black or African American
+  - White
+  - More than one race
+  - Unknown or not reported
+
+otherrace:
+  type: String
+  length: 100
+  description: specify other race
+  notes: The following questions are about you or the child's family.
+
+ethnicity:
+  type: String
+  length: 30
+  description: Ethnicity of participant
+  range:
+  - Hispanic or Latino
+  - Not Hispanic or Latino
+  - Unknown
+
+ethnic_group:
+  type: String
+  length: 255
+  description: Ethnic group
+
+edutot:
+  type: Float
+  description: Total years of education
+
+medication1_name:
+  type: String
+  length: 500
+  description: Name first medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication1_dosage:
+  type: String
+  length: 150
+  description: First medication dosage
+  notes: 0 = No medication; 999 = Missing
+  codes:
+    0: No medication
+    999: Missing
+
+months1:
+  type: Float
+  description: Number of months on this medication
+  notes: 0 = No medication; 9999=NK
+  codes:
+    0: No medication
+    9999: NK
+
+medication2_name:
+  type: String
+  length: 200
+  description: Name second medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication2_dosage:
+  type: String
+  length: 100
+  description: Second medication dosage
+  notes: 0 = No medication; 999 = Missing
+  codes:
+    0: No medication
+    999: Missing
+
+months2:
+  type: Float
+  description: Number of months on this medication
+  notes: 0 = No medication; 9999=NK
+  codes:
+    0: No medication
+    9999: NK
+
+medication3_name:
+  type: String
+  length: 150
+  description: Name third medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication3_dosage:
+  type: String
+  length: 100
+  description: Third medication dosage
+  notes: 0 = No medication; 999 = Missing
+  codes:
+    0: No medication
+    999: Missing
+
+months3:
+  type: Float
+  description: Number of months on this medication
+  notes: 0 = No medication; 9999=NK
+  codes:
+    0: No medication
+    9999: NK
+
+medication4_name:
+  type: String
+  length: 100
+  description: Name fourth medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication4_dosage:
+  type: String
+  length: 100
+  description: Fourth  medication dosage
+  notes: 0 = No medication; 999 = Missing
+  codes:
+    0: No medication
+    999: Missing
+
+months4:
+  type: Float
+  description: Number of months on this medication
+  notes: 0 = No medication; 9999=NK
+  codes:
+    0: No medication
+    9999: NK
+
+medication5_name:
+  type: String
+  length: 500
+  description: Name fifth medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication5_dosage:
+  type: String
+  length: 100
+  description: Fifth medication dosage
+  notes: 0 = No medication; 999 = Missing
+  codes:
+    0: No medication
+    999: Missing
+
+months5:
+  type: Float
+  description: Number of months on this medication
+  notes: 0 = No medication; 9999=NK
+  codes:
+    0: No medication
+    9999: NK
+
+visualacuity:
+  type: Integer
+  description: Visual acuity (both eyes)
+
+edi3_99:
+  type: Integer
+  description: 'Lowest weight as an adult (or lowest weight as an adolescent if not
+    yet age 18): pounds'
+
+height_lowest_weight:
+  type: Float
+  description: Height at time of lowest weight as an adult (or as an adolescent if
+    under 18) in inches
+  notes: inches
+  alias: ed4_inch
+
+bmi_lowest_weight:
+  type: Float
+  description: BMI at time of lowest weight as an adult (or as an adolescent if under
+    18)
+
+sum2_glass:
+  type: String
+  length: 50
+  description: Does the examinee have glasses or corrective lenses?
+  range:
+  - 'Yes'
+  - 'No'
+  - NA
+
+edi3_96:
+  type: Float
+  description: 'Highest past weight (excluding pregnancy): pounds'
+
+height_highest_weight:
+  type: Float
+  description: Height at time of highest weight as an adult (or as an adolescent if
+    under 18) in inches
+  notes: inches
+
+bmi_highest_weight:
+  type: Float
+  description: BMI at time of highest weight as an adult (or as an adolescent if under
+    18)
+
+pre004:
+  type: Integer
+  description: Pregnancy Test Result
+  range:
+  - 1
+  - 2
+  - 9
+  - -9
+  notes: 1=Positive; 2=Negative; 9=Equivocal; -9=Unknown
+  codes:
+    1: Positive
+    2: Negative
+    9: Equivocal
+    -9: Unknown
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+  alias: ed_notes
+
+weight_std:
+  type: Float
+  description: Weight - Standard Unit
+  notes: -1 = Not known
+  codes:
+    -1: Not known
+
+baseline_a_002:
+  type: String
+  length: 100
+  description: 'Interview Start Time:'
+
+height:
+  type: Float
+  description: Medical history and physical development - Height (inches)
+  notes: inches
+
+meal_number:
+  type: Float
+  description: Number of/how many meals on interview day?
+
+v1_lab_mealtime:
+  type: String
+  length: 15
+  description: Time of last meal (24hr clock)
+  notes: hh:mm
+
+ftnd_7:
+  type: Integer
+  description: Do you currently smoke any cigarettes? Y/N
+  range:
+  - 0::2
+  - -99
+  - 77
+  - 88
+  notes: 0=No; 1=Yes; 2=No, but used to; -99=NA; 77=refused; 88=missing
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: No, but used to
+    -99: NA
+    77: refused
+    88: missing
+
+eeg_s_05:
+  type: Float
+  description: In the past 24 hours, how many drinks containing alcohol (i.e. beer,
+    wine, mixed drinks) did you have?
+
+photo_rating:
+  type: String
+  length: 100
+  description: Photo Ratings
+
+treatment_name:
+  type: String
+  length: 200
+  description: treatment name
+
+otherpasttreatmentintervent1_1:
+  type: String
+  length: 100
+  description: Other Past Treatment 1 Intervention
+
+cmstrtdt:
+  type: Date
+  description: Start Date
+
+txenddt:
+  type: Integer
+  description: Psychotherapy treatment end date
+
+scid5_dis1_type_anorexia:
+  type: Integer
+  description: Anorexia Nervosa Subtype
+  range:
+  - 1
+  - 2
+  notes: 1=Bingeeating/purging type; 2=Restricting type
+  codes:
+    1: Bingeeating/purging type
+    2: Restricting type
+
+ameno_duration:
+  type: Integer
+  description: Duration of Amenorrhea (months)
+  notes: in months
+
+bmi:
+  type: Float
+  description: body mass index of subject
+
+diagnosis_other_specify:
+  type: String
+  length: 500
+  description: What other diagnoses has the participant had?
+
+bmi_restored:
+  type: Integer
+  description: Weight restored greater than or equal to 18.5 corrected BMI
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+restored_months:
+  type: Integer
+  description: Months weight restored
+
+underweight_duration:
+  type: Integer
+  description: If weight restored, duration at a weight less than 85% of ideal body
+    weight (months)
+  notes: in months
+
+weight_loss_rate:
+  type: String
+  length: 300
+  description: Rate of weight loss
+
+lti_doi:
+  type: Float
+  description: Duration of Illness, years
+
+future_intervention:
+  type: String
+  length: 100
+  description: Plan to continue following interventions
+
+mri_screen:
+  type: Integer
+  description: MRI screened
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+sesscore:
+  type: Float
+  description: Hollingshead SES Score
+  range:
+  - 8.0::66.0
+
+testgrp:
+  type: String
+  length: 50
+  description: Laboratory Test Group
+
+behavior:
+  type: String
+  length: 250
+  description: Behavior Observations
+
+behavobs_referralreason:
+  type: String
+  length: 255
+  description: Reason for Referral/Presenting Complaint(s)
+
+historyrec:
+  type: String
+  length: 4000
+  description: Brief Medical History
+
+psyhxdsc:
+  type: String
+  length: 250
+  description: Psychiatric History Item Description
+
+strtxreceivedpsycdis:
+  type: String
+  length: 255
+  description: What treatment was/is received?
+
+namepsycmed:
+  type: String
+  length: 150
+  description: Name-psychotropic med
+
+personal_notes:
+  type: String
+  length: 255
+  description: Comments
+
+family_history:
+  type: String
+  length: 500
+  description: Notes/Comments on family history
+
+bkgrnd_diag:
+  type: String
+  length: 255
+  description: Diagnosis. Provided by parent
+
+surm046a:
+  type: Integer
+  description: individual sessions with a mental health provider. Number of outpatient
+    visits of this type
+
+medication6_name:
+  type: String
+  length: 500
+  description: Name sixth medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication6_dosage:
+  type: String
+  length: 100
+  description: Sixth medication dosage
+  notes: 0 = No medication; 999 = Missing
+  codes:
+    0: No medication
+    999: Missing
+
+months6:
+  type: Float
+  description: Number of months on this medication
+  notes: 0 = No medication; 9999=NK
+  codes:
+    0: No medication
+    9999: NK
+
+medication7_name:
+  type: String
+  length: 100
+  description: Name seventh medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication7_dosage:
+  type: String
+  length: 100
+  description: Seventh medication dosage
+  notes: 0 = No medication; 999 = Missing
+  codes:
+    0: No medication
+    999: Missing
+
+months7:
+  type: Float
+  description: Number of months on this medication
+  notes: 0 = No medication; 9999=NK
+  codes:
+    0: No medication
+    9999: NK
+
+medication8_name:
+  type: String
+  length: 100
+  description: Name eighth medication that the participant has taken
+  notes: 0 = No medication; 999= Legitimately skipped
+  codes:
+    0: No medication
+    999: Legitimately skipped
+
+medication8_dosage:
+  type: String
+  length: 100
+  description: Eighth medication dosage
+  notes: 0 = No medication; 999 = Missing
+  codes:
+    0: No medication
+    999: Missing
+
+months8:
+  type: Float
+  description: Number of months on this medication
+  notes: 0 = No medication; 9999=NK
+  codes:
+    0: No medication
+    9999: NK
+
+medication9_name:
+  type: String
+  length: 100
+  description: Name ninth medication that the participant has taken
+
+medication9_dosage:
+  type: String
+  length: 100
+  description: Ninth medication dosage
+
+months9:
+  type: Integer
+  description: Number of months on this medication
+  notes: 9999=NK
+  codes:
+    9999: NK
+
+medication_10_name:
+  type: String
+  length: 100
+  description: specify med 10
+
+medication10_dosage:
+  type: String
+  length: 50
+  description: Tenth medication dosage
+
+months10:
+  type: Integer
+  description: Number of months on this medication
+  notes: 9999=NK
+  codes:
+    9999: NK
+
+fsprels:
+  type: Integer
+  description: Which category best describes your current relationship status?
+  range:
+  - 1::9
+  notes: 1= Single/never married; 2= Married; 3= Living together; 4= Domestic partnership;
+    5= Separated; 6= Divorced; 7= Widowed; 8= Engaged; 9=Other
+  codes:
+    1: Single/never married
+    2: Married
+    3: Living together
+    4: Domestic partnership
+    5: Separated
+    6: Divorced
+    7: Widowed
+    8: Engaged
+    9: Other
+
+marital_status_specify:
+  type: String
+  length: 255
+  description: 'Other marital status - Please describe:'
+
+edi3_101:
+  type: Float
+  description: How long did you weigh this weight? months
+
+dawba_p2_d:
+  type: String
+  length: 10
+  description: Diet/Weight/Body - What was your highest weight ever?
+
+past_wt:
+  type: String
+  length: 50
+  description: How long ago were you at your highest weight?
+
+current_wt:
+  type: String
+  length: 50
+  description: How long have you been at your current weight?
+
+phcm:
+  type: String
+  length: 30
+  description: 'Module B: Miscellaneous Disorders - Eating Disorders (EAT). Height
+    in centimeters'
+  alias: edds20,eddsheight
+
+weight:
+  type: String
+  length: 50
+  description: weight
+  alias: edds19,eddsweight
+
+binge_lifetime:
+  type: Integer
+  description: Lifetime occurrence of binge episodes
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: binge
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+binge_recent:
+  type: String
+  length: 30
+  description: Date of the most recent binge episode
+
+binge_pastweek:
+  type: Integer
+  description: Number of binge episodes in the past week
+
+purge:
+  type: Integer
+  description: Lifetime use of purging
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+purge_recent:
+  type: String
+  length: 30
+  description: Date of the most recent purge episode
+
+purge_pastweek:
+  type: Integer
+  description: number of purge episodes in the past week
+
+laxative:
+  type: Integer
+  description: lifetime use of laxatives
+  range:
+  - 0::1
+  notes: 1 = yes, 0 = no
+  codes:
+    1: yes, 0 = no
+
+lax_pastweek:
+  type: Integer
+  description: number of times participant used laxatives in the past week
+
+diuretic:
+  type: Integer
+  description: lifetime use of diuretics
+  range:
+  - 0::1
+  notes: 1 = yes, 0 = no
+  codes:
+    1: yes, 0 = no
+
+diur_pastweek:
+  type: Integer
+  description: number of times participant used diuretics in the past week
+
+bodyfat:
+  type: Float
+  description: Participant's percentage body fat
+
+date_menst_psychhx:
+  type: String
+  length: 30
+  description: First date of the last menstrual cycle (females only)
+  alias: menstrual
+
+fast:
+  type: Integer
+  description: lifetime use of fasting (8+ hours)
+  range:
+  - 0::1
+  notes: 1 = yes; 0 = no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+fast_pastweek:
+  type: Integer
+  description: number of times participant fasted in the past week
+
+mealpattern:
+  type: Integer
+  description: have your meal patterns been stable?
+  range:
+  - 0::1
+  notes: 1 = yes, stable, 0 = no, unstable
+  alias: mealpattern_stable
+  codes:
+    1: yes, stable, 0 = no, unstable
+
+meals_describe:
+  type: String
+  length: 300
+  description: if your meal patterns have not been stable, describe
+
+meals_yesterday:
+  type: String
+  length: 300
+  description: what was your meal pattern yesterday?
+
+condition_name:
+  type: String
+  length: 250
+  description: Experimental condition name
+  alias: condition
+
+dawba_m1_p_loss_control:
+  type: Integer
+  description: Areas of Difficulty - Loss of Control
+  range:
+  - 0::1
+  - 999
+  - -999
+  notes: 0 = No; 1 = Yes; 999 = Not Applicable; -999 = Missing
+  alias: edds5
+  codes:
+    0: 'No'
+    1: 'Yes'
+    999: Not Applicable
+    -999: Missing
+
+ebfl:
+  type: Integer
+  description: EB Eat so much uncomfortably full
+  range:
+  - 0::1
+  - 999
+  - -999
+  notes: 0 = No; 1 = Yes; 999 = Not Applicable; -999 = Missing
+  alias: edds8
+  codes:
+    0: 'No'
+    1: 'Yes'
+    999: Not Applicable
+    -999: Missing
+
+ebaln:
+  type: Integer
+  description: EB Eat alone because embarrassed
+  range:
+  - 0::1
+  - 999
+  - -999
+  notes: 0 = No; 1 = Yes; 999 = Not Applicable; -999 = Missing
+  alias: edds10
+  codes:
+    0: 'No'
+    1: 'Yes'
+    999: Not Applicable
+    -999: Missing
+
+ebdsg:
+  type: Integer
+  description: EB Feel disgusted after overeating
+  range:
+  - 0::1
+  - 999
+  - -999
+  notes: 0 = No; 1 = Yes; 999 = Not Applicable; -999 = Missing
+  alias: edds11
+  codes:
+    0: 'No'
+    1: 'Yes'
+    999: Not Applicable
+    -999: Missing
+
+edds1:
+  type: Integer
+  description: Over the past TWO WEEKS have you felt fat?
+  range:
+  - 0::6
+  - 999
+  notes: 0 = Not at all; 2 = Slightly; 4 = Moderately; 6 = Extremely; 999 = Missing
+  codes:
+    0: Not at all
+    2: Slightly
+    4: Moderately
+    6: Extremely
+    999: Missing
+
+edds2:
+  type: Integer
+  description: Over the past TWO WEEKS have you had a definite fear that you might
+    gain weight or become fat?
+  range:
+  - 0::6
+  - 999
+  notes: 0 = Not at all; 2 = Slightly; 4 = Moderately; 6 = Extremely; 999 = Missing
+  codes:
+    0: Not at all
+    2: Slightly
+    4: Moderately
+    6: Extremely
+    999: Missing
+
+edds3:
+  type: Integer
+  description: Over the past TWO WEEKS has your weight or shape influenced how you
+    judge yourself as a person?
+  range:
+  - 0::6
+  - 999
+  notes: 0 = Not at all; 2 = Slightly; 4 = Moderately; 6 = Extremely; 999 = Missing
+  codes:
+    0: Not at all
+    2: Slightly
+    4: Moderately
+    6: Extremely
+    999: Missing
+
+edds4:
+  type: Integer
+  description: During the past 2 weeks have there been times when you felt you have
+    eaten what other people would regard as an unusually large amount of food (e.g.,
+    a pint of ice cream) given the circumstances?
+  range:
+  - 0::1
+  - -999
+  notes: 0 = No; 1 = Yes -999 = Missing
+  codes:
+    0: 'No'
+    1: Yes -999 = Missing
+
+edds6:
+  type: Integer
+  description: How many times per week on average over the past 2 weeks have you eaten
+    an unusually large amount of food and experienced a loss of control?
+  range:
+  - 0::16
+  - 888
+  - 999
+  notes: 888 = Behavior has not happened; 999 = Missing
+  codes:
+    888: Behavior has not happened
+    999: Missing
+
+edds7:
+  type: Integer
+  description: During episodes of overeating with a loss of control, did you eat much
+    more rapidly than normal?
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=No; 1=Yes; 999 = N/A
+  codes:
+    0: 'No'
+    1: 'Yes'
+    999: N/A
+
+edds9:
+  type: Integer
+  description: During episodes of overeating with a loss of control, did you eat large
+    amounts of food when you didn't feel physically hungry?
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=No; 1=Yes; 999 = N/A
+  codes:
+    0: 'No'
+    1: 'Yes'
+    999: N/A
+
+edds12:
+  type: Integer
+  description: If you have episodes of uncontrollable overeating, does it make you
+    very upset?
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=No; 1=Yes; 999 = N/A
+  codes:
+    0: 'No'
+    1: 'Yes'
+    999: N/A
+
+edds13:
+  type: Integer
+  description: In order to prevent weight gain or counteract the effects of eating,
+    how many times per week on average over the past 2 weeks have you made yourself
+    vomit?
+  range:
+  - 0::16
+  - 999
+  notes: 999 = Missing
+  codes:
+    999: Missing
+
+edds14:
+  type: Integer
+  description: In order to prevent weight gain or counteract the effects of eating,
+    how many times per week on average over the past 2 weeks have you used laxatives
+    or diuretics?
+  range:
+  - 0::16
+  - 999
+  notes: 999 = Missing
+  codes:
+    999: Missing
+
+edds15:
+  type: Integer
+  description: In order to prevent weight gain or counteract the effects of eating,
+    how many times per week on average over the past 2 weeks have you fasted (skipped
+    at least 2 meals in a row)?
+  range:
+  - 0::16
+  - 999
+  notes: 999 = Missing
+  codes:
+    999: Missing
+
+edds16:
+  type: Integer
+  description: In order to prevent weight gain or counteract the effects of eating,
+    how many times per week on average over the past 2 weeks have you engaged in more
+    intense exercise specifically to counteract the effects of overeating?
+  range:
+  - 0::16
+  - 999
+  notes: 999 = Missing
+  codes:
+    999: Missing
+
+edds17:
+  type: Integer
+  description: How many times per week on average over the past 2 weeks have you eaten
+    after awakening from sleep or eaten an unusually large amount of food after your
+    evening meal and felt distressed by the night eating?
+  range:
+  - 0::16
+  - 999
+  notes: 999 = Missing
+  codes:
+    999: Missing
+
+edds18:
+  type: Integer
+  description: How much do eating or body image problems impact your relationships
+    with friends and family, work performance, and school performance?
+  range:
+  - 0::6
+  - 999
+  notes: 0 = Not at all; 2 = Slightly; 4 = Moderately; 6 = Extremely; 999 = Missing
+  codes:
+    0: Not at all
+    2: Slightly
+    4: Moderately
+    6: Extremely
+    999: Missing
+
+edds21:
+  type: Float
+  description: What is your highest weight at your current height?
+  notes: Weight in kg.
+
+who_raised_explain:
+  type: String
+  length: 50
+  description: If other primary caregiver who raised you, explain
+
+bulpurgp:
+  type: Integer
+  description: bulimia nervosa purge past
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0=No; 1=Yes; -7=Refused
+  alias: ed13_1
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -7: Refused
+
+ed1:
+  type: Integer
+  description: Did you ever lose a lot of weight on purpose, or while you were growing
+    up, did you keep your weight down on purpose?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ed2:
+  type: Integer
+  description: Did you ever feel fat, even though your family or friends were very
+    concerned that you had become much too thin?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ed3:
+  type: String
+  length: 20
+  description: After purposely losing weight, what is the lowest weight you ever dropped
+    to? (If don't know, please fill in 9999)
+
+ed3a:
+  type: Integer
+  description: 'At your lowest weight: Did friends say you were too thin or skeleton-like?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ed4_feet:
+  type: String
+  length: 15
+  description: 'At your lowest weight: Height in Feet'
+
+ed5:
+  type: String
+  length: 20
+  description: 'At your lowest weight: How old were you?'
+
+ed6:
+  type: Integer
+  description: 'At your lowest weight: At that time, were you intensely afraid of
+    gaining weight or becoming fat?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ed7:
+  type: Integer
+  description: While you were losing weight did your period stop for 3 or more cycles
+    in a row (when you were not pregnant or taking hormones, like estrogen)?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ed8:
+  type: Integer
+  description: Was there a medical disorder that caused your weight loss? IF R VOLUNTEERS
+    ANOREXIA, CODE NO.
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ed8specify:
+  type: String
+  length: 50
+  description: 'SPECIFY: Medical disorder that caused weight loss'
+
+ed9:
+  type: Integer
+  description: Were you ever greatly concerned about eating too much, looking too
+    fat, or gaining too much weight?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ed9a:
+  type: Integer
+  description: Have you ever been treated for an eating disorder?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ed10:
+  type: Integer
+  description: 'Has there ever been a time in your life when you went on eating binges
+    -- eating a large amount of food in a short period of time (usually less than
+    2 hours)? '
+  range:
+  - 1
+  - 3
+  - 5
+  - 6
+  notes: 1 = No ; 3 = Only when alcohol/drugs were involved ; 5 = Yes (while clean)
+    ; 6 = Yes (both when clean and when alcohol/drugs were involved)
+  codes:
+    1: 'No'
+    3: Only when alcohol/drugs were involved
+    5: Yes (while clean)
+    6: Yes (both when clean and when alcohol/drugs were involved)
+
+ed11:
+  type: Integer
+  description: Did you go on eating binges an average of twice a week for at least
+    3 months?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ed13_2:
+  type: Integer
+  description: 'Did you do anything to prevent weight gain from your binge eating,
+    such as: taking laxatives or diuretics?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ed13_3:
+  type: Integer
+  description: 'Did you do anything to prevent weight gain from your binge eating,
+    such as: dieting strictly?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ed13_4:
+  type: Integer
+  description: 'Did you do anything to prevent weight gain from your binge eating,
+    such as: fasting?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ed13_5:
+  type: Integer
+  description: 'Did you do anything to prevent weight gain from your binge eating,
+    such as: exercising vigorously?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ed13_6:
+  type: Integer
+  description: 'Did you do anything to prevent weight gain from your binge eating,
+    such as: taking enemas?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+peay:
+  type: String
+  length: 30
+  description: 'Module B: Miscellaneous Disorders - Eating Disorders (EAT). Year:
+    Diagnosis Eating Disorder'
+  alias: ed9b_yr
+
+ed13_7:
+  type: Integer
+  description: 'Did you do anything to prevent weight gain from your binge eating,
+    such as: anything else?'
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ed14_agerec:
+  type: String
+  length: 15
+  description: 'Age of recovery: How old were you the (first/last) time you went on
+    eating binges and tried to prevent weight gain from the binges?'
+
+ed16:
+  type: Integer
+  description: Did you only have eating binges during those periods we talked about
+    when (people thought you were too thin/you had lost a lot of weight on purpose)?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+peam:
+  type: String
+  length: 30
+  description: 'Module B: Miscellaneous Disorders - Eating Disorders (EAT). Month:
+    Diagnosis Eating Disorder'
+  alias: ed9b_mo
+
+diamond_bul3:
+  type: String
+  length: 500
+  description: 'Bulimia: In the past month, are there any things that you do, perhaps
+    after an eating binge, in order to prevent weight gain? How often do you do these
+    things?'
+  alias: ed13_7specify
+
+qk9:
+  type: Integer
+  description: Section K - Anorexia Nervosa/Bulimia. K9. At that time, did you yourself
+    think that you were so thin that your health was in danger?
+  range:
+  - 1
+  - 5
+  notes: 1=yes; 5=no
+  alias: ed6a
+  codes:
+    1: 'yes'
+    5: 'no'
+
+qk16:
+  type: Integer
+  description: Section K - Anorexia Nervosa/Bulimia. K16. During these eating binges,
+    did you feel you would not be able to stop eating or could not control what or
+    how much you were eating?
+  range:
+  - 1
+  - 5
+  notes: 1=no; 5=yes
+  alias: ed12
+  codes:
+    1: 'no'
+    5: 'yes'
+
+qk7:
+  type: Integer
+  description: Section K - Anorexia Nervosa/Bulimia. K7. You said there was a time
+    when (people were thinking you were too thin/you were very thin/you lost a lot
+    of weight on purpose/you did not gain weight when you grew). At that time, were
+    you dissatisfied with yourself because you were not thin enough?
+  range:
+  - 1
+  - 5
+  notes: 1=no; 5=yes
+  alias: ed2a
+  codes:
+    1: 'no'
+    5: 'yes'
+
+qk20ons:
+  type: Integer
+  description: 'Section K - Anorexia Nervosa/Bulimia. K19. Did the weight you gained
+    from eating binges bother you a lot?  ONS: How old were you the first time you
+    had an eating binge and tried to make up for it?  AGE'
+  notes: '#=AGE'
+  alias: ed14_ageon

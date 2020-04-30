@@ -1,0 +1,814 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - ssaga
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - ssaga
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - ssaga
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - ssaga
+
+- name: gender
+  rename: sex
+  source:
+  - ssaga
+
+- rename: ed1
+  name: ed1
+  recode:
+    5: 1
+    1: 0
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: Did you ever lose a lot of weight on purpose, or while you were growing
+      up, did you keep your weight down on purpose?
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    section: <font size="+0.5"><center>EATING DISORDERS</center></font>
+    type: radio
+    label: "<p>ED1 \nDid you ever lose a lot of weight on purpose, or while you were\
+      \ growing up, did you keep your weight down on purpose?</p>"
+    choices:
+      1: 'NO'
+      5: 'YES'
+    alignment: RH
+
+- rename: ed2
+  name: ed2
+  recode:
+    5: 1
+    1: 0
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: Did you ever feel fat, even though your family or friends were very
+      concerned that you had become much too thin?
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: "<p>ED2 \nDid you ever feel fat, even though your family or friends were\
+      \ very concerned that you had become much too thin?</p>"
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[ed1]=''5'''
+    alignment: RH
+
+- rename: qk7
+  name: ed2a
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: Section K - Anorexia Nervosa/Bulimia. K7. You said there was a time
+      when (people were thinking you were too thin/you were very thin/you lost a lot
+      of weight on purpose/you did not gain weight when you grew). At that time, were
+      you dissatisfied with yourself because you were not thin enough?
+    range:
+    - 1
+    - 5
+    notes: 1=no; 5=yes
+    alias: ed2a
+    codes:
+      1: 'no'
+      5: 'yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p style="margin-left: 40px">A. Was there a period of time when people
+      thought you were thin, but you were very dissatisfied with yourself because
+      you were not thin enough?</p>'
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[ed1]=''5'' '
+    alignment: RH
+
+- rename: ed3
+  name: ed3
+  source:
+  - ssaga
+  nda:
+    type: String
+    length: 20
+    description: After purposely losing weight, what is the lowest weight you ever
+      dropped to? (If don't know, please fill in 9999)
+  redcap:
+    form: ssaga
+    type: text
+    label: "<p>ED3 \nAfter purposely losing weight, what is the lowest weight you\
+      \ ever dropped to?\n(If don't know, please fill in 9999)</p>"
+    note: number
+    validation: number
+    branching: ' [ed2]=''5'' or [ed2a]=''5'''
+
+- rename: ed3a
+  name: ed3a
+  recode:
+    5: 1
+    1: 0
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: 'At your lowest weight: Did friends say you were too thin or skeleton-like?'
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p style="margin-left: 40px">A. Did friends say you were too thin or skeleton-like?</p>'
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[ed3]=''9999'''
+    alignment: RH
+
+- rename: ed4_feet
+  name: ed4_feet
+  source:
+  - ssaga
+  nda:
+    type: String
+    length: 15
+    description: 'At your lowest weight: Height in Feet'
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 120px">Feet</p>'
+    branching: ' [ed2]=''5'' or [ed2a]=''5'''
+
+- rename: height_lowest_weight
+  name: ed4_inch
+  source:
+  - ssaga
+  nda:
+    type: Float
+    description: Height at time of lowest weight as an adult (or as an adolescent
+      if under 18) in inches
+    notes: inches
+    alias: ed4_inch
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 120px">Inch(es)</p>'
+    branching: ' [ed2]=''5'' or [ed2a]=''5'''
+
+- rename: ed5
+  name: ed5
+  source:
+  - ssaga
+  nda:
+    type: String
+    length: 20
+    description: 'At your lowest weight: How old were you?'
+  redcap:
+    form: ssaga
+    type: text
+    label: "<p>ED5 \nHow old were you?</p>"
+    note: Age in number
+    validation: number
+    branching: ' [ed2]=''5'' or [ed2a]=''5'''
+
+- rename: ed6
+  name: ed6
+  recode:
+    5: 1
+    1: 0
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: 'At your lowest weight: At that time, were you intensely afraid of
+      gaining weight or becoming fat?'
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: "<p>ED6 \nAt that time, were you intensely afraid of gaining weight or\
+      \ becoming fat?</p>"
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: ' [ed2]=''5'' or [ed2a]=''5'''
+    alignment: RH
+
+- rename: qk9
+  name: ed6a
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: Section K - Anorexia Nervosa/Bulimia. K9. At that time, did you yourself
+      think that you were so thin that your health was in danger?
+    range:
+    - 1
+    - 5
+    notes: 1=yes; 5=no
+    alias: ed6a
+    codes:
+      1: 'yes'
+      5: 'no'
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p style="margin-left: 40px">A. At that time (when you lost the most weight
+      on purpose), did you, yourself, think that you were so thin that your health
+      was in danger?</p>'
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[ed2]=''5'' or [ed2a]=''5'''
+    alignment: RH
+
+- rename: ed7
+  name: ed7
+  recode:
+    5: 1
+    1: 0
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: While you were losing weight did your period stop for 3 or more cycles
+      in a row (when you were not pregnant or taking hormones, like estrogen)?
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: "<p>ED7 \nWhile you were losing weight did your period stop for 3 or more\
+      \ cycles in a row (when you were not pregnant or taking hormones, like estrogen)?</p>"
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[dm1]=''2'' and ( [ed2]=''5'' or [ed2a]=''5'')'
+    alignment: RH
+
+- rename: ed8
+  name: ed8
+  recode:
+    5: 1
+    1: 0
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: Was there a medical disorder that caused your weight loss? IF R VOLUNTEERS
+      ANOREXIA, CODE NO.
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: "<p>ED8 \nWas there a medical disorder that caused your weight loss? IF\
+      \ R VOLUNTEERS ANOREXIA, CODE NO.</p>"
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: ' [ed2]=''5'' or [ed2a]=''5'''
+    alignment: RH
+
+- rename: ed8specify
+  name: ed8specify
+  source:
+  - ssaga
+  nda:
+    type: String
+    length: 50
+    description: 'SPECIFY: Medical disorder that caused weight loss'
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 40px">SPECIFY: </p>'
+    branching: ' [ed8]=''5'''
+
+- rename: ed9
+  name: ed9
+  recode:
+    5: 1
+    1: 0
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: Were you ever greatly concerned about eating too much, looking too
+      fat, or gaining too much weight?
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: "<p>ED9 \nWere you ever <u>greatly</u> concerned about eating too much,\
+      \ looking too fat, or gaining too much weight?</p>"
+    choices:
+      1: 'NO'
+      5: 'YES'
+    alignment: RH
+
+- rename: ed9a
+  name: ed9a
+  recode:
+    5: 1
+    1: 0
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: Have you ever been treated for an eating disorder?
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p style="margin-left: 40px">A. Have you ever been treated for an eating
+      disorder?</p>'
+    choices:
+      1: 'NO'
+      5: 'YES'
+    alignment: RH
+
+- rename: peam
+  name: ed9b_mo
+  source:
+  - ssaga
+  nda:
+    type: String
+    length: 30
+    description: 'Module B: Miscellaneous Disorders - Eating Disorders (EAT). Month:
+      Diagnosis Eating Disorder'
+    alias: ed9b_mo
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 120px">Month</p>'
+    note: number
+    validation: number
+    branching: '[ed9a]=''5'''
+
+- rename: peay
+  name: ed9b_yr
+  source:
+  - ssaga
+  nda:
+    type: String
+    length: 30
+    description: 'Module B: Miscellaneous Disorders - Eating Disorders (EAT). Year:
+      Diagnosis Eating Disorder'
+    alias: ed9b_yr
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 120px">Year</p>'
+    note: number
+    validation: number
+    branching: '[ed9a]=''5'''
+
+- rename: ed10
+  name: ed10
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: 'Has there ever been a time in your life when you went on eating
+      binges -- eating a large amount of food in a short period of time (usually less
+      than 2 hours)? '
+    range:
+    - 1
+    - 3
+    - 5
+    - 6
+    notes: 1 = No ; 3 = Only when alcohol/drugs were involved ; 5 = Yes (while clean)
+      ; 6 = Yes (both when clean and when alcohol/drugs were involved)
+    codes:
+      1: 'No'
+      3: Only when alcohol/drugs were involved
+      5: Yes (while clean)
+      6: Yes (both when clean and when alcohol/drugs were involved)
+  redcap:
+    form: ssaga
+    type: radio
+    label: "<p>ED10 \nHas there ever been a time in your life when you went on eating\
+      \ binges -- eating a large amount of food in a short period of time (usually\
+      \ less than 2 hours)? </p>"
+    choices:
+      1: 'NO'
+      3: ALC/DRUG ONLY
+      5: YES, CLEAN
+      6: BOTH A/D & CLEAN
+
+- rename: ed11
+  name: ed11
+  recode:
+    5: 1
+    1: 0
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: Did you go on eating binges an average of twice a week for at least
+      3 months?
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: "<p>ED11 \nDid you go on eating binges an average of twice a week for at\
+      \ least 3 months?</p>"
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[ed10]>1'
+    alignment: RH
+
+- rename: qk16
+  name: ed12
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: Section K - Anorexia Nervosa/Bulimia. K16. During these eating binges,
+      did you feel you would not be able to stop eating or could not control what
+      or how much you were eating?
+    range:
+    - 1
+    - 5
+    notes: 1=no; 5=yes
+    alias: ed12
+    codes:
+      1: 'no'
+      5: 'yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: "<p>ED12 \nDuring these binges, were you afraid you could not stop eating\
+      \ or that your eating was out of control? </p>"
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[ed10]>1 and [ed11]>1'
+    alignment: RH
+
+- rename: bulpurgp
+  name: ed13_1
+  recode:
+    5: 1
+    1: 0
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: bulimia nervosa purge past
+    range:
+    - 0
+    - 1
+    - -7
+    notes: 0=No; 1=Yes; -7=Refused
+    alias: ed13_1
+    codes:
+      0: 'No'
+      1: 'Yes'
+      -7: Refused
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p style="margin-left: 40px">1. making yourself vomit?</p>'
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[ed10]>1 and [ed11]>1'
+    alignment: RH
+
+- rename: ed13_2
+  name: ed13_2
+  recode:
+    5: 1
+    1: 0
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: 'Did you do anything to prevent weight gain from your binge eating,
+      such as: taking laxatives or diuretics?'
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p style="margin-left: 40px">2. taking laxatives or diuretics?</p>'
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[ed10]>1 and [ed11]>1'
+    alignment: RH
+
+- rename: ed13_3
+  name: ed13_3
+  recode:
+    5: 1
+    1: 0
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: 'Did you do anything to prevent weight gain from your binge eating,
+      such as: dieting strictly?'
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p style="margin-left: 40px">3. dieting strictly?</p>'
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[ed10]>1 and [ed11]>1'
+    alignment: RH
+
+- rename: ed13_4
+  name: ed13_4
+  recode:
+    5: 1
+    1: 0
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: 'Did you do anything to prevent weight gain from your binge eating,
+      such as: fasting?'
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p style="margin-left: 40px">4. fasting?</p>'
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[ed10]>1 and [ed11]>1'
+    alignment: RH
+
+- rename: ed13_5
+  name: ed13_5
+  recode:
+    5: 1
+    1: 0
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: 'Did you do anything to prevent weight gain from your binge eating,
+      such as: exercising vigorously?'
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p style="margin-left: 40px">5. exercising vigorously?</p>'
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[ed10]>1 and [ed11]>1'
+    alignment: RH
+
+- rename: ed13_6
+  name: ed13_6
+  recode:
+    5: 1
+    1: 0
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: 'Did you do anything to prevent weight gain from your binge eating,
+      such as: taking enemas?'
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p style="margin-left: 40px">6. taking enemas?</p>'
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[ed10]>1 and [ed11]>1'
+    alignment: RH
+
+- rename: ed13_7
+  name: ed13_7
+  recode:
+    5: 1
+    1: 0
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: 'Did you do anything to prevent weight gain from your binge eating,
+      such as: anything else?'
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: '<p style="margin-left: 40px">7. anything else?</p>'
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[ed10]>1 and [ed11]>1'
+    alignment: RH
+
+- rename: diamond_bul3
+  name: ed13_7specify
+  source:
+  - ssaga
+  nda:
+    type: String
+    length: 500
+    description: 'Bulimia: In the past month, are there any things that you do, perhaps
+      after an eating binge, in order to prevent weight gain? How often do you do
+      these things?'
+    alias: ed13_7specify
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 80px">IF YES:  SPECIFY:</p>'
+    branching: '[ed13_7]=''5'''
+
+- rename: qk20ons
+  name: ed14_ageon
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: 'Section K - Anorexia Nervosa/Bulimia. K19. Did the weight you gained
+      from eating binges bother you a lot?  ONS: How old were you the first time you
+      had an eating binge and tried to make up for it?  AGE'
+    notes: '#=AGE'
+    alias: ed14_ageon
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 40px">AGE ONS:</p>'
+    note: number
+    validation: number
+    branching: '[ed13_1]="5" or [ed13_2]="5" or [ed13_3]="5" or [ed13_4]="5" or [ed13_5]="5"
+      or [ed13_6]="5" or [ed13_7]="5"'
+
+- rename: ed14_agerec
+  name: ed14_agerec
+  source:
+  - ssaga
+  nda:
+    type: String
+    length: 15
+    description: 'Age of recovery: How old were you the (first/last) time you went
+      on eating binges and tried to prevent weight gain from the binges?'
+  redcap:
+    form: ssaga
+    type: text
+    label: '<p style="margin-left: 40px">AGE REC:</p>'
+    note: number
+    validation: number
+    branching: '[ed13_1]="5" or [ed13_2]="5" or [ed13_3]="5" or [ed13_4]="5" or [ed13_5]="5"
+      or [ed13_6]="5" or [ed13_7]="5"'
+
+- rename: ed16
+  name: ed16
+  recode:
+    5: 1
+    1: 0
+  source:
+  - ssaga
+  nda:
+    type: Integer
+    description: Did you only have eating binges during those periods we talked about
+      when (people thought you were too thin/you had lost a lot of weight on purpose)?
+    range:
+    - 0
+    - 1
+    notes: 0 = No; 1 = Yes
+    codes:
+      0: 'No'
+      1: 'Yes'
+  redcap:
+    form: ssaga
+    type: radio
+    label: "<p>ED16 \nDid you only have eating binges during those periods we talked\
+      \ about when (people thought you were too thin/you had lost a lot of weight\
+      \ on purpose)?</p>"
+    choices:
+      1: 'NO'
+      5: 'YES'
+    branching: '[ed1]>1 and [ed10]>=1 and [ed11]>1 '
+    alignment: RH
+
+- rename: comments_misc
+  name: ed_notes
+  source:
+  - ssaga
+  nda:
+    type: String
+    length: 4000
+    description: Miscellaneous comments on study, interview, methodology relevant
+      to this form data
+    alias: ed_notes
+  redcap:
+    form: ssaga
+    type: notes
+    label: <p>EATING DISORDERS NOTES:</p>

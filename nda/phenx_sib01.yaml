@@ -1,0 +1,3899 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+phenx_sib_1:
+  type: Integer
+  description: Subject endorses thoughts about a wish to be dead or not alive anymore,
+    or wish to fall asleep and not wake up.  Have you thought about being dead or
+    what it would be like to be dead?  Have you wished you were dead or wished you
+    could go to sleep and never wake up?  Do you ever wish you weren't alive anymore?   PX640101_Wish_ToBe_Dead_PastOneMonth
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_2:
+  type: String
+  length: 25
+  description: 'Subject endorses thoughts about a wish to be dead or not alive anymore,
+    or wish to fall asleep and not wake up.  Have you thought about being dead or
+    what it would be like to be dead?  Have you wished you were dead or wished you
+    could go to sleep and never wake up?  Do you ever wish you weren''t alive anymore?    If
+    yes, describe: PX640101_Wish_ToBe_Dead_PastOneMonth_Describe'
+
+phenx_sib_3:
+  type: Integer
+  description: General, non-specific thoughts of wanting to end one's life/commit
+    suicide (e.g., I've thought about killing myself) without thoughts of ways to
+    kill oneself/associated methods, intent, or plan during the assessment period.  Have
+    you thought about doing something to make yourself not alive anymore?  Have you
+    had any thoughts about killing yourself? PX640101_SuicidalThoughts_Nonspecific_Active_PastOneMonth
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_4:
+  type: String
+  length: 25
+  description: 'General, non-specific thoughts of wanting to end one''s life/commit
+    suicide (e.g., I''ve thought about killing myself) without thoughts of ways to
+    kill oneself/associated methods, intent, or plan during the assessment period.  Have
+    you thought about doing something to make yourself not alive anymore?  Have you
+    had any thoughts about killing yourself?    If yes, describe: PX640101_SuicidalThoughts_Nonspecific_Active_PastOneMonth_Describe'
+
+phenx_sib_5:
+  type: Integer
+  description: Subject endorses thoughts of suicide and has thought of at least one
+    method during the assessment period. This is different than a specific plan with
+    time, place or method details worked out (e.g., thought of method to kill self
+    but not a specific plan).  Includes person who would say, I thought about taking
+    an overdose but I never made a specific plan as to when, where or how I would
+    actually do itand I would never go through with it.  Have you thought about how
+    you would do that or how you would make yourself not alive anymore (kill yourself)?
+    What did you think about? PX640101_SuicidalIdeation_WithMethods_WithoutIntent_PastOneMonth
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_6:
+  type: String
+  length: 25
+  description: 'Subject endorses thoughts of suicide and has thought of at least one
+    method during the assessment period. This is different than a specific plan with
+    time, place or method details worked out (e.g., thought of method to kill self
+    but not a specific plan).  Includes person who would say, I thought about taking
+    an overdose but I never made a specific plan as to when, where or how I would
+    actually do itand I would never go through with it.  Have you thought about how
+    you would do that or how you would make yourself not alive anymore (kill yourself)?
+    What did you think about?    If yes, describe: PX640101_SuicidalIdeation_WithMethods_WithoutIntent_PastOneMonth_Describe'
+
+phenx_sib_7:
+  type: Integer
+  description: Active suicidal thoughts of killing oneself and subject reports having
+    some intent to act on such thoughts, as opposed to I have the thoughts but I definitely
+    will not do anything about them.  When you thought about making yourself not alive
+    anymore (or killing yourself), did you think that this was something you might
+    actually do?  This is different from (as opposed to) having the thoughts but knowing
+    you wouldn't do anything about it. PX640101_SuicidalIdeation_WithIntent_WithoutPlan_PastOneMonth
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_8:
+  type: String
+  length: 25
+  description: 'Active suicidal thoughts of killing oneself and subject reports having
+    some intent to act on such thoughts, as opposed to I have the thoughts but I definitely
+    will not do anything about them.  When you thought about making yourself not alive
+    anymore (or killing yourself), did you think that this was something you might
+    actually do?  This is different from (as opposed to) having the thoughts but knowing
+    you wouldn''t do anything about it.    If yes, describe: PX640101_SuicidalIdeation_WithIntent_WithoutPlan_PastOneMonth_Describe'
+
+phenx_sib_9:
+  type: Integer
+  description: Thoughts of killing oneself with details of plan fully or partially
+    worked out and subject has some intent to carry it out.  Have you ever decided
+    how or when you would make yourself not alive anymore/kill yourself? Have you
+    ever planned out (worked out the details of) how you would do it?  What was your
+    plan?  When you made this plan (or worked out these details), was any part of
+    you thinking about actually doing it? PX640101_SuicidalIdeation_WithIntent_WithPlan_PastOneMonth
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_10:
+  type: String
+  length: 25
+  description: 'Thoughts of killing oneself with details of plan fully or partially
+    worked out and subject has some intent to carry it out.  Have you ever decided
+    how or when you would make yourself not alive anymore/kill yourself? Have you
+    ever planned out (worked out the details of) how you would do it?  What was your
+    plan?  When you made this plan (or worked out these details), was any part of
+    you thinking about actually doing it?    If yes, describe: PX640101_SuicidalIdeation_WithIntent_WithPlan_PastOneMonth_Describe'
+
+phenx_sib_11:
+  type: Integer
+  description: 'Actual Attempt:  A potentially self-injurious act committed with at
+    least some wish to die, as a result of act. Behavior was in part thought of as
+    method to kill oneself. Intent does not have to be 100%.  If there is any intent/desire
+    to die associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. For example, a highly lethal act that is clearly not an accident
+    so no other intent but suicide can be inferred (e.g., gunshot to head, jumping
+    from window of a high floor/story). Did you ever do anything to try to kill yourself
+    or make yourself not alive anymore?  PX640101_Suicide_Actual_Attempt_PastThreeMonths'
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_12:
+  type: String
+  length: 25
+  description: 'Actual Attempt:  A potentially self-injurious act committed with at
+    least some wish to die, as a result of act. Behavior was in part thought of as
+    method to kill oneself. Intent does not have to be 100%.  If there is any intent/desire
+    to die associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. For example, a highly lethal act that is clearly not an accident
+    so no other intent but suicide can be inferred (e.g., gunshot to head, jumping
+    from window of a high floor/storyDid you ever do anything to try to kill yourself
+    or make yourself not alive anymore?  If yes, describe: PX640101_Suicide_Actual_Attempt_PastThreeMonths_Description'
+
+phenx_sib_13:
+  type: Integer
+  description: 'A potentially self-injurious act committed with at least some wish
+    to die, as a result of act. Behavior was in part thought of as method to kill
+    oneself. Intent does not have to be 100%.  If there is any intent/desire to die
+    associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. For example, a highly lethal act that is clearly not an accident
+    so no other intent but suicide can be inferred (e.g., gunshot to head, jumping
+    from window of a high floor/storyDid you ever do anything to try to kill yourself
+    or make yourself not alive anymore? Total number of suicide attempts. PX640101_Suicide_Actual_Attempt_TotalNumber_PastThreeMonths'
+
+phenx_sib_14:
+  type: Integer
+  description: 'A potentially self-injurious act committed with at least some wish
+    to die, as a result of act. Behavior was in part thought of as method to kill
+    oneself. Intent does not have to be 100%.  If there is any intent/desire to die
+    associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. Did you ever do anything to try to kill yourself or make yourself
+    not alive anymore? What did you do?  Did you ever hurt yourself on purpose? Has
+    subject engaged in Non-Suicidal Self-Injurious Behavior? PX640101_NonSuicidal_SelfInjurious_Behavior_PastThreeMonths'
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_15:
+  type: Integer
+  description: 'A potentially self-injurious act committed with at least some wish
+    to die, as a result of act. Behavior was in part thought of as method to kill
+    oneself. Intent does not have to be 100%.  If there is any intent/desire to die
+    associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. Did you ever do anything to try to kill yourself or make yourself
+    not alive anymore? What did you do?  Did you ever hurt yourself on purpose? PX640101_SelfInjurious_Behavior_Unknown_Intent_PastThreeMonths'
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_16:
+  type: Integer
+  description: When the person is interrupted (by an outside circumstance) from starting
+    the potentially self-injurious act (if not for that, actual attempt would have
+    occurred).  Has there been a time when you started to do something to make yourself
+    not alive anymore (end your life or kill yourself) but someone or something stopped
+    you before you actually did anything? What did you do? PX640101_Suicide_Interrupted_Attempt_PastThreeMonths
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_17:
+  type: String
+  length: 25
+  description: 'When the person is interrupted (by an outside circumstance) from starting
+    the potentially self-injurious act (if not for that, actual attempt would have
+    occurred).  Has there been a time when you started to do something to make yourself
+    not alive anymore (end your life or kill yourself) but someone or something stopped
+    you before you actually did anything? What did you do?  If yes, describe: PX640101_Suicide_Interrupted_Attempt_PastThreeMonths_Describe'
+
+phenx_sib_18:
+  type: Integer
+  description: When the person is interrupted (by an outside circumstance) from starting
+    the potentially self-injurious act (if not for that, actual attempt would have
+    occurred).  Has there been a time when you started to do something to make yourself
+    not alive anymore (end your life or kill yourself) but someone or something stopped
+    you before you actually did anything? What did you do?  Total number of interrupted
+    PX640101_Suicide_Interrupted_Attempt_TotalNumber_PastThreeMonths
+
+phenx_sib_19:
+  type: Integer
+  description: When person begins to take steps toward making a suicide attempt, but
+    stops themselves before they actually have engaged in any self-destructive behavior.
+    Examples are similar to interrupted attempts, except that the individual stops
+    him/herself, instead of being stopped by something else.  Has there been a time
+    when you started to do something to make yourself not alive anymore (end your
+    life or kill yourself) but you changed your mind (stopped yourself) before you
+    actually did anything? What did you do?   PX640101_Suicide_Aborted_Attempt_PastThreeMonths
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_20:
+  type: String
+  length: 25
+  description: 'When person begins to take steps toward making a suicide attempt,
+    but stops themselves before they actually have engaged in any self-destructive
+    behavior. Examples are similar to interrupted attempts, except that the individual
+    stops him/herself, instead of being stopped by something else.  Has there been
+    a time when you started to do something to make yourself not alive anymore (end
+    your life or kill yourself) but you changed your mind (stopped yourself) before
+    you actually did anything? What did you do?  If yes, describe:   PX640101_Suicide_Aborted_Attempt_PastThreeMonths_Describe'
+
+phenx_sib_21:
+  type: Integer
+  description: When person begins to take steps toward making a suicide attempt, but
+    stops themselves before they actually have engaged in any self-destructive behavior.
+    Examples are similar to interrupted attempts, except that the individual stops
+    him/herself, instead of being stopped by something else.  Has there been a time
+    when you started to do something to make yourself not alive anymore (end your
+    life or kill yourself) but you changed your mind (stopped yourself) before you
+    actually did anything? What did you do?  Total number aborted.  PX640101_Suicide_Aborted_Attempt_TotalNumber_PastThreeMonths
+
+phenx_sib_22:
+  type: Integer
+  description: Acts or preparation towards imminently making a suicide attempt. This
+    can include anything beyond a verbalization or thought, such as assembling a specific
+    method (e.g., buying pills, purchasing a gun) or preparing for one's death by
+    suicide (e.g., giving things away, writing a suicide note).  Have you done anything
+    to get ready to make yourself not alive anymore (to end your life or kill yourself)-
+    like giving things away, writing a goodbye note, getting things you need to kill
+    yourself? PX640101_Suicide_Preparatory_Acts_Behavior_PastThreeMonths
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_23:
+  type: String
+  length: 25
+  description: 'Acts or preparation towards imminently making a suicide attempt. This
+    can include anything beyond a verbalization or thought, such as assembling a specific
+    method (e.g., buying pills, purchasing a gun) or preparing for one''s death by
+    suicide (e.g., giving things away, writing a suicide note).  Have you done anything
+    to get ready to make yourself not alive anymore (to end your life or kill yourself)-
+    like giving things away, writing a goodbye note, getting things you need to kill
+    yourself?  If yes, describe: PX640101_Suicide_Preparatory_Acts_Behavior_PastThreeMonths_Describe'
+
+phenx_sib_24:
+  type: Integer
+  description: Suicidal behavior was present during the assessment period? Lifetime
+    PX640101_Suicidal_Behavior_Present_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_25:
+  type: Integer
+  description: Subject endorses thoughts about a wish to be dead or not alive anymore,
+    or wish to fall asleep and not wake up.  Have you thought about being dead or
+    what it would be like to be dead?  Have you wished you were dead or wished you
+    could go to sleep and never wake up?  Do you ever wish you weren't alive anymore?  PX640102_Wish_ToBe_Dead_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_26:
+  type: String
+  length: 200
+  description: 'Subject endorses thoughts about a wish to be dead or not alive anymore,
+    or wish to fall asleep and not wake up.  Have you thought about being dead or
+    what it would be like to be dead?  Have you wished you were dead or wished you
+    could go to sleep and never wake up?  Do you ever wish you weren''t alive anymore?    If
+    yes, describe: PX640102_Wish_ToBe_Dead_Lifetime_Describe'
+
+phenx_sib_27:
+  type: Integer
+  description: General, non-specific thoughts of wanting to end one's life/commit
+    suicide (e.g., I've thought about killing myself) without thoughts of ways to
+    kill oneself/associated methods, intent, or plan during the assessment period.  Have
+    you thought about doing something to make yourself not alive anymore?  Have you
+    had any thoughts about killing yourself? PX640102_SuicidalThoughts_Nonspecific_Active_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_28:
+  type: String
+  length: 200
+  description: 'General, non-specific thoughts of wanting to end one''s life/commit
+    suicide (e.g., I''ve thought about killing myself) without thoughts of ways to
+    kill oneself/associated methods, intent, or plan during the assessment period.  Have
+    you thought about doing something to make yourself not alive anymore?  Have you
+    had any thoughts about killing yourself?    If yes, describe: PX640102_SuicidalThoughts_Nonspecific_Active_Lifetime_Describe'
+
+phenx_sib_29:
+  type: Integer
+  description: Subject endorses thoughts of suicide and has thought of at least one
+    method during the assessment period. This is different than a specific plan with
+    time, place or method details worked out (e.g., thought of method to kill self
+    but not a specific plan).  Includes person who would say, I thought about taking
+    an overdose but I never made a specific plan as to when, where or how I would
+    actually do itand I would never go through with it.  Have you thought about how
+    you would do that or how you would make yourself not alive anymore (kill yourself)?
+    What did you think about? PX640102_SuicidalIdeation_WithMethods_WithoutIntent_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_30:
+  type: String
+  length: 25
+  description: 'Subject endorses thoughts of suicide and has thought of at least one
+    method during the assessment period. This is different than a specific plan with
+    time, place or method details worked out (e.g., thought of method to kill self
+    but not a specific plan).  Includes person who would say, I thought about taking
+    an overdose but I never made a specific plan as to when, where or how I would
+    actually do itand I would never go through with it.  Have you thought about how
+    you would do that or how you would make yourself not alive anymore (kill yourself)?
+    What did you think about?    If yes, describe: PX640102_SuicidalIdeation_WithMethods_WithoutIntent_Lifetime_Describe'
+
+phenx_sib_31:
+  type: Integer
+  description: Active suicidal thoughts of killing oneself and subject reports having
+    some intent to act on such thoughts, as opposed to I have the thoughts but I definitely
+    will not do anything about them.  When you thought about making yourself not alive
+    anymore (or killing yourself), did you think that this was something you might
+    actually do?  This is different from (as opposed to) having the thoughts but knowing
+    you wouldn't do anything about it. PX640102_SuicidalIdeation_WithIntent_WithoutPlan_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_32:
+  type: String
+  length: 25
+  description: 'Active suicidal thoughts of killing oneself and subject reports having
+    some intent to act on such thoughts, as opposed to I have the thoughts but I definitely
+    will not do anything about them.  When you thought about making yourself not alive
+    anymore (or killing yourself), did you think that this was something you might
+    actually do?  This is different from (as opposed to) having the thoughts but knowing
+    you wouldn''t do anything about it.    If yes, describe: PX640102_SuicidalIdeation_WithIntent_WithoutPlan_Lifetime_Describe'
+
+phenx_sib_33:
+  type: Integer
+  description: Thoughts of killing oneself with details of plan fully or partially
+    worked out and subject has some intent to carry it out.  Have you ever decided
+    how or when you would make yourself not alive anymore/kill yourself? Have you
+    ever planned out (worked out the details of) how you would do it?  What was your
+    plan?  When you made this plan (or worked out these details), was any part of
+    you thinking about actually doing it? PX640102_SuicidalIdeation_WithIntent_WithPlan_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_34:
+  type: String
+  length: 25
+  description: 'Thoughts of killing oneself with details of plan fully or partially
+    worked out and subject has some intent to carry it out.  Have you ever decided
+    how or when you would make yourself not alive anymore/kill yourself? Have you
+    ever planned out (worked out the details of) how you would do it?  What was your
+    plan?  When you made this plan (or worked out these details), was any part of
+    you thinking about actually doing it?    If yes, describe: PX640102_SuicidalIdeation_WithIntent_WithPlan_Lifetime_Describe'
+
+phenx_sib_35:
+  type: Integer
+  description: 'Actual Attempt:  A potentially self-injurious act committed with at
+    least some wish to die, as a result of act. Behavior was in part thought of as
+    method to kill oneself. Intent does not have to be 100%.  If there is any intent/desire
+    to die associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. Did you ever hurt yourself on purpose? Why did you do that?  Did
+    you  as a way to end your life?  Did you want to die (even a little) when you
+    ?  Were you trying to make yourself not alive anymore when you  ? (Self-Injurious
+    Behavior without suicidal intent)   PX640102_Suicide_Actual_Attempt_Lifetime'
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_36:
+  type: String
+  length: 200
+  description: 'Actual Attempt:  A potentially self-injurious act committed with at
+    least some wish to die, as a result of act. Behavior was in part thought of as
+    method to kill oneself. Intent does not have to be 100%.  If there is any intent/desire
+    to die associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. Why did you do that?  Did you  as a way to end your life?  Did
+    you want to die (even a little) when you ?  Were you trying to make yourself not
+    alive anymore when you  ?  If yes, describe: PX640102_Suicide_Actual_Attempt_Lifetime_Description'
+
+phenx_sib_37:
+  type: Integer
+  description: 'A potentially self-injurious act committed with at least some wish
+    to die, as a result of act. Behavior was in part thought of as method to kill
+    oneself. Intent does not have to be 100%.  If there is any intent/desire to die
+    associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. Why did you do that?  Did you  as a way to end your life?  Did
+    you want to die (even a little) when you ?  Were you trying to make yourself not
+    alive anymore when you  ?  Or did you think it was possible you could have died
+    from ?  Total number of suicide attempts PX640102_Suicide_Actual_Attempt_TotalNumber_Lifetime'
+
+phenx_sib_38:
+  type: Integer
+  description: 'A potentially self-injurious act committed with at least some wish
+    to die, as a result of act. Behavior was in part thought of as method to kill
+    oneself. Intent does not have to be 100%.  If there is any intent/desire to die
+    associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. Did you ever hurt yourself on purpose? Why did you do that?  Did
+    you  as a way to end your life?  Did you want to die (even a little) when you
+    ?  Were you trying to make yourself not alive anymore when you  ?Has subject engaged
+    in Non-Suicidal Self-Injurious Behavior PX640102_NonSuicidal_SelfInjurious_Behavior_Lifetime'
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_39:
+  type: Integer
+  description: 'A potentially self-injurious act committed with at least some wish
+    to die, as a result of act. Behavior was in part thought of as method to kill
+    oneself. Intent does not have to be 100%.  If there is any intent/desire to die
+    associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. What did you do?  Did you ever hurt yourself on purpose? Why did
+    you do that?  Did you  as a way to end your life?  Did you want to die (even a
+    little) when you ?  Has subject engaged in Self-Injurious Behavior, intent unknown
+    PX640102_SelfInjurious_Behavior_Unknown_Intent_Lifetime'
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_40:
+  type: Integer
+  description: When the person is interrupted (by an outside circumstance) from starting
+    the potentially self-injurious act (if not for that, actual attempt would have
+    occurred).  Has there been a time when you started to do something to make yourself
+    not alive anymore (end your life or kill yourself) but someone or something stopped
+    you before you actually did anything? What did you do? PX640102_Suicide_Interrupted_Attempt_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_41:
+  type: String
+  length: 200
+  description: 'When the person is interrupted (by an outside circumstance) from starting
+    the potentially self-injurious act (if not for that, actual attempt would have
+    occurred).  Has there been a time when you started to do something to make yourself
+    not alive anymore (end your life or kill yourself) but someone or something stopped
+    you before you actually did anything? What did you do?  If yes, describe: PX640102_Suicide_Interrupted_Attempt_Lifetime_Describe'
+
+phenx_sib_42:
+  type: Integer
+  description: When the person is interrupted (by an outside circumstance) from starting
+    the potentially self-injurious act (if not for that, actual attempt would have
+    occurred).  Has there been a time when you started to do something to make yourself
+    not alive anymore (end your life or kill yourself) but someone or something stopped
+    you before you actually did anything? What did you do?  Total number of interrupted
+    PX640102_Suicide_Interrupted_Attempt_TotalNumber_Lifetime
+
+phenx_sib_43:
+  type: Integer
+  description: When person begins to take steps toward making a suicide attempt, but
+    stops themselves before they actually have engaged in any self-destructive behavior.
+    Examples are similar to interrupted attempts, except that the individual stops
+    him/herself, instead of being stopped by something else.  Has there been a time
+    when you started to do something to make yourself not alive anymore (end your
+    life or kill yourself) but you changed your mind (stopped yourself) before you
+    actually did anything? What did you do?  PX640102_Suicide_Aborted_Attempt_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_44:
+  type: String
+  length: 25
+  description: 'When person begins to take steps toward making a suicide attempt,
+    but stops themselves before they actually have engaged in any self-destructive
+    behavior. Examples are similar to interrupted attempts, except that the individual
+    stops him/herself, instead of being stopped by something else.  Has there been
+    a time when you started to do something to make yourself not alive anymore (end
+    your life or kill yourself) but you changed your mind (stopped yourself) before
+    you actually did anything? What did you do?  If yes, describe:   PX640102_Suicide_Aborted_Attempt_Lifetime_Describe'
+
+phenx_sib_45:
+  type: Integer
+  description: When person begins to take steps toward making a suicide attempt, but
+    stops themselves before they actually have engaged in any self-destructive behavior.
+    Examples are similar to interrupted attempts, except that the individual stops
+    him/herself, instead of being stopped by something else.  Has there been a time
+    when you started to do something to make yourself not alive anymore (end your
+    life or kill yourself) but you changed your mind (stopped yourself) before you
+    actually did anything? What did you do?  Total number aborted.  PX640102_Suicide_Aborted_Attempt_TotalNumber_Lifetime
+
+phenx_sib_46:
+  type: Integer
+  description: Acts or preparation towards imminently making a suicide attempt. This
+    can include anything beyond a verbalization or thought, such as assembling a specific
+    method (e.g., buying pills, purchasing a gun) or preparing for one's death by
+    suicide (e.g., giving things away, writing a suicide note).  Have you done anything
+    to get ready to make yourself not alive anymore (to end your life or kill yourself)-
+    like giving things away, writing a goodbye note, getting things you need to kill
+    yourself? PX640102_Suicide_Preparatory_Acts_Behavior_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_47:
+  type: String
+  length: 200
+  description: 'Acts or preparation towards imminently making a suicide attempt. This
+    can include anything beyond a verbalization or thought, such as assembling a specific
+    method (e.g., buying pills, purchasing a gun) or preparing for one''s death by
+    suicide (e.g., giving things away, writing a suicide note).  Have you done anything
+    to get ready to make yourself not alive anymore (to end your life or kill yourself)-
+    like giving things away, writing a goodbye note, getting things you need to kill
+    yourself?  If yes, describe: PX640102_Suicide_Preparatory_Acts_Behavior_Lifetime_Describe'
+
+phenx_sib_48:
+  type: Integer
+  description: Suicidal behavior was present during the assessment period? PX640102_Suicidal_Behavior_Present_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_49:
+  type: Integer
+  description: Subject endorses thoughts about a wish to be dead or not alive anymore,
+    or wish to fall asleep and not wake up.  Have you thought about being dead or
+    what it would be like to be dead?  Have you wished you were dead or wished you
+    could go to sleep and never wake up?  Do you ever wish you weren't alive anymore?   PX640103_Wish_ToBe_Dead_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_50:
+  type: String
+  length: 25
+  description: 'Subject endorses thoughts about a wish to be dead or not alive anymore,
+    or wish to fall asleep and not wake up.  Have you thought about being dead or
+    what it would be like to be dead?  Have you wished you were dead or wished you
+    could go to sleep and never wake up?  Do you ever wish you weren''t alive anymore?    If
+    yes, describe: PX640103_Wish_ToBe_Dead_SinceLastVisit_Describe'
+
+phenx_sib_51:
+  type: Integer
+  description: General, non-specific thoughts of wanting to end one's life/commit
+    suicide (e.g., I've thought about killing myself) without thoughts of ways to
+    kill oneself/associated methods, intent, or plan during the assessment period.  Have
+    you thought about doing something to make yourself not alive anymore?  Have you
+    had any thoughts about killing yourself? PX640103_SuicidalThoughts_Nonspecific_Active_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_52:
+  type: String
+  length: 25
+  description: 'General, non-specific thoughts of wanting to end one''s life/commit
+    suicide (e.g., I''ve thought about killing myself) without thoughts of ways to
+    kill oneself/associated methods, intent, or plan during the assessment period.  Have
+    you thought about doing something to make yourself not alive anymore?  Have you
+    had any thoughts about killing yourself?    If yes, describe: PX640103_SuicidalThoughts_Nonspecific_Active_SinceLastVisit_Describe'
+
+phenx_sib_53:
+  type: Integer
+  description: Subject endorses thoughts of suicide and has thought of at least one
+    method during the assessment period. This is different than a specific plan with
+    time, place or method details worked out (e.g., thought of method to kill self
+    but not a specific plan).  Includes person who would say, I thought about taking
+    an overdose but I never made a specific plan as to when, where or how I would
+    actually do itand I would never go through with it.  Have you thought about how
+    you would do that or how you would make yourself not alive anymore (kill yourself)?
+    What did you think about? PX640103_SuicidalIdeation_WithMethods_WithoutIntent_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_54:
+  type: String
+  length: 25
+  description: 'Subject endorses thoughts of suicide and has thought of at least one
+    method during the assessment period. This is different than a specific plan with
+    time, place or method details worked out (e.g., thought of method to kill self
+    but not a specific plan).  Includes person who would say, I thought about taking
+    an overdose but I never made a specific plan as to when, where or how I would
+    actually do itand I would never go through with it.  Have you thought about how
+    you would do that or how you would make yourself not alive anymore (kill yourself)?
+    What did you think about?    If yes, describe: PX640103_SuicidalIdeation_WithMethods_WithoutIntent_SinceLastVisit_Describe'
+
+phenx_sib_55:
+  type: Integer
+  description: Active suicidal thoughts of killing oneself and subject reports having
+    some intent to act on such thoughts, as opposed to I have the thoughts but I definitely
+    will not do anything about them.  When you thought about making yourself not alive
+    anymore (or killing yourself), did you think that this was something you might
+    actually do?  This is different from (as opposed to) having the thoughts but knowing
+    you wouldn't do anything about it. PX640103_SuicidalIdeation_WithIntent_WithoutPlan_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_56:
+  type: String
+  length: 25
+  description: 'Active suicidal thoughts of killing oneself and subject reports having
+    some intent to act on such thoughts, as opposed to I have the thoughts but I definitely
+    will not do anything about them.  When you thought about making yourself not alive
+    anymore (or killing yourself), did you think that this was something you might
+    actually do?  This is different from (as opposed to) having the thoughts but knowing
+    you wouldn''t do anything about it.    If yes, describe: PX640103_SuicidalIdeation_WithIntent_WithoutPlan_SinceLastVisit_Describe'
+
+phenx_sib_57:
+  type: Integer
+  description: Thoughts of killing oneself with details of plan fully or partially
+    worked out and subject has some intent to carry it out.  Have you ever decided
+    how or when you would make yourself not alive anymore/kill yourself? Have you
+    ever planned out (worked out the details of) how you would do it?  What was your
+    plan?  When you made this plan (or worked out these details), was any part of
+    you thinking about actually doing it? PX640103_SuicidalIdeation_WithIntent_WithPlan_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_58:
+  type: String
+  length: 25
+  description: 'Thoughts of killing oneself with details of plan fully or partially
+    worked out and subject has some intent to carry it out.  Have you ever decided
+    how or when you would make yourself not alive anymore/kill yourself? Have you
+    ever planned out (worked out the details of) how you would do it?  What was your
+    plan?  When you made this plan (or worked out these details), was any part of
+    you thinking about actually doing it?    If yes, describe: PX640103_SuicidalIdeation_WithIntent_WithPlan_SinceLastVisit_Describe'
+
+phenx_sib_59:
+  type: Integer
+  description: 'Actual Attempt:  A potentially self-injurious act committed with at
+    least some wish to die, as a result of act. Behavior was in part thought of as
+    method to kill oneself. Intent does not have to be 100%.  If there is any intent/desire
+    to die associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. Did you ever hurt yourself on purpose? Why did you do that?  Did
+    you  as a way to end your life?  Did you want to die (even a little) when you
+    ?   PX640103_Suicide_Actual_Attempt_SinceLastVisit'
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_60:
+  type: String
+  length: 25
+  description: 'Actual Attempt:  A potentially self-injurious act committed with at
+    least some wish to die, as a result of act. Behavior was in part thought of as
+    method to kill oneself. Intent does not have to be 100%.  If there is any intent/desire
+    to die associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. Did you ever hurt yourself on purpose? Why did you do that?  Did
+    you  as a way to end your life?  Did you want to die (even a little) when you
+    ?  If yes, describe:PX640103_Suicide_Actual_Attempt_SinceLastVisit_Description'
+
+phenx_sib_61:
+  type: Integer
+  description: 'A potentially self-injurious act committed with at least some wish
+    to die, as a result of act. Behavior was in part thought of as method to kill
+    oneself. Intent does not have to be 100%.  If there is any intent/desire to die
+    associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. What did you do?  Did you ever hurt yourself on purpose? Why did
+    you do that?  Did you  as a way to end your life?  Did you want to die (even a
+    little) when you ?  Total number of suicide attempts PX640103_Suicide_Actual_Attempt_TotalNumber_SinceLastVisit'
+
+phenx_sib_62:
+  type: Integer
+  description: 'A potentially self-injurious act committed with at least some wish
+    to die, as a result of act. Behavior was in part thought of as method to kill
+    oneself. Intent does not have to be 100%.  If there is any intent/desire to die
+    associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. Did you ever hurt yourself on purpose? Why did you do that?  Did
+    you  as a way to end your life?  Did you want to die (even a little) when you
+    ?  Has subject engaged in Non-Suicidal Self-Injurious Behavior PX640103_NonSuicidal_SelfInjurious_Behavior_SinceLastVisit'
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_63:
+  type: Integer
+  description: 'A potentially self-injurious act committed with at least some wish
+    to die, as a result of act. Behavior was in part thought of as method to kill
+    oneself. Intent does not have to be 100%.  If there is any intent/desire to die
+    associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances  Did you ever hurt yourself on purpose? Why did you do that?  Did
+    you  as a way to end your life?  Did you want to die (even a little) when you
+    ?  Has subject engaged in Self-Injurious Behavior, intent unknown PX640103_SelfInjurious_Behavior_Unknown_Intent_SinceLastVisit'
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_64:
+  type: Integer
+  description: When the person is interrupted (by an outside circumstance) from starting
+    the potentially self-injurious act (if not for that, actual attempt would have
+    occurred).  Has there been a time when you started to do something to make yourself
+    not alive anymore (end your life or kill yourself) but someone or something stopped
+    you before you actually did anything? What did you do? PX640103_Suicide_Interrupted_Attempt_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_65:
+  type: String
+  length: 25
+  description: 'When the person is interrupted (by an outside circumstance) from starting
+    the potentially self-injurious act (if not for that, actual attempt would have
+    occurred).  Has there been a time when you started to do something to make yourself
+    not alive anymore (end your life or kill yourself) but someone or something stopped
+    you before you actually did anything? What did you do?  If yes, describe: PX640103_Suicide_Interrupted_Attempt_SinceLastVisit_Describe'
+
+phenx_sib_66:
+  type: Integer
+  description: When the person is interrupted (by an outside circumstance) from starting
+    the potentially self-injurious act (if not for that, actual attempt would have
+    occurred).  Has there been a time when you started to do something to make yourself
+    not alive anymore (end your life or kill yourself) but someone or something stopped
+    you before you actually did anything? What did you do?  Total number of interrupted
+    PX640103_Suicide_Interrupted_Attempt_TotalNumber_SinceLastVisit
+
+phenx_sib_67:
+  type: Integer
+  description: When person begins to take steps toward making a suicide attempt, but
+    stops themselves before they actually have engaged in any self-destructive behavior.
+    Examples are similar to interrupted attempts, except that the individual stops
+    him/herself, instead of being stopped by something else.  Has there been a time
+    when you started to do something to make yourself not alive anymore (end your
+    life or kill yourself) but you changed your mind (stopped yourself) before you
+    actually did anything? What did you do?  PX640103_Suicide_Aborted_Attempt_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_68:
+  type: String
+  length: 25
+  description: 'When person begins to take steps toward making a suicide attempt,
+    but stops themselves before they actually have engaged in any self-destructive
+    behavior. Examples are similar to interrupted attempts, except that the individual
+    stops him/herself, instead of being stopped by something else.  Has there been
+    a time when you started to do something to make yourself not alive anymore (end
+    your life or kill yourself) but you changed your mind (stopped yourself) before
+    you actually did anything? What did you do?  If yes, describe:  PX640103_Suicide_Aborted_Attempt_SinceLastVisit_Describe'
+
+phenx_sib_69:
+  type: Integer
+  description: When person begins to take steps toward making a suicide attempt, but
+    stops themselves before they actually have engaged in any self-destructive behavior.
+    Examples are similar to interrupted attempts, except that the individual stops
+    him/herself, instead of being stopped by something else.  Has there been a time
+    when you started to do something to make yourself not alive anymore (end your
+    life or kill yourself) but you changed your mind (stopped yourself) before you
+    actually did anything? What did you do?  Total number aborted.  PX640103_Suicide_Aborted_Attempt_TotalNumber_SinceLastVisit
+
+phenx_sib_70:
+  type: Integer
+  description: Acts or preparation towards imminently making a suicide attempt. This
+    can include anything beyond a verbalization or thought, such as assembling a specific
+    method (e.g., buying pills, purchasing a gun) or preparing for one's death by
+    suicide (e.g., giving things away, writing a suicide note).  Have you done anything
+    to get ready to make yourself not alive anymore (to end your life or kill yourself)-
+    like giving things away, writing a goodbye note, getting things you need to kill
+    yourself? PX640103_Suicide_Preparatory_Acts_Behavior_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_71:
+  type: String
+  length: 25
+  description: 'Acts or preparation towards imminently making a suicide attempt. This
+    can include anything beyond a verbalization or thought, such as assembling a specific
+    method (e.g., buying pills, purchasing a gun) or preparing for one''s death by
+    suicide (e.g., giving things away, writing a suicide note).  Have you done anything
+    to get ready to make yourself not alive anymore (to end your life or kill yourself)-
+    like giving things away, writing a goodbye note, getting things you need to kill
+    yourself?  If yes, describe: PX640103_Suicide_Preparatory_Acts_Behavior_SinceLastVisit_Describe'
+
+phenx_sib_72:
+  type: Integer
+  description: Suicidal behavior was present during the assessment period? PX640103_Suicidal_Behavior_Present_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_73:
+  type: Integer
+  description: Completed Suicide PX640103_Completed_Suicide_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_74:
+  type: Integer
+  description: 'INTERVIEWER CHECKPOINT: PX640104_Interviewer_Checkpoint_Can_Respondent_Read'
+  range:
+  - 1
+  - 2
+  notes: 1=Respondent is able to read; 2=All others go to 15
+  codes:
+    1: Respondent is able to read
+    2: All others go to 15
+
+phenx_sib_75:
+  type: Integer
+  description: 'Three experiences are listed in your booklet on page 20 labeled A,
+    B, and C. Did Experience A ever happen to you?  INTERVIEWER: EXPERIENCE A IS "YOU
+    SERIOUSLY THOUGHT ABOUT KILLING YOURSELF" PX640104_ThoughtAbout_KillingYourself_AbleToRead'
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_76:
+  type: Integer
+  description: 'How old were you the first time this happened?  INTERVIEWER: EXPERIENCE
+    A IS "YOU SERIOUSLY THOUGHT ABOUT KILLING YOURSELF" PX640104_ThoughtAbout_KillingYourself_FirstTimeAge_AbleToRead'
+  notes: years
+
+phenx_sib_77:
+  type: Integer
+  description: 'How old were you the first time this happened?  INTERVIEWER: EXPERIENCE
+    A IS "YOU SERIOUSLY THOUGHT ABOUT KILLING YOURSELF" PX640104_ThoughtAbout_KillingYourself_FirstTimeAgeCoded_AbleToRead'
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_78:
+  type: Integer
+  description: 'Did Experience A happen to you at any time in the past 12 months?  INTERVIEWER:
+    EXPERIENCE A IS "YOU SERIOUSLY THOUGHT ABOUT KILLING YOURSELF" PX640104_ThoughtAbout_KillingYourself_PastYear_AbleToRead'
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_79:
+  type: Integer
+  description: 'How old were you the last time this experience happened to you?  INTERVIEWER:
+    EXPERIENCE A IS "YOU SERIOUSLY THOUGHT ABOUT KILLING YOURSELF" PX640104_ThoughtAbout_KillingYourself_LastTimeAge_AbleToRead'
+
+phenx_sib_80:
+  type: Integer
+  description: 'How old were you the last time this experience happened to you?  INTERVIEWER:
+    EXPERIENCE A IS "YOU SERIOUSLY THOUGHT ABOUT KILLING YOURSELF" PX640104_ThoughtAbout_KillingYourself_LastTimeAgeCoded_AbleToRead'
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_81:
+  type: Integer
+  description: 'Now look at the second of the three experiences on the list, Experience
+    B. Did Experience B ever happen to you?  INTERVIEWER: EXPERIENCE B IS "YOU MADE
+    A PLAN FOR KILLING YOURSELF"  PX640104_PlanTo_KillYourself_AbleToRead'
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_82:
+  type: Integer
+  description: 'How old were you the first time this happened?  INTERVIEWER: EXPERIENCE
+    B IS "YOU MADE A PLAN FOR KILLING YOURSELF" PX640104_PlanTo_KillYourself_FirstTimeAge_AbleToRead'
+  notes: years
+
+phenx_sib_83:
+  type: Integer
+  description: 'How old were you the first time this happened?  INTERVIEWER: EXPERIENCE
+    B IS "YOU MADE A PLAN FOR KILLING YOURSELF"  PX640104_PlanTo_KillYourself_FirstTimeAgeCoded_AbleToRead'
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_84:
+  type: Integer
+  description: 'Did Experience B happen to you at any time in the past 12 months?  INTERVIEWER:
+    EXPERIENCE B IS "YOU MADE A PLAN FOR KILLING YOURSELF" PX640104_PlanTo_KillYourself_PastYear_AbleToRead'
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_85:
+  type: Integer
+  description: 'How old were you the last time this experience happened to you?  INTERVIEWER:
+    EXPERIENCE B IS "YOU MADE A PLAN FOR KILLING YOURSELF" PX640104_PlanTo_KillYourself_LastTimeAge_AbleToRead'
+
+phenx_sib_86:
+  type: Integer
+  description: 'How old were you the last time this experience happened to you?  INTERVIEWER:
+    EXPERIENCE B IS "YOU MADE A PLAN FOR KILLING YOURSELF"  PX640104_PlanTo_KillYourself_LastTimeAgeCoded_AbleToRead'
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_87:
+  type: Integer
+  description: 'Now look at the third of the three experiences on the list, Experience
+    C. Did experience C ever happen to you?  INTERVIEWER: EXPERIENCE C IS "YOU TRIED
+    TO KILL YOURSELF"  PX640104_TriedTo_KillYourself_AbleToRead'
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_88:
+  type: Integer
+  description: 'How old were you the first time?  INTERVIEWER: EXPERIENCE C IS "YOU
+    TRIED TO KILL YOURSELF" PX640104_TriedTo_KillYourself_FirstAge_AbleToRead'
+  notes: years
+  alias: su2b_ageon
+
+phenx_sib_89:
+  type: Integer
+  description: 'How old were you the first time?  INTERVIEWER: EXPERIENCE C IS "YOU
+    TRIED TO KILL YOURSELF"  PX640104_TriedTo_KillYourself_FirstAgeCoded_AbleToRead'
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_90:
+  type: Integer
+  description: 'Did Experience C happen to you in the past 12 months?  INTERVIEWER:
+    EXPERIENCE C IS "YOU TRIED TO KILL YOURSELF" PX640104_TriedTo_KillYourself_PastYear_AbleToRead'
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_91:
+  type: Integer
+  description: 'How old were you (when/the last time) Experience C happened to you?  INTERVIEWER:
+    EXPERIENCE C IS "YOU TRIED TO KILL YOURSELF" PX640104_TriedTo_KillYourself_LastTimeAge_AbleToRead'
+
+phenx_sib_92:
+  type: Integer
+  description: 'How old were you (when/the last time) Experience C happened to you?  INTERVIEWER:
+    EXPERIENCE C IS "YOU TRIED TO KILL YOURSELF"  PX640104_TriedTo_KillYourself_LastTimeAgeCoded_AbleToRead'
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_93:
+  type: Integer
+  description: 'How many times did Experience C ever happen to you in your lifetime?  INTERVIEWER:
+    EXPERIENCE C IS "YOU TRIED TO KILL YOURSELF" PX640104_TriedTo_KillYourself_LifetimeNumber_AbleToRead'
+
+phenx_sib_94:
+  type: Integer
+  description: 'How many times did Experience C ever happen to you in your lifetime?  INTERVIEWER:
+    EXPERIENCE C IS "YOU TRIED TO KILL YOURSELF"  PX640104_TriedTo_KillYourself_LifetimeNumberCoded_AbleToRead'
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_95:
+  type: Integer
+  description: There are three statements numbered 1, 2, and 3 on page 21 in your
+    booklet. Which of these three statements best describes your situation when Experience
+    C happened to you the first time1, 2, or 3?  PX640104_TriedTo_KillYourself_SituationFirstTime_AbleToRead
+  range:
+  - 1::3
+  - 8
+  - 9
+  notes: 1=I made a serious attempt to kil myself and it was only luck that I did
+    not succeed; 2=I tried to kill myself, but knew that the method may not work;
+    3=My attempt was a cry for help. I did not intend to die; 8=Don't know; 9=Refused
+  codes:
+    1: I made a serious attempt to kil myself and it was only luck that I did not
+      succeed
+    2: I tried to kill myself, but knew that the method may not work
+    3: My attempt was a cry for help. I did not intend to die
+    8: Don't know
+    9: Refused
+
+phenx_sib_96:
+  type: Integer
+  description: Did it result in an injury or poisoning? PX640104_TriedTo_KillYourself_LastTimeResult_AbleToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_97:
+  type: Integer
+  description: Did it require medical attention? PX640104_TriedTo_KillYourself_LastTimeMedicalAttention_AbleToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_98:
+  type: Integer
+  description: Did it require overnight hospitalization? PX640104_TriedTo_KillYourself_LastTimeHospitalization_AbleToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_99:
+  type: Integer
+  description: 'Looking at page 20 in your booklet, which of the three statements
+    best describes your situation when Experience C happened to you (the last time)
+    - 1, 2, or 3?  INTERVIEWER: EXPERIENCE C IS "YOU TRIED TO KILL YOURSELF" PX640104_TriedTo_KillYourself_LastTimeSituation_AbleToRead'
+  range:
+  - 1::3
+  - 8
+  - 9
+  notes: 1=I made a serious attempt to kil myself and it was only luck that I did
+    not succeed; 2=I tried to kill myself, but knew that the method may not work;
+    3=My attempt was a cry for help. I did not intend to die; 8=Don't know; 9=Refused
+  codes:
+    1: I made a serious attempt to kil myself and it was only luck that I did not
+      succeed
+    2: I tried to kill myself, but knew that the method may not work
+    3: My attempt was a cry for help. I did not intend to die
+    8: Don't know
+    9: Refused
+
+phenx_sib_100:
+  type: Integer
+  description: What method did you use?  Gun PX640104_TriedTo_KillYourself_LastTimeMethod_Gun_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_101:
+  type: Integer
+  description: What method did you use?  RAZOR, KNIFE, OR OTHER SHARP INSTRUMENT PX640104_TriedTo_KillYourself_LastTimeMethod_RazorKnife_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_102:
+  type: Integer
+  description: What method did you use?  OVERDOSE OF PRESCRIPTION MEDICATIONS PX640104_TriedTo_KillYourself_LastTimeMethod_PrescriptionMed_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_103:
+  type: Integer
+  description: What method did you use?  OVERDOSE OF OVER-THE-COUNTER MEDICATIONS
+    PX640104_TriedTo_KillYourself_LastTimeMethod_OTCMedAbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_104:
+  type: Integer
+  description: What method did you use?  OVERDOSE OF OTHER DRUG (E.G., HEROIN, CRACK,
+    ALCOHOL) PX640104_TriedTo_KillYourself_LastTimeMethod_OtherDrug_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_105:
+  type: Integer
+  description: What method did you use?  POISONING (E.G., CARBON MONOXIDE, RAT POISON)
+    PX640104_TriedTo_KillYourself_LastTimeMethod_Poisoning_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_106:
+  type: Integer
+  description: What method did you use?  HANGING, STRANGULATION, SUFFOCATION PX640104_TriedTo_KillYourself_LastTimeMethod_Hanging_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_107:
+  type: Integer
+  description: What method did you use?  DROWNING PX640104_TriedTo_KillYourself_LastTimeMethod_Drowning_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_108:
+  type: Integer
+  description: What method did you use?  JUMPING FROM HIGH PLACES PX640104_TriedTo_KillYourself_LastTimeMethod_Jumping_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_109:
+  type: Integer
+  description: What method did you use?  MOTOR VEHICLE CRASH PX640104_TriedTo_KillYourself_LastTimeMethod_MotorVehicle_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_110:
+  type: Integer
+  description: What method did you use?  DON'T KNOW PX640104_TriedTo_KillYourself_LastTimeMethod_DontKnow_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_111:
+  type: Integer
+  description: What method did you use?  REFUSED PX640104_TriedTo_KillYourself_LastTimeMethod_Refused_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_112:
+  type: Integer
+  description: What method did you use?  OTHER (PLEASE DESCRIBE) PX640104_TriedTo_KillYourself_LastTimeMethod_Other_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_113:
+  type: Integer
+  description: The next few questions are about thoughts of hurting yourself. Have
+    you ever seriously thought about killing yourself? PX640104_ThoughtAbout_KillingYourself_UnableToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_114:
+  type: Integer
+  description: How old were you the first time this happened? PX640104_ThoughtAbout_KillingYourself_FirstAge_UnableToRead
+  notes: years
+
+phenx_sib_115:
+  type: Integer
+  description: How old were you the first time this happened?  PX640104_ThoughtAbout_KillingYourself_FirstAgeCoded_UnableToRead
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_116:
+  type: Integer
+  description: Have you seriously thought about killing yourself at any time in the
+    past 12 months? PX640104_ThoughtAbout_KillingYourself_PastYear_UnableToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_117:
+  type: Integer
+  description: How old were you the last time this experience happened to you? PX640104_ThoughtAbout_KillingYourself_LastAge_UnableToRead
+
+phenx_sib_118:
+  type: Integer
+  description: How old were you the last time this experience happened to you?  PX640104_ThoughtAbout_KillingYourself_LastAgeCoded_UnableToRead
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_119:
+  type: Integer
+  description: Have you ever made a plan to kill yourself? PX640104_PlanTo_KillYourself_UnableToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_120:
+  type: Integer
+  description: How old were you the first time this happened? PX640104_PlanTo_KillYourself_FirstTimeAge_UnableToRead
+  notes: years
+  alias: su1d_ageon
+
+phenx_sib_121:
+  type: Integer
+  description: How old were you the first time this happened?  PX640104_PlanTo_KillYourself_FirstTimeAgeCoded_UnableToRead
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_122:
+  type: Integer
+  description: Did you make a plan to kill yourself at any time in the past 12 months?
+    PX640104_PlanTo_KillYourself_PastYear_UnableToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_123:
+  type: Integer
+  description: How old were you the last time this experience happened to you? PX640104_PlanTo_KillYourself_LastTimeAge_UnableToRead
+  alias: su1d_agerec
+
+phenx_sib_124:
+  type: Integer
+  description: How old were you the last time this experience happened to you?  PX640104_PlanTo_KillYourself_LastTimeAgeCoded_UnableToRead
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_125:
+  type: Integer
+  description: Have you ever tried to kill yourself? PX640104_TriedTo_KillYourself_UnableToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_126:
+  type: Integer
+  description: How old were you the first time? PX640104_TriedTo_KillYourself_FirstTimeAge_UnableToRead
+  notes: years
+
+phenx_sib_127:
+  type: Integer
+  description: How old were you the first time?  PX640104_TriedTo_KillYourself_FirstTimeAgeCoded_UnableToRead
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_128:
+  type: Integer
+  description: Did you try to kill yourself in the past 12 months? PX640104_TriedTo_KillYourself_PastYear_UnableToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_129:
+  type: Integer
+  description: How old were you (when/the last time) you tried to kill yourself? PX640104_TriedTo_KillYourself_LastTimeAge_UnableToRead
+  alias: su2b_agerec
+
+phenx_sib_130:
+  type: Integer
+  description: How old were you (when/the last time) you tried to kill yourself?  PX640104_TriedTo_KillYourself_LastTimeAgeCoded_UnableToRead
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_131:
+  type: Integer
+  description: How many times did you try to kill yourself in your lifetime? PX640104_TriedTo_KillYourself_Number_UnableToRead
+
+phenx_sib_132:
+  type: Integer
+  description: How many times did you try to kill yourself in your lifetime? PX640104_TriedTo_KillYourself_NumberCoded_UnableToRead
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_133:
+  type: Integer
+  description: There are three statements I will read out loud. Please tell me which
+    of these three statements best describes your situation when you tried to kill
+    yourself the first timeone, two, or three?  "One, I made a serious attempt to
+    kill myself and it was only luck that I did not succeed."  "Two, I tried to kill
+    myself, but knew that the method was not foolproof."  "Three, my attempt was a
+    cry for help, I did not intend to die." PX640104_TriedTo_KillYourself_SituationFirstTime_UnableToRead
+  range:
+  - 1::3
+  - 8
+  - 9
+  notes: 1=I made a serious attempt to kil myself and it was only luck that I did
+    not succeed; 2=I tried to kill myself, but knew that the method may not work;
+    3=My attempt was a cry for help. I did not intend to die; 8=Don't know; 9=Refused
+  codes:
+    1: I made a serious attempt to kil myself and it was only luck that I did not
+      succeed
+    2: I tried to kill myself, but knew that the method may not work
+    3: My attempt was a cry for help. I did not intend to die
+    8: Don't know
+    9: Refused
+
+phenx_sib_134:
+  type: Integer
+  description: Did it result in an injury or poisoning? PX640104_TriedTo_KillYourself_LastTimeResult_UnableToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_135:
+  type: Integer
+  description: Did it require medical attention? PX640104_TriedTo_KillYourself_LastTimeMedicalAttention_UnableToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_136:
+  type: Integer
+  description: Did it require overnight hospitalization? PX640104_TriedTo_KillYourself_LastTimeHospitalization_UnableToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_137:
+  type: Integer
+  description: There are three statements I will read out loud. Please tell me which
+    of these three statements best describes your situation when you tried to kill
+    yourself (the last time)one, two, or three?    "One, I made a serious attempt
+    to kill myself and it was only luck that I did not succeed."  "Two, I tried to
+    kill myself, but knew that the method was not foolproof."  "Three, my attempt
+    was a cry for help, I did not intend to die." PX640104_TriedTo_KillYourself_LastTimeSituation_UnableToRead
+  range:
+  - 1::3
+  - 8
+  - 9
+  notes: 1=I made a serious attempt to kil myself and it was only luck that I did
+    not succeed; 2=I tried to kill myself, but knew that the method may not work;
+    3=My attempt was a cry for help. I did not intend to die; 8=Don't know; 9=Refused
+  codes:
+    1: I made a serious attempt to kil myself and it was only luck that I did not
+      succeed
+    2: I tried to kill myself, but knew that the method may not work
+    3: My attempt was a cry for help. I did not intend to die
+    8: Don't know
+    9: Refused
+
+phenx_sib_138:
+  type: Integer
+  description: What method did you use?  Gun PX640104_TriedTo_KillYourself_LastTimeMethod_Gun_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_139:
+  type: Integer
+  description: What method did you use?  RAZOR, KNIFE, OR OTHER SHARP INSTRUMENT PX640104_TriedTo_KillYourself_LastTimeMethod_RazorKnife_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_140:
+  type: Integer
+  description: What method did you use?  OVERDOSE OF PRESCRIPTION MEDICATIONS PX640104_TriedTo_KillYourself_LastTimeMethod_PrescriptionMed_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_141:
+  type: Integer
+  description: What method did you use?  OVERDOSE OF OVER-THE-COUNTER MEDICATIONS
+    PX640104_TriedTo_KillYourself_LastTimeMethod_OTCMed_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_142:
+  type: Integer
+  description: What method did you use?  OVERDOSE OF OTHER DRUG (E.G., HEROIN, CRACK,
+    ALCOHOL) PX640104_TriedTo_KillYourself_LastTimeMethod_OtherDrug_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_143:
+  type: Integer
+  description: What method did you use?  POISONING (E.G., CARBON MONOXIDE, RAT POISON)
+    PX640104_TriedTo_KillYourself_LastTimeMethod_Poisoning_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_144:
+  type: Integer
+  description: What method did you use?  HANGING, STRANGULATION, SUFFOCATION PX640104_TriedTo_KillYourself_LastTimeMethod_Hanging_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_145:
+  type: Integer
+  description: What method did you use?  DROWNING PX640104_TriedTo_KillYourself_LastTimeMethod_Drowning_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_146:
+  type: Integer
+  description: What method did you use?  JUMPING FROM HIGH PLACES PX640104_TriedTo_KillYourself_LastTimeMethod_Jumping_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_147:
+  type: Integer
+  description: What method did you use?  MOTOR VEHICLE CRASH PX640104_TriedTo_KillYourself_LastTimeMethod_MotorVehicle_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_148:
+  type: Integer
+  description: What method did you use?  DON'T KNOW PX640104_TriedTo_KillYourself_LastTimeMethod_DontKnow_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_149:
+  type: Integer
+  description: What method did you use?  REFUSED PX640104_TriedTo_KillYourself_LastTimeMethod_Refused_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_150:
+  type: Integer
+  description: What method did you use?  OTHER (PLEASE DESCRIBE) PX640104_TriedTo_KillYourself_LastTimeMethod_Other_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_151:
+  type: Integer
+  description: Subject endorses thoughts about a wish to be dead or not alive anymore,
+    or wish to fall asleep and not wake up.  Have you wished you were dead or wished
+    you could go to sleep and not wake up? PX640105_Wish_ToBe_Dead_PastOneMonth
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_152:
+  type: String
+  length: 25
+  description: 'Subject endorses thoughts about a wish to be dead or not alive anymore,
+    or wish to fall asleep and not wake up.  Have you wished you were dead or wished
+    you could go to sleep and not wake up?    If yes, describe: PX640105_Wish_ToBe_Dead_PastOneMonth_Describe'
+
+phenx_sib_153:
+  type: Integer
+  description: General, non-specific thoughts of wanting to end one's life/commit
+    suicide (e.g., I've thought about killing myself) without thoughts of ways to
+    kill oneself/associated methods, intent, or plan during the assessment period.  Have
+    you actually had any thoughts of killing yourself? PX640105_SuicidalThoughts_Nonspecific_Active_PastOneMonth
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_154:
+  type: String
+  length: 25
+  description: 'General, non-specific thoughts of wanting to end one''s life/commit
+    suicide (e.g., I''ve thought about killing myself) without thoughts of ways to
+    kill oneself/associated methods, intent, or plan during the assessment period.  Have
+    you actually had any thoughts of killing yourself?    If yes, describe: PX640105_SuicidalThoughts_Nonspecific_Active_PastOneMonth_Describe'
+
+phenx_sib_155:
+  type: Integer
+  description: Subject endorses thoughts of suicide and has thought of at least one
+    method during the assessment period. This is different than a specific plan with
+    time, place or method details worked out (e.g., thought of method to kill self
+    but not a specific plan).  Includes person who would say, I thought about taking
+    an overdose but I never made a specific plan as to when, where or how I would
+    actually do it..and I would never go through with it.  Have you been thinking
+    about how you might do this?   PX640105_SuicidalIdeation_WithMethods_WithoutIntent_PastOneMonth
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_156:
+  type: String
+  length: 25
+  description: 'Subject endorses thoughts of suicide and has thought of at least one
+    method during the assessment period. This is different than a specific plan with
+    time, place or method details worked out (e.g., thought of method to kill self
+    but not a specific plan).  Includes person who would say, I thought about taking
+    an overdose but I never made a specific plan as to when, where or how I would
+    actually do it..and I would never go through with it.  Have you been thinking
+    about how you might do this?    If yes, describe: PX640105_SuicidalIdeation_WithMethods_WithoutIntent_PastOneMonth_Describe'
+
+phenx_sib_157:
+  type: Integer
+  description: Active suicidal thoughts of killing oneself and subject reports having
+    some intent to act on such thoughts, as opposed to I have the thoughts but I definitely
+    will not do anything about them.  Have you had these thoughts and had some intention
+    of acting on them? PX640105_SuicidalIdeation_WithIntent_WithoutPlan_PastOneMonth
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_158:
+  type: String
+  length: 25
+  description: 'Active suicidal thoughts of killing oneself and subject reports having
+    some intent to act on such thoughts, as opposed to I have the thoughts but I definitely
+    will not do anything about them.  Have you had these thoughts and had some intention
+    of acting on them?    If yes, describe: PX640105_SuicidalIdeation_WithIntent_WithoutPlan_PastOneMonth_Describe'
+
+phenx_sib_159:
+  type: Integer
+  description: Thoughts of killing oneself with details of plan fully or partially
+    worked out and subject has some intent to carry it out.  Have you started to work
+    out or worked out the details of how to kill yourself? Do you intend to carry
+    out this plan? PX640105_SuicidalIdeation_WithIntent_WithPlan_PastOneMonth
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_160:
+  type: String
+  length: 25
+  description: 'Thoughts of killing oneself with details of plan fully or partially
+    worked out and subject has some intent to carry it out.  Have you started to work
+    out or worked out the details of how to kill yourself? Do you intend to carry
+    out this plan?    If yes, describe: PX640105_SuicidalIdeation_WithIntent_WithPlan_PastOneMonth_Describe'
+
+phenx_sib_161:
+  type: Integer
+  description: 'A potentially self-injurious act committed with at least some wish
+    to die, as a result of act. Behavior was in part thought of as method to kill
+    oneself. Intent does not have to be 100%.  If there is any intent/desire to die
+    associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. Or did you think it was possible you could have died from ?  Or
+    did you do it purely for other reasons / without ANY intention of killing yourself
+    (like to relieve stress, feel better, get sympathy, or get something else to happen)?  (Self-Injurious
+    Behavior without suicidal intent) PX640105_Suicide_Actual_Attempt_PastThreeMonths'
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_162:
+  type: String
+  length: 25
+  description: 'A potentially self-injurious act committed with at least some wish
+    to die, as a result of act. Behavior was in part thought of as method to kill
+    oneself. Intent does not have to be 100%.  If there is any intent/desire to die
+    associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. Or did you do it purely for other reasons / without ANY intention
+    of killing yourself (like to relieve stress, feel better, get sympathy, or get
+    something else to happen)?  (Self-Injurious Behavior without suicidal intent)  If
+    yes, describe: PX640105_Suicide_Actual_Attempt_PastThreeMonths_Description'
+
+phenx_sib_163:
+  type: Integer
+  description: Total number of attempts PX640105_Suicide_Actual_Attempt_TotalNumber_PastThreeMonths
+
+phenx_sib_164:
+  type: Integer
+  description: Has subject engaged in Non-Suicidal Self-Injurious Behavior? PX640105_NonSuicidal_SelfInjurious_Behavior_PastThreeMonths
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_165:
+  type: Integer
+  description: 'When the person is interrupted (by an outside circumstance) from starting
+    the potentially self-injurious act (if not for that, actual attempt would have
+    occurred).  Overdose: Person has pills in hand but is stopped from ingesting.  Once
+    they ingest any pills, this becomes an attempt rather than an interrupted attempt.
+    Shooting: Person has gun pointed toward self, gun is taken away by someone else,
+    or is somehow prevented from pulling trigger. Once they pull the trigger, even
+    if the gun fails to fire, it is an attempt. Jumping: Person is poised to jump,
+    is grabbed and taken down from ledge. Hanging: Person has noose around neck but
+    has not yet started to hang - is stopped from doing so.  Has there been a time
+    when you started to do something to end your life but someone or something stopped
+    you before you actually did anything? PX640105_Suicide_Interrupted_Attempt_PastThreeMonths'
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_166:
+  type: String
+  length: 25
+  description: 'When the person is interrupted (by an outside circumstance) from starting
+    the potentially self-injurious act (if not for that, actual attempt would have
+    occurred).  Overdose: Person has pills in hand but is stopped from ingesting.  Once
+    they ingest any pills, this becomes an attempt rather than an interrupted attempt.
+    Shooting: Person has gun pointed toward self, gun is taken away by someone else,
+    or is somehow prevented from pulling trigger. Once they pull the trigger, even
+    if the gun fails to fire, it is an attempt. Jumping: Person is poised to jump,
+    is grabbed and taken down from ledge. Hanging: Person has noose around neck but
+    has not yet started to hang - is stopped from doing so.  Has  PX640105_Suicide_Interrupted_Attempt_PastThreeMonths_Describethere
+    been a time when you started to do something to end your life but someone or something
+    stopped you before you actually did anything?  If yes, describe:'
+
+phenx_sib_167:
+  type: Integer
+  description: Total number of interrupted PX640105_Suicide_Interrupted_Attempt_TotalNumber_PastThreeMonths
+
+phenx_sib_168:
+  type: Integer
+  description: When person begins to take steps toward making a suicide attempt, but
+    stops themselves before they actually have engaged in any self-destructive behavior.
+    Examples are similar to interrupted attempts, except that the individual stops
+    him/herself, instead of being stopped by something else.  Has there been a time
+    when you started to do something to try to end your life but you stopped yourself
+    before you actually did anything? PX640105_Suicide_Aborted_Attempt_PastThreeMonths
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_169:
+  type: String
+  length: 25
+  description: 'When person begins to take steps toward making a suicide attempt,
+    but stops themselves before they actually have engaged in any self-destructive
+    behavior. Examples are similar to interrupted attempts, except that the individual
+    stops him/herself, instead of being stopped by something else.  Has there been
+    a time when you started to do something to try to end your life but you stopped
+    yourself before you actually did anything?  If yes, describe: PX640105_Suicide_Aborted_Attempt_PastThreeMonths_Describe'
+
+phenx_sib_170:
+  type: Integer
+  description: Total number of aborted PX640105_Suicide_Aborted_Attempt_TotalNumber_PastThreeMonths
+
+phenx_sib_171:
+  type: Integer
+  description: Acts or preparation towards imminently making a suicide attempt. This
+    can include anything beyond a verbalization or thought, such as assembling a specific
+    method (e.g., buying pills, purchasing a gun) or preparing for one's death by
+    suicide (e.g., giving things away, writing a suicide note).  Have you taken any
+    steps towards making a suicide attempt or preparing to kill yourself (such as
+    collecting pills, getting a gun, giving valuables away or writing a suicide note)?
+    PX640105_Suicide_Preparatory_Acts_Behavior_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_172:
+  type: String
+  length: 25
+  description: 'Acts or preparation towards imminently making a suicide attempt. This
+    can include anything beyond a verbalization or thought, such as assembling a specific
+    method (e.g., buying pills, purchasing a gun) or preparing for one''s death by
+    suicide (e.g., giving things away, writing a suicide note).  Have you taken any
+    steps towards making a suicide attempt or preparing to kill yourself (such as
+    collecting pills, getting a gun, giving valuables away or writing a suicide note)?  If
+    yes, describe: PX640105_Suicide_Preparatory_Acts_Behavior_Lifetime_Describe'
+
+phenx_sib_173:
+  type: Integer
+  description: Suicidal behavior was present during the assessment period? PX640105_Suicidal_Behavior_Present_Assessment_Period
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_174:
+  type: Integer
+  description: Subject endorses thoughts about a wish to be dead or not alive anymore,
+    or wish to fall asleep and not wake up.  Have you wished you were dead or wished
+    you could go to sleep and not wake up? PX640106_Wish_ToBe_Dead_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_175:
+  type: String
+  length: 25
+  description: 'Subject endorses thoughts about a wish to be dead or not alive anymore,
+    or wish to fall asleep and not wake up.  Have you wished you were dead or wished
+    you could go to sleep and not wake up?    If yes, describe: PX640106_Wish_ToBe_Dead_Lifetime_Describe'
+
+phenx_sib_176:
+  type: Integer
+  description: General, non-specific thoughts of wanting to end one's life/commit
+    suicide (e.g., I've thought about killing myself) without thoughts of ways to
+    kill oneself/associated methods, intent, or plan during the assessment period.  Have
+    you actually had any thoughts of killing yourself? PX640106_SuicidalThoughts_Nonspecific_Active_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_177:
+  type: String
+  length: 25
+  description: 'General, non-specific thoughts of wanting to end one''s life/commit
+    suicide (e.g., I''ve thought about killing myself) without thoughts of ways to
+    kill oneself/associated methods, intent, or plan during the assessment period.  Have
+    you actually had any thoughts of killing yourself?    If yes, describe: PX640106_SuicidalThoughts_Nonspecific_Active_Lifetime_Describe'
+
+phenx_sib_178:
+  type: Integer
+  description: Subject endorses thoughts of suicide and has thought of at least one
+    method during the assessment period. This is different than a specific plan with
+    time, place or method details worked out (e.g., thought of method to kill self
+    but not a specific plan).  Includes person who would say, I thought about taking
+    an overdose but I never made a specific plan as to when, where or how I would
+    actually do it..and I would never go through with it.  Have you been thinking
+    about how you might do this?   PX640106_SuicidalIdeation_WithMethods_WithoutIntent_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_179:
+  type: String
+  length: 25
+  description: 'Subject endorses thoughts of suicide and has thought of at least one
+    method during the assessment period. This is different than a specific plan with
+    time, place or method details worked out (e.g., thought of method to kill self
+    but not a specific plan).  Includes person who would say, I thought about taking
+    an overdose but I never made a specific plan as to when, where or how I would
+    actually do it..and I would never go through with it.  Have you been thinking
+    about how you might do this?    If yes, describe: PX640106_SuicidalIdeation_WithMethods_WithoutIntent_Lifetime_Describe'
+
+phenx_sib_180:
+  type: Integer
+  description: Active suicidal thoughts of killing oneself and subject reports having
+    some intent to act on such thoughts, as opposed to I have the thoughts but I definitely
+    will not do anything about them.  Have you had these thoughts and had some intention
+    of acting on them? PX640106_SuicidalIdeation_WithIntent_WithoutPlan_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_181:
+  type: String
+  length: 25
+  description: 'Active suicidal thoughts of killing oneself and subject reports having
+    some intent to act on such thoughts, as opposed to I have the thoughts but I definitely
+    will not do anything about them.  Have you had these thoughts and had some intention
+    of acting on them?    If yes, describe: PX640106_SuicidalIdeation_WithIntent_WithoutPlan_Lifetime_Describe'
+
+phenx_sib_182:
+  type: Integer
+  description: Thoughts of killing oneself with details of plan fully or partially
+    worked out and subject has some intent to carry it out.  Have you started to work
+    out or worked out the details of how to kill yourself? Do you intend to carry
+    out this plan? PX640106_SuicidalIdeation_WithIntent_WithPlan_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_183:
+  type: String
+  length: 25
+  description: 'Thoughts of killing oneself with details of plan fully or partially
+    worked out and subject has some intent to carry it out.  Have you started to work
+    out or worked out the details of how to kill yourself? Do you intend to carry
+    out this plan?    If yes, describe: PX640106_SuicidalIdeation_WithIntent_WithPlan_Lifetime_Describe'
+
+phenx_sib_184:
+  type: Integer
+  description: 'A potentially self-injurious act committed with at least some wish
+    to die, as a result of act. Behavior was in part thought of as method to kill
+    oneself. Intent does not have to be 100%.  If there is any intent/desire to die
+    associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. Have you done anything to harm yourself?  Have you done anything
+    dangerous where you could have died?  What did you do?  Did you  as a way to end
+    your life?  Did you want to die (even a little) when you ?  Were you trying to
+    end your life when you  ?  PX640106_Suicide_Actual_Attempt_Lifetime'
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_185:
+  type: String
+  length: 25
+  description: 'A potentially self-injurious act committed with at least some wish
+    to die, as a result of act. Behavior was in part thought of as method to kill
+    oneself. Intent does not have to be 100%.  If there is any intent/desire to die
+    associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. Have you made a suicide attempt?  Have you done anything to harm
+    yourself?   If yes, describe: PX640106_Suicide_Actual_Attempt_Lifetime_Description'
+
+phenx_sib_186:
+  type: Integer
+  description: Total number of attempts PX640106_Suicide_Actual_Attempt_TotalNumber_Lifetime
+
+phenx_sib_187:
+  type: Integer
+  description: Has subject engaged in Non-Suicidal Self-Injurious Behavior? PX640106_NonSuicidal_SelfInjurious_Behavior_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_188:
+  type: Integer
+  description: 'When the person is interrupted (by an outside circumstance) from starting
+    the potentially self-injurious act (if not for that, actual attempt would have
+    occurred).  Overdose: Person has pills in hand but is stopped from ingesting.  Once
+    they ingest any pills, this becomes an attempt rather than an interrupted attempt.
+    Shooting: Person has gun pointed toward self, gun is taken away by someone else,
+    or is somehow prevented from pulling trigger. Once they pull the trigger, even
+    if the gun fails to fire, it is an attempt. Jumping: Person is poised to jump,
+    is grabbed and taken down from ledge. Hanging: Person has noose around neck but
+    has not yet started to hang - is stopped from doing so.  Has there been a time
+    when you started to do something to end your life but someone or something stopped
+    you before you actually did anything? PX640106_Suicide_Interrupted_Attempt_Lifetime'
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_189:
+  type: String
+  length: 25
+  description: 'When the person is interrupted (by an outside circumstance) from starting
+    the potentially self-injurious act (if not for that, actual attempt would have
+    occurred).  Overdose: Person has pills in hand but is stopped from ingesting.  Once
+    they ingest any pills, this becomes an attempt rather than an interrupted attempt.
+    Shooting: Person has gun pointed toward self, gun is taken away by someone else,
+    or is somehow prevented from pulling trigger. Once they pull the trigger, even
+    if the gun fails to fire, it is an attempt. Jumping: Person is poised to jump,
+    is grabbed and taken down from ledge. Hanging: Person has noose around neck but
+    has not yet started to hang - is stopped from doing so.  Has there been a time
+    when you started to do something to end your life but someone or something stopped
+    you before you actually did anything?  If yes, describe: PX640106_Suicide_Interrupted_Attempt_Lifetime_Describe'
+
+phenx_sib_190:
+  type: Integer
+  description: Total number of interrupted PX640106_Suicide_Interrupted_Attempt_TotalNumber_Lifetime
+
+phenx_sib_191:
+  type: Integer
+  description: When person begins to take steps toward making a suicide attempt, but
+    stops themselves before they actually have engaged in any self-destructive behavior.
+    Examples are similar to interrupted attempts, except that the individual stops
+    him/herself, instead of being stopped by something else.  Has there been a time
+    when you started to do something to try to end your life but you stopped yourself
+    before you actually did anything? PX640106_Suicide_Aborted_Attempt_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_192:
+  type: String
+  length: 25
+  description: 'When person begins to take steps toward making a suicide attempt,
+    but stops themselves before they actually have engaged in any self-destructive
+    behavior. Examples are similar to interrupted attempts, except that the individual
+    stops him/herself, instead of being stopped by something else.  Has there been
+    a time when you started to do something to try to end your life but you stopped
+    yourself before you actually did anything?  If yes, describe: PX640106_Suicide_Aborted_Attempt_Lifetime_Describe'
+
+phenx_sib_193:
+  type: Integer
+  description: Total number of aborted PX640106_Suicide_Aborted_Attempt_TotalNumber_Lifetime
+
+phenx_sib_194:
+  type: Integer
+  description: Acts or preparation towards imminently making a suicide attempt. This
+    can include anything beyond a verbalization or thought, such as assembling a specific
+    method (e.g., buying pills, purchasing a gun) or preparing for one's death by
+    suicide (e.g., giving things away, writing a suicide note).  Have you taken any
+    steps towards making a suicide attempt or preparing to kill yourself (such as
+    collecting pills, getting a gun, giving valuables away or writing a suicide note)?
+    PX640106_Suicide_Preparatory_Acts_Behavior_Lifetime
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_195:
+  type: String
+  length: 25
+  description: 'Acts or preparation towards imminently making a suicide attempt. This
+    can include anything beyond a verbalization or thought, such as assembling a specific
+    method (e.g., buying pills, purchasing a gun) or preparing for one''s death by
+    suicide (e.g., giving things away, writing a suicide note).  Have you taken any
+    steps towards making a suicide attempt or preparing to kill yourself (such as
+    collecting pills, getting a gun, giving valuables away or writing a suicide note)?  If
+    yes, describe: PX640106_Suicide_Preparatory_Acts_Behavior_Lifetime_Describe'
+
+phenx_sib_196:
+  type: Integer
+  description: Suicidal behavior was present during the assessment period? PX640106_Suicidal_Behavior_Present_Assessment_Period
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_197:
+  type: Integer
+  description: Subject endorses thoughts about a wish to be dead or not alive anymore,
+    or wish to fall asleep and not wake up.  Have you wished you were dead or wished
+    you could go to sleep and not wake up? PX640107_Wish_ToBe_Dead_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_198:
+  type: String
+  length: 25
+  description: 'Subject endorses thoughts about a wish to be dead or not alive anymore,
+    or wish to fall asleep and not wake up.  Have you wished you were dead or wished
+    you could go to sleep and not wake up?    If yes, describe: PX640107_Wish_ToBe_Dead_SinceLastVisit_Describe'
+
+phenx_sib_199:
+  type: Integer
+  description: General, non-specific thoughts of wanting to end one's life/commit
+    suicide (e.g., I've thought about killing myself) without thoughts of ways to
+    kill oneself/associated methods, intent, or plan during the assessment period.  Have
+    you actually had any thoughts of killing yourself? PX640107_SuicidalThoughts_Nonspecific_Active_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_200:
+  type: String
+  length: 25
+  description: 'General, non-specific thoughts of wanting to end one''s life/commit
+    suicide (e.g., I''ve thought about killing myself) without thoughts of ways to
+    kill oneself/associated methods, intent, or plan during the assessment period.  Have
+    you actually had any thoughts of killing yourself?    If yes, describe: PX640107_SuicidalThoughts_Nonspecific_Active_SinceLastVisit_Describe'
+
+phenx_sib_201:
+  type: Integer
+  description: Subject endorses thoughts of suicide and has thought of at least one
+    method during the assessment period. This is different than a specific plan with
+    time, place or method details worked out (e.g., thought of method to kill self
+    but not a specific plan).  Includes person who would say, I thought about taking
+    an overdose but I never made a specific plan as to when, where or how I would
+    actually do it..and I would never go through with it.  Have you been thinking
+    about how you might do this?   PX640107_SuicidalIdeation_WithMethods_WithoutIntent_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_202:
+  type: String
+  length: 25
+  description: 'Subject endorses thoughts of suicide and has thought of at least one
+    method during the assessment period. This is different than a specific plan with
+    time, place or method details worked out (e.g., thought of method to kill self
+    but not a specific plan).  Includes person who would say, I thought about taking
+    an overdose but I never made a specific plan as to when, where or how I would
+    actually do it..and I would never go through with it.  Have you been thinking
+    about how you might do this?    If yes, describe: PX640107_SuicidalIdeation_WithMethods_WithoutIntent_SinceLastVisit_Describe'
+
+phenx_sib_203:
+  type: Integer
+  description: Active suicidal thoughts of killing oneself and subject reports having
+    some intent to act on such thoughts, as opposed to I have the thoughts but I definitely
+    will not do anything about them.  Have you had these thoughts and had some intention
+    of acting on them? PX640107_SuicidalIdeation_WithIntent_WithoutPlan_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_204:
+  type: String
+  length: 25
+  description: 'Active suicidal thoughts of killing oneself and subject reports having
+    some intent to act on such thoughts, as opposed to I have the thoughts but I definitely
+    will not do anything about them.  Have you had these thoughts and had some intention
+    of acting on them?    If yes, describe: PX640107_SuicidalIdeation_WithIntent_WithoutPlan_SinceLastVisit_Describe'
+
+phenx_sib_205:
+  type: Integer
+  description: Thoughts of killing oneself with details of plan fully or partially
+    worked out and subject has some intent to carry it out.  Have you started to work
+    out or worked out the details of how to kill yourself? Do you intend to carry
+    out this plan? PX640107_SuicidalIdeation_WithIntent_WithPlan_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_206:
+  type: String
+  length: 25
+  description: 'Thoughts of killing oneself with details of plan fully or partially
+    worked out and subject has some intent to carry it out.  Have you started to work
+    out or worked out the details of how to kill yourself? Do you intend to carry
+    out this plan?    If yes, describe: PX640107_SuicidalIdeation_WithIntent_WithPlan_SinceLastVisit_Describe'
+
+phenx_sib_207:
+  type: Integer
+  description: 'The following features should be rated with respect to the most severe
+    type of ideation (i.e., 1-5 from above, with 1 being the least severe and 5 being
+    the most severe). Ask about time he/she was feeling the most suicidal.  Most Severe
+    Ideation:  Type # (1-5) PX640107_SuicidalIdeation_MostSevereType_SinceLastVisit'
+
+phenx_sib_208:
+  type: String
+  length: 25
+  description: 'The following features should be rated with respect to the most severe
+    type of ideation (i.e., 1-5 from above, with 1 being the least severe and 5 being
+    the most severe). Ask about time he/she was feeling the most suicidal.  Most Severe
+    Ideation:  Description of Ideation PX640107_SuicidalIdeation_MostSevere_SinceLastVisitDescription'
+
+phenx_sib_209:
+  type: Integer
+  description: How many times have you had these thoughts? PX640107_SuicidalIdeation_MostSevere_Frequency_SinceLastVisit
+  range:
+  - 1::5
+  notes: 1= Less than once a week; 2 = Once a week; 3 =  2-5 times in week; 4 = Daily
+    or almost daily; 5 = Many times each day
+  codes:
+    1: Less than once a week
+    2: Once a week
+    3: 2-5 times in week
+    4: Daily or almost daily
+    5: Many times each day
+
+phenx_sib_210:
+  type: Integer
+  description: When you have the thoughts, how long do they last? PX640107_SuicidalIdeation_MostSevere_Duration_SinceLastVisit
+  range:
+  - 1::5
+  notes: 1= Fleeting - few seconds or minutes; 2 = Less than 1 hour/some of the time;
+    3 = 1-4 hours/a lot of time; 4 = 4-8 hours/most of day; 5 = More than 8 hours/persistent
+    or continuous
+  codes:
+    1: Fleeting - few seconds or minutes
+    2: Less than 1 hour/some of the time
+    3: 1-4 hours/a lot of time
+    4: 4-8 hours/most of day
+    5: More than 8 hours/persistent or continuous
+
+phenx_sib_211:
+  type: Integer
+  description: Could/can you stop thinking about killing yourself or wanting to die
+    if you want to? PX640107_SuicidalIdeation_MostSevere_Controllability_SinceLastVisit
+  range:
+  - 0::5
+  notes: 0 = Does not attempt to control thoughts; 1= Easily able to control thoughts;
+    2 = Can control thoughts with little difficulty; 3 = Can control thoughts with
+    some difficulty; 4 = Can control thoughts with a lot of difficulty; 5 = Unable
+    to control thoughts
+  codes:
+    0: Does not attempt to control thoughts
+    1: Easily able to control thoughts
+    2: Can control thoughts with little difficulty
+    3: Can control thoughts with some difficulty
+    4: Can control thoughts with a lot of difficulty
+    5: Unable to control thoughts
+
+phenx_sib_212:
+  type: Integer
+  description: Are there things - anyone or anything (e.g., family, religion, pain
+    of death) - that stopped you from wanting to die or acting on thoughts of committing
+    suicide? PX640107_SuicidalIdeation_MostSevere_Deterrents_SinceLastVisit
+  range:
+  - 0::5
+  notes: 0 = Does not apply; 1= Deterrents definitely stopped you from attempting
+    suicide; 2 = Deterrents probably stopped you; 3 = Uncertain that deterrents stopped
+    you; 4 = Deterrents most likely did not stop you; 5 = Deterrents definitely did
+    not stop you
+  codes:
+    0: Does not apply
+    1: Deterrents definitely stopped you from attempting suicide
+    2: Deterrents probably stopped you
+    3: Uncertain that deterrents stopped you
+    4: Deterrents most likely did not stop you
+    5: Deterrents definitely did not stop you
+
+phenx_sib_213:
+  type: Integer
+  description: What sort of reasons did you have for thinking about wanting to die
+    or killing yourself?  Was it to end the pain or stop the way you were feeling
+    (in other words you couldn't go on living with this pain or how you were feeling)
+    or was it to get attention, revenge or a reaction from others? Or both? PX640107_SuicidalIdeation_MostSevere_Reasons_SinceLastVisit
+  range:
+  - 0::5
+  notes: 0 =  Does not apply; 1= Completely to get attention, revenge or a reaction
+    from others; 2 = Mostly to get attention, revenge or a reaction from others; 3
+    = Equally to get attention, revenge or a reaction from others and to end/stop
+    the pain; 4 = Mostly to end or stop the pain (you couldn't go on living with the
+    pain or how you were feeling); 5 = Completely to end or stop the pain (you couldn't
+    go on living with the pain or  how you were feeling)
+  codes:
+    0: Does not apply
+    1: Completely to get attention, revenge or a reaction from others
+    2: Mostly to get attention, revenge or a reaction from others
+    3: Equally to get attention, revenge or a reaction from others and to end/stop
+      the pain
+    4: Mostly to end or stop the pain (you couldn't go on living with the pain or
+      how you were feeling)
+    5: Completely to end or stop the pain (you couldn't go on living with the pain
+      or  how you were feeling)
+
+phenx_sib_214:
+  type: Integer
+  description: 'A potentially self-injurious act committed with at least some wish
+    to die, as a result of act. Behavior was in part thought of as method to kill
+    oneself. Intent does not have to be 100%.  If there is any intent/desire to die
+    associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. Have you done anything to harm yourself?  Have you done anything
+    dangerous where you could have died?  What did you do?  Did you  as a way to end
+    your life?  Did you want to die (even a little) when you ?  Were you trying to
+    end your life when you  ?   PX640107_Suicide_Actual_Attempt_SinceLastVisit'
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_215:
+  type: String
+  length: 25
+  description: 'A potentially self-injurious act committed with at least some wish
+    to die, as a result of act. Behavior was in part thought of as method to kill
+    oneself. Intent does not have to be 100%.  If there is any intent/desire to die
+    associated with the act, then it can be considered an actual suicide attempt.
+    There does not have to be any injury or harm, just the potential for injury or
+    harm. If person pulls trigger while gun is in mouth but gun is broken so no injury
+    results, this is considered an attempt.  Inferring Intent: Even if an individual
+    denies intent/wish to die, it may be inferred clinically from the behavior or
+    circumstances. What did you do?  Did you  as a way to end your life?  Did you
+    want to die (even a little) when you ?  Were you trying to end your life when
+    you  ?   If yes, describe: PX640107_Suicide_Actual_Attempt_SinceLastVisit_Description'
+
+phenx_sib_216:
+  type: Integer
+  description: Total number of attempts PX640107_Suicide_Actual_Attempt_TotalNumber_SinceLastVisit
+
+phenx_sib_217:
+  type: Integer
+  description: Has subject engaged in Non-Suicidal Self-Injurious Behavior? Since
+    Last Visit. PX640107_NonSuicidal_SelfInjurious_Behavior_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_218:
+  type: Integer
+  description: 'When the person is interrupted (by an outside circumstance) from starting
+    the potentially self-injurious act (if not for that, actual attempt would have
+    occurred).  Overdose: Person has pills in hand but is stopped from ingesting.  Once
+    they ingest any pills, this becomes an attempt rather than an interrupted attempt.
+    Shooting: Person has gun pointed toward self, gun is taken away by someone else,
+    or is somehow prevented from pulling trigger. Once they pull the trigger, even
+    if the gun fails to fire, it is an attempt. Jumping: Person is poised to jump,
+    is grabbed and taken down from ledge. Hanging: Person has noose around neck but
+    has not yet started to hang - is stopped from doing so.  Has there been a time
+    when you started to do something to end your life but someone or something stopped
+    you before you actually did anything? PX640107_Suicide_Interrupted_Attempt_SinceLastVisit'
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_219:
+  type: String
+  length: 25
+  description: 'When the person is interrupted (by an outside circumstance) from starting
+    the potentially self-injurious act (if not for that, actual attempt would have
+    occurred).  Overdose: Person has pills in hand but is stopped from ingesting.  Once
+    they ingest any pills, this becomes an attempt rather than an interrupted attempt.
+    Shooting: Person has gun pointed toward self, gun is taken away by someone else,
+    or is somehow prevented from pulling trigger. Once they pull the trigger, even
+    if the gun fails to fire, it is an attempt. Jumping: Person is poised to jump,
+    is grabbed and taken down from ledge. Hanging: Person has noose around neck but
+    has not yet started to hang - is stopped from doing so.  Has there been a time
+    when you started to do something to end your life but someone or something stopped
+    you before you actually did anything?  If yes, describe: PX640107_Suicide_Interrupted_Attempt_SinceLastVisit_Describe'
+
+phenx_sib_220:
+  type: Integer
+  description: Total number of interrupted PX640107_Suicide_Interrupted_Attempt_TotalNumber_SinceLastVisit
+
+phenx_sib_221:
+  type: Integer
+  description: When person begins to take steps toward making a suicide attempt, but
+    stops themselves before they actually have engaged in any self-destructive behavior.
+    Examples are similar to interrupted attempts, except that the individual stops
+    him/herself, instead of being stopped by something else.  Has there been a time
+    when you started to do something to try to end your life but you stopped yourself
+    before you actually did anything? PX640107_Suicide_Aborted_Attempt_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_222:
+  type: String
+  length: 25
+  description: 'When person begins to take steps toward making a suicide attempt,
+    but stops themselves before they actually have engaged in any self-destructive
+    behavior. Examples are similar to interrupted attempts, except that the individual
+    stops him/herself, instead of being stopped by something else.  Has there been
+    a time when you started to do something to try to end your life but you stopped
+    yourself before you actually did anything?  If yes, describe: PX640107_Suicide_Aborted_Attempt_SinceLastVisit_Describe'
+
+phenx_sib_223:
+  type: Integer
+  description: Total number of aborted PX640107_Suicide_Aborted_Attempt_TotalNumber_SinceLastVisit
+
+phenx_sib_224:
+  type: Integer
+  description: Acts or preparation towards imminently making a suicide attempt. This
+    can include anything beyond a verbalization or thought, such as assembling a specific
+    method (e.g., buying pills, purchasing a gun) or preparing for one's death by
+    suicide (e.g., giving things away, writing a suicide note).  Have you taken any
+    steps towards making a suicide attempt or preparing to kill yourself (such as
+    collecting pills, getting a gun, giving valuables away or writing a suicide note)?
+    PX640107_Suicide_Preparatory_Acts_Behavior_SinceLastVisit
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_225:
+  type: String
+  length: 25
+  description: 'Acts or preparation towards imminently making a suicide attempt. This
+    can include anything beyond a verbalization or thought, such as assembling a specific
+    method (e.g., buying pills, purchasing a gun) or preparing for one''s death by
+    suicide (e.g., giving things away, writing a suicide note).  Have you taken any
+    steps towards making a suicide attempt or preparing to kill yourself (such as
+    collecting pills, getting a gun, giving valuables away or writing a suicide note)?  If
+    yes, describe: PX640107_Suicide_Preparatory_Acts_Behavior_SinceLastVisit_Describe'
+
+phenx_sib_226:
+  type: Integer
+  description: Suicidal behavior was present during the assessment period? PX640107_Suicidal_Behavior_Present_Assessment_Period
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_227:
+  type: Integer
+  description: 'INTERVIEWER CHECKPOINT: PX640108_Interviewer_Checkpoint_Can_Respondent_Read'
+  range:
+  - 1
+  - 2
+  notes: 1=Respondent is able to read; 2=All others go to 15
+  codes:
+    1: Respondent is able to read
+    2: All others go to 15
+
+phenx_sib_228:
+  type: Integer
+  description: 'Three experiences are listed in your booklet on page 20 labeled A,
+    B, and C. Did Experience A ever happen to you?  INTERVIEWER: EXPERIENCE A IS "YOU
+    SERIOUSLY THOUGHT ABOUT COMMITTING SUICIDE" PX640108_ThoughtAbout_CommittingSuicide_AbleToRead'
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_229:
+  type: Integer
+  description: 'How old were you the first time this happened?  INTERVIEWER: EXPERIENCE
+    A IS "YOU SERIOUSLY THOUGHT ABOUT COMMITTING SUICIDE" PX640108_ThoughtAbout_CommittingSuicide_FirstTimeAge_AbleToRead'
+  notes: Years
+
+phenx_sib_230:
+  type: Integer
+  description: 'How old were you the first time this happened?  INTERVIEWER: EXPERIENCE
+    A IS "YOU SERIOUSLY THOUGHT ABOUT COMMITTING SUICIDE"  PX640108_ThoughtAbout_CommittingSuicide_FirstTimeAgeCoded_AbleToRead'
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_231:
+  type: Integer
+  description: 'Did Experience A happen to you at any time in the past 12 months?  INTERVIEWER:
+    EXPERIENCE A IS "YOU SERIOUSLY THOUGHT ABOUT COMMITTING SUICIDE" PX640108_ThoughtAbout_CommittingSuicide_PastYear_AbleToRead'
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_232:
+  type: Integer
+  description: 'How old were you the last time this experience happened to you?  INTERVIEWER:
+    EXPERIENCE A IS "YOU SERIOUSLY THOUGHT ABOUT COMMITTING SUICIDE" PX640108_ThoughtAbout_CommittingSuicide_LastTimeAge_AbleToRead'
+  notes: Years
+
+phenx_sib_233:
+  type: Integer
+  description: 'How old were you the last time this experience happened to you?  INTERVIEWER:
+    EXPERIENCE A IS "YOU SERIOUSLY THOUGHT ABOUT COMMITTING SUICIDE"  PX640108_ThoughtAbout_CommittingSuicide_LastTimeAgeCoded_AbleToRead'
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_234:
+  type: Integer
+  description: 'Now look at the second of the three experiences on the list, Experience
+    B. Did Experience B ever happen to you?  INTERVIEWER: EXPERIENCE B IS "YOU MADE
+    A PLAN FOR COMMITTING SUICIDE" PX640108_PlanFor_CommittingSuicide_AbleToRead'
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_235:
+  type: Integer
+  description: 'How old were you the first time this happened?  INTERVIEWER: EXPERIENCE
+    B IS "YOU MADE A PLAN FOR COMMITTING SUICIDE" PX640108_PlanFor_CommittingSuicide_FirstTimeAge_AbleToRead'
+  notes: Years
+
+phenx_sib_236:
+  type: Integer
+  description: 'How old were you the first time this happened?  INTERVIEWER: EXPERIENCE
+    B IS "YOU MADE A PLAN FOR COMMITTING SUICIDE"  PX640108_PlanFor_CommittingSuicide_FirstTimeAgeCoded_AbleToRead'
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_237:
+  type: Integer
+  description: 'Did Experience B happen to you at any time in the past 12 months?  INTERVIEWER:
+    EXPERIENCE B IS "YOU MADE A PLAN FOR COMMITTING SUICIDE" PX640108_PlanFor_CommittingSuicide_PastYear_AbleToRead'
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_238:
+  type: Integer
+  description: 'How old were you the last time this experience happened to you?  INTERVIEWER:
+    EXPERIENCE B IS "YOU MADE A PLAN FOR COMMITTING SUICIDE" PX640108_PlanFor_CommittingSuicide_LastTimeAge_AbleToRead'
+  notes: Years
+
+phenx_sib_239:
+  type: Integer
+  description: 'How old were you the last time this experience happened to you?  INTERVIEWER:
+    EXPERIENCE B IS "YOU MADE A PLAN FOR COMMITTING SUICIDE"  PX640108_PlanFor_CommittingSuicide_LastTimeAgeCoded_AbleToRead'
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_240:
+  type: Integer
+  description: 'Now look at the third of the three experiences on the list, Experience
+    C. Did experience C ever happen to you?  INTERVIEWER: EXPERIENCE C IS "YOU ATTEMPTED
+    SUICIDE"   PX640108_Attempted_Suicide_AbleToRead'
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_241:
+  type: Integer
+  description: 'How many times did Experience C ever happen to you in your lifetime?  INTERVIEWER:
+    EXPERIENCE C IS "YOU ATTEMPTED SUICIDE" PX640108_Attempted_Suicide_TimesLifetime_AbleToRead'
+
+phenx_sib_242:
+  type: Integer
+  description: 'How many times did Experience C ever happen to you in your lifetime?  INTERVIEWER:
+    EXPERIENCE C IS "YOU ATTEMPTED SUICIDE" PX640108_Attempted_Suicide_TimesLifetime_AbleToRead'
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_243:
+  type: Integer
+  description: 'How old were you the first time?  INTERVIEWER: EXPERIENCE C IS "YOU
+    ATTEMPTED SUICIDE" PX640108_Attempted_Suicide_FirstTimeAge_AbleToRead'
+
+phenx_sib_244:
+  type: Integer
+  description: 'How old were you the first time?  INTERVIEWER: EXPERIENCE C IS "YOU
+    ATTEMPTED SUICIDE"  PX640108_Attempted_Suicide_FirstTimeAgeCoded_AbleToRead'
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_245:
+  type: Integer
+  description: There are three statements numbered 1, 2, and 3 on page 21 in your
+    booklet. Which of these three statements best describes your situation when Experience
+    C happened to you the first time1, 2, or 3? PX640108_Attempted_Suicide_SituationFirstTime_AbleToRead
+  range:
+  - 1::3
+  - 8
+  - 9
+  notes: 1=I made a serious attempt to kil myself and it was only luck that I did
+    not succeed; 2=I tried to kill myself, but knew that the method may not work;
+    3=My attempt was a cry for help. I did not intend to die; 8=Don't know; 9=Refused
+  codes:
+    1: I made a serious attempt to kil myself and it was only luck that I did not
+      succeed
+    2: I tried to kill myself, but knew that the method may not work
+    3: My attempt was a cry for help. I did not intend to die
+    8: Don't know
+    9: Refused
+
+phenx_sib_246:
+  type: Integer
+  description: 'Did Experience C happen to you in the past 12 months?  INTERVIEWER:
+    EXPERIENCE C IS "YOU ATTEMPTED SUICIDE" PX640108_Attempted_Suicide_PastYear_AbleToRead'
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_247:
+  type: Integer
+  description: 'How old were you (when/the last time) Experience C happened to you?  INTERVIEWER:
+    EXPERIENCE C IS "YOU ATTEMPTED SUICIDE" PX640108_Attempted_Suicide_LastTimeAge_AbleToRead'
+  notes: Years
+
+phenx_sib_248:
+  type: Integer
+  description: 'How old were you (when/the last time) Experience C happened to you?  INTERVIEWER:
+    EXPERIENCE C IS "YOU ATTEMPTED SUICIDE"  PX640108_Attempted_Suicide_LastTimeAgeCoded_AbleToRead'
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_249:
+  type: Integer
+  description: 'Did it result in an injury or poisoning?  INTERVIEWER: EXPERIENCE
+    C IS "YOU ATTEMPTED SUICIDE" PX640108_Attempted_Suicide_LastTimeResult_AbleToRead'
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_250:
+  type: Integer
+  description: 'Did it require medical attention?  INTERVIEWER: EXPERIENCE C IS "YOU
+    ATTEMPTED SUICIDE" PX640108_Attempted_Suicide_LastTimeMedicalAttention_AbleToRead'
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_251:
+  type: Integer
+  description: 'Did it require overnight hospitalization?  INTERVIEWER: EXPERIENCE
+    C IS "YOU ATTEMPTED SUICIDE" PX640108_Attempted_Suicide_LastTimeHospitalization_AbleToRead'
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_252:
+  type: Integer
+  description: 'Looking at page 21 in your booklet, which of the three statements
+    best describes your situation when Experience C happened to you (the last time)
+    - 1, 2, or 3?  INTERVIEWER: EXPERIENCE C IS "YOU ATTEMPTED SUICIDE" PX640108_Attempted_Suicide_LastTimeSituation_AbleToRead'
+  range:
+  - 1::3
+  - 8
+  - 9
+  notes: 1=I made a serious attempt to kil myself and it was only luck that I did
+    not succeed; 2=I tried to kill myself, but knew that the method may not work;
+    3=My attempt was a cry for help. I did not intend to die; 8=Don't know; 9=Refused
+  codes:
+    1: I made a serious attempt to kil myself and it was only luck that I did not
+      succeed
+    2: I tried to kill myself, but knew that the method may not work
+    3: My attempt was a cry for help. I did not intend to die
+    8: Don't know
+    9: Refused
+
+phenx_sib_253:
+  type: Integer
+  description: What method did you use (when/the last time) Experience C happened
+    to you?  Gun PX640108_Attempted_Suicide_LastTimeMethod_Gun_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_254:
+  type: Integer
+  description: What method did you use (when/the last time) Experience C happened
+    to you? (Just give me the letter.)  RAZOR, KNIFE, OR OTHER SHARP INSTRUMENT PX640108_Attempted_Suicide_LastTimeMethod_RazorKnife_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_255:
+  type: Integer
+  description: What method did you use (when/the last time) Experience C happened
+    to you? (Just give me the letter.)  OVERDOSE OF PRESCRIPTION MEDICATIONS PX640108_Attempted_Suicide_LastTimeMethod_PrescriptionMed_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_256:
+  type: Integer
+  description: What method did you use (when/the last time) Experience C happened
+    to you? (Just give me the letter.)  OVERDOSE OF OVER-THE-COUNTER MEDICATIONS PX640108_Attempted_Suicide_LastTimeMethod_OTCMEdAbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_257:
+  type: Integer
+  description: What method did you use (when/the last time) Experience C happened
+    to you? (Just give me the letter.)  OVERDOSE OF OTHER DRUG (E.G., HEROIN, CRACK,
+    ALCOHOL) PX640108_Attempted_Suicide_LastTimeMethod_OtherDrug_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_258:
+  type: Integer
+  description: What method did you use (when/the last time) Experience C happened
+    to you? (Just give me the letter.)  POISONING (E.G., CARBON MONOXIDE, RAT POISON)
+    PX640108_Attempted_Suicide_LastTimeMethod_Poisoning_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_259:
+  type: Integer
+  description: What method did you use (when/the last time) Experience C happened
+    to you? (Just give me the letter.)  HANGING, STRANGULATION, SUFFOCATION PX640108_Attempted_Suicide_LastTimeMethod_Poisoning_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_260:
+  type: Integer
+  description: What method did you use (when/the last time) Experience C happened
+    to you? (Just give me the letter.)  DROWNING PX640108_Attempted_Suicide_LastTimeMethod_Drowning_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_261:
+  type: Integer
+  description: What method did you use (when/the last time) Experience C happened
+    to you? (Just give me the letter.)  JUMPING FROM HIGH PLACES PX640108_Attempted_Suicide_LastTimeMethod_Jumping_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_262:
+  type: Integer
+  description: What method did you use (when/the last time) Experience C happened
+    to you? (Just give me the letter.)  MOTOR VEHICLE CRASH PX640108_Attempted_Suicide_LastTimeMethod_MotorVehicle_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_263:
+  type: Integer
+  description: What method did you use (when/the last time) Experience C happened
+    to you? (Just give me the letter.)  DON'T KNOW PX640108_Attempted_Suicide_LastTimeMethod_DontKnow_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_264:
+  type: Integer
+  description: What method did you use (when/the last time) Experience C happened
+    to you? (Just give me the letter.)  REFUSED PX640108_Attempted_Suicide_LastTimeMethod_DontKnow_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_265:
+  type: Integer
+  description: What method did you use (when/the last time) Experience C happened
+    to you? (Just give me the letter.)  OTHER (PLEASE DESCRIBE) PX640108_Attempted_Suicide_LastTimeMethod_Other_AbleToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_266:
+  type: String
+  length: 25
+  description: What method did you use (when/the last time) Experience C happened
+    to you? (Just give me the letter.)  OTHER (PLEASE DESCRIBE) PX640108_Attempted_Suicide_LastTimeMethod_Specify_AbleToRead
+
+phenx_sib_267:
+  type: Integer
+  description: The next few questions are about thoughts of hurting yourself. Have
+    you ever seriously thought about committing suicide? PX640108_ThoughtAbout_CommittingSuicide_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_268:
+  type: Integer
+  description: How old were you the first time this happened? PX640108_ThoughtAbout_CommittingSuicide_FirstTimeAge_UnableToRead
+  notes: Years
+
+phenx_sib_269:
+  type: Integer
+  description: How old were you the first time this happened?  PX640108_ThoughtAbout_CommittingSuicide_FirstTimeAgeCoded_UnableToRead
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_270:
+  type: Integer
+  description: Have you seriously thought about committing suicide at any time in
+    the past 12 months? PX640108_ThoughtAbout_CommittingSuicide_PastYear_UnableToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_271:
+  type: Integer
+  description: How old were you the last time this experience happened to you? PX640108_ThoughtAbout_CommittingSuicide_LastTimeAge_UnableToRead
+  notes: Years
+
+phenx_sib_272:
+  type: Integer
+  description: How old were you the last time this experience happened to you? PX640108_ThoughtAbout_CommittingSuicide_LastTimeAgeCoded_UnableToRead
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_273:
+  type: Integer
+  description: Have you ever made a plan for committing suicide? PX640108_PlanFor_CommittingSuicide_UnableToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_274:
+  type: Integer
+  description: How old were you the first time this happened? PX640108_PlanFor_CommittingSuicide_FirstTimeAge_UnableToRead
+  notes: Years
+
+phenx_sib_275:
+  type: Integer
+  description: How old were you the first time this happened?  PX640108_PlanFor_CommittingSuicide_FirstTimeAgeCoded_UnableToRead
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_276:
+  type: Integer
+  description: Did you make a plan for committing suicide at any time in the past
+    12 months? PX640108_PlanFor_CommittingSuicide_PastYear_UnableToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_277:
+  type: Integer
+  description: How old were you the last time this experience happened to you? PX640108_PlanFor_CommittingSuicide_LastTimeAge_UnableToRead
+  notes: Years
+
+phenx_sib_278:
+  type: Integer
+  description: How old were you the last time this experience happened to you?  PX640108_PlanFor_CommittingSuicide_LastTimeAgeCoded_UnableToRead
+  range:
+  - 998
+  - 999
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_279:
+  type: Integer
+  description: Have you ever attempted suicide? PX640108_Attempted_Suicide_UnableToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_280:
+  type: Integer
+  description: How many times have you attempted suicide in your lifetime? PX640108_Attempted_Suicide_TimesLifetime_UnableToRead
+
+phenx_sib_281:
+  type: Integer
+  description: How many times have you attempted suicide in your lifetime?  PX640108_Attempted_Suicide_TimesLifetimeCoded_UnableToRead
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_282:
+  type: Integer
+  description: How old were you the first time? PX640108_Attempted_Suicide_FirstTimeAge_UnableToRead
+
+phenx_sib_283:
+  type: Integer
+  description: How old were you the first time? PX640108_Attempted_Suicide_FirstTimeAgeCoded_UnableToRead
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_284:
+  type: Integer
+  description: There are three statements I will read out loud. Please tell me which
+    of these three statements best describes your situation when you tried to kill
+    yourself the first timeone, two, or three?  "One, I made a serious attempt to
+    kill myself and it was only luck that I did not succeed."  "Two, I tried to kill
+    myself, but knew that the method was not foolproof."  "Three, my attempt was a
+    cry for help, I did not intend to die." PX640108_Attempted_Suicide_SituationFirstTime_UnableToRead
+  range:
+  - 1::3
+  - 8
+  - 9
+  notes: 1=I made a serious attempt to kil myself and it was only luck that I did
+    not succeed; 2=I tried to kill myself, but knew that the method may not work;
+    3=My attempt was a cry for help. I did not intend to die; 8=Don't know; 9=Refused
+  codes:
+    1: I made a serious attempt to kil myself and it was only luck that I did not
+      succeed
+    2: I tried to kill myself, but knew that the method may not work
+    3: My attempt was a cry for help. I did not intend to die
+    8: Don't know
+    9: Refused
+
+phenx_sib_285:
+  type: Integer
+  description: PX640108_Attempted_Suicide_SituationFirstTime_UnableToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_286:
+  type: Integer
+  description: How old were you (when/the last time) you attempted suicide? PX640108_Attempted_Suicide_LastTimeAge_UnableToRead
+  notes: Years
+
+phenx_sib_287:
+  type: Integer
+  description: How old were you (when/the last time) you attempted suicide?  PX640108_Attempted_Suicide_LastTimeAgeCoded_UnableToRead
+  notes: 998=Don't Know; 999=Refused
+  codes:
+    998: Don't Know
+    999: Refused
+
+phenx_sib_288:
+  type: Integer
+  description: Did it result in an injury or poisoning? PX640108_Attempted_Suicide_LastTimeResult_UnableToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_289:
+  type: Integer
+  description: Did it require medical attention? PX640108_Attempted_Suicide_LastTimeMedicalAttention_UnableToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_290:
+  type: Integer
+  description: Did it require overnight hospitalization? PX640108_Attempted_Suicide_LastTimeHospitalization_UnableToRead
+  range:
+  - 1
+  - 5
+  - 8
+  - 9
+  notes: 1=Yes; 5=No; 8=Don't know; 9=Refused
+  codes:
+    1: 'Yes'
+    5: 'No'
+    8: Don't know
+    9: Refused
+
+phenx_sib_291:
+  type: Integer
+  description: There are three statements I will read out loud. Please tell me which
+    of these three statements best describes your situation when you tried to kill
+    yourself (the last time)one, two, or three?    "One, I made a serious attempt
+    to kill myself and it was only luck that I did not succeed."  "Two, I tried to
+    kill myself, but knew that the method was not foolproof."  "Three, my attempt
+    was a cry for help, I did not intend to die." PX640108_Attempted_Suicide_LastTimeSituation_UnableToRead
+  range:
+  - 1::3
+  - 8
+  - 9
+  notes: 1=I made a serious attempt to kil myself and it was only luck that I did
+    not succeed; 2=I tried to kill myself, but knew that the method may not work;
+    3=My attempt was a cry for help. I did not intend to die; 8=Don't know; 9=Refused
+  codes:
+    1: I made a serious attempt to kil myself and it was only luck that I did not
+      succeed
+    2: I tried to kill myself, but knew that the method may not work
+    3: My attempt was a cry for help. I did not intend to die
+    8: Don't know
+    9: Refused
+
+phenx_sib_292:
+  type: Integer
+  description: What method did you use?  Gun PX640108_Attempted_Suicide_LastTimeMethod_Gun_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_293:
+  type: Integer
+  description: What method did you use?  RAZOR, KNIFE, OR OTHER SHARP INSTRUMENT PX640108_Attempted_Suicide_LastTimeMethod_RazorKnife_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_294:
+  type: Integer
+  description: What method did you use?  OVERDOSE OF PRESCRIPTION MEDICATIONS PX640108_Attempted_Suicide_LastTimeMethod_PrescriptionMed_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_295:
+  type: Integer
+  description: What method did you use?  OVERDOSE OF OVER-THE-COUNTER MEDICATIONS
+    PX640108_Attempted_Suicide_LastTimeMethod_OTCMed_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_296:
+  type: Integer
+  description: What method did you use?  OVERDOSE OF OTHER DRUG (E.G., HEROIN, CRACK,
+    ALCOHOL) PX640108_Attempted_Suicide_LastTimeMethod_OtherDrug_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_297:
+  type: Integer
+  description: What method did you use?  POISONING (E.G., CARBON MONOXIDE, RAT POISON)
+    PX640108_Attempted_Suicide_LastTimeMethod_Poisoning_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_298:
+  type: Integer
+  description: What method did you use?  HANGING, STRANGULATION, SUFFOCATION PX640108_Attempted_Suicide_LastTimeMethod_Hanging_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_299:
+  type: Integer
+  description: What method did you use?  DROWNING PX640108_Attempted_Suicide_LastTimeMethod_Drowning_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_300:
+  type: Integer
+  description: What method did you use?  JUMPING FROM HIGH PLACES PX640108_Attempted_Suicide_LastTimeMethod_Jumping_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_301:
+  type: Integer
+  description: What method did you use?  MOTOR VEHICLE CRASH PX640108_Attempted_Suicide_LastTimeMethod_MotorVehicle_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_302:
+  type: Integer
+  description: What method did you use?  DON'T KNOW PX640108_Attempted_Suicide_LastTimeMethod_DontKnow_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_303:
+  type: Integer
+  description: What method did you use?  REFUSED PX640108_Attempted_Suicide_LastTimeMethod_Refused_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_304:
+  type: Integer
+  description: What method did you use?  OTHER PX640108_Attempted_Suicide_LastTimeMethod_Other_UnableToRead
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+phenx_sib_305:
+  type: String
+  length: 25
+  description: What method did you use?  OTHER (PLEASE DESCRIBE) PX640108_Attempted_Suicide_LastTimeMethod_Specify_UnableToRead
+
+harmsq3:
+  type: Integer
+  description: Did you do anything to hurt yourself?
+  range:
+  - 0
+  - 1
+  notes: 0 = No;1 = Yes
+  alias: su12
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+mini_b18_a:
+  type: Integer
+  description: 'Did you ever make a suicide attempt (try to kill yourself)?: If yes,
+    how many times?'
+  alias: su2a
+
+su1a:
+  type: Integer
+  description: Earlier you told me that you'd thought about taking your own life,
+    Did those thoughts persist for at least 7 days in a row?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+su12b_agerec:
+  type: String
+  length: 20
+  description: Other than when you tried to take your own life, did you ever hurt
+    yourself on purpose, for example, by cutting or burning yourself? If yes, Age
+    at most recent instance
+
+cssrs_005b:
+  type: String
+  length: 2800
+  description: 'Subject has suicidal ideation with intent and plan: Describe'
+  alias: su1c
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+  alias: su_notes
+
+yrbsms_16:
+  type: Integer
+  description: Have you ever tried to kill yourself?
+  range:
+  - 0
+  - 1
+  notes: 1= Yes; 0= No
+  alias: su2
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+sitbi_65:
+  type: Integer
+  description: How many  times in your life have you engaged in  non-suicidal self-injury
+    (NSSI)?
+  alias: su12a
+
+suic_plan_ever:
+  type: Integer
+  description: Have you ever actually made a plan to kill yourself? PX640501_Suicide_Plan_Ever
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  alias: su1b
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+yrbsms_14:
+  type: Integer
+  description: Have you ever seriously thought about killing yourself?
+  range:
+  - 0
+  - 1
+  notes: 1= Yes; 0= No
+  alias: su1
+  codes:
+    1: 'Yes'
+    0: 'No'
+
+isas_s1q3a:
+  type: Integer
+  description: 'At what age did you: First harm yourself?'
+  notes: years
+  alias: su12b_ageon

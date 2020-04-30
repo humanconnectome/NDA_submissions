@@ -1,5 +1,5 @@
 import pandas as pd
-import types
+from ccf.box import CachedBox
 
 
 class Loader:
@@ -73,3 +73,18 @@ class Loader:
         self._detect_missing_fields_hook_(df, fields)
         df, DF = self._create_shadow_dataframe(df, fields)
         return df, DF
+
+
+class BoxLoader(Loader):
+    def __init__(self, name, boxid):
+        self.boxid = boxid
+        self.box = CachedBox(cache='./')
+        super().__init__(name)
+
+    def _load_hook_(self, fields):
+        df = self.box.read_csv(self.boxid)
+        return df
+
+    def _post_load_hook_(self, df):
+        df = df.rename(columns={"subid": "subject"})
+        return super()._post_load_hook_(df)

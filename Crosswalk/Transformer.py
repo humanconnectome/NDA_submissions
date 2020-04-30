@@ -30,7 +30,6 @@ class Transformer:
     def __init__(self, map_dir='./map/', funcs={}):
         self.Y = EasyYaml()
         self.funcs = funcs
-        self.writer = None
         self.map_dir = map_dir
         self.elements = []
         self.mappings = {}

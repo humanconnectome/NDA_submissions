@@ -3,12 +3,6 @@ import types
 
 
 class Loader:
-    # def __init__(self, post=None):
-    #     if post is not None:
-    #         self.post_hook = types.MethodType(post, self)
-    #
-    # def post_hook(self, df):
-    #     return df
 
     def __init__(self, name):
         self.name = name

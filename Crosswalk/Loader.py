@@ -70,8 +70,8 @@ class Loader:
         """
         The main function that runs through all of the above functions in order.
         """
-        fields = self._fields_hook_(fields)
-        df = self._load_hook_(fields)
+        additional_fields = self._fields_hook_(fields)
+        df = self._load_hook_(additional_fields)
         df = self._post_load_hook_(df)
         self._detect_missing_fields_hook_(df, fields)
         df, DF = self._create_shadow_dataframe(df, fields)

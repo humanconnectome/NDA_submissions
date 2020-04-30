@@ -1,5 +1,8 @@
+import os
 import pandas as pd
 from ccf.box import CachedBox
+from ccf.easy_yaml import EasyYaml
+from ccf.redcap import CachedRedcap
 
 
 class Loader:
@@ -88,3 +91,69 @@ class BoxLoader(Loader):
     def _post_load_hook_(self, df):
         df = df.rename(columns={"subid": "subject"})
         return super()._post_load_hook_(df)
+
+
+class RedcapLoader(Loader):
+    def __init__(self, name, definitions_dir="./definitions/"):
+        self.directory = definitions_dir
+        self.definitions = {}
+        super().__init__(name)
+
+    def setup(self):
+        filename = os.path.join(self.directory, self.name + '.yaml')
+        Y = EasyYaml()
+        self.definitions = Y(filename)
+
+    def _load_hook_(self, fields):
+        redcap = CachedRedcap()
+        df = redcap.get_behavioral(self.get_source_name(), list(fields))
+        return df
+
+    def _detect_missing_fields_hook_(self, df, fields):
+        # Add checkbox fields
+        extended_fieldslist = []
+        for name in fields:
+            d = self.definitions.get(name)
+            if d and d['type'] == 'checkbox':
+                extended_fieldslist.extend([f'{name}___{k}' for k, v in d['choices'].items()])
+            else:
+                extended_fieldslist.append(name)
+
+        return super()._detect_missing_fields_hook_(df, extended_fieldslist)
+
+    def _create_shadow_dataframe(self, df, fields):
+        df = df.copy()
+        DF = df.copy()
+
+        for name in fields:
+            if name not in self.definitions:
+                # if not in data dictionary, then won't know how to manipulate so just skip
+                continue
+
+            field = self.definitions.get(name)
+
+            if field['type'] == 'checkbox':
+                replace_with_code = {f'{name}___{k}': k for k, v in field['choices'].items()}
+                replace_with_value = {f'{name}___{k}': v for k, v in field['choices'].items()}
+
+                z = df[replace_with_code.keys()].stack()
+                z = z[z == 1].reset_index(level=1).rename(columns={'level_1': name}).drop(columns=0)
+
+                x = z.replace(replace_with_value).groupby(level=0).agg(lambda values: '; '.join(values))
+                X = z.replace(replace_with_code).groupby(level=0).agg(lambda values: '; '.join(values))
+
+            elif name in df:
+                x = df[name].copy()
+                if field['type'] in ['radio', 'dropdown']:
+                    X = x.replace({float(k): v for k, v in field['choices'].items()})
+                elif field['type'] in ['text']:
+                    X = x.astype(str)
+                else:
+                    X = x.copy()
+            else:
+                x = pd.Series()
+                X = pd.Series()
+            df[name] = x
+            DF[name] = X
+
+        return df, DF

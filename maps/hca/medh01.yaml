@@ -4,116 +4,27 @@ elements:
   rename: subjectkey
   source:
   - hcpa
-  - ssaga
 
 - name: subject
   rename: src_subject_id
   source:
   - hcpa
-  - ssaga
 
 - name: interview_date
   rename: interview_date
   func: format_date
   source:
   - hcpa
-  - ssaga
 
 - name: interview_age
   rename: interview_age
   source:
   - hcpa
-  - ssaga
 
 - name: gender
   rename: sex
   source:
   - hcpa
-  - ssaga
-
-- rename: sf1
-  name: mh1
-  source: ssaga
-
-- rename: mh2
-  name: mh2
-  source: ssaga
-
-- rename: mh4a
-  name: mh4a
-  source: ssaga
-
-- rename: tosurg
-  name: mh4b
-  source: ssaga
-
-- rename: baseline_m_008
-  name: mh4c
-  source: ssaga
-
-- rename: mh5
-  name: mh5
-  source: ssaga
-
-- rename: mh6a1
-  name: mh6a1
-  request: Please recode 1 as 0 (for "No") and 5 as 1 (for "Yes").
-  recode:
-    5: 1
-    1: 0
-  source: ssaga
-
-- rename: mh6a2
-  name: mh6a2
-  request: Please recode 1 as 0 (for "No") and 5 as 1 (for "Yes").
-  recode:
-    5: 1
-    1: 0
-  source: ssaga
-
-- rename: mh6a3
-  name: mh6a3
-  request: Please recode 1 as 0 (for "No") and 5 as 1 (for "Yes").
-  recode:
-    5: 1
-    1: 0
-  source: ssaga
-
-- rename: mh6a4
-  name: mh6a4
-  request: Please recode 1 as 0 (for "No") and 5 as 1 (for "Yes").
-  recode:
-    5: 1
-    1: 0
-  source: ssaga
-
-- rename: mh6a5
-  name: mh6a5
-  request: Please recode 1 as 0 (for "No") and 5 as 1 (for "Yes").
-  recode:
-    5: 1
-    1: 0
-  source: ssaga
-
-- rename: mh6a6
-  name: mh6a6
-  request: Please recode 1 as 0 (for "No") and 5 as 1 (for "Yes").
-  recode:
-    5: 1
-    1: 0
-  source: ssaga
-
-- rename: mh6a7
-  name: mh6a7
-  request: Please recode 1 as 0 (for "No") and 5 as 1 (for "Yes").
-  recode:
-    5: 1
-    1: 0
-  source: ssaga
-
-- rename: comments_misc
-  name: mh_notes
-  source: ssaga
 
 - rename: dental1
   name: dental1

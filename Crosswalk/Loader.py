@@ -40,7 +40,7 @@ class Loader:
         This is also a good place to merge additional data.
         """
 
-        rosetta = pd.read_csv('UnrelatedHCAHCD_w_STG_Image_and_pseudo_GUID09_27_2019.csv')
+        rosetta = pd.read_csv('UnrelatedHCAHCD_w_STG_Image_and_pseudo_GUID05_05_2020.csv')
         rosetta = rosetta[['subjectped', 'nda_guid', 'nda_gender', 'nda_interview_date', 'nda_interview_age']]
         rosetta.columns = ['subject', 'subjectkey', 'gender', 'interview_date', 'interview_age']
         df = rosetta.merge(df, on='subject', suffixes=('', '_alt'))

@@ -17,7 +17,7 @@ class DataCache:
             d[source].add(field)
 
         for source, fields in d.items():
-            df, DF = self.sources[source].load(fields)
+            df, DF = self.sources[source].load(list(fields))
             self.df[source] = df
             self.DF[source] = DF
 

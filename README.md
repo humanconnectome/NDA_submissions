@@ -1,6 +1,6 @@
 # crosswalk
 
-My implementation of the NDA crosswalk
+HCP implementation of a suite of in-house and pip-installed (python-based) tools to facilitate open and reproducible harmonization between local REDCap databases and BOX sources with NDA data dictionary.  Use this repo to identify HCP-lifespan specific variable names in either database system, and/or to develop a similar Crosswalk for your own data (e.g. to talk to your Redcap, Box, and NDA data dictionary APIs using the libraries developed and/or curated here).     
 
 ## Directory structure
 - **Crosswalk/** - The object oriented library used for mapping

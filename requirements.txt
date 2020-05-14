@@ -3,7 +3,6 @@ backcall==0.1.0
 boto3==1.13.9
 botocore==1.16.9
 boxsdk==2.8.0
-ccf @ git+https://github.com/humanconnectome/ccf_libs@c11976646502966489ff7191ca0668cf618db6c7
 certifi==2020.4.5.1
 cffi==1.14.0
 chardet==3.0.4

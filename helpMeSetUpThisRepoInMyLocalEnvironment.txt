@@ -49,7 +49,9 @@ Some orienting instructions for logical people with python programming experienc
 8). Enstall our library of REDCap and Box API (note you might need to turn off your VPN for this...no clue why,
     but it was messing with my own experiment from my socially distanced apartment).  Incidentally, we've had a number of
     curious VPN related issues with Jupyter notebooks that I'll just casually refer to here with no further explanation.  
-    > pip install git+git://github.com/humanconnectome/ccf_libs@526bbbdc05f95162f4a71a7410632fe2c2e243fd
+    > pip install git+git://github.com/humanconnectome/ccf_libs@c11976646502966489ff7191ca0668cf618db6c7
+    or try
+    > pip install git+https://github.com/humanconnectome/ccf_libs --upgrade
 
 9). Install the software that will allow you to load your 'NDA_submissions_venv' virtual environment into the jupyter notebooks
     written for the unique task of harmonizing data from REDCap and Box with structures at the NDA

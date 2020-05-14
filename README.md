@@ -20,22 +20,8 @@ Step 2: Modify and run the notebooks [HCD](./HCD.ipynb) and [HCA](./HCD.ipynb) a
 They will download the data, transform it, and validate it against the NDA servers.  Your most time consuming task will be in modifying the map betweeen
 variables in your Redcap Databases and their destinations at the NDA.
 
-For example, every variable that you would like to send to the NDA has to be in one of the maps,
-    such as https://github.com/humanconnectome/NDA_submissions/blob/master/maps/hcd/asr01.yaml
-    Here you find an entry for the asr3 variable (my comments after #)
-
-   - name: asr3  #name of the variable in redcap
-     rename: asr1_3 #name of the element in the NDA
-     request: Please increment your 0::2 scale to a 1::3 scale.  #verbal description of what needs to happen to the variable in order to harmonize it with the NDA
-     recode:  #value recodings of the verbal request if necessary
-       0: 1
-       1: 2
-       2: 3
-     source:  #data source ...libraries will know how to open the databases you list here based on what information you put in the config.yml and /creds folder files (see step 0)
-     - child
-     - teen
-
-Note any actionable errors.
+- For example, every variable that you would like to send to the NDA has to be in one of the maps, such as https://github.com/humanconnectome/NDA_submissions/blob/master/maps/hcd/asr01.yaml. 
+- Note any actionable errors.
 
 Step 3: Validation of structures at the NDA can happen either by downloading vtcmd.py and running it against all of your generated .csv files,
         https://pypi.org/project/nda-tools/

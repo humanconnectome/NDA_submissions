@@ -184,7 +184,7 @@ class QintLoader(RedcapLoader):
         super().__init__('qint', definitions_dir)
 
     def _fields_hook_(self, fields):
-        return fields + ['subjectid']
+        return fields + ['subjectid', 'visit']
 
     def _load_hook_(self, fields):
         redcap = CachedRedcap()
@@ -193,6 +193,20 @@ class QintLoader(RedcapLoader):
 
     def _post_load_hook_(self, df):
         df = df.rename(columns={"subjectid": "subject"})
+        return super()._post_load_hook_(df)
+
+
+class QintHcdLoader(QintLoader) :
+    def _post_load_hook_(self, df):
+        df = df[df.subjectid.str.startswith('HCD', False)]
+        df = df[df.visit == 1]
+        return super()._post_load_hook_(df)
+
+
+class QintHcaLoader(QintLoader) :
+    def _post_load_hook_(self, df):
+        df = df[df.subjectid.str.startswith('HCA', False)]
+        df = df[df.visit == 1]
         return super()._post_load_hook_(df)
 
 

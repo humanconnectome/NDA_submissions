@@ -95,6 +95,20 @@ class BoxLoader(Loader):
         return super()._post_load_hook_(df)
 
 
+class BoxHcdLoader(BoxLoader) :
+    def _post_load_hook_(self, df):
+        df = super()._post_load_hook_(df)
+        df = df[df.subject.str.startswith('HCD', False)]
+        return df
+
+
+class BoxHcaLoader(BoxLoader) :
+    def _post_load_hook_(self, df):
+        df = super()._post_load_hook_(df)
+        df = df[df.subject.str.startswith('HCA', False)]
+        return df
+
+
 class RedcapLoader(Loader):
     def __init__(self, name, definitions_dir="./definitions/"):
         self.directory = definitions_dir

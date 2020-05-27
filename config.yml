@@ -7,6 +7,9 @@ config_files:
   box: ./creds/BoxApp.json
 Redcap:
   api_url: https://redcap.wustl.edu/redcap/srvrs/prod_v3_1_0_001/redcap/api/
+  datasources:
+    qint:
+      visit: 1
   behavioral:
     hcpa:
       events:

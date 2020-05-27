@@ -3,7 +3,9 @@ import pandas as pd
 from ccf.box import CachedBox
 from ccf.easy_yaml import EasyYaml
 from ccf.redcap import CachedRedcap
+from ccf.config import LoadSettings
 
+config = LoadSettings()
 
 class Loader:
 
@@ -192,6 +194,8 @@ class QintLoader(RedcapLoader):
         return df
 
     def _post_load_hook_(self, df):
+        visit = config['Redcap']['datasources']['qint']['visit']
+        df = df[df.visit == visit]
         df = df.rename(columns={"subjectid": "subject"})
         return super()._post_load_hook_(df)
 
@@ -199,14 +203,12 @@ class QintLoader(RedcapLoader):
 class QintHcdLoader(QintLoader) :
     def _post_load_hook_(self, df):
         df = df[df.subjectid.str.startswith('HCD', False)]
-        df = df[df.visit == 1]
         return super()._post_load_hook_(df)
 
 
 class QintHcaLoader(QintLoader) :
     def _post_load_hook_(self, df):
         df = df[df.subjectid.str.startswith('HCA', False)]
-        df = df[df.visit == 1]
         return super()._post_load_hook_(df)
 
 

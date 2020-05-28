@@ -91,7 +91,7 @@ class BoxLoader(Loader):
         return df
 
     def _post_load_hook_(self, df):
-        visit = "V" + config['visit']
+        visit = "V" + str(config['visit'])
         df = df[df.assessment == visit]
         df = df.rename(columns={"subid": "subject"})
         return super()._post_load_hook_(df)

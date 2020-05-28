@@ -1,5 +1,6 @@
 secrets: ./creds/secrets.yml
 box: ./creds/BoxApp.json
+visit: 1
 root:
   cache: ../tmp/cache/
   store: ../tmp/store/

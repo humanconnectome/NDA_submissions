@@ -91,6 +91,8 @@ class BoxLoader(Loader):
         return df
 
     def _post_load_hook_(self, df):
+        visit = "V" + config['visit']
+        df = df[df.assessment == visit]
         df = df.rename(columns={"subid": "subject"})
         return super()._post_load_hook_(df)
 
@@ -208,7 +210,7 @@ class QintLoader(RedcapLoader):
         return df
 
     def _post_load_hook_(self, df):
-        visit = config['Redcap']['datasources']['qint']['visit']
+        visit = config['visit']
         df = df[df.visit == visit]
         df = df.rename(columns={"subjectid": "subject"})
         return super()._post_load_hook_(df)

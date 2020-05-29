@@ -6,6 +6,8 @@ root:
   store: ../tmp/store/
 config_files:
   box: ./creds/BoxApp.json
+rosetta:  
+  filename: 'UnrelatedHCAHCD_w_STG_Image_and_pseudo_GUID05_27_2020.csv'
 Redcap:
   api_url: https://redcap.wustl.edu/redcap/srvrs/prod_v3_1_0_001/redcap/api/
   datasources:

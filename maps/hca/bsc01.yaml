@@ -212,17 +212,19 @@ elements:
   recode:
     99999: -9
 
-- rename: comments
-  name: ldl_notes
-  request: Please combine 'ldl_notes' and 'blood_notes' in one column using either
-    name. Please also label which response within this column was which.
-  source: hcpa
+# commenting out for two reasons. 1 - comments contain dates and initials which will trigger warnings in PHI flags at NDA,
+# 2 comments appear to be going to same destination...need to track down where request is handled from Moises
+#- rename: comments
+#  name: ldl_notes
+#  request: Please combine 'ldl_notes' and 'blood_notes' in one column using either
+#    name. Please also label which response within this column was which.
+#  source: hcpa
 
-- rename: comments
-  name: blood_notes
-  request: Please combine 'ldl_notes' and 'blood_notes' in one column using either
-    name. Please also label which response within this column was which.
-  source: hcpa
+#- rename: comments
+#  name: blood_notes
+#  request: Please combine 'ldl_notes' and 'blood_notes' in one column using either
+#    name. Please also label which response within this column was which.
+#  source: hcpa
 
 - rename: festrs
   name: estradiol

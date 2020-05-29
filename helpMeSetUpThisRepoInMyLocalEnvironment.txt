@@ -69,7 +69,8 @@ Some orienting instructions for logical people with python programming experienc
      to accept the NDA_submissions_venv kernel, just find and switch to it from the kernel drop-down menu.  
      Select the first cell in the notebook and hit control+Enter.  If no errors, YAY! you are ready to begin the README.
 
-
+12). If you swear you're making changes but nothing is changing, try shutting down the notebook (e.g control+c) and re launching.  Jupyter stores a lot of things in a
+     memory cache somewhere that power users probably understand how to clear.  Let us know if you become one of these users so we can add your advice to this repo.  
 
     #better written source from which I'm borrowing concepts:
     https://github.com/GarageGames/Torque2D/wiki/Cloning-the-repo-and-working-with-Git

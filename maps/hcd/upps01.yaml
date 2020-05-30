@@ -38,6 +38,13 @@ elements:
   - teen
   - parent
 
+- rename: version_form
+  code: return "Self Report"
+  source:
+    - child
+    - teen
+    - parent:
+        code: return "Parent Report"
 
 - rename: upps_p4
   name: upps3_y

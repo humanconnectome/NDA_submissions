@@ -1,0 +1,107 @@
+elements:
+- name: subjectkey
+  rename: subjectkey
+  source:
+    - PennCNP
+
+- name: subject
+  rename: src_subject_id
+  source:
+    - PennCNP
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+    - PennCNP
+
+- name: interview_age
+  rename: interview_age
+  source:
+    - PennCNP
+
+- name: gender
+  rename: sex
+  source:
+    - PennCNP
+
+- code: return "PennCNP version"
+  rename: version_form
+  source:
+  - PennCNP
+
+- name: DDISC.SV_1mo_200
+  rename: sv_1mo_200
+  source:
+  - PennCNP
+
+- name: DDISC.SV_6mo_200
+  rename: sv_6mo_200
+  source:
+  - PennCNP
+
+- name: DDISC.SV_1yr_200
+  rename: sv_1yr_200
+  source:
+  - PennCNP
+
+- name: DDISC.SV_3yr_200
+  rename: sv_3yr_200
+  source:
+  - PennCNP
+
+- name: DDISC.SV_5yr_200
+  rename: sv_5yr_200
+  source:
+  - PennCNP
+
+- name: DDISC.SV_10yr_200
+  rename: sv_10yr_200
+  source:
+  - PennCNP
+
+- name: DDISC.SV_1mo_40000
+  rename: sv_1mo_40000
+  source:
+  - PennCNP
+
+- name: DDISC.SV_6mo_40000
+  rename: sv_6mo_40000
+  source:
+  - PennCNP
+
+- name: DDISC.SV_1yr_40000
+  rename: sv_1yr_40000
+  source:
+  - PennCNP
+
+- name: DDISC.SV_3yr_40000
+  rename: sv_3yr_40000
+  source:
+  - PennCNP
+
+- name: DDISC.SV_5yr_40000
+  rename: sv_5yr_40000
+  source:
+  - PennCNP
+
+- name: DDISC.SV_10yr_40000
+  rename: sv_10yr_40000
+  source:
+  - PennCNP
+
+- name: DDISC.AUC_200
+  rename: auc_200
+  source:
+  - PennCNP
+
+- name: DDISC.AUC_40000
+  rename: auc_40000
+  source:
+  - PennCNP
+
+- name: DDISC_valid
+  rename: ddisc_valid
+  source:
+  - PennCNP
+

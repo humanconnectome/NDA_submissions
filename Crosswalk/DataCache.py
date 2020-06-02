@@ -27,8 +27,8 @@ class DataCache:
     def get(self, source, field):
         if field in self.df[source]:
             return (
-                self.df[source][field],
-                self.DF[source][field]
+                self.df[source][field].copy(),
+                self.DF[source][field].copy()
             )
         else:
             raise Exception('Field not in source', source, field)

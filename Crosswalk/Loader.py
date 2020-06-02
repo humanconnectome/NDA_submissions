@@ -77,6 +77,8 @@ class Loader:
         df = self._post_load_hook_(df)
         self._detect_missing_fields_hook_(df, fields)
         df, DF = self._create_shadow_dataframe(df, fields)
+        df = df.replace('nan', pd.NA)
+        DF = DF.replace('nan', '').fillna('')
         return df, DF
 
 

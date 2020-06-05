@@ -41,8 +41,9 @@ class Loader:
         Manipulate the dataframe to create additional or rename existing fields.
         This is also a good place to merge additional data.
         """
-
-        rosetta = pd.read_csv('UnrelatedHCAHCD_w_STG_Image_and_pseudo_GUID05_05_2020.csv')
+        #rosetta = pd.read_csv('UnrelatedHCAHCD_w_STG_Image_and_pseudo_GUID05_05_2020.csv')
+        filename = config['rosetta']['filename']
+        rosetta=pd.read_csv(filename)
         rosetta = rosetta[['subjectped', 'nda_guid', 'nda_gender', 'nda_interview_date', 'nda_interview_age']]
         rosetta.columns = ['subject', 'subjectkey', 'gender', 'interview_date', 'interview_age']
         df = rosetta.merge(df, on='subject', suffixes=('', '_alt'))

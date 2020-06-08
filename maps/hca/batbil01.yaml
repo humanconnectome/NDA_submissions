@@ -1195,3 +1195,163 @@ elements:
 - rename: batlq39_age
   name: batlq39_age
   source: hcpa
+
+- name: batlq_life_sum
+  rename: batl_total
+  source: hcpa
+
+- name: batlq_score1
+  rename: batlq_score1
+  source: hcpa
+  
+- name: batlq_score10
+  rename: batlq_score10
+  source: hcpa 
+
+- name: batlq_score11
+  rename: batlq_score11
+  source: hcpa 
+
+- name: batlq_score12
+  rename: batlq_score12
+  source: hcpa 
+
+- name: batlq_score13
+  rename: batlq_score13
+  source: hcpa 
+
+- name: batlq_score14
+  rename: batlq_score14
+  source: hcpa 
+
+- name: batlq_score15
+  rename: batlq_score15
+  source: hcpa 
+
+- name: batlq_score16
+  rename: batlq_score16
+  source: hcpa 
+
+- name: batlq_score17
+  rename: batlq_score17
+  source: hcpa 
+
+- name: batlq_score18
+  rename: batlq_score18
+  source: hcpa 
+
+- name: batlq_score19
+  rename: batlq_score19
+  source: hcpa 
+
+- name: batlq_score2
+  rename: batlq_score2
+  source: hcpa 
+
+- name: batlq_score20
+  rename: batlq_score20
+  source: hcpa 
+
+- name: batlq_score21
+  rename: batlq_score21
+  source: hcpa 
+
+- name: batlq_score22
+  rename: batlq_score22
+  source: hcpa 
+
+- name: batlq_score23
+  rename: batlq_score23
+  source: hcpa 
+
+- name: batlq_score24
+  rename: batlq_score24
+  source: hcpa 
+
+- name: batlq_score25
+  rename: batlq_score25
+  source: hcpa 
+
+- name: batlq_score26
+  rename: batlq_score26
+  source: hcpa 
+
+- name: batlq_score27
+  rename: batlq_score27
+  source: hcpa 
+
+- name: batlq_score28
+  rename: batlq_score28
+  source: hcpa 
+
+- name: batlq_score29
+  rename: batlq_score29
+  source: hcpa 
+
+- name: batlq_score3
+  rename: batlq_score3
+  source: hcpa 
+
+- name: batlq_score30
+  rename: batlq_score30
+  source: hcpa 
+
+- name: batlq_score31
+  rename: batlq_score31
+  source: hcpa 
+
+- name: batlq_score32
+  rename: batlq_score32
+  source: hcpa 
+
+- name: batlq_score33
+  rename: batlq_score33
+  source: hcpa 
+
+- name: batlq_score34
+  rename: batlq_score34
+  source: hcpa 
+
+- name: batlq_score35
+  rename: batlq_score35
+  source: hcpa 
+
+- name: batlq_score36
+  rename: batlq_score36
+  source: hcpa 
+
+- name: batlq_score37
+  rename: batlq_score37
+  source: hcpa 
+
+- name: batlq_score38
+  rename: batlq_score38
+  source: hcpa 
+
+- name: batlq_score39
+  rename: batlq_score39
+  source: hcpa 
+
+- name: batlq_score4
+  rename: batlq_score4
+  source: hcpa 
+
+- name: batlq_score5
+  rename: batlq_score5
+  source: hcpa 
+
+- name: batlq_score6
+  rename: batlq_score6
+  source: hcpa 
+
+- name: batlq_score7
+  rename: batlq_score7
+  source: hcpa 
+
+- name: batlq_score8
+  rename: batlq_score8
+  source: hcpa 
+
+- name: batlq_score9
+  rename: batlq_score9
+  source: hcpa 

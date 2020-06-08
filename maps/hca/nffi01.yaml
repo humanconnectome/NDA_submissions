@@ -265,3 +265,30 @@ elements:
 - rename: nffi_60
   name: neo60
   source: hcpa
+
+- rename: neo2_score_ne
+  name: neo_n
+  code: return x.fillna(999)
+  source: hcpa
+
+- rename: neo2_score_ex
+  name: neo_e
+  code: return x.fillna(999)
+  source: hcpa
+
+- rename: neo2_score_op
+  name: neo_o
+  code: return x.fillna(999)
+  source: hcpa
+
+- rename: neo2_score_ag
+  name: neo_a
+  code: return x.fillna(999)
+  source: hcpa
+
+- rename: neo2_score_co
+  name: neo_c
+  code: return x.fillna(999)
+  source: hcpa
+
+

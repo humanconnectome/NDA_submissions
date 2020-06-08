@@ -182,3 +182,52 @@ elements:
   name: psqi10
   request: Please rename this column 'parent_sleep20' to avoid a naming conflict.
   source: hcpa
+
+- name: psqi_com2_1
+  rename: csq_psqi_2_score
+  source: hcpa
+  
+- name: psqi_com3
+  rename: csq_psqi_4_score
+  source: hcpa
+
+- name: psqi_com2_2
+  rename: csq_psqi_5a
+  source: hcpa
+
+- name: psqi_com4
+  rename: insomnia8
+  source: hcpa
+
+- name: psqi_com4_1
+  rename: csq_psqi_se
+  source: hcpa
+
+- name: psqi_com1
+  rename: psqi_component1
+  source: hcpa
+
+- name: psqi_com2
+  rename: psqi_component2
+  source: hcpa
+
+- name: psqi_com6
+  rename: psqi_component6
+  source: hcpa
+
+- name: psqi_global
+  rename: psqi_total
+  source: hcpa
+
+- name: psqi_com2_3
+  rename: psqi_com2_3
+  source: hcpa
+  
+- name: psqi_com5
+  rename: psqi_com5
+  source: hcpa
+  
+- name: psqi_com7
+  rename: psqi_com7
+  source: hcpa
+

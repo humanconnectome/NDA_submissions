@@ -29,20 +29,13 @@ elements:
   source: hcpa
 
 
-#- func: if_60
 - rename: version_form
   name: age
-  request: Please use the version_form column to specify Older Adult (60 and above) Past 2 months
-  code: return "Older Adult (60 and above) Past 2 months" if x>=60 else " "
+  request: >-
+    Please use the "version_form" column to specify "Older Adult (60 and above): Past 2 months
+  code: >-
+    return x.map(lambda age: 'ASR' if age < 60 else 'Older Adult (60 and above): Past 2 months')
   source: hcpa
-
-#  code: return x.map(lambda q: " " if q < 60 else "Older Adult (60 and above) Past 2 months")
-#  code: return "Older Adult (60 and above) Past 2 months" if x>=60 else " "
-#  code: return " " if x < 60 else "Older Adult (60 and above) Past 2 months"
-#  code: "return x.map(lambda q: 'ASR' if q < 60 else 'Older Adult (60 and above): Past 2 months')"
-#  code: return x.map(lambda q: 'ASR' if q < 60 else 'Older Adult (60 and above): Past 2 months')
-#  code: "return x.map(lambda age: 'ASR' if age < 60 else 'Older Adult (60 and above): Past 2 months')"
-#  code: return x.map(lambda age: 'ASR' if age < 60 else 'Older Adult (60 and above): Past 2 months')
 
 
 - name: asr1

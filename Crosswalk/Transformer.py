@@ -97,17 +97,16 @@ class Transformer:
             renames = aslist(e.get('rename'))
             names = aslist(e.get('name'))
             data = datacache.get_fields(source, names)
-
-            if 'recode' in e:
-                data[0].replace(e['recode'], inplace=True)
-
             func = self.get_executable(e, len(names))
             result = func(*data)
             if type(result) is not tuple:
                 result = (result,)
 
             for i in range(min(len(result), len(renames))):
-                column[renames[i]] = result[i]
+                if 'recode' in e:
+                    column[renames[i]] = result[i].replace(e['recode'])
+                else:
+                    column[renames[i]] = result[i]
 
         result = {}
         for struct, v1 in db.items():

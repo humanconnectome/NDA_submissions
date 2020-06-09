@@ -13,6 +13,9 @@ def if_18(x, X, y, Y, z, Z):
 def split_by_gender(x, X, y, Y):
     return (x.where(y=="F"), x.where(y=="M"))
 
+def if_60(x, X, y, Y, z, Z):
+    return x.where(z < 60, y)
+
 def format_date(x, X):
     return x.astype("datetime64").dt.strftime("%m/%d/%Y")
 
@@ -22,5 +25,6 @@ funcs = {
     "prepend_age_at_onset": prepend_age_at_onset,
     "if_18": if_18,
     "split_by_gender": split_by_gender,
+    "if_60": if_60,
     "format_date": format_date
 }

@@ -1,47 +1,133 @@
+struct: asr01
+instrument: Adult Self Report
 elements:
+
 
 - name: subjectkey
   rename: subjectkey
-  source:
-  - hcpa
+  source: hcpa
+
 
 - name: subject
   rename: src_subject_id
-  source:
-  - hcpa
+  source: hcpa
+
 
 - name: interview_date
   rename: interview_date
   func: format_date
-  source:
-  - hcpa
+  source: hcpa
+
 
 - name: interview_age
   rename: interview_age
-  source:
-  - hcpa
+  source: hcpa
+
 
 - name: gender
   rename: sex
-  source:
-  - hcpa
+  source: hcpa
 
+
+#- func: if_60
 - rename: version_form
-  request: >-
-    Please use the "version_form" column to specify "Older Adult (60 and above): Past 2 months"
-  code: >-
-    return "Older Adult (60 and above): Past 2 months"
+  name: age
+  request: Please use the version_form column to specify Older Adult (60 and above) Past 2 months
+  code: return "Older Adult (60 and above) Past 2 months" if x>=60 else " "
   source: hcpa
 
-- rename: oasr_ppl3
-  name: oasr_ppl3
+#  code: return x.map(lambda q: " " if q < 60 else "Older Adult (60 and above) Past 2 months")
+#  code: return "Older Adult (60 and above) Past 2 months" if x>=60 else " "
+#  code: return " " if x < 60 else "Older Adult (60 and above) Past 2 months"
+#  code: "return x.map(lambda q: 'ASR' if q < 60 else 'Older Adult (60 and above): Past 2 months')"
+#  code: return x.map(lambda q: 'ASR' if q < 60 else 'Older Adult (60 and above): Past 2 months')
+#  code: "return x.map(lambda age: 'ASR' if age < 60 else 'Older Adult (60 and above): Past 2 months')"
+#  code: return x.map(lambda age: 'ASR' if age < 60 else 'Older Adult (60 and above): Past 2 months')
+
+
+- name: asr1
+  rename: asr1_1
   request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
   source: hcpa
 
-- rename: asr2_2
-  name: oasr_ppl7
+
+#not in source
+#- name: asr2
+#  rename: asr1_2
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- name: asr3
+  rename: asr1_3
   request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
   source: hcpa
+
+
+#- name: asr4
+#  rename: asr1_4
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- name: asr5
+  rename: asr1_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+#- name: asr6
+#  rename: asr1_6
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+#- name: asr6des
+#  rename: asr1_6_text
+#  source: hcpa
+
+
+#- name: asr7
+#  rename: asr2_1
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr8
+  - oasr_ppl7
+  - age
+  rename: asr2_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
   recode:
     0: 1
     1: 2
@@ -50,9 +136,15 @@ elements:
   code: >-
     return x.fillna(-99);
     raise Exception("Programmatically check for null: -99")
+  source: hcpa
 
-- rename: asr2_3
-  name: oasr_ppl8
+
+- func: if_60
+  name:
+  - asr9
+  - oasr_ppl8
+  - age
+  rename: asr2_3
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -62,12 +154,23 @@ elements:
     null: -99
   code: return x.fillna(-99)
 
-- rename: asr2_3_text
-  name: oasr_ppl8_des
+
+- func: if_60
+  name:
+  - asr9des
+  - oasr_ppl8_des
+  - age
+  rename: asr2_3_text
   source: hcpa
 
-- rename: asr2_4
-  name: oasr_ppl9
+
+
+- func: if_60
+  name:
+  - asr10
+  - oasr_ppl9
+  - age
+  rename: asr2_4
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -75,13 +178,64 @@ elements:
     1: 2
     2: 3
     null: -99
+
+
+#- name: asr11
+#  rename: asr2_5
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+#- name: asr12
+#  rename: asr2_6
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
 
 - rename: oasr_ppl9_des
   name: oasr_ppl9_des
   source: hcpa
 
-- rename: asr3_1
-  name: oasr_ppl12
+
+- name: oasr_ppl12
+  rename: asr3_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+#- func: if_60
+#  name:
+#  - asr13
+#  - oasr_ppl12
+#  - age
+#  rename: asr3_1
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  source: hcpa
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#    null: -99
+
+
+- func: if_60
+  name:
+  - asr14
+  - oasr_ppl13
+  - age
+  rename: asr3_2
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -90,8 +244,23 @@ elements:
     2: 3
     null: -99
 
-- rename: asr3_2
-  name: oasr_ppl13
+
+#- name: asr15
+#  rename: asr3_3
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr16
+  - oasr_ppl15
+  - age
+  rename: asr3_4
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -100,8 +269,23 @@ elements:
     2: 3
     null: -99
 
-- rename: asr3_4
-  name: oasr_ppl15
+
+#- name: asr17
+#  rename: asr3_5
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr18
+  - oasr_ppl17
+  - age
+  rename: asr3_6
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -110,13 +294,118 @@ elements:
     2: 3
     null: -99
 
-- rename: oasr_ppl16
-  name: oasr_ppl16
+
+#- name: asr19
+#  rename: asr4_1
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+#- name: asr20
+#  rename: asr4_2
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+- name: asr21
+  rename: asr4_3
   request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
   source: hcpa
 
-- rename: asr3_6
-  name: oasr_ppl17
+
+- name: asr22
+  rename: asr4_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+- name: asr23
+  rename: asr4_5
+  request:
+  - Please rename this column 'asr4_5' to avoid a naming conflict in our database.
+  - Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+- name: asr24
+  rename: asr4_6
+  request:
+  - Please rename this column 'asr4_6' to avoid a naming conflict in our database.
+  - Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+- name: asr25
+  rename: asr5_1
+  request:
+  - Please rename this column 'asr5_1' to avoid a naming conflict in our database.
+  - Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+- name: asr26
+  rename: asr5_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+#- name: asr27
+#  rename: asr5_3
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- name: asr28
+  rename: asr5_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr29
+  - oasr_ppl26
+  - age
+  rename: asr5_5
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -125,18 +414,86 @@ elements:
     2: 3
     null: -99
 
-- rename: oasr_ppl19
-  name: oasr_ppl19
-  request: Please increment your 0::2 scale to a 1::3 scale.
+
+- func: if_60
+  name:
+  - asr29des
+  - oasr_ppl26_des
+  - age
+  rename: asr5_5_text
   source: hcpa
 
-- rename: oasr_ppl20
-  name: oasr_ppl20
+
+#- name: asr30
+#  rename: asr5_6
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+#- name: asr31
+#  rename: asr6_1
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+#- name: asr32
+#  rename: asr6_2
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+#- name: asr33
+#  rename: asr6_3
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+- name: oasr_ppl31
+  rename: asr6_4
   request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
   source: hcpa
 
-- rename: asr9_4
-  name: oasr_ppl23
+
+#- func: if_60
+#  name:
+#  - asr34
+#  - oasr_ppl31
+#  - age
+#  rename: asr6_4
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  source: hcpa
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#    null: -99
+
+
+- func: if_60
+  name:
+  - asr35
+  - oasr_ppl32
+  - age
+  rename: asr6_5
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -145,62 +502,61 @@ elements:
     2: 3
     null: -99
 
-- rename: asr5_5
-  name: oasr_ppl26
+
+- name: asr36
+  rename: asr6_6
   request: Please increment your 0::2 scale to a 1::3 scale.
-  source: hcpa
   recode:
     0: 1
     1: 2
     2: 3
-    null: -99
-
-- rename: asr5_5_text
-  name: oasr_ppl26_des
   source: hcpa
 
-- rename: asr6_4
-  name: oasr_ppl31
+
+- name: asr37
+  rename: asr7_1
   request: Please increment your 0::2 scale to a 1::3 scale.
-  source: hcpa
   recode:
     0: 1
     1: 2
     2: 3
-    null: -99
-
-- rename: asr6_5
-  name: oasr_ppl32
-  request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
+
+
+#- name: asr38
+#  rename: asr7_2
+#  request:
+#  - Please rename this column 'asr7_2' to avoid a naming conflict in our database.
+#  - Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- name: asr39
+  rename: asr7_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
   recode:
     0: 1
     1: 2
     2: 3
-    null: -99
-
-- rename: oasr_ppl33
-  name: oasr_ppl33
-  request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
 
-- rename: asr21_4
-  name: oasr_ppl34
-  request: Please increment your 0::2 scale to a 1::3 scale.
-  source: hcpa
-  recode:
-    0: 1
-    1: 2
-    2: 3
-    null: -99
 
 - rename: oasr_ppl35
   name: oasr_ppl35
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
 
-- rename: asr7_4
-  name: oasr_ppl36
+
+- func: if_60
+  name:
+  - asr40
+  - oasr_ppl36
+  - age
+  rename: asr7_4
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -209,12 +565,22 @@ elements:
     2: 3
     null: -99
 
-- rename: asr7_4_text
-  name: oasr_ppl36_des
+
+- func: if_60
+  name:
+  - asr40des
+  - oasr_ppl36_des
+  - age 
+  rename: asr7_4_text
   source: hcpa
 
-- rename: asr7_5
-  name: oasr_ppl37
+
+- func: if_60
+  name:
+  - asr41
+  - oasr_ppl37
+  - age
+  rename: asr7_5
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -222,14 +588,132 @@ elements:
     1: 2
     2: 3
     null: -99
+
+
+- name: asr42
+  rename: asr7_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+- name: asr43
+  rename: asr8_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+#- name: asr44
+#  rename: asr8_2
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+#note request was wrong
+- rename: oasr_ppl3
+  name: oasr_ppl3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  source: hcpa
+
+
+
+- func: if_60
+  name:
+  - asr45
+  - oasr_ppl40
+  - age
+  rename: asr8_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  source: hcpa
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    null: -99
+
 
 - rename: oasr_ppl39
   name: oasr_ppl39
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
 
-- rename: asr8_3
-  name: oasr_ppl40
+
+- name: asr46
+  rename: asr8_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+- name: asr46des
+  rename: asr8_4_text
+  source: hcpa
+
+
+- name: asr47
+  rename: asr8_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+- name: oasr_ppl43
+  rename: asr8_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+#- func: if_60
+#  name:
+#  - asr48
+#  - oasr_ppl43
+#  - age
+#  rename: asr8_6
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  source: hcpa
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#    null: -99
+
+
+#- name: asr49
+#  rename: asr9_1
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr50
+  - oasr_ppl45
+  - age
+  rename: asr9_2
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -238,8 +722,23 @@ elements:
     2: 3
     null: -99
 
-- rename: asr8_6
-  name: oasr_ppl43
+
+#- name: asr51
+#  rename: asr9_3
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr52
+  - oasr_ppl23
+  - age
+  rename: asr9_4
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -248,23 +747,47 @@ elements:
     2: 3
     null: -99
 
-- rename: asr9_2
-  name: oasr_ppl45
+
+- rename: oasr_ppl16
+  name: oasr_ppl16
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
-  recode:
-    0: 1
-    1: 2
-    2: 3
-    null: -99
+
+
+- rename: oasr_ppl19
+  name: oasr_ppl19
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  source: hcpa
+
+
+- rename: oasr_ppl20
+  name: oasr_ppl20
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  source: hcpa
+
+
+#- name: asr53
+#  rename: asr9_5
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
 
 - rename: oasr_ppl47
   name: oasr_ppl47
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
 
-- rename: asr9_6
-  name: oasr_ppl48
+
+- func: if_60
+  name:
+  - asr54
+  - oasr_ppl48
+  - age
+  rename: asr9_6
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -273,8 +796,39 @@ elements:
     2: 3
     null: -99
 
-- rename: asr10_3
-  name: oasr_ppl49_1
+
+#- name: asr55
+#  rename: asr10_1
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr56a
+  - oasr_ppl49_1
+  - age
+  rename: asr10_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    null: -99
+  source:
+  - hcpa
+
+
+- func: if_60
+  name:
+  - asr56b
+  - oasr_ppl49_2
+  - age
+  rename: asr10_4
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -283,8 +837,13 @@ elements:
     2: 3
     null: -99
 
-- rename: asr10_4
-  name: oasr_ppl49_2
+
+- func: if_60
+  name:
+  - asr56c
+  - oasr_ppl49_3
+  - age
+  rename: asr10_5
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -293,8 +852,13 @@ elements:
     2: 3
     null: -99
 
-- rename: asr10_5
-  name: oasr_ppl49_3
+
+- func: if_60
+  name:
+  - asr56d
+  - oasr_ppl49_4
+  - age
+  rename: asr10_6
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -303,8 +867,23 @@ elements:
     2: 3
     null: -99
 
-- rename: asr10_6
-  name: oasr_ppl49_4
+
+- func: if_60
+  name:
+  - asr56ddes
+  - oasr_ppl49_4_des
+  - age
+  rename: asr10_6_text
+  source: hcpa
+
+
+
+- func: if_60
+  name:
+  - asr56e
+  - oasr_ppl49_5
+  - age
+  rename: asr11_1
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -313,12 +892,13 @@ elements:
     2: 3
     null: -99
 
-- rename: asr10_6_text
-  name: oasr_ppl49_4_des
-  source: hcpa
 
-- rename: asr11_1
-  name: oasr_ppl49_5
+- func: if_60
+  name:
+  - asr56f
+  - oasr_ppl49_6
+  - age
+  rename: asr11_2
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -327,8 +907,13 @@ elements:
     2: 3
     null: -99
 
-- rename: asr11_2
-  name: oasr_ppl49_6
+
+- func: if_60
+  name:
+  - asr56g
+  - oasr_ppl49_7
+  - age
+  rename: asr11_3
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -337,8 +922,13 @@ elements:
     2: 3
     null: -99
 
-- rename: asr11_3
-  name: oasr_ppl49_7
+
+- func: if_60
+  name:
+  - asr56h
+  - oasr_ppl49_8 
+  - age
+  rename: asr11_4
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -347,8 +937,13 @@ elements:
     2: 3
     null: -99
 
-- rename: asr11_4
-  name: oasr_ppl49_8
+
+- func: if_60
+  name:
+  - asr56i
+  - oasr_ppl49_9 
+  - age
+  rename: asr11_5
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -357,32 +952,60 @@ elements:
     2: 3
     null: -99
 
-- rename: asr11_5
-  name: oasr_ppl49_9
-  request: Please increment your 0::2 scale to a 1::3 scale.
-  source: hcpa
-  recode:
-    0: 1
-    1: 2
-    2: 3
-    null: -99
 
 - rename: oasr_ppl49_10
   name: oasr_ppl49_10
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
 
+
 - rename: oasr_ppl49_11
   name: oasr_ppl49_11
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
 
-- rename: cbcl56h_des
-  name: oasr_ppl49_11_des
+
+- name: asr57
+  rename: asr11_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
   source: hcpa
 
-- rename: asr12_3
-  name: oasr_ppl53
+
+#- name: asr58
+#  rename: asr12_1
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+#- name: asr58des
+#  rename: asr12_1_text
+#  source: hcpa
+
+
+- name: asr59
+  rename: asr12_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr60
+  - oasr_ppl53 
+  - age
+  rename: asr12_3
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -396,8 +1019,108 @@ elements:
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
 
-- rename: asr14_1
-  name: oasr_ppl61
+- name: asr61
+  rename: asr12_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+#- name: asr62
+#  rename: asr12_5
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- name: asr63
+  rename: asr12_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+#- name: asr64
+#  rename: asr13_1
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+#- name: asr65
+#  rename: asr13_2
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- name: asr66
+  rename: asr13_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+- name: asr66des
+  rename: asr13_3_text
+  source: hcpa
+
+
+
+- name: asr67
+  rename: asr13_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+#- name: asr68
+#  rename: asr13_5
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+  
+
+#- name: asr69
+#  rename: asr13_6
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+  
+
+- func: if_60
+  name:
+  - asr70
+  - oasr_ppl61 
+  - age
+  rename: asr14_1
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -406,12 +1129,74 @@ elements:
     2: 3
     null: -99
 
-- rename: asr14_1_text
-  name: oasr_ppl61_des
+
+- func: if_60
+  name:
+  - asr70des
+  - oasr_ppl61_des
+  - age
+  rename: asr14_1_text
   source: hcpa
 
-- rename: asr15_1
-  name: oasr_ppl67
+
+- name: asr71
+  rename: asr14_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+
+- name: asr72
+  rename: asr14_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+#- name: asr73
+#  rename: asr14_4
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+
+#- name: asr74
+#  rename: asr14_5
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- name: asr75
+  rename: asr14_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr76
+  - oasr_ppl67
+  - age
+  rename: asr15_1
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -420,8 +1205,28 @@ elements:
     2: 3
     null: -99
 
-- rename: asr15_3
-  name: oasr_ppl69
+
+- name: asr77
+  rename: asr15_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+- name: asr77des
+  rename: asr15_2_text
+  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr78
+  - oasr_ppl69
+  - age
+  rename: asr15_3
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -430,8 +1235,49 @@ elements:
     2: 3
     null: -99
 
-- rename: asr16_1
-  name: oasr_ppl73
+
+#- name: asr79
+#  rename: asr15_4
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+#- name: asr79des
+#  rename: asr15_4_text
+#  source: hcpa
+
+
+
+#- name: asr80
+#  rename: asr15_5
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+#- name: asr81
+#  rename: asr15_6
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr82
+  - oasr_ppl73
+  - age
+  rename: asr16_1
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -440,8 +1286,23 @@ elements:
     2: 3
     null: -99
 
-- rename: asr16_3
-  name: oasr_ppl74
+
+#- name: asr83
+#  rename: asr16_2
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr84
+  - oasr_ppl74
+  - age
+  rename: asr16_3
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -450,12 +1311,22 @@ elements:
     2: 3
     null: -99
 
-- rename: asr16_3_text
-  name: oasr_ppl74_des
+
+- func: if_60
+  name:
+  - asr84des
+  - oasr_ppl74_des
+  - age
+  rename: asr16_3_text
   source: hcpa
 
-- rename: asr16_4
-  name: oasr_ppl75
+
+- func: if_60
+  name:
+  - asr85
+  - oasr_ppl75
+  - age
+  rename: asr16_4
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -464,17 +1335,137 @@ elements:
     2: 3
     null: -99
 
-- rename: asr16_4_text
-  name: oasr_ppl75_des
+
+- func: if_60
+  name:
+  - asr85des
+  - oasr_ppl75_des
+  - age
+  rename: asr16_4_text
   source: hcpa
+
+
+#- name: asr86
+#  rename: asr16_5
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+#- name: asr87
+#  rename: asr16_6
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+#- name: asr88
+#  rename: asr17_1
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- name: asr89
+  rename: asr17_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+#- name: asr90
+#  rename: asr17_3
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr91
+  - oasr_ppl81
+  - age
+  rename: asr17_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  source: hcpa
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    null: -99
+
+
+- func: if_60
+  name:
+  - asr92
+  - oasr_ppl82
+  - age
+  rename: asr17_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  source: hcpa
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    null: -99
+
+
+- func: if_60
+  name:
+  - asr92des
+  - oasr_ppl82_des
+  - age
+  rename: asr17_5_text
+  source: hcpa
+
 
 - rename: oasr_ppl79
   name: oasr_ppl79
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
 
-- rename: asr17_4
-  name: oasr_ppl81
+
+#- name: asr93
+#  rename: asr17_6
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+#- name: asr94
+#  rename: asr18_1
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr95
+  - oasr_ppl85
+  - age
+  rename: asr18_2
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -483,8 +1474,23 @@ elements:
     2: 3
     null: -99
 
-- rename: asr17_5
-  name: oasr_ppl82
+
+#- name: asr96
+#  rename: asr18_3
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr97
+  - oasr_ppl87
+  - age
+  rename: asr18_4
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -493,12 +1499,33 @@ elements:
     2: 3
     null: -99
 
-- rename: asr17_5_text
-  name: oasr_ppl82_des
-  source: hcpa
 
-- rename: asr18_2
-  name: oasr_ppl85
+#- name: asr98
+#  rename: asr18_5
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+#- name: asr99
+#  rename: asr18_6
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr100
+  - oasr_ppl90
+  - age
+  rename: asr19_1
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -507,8 +1534,28 @@ elements:
     2: 3
     null: -99
 
-- rename: asr18_4
-  name: oasr_ppl87
+
+- name: asr100des
+  rename: asr19_1_text
+  source: hcpa
+
+
+- name: asr101
+  rename: asr19_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr102
+  - oasr_ppl92
+  - age
+  rename: asr19_3
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -517,8 +1564,13 @@ elements:
     2: 3
     null: -99
 
-- rename: asr19_1
-  name: oasr_ppl90
+
+- func: if_60
+  name:
+  - asr103
+  - oasr_ppl93
+  - age
+  rename: asr19_4
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -527,8 +1579,43 @@ elements:
     2: 3
     null: -99
 
-- rename: asr19_3
-  name: oasr_ppl92
+
+#- name: asr104
+#  rename: asr19_5
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- name: asr105
+  rename: asr19_6
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+#- name: asr106
+#  rename: asr20_1
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr107
+  - oasr_ppl97
+  - age
+  rename: asr20_2
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -537,8 +1624,43 @@ elements:
     2: 3
     null: -99
 
-- rename: asr19_4
-  name: oasr_ppl93
+
+- name: asr108
+  rename: asr20_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+#- name: asr109
+#  rename: asr20_4
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+#- name: asr110
+#  rename: asr20_5
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr111
+  - oasr_ppl99
+  - age
+  rename: asr20_6
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -547,8 +1669,13 @@ elements:
     2: 3
     null: -99
 
-- rename: asr20_2
-  name: oasr_ppl97
+
+- func: if_60
+  name:
+  - asr112
+  - oasr_ppl100
+  - age
+  rename: asr21_1
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
   recode:
@@ -557,52 +1684,168 @@ elements:
     2: 3
     null: -99
 
-- rename: asr20_6
-  name: oasr_ppl99
-  request: Please increment your 0::2 scale to a 1::3 scale.
-  source: hcpa
-  recode:
-    0: 1
-    1: 2
-    2: 3
-    null: -99
-
-- rename: asr21_1
-  name: oasr_ppl100
-  request: Please increment your 0::2 scale to a 1::3 scale.
-  source: hcpa
-  recode:
-    0: 1
-    1: 2
-    2: 3
-    null: -99
 
 - rename: oasr_ppl101
   name: oasr_ppl101
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
 
+
 - rename: oasr_ppl102
   name: oasr_ppl102
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
+
 
 - rename: oasr_ppl109
   name: oasr_ppl109
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
 
+
 - rename: oasr_ppl110
   name: oasr_ppl110
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
+
 
 - rename: oasr_ppl114
   name: oasr_ppl114
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
 
+
 - rename: oasr_ppl121
   name: oasr_ppl121
   request: Please increment your 0::2 scale to a 1::3 scale.
   source: hcpa
+
+
+#- name: asr113
+#  rename: asr21_2
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- name: asr114
+  rename: asr21_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+- func: if_60
+  name:
+  - asr115
+  - oasr_ppl34
+  - age
+  rename: asr21_4
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  source: hcpa
+  recode:
+    0: 1
+    1: 2
+    2: 3
+    null: -99
+
+
+- rename: oasr_ppl33
+  name: oasr_ppl33
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  source: hcpa
+
+
+#- name: asr116
+#  rename: asr21_5
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+#- name: asr117
+#  rename: asr21_6
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- name: asr118
+  rename: asr22_1
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+- name: asr119
+  rename: asr22_2
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+- name: asr120
+  rename: asr22_3
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+#- name: asr121
+#  rename: asr22_4
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- name: asr122
+  rename: asr22_5
+  request: Please increment your 0::2 scale to a 1::3 scale.
+  recode:
+    0: 1
+    1: 2
+    2: 3
+  source: hcpa
+
+
+#- name: asr123
+#  rename: asr22_6
+#  request: Please increment your 0::2 scale to a 1::3 scale.
+#  recode:
+#    0: 1
+#    1: 2
+#    2: 3
+#  source: hcpa
+
+
+- rename: cbcl56h_des
+  name: oasr_ppl49_11_des
+  source: hcpa
+
+
+
+

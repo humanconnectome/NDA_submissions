@@ -98,7 +98,15 @@ class Transformer:
             names = aslist(e.get('name'))
             data = datacache.get_fields(source, names)
             func = self.get_executable(e, len(names))
-            result = func(*data)
+            try:
+                result = func(*data)
+            except Exception as err:
+                print("Error on the following item:")
+                print("Names:",names)
+                print("Renames:",renames)
+                print("Exec:", func.__code__)
+                raise err
+
             if type(result) is not tuple:
                 result = (result,)
 

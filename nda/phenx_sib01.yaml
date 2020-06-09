@@ -3897,3 +3897,14 @@ isas_s1q3a:
   description: 'At what age did you: First harm yourself?'
   notes: years
   alias: su12b_ageon
+
+groups:
+  type: Integer
+  description: Group
+  range:
+  - 0
+  - 1
+  notes: 0=Control; 1=Case
+  codes:
+    0: Control
+    1: Case

@@ -2315,9 +2315,10 @@ nida_y_tobaco_type:
   - 2.2
   - 2.3
   - 2.31
+  - 3
   notes: 0 = Never smoker; 1 = Non-Smoker; 2 = Smoker; 2.1 = Current Every-Day Smoker
     ; 2.2 = Current Some-Day Smoker ; 2.3 = Former Smoker ; 2.31 = Former Smoker Heavier
-    Past Exposure
+    Past Exposure; 3= Other/Unknown
   codes:
     0: Never smoker
     1: Non-Smoker
@@ -2326,6 +2327,7 @@ nida_y_tobaco_type:
     2.2: Current Some-Day Smoker
     2.3: Former Smoker
     2.31: Former Smoker Heavier Past Exposure
+    3: Other/Unknown
 
 resp_source:
   type: Integer
@@ -2362,3 +2364,43 @@ temp_site:
   codes:
     1: Ear
     2: Oral
+
+participant_target_hr_50:
+  type: Float
+  length: 180
+  description: Target HR range (50%)
+
+target_hr_range_60:
+  type: Float
+  length: 175
+  description: Target HR range (60%)
+
+pre004:
+  type: Integer
+  description: Pregnancy Test Result
+  range:
+  - 1
+  - 2
+  - 9
+  - -9
+  notes: 1=Positive; 2=Negative; 9=Equivocal; -9=Unknown
+  alias: pregnancy_status
+  codes:
+    1: Positive
+    2: Negative
+    9: Equivocal
+    -9: Unknown
+
+upreg:
+  type: Integer
+  description: Pregnant - Urine test
+  range:
+  - 1::3
+  - 9
+  notes: 1=Positive; 2=Negative; 3=Not done; 9=Equivocal (Must retest)
+  alias: pregnancy_test_result
+  codes:
+    1: Positive
+    2: Negative
+    3: Not done
+    9: Equivocal (Must retest)

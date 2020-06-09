@@ -1182,3 +1182,41 @@ sodium:
     -7: Don't know
     -8: Refused to answer
     -9: Does not apply
+
+hnk:
+  type: Float
+  description: Hydroxynorketamine blood level
+  range:
+  - 0::999
+  - -7
+  - -8
+  - -9
+  notes: In ng/ml. -7 = Don't know; -8 = Refused to answer; -9 = Does not apply
+  codes:
+    -7: Don't know
+    -8: Refused to answer
+    -9: Does not apply
+
+bdnf:
+  type: Float
+  description: Brain-derived neurotrophic factor
+  range:
+  - 0::999
+  - -7
+  - -8
+  - -9
+  notes: In ng/ml. -7 = Don't know; -8 = Refused to answer; -9 = Does not apply
+  codes:
+    -7: Don't know
+    -8: Refused to answer
+    -9: Does not apply
+
+hnk_notes:
+  type: String
+  length: 200
+  description: Hydroxynorketamine notes (e.g., time since drug)
+
+bdnf_notes:
+  type: String
+  length: 200
+  description: Brain-derived neurotrophic factor notes (e.g., time since drug)

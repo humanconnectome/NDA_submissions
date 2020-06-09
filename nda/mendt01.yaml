@@ -243,7 +243,7 @@ medication1_name:
   length: 500
   description: Name first medication that the participant has taken
   notes: 0 = No medication; 999= Legitimately skipped
-  alias: med1,med_1n,name1,npmed_drug1_name,pmed_drug1_name,rxhx_medname,scidmed4_1a
+  alias: med1,med_1n,medication,name1,npmed_drug1_name,pmed_drug1_name,rxhx_medname,scidmed4_1a
   codes:
     0: No medication
     999: Legitimately skipped
@@ -805,7 +805,7 @@ medication1_dosage:
   length: 150
   description: First medication dosage
   notes: 0 = No medication; 999 = Missing
-  alias: med1_dose,med_1d,npmed_drug1_str_dose,pmed_drug1_str_dose,rxhx_dose
+  alias: med1_dose,med_1d,npmed_drug1_str_dose,pmed_drug1_str_dose,rxhx_dose,session1,session2,session3
   codes:
     0: No medication
     999: Missing

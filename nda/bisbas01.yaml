@@ -1204,9 +1204,12 @@ sample:
   type: Integer
   description: Training or randomized case
   range:
-  - 1
-  - 2
-  notes: 1 = randomized; 2 = training
+  - 1::5
+  notes: 1 = randomized; 2 = training; 3=randomized-control; 4=randomized-intervention;
+    5=concurrent cohort-intervention
   codes:
     1: randomized
     2: training
+    3: randomized-control
+    4: randomized-intervention
+    5: concurrent cohort-intervention

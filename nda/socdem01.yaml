@@ -30,7 +30,7 @@ interview_age:
   notes: Age is rounded to chronological month. If the research participant is 15-days-old
     at time of interview, the appropriate value would be 0 months. If the participant
     is 16-days-old, the value would be 1 month.
-  alias: age,age_months,bslage,ch_age,childs_age,pubc1,pubp1,test_age,total_age_in_months
+  alias: age,age_demo,age_months,bslage,ch_age,childs_age,pubc1,pubp1,test_age,total_age_in_months
 
 sex:
   type: String
@@ -43,7 +43,7 @@ sex:
   - O
   - NR
   notes: M = Male; F = Female; O=Other; NR = Not reported
-  alias: cbcl_informant_gender,ch_sex,demo_sex,dm1,gender,pds_sex_y,sex,sex_at_brith,sexdesc
+  alias: cbcl_informant_gender,ch_sex,demo_sex,dm1,gender,pds_sex_y,sex,sex_at_brith,sex_dem,sexbirth,sexdesc
   codes:
     M: Male
     F: Female
@@ -100,7 +100,7 @@ ethnicity:
   - Hispanic or Latino
   - Not Hispanic or Latino
   - Unknown
-  alias: de05am,demo2,demo_ethnicity,ethn,ethnic,ethnic_category,hispanic,p_latino
+  alias: de05am,demo2,demo_ethnicity,ethn,ethnic,ethnic_category,hispanic,hispanic_par,p_latino,sub_ethnicity
 
 race:
   type: String
@@ -114,7 +114,7 @@ race:
   - White
   - More than one race
   - Unknown or not reported
-  alias: demo3,demo_race,demog_04,race_category,race_ethnicity
+  alias: demo3,demo_race,demog_04,race_category,race_ethnicity,race_par
 
 ethnic_group:
   type: String
@@ -557,13 +557,14 @@ maritals_p:
   type: Integer
   description: '14. Parents'' Marital Status:'
   range:
-  - 1::7
+  - 1::8
   - 77
   - 90
   - -999
   notes: 1= Visiting relationship ; 2= Common law union ; 3= Married ; 4= Divorced
-    ; 5= Separated ; 6= No relationship ; 7= Widow/widower ; 90= Other= specify ;
-    77= N/A; -999= Missing
+    ; 5= Separated ; 6= No relationship ; 7= Widow/widower; 8 = Never married ; 90=
+    Other= specify ; 77= N/A; -999= Missing
+  alias: what_is_the_current_relati
   codes:
     1: Visiting relationship
     2: Common law union
@@ -572,6 +573,7 @@ maritals_p:
     5: Separated
     6: No relationship
     7: Widow/widower
+    8: Never married
     90: Other= specify
     77: N/A
     -999: Missing
@@ -580,6 +582,7 @@ other_marital_specify:
   type: String
   length: 150
   description: Parents' Marital Status Other specify
+  alias: if_other_please_explain
 
 motherfigures:
   type: Integer
@@ -1189,19 +1192,19 @@ fsprg:
   type: String
   length: 150
   description: In your own words, to which race(s) or racial group(s) do you belong?
-  alias: de05bm,p_race
+  alias: de05bm,p_race,race_other,race_other_par
 
 bkgrnd_education:
   type: String
   length: 1020
   description: Subject's education (school and preschool)
-  alias: b5,cbcl_grade_in_school,demo_childs_edu,demog_07,dm15,education,education_status,p_grade,participant_education,sub_grade
+  alias: b5,cbcl_grade_in_school,demo_childs_edu,demog_07,dm15,education,education_status,education_subject,p_grade,participant_education,sub_grade
 
 area4_explain:
   type: String
   length: 255
   description: Employment situation? Explain briefly
-  alias: demog_08,employment,occstat_7_text,occup_other,p_job,sub_job
+  alias: activity_par,demog_08,employment,occstat_7_text,occup_other,p_job,sub_job
 
 jobh:
   type: String
@@ -1220,7 +1223,7 @@ das1ms:
   type: String
   length: 200
   description: Marital status
-  alias: b3,dm9,marital_stat,marital_status,p_marriage,sub_marriage
+  alias: b3,dm9,marital_other,marital_stat,marital_status,p_marriage,sub_marriage
 
 aut_prebasic_insure99:
   type: String
@@ -1756,7 +1759,7 @@ ca243:
   range:
   - 1::3
   notes: 1=Right; 2=Left; 3=Mixed
-  alias: handedness
+  alias: handedness,sub_handedness
   codes:
     1: Right
     2: Left
@@ -1813,19 +1816,19 @@ fspgod:
   type: String
   length: 70
   description: Subject's gender OTHER describe
-  alias: dm2,p_gender,p_gender_different,sub_gender
+  alias: dm2,gender_other,gender_other_par,p_gender,p_gender_different,sub_gender
 
 ch_race:
   type: String
   length: 55
   description: Child's/study subject  Race specify
-  alias: cbcl_race,race_multipleraces
+  alias: cbcl_race,race_multipleraces,race_other_specify
 
 currgradelevel:
   type: String
   length: 50
   description: Current grade level
-  alias: particpant_grade_level
+  alias: grade_in_school,particpant_grade_level
 
 eversped:
   type: Integer
@@ -2377,7 +2380,7 @@ fsprels:
   - 1::9
   notes: 1= Single/never married; 2= Married; 3= Living together; 4= Domestic partnership;
     5= Separated; 6= Divorced; 7= Widowed; 8= Engaged; 9=Other
-  alias: demog_03,rel_status
+  alias: demog_03,marital_status,rel_status
   codes:
     1: Single/never married
     2: Married
@@ -2392,7 +2395,7 @@ fsprels:
 household_number_in_house:
   type: Integer
   description: Number of people living in primary residence for subject (proband)
-  alias: de019m,demog_06,dm17c,family_size,house_size,sub_income_fampl
+  alias: de019m,demog_06,dm17c,family_size,hh_total,house_size,sub_income_fampl
 
 pubertal_sex_p:
   type: Integer
@@ -2642,7 +2645,7 @@ annual_fam_inc:
   description: What was your best estimate of the total income of all family members
     from all sources, before taxes, in last year? PX011101_Annual_Family_Income
   notes: -999999 =  Don't know or don't want to say
-  alias: ann_fam_income,de015m,dm17b,family_income,household_income,income,salary,sub_income_fam
+  alias: ann_fam_income,de015m,dm17b,family_income,familyincome_par,household_income,income,salary,sub_income_fam
   codes:
     -999999: Don't know or don't want to say
 
@@ -4095,7 +4098,7 @@ comments_misc:
   length: 4000
   description: Miscellaneous comments on study, interview, methodology relevant to
     this form data
-  alias: dm_notes
+  alias: ac_demo,dm_notes
 
 sh_hs:
   type: Integer
@@ -4861,7 +4864,7 @@ saps_ad10:
 aescode:
   type: Integer
   description: Staff code number of person completing this form
-  alias: ra
+  alias: ra,rs_demo
 
 bio_father:
   type: Integer
@@ -5021,9 +5024,9 @@ demo_adopt_age:
 
 employotr:
   type: String
-  length: 50
+  length: 200
   description: Employment situation other, specify
-  alias: p_job8_1
+  alias: activity_other_par,p_job8_1
 
 nimh_rv_dem_03:
   type: Integer
@@ -5084,9 +5087,312 @@ sample:
   type: Integer
   description: Training or randomized case
   range:
-  - 1
-  - 2
-  notes: 1 = randomized; 2 = training
+  - 1::5
+  notes: 1 = randomized; 2 = training; 3=randomized-control; 4=randomized-intervention;
+    5=concurrent cohort-intervention
   codes:
     1: randomized
     2: training
+    3: randomized-control
+    4: randomized-intervention
+    5: concurrent cohort-intervention
+
+mother_cod:
+  type: String
+  length: 50
+  description: Mother's cause of death
+  alias: mother_cause_of_death
+
+father_cause_of_death:
+  type: String
+  length: 50
+  description: Father's cause of death
+
+demobmdage:
+  type: Integer
+  description: If mother deceased, age in years at death
+  range:
+  - 0::100
+  alias: mother_age_death
+
+demobfdage:
+  type: Integer
+  description: If father deceased, age in years at death
+  range:
+  - 0::100
+  alias: father_age_death
+
+father_alive:
+  type: Integer
+  description: Is your biological father still alive?
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 0 = No; 1 = Yes; 3 = Unknown
+  alias: father_still_living
+  codes:
+    0: 'No'
+    1: 'Yes'
+    3: Unknown
+
+mother_alive:
+  type: Integer
+  description: Is your biological mother still alive?
+  range:
+  - 0
+  - 1
+  - 3
+  notes: 0 = No; 1 = Yes; 3 = Unknown
+  alias: mother_still_living
+  codes:
+    0: 'No'
+    1: 'Yes'
+    3: Unknown
+
+educat:
+  type: Float
+  description: Number of years in formal education
+  notes: 999=Unknown/Missing
+  alias: edu_yrs
+  codes:
+    999: Unknown/Missing
+
+birthstate:
+  type: String
+  length: 2
+  description: State of Birth, Abbreviation
+  alias: birthplace_state
+
+sex_other:
+  type: String
+  length: 75
+  description: Describe other sex assigned at birth
+
+subject_pronouns:
+  type: String
+  length: 50
+  description: Participant's pronouns used to describe themselves
+  alias: pronoun_other
+
+sexual_orientation:
+  type: Integer
+  description: 'Sexual Orientation- Do you identify as:'
+  range:
+  - 1::9
+  notes: 1= Asexual; 2= Bisexual; 3= Gay; 4= Lesbian; 5= Pansexual;  6= Queer;  7=
+    Questioning;  8= Straight or heterosexual; 9= Other
+  alias: sexual_orient
+  codes:
+    1: Asexual
+    2: Bisexual
+    3: Gay
+    4: Lesbian
+    5: Pansexual
+    6: Queer
+    7: Questioning
+    8: Straight or heterosexual
+    9: Other
+
+sexual_or_descrip:
+  type: String
+  length: 100
+  description: What is your sexual orientation?
+  alias: sexual_orient_other
+
+edfirst_scid:
+  type: String
+  length: 100
+  description: Education first person (intervewee/first parent)
+  alias: education_par
+
+caregiver_edu:
+  type: String
+  length: 200
+  description: 'Caregiver: Education level and major'
+
+respond:
+  type: Integer
+  description: Respondent
+  range:
+  - 1::5
+  - 999
+  notes: 1 = Parent; 2 = Teacher; 3=Self; 4= Other; 5= Significant other; 999 = Not
+    available
+  alias: form_ext
+  codes:
+    1: Parent
+    2: Teacher
+    3: Self
+    4: Other
+    5: Significant other
+    999: Not available
+
+hh_grandma:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Grandmother
+  range:
+  - 0
+  - 1
+  notes: 0 = Absent from household; 1 = Checked/Present
+  codes:
+    0: Absent from household
+    1: Checked/Present
+
+hh_grandpa:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Grandfather
+  range:
+  - 0
+  - 1
+  notes: 0 = Absent from household; 1 = Checked/Present
+  codes:
+    0: Absent from household
+    1: Checked/Present
+
+hh_parentso:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Parent-Significant
+    Other
+  range:
+  - 0
+  - 1
+  notes: 0 = Absent from household; 1 = Checked/Present
+  codes:
+    0: Absent from household
+    1: Checked/Present
+
+hh_other:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Other
+  range:
+  - 0
+  - 1
+  notes: 0 = Absent from household; 1 = Checked/Present
+  codes:
+    0: Absent from household
+    1: Checked/Present
+
+hh_other_spc:
+  type: String
+  length: 100
+  description: Specify other member of household
+
+hh_mom_count:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Number
+
+hh_dad_count:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Number
+
+hh_brother_count:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Number
+
+hh_sister_count:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Number
+
+hh_stepmom_count:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Number
+
+hh_stepdad_count:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Number
+
+hh_grandma_count:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Number
+
+hh_grandpa_count:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Number
+
+hh_parentso_count:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Number
+
+hh_other_count:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Number
+
+pronoun:
+  type: Integer
+  description: Subject's preferred pronouns
+  range:
+  - 1::3
+  - 99
+  notes: 1 = He; 2 = She; 3 = Them/They; 99 = Other (specify)
+  codes:
+    1: He
+    2: She
+    3: Them/They
+    99: Other (specify)
+
+hh_mom:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Mom
+  range:
+  - 0
+  - 1
+  notes: 0 = Absent from household; 1 = Checked/Present
+  codes:
+    0: Absent from household
+    1: Checked/Present
+
+hh_dad:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Dad
+  range:
+  - 0
+  - 1
+  notes: 0 = Absent from household; 1 = Checked/Present
+  codes:
+    0: Absent from household
+    1: Checked/Present
+
+hh_brother:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Brother
+  range:
+  - 0
+  - 1
+  notes: 0 = Absent from household; 1 = Checked/Present
+  codes:
+    0: Absent from household
+    1: Checked/Present
+
+hh_sister:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Sister
+  range:
+  - 0
+  - 1
+  notes: 0 = Absent from household; 1 = Checked/Present
+  codes:
+    0: Absent from household
+    1: Checked/Present
+
+hh_stepmom:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Step-mother
+  range:
+  - 0
+  - 1
+  notes: 0 = Absent from household; 1 = Checked/Present
+  codes:
+    0: Absent from household
+    1: Checked/Present
+
+hh_stepdad:
+  type: Integer
+  description: Who lives in your household (family member or equivalent figure)? Step-father
+  range:
+  - 0
+  - 1
+  notes: 0 = Absent from household; 1 = Checked/Present
+  codes:
+    0: Absent from household
+    1: Checked/Present

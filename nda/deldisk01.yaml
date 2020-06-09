@@ -590,7 +590,7 @@ subject_response:
 rt:
   type: Float
   description: Reaction Time
-  alias: choicert,delaydisc_rt,responsetime
+  alias: choicert,dd_rt,delaydisc_rt,responsetime
 
 delaytrial:
   type: Integer
@@ -681,11 +681,13 @@ left_choice1:
   type: String
   length: 20
   description: reward option on the left side of the screen for each item
+  alias: dd_leftamount
 
 right_choice2:
   type: String
   length: 20
   description: reward option on the right side of the screen for each item
+  alias: dd_rightamount
 
 delayedchoice:
   type: String
@@ -741,7 +743,7 @@ trial:
   - -999
   notes: 1 = first; 2= second; 3=third; 4=fourth; 5=fifth; 6=sixth; etc; -777=NA,
     -999=missing
-  alias: delaydisc_trial
+  alias: dd_trial,delaydisc_trial
   codes:
     1: first
     2: second
@@ -1093,3 +1095,25 @@ ddisc_sv_3yr_20:
   type: Float
   description: Subjective Value / Indifference Point, Amount $20 in 3 year Delay
   alias: ddisc.sv_3yr_20
+
+dd_lefttime:
+  type: String
+  length: 100
+  description: Time displayed for the left choice
+
+dd_righttime:
+  type: String
+  length: 100
+  description: Time displayed for the right choice
+
+dd_choice:
+  type: Integer
+  description: Subject choice (left or right scenario)
+  range:
+  - 1
+  - 2
+  - 999
+  - 888
+  notes: 1 = left choice, 2 - right choice, 999 = not applicable, 888 = missing
+  codes:
+    1: left choice, 2 - right choice, 999 = not applicable, 888 = missing

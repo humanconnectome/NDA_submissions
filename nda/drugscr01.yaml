@@ -1340,3 +1340,16 @@ tox_06:
   type: String
   length: 100
   description: Cocaine dose
+
+lot_number:
+  type: String
+  length: 250
+  description: Lot Number
+  notes: Yes = Lot Number Known
+  alias: uds14
+  codes:
+    'Yes': Lot Number Known
+
+uds15:
+  type: Date
+  description: Expiration Date of test

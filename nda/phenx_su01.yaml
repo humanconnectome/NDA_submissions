@@ -2860,9 +2860,10 @@ nida_y_tobaco_type:
   - 2.2
   - 2.3
   - 2.31
+  - 3
   notes: 0 = Never smoker; 1 = Non-Smoker; 2 = Smoker; 2.1 = Current Every-Day Smoker
     ; 2.2 = Current Some-Day Smoker ; 2.3 = Former Smoker ; 2.31 = Former Smoker Heavier
-    Past Exposure
+    Past Exposure; 3= Other/Unknown
   codes:
     0: Never smoker
     1: Non-Smoker
@@ -2871,6 +2872,7 @@ nida_y_tobaco_type:
     2.2: Current Some-Day Smoker
     2.3: Former Smoker
     2.31: Former Smoker Heavier Past Exposure
+    3: Other/Unknown
 
 ale_total_number:
   type: Integer

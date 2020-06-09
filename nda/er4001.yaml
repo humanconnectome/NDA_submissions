@@ -2402,3 +2402,15 @@ cogbias_state:
   length: 25
   description: Event Received at Response Termination
   alias: emorecog_state
+
+er_t:
+  type: Float
+  description: Emotion response time in seconds(in seconds)
+
+iar_t:
+  type: Float
+  description: Introspective accuracy response time(in seconds)
+
+cr_t:
+  type: Float
+  description: Confidence response time(in seconds)

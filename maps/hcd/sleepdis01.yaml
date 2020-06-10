@@ -157,3 +157,38 @@ elements:
   rename: sleepdisturb_p26
   source:
   - parent
+
+- rename: sleepdisturb_arsal
+  name: sleepdisturb_arsal
+  source: 
+  - parent
+
+- rename: sleepdisturb_brth
+  name: sleepdisturb_brth
+  source: 
+  - parent
+
+- rename: sleepdisturb_hype
+  name: sleepdisturb_hype
+  source: 
+  - parent
+
+- rename: sleepdisturb_mtan
+  name: sleepdisturb_mtan
+  source: 
+  - parent
+
+- rename: sleepdisturb_somn
+  name: sleepdisturb_somn
+  source: 
+  - parent
+
+- rename: sleepdisturb_total
+  name: sleepdisturb_total
+  source: 
+  - parent
+
+- rename: sleepdisturb_trans
+  name: sleepdisturb_trans
+  source: 
+  - parent

@@ -2,6 +2,7 @@ instrument: CBCL_6-18
 struct: cbcl01
 elements:
 
+
 - name: subjectkey
   rename: subjectkey
   source:
@@ -27,6 +28,14 @@ elements:
   rename: sex
   source:
   - parent
+
+
+- rename: version_form
+  request: Please label your data "Ages 6 - 18".
+  source:
+  - parent
+  code: return "Ages 6-18"
+
 
 - name: cbclschitem1
   rename: cbcl1
@@ -1282,6 +1291,17 @@ elements:
   - parent
 
 - rename: cbcl_total_raw
-  code: return 999
+  name: total_scale
+  code: return x.fillna(999)
+  source:
+  - parent
+
+- rename: kkwithr
+  name: sndrm_scale2
+  source:
+  - parent
+
+- rename: abcl_other_total
+  name: sndrm_scale9
   source:
   - parent

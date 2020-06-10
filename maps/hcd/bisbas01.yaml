@@ -504,33 +504,6 @@ elements:
       - Rename this column to "bisbas_16a".
 
 
-#####################PETRA's Additions of Scores
-- rename: bas_drive
-  name: bas_drive
-  source:
-  - parent:
-      name: bisbas_drive
-  - child
-  - teen
-  
-- rename: bas_fs
-  name: bas_fun
-  source: 
-  - teen
-  - parent:
-      name: bisbas_dfun
-  - child:
-      name: bas_fs
-
-- rename: bas_rr
-  name: bas_reward
-  source: 
-  - teen
-  - parent:
-      name: bisbas_reward
-  - child:
-      name: bas_rr
-
 - rename: bas_total
   name: bisbas_bastotal
   source: 
@@ -538,60 +511,54 @@ elements:
 
 
 - rename: bis_y_ss_bas_drive_nm
-   name: bas_drive_nm
-   source: 
-   - child
+  name: bas_drive_nm
+  source: 
+  - child
 
 - rename: bis_y_ss_bas_fs_nm
-   name: bas_fs_nm
-   source: 
-   - child
+  name: bas_fs_nm
+  source: 
+  - child
 
 - rename: bis_y_ss_bas_rr_nm
-   name: bas_rr_nm
-   source: 
-   - child
+  name: bas_rr_nm
+  source: 
+  - child
 
 - rename: bis_y_ss_basm_drive
-   name: basm_drive
-   source: 
-   - child
+  name: basm_drive
+  source: 
+  - child
 
 - rename: bis_y_ss_basm_drive_nm
-   name: basm_drive_nm
-   source: 
-   - child
+  name: basm_drive_nm
+  source: 
+  - child
 
 - rename: bis_y_ss_basm_rr
-   name: basm_rr
-   source: 
-   - child
+  name: basm_rr
+  source: 
+  - child
 
 - rename: bis_y_ss_basm_rr_nm
-   name: basm_rr_nm
-   source: 
-   - child
+  name: basm_rr_nm
+  source: 
+  - child
 
 - rename: bis_y_ss_bis_sum_nm
-   name: bis_sum_nm
-   source: 
-   - child
+  name: bis_sum_nm
+  source: 
+  - child
 
 - rename: bis_y_ss_bism_sum
-   name: bism_sum
-   source: 
-   - child
+  name: bism_sum
+  source: 
+  - child
 
 - rename: bis_y_ss_bism_sum_nm
-   name: bism_sum_nm
-   source: 
-   - child
+  name: bism_sum_nm
+  source: 
+  - child
 
-- rename: bissc_total
-  name: bis
-  source:
-  - parent:
-      name: bisbas_bistotal
-  - child:
-      name: bis_sum
-  - teen
+
+

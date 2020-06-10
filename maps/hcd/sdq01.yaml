@@ -260,3 +260,43 @@ elements:
   func: value_by_age
   source:
   - parent
+
+- rename: p_c_sdq_co_rs
+  name: sdq_conduct
+  source: 
+  - parent
+
+- rename: p_c_sdq_em_rs
+  name: sdq_emotion
+  source: 
+  - parent
+
+- rename: p_c_sdq_hy_rs
+  name: sdq_hyperact
+  source: 
+  - parent
+
+- rename: p_c_sdq_pe_rs
+  name: sdq_peer
+  source: 
+  - parent
+
+- rename: p_c_sdq_px_rs
+  name: sdq_total
+  source: 
+  - parent
+
+- rename: p_c_sdq_so_rs
+  name: sdq_prosocial
+  source: 
+  - parent
+
+- rename: sdq_pt_externalizing
+  name: sdq_external
+  source: 
+  - parent
+
+- rename: sdq_pt_internalizing
+  name: sdq_internal
+  source: 
+  - parent

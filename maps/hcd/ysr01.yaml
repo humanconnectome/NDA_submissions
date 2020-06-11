@@ -27,6 +27,9 @@ elements:
   source:
   - child
 
+- rename: version_form
+  code: return "Ages 12 to 18"
+  source: child
 
 - rename: ysr_1
   name: ysra_item1
@@ -705,5 +708,261 @@ elements:
 
 - rename: ysr_119
   name: ysra_item112
+  source:
+  - child
+
+
+- rename: ysra_c_scale
+  name: ysra_c_scale
+  source:
+  - child
+
+- rename: cbcl_adhd
+  name: ysra_dsm5_atn_t_value
+  source:
+  - child
+
+- rename: kkdepr
+  name: ysra_dsm5_scale1
+  source:
+  - child
+
+- rename: kkanxr
+  name: ysra_dsm5_scale2
+  source:
+  - child
+
+- rename: kksomr
+  name: ysra_dsm5_scale3
+  source:
+  - child
+
+- rename: kkaddr
+  name: ysra_dsm5_scale4
+  source:
+  - child
+
+- rename: kkoddr
+  name: ysra_dsm5_scale5
+  source:
+  - child
+
+- rename: kkcdr
+  name: ysra_dsm5_scale6
+  source:
+  - child
+
+- rename: kkextr
+  name: ysra_extnl_scale
+  source:
+  - child
+
+- rename: kkintr
+  name: ysra_intnl_scale
+  source:
+  - child
+
+- rename: missingsum_obvq
+  name: ysra_missing
+  source:
+  - child
+
+- rename: kkanxdr
+  name: ysra_scale1
+  source:
+  - child
+
+- rename: kkwithr
+  name: ysra_scale2
+  source:
+  - child
+
+- rename: kksomar
+  name: ysra_scale3
+  source:
+  - child
+
+- rename: kksocpr
+  name: ysra_scale4
+  source:
+  - child
+
+- rename: kkthotr
+  name: ysra_scale5
+  source:
+  - child
+
+- rename: kkattnr
+  name: ysra_scale6
+  source:
+  - child
+
+- rename: kkdelir
+  name: ysra_scale7
+  source:
+  - child
+
+- rename: kkaggrr
+  name: ysra_scale8
+  source:
+  - child
+
+- rename: abcl_other_total
+  name: ysra_scale9
+  source:
+  - child
+
+- rename: ysra_total_score
+  name: ysra_total_score
+  source:
+  - child
+
+- rename: kkanxp
+  name: ysra_dsm5_anx_percentage
+  source:
+  - child
+
+- rename: cbcl_anxiety
+  name: ysra_dsm5_anx_t_value
+  source:
+  - child
+
+- rename: kkaddp
+  name: ysra_dsm5_atn_percentage
+  source:
+  - child
+
+- rename: kkdepp
+  name: ysra_dsm5_dps_percentage
+  source:
+  - child
+
+- rename: kkdept
+  name: ysra_dsm5_dps_t_value
+  source:
+  - child
+
+- rename: kkcdp
+  name: ysra_dsm5_ndt_percentage
+  source:
+  - child
+
+- rename: cbcl_conduct
+  name: ysra_dsm5_ndt_t_value
+  source:
+  - child
+
+- rename: kkoddp
+  name: ysra_dsm5_pst_percentage
+  source:
+  - child
+
+- rename: cbcl_oppositional
+  name: ysra_dsm5_pst_t_value
+  source:
+  - child
+
+- rename: kksomp
+  name: ysra_dsm5_som_percentage
+  source:
+  - child
+
+- rename: somatic_problems_t_score
+  name: ysra_dsm5_som_t_value
+  source:
+  - child
+
+- rename: cbcl_external
+  name: ysra_extnlt_value
+  source:
+  - child
+
+- rename: cbcl_internal
+  name: ysra_intnlt_value
+  source:
+  - child
+
+- rename: cbcl_total
+  name: ysra_totalt_value
+  source:
+  - child
+
+- rename: kkanxdp
+  name: ysra1_percentage
+  source:
+  - child
+
+- rename: anxious_t_score
+  name: ysra1_t_value
+  source:
+  - child
+
+- rename: kkwithp
+  name: ysra2_percentage
+  source:
+  - child
+
+- rename: cbcl_withdrawn_depressed_t_sc
+  name: ysra2_t_value
+  source:
+  - child
+
+- rename: kksomap
+  name: ysra3_percentage
+  source:
+  - child
+
+- rename: somatic_t_score
+  name: ysra3_t_value
+  source:
+  - child
+
+- rename: kksocpp
+  name: ysra4_percentage
+  source:
+  - child
+
+- rename: cbcl_social_p
+  name: ysra4_t_value
+  source:
+  - child
+
+- rename: kkthotp
+  name: ysra5_percentage
+  source:
+  - child
+
+- rename: thought_t_score
+  name: ysra5_t_value
+  source:
+  - child
+
+- rename: kkattnp
+  name: ysra6_percentage
+  source:
+  - child
+
+- rename: attention_t_score
+  name: ysra6_t_value
+  source:
+  - child
+
+- rename: kkdelip
+  name: ysra7_percentage
+  source:
+  - child
+
+- rename: cbcl_rulebreak
+  name: ysra7_t_value
+  source:
+  - child
+
+- rename: kkaggrp
+  name: ysra8_percentage
+  source:
+  - child
+
+- rename: aggressive_t_score
+  name: ysra8_t_value
   source:
   - child

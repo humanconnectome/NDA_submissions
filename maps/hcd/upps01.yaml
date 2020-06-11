@@ -38,13 +38,22 @@ elements:
   - teen
   - parent
 
+
 - rename: version_form
-  code: return "Self Report"
+  code: return "UPPS Short Form"
   source:
-    - child
-    - teen
-    - parent:
-        code: return "Parent Report"
+  - child
+  - teen
+  - parent
+
+
+#- rename: version_form
+#  code: return "Self Report"
+#  source:
+#    - child
+#    - teen
+#    - parent:
+#        code: return "Parent Report"
 
 - rename: upps_p4
   name: upps3_y
@@ -565,3 +574,46 @@ elements:
         3: 2
         4: 1
       request: Please rename this column "phenx_upps_p_40" to avoid a naming conflict. Also, please reverse code this column.
+
+- rename: persev_score
+  name: upps_prsv
+  source:
+  - child
+  - teen
+  - parent:
+      name: upps_lackprsv
+
+- rename: premed_score
+  name: upps_premed
+  source:
+  - parent
+
+- rename: upps_plan
+  name: upps_plan
+  source:
+  - child
+  - teen
+
+- rename: senseek_score
+  name: upps_sens
+  source:
+  - child
+  - teen
+  - parent:
+      name: upps_senseek
+
+- rename: upps_negu
+  name: upps_neg
+  source:
+  - child
+  - teen
+  - parent:
+      name: upps_negurge
+
+- rename: upps_posu 
+  name: upps_pos
+  source:
+  - child
+  - teen
+  - parent:
+      name: upps_posurge

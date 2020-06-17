@@ -741,34 +741,6 @@ elements:
   source: ["parent"]
   code: return 999
 
-- rename: cbcl_anxious_raw
-  source: ["parent"]
-  code: return 999
-
-- rename: cbcl_somatic_c_raw
-  source: ["parent"]
-  code: return 999
-
-- rename: cbcl_withdrawn_raw
-  source: ["parent"]
-  code: return 999
-
-- rename: cbcl_sleep_raw
-  source: ["parent"]
-  code: return 999
-
-- rename: cbcl_attention_raw
-  source: ["parent"]
-  code: return 999
-
-- rename: cbcl_aggressive_raw
-  source: ["parent"]
-  code: return 999
-
-- rename: cbcl_total_raw
-  source: ["parent"]
-  code: return 999
-
 - rename: cbcl_affective_raw
   source: ["parent"]
   code: return 999
@@ -962,4 +934,69 @@ elements:
   rename: cbcl_withdrawn_perc
   source:
     - parent
+
+- rename: kkaddp
+  name: dsm5_1_scale
+  source:
+  - parent
+
+- rename: cbcl_dsm_anxietyproblems_raw
+  name: dsm5_2_scale
+  source:
+  - parent
+
+- rename: cbcl_dsm_pervasive_dev_raw
+  name: dsm5_3_scale
+  source:
+  - parent
+
+- rename: kkaddr
+  name: dsm5_4_scale
+  source:
+  - parent
+
+- rename: kkoddr
+  name: dsm5_5_scale
+  source:
+  - parent
+
+- rename: cbcl_emotionally_reactive_raw
+  name: ebs_1_scale
+  source:
+  - parent
+
+- rename: cbcl_anxious_raw
+  name: ebs_2_scale
+  source:
+  - parent
+
+- rename: cbcl_somatic_c_raw
+  name: ebs_3_scale
+  source:
+  - parent
+
+- rename: cbcl_withdrawn_raw
+  name: ebs_4_scale
+  source:
+  - parent
+
+- rename: cbcl_sleep_raw
+  name: ebs_5_scale
+  source:
+  - parent
+
+- rename: cbcl_attention_raw
+  name: ebs_6_scale
+  source:
+  - parent
+
+- rename: cbcl_aggressive_raw
+  name: ebs_7_scale
+  source:
+  - parent
+
+- rename: cbcl_total_raw
+  name: tot_prob_scale
+  source:
+  - parent
 

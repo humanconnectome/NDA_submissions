@@ -128,3 +128,27 @@ elements:
   name: gbi_p9
   source:
   - parent
+
+# MOISES
+#- rename: gbitotal
+#  name: gbi_miss
+#  source:
+#  - parent
+
+- rename: gbitotal
+  name: gbi_total
+  source:
+  - parent
+
+- rename: sup_y_ss_sum_nm
+  name: s7upchildself_nm
+  source:
+  - child
+  - teen
+
+- rename: sup_y_ss_sum
+  name: s7upchildself_sum
+  source:
+  - child
+  - teen
+

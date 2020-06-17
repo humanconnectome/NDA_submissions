@@ -155,3 +155,34 @@ elements:
   rename: famenv_9
   source:
   - parent
+
+
+#MOISES
+- rename: fes_y_ss_fc_na
+  name: conflict_na
+  source:
+  - teen
+  - child
+  - parent
+
+- rename: fes_y_ss_fc_nm
+  name: conflict_nm
+  source:
+  - teen
+  - child
+  - parent
+
+- rename: fes_y_ss_fc_pr
+  name: conflict_pr
+  source:
+  - teen
+  - child
+  - parent
+
+- rename: fes_y_ss_fc
+  name: conflict_raw
+  source:
+  - teen
+  - child
+  - parent
+

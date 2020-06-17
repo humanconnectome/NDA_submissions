@@ -266,3 +266,19 @@ elements:
   recode: {0: -9}
   source:
   - parent
+
+- rename: cbqscale3
+  name: cbq_effcon
+  source:
+  - parent
+
+- rename: cbqscale2
+  name: cbq_negaff
+  source:
+  - parent
+
+- rename: cbqscale1
+  name: cbq_surgency
+  source:
+  - parent
+

@@ -1113,3 +1113,66 @@ elements:
   source:
   - child
   - teen
+
+
+# MOISES
+- rename: ale_affect_sum
+  name: ale_affect_sum
+  source:
+  - child
+  - teen
+
+- rename: ale_affected_bad_mean
+  name: ale_affected_bad_mean
+  source:
+  - child
+  - teen
+
+- rename: ale_affected_bad_sum
+  name: ale_affected_bad_sum
+  source:
+  - child
+  - teen
+
+- rename: ale_affected_good_mean
+  name: ale_affected_good_mean
+  source:
+  - child
+  - teen
+
+- rename: ale_affected_good_sum
+  name: ale_affected_good_sum
+  source:
+  - child
+  - teen
+
+- rename: ale_affected_mean
+  name: ale_affected_mean
+  source:
+  - child
+  - teen
+
+- rename: ale_total_bad
+  name: ale_total_bad
+  source:
+  - child
+  - teen
+
+- rename: ale_total_good
+  name: ale_total_good
+  source:
+  - child
+  - teen
+
+- rename: ale_total_number
+  name: ale_total_number
+  source:
+  - child
+  - teen
+
+- rename: ale_total_number_nm
+  name: ale_total_number_nm
+  source:
+  - child
+  - teen
+

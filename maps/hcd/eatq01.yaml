@@ -600,3 +600,172 @@ elements:
   source:
     - child
 
+
+
+
+#MOISES
+- rename: eatq_p_ss_activation
+  name: eatq_p_ss_activation
+  source:
+  - parent
+
+- rename: eatq_p_ss_activation_nm
+  name: eatq_p_ss_activation_nm
+  source:
+  - parent
+
+- rename: eatq_p_ss_affiliation
+  name: eatq_p_ss_affiliation
+  source:
+  - parent
+
+- rename: eatq_p_ss_affiliation_nm
+  name: eatq_p_ss_affiliation_nm
+  source:
+  - parent
+
+- rename: eatq_p_ss_aggression
+  name: eatq_p_ss_aggression
+  source:
+  - parent
+
+- rename: eatq_p_ss_aggression_nm
+  name: eatq_p_ss_aggression_nm
+  source:
+  - parent
+
+- rename: eatq_p_ss_attention
+  name: eatq_p_ss_attention
+  source:
+  - parent
+
+- rename: eatq_p_ss_attention_nm
+  name: eatq_p_ss_attention_nm
+  source:
+  - parent
+
+- rename: eatq_p_ss_contl_sup
+  name: eatq_p_ss_contl_sup
+  source:
+  - parent
+
+- rename: eatq_p_ss_contl_sup_nm
+  name: eatq_p_ss_contl_sup_nm
+  source:
+  - parent
+
+- rename: eatq_p_ss_depressive
+  name: eatq_p_ss_depressive
+  source:
+  - parent
+
+- rename: eatq_p_ss_depressive_nm
+  name: eatq_p_ss_depressive_nm
+  source:
+  - parent
+
+- rename: eatq_p_ss_fear
+  name: eatq_p_ss_fear
+  source:
+  - parent
+
+- rename: eatq_p_ss_fear_nm
+  name: eatq_p_ss_fear_nm
+  source:
+  - parent
+
+- rename: eatq_p_ss_frustration
+  name: eatq_p_ss_frustration
+  source:
+  - parent
+
+- rename: eatq_p_ss_frustration_nm
+  name: eatq_p_ss_frustration_nm
+  source:
+  - parent
+
+- rename: eatq_p_ss_inhibitory
+  name: eatq_p_ss_inhibitory
+  source:
+  - parent
+
+- rename: eatq_p_ss_inhibitory_nm
+  name: eatq_p_ss_inhibitory_nm
+  source:
+  - parent
+
+- rename: eatq_p_ss_negaffect_sup
+  name: eatq_p_ss_negaffect_sup
+  source:
+  - parent
+
+- rename: eatq_p_ss_negaffect_sup_nm
+  name: eatq_p_ss_negaffect_sup_nm
+  source:
+  - parent
+
+- rename: eatq_p_ss_shyness
+  name: eatq_p_ss_shyness
+  source:
+  - parent
+
+- rename: eatq_p_ss_shyness_nm
+  name: eatq_p_ss_shyness_nm
+  source:
+  - parent
+
+- rename: eatq_p_ss_surgency
+  name: eatq_p_ss_surgency
+  source:
+  - parent
+
+- rename: eatq_p_ss_surgency_nm
+  name: eatq_p_ss_surgency_nm
+  source:
+  - parent
+
+- rename: eatq_p_ss_surgency_sup
+  name: eatq_p_ss_surgency_sup
+  source:
+  - parent
+
+- rename: eatq_p_ss_surgency_sup_nm
+  name: eatq_p_ss_surgency_sup_nm
+  source:
+  - parent
+
+- rename: eatq_ypers
+  name: eatq_ypers
+  source:
+  - child
+
+- rename: eatq_ypls
+  name: eatq_ypls
+  source:
+  - child
+
+- rename: eatq_yspr_aff
+  name: eatq_yspr_aff
+  source:
+  - child
+
+- rename: eatq_yspr_eff
+  name: eatq_yspr_eff
+  source:
+  - child
+
+- rename: eatq_yspr_neg
+  name: eatq_yspr_neg
+  source:
+  - child
+
+- rename: eatq_yspr_sur
+  name: eatq_yspr_sur
+  source:
+  - child
+
+- rename: eatq_ysur
+  name: eatq_ysur
+  source:
+  - child
+

@@ -1016,278 +1016,278 @@ elements:
 - rename: cbcl_adhd
   name: dsm5_scale4_tvalue
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
 
 - rename: cbcl_adhd_perc
   name: dsm5_scale4_percentage
-  source: 
+  source:
   - parent
 
 - rename: cbcl_adhd_raw
   code: return x.fillna(999)
   name: dsm5_scale4
-  source: 
+  source:
   - parent
 
 - rename: cbcl_aggressive
   code: return x.fillna(999)
   name: sndrm_scale8_tvalue
-  source: 
+  source:
   - parent
 
 - rename: cbcl_aggressive_perc
   name: sndrm_scale8_percentage
-  source: 
+  source:
   - parent
 
 - rename: cbcl_aggressive_raw
   code: return x.fillna(999)
   name: sndrm_scale8
-  source: 
+  source:
   - parent
 
 - rename: cbcl_anxiety
   code: return x.fillna(999)
   name: dsm5_scale2_tvalue
-  source: 
+  source:
   - parent
 
 - rename: cbcl_anxiety_perc
   name: dsm5_scale2_percentage
-  source: 
+  source:
   - parent
 
 - rename: cbcl_anxiety_raw
   code: return x.fillna(999)
   name: dsm5_scale2
-  source: 
+  source:
   - parent
 
 - rename: cbcl_anxious
   code: return x.fillna(999)
   name: sndrm_scale1_tvalue
-  source: 
+  source:
   - parent
 
 - rename: cbcl_anxious_perc
   name: sndrm_scale1_percentage
-  source: 
+  source:
   - parent
 
 - rename: cbcl_anxious_raw
   code: return x.fillna(999)
   name: sndrm_scale1
-  source: 
+  source:
   - parent
 
 - rename: cbcl_attention
   code: return x.fillna(999)
   name: sndrm_scale6_tvalue
-  source: 
+  source:
   - parent
 
 - rename: cbcl_attention_perc
   name: sndrm_scale6_percentage
-  source: 
+  source:
   - parent
 
 - rename: cbcl_attention_raw
   code: return x.fillna(999)
   name: sndrm_scale6
-  source: 
+  source:
   - parent
 
 - rename: cbcl_conduct
   code: return x.fillna(999)
   name: dsm5_scale6_tvalue
-  source: 
+  source:
   - parent
 
 - rename: cbcl_conduct_perc
   name: dsm5_scale6_percentage
-  source: 
+  source:
   - parent
 
 - rename: cbcl_conduct_raw
   code: return x.fillna(999)
   name: dsm5_scale6
-  source: 
+  source:
   - parent
 
 - rename: cbcl_depresspr
   name: dsm5_scale1_tvalue
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
 
 - rename: cbcl_depresspr_raw
   name: dsm5_scale1
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
 
 - rename: cbcl_deprpr_perc
   name: dsm5_scale1_percentage
-  source: 
+  source:
   - parent
 
 - rename: cbcl_external
   code: return x.fillna(999)
   name: sndrm_external_tvalue
-  source: 
+  source:
   - parent
 
 - rename: cbcl_external_perc
   name: sndrm_external_percentage
-  source: 
+  source:
   - parent
 
 - rename: cbcl_external_raw
   code: return x.fillna(999)
   name: external_scale_sch
-  source: 
+  source:
   - parent
 
 - rename: cbcl_internal
   name: sndrm_internal_tvalue
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
 
 - rename: cbcl_internal_perc
   name: sndrm_internal_percentage
-  source: 
+  source:
   - parent
 
 - rename: cbcl_internal_raw
   name: internal_scale_sch
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
 
 - rename: cbcl_oppositional
   name: dsm5_scale5_tvalue
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
 
 - rename: cbcl_oppositional_perc
   name: dsm5_scale5_percentage
-  source: 
+  source:
   - parent
 
 - rename: cbcl_oppositional_raw
   name: dsm5_scale5
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
 
 - rename: cbcl_rulebreak
   name: sndrm_scale7_tvalue
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
 
 - rename: cbcl_rulebreak_perc
   name: sndrm_scale7_percentage
-  source: 
+  source:
   - parent
 
 - rename: cbcl_rulebreak_raw
   name: sndrm_scale7
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
 
 - rename: cbcl_social_p
   name: sndrm_scale4_tvalue
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
 
 - rename: cbcl_social_p_perc
   name: sndrm_scale4_percentage
-  source: 
+  source:
   - parent
 
 - rename: cbcl_social_p_raw
   name: sndrm_scale4
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
 
 - rename: cbcl_somatic_c
   name: sndrm_scale3_tvalue
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
 
 - rename: cbcl_somatic_c_perc
   name: sndrm_scale3_percentage
-  source: 
+  source:
   - parent
 
 - rename: cbcl_somatic_c_raw
   code: return x.fillna(999)
   name: sndrm_scale3
-  source: 
+  source:
   - parent
 
 - rename: cbcl_somatic_p
   name: dsm5_scale3_tvalue
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
 
 - rename: cbcl_somatic_p_perc
   name: dsm5_scale3_percentage
-  source: 
+  source:
   - parent
 
 - rename: cbcl_somatic_p_raw
   name: dsm5_scale3
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
 
 - rename: cbcl_thought
   name: sndrm_scale5_tvalue
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
 
 - rename: cbcl_thought_perc
   name: sndrm_scale5_percentage
-  source: 
+  source:
   - parent
 
 - rename: cbcl_thought_raw
   name: sndrm_scale5
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
 
 - rename: cbcl_total
   name: sndrm_total_tvalue
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
 
 - rename: cbcl_total_perc
   name: sndrm_total_percentage
-  source: 
+  source:
   - parent
 
 - rename: cbcl_withdrawn
   name: sndrm_scale2_tvalue
   code: return x.fillna(999)
-  source: 
+  source:
   - parent
-   
+
 - rename: cbcl_withdrawn_perc
   name: sndrm_scale2_percentage
-  source: 
+  source:
   - parent
 
 - rename: cbcl_total_raw

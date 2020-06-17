@@ -610,7 +610,7 @@ elements:
   - parent:
       name: upps_negurge
 
-- rename: upps_posu 
+- rename: upps_posu
   name: upps_pos
   source:
   - child

@@ -1575,381 +1575,381 @@ elements:
 
 - name: asr_syn_aggr
   rename: aggressive_behavior_total
-  source: 
+  source:
   - child
   - teen
-  
+
 - name: asr_syn_aggr_t
   rename: aggressive_behavior_tscore
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_dep
   rename: anxious__depressed_total
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_dep_t
   rename: anxious__depressed_tscore
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_attn
   rename: attention_problems_total
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_attn_t
   rename: attention_problems_tscore
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_extnl
   rename: externalizing_problems_total
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_extnl_t
   rename: externalizing_problems_tscore
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_intnl
   rename: internalizing_problems_total
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_intnl_t
   rename: internalizing_problems_tscore
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_rule
   rename: rule_breaking_behavior_total
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_rule_t
   rename: rule_breaking_behavior_tscore
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_som
   rename: somatic_complaints_total
-  source: 
+  source:
   - child
   - teen
 
 # wrong this is somatic problems t score not somatic complaints syndrome tscore
 #- name: asr_som_t
 #  rename: somatic_complaints_tscore
-#  source: 
+#  source:
 #  - child
 #  - teen
 
 - name: asr_syn_intru
   rename: thought_problems_total
-  source: 
+  source:
   - child
   - teen
 
 # another conflict between 3 people at WashU and 1 person at NDA see thought_problems_total
 #- name: asr_syn_intru_t
 #  rename: thought_problems_tscore
-#  source: 
+#  source:
 #  - child
 #  - teen
 
 - name: asr_syn_sum
   rename: total_problems_total
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_sum_t
   rename: total_problems_tscore
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_with
   rename: withdrawn_total
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_with_t
   rename: withdrawn_tscore
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_adh
   rename: adh_total
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_adh_pcnt
   rename: kkaddp
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_adh_t
   rename: adh_t_score
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_anp
   rename: antisocial_total
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_anp_pcnt
   rename: asr_anp_pcnt
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_anp_t
   rename: antisocial_t_score
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_anx
   rename: anxiety_total
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_anx_pcnt
   rename: kkanxp
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_anx_t
   rename: anxiety_t_score
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_avo
   rename: avoidant_total
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_avo_pcnt
   rename: asr_avo_pcnt
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_avo_t
   rename: avoidant_t_score
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_dep
   rename: depressive_total
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_dep_pcnt
   rename: kkdepp
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_dep_t
   rename: depressive_t_score
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_hi
   rename: adh_h_i_total
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_hi_pcnt
   rename: asr_hi_pcnt
-  source: 
+  source:
   - child
   - teen
 
 #- name: asr_hi_t
 #  rename: asr_hi_t
-#  source: 
+#  source:
 #  - child
 #  - teen
 
 - name: asr_i
   rename: adh_i_total
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_i_pcnt
   rename: asr_i_pcnt
-  source: 
+  source:
   - child
   - teen
 
 #- name: asr_i_t
 #  rename: asr_i_t
-#  source: 
+#  source:
 #  - child
 #  - teen
 
 - name: asr_miss
   rename: missingsum_obvq
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_som_pcnt
   rename: kksomp
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_aggr_pcnt
   rename: kkaggrp
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_attn_pcnt
   rename: kkattnp
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_critical
   rename: abcl_critical_total
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_critical_pcnt
   rename: asr_syn_critical_pcnt
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_critical_t
   rename: critical_t_score
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_csum
   rename: asr_syn_csum
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_dep_pcnt
   rename: kkanxdp
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_extnl_pcnt
   rename: asr_syn_extnl_pcnt
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_intnl_pcnt
   rename: asr_syn_intnl_pcnt
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_intru_pcnt
   rename: asr_syn_intru_pcnt
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_other
   rename: abcl_other_total
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_rule_pcnt
   rename: kkdelip
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_som
   rename: kksomar
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_som_pcnt
   rename: kksomap
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_som_t
   rename: somatic_complaints_tscore
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_sum_pcnt
   rename: asr_syn_sum_pcnt
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_thou
   rename: asr_scr_thought_r
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_thou_pcnt
   rename: kkthotp
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_thou_t
   rename: thought_problems_tscore
-  source: 
+  source:
   - child
   - teen
 
 - name: asr_syn_with_pcnt
   rename: cbcl_withdrawn_perc
-  source: 
+  source:
   - child
   - teen
 

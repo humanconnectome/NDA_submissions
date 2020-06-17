@@ -50,12 +50,12 @@ elements:
         code: return 1
 
 - rename: version_form
-  code: return 
+  code: return
   source:
     - child
     - teen
     - parent:
-        code: return 'SRS-2 School Age' 
+        code: return 'SRS-2 School Age'
 
 - rename: respond_detail
   code: return 999
@@ -596,7 +596,7 @@ elements:
   source:
   - child
   - teen
-  
+
 - func: split_by_gender
   rename:
   - female_rawscoreall
@@ -606,9 +606,9 @@ elements:
   - gender
   request:
   - Please split total raw scores by sex.
-  - Indicate different version (School age) in version_form 
+  - Indicate different version (School age) in version_form
   source:
-  - parent  
+  - parent
 
 
 - func: split_by_gender
@@ -629,11 +629,11 @@ elements:
 - rename: female_tscoreall
   name: srs_y_total_ftscore_p
   source: parent
-  
+
 - rename:  male_tscoreall
   name: srs_y_total_mtscore_p
   source: parent
-  
+
 
 - rename: phenotype
   code: return "Healthy Subject"

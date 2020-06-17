@@ -551,3 +551,52 @@ elements:
   source:
   - parent:
       name: eatq_p61
+
+
+
+
+- name: eatq_yact
+  rename: eatq_ac
+  source:
+    - child
+
+- name: eatq_yafl
+  rename: eatq_aff
+  source:
+    - child
+
+- name: eatq_yagr
+  rename: eatq_agg
+  source:
+    - child
+
+- name: eatq_yatn
+  rename: eatq_att
+  source:
+    - child
+
+- name: eatq_ydep
+  rename: eatq_dm
+  source:
+    - child
+
+- name: eatq_yfear
+  rename: eatq_fear
+  source:
+    - child
+
+- name: eatq_yfru
+  rename: eatq_fru
+  source:
+    - child
+
+- name: eatq_yinh
+  rename: eatq_ic
+  source:
+    - child
+
+- name: eatq_yshy
+  rename: eatq_shy
+  source:
+    - child
+

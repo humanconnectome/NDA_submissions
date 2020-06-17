@@ -741,15 +741,7 @@ elements:
   source: ["parent"]
   code: return 999
 
-- rename: cbcl_emotional
-  source: ["parent"]
-  code: return 999
-
 - rename: cbcl_anxious_raw
-  source: ["parent"]
-  code: return 999
-
-- rename: cbcl_anxious
   source: ["parent"]
   code: return 999
 
@@ -757,15 +749,7 @@ elements:
   source: ["parent"]
   code: return 999
 
-- rename: cbcl_somatic_c
-  source: ["parent"]
-  code: return 999
-
 - rename: cbcl_withdrawn_raw
-  source: ["parent"]
-  code: return 999
-
-- rename: cbcl_withdrawn
   source: ["parent"]
   code: return 999
 
@@ -773,15 +757,7 @@ elements:
   source: ["parent"]
   code: return 999
 
-- rename: cbcl_sleep
-  source: ["parent"]
-  code: return 999
-
 - rename: cbcl_attention_raw
-  source: ["parent"]
-  code: return 999
-
-- rename: cbcl_attention
   source: ["parent"]
   code: return 999
 
@@ -789,31 +765,7 @@ elements:
   source: ["parent"]
   code: return 999
 
-- rename: cbcl_aggressive
-  source: ["parent"]
-  code: return 999
-
-- rename: cbcl_internal_raw
-  source: ["parent"]
-  code: return 999
-
-- rename: cbcl_internal
-  source: ["parent"]
-  code: return 999
-
-- rename: cbcl_external_raw
-  source: ["parent"]
-  code: return 999
-
-- rename: cbcl_external
-  source: ["parent"]
-  code: return 999
-
 - rename: cbcl_total_raw
-  source: ["parent"]
-  code: return 999
-
-- rename: cbcl_total
   source: ["parent"]
   code: return 999
 
@@ -821,15 +773,7 @@ elements:
   source: ["parent"]
   code: return 999
 
-- rename: cbcl_affective
-  source: ["parent"]
-  code: return 999
-
 - rename: cbcl_anxiety_raw
-  source: ["parent"]
-  code: return 999
-
-- rename: cbcl_anxiety
   source: ["parent"]
   code: return 999
 
@@ -837,23 +781,11 @@ elements:
   source: ["parent"]
   code: return 999
 
-- rename: cbcl_pervasive
-  source: ["parent"]
-  code: return 999
-
 - rename: cbcl_adhd_raw
   source: ["parent"]
   code: return 999
 
-- rename: cbcl_adhd
-  source: ["parent"]
-  code: return 999
-
 - rename: cbcl_oppositional_raw
-  source: ["parent"]
-  code: return 999
-
-- rename: cbcl_oppositional
   source: ["parent"]
   code: return 999
 
@@ -868,3 +800,166 @@ elements:
 - rename: cbcl_depresspr_raw
   source: ["parent"]
   code: return 999
+
+
+
+- name: dsm5_4_tvalue
+  rename: cbcl_adhd
+  source:
+    - parent
+
+- name: dsm5_4percentage
+  rename: cbcl_adhd_perc
+  source:
+    - parent
+
+- name: dsm5_1_tvalue
+  rename: cbcl_affective
+  source:
+    - parent
+
+- name: dsm5_1percentage
+  rename: cbcl_affective_perc
+  source:
+    - parent
+
+- name: ebs_7_tvalue
+  rename: cbcl_aggressive
+  source:
+    - parent
+
+- name: ebs_7percentage
+  rename: cbcl_aggressive_perc
+  source:
+    - parent
+
+- name: dsm5_2_tvalue
+  rename: cbcl_anxiety
+  source:
+    - parent
+
+- name: dsm5_2percentage
+  rename: cbcl_anxiety_perc
+  source:
+    - parent
+
+- name: ebs_2_tvalue
+  rename: cbcl_anxious
+  source:
+    - parent
+
+- name: ebs_2percentage
+  rename: cbcl_anxious_perc
+  source:
+    - parent
+
+- name: ebs_6_tvalue
+  rename: cbcl_attention
+  source:
+    - parent
+
+- name: ebs_6percentage
+  rename: cbcl_attention_perc
+  source:
+    - parent
+
+- name: ebs_1_tvalue
+  rename: cbcl_emotional
+  source:
+    - parent
+
+- name: ebs_1percentage
+  rename: cbcl_emotional_perc
+  source:
+    - parent
+
+- name: external_tvalue
+  rename: cbcl_external
+  source:
+    - parent
+
+- name: external_percentage
+  rename: cbcl_external_perc
+  source:
+    - parent
+
+- name: external_scale_pre
+  rename: cbcl_external_raw
+  source:
+    - parent
+
+- name: internal_tvalue
+  rename: cbcl_internal
+  source:
+    - parent
+
+- name: internal_percentage
+  rename: cbcl_internal_perc
+  source:
+    - parent
+
+- name: internal_scale_pre
+  rename: cbcl_internal_raw
+  source:
+    - parent
+
+- name: dsm5_5_tvalue
+  rename: cbcl_oppositional
+  source:
+    - parent
+
+- name: dsm5_5percentage
+  rename: cbcl_oppositional_perc
+  source:
+    - parent
+
+- name: dsm5_3_tvalue
+  rename: cbcl_pervasive
+  source:
+    - parent
+
+- name: dsm5_3percentage
+  rename: cbcl_pervasive_perc
+  source:
+    - parent
+
+- name: ebs_5_tvalue
+  rename: cbcl_sleep
+  source:
+    - parent
+
+- name: ebs_5percentage
+  rename: cbcl_sleep_perc
+  source:
+    - parent
+
+- name: ebs_3_tvalue
+  rename: cbcl_somatic_c
+  source:
+    - parent
+
+- name: ebs_3percentage
+  rename: cbcl_somatic_c_perc
+  source:
+    - parent
+
+- name: tot_prob_tvalue
+  rename: cbcl_total
+  source:
+    - parent
+
+- name: tot_prob_percentage
+  rename: cbcl_total_perc
+  source:
+    - parent
+
+- name: ebs_4_tvalue
+  rename: cbcl_withdrawn
+  source:
+    - parent
+
+- name: ebs_4percentage
+  rename: cbcl_withdrawn_perc
+  source:
+    - parent
+

@@ -30,145 +30,145 @@ elements:
 
 - name: cbclpre1
   rename: cbcl56a
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre2
   rename: cbcl1
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre3
   rename: cbcl_nt
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre4
   rename: cbcl_eye
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre5
   rename: cbcl8
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre6
   rename: cbcl10
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre7
   rename: cbcl_out
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre8
   rename: cbcl_wait
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre9
   rename: cbcl_chew
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre10
   rename: cbcl11
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre11
   rename: cbcl_help
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre12
   rename: cbcl49
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre13
   rename: cbcl14
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre14
   rename: cbcl15
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre15
   rename: cbcl_defiant
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre16
   rename: cbcl_dem
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre17
   rename: cbcl20
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre18
   rename: cbcl21
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre19
   rename: cbcl_diar
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre20
   rename: cbcl_disob
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre21
   rename: cbcl_dist
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre22
   rename: cbcl_alonsleep
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre23
   rename: cbcl_answer
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre24
   rename: cbcl24
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
@@ -179,43 +179,43 @@ elements:
 
 - name: cbclpre25
   rename: cbcl25
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre26
   rename: cbcl_fun
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre27
   rename: cbcl26
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre28
   rename: cbcl_home
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre29
   rename: cbcl_frust
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre30
   rename: cbcl27
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre31
   rename: cbcl_eat
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
@@ -226,7 +226,7 @@ elements:
 
 - name: cbclpre32
   rename: cbcl29
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
@@ -237,19 +237,19 @@ elements:
 
 - name: cbclpre33
   rename: cbcl_feel
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre34
   rename: cbcl36
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre35
   rename: cbcl37
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
@@ -260,67 +260,67 @@ elements:
 
 - name: cbclpre36
   rename: cbcl_every
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre37
   rename: cbcl_upset
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre38
   rename: cbcl_troubsleep
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre39
   rename: cbcl56b
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre40
   rename: cbcl_hit
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre41
   rename: cbcl_breath
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre42
   rename: cbcl_hurt
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre43
   rename: cbcl_unhap
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre44
   rename: cbcl_angry
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre45
   rename: cbcl56c
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre46
   rename: cbcl46
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
@@ -331,49 +331,49 @@ elements:
 
 - name: cbclpre47
   rename: cbcl45
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre48
   rename: cbcl47
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre49
   rename: cbcl53
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre50
   rename: cbcl54
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre51
   rename: cbcl_panic
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre52
   rename: cbcl_bow
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre53
   rename: cbcl57
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre54
   rename: cbcl58
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
@@ -384,19 +384,19 @@ elements:
 
 - name: cbclpre55
   rename: cbcl60
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre56
   rename: cbcl62
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre57
   rename: cbcl56d
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
@@ -407,37 +407,37 @@ elements:
 
 - name: cbclpre58
   rename: cbcl_punish
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre59
   rename: cbcl_shift
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre60
   rename: cbcl56e
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre61
   rename: cbcl_reat
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre62
   rename: cbcl_play
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre63
   rename: cbcl_rock
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 

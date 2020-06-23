@@ -344,3 +344,8 @@ screentime2_p:
     time spent on school related work, but do include watching TV, shows or videos,
     texting or chatting, playing games, or visiting social networking sites (Facebook,
     Twitter, Instagram).  Hours:'
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

@@ -3000,3 +3000,8 @@ ysra_c_scale:
 ysra_total_score:
   type: Integer
   description: YSR Sum A, B, C Scales
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

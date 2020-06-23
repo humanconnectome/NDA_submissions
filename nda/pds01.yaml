@@ -1255,3 +1255,8 @@ resp_source:
     4: teacher
     5: trainer
     6: fidelity reviewer
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

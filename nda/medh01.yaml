@@ -345,9 +345,7 @@ medhx_celiac:
   - 0::2
   notes: 0 = No, 1 = Yes, 2 = Not sure
   codes:
-    0: "No"
-    1: "Yes"
-    2: Not sure
+    0: No, 1 = Yes, 2 = Not sure
 
 version_form:
   type: String
@@ -1251,12 +1249,12 @@ q17_b14:
     Heart /Problemas del coraz?n
   range:
   - 0::2
-  notes: 0 = No, 1 = Yes, 2 = Not sure
+  notes: 0 = No, 1 = Yes, 2 = Not sure//Now I'd like to ask you about your child's
+    use of health services during the past year and throughout his/her whole life.
   alias: medhx_2o
   codes:
-    0: "No"
-    1: "Yes"
-    2: Not sure
+    0: No, 1 = Yes, 2 = Not sure//Now I'd like to ask you about your child's use of
+      health services during the past year and throughout his/her whole life.
 
 seq1c_2:
   type: Integer
@@ -1286,13 +1284,16 @@ w1_m_cu_hrng:
   - 1
   - -888
   - -999
-  notes: 0 = No; 1 = Yes; -999 = missing; -888 = not applicable
+  notes: 0 = No; 1 = Yes; -999 = missing; -888 = not applicable//Now I'd like to ask
+    you about your child's use of health services during the past year and throughout
+    his/her whole life.
   alias: medhx_2i
   codes:
     0: 'No'
     1: 'Yes'
     -999: missing
-    -888: not applicable
+    -888: not applicable//Now I'd like to ask you about your child's use of health
+      services during the past year and throughout his/her whole life.
 
 wk_allergies:
   type: Integer
@@ -1304,8 +1305,8 @@ wk_allergies:
   notes: No = 0; Yes = 1
   alias: medhx_2b
   codes:
-    0: 'No'
-    1: 'Yes'
+    'No': '0'
+    'Yes': '1'
 
 cfmh_chd_seizure:
   type: Integer
@@ -1325,15 +1326,16 @@ cfmh_chd_seizure:
 
 wk_asthma:
   type: Integer
-  description: Has she/he ever been to a doctor for any of these things?Asthma /Asma
+  description: "Has she/he ever been to a doctor for any of these things?Asthma /Asma\r"
   range:
   - 0
   - 1
-  notes: 0 = No; 1 = Yes
+  notes: No = 0; Yes = 1;//Now I'd like to ask you about your child's use of health
+    services during the past year and throughout his/her whole life.
   alias: medhx_2a
   codes:
-    0: 'No'
-    1: 'Yes'
+    'No': '0'
+    'Yes': '1'
 
 baseline_k_005:
   type: Integer
@@ -1344,28 +1346,33 @@ baseline_k_005:
   - -888
   - -999
   - -7
-  notes: 0=No; 1=Yes; -888=Not Applicable; -999=Missing/NK; -7=Refused
+  notes: 0=No; 1=Yes; -888=Not Applicable; -999=Missing/NK; -7=Refused //Now I'd like
+    to ask you about your child's use of health services during the past year and
+    throughout his/her whole life.
   alias: medhx_2g
   codes:
     0: 'No'
     1: 'Yes'
     -888: Not Applicable
     -999: Missing/NK
-    -7: Refused
+    -7: Refused //Now I'd like to ask you about your child's use of health services
+      during the past year and throughout his/her whole life.
 
 cfmh_chd_cerpalsy:
   type: Integer
   description: Has she/he ever been to a doctor for any of these things?Cerebral Palsy
-    /Paralisis Cerebral
+    /Par?lisis Cerebral
   range:
   - 1
   - 0
   - 999
-  notes: 0 = No; 1 = Yes
+  notes: 0 = No; 1 = Yes //Now I'd like to ask you about your child's use of health
+    services during the past year and throughout his/her whole life.
   alias: medhx_2f
   codes:
     0: 'No'
-    1: 'Yes'
+    1: Yes //Now I'd like to ask you about your child's use of health services during
+      the past year and throughout his/her whole life.
 
 medhis_1a:
   type: Integer
@@ -1973,12 +1980,12 @@ medhx_brokenbones:
     /Fracturas
   range:
   - 0::2
-  notes: 0 = No, 1 = Yes, 2 = Not sure
+  notes: 0 = No, 1 = Yes, 2 = Not sure//Now I'd like to ask you about your child's
+    use of health services during the past year and throughout his/her whole life.
   alias: medhx_6a
   codes:
-    0: "No"
-    1: "Yes"
-    2: Not sure
+    0: No, 1 = Yes, 2 = Not sure//Now I'd like to ask you about your child's use of
+      health services during the past year and throughout his/her whole life.
 
 medhis_6o_drug19:
   type: String
@@ -2050,14 +2057,17 @@ ms:
   - -7
   - 9
   - -999
-  notes: 0=No; 1=Yes;-7=Refused; 9=Not evaluated; -999= Don't know/Missing Data
+  notes: 0=No; 1=Yes;-7=Refused; 9=Not evaluated; -999= Don't know/Missing Data //Now
+    I'd like to ask you about your child's use of health services during the past
+    year and throughout his/her whole life.
   alias: medhx_2m
   codes:
     0: 'No'
     1: 'Yes'
     7: Refused
     9: Not evaluated
-    -999: Don't know/Missing Data
+    -999: Don't know/Missing Data //Now I'd like to ask you about your child's use
+      of health services during the past year and throughout his/her whole life.
 
 medhis_6o_drug29:
   type: String
@@ -2131,3 +2141,8 @@ medhis_6q_drug6:
   description: If your child has had accidental poisonings, then list poisons. Poison
     6
   alias: medhx_6q_drug6
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

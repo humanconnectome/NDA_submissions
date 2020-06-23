@@ -38,13 +38,22 @@ elements:
   - teen
   - parent
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - child
+  - teen
+  - parent:
+      code: return "caregiver about child subject"
+
+
 - rename: version_form
   code: return "S7up Self Report"
   source:
     - child
     - teen
     - parent:
-        code: return "Parent Report"
+        code: return "S7up Parent Report"
 
 - rename: gbi4
   name: s7upchildself1

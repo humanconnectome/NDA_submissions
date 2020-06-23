@@ -37,6 +37,24 @@ elements:
   - teen
   - parent
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - child
+  - teen
+  - parent:
+      code: return "caregiver about child subject"
+
+
+- rename: respond
+  source:
+  - child:
+      code: return 3
+  - teen:
+      code: return 3
+  - parent:
+      code: return 1
+
 
 - name: pds_sub_1
   rename: pds_1
@@ -273,14 +291,6 @@ elements:
   - teen
   - parent:
       name: pubertal_p_mh
-
-- rename: respond
-  code: return 3
-  source:
-    - child
-    - teen
-    - parent:
-        code: return 1
 
 - name: pds_p_g5a
   rename: pds_8_pv

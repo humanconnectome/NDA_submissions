@@ -26,6 +26,12 @@ elements:
   source:
   - hcpa
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - hcpa
+  
+
 - rename: caffeine_session
   name: caffeine_session
   source: hcpa

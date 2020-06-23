@@ -26,6 +26,13 @@ elements:
   source:
   - hcpa
 
+#comqother not available for this structure
+#- rename: comqother
+#  code: return "subject about self"
+#  source:
+#  - hcpa
+  
+
 - rename: adlnow8
   name: iadl1
   request: Please decrement your 1::4 scale to 0::3.

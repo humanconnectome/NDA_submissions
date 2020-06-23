@@ -28,6 +28,12 @@ elements:
   source:
   - parent
 
+- rename: comqother
+  code: return "caregiver about child subject"
+  source:
+  - parent
+
+
 - name: cbq1
   rename: cbq01
   recode: {0: -9}

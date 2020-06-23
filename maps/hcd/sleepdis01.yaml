@@ -28,6 +28,13 @@ elements:
   source:
   - parent
 
+
+- rename: comqother
+  code: return "caregiver about child subject"
+  source:
+  - parent
+
+
 - name: sleepdisturb_p1
   rename: sleepdisturb_p1
   source:

@@ -1213,3 +1213,8 @@ sample:
     3: randomized-control
     4: randomized-intervention
     5: concurrent cohort-intervention
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

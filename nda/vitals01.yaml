@@ -2404,3 +2404,8 @@ upreg:
     2: Negative
     3: Not done
     9: Equivocal (Must retest)
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

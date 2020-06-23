@@ -12600,8 +12600,7 @@ dem_18p:
   notes: 1=Yes 0=No
   alias: oc1
   codes:
-    1: "Yes"
-    0: "No"
+    1: Yes 0=No
 
 oc1c:
   type: Integer

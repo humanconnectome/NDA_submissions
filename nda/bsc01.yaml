@@ -874,8 +874,7 @@ ed1_saliva:
   alias: bld_rucdr_saliva
   codes:
     0: 'No'
-    1: "Yes"
-    -8: DON'T KNOW
+    1: Yes -8=DON'T KNOW
     -7: REFUSED
     -5: Presented, not answered
 
@@ -1220,3 +1219,8 @@ bdnf_notes:
   type: String
   length: 200
   description: Brain-derived neurotrophic factor notes (e.g., time since drug)
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

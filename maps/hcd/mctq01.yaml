@@ -28,6 +28,11 @@ elements:
   source:
   - child
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - child
+
 - rename: version_form
   code: return "Past 4 weeks"
   source:

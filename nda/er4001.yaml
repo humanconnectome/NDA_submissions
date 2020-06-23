@@ -54,12 +54,12 @@ er40_c_cr:
   description: Correct Responses
   range:
   - 0::40
-  alias: er40_d_cr,k_er40d.er40_cr,k_er40d_er40_cr,penn_ert_crrct
+  alias: er40_d_cr,er40d.er40_cr,k_er40d.er40_cr,k_er40d_er40_cr,penn_ert_crrct
 
 er40_c_rtcr:
   type: Float
   description: Correct Responses Median Response Time (ms)
-  alias: er40_d_rtcr,k_er40d.er40_crt,k_er40d_er40_crt,penn_ert_meanrt_crrct
+  alias: er40_d_rtcr,er40d.er40_crt,k_er40d.er40_crt,k_er40d_er40_crt,penn_ert_meanrt_crrct
 
 er40_c_rt:
   type: Float
@@ -2414,3 +2414,8 @@ iar_t:
 cr_t:
   type: Float
   description: Confidence response time(in seconds)
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

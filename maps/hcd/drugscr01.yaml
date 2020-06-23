@@ -38,6 +38,16 @@ elements:
   - teen
   - parent
 
+
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - child
+  - teen
+  - parent:
+      code: return "caregiver about child subject"
+
+
 - name: caffeine_session
   nda_name: caffeine_session
   rename: caffeine_session

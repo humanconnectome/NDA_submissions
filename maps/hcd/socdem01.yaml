@@ -345,10 +345,10 @@ elements:
   source:
   - parent
 
-- name: other_parent
-  rename: comqother
-  source:
-  - parent
+#- name: other_parent
+#  rename: comqother
+#  source:
+#  - parent
 
 - name: p_c_grade
   rename: p_c_grade

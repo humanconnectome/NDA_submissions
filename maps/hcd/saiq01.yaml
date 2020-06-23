@@ -26,6 +26,11 @@ elements:
   source:
   - parent
 
+- rename: comqother
+  code: return "caregiver about child subject"
+  source:
+  - parent
+
 - name: sai_p_activities
   rename: ccf_sai_p_activities
   source:

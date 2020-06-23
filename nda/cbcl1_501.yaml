@@ -3083,3 +3083,8 @@ cbcl_dsm_pervasive_dev_raw:
   type: Integer
   description: 'CBCL (1_5-5): DSM scale pervasive developmental raw'
   alias: dsm5_3_scale
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

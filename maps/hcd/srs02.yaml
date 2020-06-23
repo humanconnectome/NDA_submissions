@@ -41,13 +41,14 @@ elements:
   - teen
   - parent
 
-- rename: respond
-  code: return 3
+- rename: comqother
+  code: return "subject about self"
   source:
-    - child
-    - teen
-    - parent:
-        code: return 1
+  - child
+  - teen
+  - parent:
+      code: return "caregiver about child subject"
+
 
 - rename: version_form
   code: return
@@ -56,6 +57,18 @@ elements:
     - teen
     - parent:
         code: return 'SRS-2 School Age'
+
+
+- rename: respond
+  source:
+    - child:
+        code: return 3
+    - teen:
+        code: return 3
+    - parent:
+        code: return 1
+
+
 
 - rename: respond_detail
   code: return 999

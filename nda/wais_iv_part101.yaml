@@ -5812,3 +5812,8 @@ subtesttypedk:
 matrix_completion:
   type: Float
   description: Matrix Reasoning Completion time (seconds)
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

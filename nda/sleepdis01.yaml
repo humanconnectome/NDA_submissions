@@ -442,3 +442,8 @@ sleepdisturb_total:
 sleepdisturb_trans:
   type: Integer
   description: 'Sleep-Wake Transition Disorders '
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

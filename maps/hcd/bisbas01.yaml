@@ -38,13 +38,20 @@ elements:
   - teen
   - parent
 
-- rename: version_form
-  code: return "subject about subject"
+- rename: comqother
+  code: return "subject about self"
   source:
-    - child
-    - teen
-    - parent:
-        code: return "caregiver about subject"
+  - child
+  - teen
+  - parent:
+      code: return "caregiver about child subject"
+
+- rename: version_form
+  code: return "see comqother"
+  source:
+  - child
+  - teen
+  - parent
 
 - rename: bissc_total
   name: bis_sum

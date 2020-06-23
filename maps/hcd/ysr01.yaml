@@ -27,6 +27,12 @@ elements:
   source:
   - child
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - child
+  
+
 - rename: version_form
   code: return "Ages 12 to 18"
   source: child

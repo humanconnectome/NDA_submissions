@@ -28,6 +28,11 @@ elements:
   source:
   - parent
 
+- rename: comqother
+  code: return "caregiver about child subject"
+  source:
+  - parent
+
 - name: devhx_1_p
   rename: bio_mother
   source:
@@ -43,15 +48,16 @@ elements:
   source:
   - parent
 
-- name: devhx_3_p
-  rename: devhis_3_p
-  source:
-  - parent
+# moved to socdem01 structure
+#- name: devhx_3_p
+#  rename: devhis_3_p
+#  source:
+#  - parent
 
-- name: devhx_4_p
-  rename: devhis_4_p
-  source:
-  - parent
+#- name: devhx_4_p
+#  rename: devhis_4_p
+#  source:
+#  - parent
 
 - name: devhx_5_p
   rename: child_twin

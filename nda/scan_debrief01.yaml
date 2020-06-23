@@ -893,3 +893,8 @@ satisfaction57_4:
     2: A little fun
     3: Very fun
     4: Super fun
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

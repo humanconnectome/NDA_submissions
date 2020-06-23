@@ -4081,3 +4081,8 @@ antisocial_t_score:
   type: Integer
   description: Antisocial Personality Problems T Score
   alias: asr_anp_t
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

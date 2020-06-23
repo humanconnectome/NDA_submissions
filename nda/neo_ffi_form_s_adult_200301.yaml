@@ -1288,3 +1288,8 @@ subject_description:
   length: 4000
   description: Subject related information (e.g the affection, phenotype, disease
     information, etc.).
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

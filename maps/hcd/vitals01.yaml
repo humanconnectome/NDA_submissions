@@ -33,6 +33,13 @@ elements:
   - child
   - teen
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - child
+  - teen
+
+
 - name: height
   rename: vtl007
   request: Please convert heights to inches.

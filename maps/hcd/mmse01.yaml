@@ -33,6 +33,12 @@ elements:
   - child
   - teen
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - child
+  - teen
+
 - name: mmse1_1
   rename: mmse01
   source:

@@ -1329,7 +1329,7 @@ tox_03:
   notes: 2=No; Yes=1
   codes:
     2: 'No'
-    1: 'Yes'
+    'Yes': '1'
 
 tox_04:
   type: String
@@ -1353,3 +1353,8 @@ lot_number:
 uds15:
   type: Date
   description: Expiration Date of test
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

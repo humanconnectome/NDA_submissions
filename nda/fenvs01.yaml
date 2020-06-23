@@ -963,3 +963,8 @@ fes_y_ss_fc_pr:
     Report: Prorated Score (Based on minimum of five items answered): [fes_y_ss_fc]*[fes_y_ss_fc_nt]
     /[fes_y_ss_fc_na]'
   alias: conflict_pr
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

@@ -2828,3 +2828,8 @@ eatq_p_ss_aggression_nm:
 eatq_p_ss_attention:
   type: Integer
   description: 'Parent attention  Validation: Maximum of 1 item missing'
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

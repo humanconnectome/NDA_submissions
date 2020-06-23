@@ -2318,3 +2318,8 @@ phenx_upps_p_7:
 upps_plan:
   type: Integer
   description: Lack of planning
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

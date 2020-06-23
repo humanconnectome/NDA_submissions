@@ -39,13 +39,14 @@ elements:
   - parent
 
 
-- rename: version_form
-  code: return "Self-reported"
+- rename: comqother
+  code: return "subject about self"
   source:
-    - child
-    - teen
-    - parent:
-        code: return "Parent report"
+  - child
+  - teen
+  - parent:
+      code: return "caregiver about child subject"
+
 
 - name: satisfaction1
   rename: satisfaction1

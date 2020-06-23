@@ -1287,3 +1287,8 @@ version_form:
   type: String
   length: 121
   description: Form used/assessment name
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

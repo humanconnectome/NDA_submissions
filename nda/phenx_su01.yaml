@@ -2909,3 +2909,8 @@ ale_total_bad:
 ale_total_good:
   type: Integer
   description: 'Total Number of Good Events Validation: No Minimum'
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

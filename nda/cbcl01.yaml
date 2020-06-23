@@ -6170,3 +6170,8 @@ kkwithr:
   type: Integer
   description: 'Withdrawn Depressed  Raw score '
   alias: sndrm_scale2
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

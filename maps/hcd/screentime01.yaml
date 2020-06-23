@@ -37,14 +37,15 @@ elements:
   - teen
   - parent
 
-# this variable not defined for this structure...youll have to figure it out from context
-#- rename: version_form
-#  code: return "Self Report"
-#  source:
-#    - child
-#    - teen
-#    - parent:
-#        code: return "Parent Report"
+
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - child
+  - teen
+  - parent:
+      code: return "caregiver about child subject"
+
 
 - name: screen1_wkdy_y
   rename: screentime1_wkdy_y

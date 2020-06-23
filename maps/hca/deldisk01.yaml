@@ -30,6 +30,12 @@ elements:
   source:
   - PennCNP
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - PennCNP
+  
+
 - name: DDISC.SV_1mo_200
   rename: sv_1mo_200
   source:

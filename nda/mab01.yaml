@@ -3664,3 +3664,8 @@ devhis_8_other4_name:
     she might have been pregnant with this child: Specify: Drug use? Name of drug
     4: '
   alias: devhx_8_other4_name
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

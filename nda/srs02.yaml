@@ -1635,3 +1635,8 @@ srsa52:
     2: Sometimes true
     3: Often true
     4: Almost always true
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

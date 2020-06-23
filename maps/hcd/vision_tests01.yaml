@@ -31,6 +31,12 @@ elements:
   - child
   - teen
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - child
+  - teen
+
 - name: colorvsn1
   rename: psysoc_64
   recode:

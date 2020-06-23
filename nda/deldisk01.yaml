@@ -1117,3 +1117,8 @@ dd_choice:
   notes: 1 = left choice, 2 - right choice, 999 = not applicable, 888 = missing
   codes:
     1: left choice, 2 - right choice, 999 = not applicable, 888 = missing
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

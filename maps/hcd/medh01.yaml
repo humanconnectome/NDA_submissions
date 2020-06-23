@@ -33,6 +33,20 @@ elements:
   - teen
   - parent
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - teen
+  - parent:
+      code: return "caregiver about child subject"
+
+- rename: version_form
+  code: return "Lifetime or Past year"
+  source:
+  - teen
+  - parent
+
+
 - name: dental1
   rename: dental1
   source:

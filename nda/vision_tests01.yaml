@@ -1,5 +1,6 @@
 subjectkey:
   type: GUID
+  required: true
   description: The NDAR Global Unique Identifier (GUID) for research subject
   range:
   - NDAR*
@@ -7,6 +8,7 @@ subjectkey:
 src_subject_id:
   type: String
   length: 20
+  required: true
   description: Subject ID how it's defined in lab/project
 
 interview_date:
@@ -1721,3 +1723,8 @@ mars_vision144:
   codes:
     0: Incorrect
     1: Correct
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

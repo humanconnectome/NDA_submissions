@@ -412,8 +412,9 @@ mmse28:
 
 mmse29:
   type: Integer
-  description: 'Give the subject a blank piece of paper and say,
-    "Write a sentence." If needed, prompt the subject:
+  description: 'Give the subject a
+
+    blank piece of paper and say, "Write a sentence." If needed, prompt the subject:
     "Write a sentence about the weather."'
   range:
   - 0
@@ -519,8 +520,7 @@ mmse20_1:
     \ executed. Maximum of 3 points."
   range:
   - 0::3
-  notes: >-
-    0 = subject did none: took paper in non-dominant hand, folded it in half
+  notes: '0 = subject did none: took paper in non-dominant hand, folded it in half
     once with both hands, put the paper down on the floor
 
     1 = subject did only one: took paper in non-dominant hand, folded it in half once
@@ -530,20 +530,19 @@ mmse20_1:
     with both hands, put the paper down on the floor
 
     3 = subject did all three: took paper in non-dominant hand, folded it in half
-    once with both hands, put the paper down on the floor
+    once with both hands, put the paper down on the floor'
   codes:
-    0: >-
-      subject did none: took paper in non-dominant hand, folded it in half once
+    0: 'subject did none: took paper in non-dominant hand, folded it in half once
       with both hands, put the paper down on the floor
-    1: >-
-      subject did only one: took paper in non-dominant hand, folded it in half
+
+      1 = subject did only one: took paper in non-dominant hand, folded it in half
       once with both hands, put the paper down on the floor
-    2: >-
-      subject did only two: took paper in non-dominant hand, folded it in half
+
+      2 = subject did only two: took paper in non-dominant hand, folded it in half
       once with both hands, put the paper down on the floor
-    3: >-
-      subject did all three: took paper in non-dominant hand, folded it in half
-      once with both hands, put the paper down on the floor
+
+      3 = subject did all three: took paper in non-dominant hand, folded it in half
+      once with both hands, put the paper down on the floor'
 
 mmse11_1:
   type: Integer
@@ -565,9 +564,11 @@ mmse11_1:
 
     3 = named three objects'
   codes:
-    1: named one object
-    2: named two objects
-    3: named three objects
+    1: 'named one object
+
+      2 = named two objects
+
+      3 = named three objects'
 
 mmse12_1:
   type: Integer
@@ -624,8 +625,9 @@ mmse6_1:
 
     1 = knows country we are in'
   codes:
-    0: does not know country we are in
-    1: knows country we are in'
+    0: 'does not know country we are in
+
+      1 = knows country we are in'
 
 mmse7_1:
   type: Integer
@@ -637,8 +639,9 @@ mmse7_1:
 
     1 = knows province/state/county we are in'
   codes:
-    0: does not know province/state/county we are in
-    1: knows province/state/county we are in
+    0: 'does not know province/state/county we are in
+
+      1 = knows province/state/county we are in'
 
 study_id:
   type: Integer
@@ -897,3 +900,8 @@ mmse_less25:
   codes:
     0: 'No'
     1: 'Yes'
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

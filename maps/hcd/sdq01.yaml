@@ -31,10 +31,10 @@ elements:
   source:
   - parent
 
-- rename: version_form
+- rename: comqother
+  code: return "caregiver about child subject"
   source:
-    - parent:
-        code: return "Parent report"
+  - parent
 
 - rename: p_c_sdq_1
   name:

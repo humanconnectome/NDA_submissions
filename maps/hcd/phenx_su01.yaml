@@ -40,6 +40,12 @@ elements:
     - child
     - teen
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - child
+  - teen
+
 - name: ale1
   rename: fam_mem_died
   source:
@@ -1146,11 +1152,11 @@ elements:
   - child
   - teen
 
-- rename: ale_affected_mean
-  name: ale_affected_mean
-  source:
-  - child
-  - teen
+#- rename: ale_affected_mean
+#  name: ale_affected_mean
+#  source:
+#  - child
+#  - teen
 
 - rename: ale_total_bad
   name: ale_total_bad

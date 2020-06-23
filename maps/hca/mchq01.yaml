@@ -26,6 +26,13 @@ elements:
   source:
   - hcpa
 
+# comqother not avail for this structure
+#- rename: comqother
+#  code: return "subject about self"
+#  source:
+#  - hcpa
+  
+
 - rename: rev_endohypothyroidism
   name: mstrl1a
   source: hcpa

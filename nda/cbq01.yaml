@@ -4047,3 +4047,8 @@ cbqscale3:
   description: Effortful Control Scale
   notes: 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36
   alias: cbq_effcon
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

@@ -46,14 +46,13 @@ elements:
   - teen
   - parent
 
-
-#- rename: version_form
-#  code: return "Self Report"
-#  source:
-#    - child
-#    - teen
-#    - parent:
-#        code: return "Parent Report"
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - child
+  - teen
+  - parent:
+      code: return "caregiver about child subject"
 
 - rename: upps_p4
   name: upps3_y

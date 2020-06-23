@@ -33,6 +33,13 @@ elements:
   - teen
   - parent
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - teen
+  - parent:
+      code: return "caregiver about child subject"
+
 - name: med1_dose
   rename: medication1_dosage
   source:

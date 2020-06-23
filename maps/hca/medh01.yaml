@@ -26,6 +26,12 @@ elements:
   source:
   - hcpa
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - hcpa
+  
+
 - rename: dental1
   name: dental1
   source: hcpa

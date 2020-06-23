@@ -28,6 +28,11 @@ elements:
   source:
   - teen
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - teen
+
 - name: psqi1
   rename: psqip1
   source:

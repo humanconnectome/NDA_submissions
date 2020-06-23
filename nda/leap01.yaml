@@ -2111,3 +2111,8 @@ lan_132:
 lan_133:
   type: Integer
   description: 'Language 5: Writing Scale'
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

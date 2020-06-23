@@ -30,6 +30,11 @@ elements:
   - parent
 
 
+- rename: comqother
+  code: return "caregiver about child subject"
+  source:
+  - parent
+
 - rename: version_form
   request: Please label your data "Ages 6 - 18".
   source:

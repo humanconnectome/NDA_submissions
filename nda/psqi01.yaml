@@ -1105,8 +1105,8 @@ t_mde_22:
   - 1
   notes: No = 0; Yes = 1
   codes:
-    0: 'No'
-    1: 'Yes'
+    'No': '0'
+    'Yes': '1'
 
 timept:
   type: Integer
@@ -1344,3 +1344,8 @@ psqi_com7:
   type: Integer
   description: 'Assign component 7 score as follows: Sum of # 8 and #9 Component 7
     score 0, 0 1-2, 1 3-4, 2 5-6, 3'
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

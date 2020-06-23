@@ -26,6 +26,12 @@ elements:
   source:
   - hcpa
 
+#- rename: comqother
+#  code: return "subject about self"
+#  source:
+#  - hcpa
+  
+
 - rename: moca_edu
   name: moca_edu
   source: hcpa

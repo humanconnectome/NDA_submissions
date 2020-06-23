@@ -38,6 +38,16 @@ elements:
   - teen
   - parent
 
+
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - child
+  - teen
+  - parent:
+      code: return "caregiver about child subject"
+
+
 - name: bld_core
   rename: bld_core
   source:

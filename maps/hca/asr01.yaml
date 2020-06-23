@@ -37,6 +37,11 @@ elements:
     return x.map(lambda age: 'ASR' if age < 60 else 'Older Adult (60 and above): Past 2 months')
   source: hcpa
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - hcpa
+  
 
 - name: asr1
   rename: asr1_1

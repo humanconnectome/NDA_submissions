@@ -26,6 +26,13 @@ elements:
   source:
   - hcpa
 
+
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - hcpa
+  
+
 - rename: psqip1
   name: psqi1
   source: hcpa

@@ -1242,3 +1242,8 @@ sup_y_ss_sum_nm:
   type: Integer
   description: '7UP sum: Number Missing Answers'
   alias: s7upchildself_nm
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

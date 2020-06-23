@@ -1423,8 +1423,8 @@ wk_arthritis:
   - 1
   notes: No = 0; Yes = 1;
   codes:
-    0: 'No'
-    1: 'Yes'
+    'No': '0'
+    'Yes': '1'
 
 baseline_k_007:
   type: Integer
@@ -5210,6 +5210,7 @@ caregiver_edu:
   type: String
   length: 200
   description: 'Caregiver: Education level and major'
+  alias: education_other_par
 
 respond:
   type: Integer

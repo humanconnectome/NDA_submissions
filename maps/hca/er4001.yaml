@@ -25,6 +25,12 @@ elements:
   source:
     - PennCNP
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - PennCNP
+  
+
 - name: K_ER40D.valid_code
   rename: version_form
   source:

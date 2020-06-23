@@ -726,3 +726,8 @@ subtesttypenr:
   type: Integer
   description: Subtest Type No Response (NR),Total
   alias: wppsi_mxr_nr
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

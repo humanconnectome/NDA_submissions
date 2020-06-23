@@ -3863,7 +3863,8 @@ yrbsms_16:
     0: 'No'
 
 sitbi_65:
-  type: Integer
+  type: String
+  length: 20
   description: How many  times in your life have you engaged in  non-suicidal self-injury
     (NSSI)?
   alias: su12a

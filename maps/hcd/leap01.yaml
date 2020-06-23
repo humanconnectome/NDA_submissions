@@ -33,6 +33,14 @@ elements:
   - teen
   - parent
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - teen
+  - parent:
+      code: return "caregiver about child subject"
+
+
 - name: lan_know
   rename: lan_know
   source:

@@ -21,6 +21,11 @@ elements:
   source:
   - qint
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - qint
+  
 - name: gender
   rename: sex
   source:

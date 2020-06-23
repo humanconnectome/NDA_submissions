@@ -3177,3 +3177,8 @@ med15_frqcy:
   length: 10
   description: How often do you take [med15]?
   notes: Time(s)/(Day, Week, Month)
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

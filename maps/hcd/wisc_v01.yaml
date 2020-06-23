@@ -26,6 +26,12 @@ elements:
   source:
   - qint
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - qint
+  
+
 - name: wisc_matrixreason_score
   rename: matrixreason_score
   source:

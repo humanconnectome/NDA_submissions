@@ -1168,3 +1168,8 @@ handedness_11:
     2: LI
     3: RI
     4: RN
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

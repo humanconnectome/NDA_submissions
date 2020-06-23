@@ -598,3 +598,8 @@ mctq_school8:
   codes:
     1: 'Yes'
     0: 'No'
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)

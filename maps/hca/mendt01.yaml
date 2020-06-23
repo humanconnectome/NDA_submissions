@@ -26,6 +26,12 @@ elements:
   source:
   - hcpa
 
+- rename: comqother
+  code: return "subject about self"
+  source:
+  - hcpa
+  
+
 - rename: medication1_dosage
   name: med1_dose
   source: hcpa

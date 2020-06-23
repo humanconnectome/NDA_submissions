@@ -18,15 +18,24 @@ elements:
   source:
   - parent
 
+
 - name: interview_age
   rename: interview_age
   source:
   - parent
 
+
 - name: gender
   rename: sex
   source:
   - parent
+
+
+- rename: comqother
+  code: return "caregiver about child subject"
+  source:
+  - parent
+ 
 
 - name: cbclpre1
   rename: cbcl56a
@@ -60,7 +69,7 @@ elements:
 
 - name: cbclpre6
   rename: cbcl10
-  code: return x.fillna(999)
+  code: return 999
   source:
   - parent
 
@@ -443,13 +452,13 @@ elements:
 
 - name: cbclpre64
   rename: cbcl_bed
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre65
   rename: cbcl_toil
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
@@ -460,55 +469,55 @@ elements:
 
 - name: cbclpre66
   rename: cbcl68
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre67
   rename: cbcl_aff
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre68
   rename: cbcl71
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre69
   rename: cbcl_selfish
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre70
   rename: cbcl_littleaf
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre71
   rename: cbcl_inter
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre72
   rename: cbcl_fear
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre73
   rename: cbcl75
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre74
   rename: cbcl76
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
@@ -519,13 +528,13 @@ elements:
 
 - name: cbclpre75
   rename: cbcl_smear
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre76
   rename: cbcl79
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
@@ -536,25 +545,25 @@ elements:
 
 - name: cbclpre77
   rename: cbcl_stares
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre78
   rename: cbcl56f
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre79
   rename: cbcl_sad
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre80
   rename: cbcl84
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
@@ -565,73 +574,73 @@ elements:
 
 - name: cbclpre81
   rename: cbcl86
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre82
   rename: cbcl87
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre83
   rename: cbcl88
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre84
   rename: cbcl_crie
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre85
   rename: cbcl95
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre86
   rename: cbcl_clean
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre87
   rename: cbcl50
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre88
   rename: cbcl_uncoop
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre89
   rename: cbcl102
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre90
   rename: cbcl103
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre91
   rename: cbcl104
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre92
   rename: cbcl_people
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
@@ -642,43 +651,43 @@ elements:
 
 - name: cbclpre93
   rename: cbcl56g
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre94
   rename: cbcl_wake
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre95
   rename: cbcl_wand
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre96
   rename: cbcl19
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre97
   rename: cbcl109
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre98
   rename: cbcl_withdr
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
 - name: cbclpre99
   rename: cbcl112
-  code: return 999
+  code: return x.fillna(999)
   source:
   - parent
 
@@ -745,6 +754,7 @@ elements:
   source: ["parent"]
   code: return 999
 
+
 - rename: cbcl_anxiety_raw
   source: ["parent"]
   code: return 999
@@ -774,7 +784,6 @@ elements:
   code: return 999
 
 
-
 - name: dsm5_4_tvalue
   rename: cbcl_adhd
   source:
@@ -787,6 +796,7 @@ elements:
 
 - name: dsm5_1_tvalue
   rename: cbcl_affective
+  code: return x.fillna(999)
   source:
     - parent
 
@@ -797,6 +807,7 @@ elements:
 
 - name: ebs_7_tvalue
   rename: cbcl_aggressive
+  code: return x.fillna(999)
   source:
     - parent
 
@@ -807,6 +818,7 @@ elements:
 
 - name: dsm5_2_tvalue
   rename: cbcl_anxiety
+  code: return x.fillna(999)
   source:
     - parent
 
@@ -817,6 +829,7 @@ elements:
 
 - name: ebs_2_tvalue
   rename: cbcl_anxious
+  code: return x.fillna(999)
   source:
     - parent
 
@@ -827,6 +840,7 @@ elements:
 
 - name: ebs_6_tvalue
   rename: cbcl_attention
+  code: return x.fillna(999)
   source:
     - parent
 
@@ -837,6 +851,7 @@ elements:
 
 - name: ebs_1_tvalue
   rename: cbcl_emotional
+  code: return x.fillna(999)
   source:
     - parent
 
@@ -847,6 +862,7 @@ elements:
 
 - name: external_tvalue
   rename: cbcl_external
+  code: return x.fillna(999)
   source:
     - parent
 
@@ -857,11 +873,13 @@ elements:
 
 - name: external_scale_pre
   rename: cbcl_external_raw
+  code: return x.fillna(999)
   source:
     - parent
 
 - name: internal_tvalue
   rename: cbcl_internal
+  code: return x.fillna(999)
   source:
     - parent
 
@@ -872,6 +890,7 @@ elements:
 
 - name: internal_scale_pre
   rename: cbcl_internal_raw
+  code: return x.fillna(999)
   source:
     - parent
 
@@ -887,6 +906,7 @@ elements:
 
 - name: dsm5_3_tvalue
   rename: cbcl_pervasive
+  code: return x.fillna(999)
   source:
     - parent
 
@@ -897,6 +917,7 @@ elements:
 
 - name: ebs_5_tvalue
   rename: cbcl_sleep
+  code: return x.fillna(999)
   source:
     - parent
 
@@ -907,6 +928,7 @@ elements:
 
 - name: ebs_3_tvalue
   rename: cbcl_somatic_c
+  code: return x.fillna(999)
   source:
     - parent
 
@@ -917,6 +939,7 @@ elements:
 
 - name: tot_prob_tvalue
   rename: cbcl_total
+  code: return x.fillna(999)
   source:
     - parent
 
@@ -927,6 +950,7 @@ elements:
 
 - name: ebs_4_tvalue
   rename: cbcl_withdrawn
+  code: return x.fillna(999)
   source:
     - parent
 
@@ -935,7 +959,12 @@ elements:
   source:
     - parent
 
-- rename: kkaddp
+#- rename: kkaddp
+#  name: dsm5_1_scale
+#  source:
+#  - parent
+
+- rename: cbcl_dsm_affectiveproblems_raw
   name: dsm5_1_scale
   source:
   - parent
@@ -967,36 +996,43 @@ elements:
 
 - rename: cbcl_anxious_raw
   name: ebs_2_scale
+  code: return x.fillna(999)
   source:
   - parent
 
 - rename: cbcl_somatic_c_raw
   name: ebs_3_scale
+  code: return x.fillna(999)
   source:
   - parent
 
 - rename: cbcl_withdrawn_raw
   name: ebs_4_scale
+  code: return x.fillna(999)
   source:
   - parent
 
 - rename: cbcl_sleep_raw
   name: ebs_5_scale
+  code: return x.fillna(999)
   source:
   - parent
 
 - rename: cbcl_attention_raw
   name: ebs_6_scale
+  code: return x.fillna(999)
   source:
   - parent
 
 - rename: cbcl_aggressive_raw
   name: ebs_7_scale
+  code: return x.fillna(999)
   source:
   - parent
 
 - rename: cbcl_total_raw
   name: tot_prob_scale
+  code: return x.fillna(999)
   source:
   - parent
 

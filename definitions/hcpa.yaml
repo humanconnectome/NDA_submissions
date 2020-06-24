@@ -8469,19 +8469,51 @@ straw4b:
 straw_code:
   form: hcpa_block_1
   type: calc
-  label: "<font size=2.5>CODE:</font>\r\n1.11, Postmenopausal +1a\r\n1.12, Postmenopausal\
-    \ +1b \r\n1.13, Postmenopausal +1c\r\n1.14,  Postmenopausal +2\r\n1.21, Postmenopausal\r\
-    \n1.22, No periods for 12 months other reason\r\n2,      Late Transition\r\n2.2,\
-    \   Skipped periods not necessarily due to natural menopause\r\n3,      Early\
-    \ Transition \r\n4.1,   Late Reproductive (i.e., late premenopausal)\r\n4.2, \
-    \  Reproductive(i.e., premenopausal)"
-  choices: max( (if([straw1a]='1', 1.11, 'NaN')), (if([straw1a]='2', 1.12, 'NaN')),
-    (if([straw1a]='3', 1.13, 'NaN')), (if([straw1a]='4', 1.14, 'NaN')), (if([straw1b]='1',
-    1.21, 'NaN')), (if(([straw1b]>=2 and [straw1b]<=6), 1.22, 'NaN')), (if([straw2a]='1',
-    2, 'NaN')), (if([straw2b]>=1, 2.20, 'NaN')), (if([straw3b]='1', 3, 'NaN')), (if([straw4a]='1',
-    4.10, 'NaN')), (if([straw4b]='1', 4.10, 'NaN')), (if(([straw4a]='0' and [straw4b]='0'),
-    4.20, 'NaN')))
+  label: "1.11, If yes to 1a1 and 1b1, code as Postmenopausal +1a. \r\n1.12, If yes\
+    \ to 1a2 and 1b1, code as Postmenopausal +1b.\r\n1.13, If yes to 1a3 and 1b1,\
+    \ code as Postmenopausal +1c. \r\n1.14, If yes to 1a4 and 1b1, code as Postmenopausal\
+    \ +2. \r\n\r\n1.11002, If yes to 1a1, 1b2, 1b3, 1b5, 1b6, code as Postmenopausal\
+    \ +1a, \"no periods for 12 months other reason\". \r\n1.12002, If yes to 1a2,\
+    \ 1b2, 1b3, 1b5, 1b6, code as Postmenopausal +1b, \"no periods for 12 months other\
+    \ reason\". \r\n1.13002, If yes to 1a3, 1b2, 1b3, 1b5, 1b6, code as Postmenopausal\
+    \ +1c, \"no periods for 12 months other reason\". \r\n1.14002, If yes to 1a4,\
+    \ 1b2, 1b3, 1b5, 1b6, code as Postmenopausal +2, \"no periods for 12 months other\
+    \ reason\". \r\n\r\n1.11004, If yes to 1a1 and 1b4, code as Postmenopausal +1a,\
+    \ \"no periods for 12 months, IUD, Norplant, etc.\". \r\n1.12004, If yes to 1a2\
+    \ and 1b4, code as Postmenopausal +1b, \"no periods for 12 months, IUD, Norplant,\
+    \ etc.\". \r\n1.13004, If yes to 1a3 and 1b4, code as Postmenopausal +1c, \"no\
+    \ periods for 12 months, IUD, Norplant, etc.\". \r\n1.14004, If yes to 1a4 and\
+    \ 1b4, code as Postmenopausal +2, \"no periods for 12 months, IUD, Norplant, etc.\"\
+    . \r\n\r\n1.11007, If yes to 1a1 and 1b7, code as Postmenopausal +1a, \"unknown\"\
+    .\r\n1.12007, If yes to 1a2 and 1b7, code as Postmenopausal +1b, \"unknown\".\r\
+    \n1.13007, If yes to 1a3 and 1b7, code as Postmenopausal +1c, \"unknown\".\r\n\
+    1.14007, If yes to 1a4 and 1b7, code as Postmenopausal +2, \"unknown\".\r\n\r\n\
+    2, If yes to 2a, code as Late Transition\r\n2.2001, If yes to 2b1, 2b2, 2b4, 2b5,\
+    \ code as Skipped periods not necessarily due to natural menopause.\r\n2.2003,\
+    \ If yes to 2b3, code as Skipped periods, \"birth control injection or other med\"\
+    .\r\n\r\n3, If yes to 3b, code as Early Transition. \r\n\r\n4.1, If yes to 4a\
+    \ or 4b, code as Late Reproductive (i.e., late premenopausal).\r\n4.2, If no to\
+    \ both 4a and 4b, code as Reproductive(i.e., premenopausal)."
+  choices: max((if(([straw1a]='1' and [straw1b]='1'), 1.11, 'NaN')),  (if(([straw1a]='2'
+    and [straw1b]='1'), 1.12, 'NaN')),  (if(([straw1a]='3' and [straw1b]='1'), 1.13,
+    'NaN')),  (if(([straw1a]='4' and [straw1b]='1'), 1.14, 'NaN')),  (if(([straw1a]='1'
+    and ([straw1b]=2 or [straw1b]=3  or [straw1b]=5  or [straw1b]=6)), 1.11002, 'NaN')),  (if(([straw1a]='2'
+    and ([straw1b]=2 or [straw1b]=3  or [straw1b]=5  or [straw1b]=6)), 1.12002, 'NaN')),  (if(([straw1a]='3'
+    and ([straw1b]=2 or [straw1b]=3  or [straw1b]=5  or [straw1b]=6)), 1.13002, 'NaN')),  (if(([straw1a]='4'
+    and ([straw1b]=2 or [straw1b]=3  or [straw1b]=5  or [straw1b]=6)), 1.14002, 'NaN')),
+    (if(([straw1a]='1' and [straw1b]='4'), 1.11004, 'NaN')),  (if(([straw1a]='2' and
+    [straw1b]='4'), 1.12004, 'NaN')),  (if(([straw1a]='3' and [straw1b]='4'), 1.13004,
+    'NaN')),  (if(([straw1a]='4' and [straw1b]='4'), 1.14004, 'NaN')),   (if(([straw1a]='1'
+    and ([straw1b]='7' or [straw1b]='999')), 1.11007, 'NaN')),  (if(([straw1a]='2'
+    and ([straw1b]='7' or [straw1b]='999')), 1.12007, 'NaN')),  (if(([straw1a]='3'
+    and ([straw1b]='7' or [straw1b]='999')), 1.13007, 'NaN')),  (if(([straw1a]='4'
+    and ([straw1b]='7' or [straw1b]='999')), 1.14007, 'NaN')),  (if([straw2a]='1',
+    2, 'NaN')),  (if(([straw2b]='1' or [straw2b]='2' or [straw2b]='4' or [straw2b]='5'
+    or [straw2b]='999'), 2.2001, 'NaN')),  (if([straw2b]='3', 2.2003, 'NaN')),  (if([straw3b]='1',
+    3, 'NaN')),  (if(([straw4a]='1' or [straw4b]='1'), 4.1, 'NaN')),  (if(([straw4a]='0'
+    and [straw4b]='0'), 4.2, 'NaN')))
   branching: '[visit_1_arm_1][gender]=''2'''
+  alignment: LV
   annotation: '@HIDDEN-SURVEY'
 
 straw1miss:

@@ -1235,7 +1235,7 @@ gbi_76:
 
 sup_y_ss_sum:
   type: Integer
-  description: "7UP sum\r([sup_1_y]:[sup_7_y])\r; Validation: All items must be answered"
+  description: "7UP sum([sup_1_y]:[sup_7_y]); Validation: All items must be answered"
   alias: s7upchildself_sum
 
 sup_y_ss_sum_nm:

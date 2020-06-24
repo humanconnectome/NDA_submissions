@@ -1326,7 +1326,7 @@ cfmh_chd_seizure:
 
 wk_asthma:
   type: Integer
-  description: "Has she/he ever been to a doctor for any of these things?Asthma /Asma\r"
+  description: "Has she/he ever been to a doctor for any of these things?Asthma /Asma"
   range:
   - 0
   - 1

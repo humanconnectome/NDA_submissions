@@ -25903,7 +25903,7 @@ ale_total_number:
 ale_total_number_nm:
   form: life_events_scores
   type: calc
-  label: "Total Number of Events\rNumber Missing Answers"
+  label: "Total Number of Events Number Missing Answers"
   choices: 'sum((if([ale1] ="NaN", 1, 0)),
 
     (if([ale2] ="NaN", 1, 0)),

@@ -27813,7 +27813,7 @@ basm_rr:
 basm_drive_nm:
   form: bisbas_scores
   type: calc
-  label: "BAS drive (modified)\rNumber Missing Answers\r "
+  label: "BAS drive (modified) Number Missing Answers "
   choices: 'sum((if([bisbas13]="NaN", 1, 0)),
 
     (if([bisbas14]="NaN", 1, 0)),

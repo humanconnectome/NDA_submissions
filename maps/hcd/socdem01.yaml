@@ -5,18 +5,21 @@ funcs:
     return x.where(z >= 18, y)
 elements:
 
+#done
 - name: subjectkey
   rename: subjectkey
   source:
   - teen
   - parent
 
+#done
 - name: subject
   rename: src_subject_id
   source:
   - teen
   - parent
 
+#done
 - name: interview_date
   rename: interview_date
   func: format_date
@@ -24,18 +27,29 @@ elements:
   - teen
   - parent
 
+#done
 - name: interview_age
   rename: interview_age
   source:
   - teen
   - parent
 
+#done
 - name: gender
   rename: sex
   source:
   - teen
   - parent
 
+#done
+- rename: comqother
+  source:
+  - teen:
+      code: return "adult subject about self and family"
+  - parent:
+      code: return "caregiver about child subject and family"
+
+#done
 - name: sub_adopt
   rename: dembadpt
   recode:
@@ -45,6 +59,18 @@ elements:
   - parent:
       name: p_c_adopt
 
+#done
+- rename: sub_adopt_1
+  name:
+  - p_c_adopt_when
+  - p_c_adopt_when_unit
+  code: return X + " " + Y
+  request: Age at adoption is a free-text field. Please concatenate responses from
+    'sub_adopt_1' and 'sub_adopt_1unit' in the 'sub_adopt_1' column.
+  source:
+  - parent
+
+#done
 - rename: sub_adopt_1
   name:
   - sub_adopt_1
@@ -57,6 +83,7 @@ elements:
   source:
   - teen
 
+#done
 - func: convert_all_to_text
   name: sub_country
   rename: country_origin
@@ -64,40 +91,113 @@ elements:
   source:
   - teen
   - parent:
-      name: p_country
+      name: p_c_country
 
+#request
+- func: convert_all_to_text
+  name: p_country
+  rename: cg1_country_origin
+  request: Please convert numeric codes to the text strings they represent.
+  source:
+  - parent
+
+#done
 - name: sub_yrs_in_usa
-  rename: ustime_coded
+  rename: ustime
   source:
   - teen
-
-- rename: fspgod
-  code: return X + Y
-  old_code: return column.replace(CONST['gender']) + studydata.sub_gender_different.fillna('')
-  request:
-  - Gender identity is a free-text field.
-  - Please concatenate responses from "sub_gender" and "sub_gender_different"
-    in the "sub_gender" column.
-  source:
-  - teen:
-      name:
-        - sub_gender
-        - sub_gender_different
   - parent:
-      name:
-        - p_gender
-        - p_gender_different
+      name: p_c_yrs_in_usa
 
+# request
+- name: p_yrs_in_usa
+  rename: cg1_ustime
+  source:
+  - parent
+ 
 
+#done
+- rename: nimh_rv_dem_03
+  name: sub_gender
+  source:
+  - teen
+  - parent: 
+      name: p_c_gender
+  request: 
+  - Please decrement values 1::6 to 0::5. Values of 7 and 8 can remain the
+  recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+    6: 5
+
+# request 
+- rename: cg1_nimh_rv_dem_03
+  name: p_gender
+  source:
+   - parent 
+  request: 
+  - Please decrement values 1::6 to 0::5. Values of 7 and 8 can remain the
+  recode:
+    1: 0
+    2: 1
+    3: 2
+    4: 3
+    5: 4
+    6: 5
+
+#done
+- rename: fspgod
+  name: sub_gender_different
+  source:
+  - teen
+  - parent: 
+      name: p_c_gender_different
+
+# request
+- rename: cg1_fspgod
+  name: p_gender_different
+  source:
+  - parent 
+ 
+
+### old version keeping in just in case
+##- rename: fspgod
+##  code: return X + Y
+##  old_code: return column.replace(CONST['gender']) + studydata.sub_gender_different.fillna('')
+##  request:
+##  - Gender identity is a free-text field.
+##  - Please concatenate responses from "sub_gender" and "sub_gender_different"
+##    in the "sub_gender" column.
+##  source:
+##  - teen:
+##      name:
+##        - sub_gender
+##        - sub_gender_different
+##  - parent:
+##      name:
+##        - p_gender
+##        - p_gender_different
+
+#done
 - func: convert_all_to_text
   name: sub_marriage
   rename: das1ms
   request: Please convert numeric codes to the text strings they represent.
   source:
   - teen
-  - parent:
-      name: p_marriage
 
+#request
+- func: convert_all_to_text
+  name: p_marriage
+  rename: cg1_das1ms
+  request: Please convert numeric codes to the text strings they represent.
+  source:
+  - parent
+
+#done
 - func: convert_all_to_text
   name: sub_grade
   rename: bkgrnd_education
@@ -105,8 +205,18 @@ elements:
   source:
   - teen
   - parent:
-      name: p_grade
+      name: p_c_grade
 
+#request
+- func: convert_all_to_text
+  name: p_grade
+  rename: cg1_bkgrnd_education
+  request: Please convert numeric codes to the text strings they represent.
+  source:
+   - parent
+
+
+#done
 - old_code: |-
     return column.replace(CONST["working_status"]) + studydata.sub_job8_1.fillna("")
   name:
@@ -120,39 +230,69 @@ elements:
     answers ("sub_job8_1") with "sub_job" answers.
   source:
   - teen
-  - parent:
-      name:
-        - p_job
-        - p_job8_1
 
+#request
+- name:
+  - p_job
+  - p_job8_1
+  rename: cg1_area4_explain
+  code: return X + Y
+  request:
+  - Please convert numeric codes to the text strings they represent.
+  - Because "sub_job" is a free-text field, please concatenate subjects' specified
+    answers ("sub_job8_1") with "sub_job" answers.
+  source:
+  - parent
+
+#done
 - name: sub_job1_1
   rename: employcur
   source:
   - teen
-  - parent:
-      name: p_job1_1
 
+#request
+- name: p_job1_1
+  rename: cg1_employcur
+  source:
+  - parent
+
+#done
 - name: sub_job7_1
   rename: paofwork5
   source:
   - teen
-  - parent:
-      name: p_job7_1
 
+#request
+- name: p_job7_1
+  rename: cg1_paofwork5
+  source:
+  - parent
+      
+#done
 - name: sub_business
   rename: ind_type
   source:
   - teen
-  - parent:
-      name: p_business
 
+#request
+- name: p_business
+  rename: cg1_ind_type
+  source:
+  - parent
+
+#done
 - name: sub_work
   rename: jobh
   source:
   - teen
-  - parent:
-      name: p_work
 
+#request (is caregiver 1, even though says mom)
+- name: p_work
+  rename: dem_industry_mom_12
+  source:
+  - parent
+ 
+#done
 - name: sub_income_num
   rename: calm_inc1
   recode:
@@ -161,13 +301,20 @@ elements:
   source:
   - teen
 
+#done
 - rename: sub_income
-  source:
-  - teen:
-      name: sub_income
-  - parent:
-      name: p_income
+  name: sub_income
+  source: 
+  - teen
 
+#request
+- rename: cg1_sub_income
+  name: p_income
+  source: 
+  - parent
+
+#done - if 18 function based on skip logic in redcap database, but actually question not asked 
+# (e.g. family_income and family_income_question only asked if subject was < 18, which never the case)
 - rename: annual_fam_inc
   name: family_income
   recode:
@@ -183,6 +330,8 @@ elements:
         - age
   - parent
 
+#done - if 18 function based on skip logic in redcap database, but actually question not asked 
+# (e.g. family_income and family_income_question only asked if subject was < 18, which never the case)
 - rename: sub_income_famcode
   name: family_income_question
   source:
@@ -194,6 +343,7 @@ elements:
         - age
   - parent
 
+#done
 - name: sub_income_fampl
   rename: household_number_in_house
   source:
@@ -201,16 +351,26 @@ elements:
   - parent:
       name: family_size
 
+#note that devhx_3_p and devhx_4_p were originally mapped to the mab01 structure
+#done
 - name: sub_momage
   rename: preg_age_mom
   source:
   - teen
+  - parent:
+      name: devhx_3_p
 
+
+#done
 - name: sub_dadage
   rename: preg_age_dad
   source:
   - teen
+  - parent:
+      name: devhx_4_p
 
+
+#done
 - func: convert_all_to_text
   name: sub_bio_f_country
   rename: birthcountry_dad
@@ -220,6 +380,7 @@ elements:
   - parent:
       name: p_bio_f_country
 
+#done
 - func: convert_all_to_text
   name: sub_bio_m_county
   rename: birthcountry_mom
@@ -229,6 +390,7 @@ elements:
   - parent:
       name: p_bio_m_county
 
+#done
 - name: sub_mgrade
   rename: mother_edu_cat
   recode:
@@ -251,6 +413,7 @@ elements:
   source:
   - teen
 
+#done
 - name: sub_fgrade
   rename: father_edu_cat
   recode:
@@ -268,6 +431,15 @@ elements:
   source:
   - teen
 
+#done
+- rename: ptner_grade
+  name: ptner_grade
+  func: convert_all_to_text
+  request: Please convert numeric codes to the text strings they represent.
+  source:
+  - parent
+
+#done
 - name: family_income_dfct1
   rename: family_income_dfct1
   recode:
@@ -276,6 +448,7 @@ elements:
   - teen
   - parent
 
+#done
 - name: family_income_dfct2
   rename: family_income_dfct2
   recode:
@@ -284,6 +457,7 @@ elements:
   - teen
   - parent
 
+#done
 - name: family_income_dfct3
   rename: family_income_dfct3
   recode:
@@ -292,6 +466,7 @@ elements:
   - teen
   - parent
 
+#done
 - name: family_income_dfct4
   rename: family_income_dfct4
   recode:
@@ -300,6 +475,7 @@ elements:
   - teen
   - parent
 
+#done
 - name: family_income_dfct5
   rename: family_income_dfct5
   recode:
@@ -308,6 +484,7 @@ elements:
   - teen
   - parent
 
+#done
 - name: family_income_dfct6
   rename: family_income_dfct6
   recode:
@@ -316,6 +493,7 @@ elements:
   - teen
   - parent
 
+#done
 - name: family_income_dfct7
   rename: family_income_dfct7
   recode:
@@ -324,6 +502,7 @@ elements:
   - teen
   - parent
 
+#done
 - name: bio_mother
   rename: bio_mother
   recode:
@@ -331,6 +510,7 @@ elements:
   source:
   - parent
 
+#done
 - name: bio_father
   rename: bio_father
   recode:
@@ -338,6 +518,7 @@ elements:
   source:
   - parent
 
+#done
 - name: cust_parent
   rename: cust_parent
   recode:
@@ -345,81 +526,35 @@ elements:
   source:
   - parent
 
+# comqother used for different purposes
 #- name: other_parent
 #  rename: comqother
 #  source:
 #  - parent
 
-- name: p_c_grade
-  rename: p_c_grade
-  func: convert_all_to_text
-  source:
-  - parent
 
-- name: p_c_adopt_when
-  rename: demo_adopt_age
-  source:
-  - parent
+# wont work because p_race is checkbox
+#- func: convert_all_to_text
+#  name: p_race
+#  rename: fsprg
+#  request: Please convert numeric codes to the text strings they represent.
+#  source:
+#  - parent
 
-- name: p_c_adopt_when_unit
-  rename: p_c_adopt_when_unit
-  source:
-  - parent
+# grab race and ethincity from ndar_subjects' code
+#- name: p_latino
+#  rename: ethnicity
+#  recode:
+#    0: Not Hispanic or Latino
+#    1: Hispanic or Latino
+#    9: Unknown
+#  source:
+#  - parent
+#  - teen:
+#      name: sub_latino
 
-- rename: nimh_rv_dem_03
-  name: p_c_gender
-  recode:
-    1: 0
-    2: 1
-    3: 2
-    4: 3
-    5: 4
-    6: 5
-  request: Please decrement values 1::6 to 0::5. Values of 7 and 8 can remain the
-    same.
-  source:
-  - parent
 
-- name: p_c_gender_different
-  rename: p_c_gender_different
-  source:
-  - parent
-
-- func: convert_all_to_text
-  name: p_c_country
-  rename: p_c_country
-  request: Please convert numeric codes to the text strings they represent.
-  source:
-  - parent
-
-- name: p_c_yrs_in_usa
-  rename: p_c_yrs_in_usa
-  source:
-  - parent
-
-- func: convert_all_to_text
-  name: p_race
-  rename: fsprg
-  request: Please convert numeric codes to the text strings they represent.
-  source:
-  - parent
-
-- name: p_latino
-  rename: ethnicity
-  recode:
-    0: Not Hispanic or Latino
-    1: Hispanic or Latino
-    9: Unknown
-  source:
-  - parent
-  - teen:
-      name: sub_latino
-
-- name: p_yrs_in_usa
-  rename: ustime
-  source:
-  - parent
-
+#done
 - name: ptner_yn
   rename: ptner_yn
   recode:
@@ -427,6 +562,7 @@ elements:
   source:
   - parent
 
+#done
 - name: ptner_bio_parent
   rename: p_partnerbio
   recode:
@@ -434,45 +570,45 @@ elements:
   source:
   - parent
 
-- rename: ptner_grade
-  name: ptner_grade
-  func: convert_all_to_text
-  request: Please convert numeric codes to the text strings they represent.
-  source:
-  - parent
 
+#done
 - name: ptner_job
   rename: ptner_job
   source:
   - parent
 
+#done
 - name: ptner_job1_1
   rename: ptner_job1_1
   source:
   - parent
 
+#done
 - name: ptner_job7_1
   rename: ptner_job7_1
   source:
   - parent
 
+#done
 - name: ptner_job8_1
   rename: ptner_job8_1
   source:
   - parent
 
+#done
 - name: ptner_business
   rename: ptner_business
   source:
   - parent
 
+#done
 - name: ptner_work
   rename: ptner_work
   source:
   - parent
 
+#done
 - name: ptner_income
   rename: ptner_income
   source:
   - parent
-

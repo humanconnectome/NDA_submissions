@@ -1,0 +1,49 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - hcpa
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - hcpa
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - hcpa
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - hcpa
+
+- name: gender
+  rename: sex
+  source:
+  - hcpa
+
+#- rename: comqother
+#  code: return "subject about self"
+#  source:
+#  - hcpa
+  
+- name: trail1
+  rename: tmta_raw
+  source: hcpa
+
+- name: trail2
+  rename: tmtb_raw
+  source: hcpa
+
+- rename: versionchildadult
+  code: return "Adult"
+  source: hcpa
+
+- rename: seizures
+  code: return 999
+  source: hcpa
+  

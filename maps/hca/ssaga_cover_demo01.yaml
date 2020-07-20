@@ -1,0 +1,136 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - ssaga
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - ssaga
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - ssaga
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - ssaga
+
+- name: gender
+  rename: sex
+  source:
+  - ssaga
+
+- rename: fspgod
+  name: dm2
+  request: Please convert numeric codes to the text strings they represent.
+  old_code: studydata.dm2=studydata.dm2.str.replace('1','Male'); studydata.dm2=studydata.dm2.str.replace('2','Female')
+  func: convert_all_to_text
+  source: ssaga
+
+- rename: das1ms
+  name: dm9
+  request: Please convert numeric codes to the text strings they represent.
+  old_code: studydata.dm9=studydata.dm9.str.replace('1', 'MARRIED'); studydata.dm9=studydata.dm9.str.replace('2','WIDOWED');
+    studydata.dm9=studydata.dm9.str.replace('3', 'SEPARATED'); studydata.dm9=studydata.dm9.str.replace('4',
+    'DIVORCED'); studydata.dm9=studydata.dm9.str.replace('5', 'NEVER MARRIED'); studydata.dm9=studydata.dm9.str.replace('6',
+    'LIVING AS MARRIED')
+  source: ssaga
+  func: convert_all_to_text
+
+- rename: dm9_wyr
+  name: dm9_wyr
+  source: ssaga
+
+- rename: qa18
+  name: dm11
+  source: ssaga
+
+- rename: qa19
+  name: dm12
+  source: ssaga
+
+- rename: pregnancy_no
+  name: dm14
+  source: ssaga
+
+- rename: qa22
+  name: dm14_kidnum
+  source: ssaga
+
+- rename: bkgrnd_education
+  name: dm15
+  request: Please convert numeric codes to the text strings they represent.
+  func: convert_all_to_text
+  source: ssaga
+
+- rename: sh_hs
+  name: dm15a
+  request: Please recode 1 as 0 (for "No").
+  recode:
+    5: 1
+    1: 0
+  source: ssaga
+
+- rename: test_ged
+  name: dm15b
+  request: Please recode 1 as 0 (for "No").
+  recode:
+    5: 1
+    1: 0
+  source: ssaga
+
+- rename: ed_1_y
+  name: dm15e
+  request: Please recode 1 as 0 (for "No").
+  recode:
+    5: 1
+    1: 0
+  source: ssaga
+
+- rename: dm15f
+  name: dm15f
+  source: ssaga
+
+- rename: dm15g
+  name: dm15g
+  source: ssaga
+
+- rename: dm__16
+  name: dm16
+  source: ssaga
+
+- rename: eo4
+  name: dm17
+  request: Please recode 1 as 0 (for "No").
+  recode:
+    5: 1
+    1: 0
+  source: ssaga
+
+- rename: a2b_yn
+  name: dm17a
+  request: Please recode 1 as 0 (for "No").
+  recode:
+    5: 1
+    1: 0
+  source: ssaga
+
+- rename: annual_fam_inc
+  name: dm17b
+  request: Please convert numeric codes to the text strings they represent.
+  func: convert_all_to_text
+  source: ssaga
+
+- rename: household_number_in_house
+  name: dm17c
+  source: ssaga
+
+- rename: comments_misc
+  name: dm_notes
+  source: ssaga

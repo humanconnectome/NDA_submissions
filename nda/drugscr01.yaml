@@ -439,7 +439,7 @@ lab020:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
   alias: visitnum
 
@@ -806,12 +806,12 @@ pregnan:
   type: Integer
   description: pregnancy test
   range:
-  - 0::5
+  - 0::6
   - -7
   - 9
   notes: 0=Negative; 1=Positive; 2=Test not conducted; -7=Refused; 9=NA;3=Not pregnant
     (per pregnancy test); 4=Not pregnant (has not reached menarche); 5=Pregnancy suspected,
-    but not confirmed
+    but not confirmed; 6 = Equivocal
   alias: pregres,uds_pregnancy,urine_preg_results,urine_preg_results.
   codes:
     0: Negative
@@ -822,6 +822,7 @@ pregnan:
     3: Not pregnant (per pregnancy test)
     4: Not pregnant (has not reached menarche)
     5: Pregnancy suspected, but not confirmed
+    6: Equivocal
 
 alcohol_level:
   type: Float

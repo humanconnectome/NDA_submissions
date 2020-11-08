@@ -353,7 +353,7 @@ visitid:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
   alias: int1,session,timept,visit_name,visitnum,vtypvs
 
@@ -533,7 +533,7 @@ relationship:
   type: Integer
   description: Relationship of respondent to individual
   range:
-  - 1::93
+  - 1::95
   - -999
   notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
     (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
@@ -1139,12 +1139,28 @@ trt_grp:
   - 1CT
   - 2
   - 3
-  notes: 1=Group 1 first 8 weeks; 1AO=Group 1 8 week add on; 1CT=Group 1 8 week cross
-    taper; 2=Group 2; 3=Group 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  notes: "1=Group 1 first 8 weeks; 1AO=Group 1 8 week add on; 1CT=Group 1 8 week cross\
+    \ taper; 2=Group 2; 3=Group 3; 4 =active; 5=sham; 6=none; 7=ESDM High intensity;\
+    \ 8=ESDM Low intensity; 9=EIBI High intensity; 10=EIBI Low intensity; ESDM = Early\
+    \ Start Denver Model; \nEIBI = Early and Intensive Behavioral Intervention"
   codes:
     1: Group 1 first 8 weeks
     2: Group 2
     3: Group 3
+    4: active
+    5: sham
+    6: none
+    7: ESDM High intensity
+    8: ESDM Low intensity
+    9: EIBI High intensity
+    10: EIBI Low intensity
 
 etype:
   type: String
@@ -1555,7 +1571,7 @@ vtlq1:
   type: String
   length: 10
   description: Time Vital Signs taken
-  alias: hwv_time
+  alias: bp12,bp16,bp20,bp24,bp28,bp32,bp36,bp4,bp40,bp44,bp48,bp52,bp56,bp60,bp64,bp68,bp72,bp76,bp8,bp80,hwv_time
 
 vtl007:
   type: Float
@@ -1587,22 +1603,22 @@ vis_type:
   description: Visit type
   range:
   - 0::2
-  notes: 1=Phone; 0=doctor's office; 2=No, not phone interview
+  notes: 1=Phone/remote; 0=doctor's office/In person; 2=No, not phone interview
   alias: phone
   codes:
-    1: Phone
-    0: doctor's office
+    1: Phone/remote
+    0: doctor's office/In person
     2: No, not phone interview
 
 blood_ps:
   type: Integer
   description: systolic blood pressure
-  alias: bp_syst,bpsystolic,hwv_bp_systolic
+  alias: bp1,bp13,bp17,bp21,bp25,bp29,bp33,bp37,bp41,bp45,bp49,bp5,bp53,bp57,bp61,bp65,bp69,bp73,bp77,bp9,bp_syst,bpsystolic,hwv_bp_systolic
 
 blood_pd:
   type: Integer
   description: diastolic blood pressure
-  alias: bp_dias,bpdiastolic,diastoli,hwv_bp_diastolic
+  alias: bp10,bp14,bp18,bp2,bp22,bp26,bp30,bp34,bp38,bp42,bp46,bp50,bp54,bp58,bp6,bp62,bp66,bp70,bp74,bp78,bp_dias,bpdiastolic,diastoli,hwv_bp_diastolic
 
 date_updated:
   type: Date
@@ -2028,7 +2044,7 @@ wstcirc3:
 t1bmizy:
   type: Float
   description: BMI z-score
-  alias: bmi_z_score
+  alias: bmi_z_score,bmi_zscore
 
 vtl010a:
   type: Integer
@@ -2409,3 +2425,14 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+bp_stand:
+  type: String
+  length: 15
+  description: Blood Pressure Standing (for at least 1 minute), Systolic/Diastolic
+  alias: bp_standing
+
+bp3:
+  type: Float
+  description: Mean Arterial Pressure (MAP)
+  alias: bp11,bp15,bp19,bp23,bp27,bp31,bp35,bp39,bp43,bp47,bp51,bp55,bp59,bp63,bp67,bp7,bp71,bp75,bp79

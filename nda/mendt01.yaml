@@ -63,7 +63,7 @@ site:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
   alias: int1,rxhx_interval,visitlabel,vtyppmc
 
@@ -608,7 +608,7 @@ prndose6:
 
 medication1_frequency:
   type: String
-  length: 60
+  length: 120
   description: First medication frequency
   alias: med1_frqcy,med_freq,medlist_frequency,npmed_drug1_frequency,pmed_drug1_frequency,rxhx_freq,scidmed4_1d
 
@@ -3049,11 +3049,11 @@ concommeds_1_source:
   type: Integer
   description: Source of Information
   range:
-  - 1::7
-  - 9
+  - 1::10
   - 99
   notes: 1=Subject; 2=Health Professional; 3=Chart/Medical Record; 4=Family/friends/associate;
-    ; 5 = Prescribing Physician; 6 = Therapist; 7 = Pharmacy;  9=Other; 99=Unknown
+    ; 5 = Prescribing Physician; 6 = Therapist; 7 = Pharmacy; 9=Other; 99=Unknown;
+    10 = Research staff
   alias: med_source
   codes:
     1: Subject
@@ -3065,6 +3065,7 @@ concommeds_1_source:
     7: Pharmacy
     9: Other
     99: Unknown
+    10: Research staff
 
 mini_k_abuse_life:
   type: Integer

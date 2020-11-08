@@ -54,7 +54,7 @@ relationship:
   type: Integer
   description: Relationship of respondent to individual
   range:
-  - 1::93
+  - 1::95
   - -999
   notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
     (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
@@ -2816,7 +2816,7 @@ site:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
 
 cbp_4:

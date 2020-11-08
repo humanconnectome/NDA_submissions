@@ -825,7 +825,7 @@ daylastpd:
   type: String
   length: 30
   description: First day of last menstrual period ( in days/months/years ago)
-  alias: gynecological_hist_5,men_start
+  alias: gynecological_hist_5,men_start,mensthx07
 
 bcpever:
   type: Integer

@@ -2685,7 +2685,7 @@ year_mta:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
 
 eatq_p_ss_attention_nm:
@@ -2710,24 +2710,31 @@ eatq_p_ss_depressive_nm:
   description: Parent depressive mood number missing
 
 eatq_p_ss_fear:
-  type: Integer
-  description: 'Parent fear  Validation: Maximum of 1 item missing'
+  type: Float
+  description: 'PhenX Early Adolescent Temperament Q - Parent fear; sum(eatq_phenx_trouble_p,
+    eatq_phenx_attachment_p, eatq_phenx_ball_scared_p, eatq_phenx_dark_scared_p, eatq_phenx_alone_p,
+    eatq_phenx_worry_p); Validation: Maximum of 1 item missing'
 
 eatq_p_ss_fear_nm:
   type: Integer
   description: Parent fear number missing
 
 eatq_p_ss_frustration:
-  type: Integer
-  description: 'Parent frustration  Validation: Maximum of 1 item missing'
+  type: Float
+  description: 'PhenX Early Adolescent Temperament Q - Parent frustration ; sum(eatq_phenx_annoyed_p,
+    eatq_phenx_irritated_crit_p, eatq_phenx_irritated_place_p, eatq_phenx_irritated_enjoy_p,
+    eatq_phenx_disagree_p, eatq_phenx_frustrated_p); Validation: Maximum of 1 item
+    missing'
 
 eatq_p_ss_frustration_nm:
   type: Integer
   description: Parent frustration number missing
 
 eatq_p_ss_inhibitory:
-  type: Integer
-  description: 'Parent inhibitory  Validation: Maximum of 1 item missing'
+  type: Float
+  description: 'PhenX Early Adolescent Temperament Q - Parent inhibitory; sum(eatq_phenx_turn_taking_p,
+    eatq_phenx_open_present_p, eatq_phenx_impulse_p, eatq_phenx_laugh_control_p, eatq_phenx_stick_to_plan_p);
+    Validation: Maximum of 1 item missing'
 
 eatq_p_ss_inhibitory_nm:
   type: Integer
@@ -2742,16 +2749,21 @@ eatq_p_ss_negaffect_sup_nm:
   description: Super Scale Negative Affect Number Missing
 
 eatq_p_ss_shyness:
-  type: Integer
-  description: 'Parent shyness  Validation: Maximum of 1 item missing'
+  type: Float
+  description: 'PhenX Early Adolescent Temperament Q - Parent shyness; sum(eatq_phenx_social_p,
+    eatq_phenx_is_shy_p, eatq_phenx_not_shy_p, eatq_phenx_meet_p, eatq_phenx_shy_meet_p);
+    Validation: Maximum of 1 item missing'
 
 eatq_p_ss_shyness_nm:
   type: Integer
   description: Parent shyness number missing
 
 eatq_p_ss_surgency:
-  type: Integer
-  description: 'Parent surgency  Validation: Maximum of 1 item missing'
+  type: Float
+  description: 'PhenX Early Adolescent Temperament Q - Parent surgency; sum(eatq_phenx_africa_p,
+    eatq_phenx_ski_slope_p, eatq_phenx_city_move_p, eatq_phenx_sea_dive_p, eatq_phenx_travel_p,
+    eatq_phenx_race_car_p, eatq_phenx_school_excite_p, eatq_phenx_energized_p, eatq_phenx_rides_scared_p);
+    Validation: Maximum of 1 item missing'
 
 eatq_p_ss_surgency_nm:
   type: Integer
@@ -2772,8 +2784,11 @@ eatq_ypers:
     6, 12, 21, 24
 
 eatq_p_ss_activation:
-  type: Integer
-  description: 'Parent activation  Validation: Maximum of 1 item missing'
+  type: Float
+  description: 'PhenX Early Adolescent Temperament Q - Parent activation; sum(eatq_phenx_finish_p,
+    eatq_phenx_deal_p, eatq_phenx_before_hw_p, eatq_phenx_right_away_p, eatq_phenx_finish_hw_p,
+    eatq_phenx_early_start_p, eatq_phenx_puts_off_p); Validation: Maximum of 1 item
+    missing'
 
 eatq_ypls:
   type: Float
@@ -2810,26 +2825,57 @@ eatq_p_ss_activation_nm:
   description: Parent activation number missing
 
 eatq_p_ss_affiliation:
-  type: Integer
-  description: 'Parent affiliation  Validation: Maximum of 1 item missing'
+  type: Float
+  description: 'PhenX Early Adolescent Temperament Q - Parent affiliation; sum(eatq_phenx_care_p,
+    eatq_phenx_share_p, eatq_phenx_spend_time_p, eatq_phenx_hugs_p, eatq_phenx_close_rel_p,
+    eatq_phenx_friendly_p); Validation: Maximum of 1 item missing'
 
 eatq_p_ss_affiliation_nm:
   type: Integer
   description: Parent affiliation number missing
 
 eatq_p_ss_aggression:
-  type: Integer
-  description: 'Parent aggression  Validation: Maximum of 1 item missing'
+  type: Float
+  description: 'PhenX Early Adolescent Temperament Q - Parent aggression; sum(eatq_phenx_insult_p,
+    eatq_phenx_angry_hit_p, eatq_phenx_rude_p, eatq_phenx_blame_p, eatq_phenx_doorslam_p,
+    eatq_phenx_makes_fun_p, eatq_phenx_no_criticize_p); Validation: Maximum of 1 item
+    missing'
 
 eatq_p_ss_aggression_nm:
   type: Integer
   description: Parent aggression number missing
 
 eatq_p_ss_attention:
-  type: Integer
-  description: 'Parent attention  Validation: Maximum of 1 item missing'
+  type: Float
+  description: 'PhenX Early Adolescent Temperament Q - Parent attention; sum(eatq_phenx_concentrate_p,
+    eatq_phenx_distracted_p, eatq_phenx_try_focus_p, eatq_phenx_peripheral_p, eatq_phenx_sidetracked_p,
+    eatq_phenx_close_attention_p); Validation: Maximum of 1 item missing'
 
 comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+eatq_surgency:
+  type: Float
+  description: 'EATQ Score: Surgency'
+
+eatq_negaffect:
+  type: Float
+  description: 'EATQ Score: Negative Affect'
+
+eatq_hip:
+  type: Float
+  description: 'EATQ Score: High Intensity Pleasure Scale'
+
+eatq_effcont:
+  type: Float
+  description: 'EATQ Score: Effortful Control'
+
+eatq_pleasure:
+  type: Float
+  description: 'EATQ Score: Pleasure Sensitivity Scale'
+
+eatq_perception:
+  type: Float
+  description: 'EATQ Score: Perceptual Sensitivity Scale'

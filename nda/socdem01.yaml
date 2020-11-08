@@ -19,7 +19,7 @@ interview_date:
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
   notes: Required field
-  alias: assess_date,assessment_date,assessment_dt,bl_visit_date,consentdate,consented_study,date_demographics,date_interview_ses,date_taken,demo_date,demo_rpt_date,interviewdate,intvdate,pds_date,pp_date,profile_date,testing_date,visit_date
+  alias: assess_date,assessment_date,assessment_dt,bl_visit_date,consentdate,consented_study,date_demographics,date_interview_ses,date_taken,demo_date,demo_rpt_date,interviewdate,intvdate,pds_date,pp_date,profile_date,test_date_tele_screen,testing_date,visit_date
 
 interview_age:
   type: Integer
@@ -120,7 +120,7 @@ ethnic_group:
   type: String
   length: 255
   description: Ethnic group
-  alias: other_race
+  alias: if_yes_ask_for_clarificati,other_race
 
 bio_parent:
   type: Integer
@@ -156,7 +156,7 @@ relationship:
   type: Integer
   description: Relationship of respondent to individual
   range:
-  - 1::93
+  - 1::95
   - -999
   notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
     (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
@@ -376,27 +376,12 @@ bio_mother_education:
   length: 75
   description: Biological Mother Highest level of education
   range:
-  - Less than High School
-  - High School Degree
-  - GED
-  - Less than 7th Grade
-  - Jr. High School
-  - Some High School
-  - Some College
-  - Associates Degree
-  - Bachelors Degree
-  - Some Graduate Work
-  - Graduate Degree
-  - Never attended school
-  - Primary/all age/ Jnr. Secondary
-  - Secondary/High/Technical
-  - H.E.A.R.T/ Vocational
-  - Tertiary College/University
-  - Other tertiary- specify
-  - Other education-specify
-  - 99
-  - 77
-  - -999?
+  - '?'
+  notes: Less than High School;High School Degree;GED; Less than 7th Grade; Jr. High
+    School; Some High School; Some College;Associates Degree;Bachelors Degree;Some
+    Graduate Work;Graduate Degree; Never attended school ; Primary/all age/ Jnr. Secondary
+    ; Secondary/High/Technical ; H.E.A.R.T/ Vocational ; Tertiary College/University
+    ; Other tertiary- specify ; Other education-specify ; 99 ; 77; -999
   alias: mother_edu1
 
 mothertert_specify1:
@@ -479,29 +464,11 @@ bio_father_education:
   type: String
   length: 75
   description: Biological Father Highest level of education
-  range:
-  - Less than High School
-  - High School Degree
-  - GED
-  - Less than 7th Grade
-  - Jr. High School
-  - Some High School
-  - Some College
-  - Associates Degree
-  - Bachelors Degree
-  - Some Graduate Work
-  - Graduate Degree
-  - Never attended school
-  - Primary/all age/ Jnr. Secondary
-  - Secondary/High/Technical
-  - H.E.A.R.T/ Vocational
-  - Tertiary College/University
-  - Other tertiary- specify
-  - Other education-specify
-  - 99
-  - 77
-  - -999?
-  notes: 99= D/K ; 77= N/A; 999= Missing
+  notes: Less than High School;High School Degree;GED; Less than 7th Grade; Jr. High
+    School; Some High School; Some College;Associates Degree;Bachelors Degree;Some
+    Graduate Work;Graduate Degree; Never attended school ; Primary/all age/ Jnr. Secondary
+    ; Secondary/High/Technical ; H.E.A.R.T/ Vocational ; Tertiary College/University
+    ; Other tertiary- specify ; Other education-specify;99= D/K ; 77= N/A; 999= Missing
   alias: father_edu1
   codes:
     99: D/K
@@ -1198,7 +1165,7 @@ bkgrnd_education:
   type: String
   length: 1020
   description: Subject's education (school and preschool)
-  alias: b5,cbcl_grade_in_school,demo_childs_edu,demog_07,dm15,education,education_status,education_subject,p_grade,participant_education,sub_grade
+  alias: b5,cbcl_grade_in_school,demo_childs_edu,demog_07,dm15,education,education_status,education_subject,education_years,p_grade,participant_education,socio_5,sub_grade
 
 area4_explain:
   type: String
@@ -1216,6 +1183,7 @@ thous:
   type: Integer
   description: Total number of persons in household
   notes: 0=Does not apply (e.g., in institution), 99=unknown
+  alias: socio_6
   codes:
     0: Does not apply (e.g., in institution), 99=unknown
 
@@ -1223,7 +1191,7 @@ das1ms:
   type: String
   length: 200
   description: Marital status
-  alias: b3,dm9,marital_other,marital_stat,marital_status,p_marriage,sub_marriage
+  alias: b3,dm9,marital_other,marital_stat,marital_status,p_marriage,socio_4,sub_marriage
 
 aut_prebasic_insure99:
   type: String
@@ -1759,7 +1727,7 @@ ca243:
   range:
   - 1::3
   notes: 1=Right; 2=Left; 3=Mixed
-  alias: handedness,sub_handedness
+  alias: handedness,r_l_b,sub_handedness
   codes:
     1: Right
     2: Left
@@ -2132,51 +2100,9 @@ cg1_education:
   type: String
   length: 100
   description: Caregiver/Prent 1's Highest Level of Education
-  range:
-  - Some primary school
-  - Some high school
-  - High school diploma
-  - GED
-  - Some college or technical school
-  - Associate degree
-  - Baccalaureate degree
-  - Graduate or professional degree
-  - did not graduate from high school
-  - college graduate
-  - No formal schooling completed
-  - Nursery school to 4th grade
-  - 5th or 6th grade
-  - 7th or 8th grade
-  - 9th grade
-  - 10th grade
-  - 11th grade
-  - 12th grade, no diploma
-  - High School Graduate/GED or equivalent
-  - Some college credit, but less than 1 year
-  - Technical college/vocational school
-  - Associate degree
-  - Bachelors's degree
-  - Master's degree
-  - Professional degree
-  - Doctorate degree
-  - Refused
-  - Some elementary
-  - Elementary
-  - Some Middle School
-  - Middle School
-  - Some High School
-  - GED
-  - High School
-  - Trade School/Certification Program
-  - Undergraduate Degree
-  - Some Graduate School
-  - Less than 7th grade
-  - Junior High
-  - High School Graduate
-  - Some College
-  - Special Training After High School
-  - Graduate/Professional Training
-  - Some Grade School
+  notes: Some primary school;Some high school;High school diploma;GED;Some college
+    or technical school;Associate degree;Baccalaureate degree;Graduate or professional
+    degree; did not graduate from high school; college graduate; Middle School
   alias: educ,person1_education
 
 cg2_relationship:
@@ -2192,18 +2118,9 @@ cg2_education:
   type: String
   length: 100
   description: Caregiver/Parent 2's Highest Level of Education
-  range:
-  - Some primary school
-  - Some high school
-  - High school diploma
-  - GED
-  - Some college or technical school
-  - Associate degree
-  - Baccalaureate degree
-  - Graduate or professional degree
-  - did not graduate from high school
-  - college graduate
-  - Middle School
+  notes: Some primary school;Some high school;High school diploma;GED;Some college
+    or technical school;Associate degree;Baccalaureate degree;Graduate or professional
+    degree; did not graduate from high school; college graduate; Middle School
   alias: person2_education
 
 qaet1:
@@ -4098,7 +4015,7 @@ comments_misc:
   length: 4000
   description: Miscellaneous comments on study, interview, methodology relevant to
     this form data
-  alias: ac_demo,dm_notes
+  alias: ac_demo,dm_notes,notes
 
 sh_hs:
   type: Integer
@@ -4834,9 +4751,9 @@ rater_title:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
-  alias: evalcode
+  alias: evalcode,eventname
 
 time_assess:
   type: String
@@ -4864,7 +4781,7 @@ saps_ad10:
 aescode:
   type: Integer
   description: Staff code number of person completing this form
-  alias: ra,rs_demo
+  alias: ra,rs_demo,screening_administrator_in
 
 bio_father:
   type: Integer
@@ -5397,3 +5314,416 @@ hh_stepdad:
   codes:
     0: Absent from household
     1: Checked/Present
+
+socio_11:
+  type: Integer
+  description: Do you have your own mobile phone?
+  range:
+  - 0
+  - 1
+  - 3
+  notes: '1 = Yes ; 0 = No ; 3 = Yes, but currently it is damaged or not working '
+  codes:
+    1: 'Yes'
+    0: 'No'
+    3: Yes, but currently it is damaged or not working
+
+socio_11_1:
+  type: Integer
+  description: If you have your own mobile phone, what type of mobile phone do you
+    have?
+  range:
+  - 1
+  - 2
+  notes: '1 = Smartphone  ; 2 = Other '
+  codes:
+    1: Smartphone
+    2: Other
+
+socio_12:
+  type: Integer
+  description: Have you ever used a Smartphone?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+socio_12_1:
+  type: String
+  length: 20
+  description: If you have ever used a smartphone, whose smartphone have you used?
+  notes: '1 = Own  ; 2 = Family Member''s ; 3 = Friend''s ; 4 = Relative''s ; 5 =
+    Co-worker''s ; 6 = Any other''s '
+  codes:
+    1: Own
+    2: Family Member's
+    3: Friend's
+    4: Relative's
+    5: Co-worker's
+    6: Any other's
+
+gfsr_21:
+  type: String
+  length: 25
+  description: How long have you been at your current job
+  alias: socio_7
+
+socio_2:
+  type: Integer
+  description: 'What is your designation? '
+  range:
+  - 1
+  - 2
+  notes: 1 = Accredited Social Health Activist (ASHA) ; 2 = ASHA Facilitator
+  codes:
+    1: Accredited Social Health Activist (ASHA)
+    2: ASHA Facilitator
+
+socio_8:
+  type: String
+  length: 60
+  description: Which Community Health Center (CHC) are you working with?
+
+socio_9:
+  type: Integer
+  description: Have you participated in any training program on mental health?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+socio_9_1:
+  type: String
+  length: 60
+  description: Have you participated in any training program on mental health? If
+    yes, then how many months/years ago was this?
+
+socio_9_2:
+  type: String
+  length: 60
+  description: Have you participated in any training program on mental health? If
+    yes, then what was the name or subject of this training program?
+
+socio_10:
+  type: Integer
+  description: How much time did it take you to travel to reach this place? (i.e.,
+    where the data collection is currently taking place)
+  range:
+  - 1::1440
+  notes: In minutes
+
+cg1_employcur:
+  type: Integer
+  description: 'Caregiver/Parent 1: If working now, what is your current employment
+    status?'
+  range:
+  - 1::12
+  - -7
+  notes: 1=Full time; 2=Part time for pay; 3=Homemaker; 4=Incarcerated; 5=Disabled;
+    6=Leave of absence; 7=Unemployed; 8=Retired; 9=Other; 10=Student; 11=Volunteer;
+    -7=Refused; 12 = Maternity leave
+  codes:
+    1: Full time
+    2: Part time for pay
+    3: Homemaker
+    4: Incarcerated
+    5: Disabled
+    6: Leave of absence
+    7: Unemployed
+    8: Retired
+    9: Other
+    10: Student
+    11: Volunteer
+    -7: Refused
+    12: Maternity leave
+
+cg1_paofwork5:
+  type: Integer
+  description: 'Caregiver/Parent 1: If student, what type of student are you?'
+  range:
+  - 1::3
+  - -9
+  notes: 1 = Yes, Full-time; 2 = Yes, Part-time; 3 = Not a student, -9 = Missing Data
+  codes:
+    1: Yes, Full-time
+    2: Yes, Part-time
+    3: Not a student, -9 = Missing Data
+
+cg1_ind_type:
+  type: String
+  length: 100
+  description: 'Caregiver/Parent 1: In what kind of business or industry do (did)
+    you work?'
+
+cg1_sub_income:
+  type: Integer
+  description: 'Caregiver/Parent 1: How much did you earn, before taxes and other
+    deductions, during the past 12 months?'
+  range:
+  - 1::10
+  - 99
+  - 999
+  notes: 1 =Less than $5,000 ; 2 =$5,000 through $11,999 ; 3 =$12,000 through $15,999
+    ; 4 =$16,000 through $24,999 ; 5 =$25,000 through $34,999 ; 6 =$35,000 through
+    $49,999 ; 7 =$50,000 through $74,999 ; 8 =$75,000 through $99,999 ; 9 =$100,000
+    through $199,999 ; 10 =$200,000 and greater; 99 = Don't Know; 999 = Don't wish
+    to answer
+  codes:
+    1: Less than $5,000
+    2: $5,000 through $11,999
+    3: $12,000 through $15,999
+    4: $16,000 through $24,999
+    5: $25,000 through $34,999
+    6: $35,000 through $49,999
+    7: $50,000 through $74,999
+    8: $75,000 through $99,999
+    9: $100,000 through $199,999
+    10: $200,000 and greater
+    99: Don't Know
+    999: Don't wish to answer
+
+cg1_bkgrnd_education:
+  type: String
+  length: 65
+  description: 'Caregiver/Parent 1: What is the highest grade or level of school you
+    have completed or the highest degree you have received?'
+
+dem_industry_mom_12:
+  type: String
+  length: 200
+  description: 'For your current or most recent job, in what kind of industry did/do
+    you work? (For example: hospital, auto engine manufacturing, newspaper publishing,
+    mail order house) (Parent/Caregiver 1)'
+  alias: cg1_jobh
+
+cg1_country_origin:
+  type: String
+  length: 70
+  description: 'Caregiver/Parent 1: In which country were you born?'
+
+cg1_ustime:
+  type: String
+  length: 50
+  description: 'Caregiver/Parent 1: How many years have you lived in the United States:'
+
+cg1_nimh_rv_dem_03:
+  type: Integer
+  description: 'Caregiver/Parent 1: What is your current gender identity? '
+  range:
+  - 0::5
+  - 7
+  - 8
+  notes: 0=Male; 1=Female; 2=Trans male/Trans man; 3=Trans female/Trans woman; 4=Genderqueer
+    or Gender non-conforming; 5=Different identity; 7 = Refused; 8 = Don't Know
+  codes:
+    0: Male
+    1: Female
+    2: Trans male/Trans man
+    3: Trans female/Trans woman
+    4: Genderqueer or Gender non-conforming
+    5: Different identity
+    7: Refused
+    8: Don't Know
+
+cg1_fspgod:
+  type: String
+  length: 100
+  description: 'Caregiver/Parent 1: Please state if you have a different gender identity:'
+
+cg1_das1ms:
+  type: String
+  length: 100
+  description: 'Caregiver/Parent 1: Are you now married, widowed, divorced, separated,
+    never married or living with a partner? '
+
+cg1_area4_explain:
+  type: String
+  length: 150
+  description: 'Caregiver/Parent 1: We would like to know about what you do - are
+    you working now, looking for work, retired, taking care of children, a student,
+    or what?'
+
+reading_recognizing:
+  type: Integer
+  description: Do you have problems reading a newspaper or recognizing someone from
+    across the room related to macular degeneration?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+both_eyes:
+  type: Integer
+  description: Is your macular degeneration in both eyes?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+left_eye_diagnosis:
+  type: Integer
+  description: Left Eye Diagnosis (type of macular degeneration)
+  range:
+  - 1::3
+  notes: 1 = Dry ; 2 = Wet ; 3 = Other
+  codes:
+    1: Dry
+    2: Wet
+    3: Other
+
+right_eye_diagnosis:
+  type: Integer
+  description: Right Eye Diagnosis (type of macular degeneration)
+  range:
+  - 1::3
+  notes: 1 = Dry ; 2 = Wet ; 3 = Other
+  codes:
+    1: Dry
+    2: Wet
+    3: Other
+
+drive_yourself:
+  type: Integer
+  description: Are you able to drive yourself?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+distance_from_bhm:
+  type: String
+  length: 15
+  description: About how far away from Birmingham do you live?
+
+mr_compatible:
+  type: Integer
+  description: In order to ensure your comfort in the MRI scanner - is your weight
+    above 300 pounds or your waist circumference (belt size) greater than 60 inches?
+    (If yes to either, then patient is ineligible).
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+lie_flat_in_scanner:
+  type: Integer
+  description: Do you have any neck problems that would make it difficult to lie flat
+    on a bed with no pillow?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+doctor_referral:
+  type: Integer
+  description: Are you calling because you heard about us through your eye doctor?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+visualacuity1:
+  type: Float
+  description: Visual acuity from doctor
+  notes: out of 20
+  alias: visual_acuity
+
+voicemail:
+  type: String
+  length: 25
+  description: Time and date the voicemail was left.
+
+when_could_i_call_you_back:
+  type: String
+  length: 20
+  description: When could I call you back to finish the questionnaire?
+
+md_diagnosis:
+  type: Integer
+  description: Have you ever been diagnosed with Macular Degeneration?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+type_of_md:
+  type: Integer
+  description: Is your Macular Degeneration age-related or juvenile?
+  range:
+  - 1::3
+  notes: 1 = Age Related ; 2 = Juvenile ; 3 = Other
+  codes:
+    1: Age Related
+    2: Juvenile
+    3: Other
+
+kind_of_md_if_other:
+  type: String
+  length: 20
+  description: What kind of Macular Degeneration if other?
+
+time_since_diagnosis:
+  type: String
+  length: 15
+  description: How long have you been diagnosed with macular degeneration?
+  notes: in months
+
+studyinfo:
+  type: Integer
+  description: Would you like me to tell you about our study?
+  range:
+  - 1::3
+  notes: 1 = Yes, Now ; 2 = Yes, Later ; 3 = No
+  alias: study_info
+  codes:
+    1: Yes, Now
+    2: Yes, Later
+    3: 'No'
+
+ps_prime_income:
+  type: Integer
+  description: Family income at year 1
+  range:
+  - 1::8
+  - -999
+  notes: 1 = less than $25,000 ; 2 = $25,000 - $34,999 ; 3 = $35,000 - $49,999 ; 4
+    = $50,000 - $74,999 ; 5 = $75,000 - $99,999 ; 6 = $100,000 - $129,999 ; 7 = $130,000
+    - $149,999 ; 8 = higher than $150,000 ; -999 = Declined to answer/Respondent does
+    not know
+  codes:
+    1: less than $25,000
+    2: $25,000 - $34,999
+    3: $35,000 - $49,999
+    4: $50,000 - $74,999
+    5: $75,000 - $99,999
+    6: $100,000 - $129,999
+    7: $130,000 - $149,999
+    8: higher than $150,000
+    -999: Declined to answer/Respondent does not know

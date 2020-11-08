@@ -873,7 +873,7 @@ bis_y_ss_basm_drive_nt:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
   alias: eventname
 
@@ -1165,6 +1165,7 @@ respondent:
   - Other
   - Parent
   - Teacher
+  - Child
 
 bisbas_16a:
   type: Integer
@@ -1218,3 +1219,15 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+vis_type:
+  type: Integer
+  description: Visit type
+  range:
+  - 0::2
+  notes: 1=Phone/remote; 0=doctor's office/In person; 2=No, not phone interview
+  alias: visit_type,visit_type_12,visit_type_6
+  codes:
+    1: Phone/remote
+    0: doctor's office/In person
+    2: No, not phone interview

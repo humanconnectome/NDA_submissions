@@ -400,12 +400,28 @@ trt_grp:
   - 1CT
   - 2
   - 3
-  notes: 1=Group 1 first 8 weeks; 1AO=Group 1 8 week add on; 1CT=Group 1 8 week cross
-    taper; 2=Group 2; 3=Group 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  notes: "1=Group 1 first 8 weeks; 1AO=Group 1 8 week add on; 1CT=Group 1 8 week cross\
+    \ taper; 2=Group 2; 3=Group 3; 4 =active; 5=sham; 6=none; 7=ESDM High intensity;\
+    \ 8=ESDM Low intensity; 9=EIBI High intensity; 10=EIBI Low intensity; ESDM = Early\
+    \ Start Denver Model; \nEIBI = Early and Intensive Behavioral Intervention"
   codes:
     1: Group 1 first 8 weeks
     2: Group 2
     3: Group 3
+    4: active
+    5: sham
+    6: none
+    7: ESDM High intensity
+    8: ESDM Low intensity
+    9: EIBI High intensity
+    10: EIBI Low intensity
 
 days_baseline:
   type: Integer
@@ -448,7 +464,7 @@ relationship:
   type: Integer
   description: Relationship of respondent to individual
   range:
-  - 1::93
+  - 1::95
   - -999
   notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
     (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
@@ -638,7 +654,7 @@ pds_ave:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
   alias: eventname,stais_visit,timepoint
 
@@ -769,7 +785,7 @@ accult_select_language:
   range:
   - 0
   - 1
-  notes: 0=No; 1=Yes
+  notes: 0 = No; 1 = Yes
   alias: pds_select_language___1
   codes:
     0: 'No'
@@ -836,6 +852,7 @@ menstrualcycle5_y:
   range:
   - 1::4
   - 777
+  - 999
   notes: 1 = Not at all; 2 = Mild; 3 = Moderate; 4 = Severe; 777 = Decline to answer;
     The following questions are about the history of your menstrual cycle. If you
     do not remember specific details, just try to answer as best you can.
@@ -854,6 +871,7 @@ menstrualcycle6_y:
   range:
   - 1::4
   - 777
+  - 999
   notes: 1 = Not at all; 2 = Mild; 3 = Moderate; 4 = Severe; 777 = Decline to answer;
     The following questions are about the history of your menstrual cycle. If you
     do not remember specific details, just try to answer as best you can.

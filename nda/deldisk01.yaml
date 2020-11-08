@@ -813,7 +813,7 @@ aurora_device:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
   alias: delaydisc_timepoint
 
@@ -924,6 +924,7 @@ respondent:
   - Other
   - Parent
   - Teacher
+  - Child
 
 sv_6mo_200:
   type: Float

@@ -70,7 +70,7 @@ visnum:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
   alias: assessment
 
@@ -520,7 +520,7 @@ family_history:
 
 bkgrnd_diag:
   type: String
-  length: 255
+  length: 1020
   description: Diagnosis. Provided by parent
 
 surm046a:
@@ -1200,9 +1200,9 @@ ed9a:
 
 ed10:
   type: Integer
-  description: 'Has there ever been a time in your life when you went on eating binges
-    -- eating a large amount of food in a short period of time (usually less than
-    2 hours)? '
+  description: 'ED10: Has there ever been a time in your life when you went on eating
+    binges -- eating a large amount of food in a short period of time (usually less
+    than 2 hours)?'
   range:
   - 1
   - 3

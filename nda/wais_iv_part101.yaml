@@ -148,7 +148,7 @@ scoring_vocabulary_group:
 scoring_arithmetic_raw:
   type: Float
   description: Arithmetic Raw Score
-  alias: WAIS_IV_Scoring_Arithmetic_Raw
+  alias: WAIS_IV_Scoring_Arithmetic_Raw,arithmetic_totalrawscore
 
 scoring_arithmetic_scaled:
   type: Float
@@ -168,7 +168,7 @@ scoring_arithmetic_group:
 scoring_symbolsearch_raw:
   type: Float
   description: Symbol Search Raw Score
-  alias: WAIS_IV_Scoring_SymbolSearch_Raw,symbolsearchrawscore
+  alias: WAIS_IV_Scoring_SymbolSearch_Raw,symbolsearch_totalrawscore,symbolsearchrawscore
 
 scoring_symbolsearch_scaled:
   type: Float
@@ -188,7 +188,7 @@ scoring_symbolsearch_group:
 scoring_visualpuzzles_raw:
   type: Float
   description: Visual Puzzles Raw Score
-  alias: WAIS_IV_Scoring_VisualPuzzles_Raw
+  alias: WAIS_IV_Scoring_VisualPuzzles_Raw,visualpuzzles_totalrawscore
 
 scoring_visualpuzzles_scaled:
   type: Float
@@ -208,7 +208,7 @@ scoring_visualpuzzles_group:
 scoring_information_raw:
   type: Float
   description: Information Raw Score
-  alias: WAIS_IV_Scoring_Information_Raw
+  alias: WAIS_IV_Scoring_Information_Raw,information_totalrawscore
 
 scoring_information_scaled:
   type: Float
@@ -283,7 +283,7 @@ scoring_figureweights_group:
 scoring_comprehension_raw:
   type: Float
   description: Comprehension Raw Score
-  alias: WAIS_IV_Scoring_Comprehension_Raw
+  alias: WAIS_IV_Scoring_Comprehension_Raw,comprehension_totalrawscore
 
 scoring_comprehension_scaled:
   type: Float
@@ -5287,7 +5287,7 @@ relationship:
   type: Integer
   description: Relationship of respondent to individual
   range:
-  - 1::93
+  - 1::95
   - -999
   notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
     (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
@@ -5484,7 +5484,7 @@ iqlang:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
 
 scoring_conv_confidence_wm:

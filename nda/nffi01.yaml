@@ -49,7 +49,7 @@ sex:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
 
 dayscons:
@@ -64,7 +64,7 @@ nffi_1:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_01,neo_01,neo_ne1,worrier
+  alias: neo2_01,neo_01,neo_ne1,neoffi_1,worrier
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -80,7 +80,7 @@ nffi_2:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_02,neo_02,peopleme
+  alias: neo2_02,neo_02,neoffi_2,peopleme
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -95,14 +95,14 @@ nffi_3:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
   alias: daydream,neo2_03,neo_03
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_4:
@@ -112,7 +112,7 @@ nffi_4:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: crteous,neo2_04,neo_04
+  alias: crteous,neo2_04,neo_04,neoffi_4
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -128,7 +128,7 @@ nffi_5:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: cleaneat,neo2_05,neo_05
+  alias: cleaneat,neo2_05,neo_05,neoffi_5
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -160,7 +160,7 @@ nffi_7:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: laugh,neo2_07,neo_07
+  alias: laugh,neo2_07,neo_07,neoffi_7
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -175,14 +175,14 @@ nffi_8:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
   alias: neo2_08,neo_08,rightway
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_9:
@@ -191,14 +191,14 @@ nffi_9:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
   alias: argument,neo2_9a,neo_09
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_10:
@@ -208,7 +208,7 @@ nffi_10:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_10,neo_10,pace
+  alias: neo2_10,neo_10,neoffi_10,pace
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -225,7 +225,7 @@ nffi_11:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_11,neo_11,neo_ne3,stress
+  alias: neo2_11,neo_11,neo_ne3,neoffi_11,stress
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -240,14 +240,14 @@ nffi_12:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
   alias: lighthrt,neo2_12,neo_12
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_13:
@@ -257,7 +257,7 @@ nffi_13:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: artnture,neo2_13,neo_13
+  alias: artnture,neo2_13,neo_13,neoffi_13
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -272,14 +272,14 @@ nffi_14:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_14,neo_14,selfish
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
+  alias: neo2_14,neo_14,neoffi_14,selfish
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_15:
@@ -304,14 +304,14 @@ nffi_16:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: feelblue,neo2_16,neo_16,neo_ne4
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
+  alias: feelblue,neo2_16,neo_16,neo_ne4,neoffi_16
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_17:
@@ -321,7 +321,7 @@ nffi_17:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: enjytalk,neo2_17,neo_17
+  alias: enjytalk,neo2_17,neo_17,neoffi_17
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -337,14 +337,14 @@ nffi_18:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: mislead,neo2_18,neo_18
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
+  alias: mislead,neo2_18,neo_18,neoffi_18
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_19:
@@ -370,7 +370,7 @@ nffi_20:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: dotasks,neo2_20,neo_20
+  alias: dotasks,neo2_20,neo_20,neoffi_20
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -386,7 +386,7 @@ nffi_21:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: jittery,neo2_21,neo_21,neo_ne5
+  alias: jittery,neo2_21,neo_21,neo_ne5,neoffi_21
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -402,7 +402,7 @@ nffi_22:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: action,neo2_22,neo_22
+  alias: action,neo2_22,neo_22,neoffi_22
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -417,14 +417,14 @@ nffi_23:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_23,neo_23,poetry
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
+  alias: neo2_23,neo_23,neoffi_23,poetry
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_24:
@@ -433,14 +433,14 @@ nffi_24:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
   alias: cynical,neo2_24,neo_24
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_25:
@@ -450,7 +450,7 @@ nffi_25:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_25,neo_25,setgoal
+  alias: neo2_25,neo_25,neoffi_25,setgoal
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -466,7 +466,7 @@ nffi_26:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_26,neo_26,neo_ne6,worthles
+  alias: neo2_26,neo_26,neo_ne6,neoffi_26,worthles
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -481,14 +481,14 @@ nffi_27:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
   alias: doalone,neo2_27,neo_27
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_28:
@@ -513,14 +513,14 @@ nffi_29:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
   alias: advntage,neo2_29,neo_29
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_30:
@@ -530,7 +530,7 @@ nffi_30:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_30,neo_30,wstetime
+  alias: neo2_30,neo_30,neoffi_30,wstetime
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -545,14 +545,14 @@ nffi_31:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: feelfear,neo2_31,neo_31,neo_ne7
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
+  alias: feelfear,neo2_31,neo_31,neo_ne7,neoffi_31
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_32:
@@ -562,7 +562,7 @@ nffi_32:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: feelengy,neo2_32,neo_32
+  alias: feelengy,neo2_32,neo_32,neoffi_32
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -577,14 +577,14 @@ nffi_33:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: feelmood,neo2_33,neo_33
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
+  alias: feelmood,neo2_33,neo_33,neoffi_33
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_34:
@@ -610,7 +610,7 @@ nffi_35:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_35,neo_35,workhard
+  alias: neo2_35,neo_35,neoffi_35,workhard
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -626,7 +626,7 @@ nffi_36:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_36,neo_36,neo_ne8,treatme
+  alias: neo2_36,neo_36,neo_ne8,neoffi_36,treatme
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -642,7 +642,7 @@ nffi_37:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: highsprt,neo2_37,neo_37
+  alias: highsprt,neo2_37,neo_37,neoffi_37
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -658,14 +658,14 @@ nffi_38:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
   alias: moraliss,neo2_38,neo_38
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_39:
@@ -674,14 +674,14 @@ nffi_39:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: coldcalc,neo2_39,neo_39
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
+  alias: coldcalc,neo2_39,neo_39,neoffi_39
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_40:
@@ -691,7 +691,7 @@ nffi_40:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: counton,neo2_40,neo_40
+  alias: counton,neo2_40,neo_40,neoffi_40
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -708,7 +708,7 @@ nffi_41:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: gowrong,neo2_41,neo_41,neo_ne9
+  alias: gowrong,neo2_41,neo_41,neo_ne9,neoffi_41
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -723,14 +723,14 @@ nffi_42:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
   alias: neo2_42,neo_42,optimist
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_43:
@@ -741,7 +741,7 @@ nffi_43:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_43,neo_43,workart
+  alias: neo2_43,neo_43,neoffi_43,workart
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -756,14 +756,14 @@ nffi_44:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
   alias: hardhead,neo2_44,neo_44
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_45:
@@ -773,7 +773,7 @@ nffi_45:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_45,neo_45,reliable
+  alias: neo2_45,neo_45,neoffi_45,reliable
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -788,14 +788,14 @@ nffi_46:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_46,neo_46,neo_ne10,saddepr
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
+  alias: neo2_46,neo_46,neo_ne10,neoffi_46,saddepr
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_47:
@@ -805,7 +805,7 @@ nffi_47:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: fastpace,neo2_47,neo_47
+  alias: fastpace,neo2_47,neo_47,neoffi_47
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -821,14 +821,14 @@ nffi_48:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_48,neo_48,universe
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
+  alias: neo2_48,neo_48,neoffi_48,universe
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_49:
@@ -838,7 +838,7 @@ nffi_49:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_49,neo_49,thoughtf
+  alias: neo2_49,neo_49,neoffi_49,thoughtf
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -854,7 +854,7 @@ nffi_50:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: jobdone,neo2_50,neo_50
+  alias: jobdone,neo2_50,neo_50,neoffi_50
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -870,7 +870,7 @@ nffi_51:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_51,neo_51,neo_ne11,solvprob
+  alias: neo2_51,neo_51,neo_ne11,neoffi_51,solvprob
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -886,7 +886,7 @@ nffi_52:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: active,neo2_52,neo_52
+  alias: active,neo2_52,neo_52,neoffi_52
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -902,7 +902,7 @@ nffi_53:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: icurious,neo2_53,neo_53
+  alias: icurious,neo2_53,neo_53,neoffi_53
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -917,14 +917,14 @@ nffi_54:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: dontlike,neo2_54,neo_54
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
+  alias: dontlike,neo2_54,neo_54,neoffi_54
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_55:
@@ -934,7 +934,7 @@ nffi_55:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_55,neo_55,organizd
+  alias: neo2_55,neo_55,neoffi_55,organizd
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -950,7 +950,7 @@ nffi_56:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: ashamed,neo2_56,neo_56,neo_ne12
+  alias: ashamed,neo2_56,neo_56,neo_ne12,neoffi_56
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -965,14 +965,14 @@ nffi_57:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: leader,neo2_57,neo_57
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
+  alias: leader,neo2_57,neo_57,neoffi_57
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_58:
@@ -982,7 +982,7 @@ nffi_58:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: abstract,neo2_58,neo_58
+  alias: abstract,neo2_58,neo_58,neoffi_58
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -997,14 +997,14 @@ nffi_59:
   range:
   - 1::5
   - -7
-  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: manipul,neo2_59,neo_59
+  notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
+  alias: manipul,neo2_59,neo_59,neoffi_59
   codes:
-    1: Strongly Disagree
-    2: Disagree
+    5: Strongly Disagree
+    4: Disagree
     3: Neutral
-    4: Agree
-    5: Strongly agree
+    2: Agree
+    1: Strongly agree
     -7: Refused
 
 nffi_60:
@@ -1014,7 +1014,7 @@ nffi_60:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_60,neo_60,strive
+  alias: neo2_60,neo_60,neoffi_60,strive
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -1126,3 +1126,4 @@ respondent:
   - Other
   - Parent
   - Teacher
+  - Child

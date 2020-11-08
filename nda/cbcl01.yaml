@@ -4271,7 +4271,7 @@ relationship:
   type: Integer
   description: Relationship of respondent to individual
   range:
-  - 1::93
+  - 1::95
   - -999
   notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
     (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
@@ -5194,7 +5194,7 @@ ysr17_7:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
   alias: cbcl_interval,eventname,timept
 
@@ -5539,6 +5539,7 @@ respondent:
   - Other
   - Parent
   - Teacher
+  - Child
   alias: filby
 
 respondent_other_specify:
@@ -6044,7 +6045,7 @@ accult_select_language:
   range:
   - 0
   - 1
-  notes: 0=No; 1=Yes
+  notes: 0 = No; 1 = Yes
   alias: cbcl_select_language___1
   codes:
     0: 'No'

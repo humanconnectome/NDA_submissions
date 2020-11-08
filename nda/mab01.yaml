@@ -1131,10 +1131,12 @@ matern_nicu:
   range:
   - 0
   - 1
-  notes: 0 = No; 1 = Yes
+  - -999
+  notes: 0= No; 1= Yes; -999= Prefer not to answer
   codes:
     0: 'No'
     1: 'Yes'
+    -999: Prefer not to answer
 
 matern_nicu_days:
   type: Integer
@@ -3669,3 +3671,8 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+visit:
+  type: String
+  length: 60
+  description: Visit name

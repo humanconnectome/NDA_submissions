@@ -291,12 +291,13 @@ aurora_device:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
 
 emorecog_accuracy:
   type: Float
   description: Prop Correct Responses Across All Trials
+  alias: penn_er40_acc
 
 emorecog_meanrtc:
   type: Float
@@ -2352,6 +2353,7 @@ respondent:
   - Other
   - Parent
   - Teacher
+  - Child
 
 er40_d_fc:
   type: Integer
@@ -2406,6 +2408,7 @@ cogbias_state:
 er_t:
   type: Float
   description: Emotion response time in seconds(in seconds)
+  alias: penn_er40_resp
 
 iar_t:
   type: Float
@@ -2419,3 +2422,483 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+er_t8:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 8
+
+cr_t18:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 18
+
+cr_t19:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 19
+
+cr_t20:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 20
+
+cr_t21:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 21
+
+cr_t22:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 22
+
+cr_t23:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 23
+
+cr_t24:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 24
+
+cr_t25:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 25
+
+cr_t26:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 26
+
+cr_t27:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 27
+
+er_t9:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 9
+
+cr_t28:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 28
+
+cr_t29:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 29
+
+cr_t30:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 30
+
+cr_t31:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 31
+
+cr_t32:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 32
+
+cr_t33:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 33
+
+cr_t34:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 34
+
+cr_t35:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 35
+
+cr_t36:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 36
+
+cr_t37:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 37
+
+er_t10:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 10
+
+cr_t38:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 38
+
+cr_t39:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 39
+
+cr_t40:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 40
+
+er_t11:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 11
+
+er_t12:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 12
+
+er_t13:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 13
+
+er_t14:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 14
+
+er_t15:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 15
+
+er_t16:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 16
+
+er_t17:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 17
+
+er_t18:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 18
+
+er_t19:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 19
+
+er_t20:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 20
+
+er_t21:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 21
+
+er_t22:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 22
+
+er_t23:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 23
+
+er_t24:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 24
+
+er_t25:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 25
+
+er_t26:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 26
+
+er_t27:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 27
+
+er_t1:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 1
+
+er_t28:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 28
+
+er_t29:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 29
+
+er_t30:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 30
+
+er_t31:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 31
+
+er_t32:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 32
+
+er_t33:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 33
+
+er_t34:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 34
+
+er_t35:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 35
+
+er_t36:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 36
+
+er_t37:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 37
+
+er_t2:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 2
+
+er_t38:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 38
+
+er_t39:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 39
+
+er_t40:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 40
+
+iar_t1:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 1
+
+iar_t2:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 2
+
+iar_t3:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 3
+
+iar_t4:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 4
+
+iar_t5:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 5
+
+iar_t6:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 6
+
+iar_t7:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 7
+
+er_t3:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 3
+
+iar_t8:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 8
+
+iar_t9:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 9
+
+iar_t10:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 10
+
+iar_t11:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 11
+
+iar_t12:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 12
+
+iar_t13:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 13
+
+iar_t14:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 14
+
+iar_t15:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 15
+
+iar_t16:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 16
+
+iar_t17:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 17
+
+er_t4:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 4
+
+iar_t18:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 18
+
+iar_t19:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 19
+
+iar_t20:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 20
+
+iar_t21:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 21
+
+iar_t22:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 22
+
+iar_t23:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 23
+
+iar_t24:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 24
+
+iar_t25:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 25
+
+iar_t26:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 26
+
+iar_t27:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 27
+
+er_t5:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 5
+
+iar_t28:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 28
+
+iar_t29:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 29
+
+iar_t30:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 30
+
+iar_t31:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 31
+
+iar_t32:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 32
+
+iar_t33:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 33
+
+iar_t34:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 34
+
+iar_t35:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 35
+
+iar_t36:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 36
+
+iar_t37:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 37
+
+er_t6:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 6
+
+iar_t38:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 38
+
+iar_t39:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 39
+
+iar_t40:
+  type: Float
+  description: Introspective accuracy response time(in seconds)-Trial 40
+
+cr_t1:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 1
+
+cr_t2:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 2
+
+cr_t3:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 3
+
+cr_t4:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 4
+
+cr_t5:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 5
+
+cr_t6:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 6
+
+cr_t7:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 7
+
+er_t7:
+  type: Float
+  description: Emotion response time in seconds(in seconds)-Trial 7
+
+cr_t8:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 8
+
+cr_t9:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 9
+
+cr_t10:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 10
+
+cr_t11:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 11
+
+cr_t12:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 12
+
+cr_t13:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 13
+
+cr_t14:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 14
+
+cr_t15:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 15
+
+cr_t16:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 16
+
+cr_t17:
+  type: Float
+  description: Confidence response time(in seconds)-Trial 17

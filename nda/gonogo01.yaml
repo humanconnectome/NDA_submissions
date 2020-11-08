@@ -857,7 +857,7 @@ aurora_device:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
   alias: fktimepointid,gradcpt_timepoint,visit_name
 
@@ -1513,7 +1513,7 @@ pre3_fa_rt:
   description: Mean response time (ms) for incorrect (following 3 go trials) nogo
     trials (button pressed)
   range:
-  - 0::800
+  - 0::975
 
 pre4_cr_prop:
   type: Float

@@ -13,12 +13,14 @@ src_subject_id:
 
 interview_date:
   type: Date
+  required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
   notes: Required field
 
 interview_age:
   type: Integer
+  required: true
   description: Age in months at the time of the interview/test/sampling/imaging.
   range:
   - 0::1260
@@ -29,6 +31,7 @@ interview_age:
 sex:
   type: String
   length: 20
+  required: true
   description: Sex of the subject
   range:
   - M

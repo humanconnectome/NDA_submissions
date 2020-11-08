@@ -131,7 +131,7 @@ sitedatasource_physician:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
   alias: interval,visit_name,visitnum
 

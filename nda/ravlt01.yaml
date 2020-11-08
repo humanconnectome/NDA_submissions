@@ -1753,7 +1753,7 @@ ravlt_disct:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
   alias: eventname
 

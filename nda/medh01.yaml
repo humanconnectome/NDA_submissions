@@ -51,7 +51,7 @@ sex:
 
 visit:
   type: String
-  length: 50
+  length: 60
   description: Visit name
 
 medh1:
@@ -1326,7 +1326,7 @@ cfmh_chd_seizure:
 
 wk_asthma:
   type: Integer
-  description: "Has she/he ever been to a doctor for any of these things?Asthma /Asma"
+  description: "Has she/he ever been to a doctor for any of these things?Asthma /Asma\r"
   range:
   - 0
   - 1

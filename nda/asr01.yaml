@@ -2997,7 +2997,7 @@ cdrs11:
 
 ill_disable_handicap_yes_no:
   type: String
-  length: 3
+  length: 10
   description: III. Does he/she have any illness, disability, or handicap?
   range:
   - 'No'
@@ -3413,7 +3413,7 @@ accult_select_language:
   range:
   - 0
   - 1
-  notes: 0=No; 1=Yes
+  notes: 0 = No; 1 = Yes
   codes:
     0: 'No'
     1: 'Yes'

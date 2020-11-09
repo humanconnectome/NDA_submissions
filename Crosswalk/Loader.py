@@ -215,10 +215,12 @@ class QintLoader(RedcapLoader):
     def _post_load_hook_(self, df):
         visit = config['visit']
         df = df[df.visit == visit]
+        print(df.shape)
         df = df.rename(columns={"subjectid": "subject"})
+        
         return super()._post_load_hook_(df)
 
-
+    
 class QintHcdLoader(QintLoader) :
     def _post_load_hook_(self, df):
         df = df[df.subjectid.str.startswith('HCD', False)]
@@ -228,6 +230,25 @@ class QintHcdLoader(QintLoader) :
 class QintHcaLoader(QintLoader) :
     def _post_load_hook_(self, df):
         df = df[df.subjectid.str.startswith('HCA', False)]
+        return super()._post_load_hook_(df)
+
+
+class KsadsLoader(RedcapLoader):
+    def __init__(self, definitions_dir="./definitions/"):
+        super().__init__('ksads', definitions_dir)
+
+    def _fields_hook_(self, fields):
+        return fields + ['patientid']
+
+    def _load_hook_(self, fields):
+        redcap = CachedRedcap()
+        df = redcap(self.get_source_name(), list(fields))
+        return df
+
+    def _post_load_hook_(self, df):
+        visit = config['visit']
+        df = df[df.patientid.str.contains("V"+visit)]
+        df['subject']=df.patientid.str[:10]
         return super()._post_load_hook_(df)
 
 

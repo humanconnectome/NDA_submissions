@@ -28,7 +28,8 @@ class Manager:
                 sessions.append(session)
             sessions = pd.concat(sessions)
 
-            df = df[['subjectkey', 'src_subject_id', 'interview_date', 'interview_age', 'sex', 'alc', 'caffeine_session',
+            df = df[['subjectkey', 'src_subject_id', 'interview_date', 'interview_age', 'sex', 'comqother',
+                        'alc', 'caffeine_session',
                         'drug', 'nicotine_session']] \
                 .merge(sessions, right_index=True, left_index=True)
 

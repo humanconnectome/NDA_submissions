@@ -4,3 +4,4 @@
 creds/
 .bk.*/
 .*cache
+.venv/

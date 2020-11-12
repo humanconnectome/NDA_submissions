@@ -251,6 +251,7 @@ class KsadsLoader(RedcapLoader):
         visit = config['visit']
         df = df[df.patientid.str.contains("V"+visit)]
         df['subject']=df.patientid.str[:10]
+        
         return super()._post_load_hook_(df)
 
 

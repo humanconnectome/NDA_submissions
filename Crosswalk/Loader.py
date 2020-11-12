@@ -244,6 +244,8 @@ class KsadsLoader(RedcapLoader):
 
     def _load_hook_(self, fields):
         redcap = CachedRedcap()
+        exclude = ['subject', 'subjectkey', 'gender', 'interview_date', 'interview_age']
+        fields = [x for x in fields if x not in exclude]
         df = redcap(self.get_source_name(), list(fields))
         return df
 
@@ -264,6 +266,8 @@ class SsagaLoader(RedcapLoader):
 
     def _load_hook_(self, fields):
         redcap = CachedRedcap()
+        exclude = ['subject', 'subjectkey', 'gender', 'interview_date', 'interview_age']
+        fields = [x for x in fields if x not in exclude]
         df = redcap(self.get_source_name(), list(fields))
         return df
 

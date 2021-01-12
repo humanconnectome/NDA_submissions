@@ -1,6 +1,9 @@
 # crosswalk
 
-HCP implementation of a suite of in-house and pip-installed (python-based) tools to facilitate open and reproducible harmonization between local REDCap databases and BOX sources with NDA data dictionary.  Use this repo to identify HCP-lifespan specific variable names in either database system, and/or to develop a similar Crosswalk for your own data (e.g. to talk to your Redcap, Box, and NDA data dictionary APIs using the libraries developed and/or curated here).     
+HCP implementation of a suite of in-house and pip-installed (python-based) tools to facilitate open, debatable, and reproducible harmonization between local REDCap databases and BOX sources with NDA data dictionary.
+Use this repo to identify HCP-lifespan specific variable names in either database system, and/or to develop a similar Crosswalk for your own data (e.g. to talk to your Redcap, Box, and NDA data dictionary
+APIs using the libraries developed and/or curated here).  Take what you like, leave the rest. This repository is as general as we can make it without breaking record of the history of decisions made by the
+HCP, every one of which matters when it comes to debating the definition of 'Harmonized.'     
 
 ## Directory structure
 - **Crosswalk/** - The object oriented library used for mapping
@@ -29,6 +32,14 @@ Step 4: After you have all of your structures validated (you'll know this if you
         you can upload them to the NDA under your collection ID using the vtcmd.py on the command line, or via the NDA's GUI tool:
 	https://nda.nih.gov/vt/  but at this point you'll need an admin to grant permission to submit data under your NDA user name.
 
-Step 5: Browse the documentation headings on  https://pypi.org/project/nda-tools/ so you know more about the vtcmd.py tool and can discuss its use cases.
+Step 5: Make sure everything went according to plan, by using the maps you created with the local and remote annotation sources for every variable within the complete set of uploaded or
+        downloaded structures into a single table called a 'Crosswalk' with the Make_Crosswalk_Table_4_Documentation.ipynb notebook.
+	Crosswalk_Lifespan_Behavioral_2.0_01_11_2021.csv in this repo is the version most up to date output of this notebook as of January 11, 2020.
+	Note that while hcp_variable_upload, nda_element, and nda_structure won't change, the annotation at the NDA CAN AND WILL change. Moreover, by placing our
+	data into NDA structures, we have been forced to remove the natural groupings of variables that provided context for understanding their relationships, so the HCP
+	labels grabbed from our local sources may make less sense.  We are actively looking into programmatic ways of addressing this consequence of 'harmonizing' with the NDA.
+	NOTE THAT THE HCP CROSSWALK ALSO PULLS INFO FROM those created by the NIH Toolbox pipeline https://github.com/humanconnectome/NIHToolbox2NDA.
+
+Step 6: Browse the documentation headings on  https://pypi.org/project/nda-tools/ so you know more about the vtcmd.py tool and can discuss its use cases.
         In particular, note that this tool is also documented as capable of DOWNLOADING data from the NDA.  
 

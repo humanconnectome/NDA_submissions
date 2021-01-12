@@ -34,7 +34,7 @@ Step 4: After you have all of your structures validated (you'll know this if you
 
 Step 5: Make sure everything went according to plan, by using the maps you created with the local and remote annotation sources for every variable within the complete set of uploaded or
         downloaded structures into a single table called a 'Crosswalk' with the Make_Crosswalk_Table_4_Documentation.ipynb notebook.
-	Crosswalk_Lifespan_Behavioral_2.0_01_11_2021.csv in this repo is the version most up to date output of this notebook as of January 11, 2020.
+	Crosswalk_Lifespan_Behavioral_2.0_01_12_2021.csv in this repo is the version most up to date output of this notebook as of January 11, 2020.
 	Note that while hcp_variable_upload, nda_element, and nda_structure won't change, the annotation at the NDA CAN AND WILL change. Moreover, by placing our
 	data into NDA structures, we have been forced to remove the natural groupings of variables that provided context for understanding their relationships, so the HCP
 	labels grabbed from our local sources may make less sense.  We are actively looking into programmatic ways of addressing this consequence of 'harmonizing' with the NDA.

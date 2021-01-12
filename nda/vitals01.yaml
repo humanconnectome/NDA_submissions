@@ -1146,10 +1146,13 @@ trt_grp:
   - 8
   - 9
   - 10
-  notes: "1=Group 1 first 8 weeks; 1AO=Group 1 8 week add on; 1CT=Group 1 8 week cross\
-    \ taper; 2=Group 2; 3=Group 3; 4 =active; 5=sham; 6=none; 7=ESDM High intensity;\
-    \ 8=ESDM Low intensity; 9=EIBI High intensity; 10=EIBI Low intensity; ESDM = Early\
-    \ Start Denver Model; \nEIBI = Early and Intensive Behavioral Intervention"
+  - 11
+  - 12
+  notes: 1=Group 1 first 8 weeks; 1AO=Group 1 8 week add on; 1CT=Group 1 8 week cross
+    taper; 2=Group 2; 3=Group 3; 4 =active; 5=sham; 6=none; 7=ESDM High intensity;
+    8=ESDM Low intensity; 9=EIBI High intensity; 10=EIBI Low intensity; ESDM = Early
+    Start Denver Model; EIBI = Early and Intensive Behavioral Intervention; 11 = Navigator;
+    12 = Care manager
   codes:
     1: Group 1 first 8 weeks
     2: Group 2
@@ -1161,6 +1164,8 @@ trt_grp:
     8: ESDM Low intensity
     9: EIBI High intensity
     10: EIBI Low intensity
+    11: Navigator
+    12: Care manager
 
 etype:
   type: String

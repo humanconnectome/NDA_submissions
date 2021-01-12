@@ -805,29 +805,30 @@ tosurg:
 
 mh2:
   type: Integer
-  description: Has your health always been at the current rating, or has it been better
+  description: MH2 Has your health always been (ANSWER IN MH1); or has it been better
     or worse?
   range:
   - 1
   - 2
   - 5
   - 6
-  notes: 1 = NO, WORSE ; 2 = NO, BETTER ; 5 = YES, SAME ; 6 = BOTH BETTER & WORSE
+  notes: 1=No, Worse;2=No, better; 5=Yes, Same; 6=Both better and worse
   codes:
-    1: NO, WORSE
-    2: NO, BETTER
-    5: YES, SAME
-    6: BOTH BETTER & WORSE
+    1: No, Worse
+    2: No, better
+    5: Yes, Same
+    6: Both better and worse
 
 mh4a:
   type: Integer
-  description: How many times have you been in a hospital overnight (including surgery
-    and pregnancy), excluding psychiatric or substance abuse treatment?
+  description: MH4a How many times have you been in a hospital overnight (including
+    surgery and pregnancy); excluding psychiatric or substance abuse treatment?
 
 mh5:
   type: Integer
-  description: In the last 6 months, how many visits have you made to a doctor, clinic,
-    or emergency room for your physical health?  DO NOT COUNT CHIROPRACTORS.
+  description: MH5 In the last 6 months; how many visits have you made to a doctor;
+    clinic; or emergency room for your physical health? DO NOT COUNT CHIROPRACTORS
+    OR ROUTINE PHYSICALS.
 
 mh6a1:
   type: Integer

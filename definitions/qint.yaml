@@ -39,6 +39,17 @@ visit:
   type: text
   label: Visit
 
+q_unusable:
+  form: common
+  type: yesno
+  label: Is the data UN-usable (if yes, please specify why..e.g. protocol deviation,
+    etc)
+
+unusable_specify:
+  form: common
+  type: notes
+  label: 'Please explain why this data is unusable '
+
 ravlt_two:
   form: ravlt
   type: truefalse

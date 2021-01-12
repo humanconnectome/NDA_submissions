@@ -953,7 +953,7 @@ mpdat:
 
 timepoint_label:
   type: String
-  length: 5
+  length: 20
   description: Timepoint/visit label
 
 l2_gng_comms:

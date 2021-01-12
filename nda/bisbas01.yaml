@@ -404,28 +404,31 @@ bas_drive:
   type: Integer
   required: true
   description: BAS Drive
-  notes: 3, 9, 12, 21; 99= N/A
+  notes: "\t3, 9, 12, 21; 99= N/A; 999=Missing"
   alias: bas_drive_score,bis_y_ss_bas_drive,c_totalbasdrive,phenx_srp_bas_drive
   codes:
     99: N/A
+    999: Missing
 
 bas_fs:
   type: Integer
   required: true
   description: BAS Fun seeking
-  notes: 5, 10, 15, 20; 99= N/A
+  notes: "\t5, 10, 15, 20; 99= N/A; 999=Missing"
   alias: bas_fun_seeking,bas_fun_seeking_score,bis_y_ss_bas_fs,c_totalbasfunseek,phenx_srp_bas_funseeking
   codes:
     99: N/A
+    999: Missing
 
 bas_rr:
   type: Integer
   required: true
   description: BAS Reward responsiveness
-  notes: 4, 7, 14, 18, 23; 99= N/A
+  notes: "\t4, 7, 14, 18, 23; 99= N/A; 999=Missing"
   alias: bas_reward,bas_reward_response_score,bas_reward_responsiveness,bis_y_ss_bas_rr,c_totalbasreward,phenx_srp_bas_rewardresponsiveness
   codes:
     99: N/A
+    999: Missing
 
 bas_total:
   type: Integer
@@ -1166,6 +1169,7 @@ respondent:
   - Parent
   - Teacher
   - Child
+  - Self
 
 bisbas_16a:
   type: Integer

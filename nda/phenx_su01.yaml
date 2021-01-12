@@ -56,12 +56,13 @@ alc_30day_freq:
   range:
   - 0::30
   - 999
+  - -9
   notes: 'DATEFILL is the date 30 days prior to the date of the interview.  Enter
     frequency in days.  Definition of a standard drink: 1 12oz bottle of beer, 1 glass
     4oz non-fortified wine, 1 mixed drink with 1oz liquor.  If respondent needs a
     visual reference for the size of a drink, use the flashcards from the Wave 1 National
     Epidemiologic Survey on Alcohol and Related Conditions (NESARC) study.'
-  alias: nida_y_alclife3,numdaysalcohol,su_3
+  alias: nida_y_alclife3,numdaysalcohol,phenx_alcohol1,su_3
 
 alc_30day_freqcode:
   type: Integer
@@ -82,12 +83,17 @@ alc_30day_quantity:
   range:
   - 0::90
   - 999
-  notes: 'Enter quantity in drinks.  Definition of a standard drink: 1 12oz bottle
-    of beer, 1 glass 4oz non-fortified wine, 1 mixed drink with 1oz liquor.  If respondent
+  - -7
+  - -9
+  notes: 'Enter quantity in drinks. Definition of a standard drink: 1 12oz bottle
+    of beer, 1 glass 4oz non-fortified wine, 1 mixed drink with 1oz liquor. If respondent
     needs a visual reference for the size of a drink, use the flashcards from the
     Wave 1 National Epidemiologic Survey on Alcohol and Related Conditions (NESARC)
-    study.'
-  alias: nida_y_alclife4,numdrinksperday,su_4
+    study.; -7 = N/A; -9 = Do not know/Refused'
+  alias: nida_y_alclife4,numdrinksperday,phenx_alcohol2,su_4
+  codes:
+    -7: N/A
+    -9: Do not know/Refused
 
 alc_30day_quantitycode:
   type: Float
@@ -1815,7 +1821,13 @@ evryday_smoker_qty_1day:
   description: Protocol A is used with adults who are Every-Day Smokers.  On the average,
     about how many cigarettes do you now smoke each day? PX030802_Everyday_Smoker_Quantity_1Day
   range:
-  - 1::99
+  - 0::99
+  - -7
+  - -9
+  notes: -7 = N/A; -9 = Missing
+  codes:
+    -7: N/A
+    -9: Missing
 
 evryday_smoker_qty_1day_code:
   type: Integer
@@ -1834,7 +1846,13 @@ someday_smoker_days_1mon:
   description: Protocol B is used with adults who are Some-Day Smokers.  On how many
     of the past 30 days did you smoke cigarettes? PX030802_Someday_Smoker_Days_1Month
   range:
-  - 1::30
+  - 0::30
+  - -7
+  - -9
+  notes: -7 = N/A; -9 = Missing
+  codes:
+    -7: N/A
+    -9: Missing
 
 someday_smok_days_1mon_code:
   type: Integer
@@ -1853,7 +1871,13 @@ someday_smoker_qty_1day:
   description: Protocol B is used with adults who are Some-Day Smokers.  On the average,
     how many cigarettes did you usually smoke each day? PX030802_Someday_Smoker_Quantity_1Day
   range:
-  - 1::99
+  - 0::99
+  - -7
+  - -9
+  notes: -7 = N/A; -9 = Missing
+  codes:
+    -7: N/A
+    -9: Missing
 
 someday_smoker_qty_1day_code:
   type: Integer
@@ -1875,6 +1899,7 @@ former_smoker_6mons:
   - 1
   - 2
   - 97
+  - -7
   notes: 1=Yes; 2=No; 97=Don't Know/Refused
   codes:
     1: 'Yes'
@@ -1886,7 +1911,13 @@ former_smoker_qty_1daya:
   description: Protocol C is used with adults who are Former Smokers.  When you last
     smoked every day, on average how many cigarettes did you smoke each day? PX030802_Former_Smoker_Quantity_1DayA
   range:
-  - 1::99
+  - 0::99
+  - -7
+  - -9
+  notes: -7 = N/A; -9 = Missing
+  codes:
+    -7: N/A
+    -9: Missing
 
 former_smoker_qty_1daya_code:
   type: Integer
@@ -2914,3 +2945,9 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+timepoint_label:
+  type: String
+  length: 20
+  description: Timepoint/visit label
+  alias: timepoint

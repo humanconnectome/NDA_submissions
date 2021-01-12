@@ -5540,6 +5540,7 @@ respondent:
   - Parent
   - Teacher
   - Child
+  - Self
   alias: filby
 
 respondent_other_specify:

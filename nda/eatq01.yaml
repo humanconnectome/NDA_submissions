@@ -2879,3 +2879,7 @@ eatq_pleasure:
 eatq_perception:
   type: Float
   description: 'EATQ Score: Perceptual Sensitivity Scale'
+
+eatq_affilness:
+  type: Float
+  description: 'EATQ Score: Affiliativeness'

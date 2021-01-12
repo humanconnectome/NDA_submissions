@@ -1,0 +1,2616 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: guid,ndar_psqi
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: fnesubject,fnrsubject,hcpa_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  notes: Required field
+  alias: fnesessdate,fnrsessdate,session_date,sessiondate
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of the subject
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+version_form:
+  type: String
+  length: 121
+  required: true
+  description: Form used/assessment name
+  alias: version
+
+mssess:
+  type: Integer
+  description: Session number this measure was based on
+  range:
+  - 0::26
+  - 55
+  - 56
+  - 57
+  - -9
+  notes: 0 = Pre; 1 = Session 1; 2 = Session 2; 3 = Session 3; 4 = Session 4; 5 =
+    Session 5; 6 = Session 6; 7 = Session 7; 8 = Session 8; 9 = Session 9; 10 = Session
+    10; 11 = Session 11; 12 = Session 12; 13 = Session 13; 14 = Session 14; 15 = Session
+    15; 16 = Session 16; 17 = Session 17; 18 = Session 18; 19 = Session 19; 20 = Session
+    20; 21 = Session 21; 22 = Session 22; 23 = Session 23; 24 = Session 24; 25 = Session
+    25; 26 = Session 26; 55 = Post; 56 = 6 month follow-up; 57 = 12 month follow-up
+  alias: fnesession,fnrsess
+  codes:
+    0: Pre
+    1: Session 1
+    2: Session 2
+    3: Session 3
+    4: Session 4
+    5: Session 5
+    6: Session 6
+    7: Session 7
+    8: Session 8
+    9: Session 9
+    10: Session 10
+    11: Session 11
+    12: Session 12
+    13: Session 13
+    14: Session 14
+    15: Session 15
+    16: Session 16
+    17: Session 17
+    18: Session 18
+    19: Session 19
+    20: Session 20
+    21: Session 21
+    22: Session 22
+    23: Session 23
+    24: Session 24
+    25: Session 25
+    26: Session 26
+    55: Post
+    56: 6 month follow-up
+    57: 12 month follow-up
+
+fnetp:
+  type: String
+  length: 20
+  description: pre, post, follow up 6 or 12
+  alias: fnrtp
+
+fneexpname:
+  type: String
+  length: 20
+  description: Face-NameEncodingBLOCK2_FINAL
+  alias: fnrexpname
+
+fneclockinfo:
+  type: String
+  length: 1000
+  description: detailed information on clock used by software to run task and detailed
+    timestamp
+  alias: fnrclockinfo
+
+fnedatbase:
+  type: String
+  length: 20
+  description: task data file version used
+  alias: fnrdatbase
+
+fnerefrate:
+  type: String
+  length: 20
+  description: display used refresh rate as detected at start of task
+  notes: in Hz
+  alias: fnrrefrate
+
+fneexpver:
+  type: String
+  length: 20
+  description: task version used
+  notes: 1.0.0.17
+  alias: fnrexpver
+
+fnegroup:
+  type: String
+  length: 20
+  description: group used
+  alias: fnrgroup
+
+fnerandseed:
+  type: String
+  length: 20
+  description: random seed used in task
+  alias: fnrrandseed
+
+fneruntime:
+  type: String
+  length: 20
+  description: run time version of software used
+  notes: 2.0.10.242
+  alias: fnrruntime
+
+fnerunexpec:
+  type: String
+  length: 20
+  description: run time version of software expected
+  notes: 2.0.10.242
+  alias: fnrrunexpec
+
+fnesessutc:
+  type: String
+  length: 20
+  description: exact time and date stamp using utc
+  notes: mm/dd/yyyy hh:mm
+  alias: fnrsessutc
+
+fnesesstime:
+  type: String
+  length: 20
+  description: time session took place
+  notes: hh:mm:ss
+  alias: fnrsesstime
+
+fnestudver:
+  type: String
+  length: 20
+  description: e-prime studio version used to design task
+  notes: 2.0.10.147
+  alias: fnrstudver
+
+fneblock:
+  type: Integer
+  description: block number being run
+  alias: block,fnrblock
+
+fneageblock:
+  type: String
+  length: 10
+  description: age appearance of faces presented in bock
+  range:
+  - Old
+  - Young
+  - -7
+  notes: old = old appearance; young = young apperarance; -7 example/
+  alias: fnrage
+  codes:
+    old: old appearance
+
+fnrcorrectresponse1:
+  type: Integer
+  description: correct responses for original or new face task
+
+fnrcorrectresponse2:
+  type: Integer
+  description: correct responses for which name face task
+  range:
+  - 1::4
+
+fneblocklist:
+  type: Integer
+  description: block list
+
+fneblockcycle:
+  type: Integer
+  description: block list cycle
+
+fneblocklistsample:
+  type: Integer
+  description: block list sample
+
+fneexamblock:
+  type: Integer
+  description: example/practice block number
+  range:
+  - 1::10
+  - -7
+  notes: 1 = 1; 2 = 2; 3 = 3; -7 = N/A as this was not an example/practice run
+  alias: fnrexamblock
+  codes:
+    1: '1'
+    2: '2'
+    3: '3'
+    -7: N/A as this was not an example/practice run
+
+fneexamblock_cycle:
+  type: Integer
+  description: example/practice block cycle
+  alias: fnrexamblockcycl
+
+fneexamblock_sample:
+  type: Integer
+  description: example/practice sample number
+  range:
+  - 1::10
+  - -7
+  notes: 1 = sample 1 run in example/practice block; 2 = sample 2 run in example/practice
+    block; -7 = N/A as this was not example/practice run
+  alias: fnrexamblocksampl
+  codes:
+    1: sample 1 run in example/practice block
+    2: sample 2 run in example/practice block
+    -7: N/A as this was not example/practice run
+
+fnrexpeblock:
+  type: Integer
+  description: experimental block number
+  range:
+  - 1::100
+  - -7
+  notes: 1 = 1; 2 = 2; 3 = 3; -7 = N/A as experimental block was not run
+  codes:
+    1: '1'
+    2: '2'
+    3: '3'
+    -7: N/A as experimental block was not run
+
+fnrexpeblockcycl:
+  type: Integer
+  description: experimental block cycle number
+
+fnrexpeblocksampl:
+  type: Integer
+  description: experimental block sample number
+  range:
+  - 1::100
+  - -7
+  notes: 1 = sample 1 run in experimental block; 2 = sample 2 run in experimental
+    block; -7 = N/A as this run was not experimental
+  codes:
+    1: sample 1 run in experimental block
+    2: sample 2 run in experimental block
+    -7: N/A as this run was not experimental
+
+fneexamcue_acc:
+  type: Integer
+  description: subject accuracy to the example/practice  cue task
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0 = incorrect response ; 1 = correct response; -7 = N/A as original or new
+    example/test face task was not run in this cycle
+  codes:
+    0: incorrect response
+    1: correct response
+    -7: N/A as original or new example/test face task was not run in this cycle
+
+fneexamcue_cresp:
+  type: Integer
+  description: correct response to the example/practice  cue task
+  range:
+  - 1
+  - 2
+  - -7
+
+fneexamcue_durerror:
+  type: Integer
+  description: example/practice cue duration error
+
+fneexamcue_onsetdelay:
+  type: Integer
+  description: example/practice cue onset delay time
+  notes: in milliseconds; -7 = N/A as example/practice cue was not run
+  codes:
+    -7: N/A as example/practice cue was not run
+
+fneexamcue_onsetime:
+  type: Integer
+  description: example/practice cue onset time
+  notes: in milliseconds; -7 = N/A as example/practice cue was not run
+  codes:
+    -7: N/A as example/practice cue was not run
+
+fneexamcue_onstoonsttime:
+  type: Integer
+  description: example/practice cue onset to onset time
+  notes: in milliseconds; -7 = N/A as example/practice cue was not run
+  codes:
+    -7: N/A as example/practice cue was not run
+
+fneexamcue_resp:
+  type: Integer
+  description: subject response to example/practice cue
+  range:
+  - 1
+  - 2
+  - -7
+  notes: 1 = yes, name fits face; 2 = no, name does not fit;
+  codes:
+    1: yes, name fits face
+    2: no, name does not fit
+
+fneexamcue_resptime:
+  type: Integer
+  description: subject response time to example/practice cue
+  notes: in milliseconds; -7 = N/A as example/practice cue was not run
+  codes:
+    -7: N/A as example/practice cue was not run
+
+fneexamcue_respttime:
+  type: Integer
+  description: subject response timestamp in relation to beginning program execution
+  notes: in milliseconds; -7 = N/A as example/practice cue was not run
+  codes:
+    -7: N/A as example/practice cue was not run
+
+fneexamresp_acc:
+  type: Integer
+  description: subject accuracy to the example/practice response task
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0 = incorrect response ; 1 = correct response; -7 = N/A as original or new
+    example/test face task was not run in this cycle
+  codes:
+    0: incorrect response
+    1: correct response
+    -7: N/A as original or new example/test face task was not run in this cycle
+
+fneexamresp_cresp:
+  type: Integer
+  description: correct response to the example/practice  response task
+
+fneexamresp_durerror:
+  type: Integer
+  description: example/practice response duration error
+
+fneexamresp_onsetdelay:
+  type: Integer
+  description: example/practice response onset delay time
+  notes: in milliseconds; -7 = N/A as example/practice cue was not run
+  codes:
+    -7: N/A as example/practice cue was not run
+
+fneexamresp_onsetime:
+  type: Integer
+  description: example/practice response onset time
+  notes: in milliseconds; -7 = N/A as example/practice cue was not run
+  codes:
+    -7: N/A as example/practice cue was not run
+
+fneexamresp_onstoonsttime:
+  type: Integer
+  description: example/practice response onset to onset time
+  notes: in milliseconds; -7 = N/A as example/practice cue was not run
+  codes:
+    -7: N/A as example/practice cue was not run
+
+fneexamresp_resp:
+  type: Integer
+  description: subject response to example/practice response task
+
+fneexamresp_resptime:
+  type: Float
+  description: subject response time to example/practice response task
+  notes: in milliseconds; -7 = N/A as example/practice cue was not run
+  codes:
+    -7: N/A as example/practice cue was not run
+
+fneexamresp_respttime:
+  type: Integer
+  description: subject response timestamp in relation to beginning program execution
+  notes: in milliseconds; -7 = N/A as example/practice cue was not run
+  codes:
+    -7: N/A as example/practice cue was not run
+
+fneexamsld_acc:
+  type: Integer
+  description: subject accuracy to the example/practice slide task
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0 = incorrect response ; 1 = correct response; -7 = N/A as original or new
+    example/test face task was not run in this cycle
+  codes:
+    0: incorrect response
+    1: correct response
+    -7: N/A as original or new example/test face task was not run in this cycle
+
+fneexamsld_cresp:
+  type: Integer
+  description: correct response to the example/practice  slide task
+
+fneexamsld_durerror:
+  type: Integer
+  description: example/practice slide duration error
+
+fneexamsld_onsetdelay:
+  type: Integer
+  description: example/practice slide onset delay time
+  notes: in milliseconds; -7 = N/A as example/practice slide was not run
+  codes:
+    -7: N/A as example/practice slide was not run
+
+fneexamsld_onsetime:
+  type: Integer
+  description: example/practice slide onset time
+  notes: in milliseconds; -7 = N/A as example/practice slide was not run
+  codes:
+    -7: N/A as example/practice slide was not run
+
+fneexamsld_onstoonsttime:
+  type: Integer
+  description: example/practice slide onset to onset time
+  notes: in milliseconds; -7 = N/A as example/practice slide was not run
+  codes:
+    -7: N/A as example/practice slide was not run
+
+fneexamsld_resp:
+  type: Integer
+  description: subject response to example/practice slide
+  range:
+  - 0::2
+  - -7
+
+fneexamsld_resptime:
+  type: Integer
+  description: subject response time to example/practice slide
+  notes: in milliseconds; -7 = N/A as example/practice slide was not run
+  codes:
+    -7: N/A as example/practice slide was not run
+
+fneexamsld_respttime:
+  type: Integer
+  description: subject response timestamp in relation to beginning program execution
+  notes: in milliseconds; -7 = N/A as example/practice slide was not run
+  codes:
+    -7: N/A as example/practice slide was not run
+
+fnegenderblock:
+  type: String
+  length: 20
+  description: gender of image displayed in example/practice blocks
+  range:
+  - Male
+  - Female
+  - -7
+  alias: fnrimggender
+
+fnenameblock:
+  type: String
+  length: 50
+  description: name of image displayed in example/practice blocks
+  alias: fnrimage
+
+fneimageblock:
+  type: String
+  length: 50
+  description: file name of image displayed in example/practice blocks
+  alias: fnrlurename
+
+fnepracmode:
+  type: String
+  length: 3
+  description: is example/practive mode running
+  range:
+  - 'Yes'
+  - 'No'
+
+fneprocblock:
+  type: String
+  length: 50
+  description: name of proceduring running in block
+
+fnerunningblock:
+  type: String
+  length: 50
+  description: name of block running
+
+fnetrialrun:
+  type: Integer
+  description: trial number being run
+  range:
+  - 1::60
+  - -7
+  notes: 1 = trial 1; 2 = trial 2; 3 = trial 3 ; -7 experimental trial was not run
+  alias: subtrial
+  codes:
+    1: trial 1
+    2: trial 2
+    3: trial 3
+
+fneage:
+  type: String
+  length: 10
+  description: age appearance of faces presented in trial
+  range:
+  - Old
+  - Young
+  - -7
+  notes: old = old appearance; young = young apperarance; -7 experimental  experimental
+    cue task was not run
+  codes:
+    old: old appearance
+
+fnecue_acc:
+  type: Integer
+  description: subject accuracy to the experimental cue task
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0 = incorrect response ; 1 = correct response; -7 = N/A  experimental cue
+    task was not run
+  codes:
+    0: incorrect response
+    1: correct response
+    -7: N/A  experimental cue task was not run
+
+fnecue_cresp:
+  type: Integer
+  description: correct response to the experimental cue task
+
+fnecue_durerror:
+  type: Integer
+  description: experimental cue task duration error
+
+fnecue_onsetdelay:
+  type: Integer
+  description: experimental cue task onset delay time
+  notes: in milliseconds; -7 = N/A as example/practice slide was not run
+  codes:
+    -7: N/A as example/practice slide was not run
+
+fnecue_onsetime:
+  type: Float
+  description: experimental cue task onset time
+  notes: in milliseconds; -7 = N/A as example/practice slide was not run
+  alias: getready_finishtime,onset
+  codes:
+    -7: N/A as example/practice slide was not run
+
+fnecue_onstoonsttime:
+  type: Integer
+  description: experimental cue task onset to onset time
+  notes: in milliseconds; -7 = N/A as example/practice slide was not run
+  codes:
+    -7: N/A as example/practice slide was not run
+
+fnecue_resp:
+  type: Integer
+  description: subject response to experimental cue task
+
+fnecue_resptime:
+  type: Integer
+  description: subject response time to  experimental cue task
+
+fnecue_respttime:
+  type: Integer
+  description: subject response timestamp in relation to beginning program execution
+
+fneexperesp_acc:
+  type: Integer
+  description: subject accuracy to the experimental response task
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0 = incorrect response ; 1 = correct response; -7 = experimental response
+    task  was not run
+  codes:
+    0: incorrect response
+    1: correct response
+    -7: experimental response task  was not run
+
+fneexperesp_cresp:
+  type: Float
+  description: correct response to the experimental response task
+
+fneexperesp_durerror:
+  type: Integer
+  description: experimental response task duration error
+
+fneexperesp_onsetdelay:
+  type: Integer
+  description: experimental response task onset delay time
+  notes: in milliseconds; -7 = N/A as experimental response task  was not run
+  codes:
+    -7: N/A as experimental response task  was not run
+
+fneexperesp_onsetime:
+  type: Integer
+  description: experimental response task onset time
+  notes: in milliseconds; -7 = N/A as experimental response task  was not run
+  codes:
+    -7: N/A as experimental response task  was not run
+
+fneexperesp_onstoonsttime:
+  type: Integer
+  description: experimental response task onset to onset time
+  notes: in milliseconds; -7 = N/A as experimental response task  was not run
+  codes:
+    -7: N/A as experimental response task  was not run
+
+fneexperesp_resp:
+  type: Integer
+  description: subject response to experimental response task
+  range:
+  - 0::2
+  - -7
+  notes: 1 = yes, name fits face; 2 = no, name does not fit; 0 = not recorded or declined
+    to answer
+  codes:
+    1: yes, name fits face
+    2: no, name does not fit
+    0: not recorded or declined to answer
+
+fneexperesp_resptime:
+  type: Integer
+  description: subject response time to  experimental response task
+  notes: in milliseconds; -7 = N/A as experimental response task  was not run
+  codes:
+    -7: N/A as experimental response task  was not run
+
+fneexperesp_respttime:
+  type: Integer
+  description: subject response timestamp in relation to beginning program execution
+  notes: in milliseconds; -7 = N/A as experimental response task  was not run
+  codes:
+    -7: N/A as experimental response task  was not run
+
+fneexpesld_acc:
+  type: Integer
+  description: subject accuracy to the experimental slide task
+  notes: 0 = incorrect response ; 1 = correct response; -7 = N/A as experimental response
+    task  not run
+  codes:
+    0: incorrect response
+    1: correct response
+    -7: N/A as experimental response task  not run
+
+fneexpesld_cresp:
+  type: Integer
+  description: correct response to the experimental slide task
+
+fneexpesld_durerror:
+  type: Integer
+  description: experimental slide task duration error
+
+fneexpesld_onsetdelay:
+  type: Integer
+  description: experimental slide task onset delay time
+  notes: in milliseconds; -7 = N/A as  experimental slide was not run
+  codes:
+    -7: N/A as  experimental slide was not run
+
+fneexpesld_onsetime:
+  type: Integer
+  description: experimental slide task onset time
+  notes: in milliseconds; -7 = N/A as experimental slide was not run
+  codes:
+    -7: N/A as experimental slide was not run
+
+fneexpesld_onstoonsttime:
+  type: Integer
+  description: experimental slide task onset to onset time
+  notes: in milliseconds; -7 = N/A as  experimental slide was not run
+  codes:
+    -7: N/A as  experimental slide was not run
+
+fneexpesld_resp:
+  type: Integer
+  description: subject response to experimental slide task
+  range:
+  - 0::2
+  - -7
+  notes: 1 = yes, name fits face; 2 = no, name does not fit; 0= not recorded or declined
+    to answer; -7 = N/A as it was not run on this trial or missing
+  codes:
+    1: yes, name fits face
+    2: no, name does not fit
+    0: not recorded or declined to answer
+    -7: N/A as it was not run on this trial or missing
+
+fneexpesld_resptime:
+  type: Integer
+  description: subject response time to  experimental slide task
+  notes: in milliseconds; 0 = not recorded or declined to answer; -7 = N/A as  experimental
+    slide was not run
+  codes:
+    0: not recorded or declined to answer
+    -7: N/A as  experimental slide was not run
+
+fneexpesld__respttime:
+  type: Integer
+  description: subject response timestamp in relation to beginning program execution
+  notes: in milliseconds; 0 = not recorded or declined to answer; -7 = N/A as  experimental
+    slide was not run
+  codes:
+    0: not recorded or declined to answer
+    -7: N/A as  experimental slide was not run
+
+fneimagegen:
+  type: String
+  length: 10
+  description: gender of image displayed
+  range:
+  - Male
+  - Female
+  - -7
+  notes: male or female image displayed; -7 = N/A as image was not displayed in this
+    trial
+  codes:
+    -7: N/A as image was not displayed in this trial
+
+fneimageid:
+  type: Integer
+  description: actual image id number
+  notes: number of image displayed; -7 = N/A as image was not displayed in this trial
+  codes:
+    -7: N/A as image was not displayed in this trial
+
+fnename:
+  type: String
+  length: 50
+  description: actual name of image displayed
+  notes: name of image displayed; -7 = N/A as image was not displayed in this trial
+  codes:
+    -7: N/A as image was not displayed in this trial
+
+fnenulldur:
+  type: Integer
+  description: duration of null even
+  notes: in milliseconds; -7 = N/A as this was not a dull event run
+  codes:
+    -7: N/A as this was not a dull event run
+
+fnenullev:
+  type: String
+  length: 3
+  description: was this a null event
+  range:
+  - 'Yes'
+  - 'No'
+  - -7
+  notes: yes = it was a null event ; no = it was not a null event; -7 = N/A as this
+    was not a dull event run
+  codes:
+    'yes': it was a null event
+    'no': it was not a null event
+    -7: N/A as this was not a dull event run
+
+fneimage:
+  type: String
+  length: 100
+  description: image file name used in run
+  notes: bmp (bitmap) format picture
+  alias: picture
+
+fneproc:
+  type: String
+  length: 20
+  description: name of trial procedure being run
+
+fnetrialname:
+  type: String
+  length: 20
+  description: name of trial list being run
+
+fnetrial:
+  type: Integer
+  description: trial list number run
+  range:
+  - 1::60
+  - -7
+  notes: 1 = trial list item 1 ; 2 = trial list item 2; 3 = trial list item 3; -7
+    = N/A no trial list item was run
+  codes:
+    1: trial list item 1
+    2: trial list item 2
+    3: trial list item 3
+    -7: N/A no trial list item was run
+
+fnetrialcycle:
+  type: Integer
+  description: trial list cycle number run
+
+fnetrialsamplenum:
+  type: Integer
+  description: trial list sample number run
+  range:
+  - 1::60
+  - -7
+  notes: 1 = trial list sample 1 ; 2 = trial list sample 2; 3 = trial list sample
+    3; -7 = N/A experimental trial sample was not run
+  codes:
+    1: trial list sample 1
+    2: trial list sample 2
+    3: trial list sample 3
+    -7: N/A experimental trial sample was not run
+
+fnrname1:
+  type: String
+  length: 20
+  description: name 1 option for task
+
+fnrname2:
+  type: String
+  length: 20
+  description: name 2 option for task
+
+fnrname3:
+  type: String
+  length: 20
+  description: name 3 option for task
+
+fnrnewnname:
+  type: String
+  length: 20
+  description: new name on task
+
+fnrexamoon_acc:
+  type: Integer
+  description: original or new example/practice face task accuracy
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0 = incorrect response ; 1 = correct response; -7 = N/A as original or new
+    example/practice face task was not run in this cycle
+  codes:
+    0: incorrect response
+    1: correct response
+    -7: N/A as original or new example/practice face task was not run in this cycle
+
+fnrexamoon_cresp:
+  type: Integer
+  description: original or new example/practice face task correct response
+
+fnrexamoon_durerror:
+  type: Integer
+  description: original and new example/practice face task duration error
+
+fnrexamoon_onsetdelay:
+  type: Integer
+  description: original and new example/practice face task onset delay
+  notes: in milliseconds; -7 = N/A as original or new example/practice face task was
+    not run in this cycle
+  codes:
+    -7: N/A as original or new example/practice face task was not run in this cycle
+
+fnrexamoon_onsettime:
+  type: Integer
+  description: original and new example/practice face task onset time of image
+  notes: in milliseconds; -7 = N/A as original or new example/practice face task was
+    not run in this cycle
+  codes:
+    -7: N/A as original or new example/practice face task was not run in this cycle
+
+fnrexamoon_onstoonsttime:
+  type: Integer
+  description: original and new example/practice face task onset to onset time
+  notes: in milliseconds; -7 = N/A as original or new example/practice face task was
+    not run in this cycle
+  codes:
+    -7: N/A as original or new example/practice face task was not run in this cycle
+
+fnrexamoon_resp:
+  type: Integer
+  description: original or new face task actual response by subject
+  range:
+  - 1::4
+  - -7
+  notes: 1 = original, very certain; 2 = original, not certain; 3 = new, not certain;
+    4 = new, very certain; -7 = N/A as original or new example/practice face task
+    was not run in this cycle
+  codes:
+    1: original, very certain
+    2: original, not certain
+    3: new, not certain
+    4: new, very certain
+    -7: N/A as original or new example/practice face task was not run in this cycle
+
+fnrexamoon_resptime:
+  type: Integer
+  description: original or new face task subject response time
+  notes: in milliseconds; -7 = N/A as original or new example/practice face task was
+    not run in this cycle
+  codes:
+    -7: N/A as original or new example/practice face task was not run in this cycle
+
+fnrexamoon_respttime:
+  type: Integer
+  description: original or new face task subject response timestamp  in relation to
+    beginning program execution
+  notes: in milliseconds; -7 = N/A as original or new example/practice face task was
+    not run in this cycle
+  codes:
+    -7: N/A as original or new example/practice face task was not run in this cycle
+
+fnrexpeoon_acc:
+  type: Integer
+  description: original or new face task accuracy
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0 = incorrect response ; 1 = correct response; -7 = N/A as original or new
+    face experimental task task was not run in this cycle
+  codes:
+    0: incorrect response
+    1: correct response
+    -7: N/A as original or new face experimental task task was not run in this cycle
+
+fnrexpeoon_cresp:
+  type: Integer
+  description: original or new face task correct response
+  range:
+  - 1::4
+  - -7
+  notes: 1 = original, very certain; 2 = original, not certain; 3 = new, not certain;
+    4 = new, very certain; -7 = N/A as original or new face experimental  task was
+    not run in this cycle
+  codes:
+    1: original, very certain
+    2: original, not certain
+    3: new, not certain
+    4: new, very certain
+    -7: N/A as original or new face experimental  task was not run in this cycle
+
+fnrexpeoon_durerror:
+  type: Integer
+  description: original or new face task duration error
+
+fnrexpeoon_onsetdelay:
+  type: Integer
+  description: original or new face task onset delay
+  notes: in milliseconds; -7 = N/A as original or new face  experimental  task was
+    not run in this cycle
+  codes:
+    -7: N/A as original or new face  experimental  task was not run in this cycle
+
+fnrexpeoon_onsettime:
+  type: Integer
+  description: original or new face task onset time of image
+  notes: in milliseconds; -7 = N/A as original or new face  experimental  task was
+    not run in this cycle
+  codes:
+    -7: N/A as original or new face  experimental  task was not run in this cycle
+
+fnrexpeoon_onstoonsttime:
+  type: Integer
+  description: original or new face task onset to onset time
+  notes: in milliseconds; -7 = N/A as original or new face  experimental  task was
+    not run in this cycle
+  codes:
+    -7: N/A as original or new face  experimental  task was not run in this cycle
+
+fnrexpeoon_resp:
+  type: Integer
+  description: original or new face task actual response by subject
+  range:
+  - 1::4
+  - -7
+  notes: 1 = original, very certain; 2 = original, not certain; 3 = new, not certain;
+    4 = new, very certain; -7 = N/A as original or new face  experimental  task was
+    not run in this cycle
+  codes:
+    1: original, very certain
+    2: original, not certain
+    3: new, not certain
+    4: new, very certain
+    -7: N/A as original or new face  experimental  task was not run in this cycle
+
+fnrexpeoon_resptime:
+  type: Integer
+  description: original or new face task subject response time
+  notes: in milliseconds; -7 = N/A as original or new face task task was not run in
+    this cycle
+  codes:
+    -7: N/A as original or new face task task was not run in this cycle
+
+fnrexpeoon_respttime:
+  type: Integer
+  description: original or new face task subject response timestamp  in relation to
+    beginning program execution
+  notes: in milliseconds; -7 = N/A as original or new face  experimental  task was
+    not run in this cycle
+  codes:
+    -7: N/A as original or new face  experimental  task was not run in this cycle
+
+fnrproc:
+  type: String
+  length: 20
+  description: Procedure running in this block number
+  notes: ExampleProc = example/practice procedure ; ExperimentalProc = experimental
+    procedure
+
+fnrrunning:
+  type: String
+  length: 20
+  description: type of block in this run
+  notes: ExampleBlock = example/practice block being run; ExperimentalBlock = experimental
+    block beig run
+
+fnrexamwn_acc:
+  type: Integer
+  description: which name face example/practice task accuracy
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0 = incorrect response; 1 = correct response; -7 = N/A as example/practice
+    which name face task was not run
+  codes:
+    0: incorrect response
+    1: correct response
+    -7: N/A as example/practice which name face task was not run
+
+fnrexamwn_cresp:
+  type: Integer
+  description: which name face example/practice task correct response
+  range:
+  - 1::4
+  - -7
+  notes: 1 = Name 1; 2 = Name 2; 3 = Name 3; 4 =New; -7 = N/A as example/practice
+    which name face task was not run
+  codes:
+    1: Name 1
+    2: Name 2
+    3: Name 3
+    4: New
+    -7: N/A as example/practice which name face task was not run
+
+fnrexamwn_durerror:
+  type: Integer
+  description: which name face example/practice task duration error
+
+fnrexamwn_onsetdelay:
+  type: Integer
+  description: which name face example/practice task onset delay
+  notes: in milliseconds; -7 = N/A as task was not run in this cycle
+  codes:
+    -7: N/A as task was not run in this cycle
+
+fnrexamwn_onsettime:
+  type: Integer
+  description: which name face example/practice task onset time of image
+  notes: in milliseconds; -7 = N/A as task was not run in this cycle
+  codes:
+    -7: N/A as task was not run in this cycle
+
+fnrexamwn_onstoonsttime:
+  type: Integer
+  description: which name face example/practice task onset to onset time
+  notes: in milliseconds; -7 = N/A as task was not run in this cycle
+  codes:
+    -7: N/A as task was not run in this cycle
+
+fnrexamwn_resp:
+  type: Integer
+  description: which name face example/practice task face name retrieval task actual
+    response by subject
+  range:
+  - 1::4
+  - -7
+  notes: 1 = Name 1; 2 = Name 2; 3 = Name 3; 4 =New; -7 = N/A as example/practice
+    which name face task was not run
+  codes:
+    1: Name 1
+    2: Name 2
+    3: Name 3
+    4: New
+    -7: N/A as example/practice which name face task was not run
+
+fnrexamwn_resptime:
+  type: Integer
+  description: which name face example/practice task subject response time
+  notes: in milliseconds; -7 = N/A as task was not run in this cycle
+  codes:
+    -7: N/A as task was not run in this cycle
+
+fnrexamwn_respttime:
+  type: Integer
+  description: which name face example/practice task subject response timestamp in
+    relation to beginning program execution
+  notes: in milliseconds; -7 = N/A as task was not run in this cycle
+  codes:
+    -7: N/A as task was not run in this cycle
+
+fnrexpewn_acc:
+  type: Integer
+  description: which name face task accuracy
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0 = incorrect response; 1 = correct response; -7 = N/A as experimental which
+    name face task was not run
+  codes:
+    0: incorrect response
+    1: correct response
+    -7: N/A as experimental which name face task was not run
+
+fnrexpewn_cresp:
+  type: Integer
+  description: which name face task correct response
+
+fnrexpewn_durerror:
+  type: Integer
+  description: which name face task duration error
+
+fnrexpewn_onsetdelay:
+  type: Integer
+  description: which name face task onset delay
+  notes: in milliseconds; -7 = N/A as experimental which name face task was not run
+  codes:
+    -7: N/A as experimental which name face task was not run
+
+fnrexpewn_onsettime:
+  type: Integer
+  description: which name face task onset time of image
+  notes: in milliseconds;  -7 = N/A as experimental which name face task was not run
+  codes:
+    -7: N/A as experimental which name face task was not run
+
+fnrexpewn_onstoonsttime:
+  type: Integer
+  description: which name face task onset to onset time
+  notes: in milliseconds; -7 = N/A as experimental which name face task was not run
+  codes:
+    -7: N/A as experimental which name face task was not run
+
+fnrexpewn_resp:
+  type: Integer
+  description: which name face task face name retrieval actual response by subject
+  range:
+  - 1::4
+  - -7
+  notes: 1 = Name 1; 2 = Name 2; 3 = Name 3; 4 =New ;  -7 = N/A as experimental which
+    name face task was not run
+  codes:
+    1: Name 1
+    2: Name 2
+    3: Name 3
+    4: New
+    -7: N/A as experimental which name face task was not run
+
+fnrexpewn_resptime:
+  type: Integer
+  description: which name face task subject response time
+  notes: in milliseconds;  -7 = N/A as experimental which name face task was not run
+  codes:
+    -7: N/A as experimental which name face task was not run
+
+fnrexpewn_respttime:
+  type: Integer
+  description: which name face task subject response timestamp in relation to beginning
+    program execution
+  notes: in milliseconds;  -7 = N/A as experimental which name face task was not run
+  codes:
+    -7: N/A as experimental which name face task was not run
+
+stim_onsettime:
+  type: Integer
+  description: exact time of start of stimulus presentation relative to start of experiment
+  range:
+  - 0::900000
+  notes: in milliseconds
+
+baseline_a_002:
+  type: String
+  length: 100
+  description: 'Interview Start Time:'
+  alias: sessiontime
+
+stimimagert:
+  type: Integer
+  description: Stimulus Image Reaction Time
+  alias: stim_rt
+
+alltrials200_1:
+  type: Integer
+  description: Trial number
+  alias: trial,trialno
+
+getready_onsettime:
+  type: Float
+  description: Scanner onset time (timestamp, ms)
+
+isidur:
+  type: Float
+  description: Interstimulus Interval Duration (ms)
+
+previousvalence:
+  type: String
+  length: 10
+  description: Previous Valence
+  range:
+  - positive
+  - negative
+
+valence:
+  type: String
+  length: 10
+  description: Current Valence
+  range:
+  - positive
+  - negative
+  - neutral
+
+valence_switch:
+  type: Integer
+  description: Valence Switch
+  range:
+  - 0::1
+  notes: 0=repeat (i.e., previous and current valence is the same, e.g., pp,nn) ;
+    1=switch (i.e., previous and current valence is the different, e.g., pn,np)
+  codes:
+    0: repeat (i.e., previous and current valence is the same, e.g., pp,nn)
+    1: switch (i.e., previous and current valence is the different, e.g., pn,np)
+
+stim_acc:
+  type: Integer
+  description: Stimulus Accuracy
+  range:
+  - 0::1
+  notes: 0=incorrect; 1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+runtype:
+  type: String
+  length: 5
+  description: Run Type
+  range:
+  - Mixed
+  - Self
+  - Other
+  notes: Mixed runs contain statements about themselves (self) and a same-sex friend
+    (other), Self runs contain only "I am" statements, Other runs contain only "[Friend]
+    is", where [Friend] is named by each participant
+
+word:
+  type: String
+  length: 20
+  description: Trait adjective
+  notes: Various Stimuli
+
+previoustype:
+  type: String
+  length: 1
+  description: Previous Reference Type
+  range:
+  - S
+  - O
+  notes: Self
+
+typecondition:
+  type: String
+  length: 2
+  description: Combined Reference Type on Previous Trial and on Current Trial
+  range:
+  - SS
+  - OO
+  - OS
+  - SO
+  notes: SS=previous and current trial are Self; OO=previous and current trial are
+    Other; SO= Self Reference on previous trial and Other Reference on current trial;
+    OS = Other Reference on previous trial and Self Reference on current trial
+  codes:
+    SS: previous and current trial are Self
+    OO: previous and current trial are Other
+    SO: Self Reference on previous trial and Other Reference on current trial
+    OS: Other Reference on previous trial and Self Reference on current trial
+
+type_switch:
+  type: Integer
+  description: Reference Type Switch
+  range:
+  - 0::1
+  notes: 0=repeat (i.e., previous and current reference type is the same, e.g., SS,OO);
+    1=switch (i.e., previous and current reference type is the different, e.g., SO,
+    OS)
+  codes:
+    0: repeat (i.e., previous and current reference type is the same, e.g., SS,OO)
+    1: switch (i.e., previous and current reference type is the different, e.g., SO,
+      OS)
+
+endorsed:
+  type: Integer
+  description: 'Participant Response: Is the stimulus statement true or false?'
+  range:
+  - 0
+  - 1
+  notes: 0=false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+emotionl:
+  type: String
+  length: 5
+  description: Emotion on Left
+  range:
+  - happy
+  - angry
+  - sad
+
+emotionr:
+  type: String
+  length: 5
+  description: Emotion on Right
+  range:
+  - happy
+  - angry
+  - sad
+
+previouscue:
+  type: String
+  length: 5
+  description: Word of Previous Trial
+  range:
+  - happy
+  - angry
+  - sad
+
+cuecondition:
+  type: String
+  length: 2
+  description: Combined Cue on Previous and Cue on Current Trial
+  range:
+  - HH
+  - AA
+  - SS
+  - HA
+  - AH
+  - HS
+  - SH
+  notes: HH=previous and current trial cue is happy; AA=previous and current trial
+    cue is angry; SS=previous and current trial is sad; HS = happy on previous trial
+    and sad on current trial; HA = happy on previous trial and angry on current trial)
+  codes:
+    HH: previous and current trial cue is happy
+    AA: previous and current trial cue is angry
+    SS: previous and current trial is sad
+    HS: happy on previous trial and sad on current trial
+    HA: happy on previous trial and angry on current trial)
+
+cue_switch:
+  type: Integer
+  description: Cue Switch
+  range:
+  - 0::1
+  notes: 0=repeat (i.e., previous and current valence is the same, e.g., HH, AA, SS);
+    1=switch (i.e., previous and current valence is the different, e.g., HA, AH, HS,
+    SH)
+  codes:
+    0: repeat (i.e., previous and current valence is the same, e.g., HH, AA, SS)
+    1: switch (i.e., previous and current valence is the different, e.g., HA, AH,
+      HS, SH)
+
+gender_face:
+  type: String
+  length: 1
+  description: Gender of Current Trial
+  range:
+  - F
+  - M
+  notes: F=Female; M=Male
+  codes:
+    F: Female
+    M: Male
+
+gender_switch:
+  type: Integer
+  description: Gender Switch
+  range:
+  - 0::1
+  notes: 0=repeat (i.e., previous cue is same as current cue, e.g., FF, MM); 1=switch
+    (i.e., previous cue is different than current cue, e.g., FM, MF)
+  codes:
+    0: repeat (i.e., previous cue is same as current cue, e.g., FF, MM)
+    1: switch (i.e., previous cue is different than current cue, e.g., FM, MF)
+
+gendercondition:
+  type: String
+  length: 2
+  description: Combined Gender on Previous and Current Trial
+  range:
+  - FF
+  - FM
+  - MF
+  - MM
+  notes: FM = female on previous trial and male on current trial; MF=male on previous
+    trial and female on current trial
+  codes:
+    FM: female on previous trial and male on current trial
+    MF: male on previous trial and female on current trial
+
+previouslocation:
+  type: String
+  length: 1
+  description: Previous Cued Location of Cued Emotion
+  range:
+  - L
+  - R
+  notes: L=Left; R=Right
+  codes:
+    L: Left
+    R: Right
+
+location:
+  type: Integer
+  description: Location. Where the AADOS was administered
+  range:
+  - 1::3
+  notes: 1 = Clinic; 2 = Participant's home; 3 = Other testing space
+  codes:
+    1: Clinic
+    2: Participant's home
+    3: Other testing space
+
+location_switch:
+  type: Integer
+  description: Location switch
+  range:
+  - 0::1
+  notes: 0=repeat (i.e., previous cued location is same as current cued location,
+    e.g., LL,RR); 1=switch (i.e., previous cued location is different than current
+    cued location, e.g., LR, RL)
+  codes:
+    0: repeat (i.e., previous cued location is same as current cued location, e.g.,
+      LL,RR)
+    1: switch (i.e., previous cued location is different than current cued location,
+      e.g., LR, RL)
+
+locationcondition:
+  type: String
+  length: 2
+  description: Combined Previous and Current Cued Location
+  range:
+  - LL
+  - LR
+  - RL
+  - RR
+  notes: LR = left on previous trial and right on current trial; RL=right on previous
+    trial and left on current trial
+  codes:
+    LR: left on previous trial and right on current trial
+    RL: right on previous trial and left on current trial
+
+reference_type:
+  type: String
+  length: 1
+  description: Current Reference Type
+  range:
+  - S
+  - O
+  notes: Other
+  alias: type
+
+proceduretrial_block:
+  type: String
+  length: 7
+  description: Block Type
+  range:
+  - BlockHA
+  - BlockHS
+  notes: 'BlockHA=Block of Happy-Angry Pairs; BlockHS=Block of Happy-Sad Pairs; Note:
+    Happy face could appear on the left or the right (see EmotionL and EmotionR)'
+  alias: proceduretrial
+
+faceid:
+  type: String
+  length: 100
+  description: Facial Identity Presented
+  notes: Various Stimuli
+  alias: id
+
+currentcue:
+  type: String
+  length: 5
+  description: Word of Current Trial
+  range:
+  - happy
+  - angry
+  - sad
+  alias: cue
+
+valencecondition:
+  type: String
+  length: 2
+  description: Combined Valence on Previous and Current Trial
+  range:
+  - pp
+  - pn
+  - np
+  - nn
+  notes: pp=previous and current trial are positive; pp=previous and current trial
+    are negative; pn = positive picture on previous trial and negative picture on
+    current trial; np = negative picture on previous trial and positive picture on
+    current trial
+  codes:
+    pp: previous and current trial are negative
+    pn: positive picture on previous trial and negative picture on current trial
+    np: negative picture on previous trial and positive picture on current trial
+
+previousgender:
+  type: String
+  length: 1
+  description: Gender of Previous Trial
+  range:
+  - F
+  - M
+  notes: F=Female; M=Male
+  codes:
+    F: Female
+    M: Male
+
+experiment_id:
+  type: Integer
+  description: ID for the Experiment/settings/run
+
+val_sumbitrt:
+  type: Float
+  description: Reaction time of the participant pressing the submit key for valence
+    scale
+  alias: rstim_rt_valence
+
+aro_submitrt:
+  type: Float
+  description: Reaction time - from rating onset to pressing the submit key for arousal
+    scale
+  alias: rstim1_rt,rstim_rt_arousal
+
+rstim_resp_valence:
+  type: Integer
+  description: Valence Rating - Indicate how the picture makes you feel.
+  range:
+  - 1::9
+  notes: 1=extremely negative; 5=neutral; 9=extremely positive.
+  codes:
+    1: extremely negative
+    5: neutral
+    9: extremely positive.
+
+rstim_resp_arousal:
+  type: Integer
+  description: 'Arousal Rating - Indicate how strong the emotion is. '
+  range:
+  - 1::9
+  notes: 1=not at all; 9=extremly intense
+  alias: rstim1_resp
+  codes:
+    1: not at all
+    9: extremly intense
+
+rstim_rt_emotion:
+  type: Integer
+  description: Reaction time (ms) of emotion labeling
+  notes: self-paced task
+
+rstim_acc:
+  type: Integer
+  description: ReportedEmotion = Emotion displayed?
+  range:
+  - 0::1
+  notes: 0=incorrect; 1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+cb1_8a_other:
+  type: String
+  length: 20
+  description: 'Counterbalance 1: Face8 Participant Response: Other Response:'
+
+cb1_9a:
+  type: Integer
+  description: 'Counterbalance 1: Face9 Participant Response:'
+  range:
+  - 1::3
+  notes: 1 = Sharon ; 2 = No response ; 3 = Other response  (enter in the following)
+  codes:
+    1: Sharon
+    2: No response
+    3: Other response  (enter in the following)
+
+cb1_9a_other:
+  type: String
+  length: 20
+  description: 'Counterbalance 1: Face9 Participant Response: Other Response:'
+
+cb1_10a:
+  type: Integer
+  description: 'Counterbalance 1: Face10 Participant Response:'
+  range:
+  - 1::3
+  notes: 1 = Diane ; 2 = No response ; 3 = Other response  (enter in the following)
+  codes:
+    1: Diane
+    2: No response
+    3: Other response  (enter in the following)
+
+cb1_10a_other:
+  type: String
+  length: 20
+  description: 'Counterbalance 1: Face10 Participant Response: Other Response:'
+
+cb2_1a:
+  type: Integer
+  description: 'Counterbalance 2: Face1 Participant Response:'
+  range:
+  - 1::3
+  notes: 1 = Scott ; 2 = No response ; 3 = Other response  (enter in the following)
+  codes:
+    1: Scott
+    2: No response
+    3: Other response  (enter in the following)
+
+cb2_1a_other:
+  type: String
+  length: 20
+  description: 'Counterbalance 2: Face1 Participant Response: Other Response:'
+
+cb2_2a:
+  type: Integer
+  description: 'Counterbalance 2: Face2 Participant Response:'
+  range:
+  - 1::3
+  notes: 1 = Tony ; 2 = No response ; 3 = Other response  (enter in the following)
+  codes:
+    1: Tony
+    2: No response
+    3: Other response  (enter in the following)
+
+cb2_2a_other:
+  type: String
+  length: 20
+  description: 'Counterbalance 2: Face2 Participant Response: Other Response:'
+
+cb2_3a:
+  type: Integer
+  description: 'Counterbalance 2: Face3 Participant Response:'
+  range:
+  - 1::3
+  notes: 1 = Mark ; 2 = No response ; 3 = Other response  (enter in the following)
+  codes:
+    1: Mark
+    2: No response
+    3: Other response  (enter in the following)
+
+cb2_3a_other:
+  type: String
+  length: 20
+  description: 'Counterbalance 2: Face3 Participant Response: Other Response:'
+
+cb2_4a:
+  type: Integer
+  description: 'Counterbalance 2: Face4 Participant Response:'
+  range:
+  - 1::3
+  notes: 1 = Roger ; 2 = No response ; 3 = Other response  (enter in the following)
+  codes:
+    1: Roger
+    2: No response
+    3: Other response  (enter in the following)
+
+cb2_4a_other:
+  type: String
+  length: 20
+  description: 'Counterbalance 2: Face4 Participant Response: Other Response:'
+
+cb2_5a:
+  type: Integer
+  description: 'Counterbalance 2: Face5 Participant Response:'
+  range:
+  - 1::3
+  notes: 1 = John ; 2 = No response ; 3 = Other response  (enter in the following)
+  codes:
+    1: John
+    2: No response
+    3: Other response  (enter in the following)
+
+cb2_5a_other:
+  type: String
+  length: 20
+  description: 'Counterbalance 2: Face5 Participant Response: Other Response:'
+
+cb2_6a:
+  type: Integer
+  description: 'Counterbalance 2: Face6 Participant Response:'
+  range:
+  - 1::3
+  notes: 1 = Pam ; 2 = No response ; 3 = Other response  (enter in the following)
+  codes:
+    1: Pam
+    2: No response
+    3: Other response  (enter in the following)
+
+cb2_6a_other:
+  type: String
+  length: 20
+  description: 'Counterbalance 2: Face6 Participant Response: Other Response:'
+
+cb2_7a:
+  type: Integer
+  description: 'Counterbalance 2: Face7 Participant Response:'
+  range:
+  - 1::3
+  notes: 1 = Ann ; 2 = No response ; 3 = Other response  (enter in the following)
+  codes:
+    1: Ann
+    2: No response
+    3: Other response  (enter in the following)
+
+cb2_7a_other:
+  type: String
+  length: 20
+  description: 'Counterbalance 2: Face7 Participant Response: Other Response:'
+
+cb2_8a:
+  type: Integer
+  description: 'Counterbalance 2: Face8 Participant Response:'
+  range:
+  - 1::3
+  notes: 1 = Linda ; 2 = No response ; 3 = Other response  (enter in the following)
+  codes:
+    1: Linda
+    2: No response
+    3: Other response  (enter in the following)
+
+cb2_8a_other:
+  type: String
+  length: 20
+  description: 'Counterbalance 2: Face8 Participant Response: Other Response:'
+
+cb2_9a:
+  type: Integer
+  description: 'Counterbalance 2: Face9 Participant Response:'
+  range:
+  - 1::3
+  notes: 1 = Stacy ; 2 = No response ; 3 = Other response  (enter in the following)
+  codes:
+    1: Stacy
+    2: No response
+    3: Other response  (enter in the following)
+
+cb2_9a_other:
+  type: String
+  length: 20
+  description: 'Counterbalance 2: Face9 Participant Response: Other Response:'
+
+cb2_10a:
+  type: Integer
+  description: 'Counterbalance 2: Face10 Participant Response:'
+  range:
+  - 1::3
+  notes: 1 = Rachel ; 2 = No response ; 3 = Other response  (enter in the following)
+  codes:
+    1: Rachel
+    2: No response
+    3: Other response  (enter in the following)
+
+cb2_10a_other:
+  type: String
+  length: 20
+  description: 'Counterbalance 2: Face10 Participant Response: Other Response:'
+
+f2_other:
+  type: String
+  length: 10
+  description: 'After scan: what name did subject say if not correct name for face2?'
+
+f10_mem1_rt:
+  type: Float
+  description: 'In scanner: face 10 in Memorize Block 1 (ms to button press)'
+
+f10_rec1_resp:
+  type: Integer
+  description: 'In scanner: face 10 in Recall Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f10_rec1_rt:
+  type: Float
+  description: 'In scanner: face 10 in Recall Block 1 (ms to button press)'
+
+f10_mem2_resp:
+  type: Integer
+  description: 'In scanner: face 10 in Memorize Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f10_mem2_rt:
+  type: Float
+  description: 'In scanner: face 10 in Memorize Block 2 (ms to button press)'
+
+f10_rec2_resp:
+  type: Integer
+  description: 'In scanner: face 10 in Recall Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f10_rec2_rt:
+  type: Float
+  description: 'In scanner: face 10 in Recall Block 2 (ms to button press)'
+
+f3_recall:
+  type: Integer
+  description: 'After scan: did subject recall face 3 name correctly?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=no;1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+f3_other:
+  type: String
+  length: 10
+  description: 'After scan: what name did subject say if not correct name for face3?'
+
+f4_recall:
+  type: Integer
+  description: 'After scan: did subject recall face 4 name correctly?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=no;1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+f4_other:
+  type: String
+  length: 10
+  description: 'After scan: what name did subject say if not correct name for face4?'
+
+f5_recall:
+  type: Integer
+  description: 'After scan: did subject recall face 5 name correctly?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=no;1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+f5_other:
+  type: String
+  length: 10
+  description: 'After scan: what name did subject say if not correct name for face5?'
+
+f6_recall:
+  type: Integer
+  description: 'After scan: did subject recall face 6 name correctly?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=no;1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+f6_other:
+  type: String
+  length: 10
+  description: 'After scan: what name did subject say if not correct name for face6?'
+
+f7_recall:
+  type: Integer
+  description: 'After scan: did subject recall face 7 name correctly?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=no;1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+f7_other:
+  type: String
+  length: 10
+  description: 'After scan: what name did subject say if not correct name for face7?'
+
+f8_recall:
+  type: Integer
+  description: 'After scan: did subject recall face 8 name correctly?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=no;1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+f8_other:
+  type: String
+  length: 10
+  description: 'After scan: what name did subject say if not correct name for face8?'
+
+f9_recall:
+  type: Integer
+  description: 'After scan: did subject recall face 9 name correctly?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=no;1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+f9_other:
+  type: String
+  length: 10
+  description: 'After scan: what name did subject say if not correct name for face9?'
+
+f10_recall:
+  type: Integer
+  description: 'After scan: did subject recall face 10 name correctly?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=no;1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+f10_other:
+  type: String
+  length: 10
+  description: 'After scan: what name did subject say if not correct name for face10?'
+
+f1_mem1_resp:
+  type: Integer
+  description: 'In scanner: face 1 in Memorize Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f1_mem1_rt:
+  type: Float
+  description: 'In scanner: face 1 in Memorize Block 1 (ms to button press)'
+
+f1_rec1_resp:
+  type: Integer
+  description: 'In scanner: face 1 in Recall Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+avg_mem_resp:
+  type: Float
+  description: 'In scanner: Memorization: average proportion of button presses'
+
+f1_rec1_rt:
+  type: Float
+  description: 'In scanner: face 1 in Recall Block 1 (ms to button press)'
+
+f1_mem2_resp:
+  type: Integer
+  description: 'In scanner: face 1 in Memorize Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f1_mem2_rt:
+  type: Float
+  description: 'In scanner: face 1 in Memorize Block 2 (ms to button press)'
+
+f1_rec2_resp:
+  type: Integer
+  description: 'In scanner: face 1 in Recall Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f1_rec2_rt:
+  type: Float
+  description: 'In scanner: face 1 in Recall Block 2 (ms to button press)'
+
+f2_mem1_resp:
+  type: Integer
+  description: 'In scanner: face 2 in Memorize Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f2_mem1_rt:
+  type: Float
+  description: 'In scanner: face 2 in Memorize Block 1 (ms to button press)'
+
+f2_rec1_resp:
+  type: Integer
+  description: 'In scanner: face 2 in Recall Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f2_rec1_rt:
+  type: Float
+  description: 'In scanner: face 2 in Recall Block 1 (ms to button press)'
+
+f2_mem2_resp:
+  type: Integer
+  description: 'In scanner: face 2 in Memorize Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+ave_mem_rt:
+  type: Float
+  description: 'In scanner: Memorization: average ms to button press'
+
+f2_mem2_rt:
+  type: Float
+  description: 'In scanner: face 2 in Memorize Block 2 (ms to button press)'
+
+f2_rec2_resp:
+  type: Integer
+  description: 'In scanner: face 2 in Recall Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f2_rec2_rt:
+  type: Float
+  description: 'In scanner: face 2 in Recall Block 2 (ms to button press)'
+
+f3_mem1_resp:
+  type: Integer
+  description: 'In scanner: face 3 in Memorize Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f3_mem1_rt:
+  type: Float
+  description: 'In scanner: face 3 in Memorize Block 1 (ms to button press)'
+
+f3_rec1_resp:
+  type: Integer
+  description: 'In scanner: face 3 in Recall Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f3_rec1_rt:
+  type: Float
+  description: 'In scanner: face 3 in Recall Block 1 (ms to button press)'
+
+f3_mem2_resp:
+  type: Integer
+  description: 'In scanner: face 3 in Memorize Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f3_mem2_rt:
+  type: Float
+  description: 'In scanner: face 3 in Memorize Block 2 (ms to button press)'
+
+f3_rec2_resp:
+  type: Integer
+  description: 'In scanner: face 3 in Recall Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+avg_rec_resp:
+  type: Float
+  description: 'In scanner: Recall: average proportion of button presses'
+
+f3_rec2_rt:
+  type: Float
+  description: 'In scanner: face 3 in Recall Block 2 (ms to button press)'
+
+f4_mem1_resp:
+  type: Integer
+  description: 'In scanner: face 4 in Memorize Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f4_mem1_rt:
+  type: Float
+  description: 'In scanner: face 4 in Memorize Block 1 (ms to button press)'
+
+f4_rec1_resp:
+  type: Integer
+  description: 'In scanner: face 4 in Recall Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f4_rec1_rt:
+  type: Float
+  description: 'In scanner: face 4 in Recall Block 1 (ms to button press)'
+
+f4_mem2_resp:
+  type: Integer
+  description: 'In scanner: face 4 in Memorize Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f4_mem2_rt:
+  type: Float
+  description: 'In scanner: face 4 in Memorize Block 2 (ms to button press)'
+
+f4_rec2_resp:
+  type: Integer
+  description: 'In scanner: face 4 in Recall Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f4_rec2_rt:
+  type: Float
+  description: 'In scanner: face 4 in Recall Block 2 (ms to button press)'
+
+f5_mem1_resp:
+  type: Integer
+  description: 'In scanner: face 5 in Memorize Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+avg_rec_rt:
+  type: Float
+  description: 'In scanner: Recall: average ms to button press'
+
+f5_mem1_rt:
+  type: Float
+  description: 'In scanner: face 5 in Memorize Block 1 (ms to button press)'
+
+f5_rec1_resp:
+  type: Integer
+  description: 'In scanner: face 5 in Recall Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f5_rec1_rt:
+  type: Float
+  description: 'In scanner: face 5 in Recall Block 1 (ms to button press)'
+
+f5_mem2_resp:
+  type: Integer
+  description: 'In scanner: face 5 in Memorize Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f5_mem2_rt:
+  type: Float
+  description: 'In scanner: face 5 in Memorize Block 2 (ms to button press)'
+
+f5_rec2_resp:
+  type: Integer
+  description: 'In scanner: face 5 in Recall Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f5_rec2_rt:
+  type: Float
+  description: 'In scanner: face 5 in Recall Block 2 (ms to button press)'
+
+f6_mem1_resp:
+  type: Integer
+  description: 'In scanner: face 6 in Memorize Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f6_mem1_rt:
+  type: Float
+  description: 'In scanner: face 6 in Memorize Block 1 (ms to button press)'
+
+f6_rec1_resp:
+  type: Integer
+  description: 'In scanner: face 6 in Recall Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f1_recall:
+  type: Integer
+  description: 'After scan: did subject recall face 1 name correctly?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=no;1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+f6_rec1_rt:
+  type: Float
+  description: 'In scanner: face 6 in Recall Block 1 (ms to button press)'
+
+f6_mem2_resp:
+  type: Integer
+  description: 'In scanner: face 6 in Memorize Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f6_mem2_rt:
+  type: Float
+  description: 'In scanner: face 6 in Memorize Block 2 (ms to button press)'
+
+f6_rec2_resp:
+  type: Integer
+  description: 'In scanner: face 6 in Recall Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f6_rec2_rt:
+  type: Float
+  description: 'In scanner: face 6 in Recall Block 2 (ms to button press)'
+
+f7_mem1_resp:
+  type: Integer
+  description: 'In scanner: face 7 in Memorize Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f7_mem1_rt:
+  type: Float
+  description: 'In scanner: face 7 in Memorize Block 1 (ms to button press)'
+
+f7_rec1_resp:
+  type: Integer
+  description: 'In scanner: face 7 in Recall Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f7_rec1_rt:
+  type: Float
+  description: 'In scanner: face 7 in Recall Block 1 (ms to button press)'
+
+f7_mem2_resp:
+  type: Integer
+  description: 'In scanner: face 7 in Memorize Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f1_other:
+  type: String
+  length: 10
+  description: 'After scan: what name did subject say if not correct name for face1?'
+
+f7_mem2_rt:
+  type: Float
+  description: 'In scanner: face 7 in Memorize Block 2 (ms to button press)'
+
+f7_rec2_resp:
+  type: Integer
+  description: 'In scanner: face 7 in Recall Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f7_rec2_rt:
+  type: Float
+  description: 'In scanner: face 7 in Recall Block 2 (ms to button press)'
+
+f8_mem1_resp:
+  type: Integer
+  description: 'In scanner: face 8 in Memorize Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f8_mem1_rt:
+  type: Float
+  description: 'In scanner: face 8 in Memorize Block 1 (ms to button press)'
+
+f8_rec1_resp:
+  type: Integer
+  description: 'In scanner: face 8 in Recall Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f8_rec1_rt:
+  type: Float
+  description: 'In scanner: face 8 in Recall Block 1 (ms to button press)'
+
+f8_mem2_resp:
+  type: Integer
+  description: 'In scanner: face 8 in Memorize Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f8_mem2_rt:
+  type: Float
+  description: 'In scanner: face 8 in Memorize Block 2 (ms to button press)'
+
+f8_rec2_resp:
+  type: Integer
+  description: 'In scanner: face 8 in Recall Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f2_recall:
+  type: Integer
+  description: 'After scan: did subject recall face 2 name correctly?'
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=no;1=yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+f8_rec2_rt:
+  type: Float
+  description: 'In scanner: face 8 in Recall Block 2 (ms to button press)'
+
+f9_mem1_resp:
+  type: Integer
+  description: 'In scanner: face 9 in Memorize Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f9_mem1_rt:
+  type: Float
+  description: 'In scanner: face 9 in Memorize Block 1 (ms to button press)'
+
+f9_rec1_resp:
+  type: Integer
+  description: 'In scanner: face 9 in Recall Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f9_rec1_rt:
+  type: Float
+  description: 'In scanner: face 9 in Recall Block 1 (ms to button press)'
+
+f9_mem2_resp:
+  type: Integer
+  description: 'In scanner: face 9 in Memorize Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f9_mem2_rt:
+  type: Float
+  description: 'In scanner: face 9 in Memorize Block 2 (ms to button press)'
+
+f9_rec2_resp:
+  type: Integer
+  description: 'In scanner: face 9 in Recall Block 2 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+f9_rec2_rt:
+  type: Float
+  description: 'In scanner: face 9 in Recall Block 2 (ms to button press)'
+
+f10_mem1_resp:
+  type: Integer
+  description: 'In scanner: face 10 in Memorize Block 1 (yes/no)'
+  range:
+  - 1
+  - 0
+  notes: 1=yes;0=no
+  codes:
+    1: 'yes'
+    0: 'no'
+
+fneimageblockbmp:
+  type: String
+  length: 100
+  description: Image file name used in example/practice blocks bmp (bitmap) format
+    picture

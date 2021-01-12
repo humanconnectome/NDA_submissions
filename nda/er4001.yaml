@@ -2354,6 +2354,7 @@ respondent:
   - Parent
   - Teacher
   - Child
+  - Self
 
 er40_d_fc:
   type: Integer

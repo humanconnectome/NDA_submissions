@@ -925,6 +925,7 @@ respondent:
   - Parent
   - Teacher
   - Child
+  - Self
 
 sv_6mo_200:
   type: Float

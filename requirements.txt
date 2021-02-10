@@ -8,7 +8,7 @@ ccf==0.4.5
 certifi==2020.11.8
 cffi==1.14.3
 chardet==3.0.4
-cryptography==3.2.1
+cryptography==3.3.2
 decorator==4.4.2
 docutils==0.15.2
 et-xmlfile==1.0.1

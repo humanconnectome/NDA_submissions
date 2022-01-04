@@ -12,7 +12,7 @@ class DataCache:
         for source in sources:
             self.sources[source.get_source_name()] = source
 
-    def preload(self, fields):
+    def preload(self, fields):  #fields are the subset of redcap being mapped (names)
         d = defaultdict(set)
         for source, field in fields:
             d[source].add(field)

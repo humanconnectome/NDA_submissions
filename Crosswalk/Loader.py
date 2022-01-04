@@ -26,7 +26,7 @@ class Loader:
     def _fields_hook_(self, fields):
         """
         Use this function to add sepcial fields that are not explicitly
-        described in the yaml map files.
+        described in the yaml map files. (names not renames)
         """
         return fields
 
@@ -41,15 +41,14 @@ class Loader:
         Manipulate the dataframe to create additional or rename existing fields.
         This is also a good place to merge additional data.
         """
-        #rosetta = pd.read_csv('UnrelatedHCAHCD_w_STG_Image_and_pseudo_GUID05_05_2020.csv')
         filename = config['rosetta']['filename']
+        print(df.redcap_event_name.unique())
+        print(filename)
         rosetta=pd.read_csv(filename)
         rosetta = rosetta[['subjectped', 'nda_guid', 'nda_gender', 'nda_interview_date', 'nda_interview_age']]
         rosetta.columns = ['subject', 'subjectkey', 'gender', 'interview_date', 'interview_age']
         df = rosetta.merge(df, on='subject', suffixes=('', '_alt'))
         df['source'] = self.name
-        df['age'] = df.interview_age / 12
-
         return df
 
     def _detect_missing_fields_hook_(self, df, fields):
@@ -128,6 +127,7 @@ class RedcapLoader(Loader):
     def _load_hook_(self, fields):
         redcap = CachedRedcap()
         df = redcap.get_behavioral(self.get_source_name(), list(fields))
+        print(df.redcap_event_name.unique())
         return df
 
     def _detect_missing_fields_hook_(self, df, fields):

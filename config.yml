@@ -7,17 +7,35 @@ root:
 config_files:
   box: ./creds/BoxApp.json
 rosetta:  
-  filename: 'UnrelatedHCAHCD_w_STG_Image_and_pseudo_GUID05_27_2020.csv'
+  filename: 'HCA_AllSources_11_19_2021.csv'
 Redcap:
   api_url: https://redcap.wustl.edu/redcap/srvrs/prod_v3_1_0_001/redcap/api/
   datasources:
     qint:
-      visit: 1
+      visit:
+        - 1
+        - 2
+        - 3
+    hcpa:
+      events: 
+        - visit_1_arm_1
+        - visit_2_arm_1
+      fields:
+        idvar: id
+        eventvar: redcap_event_name
+        dobvar: dob
+        field: subject_id
+        interview_date: v1_date
+        sexatbirth: gender
+        sitenum: site
   behavioral:
     hcpa:
       events:
         - visit_1_arm_1
+        - visit_2_arm_1
       fields:
+        idvar: id
+        eventvar: redcap_event_name
         dobvar: dob
         field: subject_id
         interview_date: v1_date
@@ -35,6 +53,8 @@ Redcap:
     child:
       events:
         - visit_1_arm_1
+        - visit_2_arm_1
+        - visit_3_arm_1
       fields:
         dobvar: dob
         field: subject_id
@@ -44,88 +64,11 @@ Redcap:
     parent:
       events:
         - visit_1_arm_1
+        - visit_2_arm_1
+        - visit_3_arm_1
       fields:
-        dobvar: dob
         field: parent_id
-        interview_date: intake_date
+        #interview_date: intake_date
         sexatbirth: gender
         sitenum: site
-KSADS:
-  download_dir: ./cache/raw_ksads/
-  siteids:
-    Harvard: 37
-    Minn: 38
-    UCLA: 36
-    WashU: 34
-  forms:
-    - intro
-    - screener
-    - supplement
-ksads_snapshotfolderid: 48203202724
-penn_snapshotfolderid:  48203214504
-snapshotQCfolder: 76434619813
-keyfileid: 265126641029
-cachekeyfile: 506958838440
-PennCNP:
-  credentials: ../creds/PennCNP.yml
-  slim: 460781218444
-  dict: 460884641280
-  snapshot: 452784840845
-Summaries:
-  Intro:
-    dict_id: 450219939565
-    key_sheet: intro
-    slim_id: 449745327689
-  Screener:
-    dict_id: 450226557492
-    key_sheet: Screener
-    slim_id: 449798152073
-  Supplement:
-    dict_id: 450238563945
-    key_sheet: Supplement
-    slim_id: 449779011618
-Sites:
-  WashU:
-    Intro: 317203291349
-    Screener: 317204091034
-    Supplement: 317203382109
-  Minn:
-    Intro: 317226607001
-    Screener: 317230106899
-    Supplement: 317226471328
-  UCLA:
-    Intro: 317224169848
-    Screener: 317224489061
-    Supplement: 317224494224
-  Harvard:
-    Intro: 317223373321
-    Screener: 317216055920
-    Supplement: 317222199440
-Assessments:
-  Intro:
-    cleanest_start:
-      - 317203291349
-      - 317226607001
-      - 317224169848
-      - 317223373321
-    dict_id: 450219939565
-    key_sheet: intro
-    slim_id: 449745327689
-  Screener:
-    cleanest_start:
-      - 317204091034
-      - 317230106899
-      - 317224489061
-      - 317216055920
-    dict_id: 450226557492
-    key_sheet: Screener
-    slim_id: 449798152073
-  Supplement:
-    cleanest_start:
-      - 317203382109
-      - 317226471328
-      - 317224494224
-      - 317222199440
-    dict_id: 450238563945
-    key_sheet: Supplement
-    slim_id: 449779011618
+

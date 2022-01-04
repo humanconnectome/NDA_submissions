@@ -45950,6 +45950,30 @@ fp_pds_p_cat:
   branching: '([age]>=5 and [age]<14) '
   annotation: '@HIDDEN-SURVEY'
 
+fp_pubertal_missing:
+  form: follow_up
+  type: calc
+  label: 'Pubertal Missing Items Total:'
+  choices: "sum((if([fp_pds_p_1]='NaN', '1', '0')),\r\n(if([fp_pds_p_2]='NaN', '1',\
+    \ '0')),\r\n(if([fp_pds_p_3]='NaN', '1', '0')),\r\n(if(([visit_1_arm_1][gender]='1'\
+    \ and [fp_pds_p_b4]='NaN'), '1', '0')),\r\n(if(([visit_1_arm_1][gender]='1' and\
+    \ [fp_pds_p_b5]='NaN'), '1', '0')),\r\n(if(([visit_1_arm_1][gender]='2' and [fp_pds_p_g4]='NaN'),\
+    \ '1', '0')),\r\n(if(([visit_1_arm_1][gender]='2' and [fp_pds_p_g5a]='NaN'), '1',\
+    \ '0')))"
+  annotation: '@HIDDEN-SURVEY'
+
+fp_pubertal_average:
+  form: follow_up
+  type: calc
+  label: "fp_puberty Average:\r\n\r\nAllowing one missing/unanswered item max and\
+    \ for that item, to use the average of the remaining answered questions."
+  choices: if(([fp_pubertal_missing]='0' and [fp_pds_p_score]>=1), ([fp_pds_p_score]/5),
+    (if([fp_pubertal_missing]='1', (max((if([visit_1_arm_1][gender]='1', (mean([fp_pds_p_1],
+    [fp_pds_p_2], [fp_pds_p_3], [fp_pds_p_b4], [fp_pds_p_b5])), 'NaN')), (if([visit_1_arm_1][gender]='2',
+    (mean([fp_pds_p_1], [fp_pds_p_2], [fp_pds_p_3], [fp_pds_p_g4], [fp_pds_p_g5a])),
+    'NaN')))), 'NaN')))
+  annotation: '@HIDDEN-SURVEY'
+
 fp_diagnose:
   form: follow_up
   section: <font size="+0.05"><center>Neurological or Other Physical Diagnosis</center></font>
@@ -90735,7 +90759,7 @@ rte18_promis_sc002:
 rte18_promis_sc003:
   form: remote_toolbox_parent_about_self
   type: radio
-  label: 'How often have you felt nervous and '
+  label: How often have you felt nervous and "stressed"?
   choices:
     1: Never
     2: Almost Never
@@ -90844,7 +90868,8 @@ rte18_promis_sc003ms:
   form: remote_toolbox_parent_about_self
   type: descriptive
   label: '<span style=''font-size:125%; color: #8A0808;''> You have not provided an
-    answer for question "How often have you felt nervous and '
+    answer for question "How often have you felt nervous and  "stressed"? Please review,
+    and answer.</span>'
   branching: '[rte18_promis_sc003]='''''
 
 rte18_promis_sc006_rms:

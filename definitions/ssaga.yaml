@@ -31250,7 +31250,7 @@ dr12b1_coc_12m:
   form: ssaga
   type: radio
   label: '<p>DR12B1 12-MONTH <div style="margin-left: 40px">Continue to use COCAINE  knowing
-    itcaused  hepatitis</div></p>'
+    it caused  hepatitis</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -31268,7 +31268,7 @@ dr12c1_coc_12m:
   form: ssaga
   type: radio
   label: '<p>DR12C1 12-MONTH <div style="margin-left: 40px">Continue to use COCAINE  knowing
-    itcaused  other health problems</div></p>'
+    it caused  other health problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -31286,7 +31286,7 @@ dr13d_coc_12m:
   form: ssaga
   type: radio
   label: '<p>DR13D 12-MONTH <div style="margin-left: 40px">Continue to use COCAINE  knowing
-    itcaused  </div></p>'
+    it caused  any problem</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -31304,7 +31304,7 @@ dr14b_coc_12m:
   form: ssaga
   type: radio
   label: '<p>DR14B 12-MONTH <div style="margin-left: 40px">COCAINE Continue to use
-    knowing itcaused  problems with police</div></p>'
+    knowing it caused  problems with police</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -31376,7 +31376,7 @@ dr18a_coc_12m:
   form: ssaga
   type: radio
   label: '<p>DR18A 12-MONTH <div style="margin-left: 40px">COCAINE Continue to use
-    knowing itcaused  emotional or psychological problems</div></p>'
+    knowing it caused  emotional or psychological problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -31590,7 +31590,7 @@ dr12b1_stim_12m:
   form: ssaga
   type: radio
   label: '<p>DR12B1 12-MONTH <div style="margin-left: 40px">Continue to use STIM  knowing
-    itcaused  hepatitis</div></p>'
+    it caused  hepatitis</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -31608,7 +31608,7 @@ dr12c1_stim_12m:
   form: ssaga
   type: radio
   label: '<p>DR12C1 12-MONTH <div style="margin-left: 40px">Continue to use STIM  knowing
-    itcaused  other health problems</div></p>'
+    it caused  other health problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -31626,7 +31626,7 @@ dr13d_stim_12m:
   form: ssaga
   type: radio
   label: '<p>DR13D 12-MONTH <div style="margin-left: 40px">Continue to use STIM  knowing
-    itcaused  </div></p>'
+    it caused  any problem</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -31644,7 +31644,7 @@ dr14b_stim_12m:
   form: ssaga
   type: radio
   label: '<p>DR14B 12-MONTH <div style="margin-left: 40px">STIM Continue to use knowing
-    itcaused  problems with police</div></p>'
+    it caused  problems with police</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -31716,7 +31716,7 @@ dr18a_stim_12m:
   form: ssaga
   type: radio
   label: '<p>DR18A 12-MONTH <div style="margin-left: 40px">STIM Continue to use knowing
-    itcaused  emotional or psychological problems</div></p>'
+    it caused  emotional or psychological problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -31930,7 +31930,7 @@ dr12b1_sed_12m:
   form: ssaga
   type: radio
   label: '<p>DR12B1 12-MONTH <div style="margin-left: 40px">Continue to use SED  knowing
-    itcaused  hepatitis</div></p>'
+    it caused  hepatitis</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -31948,7 +31948,7 @@ dr12c1_sed_12m:
   form: ssaga
   type: radio
   label: '<p>DR12C1 12-MONTH <div style="margin-left: 40px">Continue to use SED  knowing
-    itcaused  other health problems</div></p>'
+    it caused  other health problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -31966,7 +31966,7 @@ dr13d_sed_12m:
   form: ssaga
   type: radio
   label: '<p>DR13D 12-MONTH <div style="margin-left: 40px">Continue to use SED  knowing
-    itcaused  </div></p>'
+    it caused  any problem</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -31984,7 +31984,7 @@ dr14b_sed_12m:
   form: ssaga
   type: radio
   label: '<p>DR14B 12-MONTH <div style="margin-left: 40px">SED Continue to use knowing
-    itcaused  problems with police</div></p>'
+    it caused  problems with police</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -32056,7 +32056,7 @@ dr18a_sed_12m:
   form: ssaga
   type: radio
   label: '<p>DR18A 12-MONTH <div style="margin-left: 40px">SED Continue to use knowing
-    itcaused  emotional or psychological problems</div></p>'
+    it caused  emotional or psychological problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -32270,7 +32270,7 @@ dr12b1_op_12m:
   form: ssaga
   type: radio
   label: '<p>DR12B1 12-MONTH <div style="margin-left: 40px">Continue to use OP  knowing
-    itcaused  hepatitis</div></p>'
+    it caused  hepatitis</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -32288,7 +32288,7 @@ dr12c1_op_12m:
   form: ssaga
   type: radio
   label: '<p>DR12C1 12-MONTH <div style="margin-left: 40px">Continue to use OP  knowing
-    itcaused  other health problems</div></p>'
+    it caused  other health problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -32306,7 +32306,7 @@ dr13d_op_12m:
   form: ssaga
   type: radio
   label: '<p>DR13D 12-MONTH <div style="margin-left: 40px">Continue to use OP  knowing
-    itcaused  </div></p>'
+    it caused  any problem</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -32324,7 +32324,7 @@ dr14b_op_12m:
   form: ssaga
   type: radio
   label: '<p>DR14B 12-MONTH <div style="margin-left: 40px">OP Continue to use knowing
-    itcaused  problems with police</div></p>'
+    it caused  problems with police</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -32396,7 +32396,7 @@ dr18a_op_12m:
   form: ssaga
   type: radio
   label: '<p>DR18A 12-MONTH <div style="margin-left: 40px">OP Continue to use knowing
-    itcaused  emotional or psychological problems</div></p>'
+    it caused  emotional or psychological problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -32610,7 +32610,7 @@ dr12b1_oth_12m:
   form: ssaga
   type: radio
   label: '<p>DR12B1 12-MONTH <div style="margin-left: 40px">Continue to use [dr1_oth]  knowing
-    itcaused  hepatitis</div></p>'
+    it caused  hepatitis</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -32628,7 +32628,7 @@ dr12c1_oth_12m:
   form: ssaga
   type: radio
   label: '<p>DR12C1 12-MONTH <div style="margin-left: 40px">Continue to use [dr1_oth]  knowing
-    itcaused  other health problems</div></p>'
+    it caused  other health problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -32646,7 +32646,7 @@ dr13d_oth_12m:
   form: ssaga
   type: radio
   label: '<p>DR13D 12-MONTH <div style="margin-left: 40px">Continue to use [dr1_oth]  knowing
-    itcaused  </div></p>'
+    it caused  any problem</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -32664,7 +32664,7 @@ dr14b_oth_12m:
   form: ssaga
   type: radio
   label: '<p>DR14B 12-MONTH <div style="margin-left: 40px">[dr1_oth] Continue to use
-    knowing itcaused  problems with police</div></p>'
+    knowing it caused  problems with police</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -32736,7 +32736,7 @@ dr18a_oth_12m:
   form: ssaga
   type: radio
   label: '<p>DR18A 12-MONTH <div style="margin-left: 40px">[dr1_oth] Continue to use
-    knowing itcaused  emotional or psychological problems</div></p>'
+    knowing it caused  emotional or psychological problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -33151,7 +33151,7 @@ dr12b1_coc_30d:
   form: ssaga
   type: radio
   label: '<p>DR12B1 30-DAY <div style="margin-left: 40px">Continue to use COCAINE  knowing
-    itcaused  hepatitis</div></p>'
+    it caused  hepatitis</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -33169,7 +33169,7 @@ dr12c1_coc_30d:
   form: ssaga
   type: radio
   label: '<p>DR12C1 30-DAY <div style="margin-left: 40px">Continue to use COCAINE  knowing
-    itcaused  other health problems</div></p>'
+    it caused  other health problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -33187,7 +33187,7 @@ dr13d_coc_30d:
   form: ssaga
   type: radio
   label: '<p>DR13D 30-DAY <div style="margin-left: 40px">Continue to use COCAINE  knowing
-    itcaused  </div></p>'
+    it caused  any problem</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -33205,7 +33205,7 @@ dr14b_coc_30d:
   form: ssaga
   type: radio
   label: '<p>DR14B 30-DAY <div style="margin-left: 40px">COCAINE Continue to use knowing
-    itcaused  problems with police</div></p>'
+    it caused  problems with police</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -33277,7 +33277,7 @@ dr18a_coc_30d:
   form: ssaga
   type: radio
   label: '<p>DR18A 30-DAY <div style="margin-left: 40px">COCAINE Continue to use knowing
-    itcaused  emotional or psychological problems</div></p>'
+    it caused  emotional or psychological problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -33491,7 +33491,7 @@ dr12b1_stim_30d:
   form: ssaga
   type: radio
   label: '<p>DR12B1 30-DAY <div style="margin-left: 40px">Continue to use STIM  knowing
-    itcaused  hepatitis</div></p>'
+    it caused  hepatitis</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -33509,7 +33509,7 @@ dr12c1_stim_30d:
   form: ssaga
   type: radio
   label: '<p>DR12C1 30-DAY <div style="margin-left: 40px">Continue to use STIM  knowing
-    itcaused  other health problems</div></p>'
+    it caused  other health problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -33527,7 +33527,7 @@ dr13d_stim_30d:
   form: ssaga
   type: radio
   label: '<p>DR13D 30-DAY <div style="margin-left: 40px">Continue to use STIM  knowing
-    itcaused  </div></p>'
+    it caused  any problem</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -33545,7 +33545,7 @@ dr14b_stim_30d:
   form: ssaga
   type: radio
   label: '<p>DR14B 30-DAY <div style="margin-left: 40px">STIM Continue to use knowing
-    itcaused  problems with police</div></p>'
+    it caused  problems with police</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -33617,7 +33617,7 @@ dr18a_stim_30d:
   form: ssaga
   type: radio
   label: '<p>DR18A 30-DAY <div style="margin-left: 40px">STIM Continue to use knowing
-    itcaused  emotional or psychological problems</div></p>'
+    it caused  emotional or psychological problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -33831,7 +33831,7 @@ dr12b1_sed_30d:
   form: ssaga
   type: radio
   label: '<p>DR12B1 30-DAY <div style="margin-left: 40px">Continue to use SED  knowing
-    itcaused  hepatitis</div></p>'
+    it caused  hepatitis</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -33849,7 +33849,7 @@ dr12c1_sed_30d:
   form: ssaga
   type: radio
   label: '<p>DR12C1 30-DAY <div style="margin-left: 40px">Continue to use SED  knowing
-    itcaused  other health problems</div></p>'
+    it caused  other health problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -33867,7 +33867,7 @@ dr13d_sed_30d:
   form: ssaga
   type: radio
   label: '<p>DR13D 30-DAY <div style="margin-left: 40px">Continue to use SED  knowing
-    itcaused  </div></p>'
+    it caused  any problem</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -33885,7 +33885,7 @@ dr14b_sed_30d:
   form: ssaga
   type: radio
   label: '<p>DR14B 30-DAY <div style="margin-left: 40px">SED Continue to use knowing
-    itcaused  problems with police</div></p>'
+    it caused  problems with police</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -33957,7 +33957,7 @@ dr18a_sed_30d:
   form: ssaga
   type: radio
   label: '<p>DR18A 30-DAY <div style="margin-left: 40px">SED Continue to use knowing
-    itcaused  emotional or psychological problems</div></p>'
+    it caused  emotional or psychological problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -34171,7 +34171,7 @@ dr12b1_op_30d:
   form: ssaga
   type: radio
   label: '<p>DR12B1 30-DAY <div style="margin-left: 40px">Continue to use OP  knowing
-    itcaused  hepatitis</div></p>'
+    it caused  hepatitis</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -34189,7 +34189,7 @@ dr12c1_op_30d:
   form: ssaga
   type: radio
   label: '<p>DR12C1 30-DAY <div style="margin-left: 40px">Continue to use OP  knowing
-    itcaused  other health problems</div></p>'
+    it caused  other health problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -34207,7 +34207,7 @@ dr13d_op_30d:
   form: ssaga
   type: radio
   label: '<p>DR13D 30-DAY <div style="margin-left: 40px">Continue to use OP  knowing
-    itcaused  </div></p>'
+    it caused  any problem</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -34225,7 +34225,7 @@ dr14b_op_30d:
   form: ssaga
   type: radio
   label: '<p>DR14B 30-DAY <div style="margin-left: 40px">OP Continue to use knowing
-    itcaused  problems with police</div></p>'
+    it caused  problems with police</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -34297,7 +34297,7 @@ dr18a_op_30d:
   form: ssaga
   type: radio
   label: '<p>DR18A 30-DAY <div style="margin-left: 40px">OP Continue to use knowing
-    itcaused  emotional or psychological problems</div></p>'
+    it caused  emotional or psychological problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -34511,7 +34511,7 @@ dr12b1_oth_30d:
   form: ssaga
   type: radio
   label: '<p>DR12B1 30-DAY <div style="margin-left: 40px">Continue to use [dr1_oth]  knowing
-    itcaused  hepatitis</div></p>'
+    it caused  hepatitis</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -34529,7 +34529,7 @@ dr12c1_oth_30d:
   form: ssaga
   type: radio
   label: '<p>DR12C1 30-DAY <div style="margin-left: 40px">Continue to use [dr1_oth]  knowing
-    itcaused  other health problems</div></p>'
+    it caused  other health problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -34547,7 +34547,7 @@ dr13d_oth_30d:
   form: ssaga
   type: radio
   label: '<p>DR13D 30-DAY <div style="margin-left: 40px">Continue to use [dr1_oth]  knowing
-    itcaused  </div></p>'
+    it caused  any problem</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -34565,7 +34565,7 @@ dr14b_oth_30d:
   form: ssaga
   type: radio
   label: '<p>DR14B 30-DAY <div style="margin-left: 40px">[dr1_oth] Continue to use
-    knowing itcaused  problems with police</div></p>'
+    knowing it caused  problems with police</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -34637,7 +34637,7 @@ dr18a_oth_30d:
   form: ssaga
   type: radio
   label: '<p>DR18A 30-DAY <div style="margin-left: 40px">[dr1_oth] Continue to use
-    knowing itcaused  emotional or psychological problems</div></p>'
+    knowing it caused  emotional or psychological problems</div></p>'
   choices:
     1: 'NO'
     5: 'YES'
@@ -34750,7 +34750,7 @@ dr19_coc_rev14:
   form: ssaga
   type: descriptive
   label: '<div style="margin-left: 40px">Continue to use COCAINE  knowing it caused
-    </div>'
+    any problem</div>'
   branching: '[dr_total]>=1 and [dr13d_coc]=''5'''
 
 dr19_coc_rev15:
@@ -34906,26 +34906,27 @@ dr19_stim_rev11:
 dr19_stim_rev12:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">Continue to use STIM  knowing itcaused  hepatitis</div>'
+  label: '<div style="margin-left: 40px">Continue to use STIM  knowing it caused  hepatitis</div>'
   branching: '[dr_total]>=1 and [dr12b1_stim]=''5'''
 
 dr19_stim_rev13:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">Continue to use STIM  knowing itcaused  other
+  label: '<div style="margin-left: 40px">Continue to use STIM  knowing it caused  other
     health problems</div>'
   branching: '[dr_total]>=1 and [dr12c1_stim]=''5'''
 
 dr19_stim_rev14:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">Continue to use STIM  knowing itcaused  </div>'
+  label: '<div style="margin-left: 40px">Continue to use STIM  knowing it caused  any
+    problem</div></p>'
   branching: '[dr_total]>=1 and [dr13d_stim]=''5'''
 
 dr19_stim_rev15:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">STIM Continue to use knowing itcaused  problems
+  label: '<div style="margin-left: 40px">STIM Continue to use knowing it caused  problems
     with police</div>'
   branching: '[dr_total]>=1 and [dr14b_stim]=''5'''
 
@@ -34951,7 +34952,7 @@ dr19_stim_rev18:
 dr19_stim_rev19:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">STIM Continue to use knowing itcaused  emotional
+  label: '<div style="margin-left: 40px">STIM Continue to use knowing it caused  emotional
     or psychological problems</div>'
   branching: '[dr_total]>=1 and [dr18a_stim]=''5'''
 
@@ -35073,26 +35074,27 @@ dr19_sed_rev11:
 dr19_sed_rev12:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">Continue to use SED  knowing itcaused  hepatitis</div>'
+  label: '<div style="margin-left: 40px">Continue to use SED  knowing it caused  hepatitis</div>'
   branching: '[dr_total]>=1 and [dr12b1_sed]=''5'''
 
 dr19_sed_rev13:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">Continue to use SED  knowing itcaused  other
+  label: '<div style="margin-left: 40px">Continue to use SED  knowing it caused  other
     health problems</div>'
   branching: '[dr_total]>=1 and [dr12c1_sed]=''5'''
 
 dr19_sed_rev14:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">Continue to use SED  knowing itcaused  </div>'
+  label: '<div style="margin-left: 40px">Continue to use SED  knowing it caused  any
+    problem</div></p>'
   branching: '[dr_total]>=1 and [dr13d_sed]=''5'''
 
 dr19_sed_rev15:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">SED Continue to use knowing itcaused  problems
+  label: '<div style="margin-left: 40px">SED Continue to use knowing it caused  problems
     with police</div>'
   branching: '[dr_total]>=1 and [dr14b_sed]=''5'''
 
@@ -35117,7 +35119,7 @@ dr19_sed_rev18:
 dr19_sed_rev19:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">SED Continue to use knowing itcaused  emotional
+  label: '<div style="margin-left: 40px">SED Continue to use knowing it caused  emotional
     or psychological problems</div>'
   branching: '[dr_total]>=1 and [dr18a_sed]=''5'''
 
@@ -35239,26 +35241,27 @@ dr19_op_rev11:
 dr19_op_rev12:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">Continue to use OP  knowing itcaused  hepatitis</div>'
+  label: '<div style="margin-left: 40px">Continue to use OP  knowing it caused  hepatitis</div>'
   branching: '[dr_total]>=1 and [dr12b1_op]=''5'''
 
 dr19_op_rev13:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">Continue to use OP  knowing itcaused  other
+  label: '<div style="margin-left: 40px">Continue to use OP  knowing it caused  other
     health problems</div>'
   branching: '[dr_total]>=1 and [dr12c1_op]=''5'''
 
 dr19_op_rev14:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">Continue to use OP  knowing itcaused  </div>'
+  label: '<div style="margin-left: 40px">Continue to use OP  knowing it caused  any
+    problem</div></p>'
   branching: '[dr_total]>=1 and [dr13d_op]=''5'''
 
 dr19_op_rev15:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">OP Continue to use knowing itcaused  problems
+  label: '<div style="margin-left: 40px">OP Continue to use knowing it caused  problems
     with police</div>'
   branching: '[dr_total]>=1 and [dr14b_op]=''5'''
 
@@ -35283,7 +35286,7 @@ dr19_op_rev18:
 dr19_op_rev19:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">OP Continue to use knowing itcaused  emotional
+  label: '<div style="margin-left: 40px">OP Continue to use knowing it caused  emotional
     or psychological problems</div>'
   branching: '[dr_total]>=1 and [dr18a_op]=''5'''
 
@@ -35406,26 +35409,27 @@ dr19_oth_rev11:
 dr19_oth_rev12:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">Continue to use [dr1_oth]  knowing itcaused  hepatitis</div>'
+  label: '<div style="margin-left: 40px">Continue to use [dr1_oth]  knowing it caused  hepatitis</div>'
   branching: '[dr_total]>=1 and [dr12b1_oth]=''5'''
 
 dr19_oth_rev13:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">Continue to use [dr1_oth]  knowing itcaused  other
+  label: '<div style="margin-left: 40px">Continue to use [dr1_oth]  knowing it caused  other
     health problems</div>'
   branching: '[dr_total]>=1 and [dr12c1_oth]=''5'''
 
 dr19_oth_rev14:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">Continue to use [dr1_oth]  knowing itcaused  </div>'
+  label: '<div style="margin-left: 40px">Continue to use [dr1_oth]  knowing it caused  any
+    problem</div></p>'
   branching: '[dr_total]>=1 and [dr13d_oth]=''5'''
 
 dr19_oth_rev15:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">[dr1_oth] Continue to use knowing itcaused  problems
+  label: '<div style="margin-left: 40px">[dr1_oth] Continue to use knowing it caused  problems
     with police</div>'
   branching: '[dr_total]>=1 and [dr14b_oth]=''5'''
 
@@ -35452,7 +35456,7 @@ dr19_oth_rev18:
 dr19_oth_rev19:
   form: ssaga
   type: descriptive
-  label: '<div style="margin-left: 40px">[dr1_oth] Continue to use knowing itcaused  emotional
+  label: '<div style="margin-left: 40px">[dr1_oth] Continue to use knowing it caused  emotional
     or psychological problems</div>'
   branching: '[dr_total]>=1 and [dr18a_oth]=''5'''
 

@@ -53,685 +53,709 @@ unusable_specify:
 ravlt_two:
   form: ravlt
   type: truefalse
-  label: Is RAVLT2?
+  label: Is this RAVLT2 (RAVLT-Alternate Short Delay)
   note: Was the alternative list used?
 
 ravlt_pea_ravlt_sd_tc:
   form: ravlt
+  section: Raw Scores
   type: text
-  label: pea_ravlt_sd_tc
+  label: RAVLT or RAVLT2 Short Delay Raw Score
 
 ravlt_delay_scaled:
   form: ravlt
+  section: Scaled Scores
   type: text
-  label: delay_scaled
+  label: RAVLT or RAVLT2 Short Delay Scaled Score
 
 ravlt_delay_completion:
   form: ravlt
+  section: Subtest Completion Times
   type: text
-  label: delay_completion
+  label: RAVLT or RAVLT2 Short Delay Completion time (seconds)
 
 ravlt_discontinue:
   form: ravlt
+  section: Rules Triggered
   type: text
-  label: discontinue
+  label: RAVLT or RAVLT2 Short Delay Rules Triggered, Discontinue
 
 ravlt_reverse:
   form: ravlt
   type: text
-  label: reverse
+  label: RAVLT or RAVLT2 Short Delay Rules Triggered, Reverse
 
 ravlt_pea_ravlt_sd_trial_i_tc:
   form: ravlt
+  section: Item-Level Raw Scores
   type: text
-  label: pea_ravlt_sd_trial_i_tc
+  label: RAVLT or RAVLT2 Short Delay Trial I Raw Score
 
 ravlt_pea_ravlt_sd_trial_ii_tc:
   form: ravlt
   type: text
-  label: pea_ravlt_sd_trial_ii_tc
+  label: RAVLT or RAVLT2 Short Delay Trial II Raw Score
 
 ravlt_pea_ravlt_sd_trial_iii_tc:
   form: ravlt
   type: text
-  label: pea_ravlt_sd_trial_iii_tc
+  label: RAVLT or RAVLT2 Short Delay Trial III Raw Score
 
 ravlt_pea_ravlt_sd_trial_iv_tc:
   form: ravlt
   type: text
-  label: pea_ravlt_sd_trial_iv_tc
+  label: RAVLT or RAVLT2 Short Delay Trial IV Raw Score
 
 ravlt_pea_ravlt_sd_trial_v_tc:
   form: ravlt
   type: text
-  label: pea_ravlt_sd_trial_v_tc
+  label: RAVLT or RAVLT2 Short Delay Trial V Raw Score
 
 ravlt_pea_ravlt_sd_listb_tc:
   form: ravlt
   type: text
-  label: pea_ravlt_sd_listb_tc
+  label: RAVLT or RAVLT2 Short Delay List B Raw Score
 
 ravlt_pea_ravlt_sd_trial_vi_tc:
   form: ravlt
   type: text
-  label: pea_ravlt_sd_trial_vi_tc
+  label: RAVLT or RAVLT2 Short Delay Trial VI Raw Score
 
 ravlt_recall_correct_trial1:
   form: ravlt
+  section: Additional Measures (Primary and Combined and Process)
   type: text
-  label: recall_correct_trial1
+  label: RAVLT or RAVLT2 Trial 1 Free Recall Total Correct
 
 ravlt_recall_correct_trial2:
   form: ravlt
   type: text
-  label: recall_correct_trial2
+  label: RAVLT or RAVLT2 Trial 2 Free Recall Total Correct
 
 ravlt_recall_correct_trial3:
   form: ravlt
   type: text
-  label: recall_correct_trial3
+  label: RAVLT or RAVLT2 Trial 3 Free Recall Total Correct
 
 ravlt_recall_correct_trial4:
   form: ravlt
   type: text
-  label: recall_correct_trial4
+  label: RAVLT or RAVLT2 Trial 4 Free Recall Total Correct
 
 ravlt_delay_recall_correct:
   form: ravlt
   type: text
-  label: delay_recall_correct
+  label: RAVLT or RAVLT2 Short-Delay Free Recall Total Correct
 
 ravlt_delay_recall_intrusion:
   form: ravlt
   type: text
-  label: delay_recall_intrusion
+  label: RAVLT or RAVLT2 Short-Delay Free Recall Intrusions
 
 ravlt_delay_total_intrusion:
   form: ravlt
   type: text
-  label: delay_total_intrusion
+  label: RAVLT or RAVLT2 Short-Delay Total Intrusions
 
 ravlt_delay_total_repetitions:
   form: ravlt
   type: text
-  label: delay_total_repetitions
+  label: RAVLT or RAVLT2 Short-Delay Total Repetitions
 
 wais_scoring_matrixreasoning_raw:
   form: wais
+  section: Raw Scores
   type: text
-  label: scoring_matrixreasoning_raw
+  label: WAIS-IV Matrix Reasoning Raw Score
 
 wais_scoring_matrixreasoning_scaled:
   form: wais
+  section: Scaled Scores
   type: text
-  label: scoring_matrixreasoning_scaled
+  label: WAIS-IV Matrix Reasoning Scaled Score
 
 wais_wais_dk:
   form: wais
+  section: Contextual Events
   type: text
-  label: wais_dk
+  label: WAIS-IV Subtest Type Don't Know (DK),Total
 
 wais_wais_nr:
   form: wais
   type: text
-  label: wais_nr
+  label: WAIS-IV Subtest Type No Response (NR),Total
 
 wais_wais_p:
   form: wais
   type: text
-  label: wais_p
+  label: WAIS-IV Subtest Type Prompt (P),Total
 
 wais_matrix_completion:
   form: wais
+  section: Subtest Completion Times
   type: text
-  label: matrix_completion
+  label: WAIS-IV Matrix Reasoning Completion time (seconds)
 
 wais_discontinue:
   form: wais
+  section: Rules Triggered
   type: text
-  label: discontinue
+  label: WAIS-IV Rules Triggered, Discontinue
 
 wais_reverse:
   form: wais
   type: text
-  label: reverse
+  label: WAIS-IV Rules Triggered, Reverse
 
 wais_matrixreasoning_a_resp:
   form: wais
+  section: Item-Level Raw Scores
   type: text
-  label: matrixreasoning_a_resp
+  label: WAIS-IV Matrix Reasoning Sample Item A
 
 wais_matrixreasoning_b_resp:
   form: wais
   type: text
-  label: matrixreasoning_b_resp
+  label: WAIS-IV Matrix Reasoning Sample Item B
 
 wais_matrixreasoning_1_score:
   form: wais
   type: text
-  label: matrixreasoning_1_score
+  label: WAIS-IV Matrix Reasoning Item 1
 
 wais_matrixreasoning_2_score:
   form: wais
   type: text
-  label: matrixreasoning_2_score
+  label: WAIS-IV Matrix Reasoning Item 2
 
 wais_matrixreasoning_3_score:
   form: wais
   type: text
-  label: matrixreasoning_3_score
+  label: WAIS-IV Matrix Reasoning Item 3
 
 wais_matrixreasoning_4_score:
   form: wais
   type: text
-  label: matrixreasoning_4_score
+  label: WAIS-IV Matrix Reasoning Item 4
 
 wais_matrixreasoning_5_score:
   form: wais
   type: text
-  label: matrixreasoning_5_score
+  label: WAIS-IV Matrix Reasoning Item 5
 
 wais_matrixreasoning_6_score:
   form: wais
   type: text
-  label: matrixreasoning_6_score
+  label: WAIS-IV Matrix Reasoning Item 6
 
 wais_matrixreasoning_7_score:
   form: wais
   type: text
-  label: matrixreasoning_7_score
+  label: WAIS-IV Matrix Reasoning Item 7
 
 wais_matrixreasoning_8_score:
   form: wais
   type: text
-  label: matrixreasoning_8_score
+  label: WAIS-IV Matrix Reasoning Item 8
 
 wais_matrixreasoning_9_score:
   form: wais
   type: text
-  label: matrixreasoning_9_score
+  label: WAIS-IV Matrix Reasoning Item 9
 
 wais_matrixreasoning_10_score:
   form: wais
   type: text
-  label: matrixreasoning_10_score
+  label: WAIS-IV Matrix Reasoning Item 10
 
 wais_matrixreasoning_11_score:
   form: wais
   type: text
-  label: matrixreasoning_11_score
+  label: WAIS-IV Matrix Reasoning Item 11
 
 wais_matrixreasoning_12_score:
   form: wais
   type: text
-  label: matrixreasoning_12_score
+  label: WAIS-IV Matrix Reasoning Item 12
 
 wais_matrixreasoning_13_score:
   form: wais
   type: text
-  label: matrixreasoning_13_score
+  label: WAIS-IV Matrix Reasoning Item 13
 
 wais_matrixreasoning_14_score:
   form: wais
   type: text
-  label: matrixreasoning_14_score
+  label: WAIS-IV Matrix Reasoning Item 14
 
 wais_matrixreasoning_15_score:
   form: wais
   type: text
-  label: matrixreasoning_15_score
+  label: WAIS-IV Matrix Reasoning Item 15
 
 wais_matrixreasoning_16_score:
   form: wais
   type: text
-  label: matrixreasoning_16_score
+  label: WAIS-IV Matrix Reasoning Item 16
 
 wais_matrixreasoning_17_score:
   form: wais
   type: text
-  label: matrixreasoning_17_score
+  label: WAIS-IV Matrix Reasoning Item 17
 
 wais_matrixreasoning_18_score:
   form: wais
   type: text
-  label: matrixreasoning_18_score
+  label: WAIS-IV Matrix Reasoning Item 18
 
 wais_matrixreasoning_19_score:
   form: wais
   type: text
-  label: matrixreasoning_19_score
+  label: WAIS-IV Matrix Reasoning Item 19
 
 wais_matrixreasoning_20_score:
   form: wais
   type: text
-  label: matrixreasoning_20_score
+  label: WAIS-IV Matrix Reasoning Item 20
 
 wais_matrixreasoning_21_score:
   form: wais
   type: text
-  label: matrixreasoning_21_score
+  label: WAIS-IV Matrix Reasoning Item 21
 
 wais_matrixreasoning_22_score:
   form: wais
   type: text
-  label: matrixreasoning_22_score
+  label: WAIS-IV Matrix Reasoning Item 22
 
 wais_matrixreasoning_23_score:
   form: wais
   type: text
-  label: matrixreasoning_23_score
+  label: WAIS-IV Matrix Reasoning Item 23
 
 wais_matrixreasoning_24_score:
   form: wais
   type: text
-  label: matrixreasoning_24_score
+  label: WAIS-IV Matrix Reasoning Item 24
 
 wais_matrixreasoning_25_score:
   form: wais
   type: text
-  label: matrixreasoning_25_score
+  label: WAIS-IV Matrix Reasoning Item 25
 
 wais_matrixreasoning_26_score:
   form: wais
   type: text
-  label: matrixreasoning_26_score
+  label: WAIS-IV Matrix Reasoning Item 26
 
 wisc_matrixreason_score:
   form: wisc
+  section: Raw Scores
   type: text
-  label: matrixreason_score
+  label: WISC-V Matrix Reasoning Raw Score
 
 wisc_scaled_matrix:
   form: wisc
+  section: Scaled Scores
   type: text
-  label: scaled_matrix
+  label: WISC-V Matrix Reasoning Scaled Score
 
 wisc_subtesttypedk:
   form: wisc
+  section: Contextual Events
   type: text
-  label: subtesttypedk
+  label: WISC-V Subtest Type Don't Know (DK),Total
 
 wisc_subtesttypenr:
   form: wisc
   type: text
-  label: subtesttypenr
+  label: WISC-V Subtest Type No Response (NR),Total
 
 wisc_subtesttypesc:
   form: wisc
   type: text
-  label: subtesttypesc
+  label: WISC-V Subtest Type Self-Corrections (SC),Total
 
 wisc_subtesttypesv:
   form: wisc
   type: text
-  label: subtesttypesv
+  label: WISC-V Subtest Type Subvocalization (SV),Total
 
 wisc_matrix_completion:
   form: wisc
+  section: Subtest Completion Times
   type: text
-  label: matrix_completion
+  label: WISC-V Matrix Reasoning Completion Time (seconds)
 
 wisc_discontinue:
   form: wisc
+  section: Rules Triggered
   type: text
-  label: discontinue
+  label: WISC-V Rules Triggered, Discontinue
 
 wisc_reverse:
   form: wisc
   type: text
-  label: reverse
+  label: WISC-V Rules Triggered, Reverse
 
 wisc_pea_wiscv_item_a_rs:
   form: wisc
+  section: Item-Level Raw Scores
   type: text
-  label: pea_wiscv_item_a_rs
+  label: WISC-V Matrix Reasoning Sample Item A (Matrix)
 
 wisc_pea_wiscv_item_b_rs:
   form: wisc
   type: text
-  label: pea_wiscv_item_b_rs
+  label: 'WISC-V Matrix Reasoning Sample Item B (Serial Order) '
 
 wisc_matrixreason_item1:
   form: wisc
   type: text
-  label: matrixreason_item1
+  label: WISC-V Matrix Reasoning Item 1
 
 wisc_matrixreason_item2:
   form: wisc
   type: text
-  label: matrixreason_item2
+  label: WISC-V Matrix Reasoning Item 2
 
 wisc_matrixreason_item3:
   form: wisc
   type: text
-  label: matrixreason_item3
+  label: WISC-V Matrix Reasoning Item 3
 
 wisc_matrixreason_item4:
   form: wisc
   type: text
-  label: matrixreason_item4
+  label: WISC-V Matrix Reasoning Item 4
 
 wisc_matrixreason_item5:
   form: wisc
   type: text
-  label: matrixreason_item5
+  label: WISC-V Matrix Reasoning Item 5
 
 wisc_matrixreason_item6:
   form: wisc
   type: text
-  label: matrixreason_item6
+  label: WISC-V Matrix Reasoning Item 6
 
 wisc_matrixreason_item7:
   form: wisc
   type: text
-  label: matrixreason_item7
+  label: WISC-V Matrix Reasoning Item 7
 
 wisc_matrixreason_item8:
   form: wisc
   type: text
-  label: matrixreason_item8
+  label: WISC-V Matrix Reasoning Item 8
 
 wisc_matrixreason_item9:
   form: wisc
   type: text
-  label: matrixreason_item9
+  label: WISC-V Matrix Reasoning Item 9
 
 wisc_matrixreason_item10:
   form: wisc
   type: text
-  label: matrixreason_item10
+  label: WISC-V Matrix Reasoning Item 10
 
 wisc_matrixreason_item11:
   form: wisc
   type: text
-  label: matrixreason_item11
+  label: WISC-V Matrix Reasoning Item 11
 
 wisc_matrixreason_item12:
   form: wisc
   type: text
-  label: matrixreason_item12
+  label: WISC-V Matrix Reasoning Item 12
 
 wisc_matrixreason_item13:
   form: wisc
   type: text
-  label: matrixreason_item13
+  label: WISC-V Matrix Reasoning Item 13
 
 wisc_matrixreason_item14:
   form: wisc
   type: text
-  label: matrixreason_item14
+  label: WISC-V Matrix Reasoning Item 14
 
 wisc_matrixreason_item15:
   form: wisc
   type: text
-  label: matrixreason_item15
+  label: WISC-V Matrix Reasoning Item 15
 
 wisc_matrixreason_item16:
   form: wisc
   type: text
-  label: matrixreason_item16
+  label: WISC-V Matrix Reasoning Item 16
 
 wisc_matrixreason_item17:
   form: wisc
   type: text
-  label: matrixreason_item17
+  label: WISC-V Matrix Reasoning Item 17
 
 wisc_matrixreason_item18:
   form: wisc
   type: text
-  label: matrixreason_item18
+  label: WISC-V Matrix Reasoning Item 18
 
 wisc_matrixreason_item19:
   form: wisc
   type: text
-  label: matrixreason_item19
+  label: WISC-V Matrix Reasoning Item 19
 
 wisc_matrixreason_item20:
   form: wisc
   type: text
-  label: matrixreason_item20
+  label: WISC-V Matrix Reasoning Item 20
 
 wisc_matrixreason_item21:
   form: wisc
   type: text
-  label: matrixreason_item21
+  label: WISC-V Matrix Reasoning Item 21
 
 wisc_matrixreason_item22:
   form: wisc
   type: text
-  label: matrixreason_item22
+  label: WISC-V Matrix Reasoning Item 22
 
 wisc_matrixreason_item23:
   form: wisc
   type: text
-  label: matrixreason_item23
+  label: WISC-V Matrix Reasoning Item 23
 
 wisc_matrixreason_item24:
   form: wisc
   type: text
-  label: matrixreason_item24
+  label: WISC-V Matrix Reasoning Item 24
 
 wisc_matrixreason_item25:
   form: wisc
   type: text
-  label: matrixreason_item25
+  label: WISC-V Matrix Reasoning Item 25
 
 wisc_matrixreason_item26:
   form: wisc
   type: text
-  label: matrixreason_item26
+  label: WISC-V Matrix Reasoning Item 26
 
 wisc_matrixreason_item27:
   form: wisc
   type: text
-  label: matrixreason_item27
+  label: WISC-V Matrix Reasoning Item 27
 
 wisc_matrixreason_item28:
   form: wisc
   type: text
-  label: matrixreason_item28
+  label: WISC-V Matrix Reasoning Item 28
 
 wisc_matrixreason_item29:
   form: wisc
   type: text
-  label: matrixreason_item29
+  label: WISC-V Matrix Reasoning Item 29
 
 wisc_matrixreason_item30:
   form: wisc
   type: text
-  label: matrixreason_item30
+  label: WISC-V Matrix Reasoning Item 30
 
 wisc_matrixreason_item31:
   form: wisc
   type: text
-  label: matrixreason_item31
+  label: WISC-V Matrix Reasoning Item 31
 
 wisc_matrixreason_item32:
   form: wisc
   type: text
-  label: matrixreason_item32
+  label: WISC-V Matrix Reasoning Item 32
 
 wppsi_wppsi_mxr_rawscre:
   form: wppsi
+  section: Raw Scores
   type: text
-  label: wppsi_mxr_rawscre
+  label: WPPSI-IV Raw score - Matrix Reasoning
 
 wppsi_wppsi_mxr_scldscre:
   form: wppsi
+  section: Scaled Scores
   type: text
-  label: wppsi_mxr_scldscre
+  label: WPPSI-IV Scaled Score  - Matrix Reasoning
 
 wppsi_wppsi_mxr_dk:
   form: wppsi
+  section: Contextual Events
   type: text
-  label: wppsi_mxr_dk
+  label: WPPSI-IV Subtest Type Don't Know (DK),Total
 
 wppsi_wppsi_mxr_nr:
   form: wppsi
   type: text
-  label: wppsi_mxr_nr
+  label: WPPSI-IV Subtest Type No Response (NR),Total
 
 wppsi_wppsi_mxr_p:
   form: wppsi
   type: text
-  label: wppsi_mxr_p
+  label: WPPSI-IV Subtest Type Prompt (P), Total
 
 wppsi_matrix_completion:
   form: wppsi
+  section: Subtest Completion Times
   type: text
-  label: matrix_completion
+  label: WPPSI-IV Matrix Reasoning Completion time (seconds)
 
 wppsi_discontinue:
   form: wppsi
+  section: Rules Triggered
   type: text
-  label: discontinue
+  label: WPPSI-IV Rules Triggered, Discontinue
 
 wppsi_reverse:
   form: wppsi
   type: text
-  label: reverse
+  label: WPPSI-IV Rules Triggered, Reverse
 
 wppsi_pea_wppsi_item_a_rs:
   form: wppsi
+  section: Item-Level Raw Scores
   type: text
-  label: pea_wppsi_item_a_rs
+  label: WPPSI-IV Ages 4-7 Matrix Reasoning Sample Item A
 
 wppsi_pea_wppsi_item_b_rs:
   form: wppsi
   type: text
-  label: pea_wppsi_item_b_rs
+  label: WPPSI-IV Ages 4-7 Matrix Reasoning Sample Item B
 
 wppsi_pea_wppsi_item_c_rs:
   form: wppsi
   type: text
-  label: pea_wppsi_item_c_rs
+  label: WPPSI-IV Ages 4-7 Matrix Reasoning Sample Item C
 
 wppsi_matrixreason_item1:
   form: wppsi
   type: text
-  label: matrixreason_item1
+  label: WPPSI-IV  Matrix Reasoning Item 1
 
 wppsi_matrixreason_item2:
   form: wppsi
   type: text
-  label: matrixreason_item2
+  label: WPPSI-IV  Matrix Reasoning Item 2
 
 wppsi_matrixreason_item3:
   form: wppsi
   type: text
-  label: matrixreason_item3
+  label: WPPSI-IV  Matrix Reasoning Item 3
 
 wppsi_matrixreason_item4:
   form: wppsi
   type: text
-  label: matrixreason_item4
+  label: WPPSI-IV  Matrix Reasoning Item 4
 
 wppsi_matrixreason_item5:
   form: wppsi
   type: text
-  label: matrixreason_item5
+  label: WPPSI-IV  Matrix Reasoning Item 5
 
 wppsi_matrixreason_item6:
   form: wppsi
   type: text
-  label: matrixreason_item6
+  label: WPPSI-IV  Matrix Reasoning Item 6
 
 wppsi_matrixreason_item7:
   form: wppsi
   type: text
-  label: matrixreason_item7
+  label: WPPSI-IV  Matrix Reasoning Item 7
 
 wppsi_matrixreason_item8:
   form: wppsi
   type: text
-  label: matrixreason_item8
+  label: WPPSI-IV  Matrix Reasoning Item 8
 
 wppsi_matrixreason_item9:
   form: wppsi
   type: text
-  label: matrixreason_item9
+  label: WPPSI-IV  Matrix Reasoning Item 9
 
 wppsi_matrixreason_item10:
   form: wppsi
   type: text
-  label: matrixreason_item10
+  label: WPPSI-IV  Matrix Reasoning Item 10
 
 wppsi_matrixreason_item11:
   form: wppsi
   type: text
-  label: matrixreason_item11
+  label: WPPSI-IV  Matrix Reasoning Item 11
 
 wppsi_matrixreason_item12:
   form: wppsi
   type: text
-  label: matrixreason_item12
+  label: WPPSI-IV  Matrix Reasoning Item 12
 
 wppsi_matrixreason_item13:
   form: wppsi
   type: text
-  label: matrixreason_item13
+  label: WPPSI-IV  Matrix Reasoning Item 13
 
 wppsi_matrixreason_item14:
   form: wppsi
   type: text
-  label: matrixreason_item14
+  label: WPPSI-IV  Matrix Reasoning Item 14
 
 wppsi_matrixreason_item15:
   form: wppsi
   type: text
-  label: matrixreason_item15
+  label: WPPSI-IV  Matrix Reasoning Item 15
 
 wppsi_matrixreason_item16:
   form: wppsi
   type: text
-  label: matrixreason_item16
+  label: WPPSI-IV  Matrix Reasoning Item 16
 
 wppsi_matrixreason_item17:
   form: wppsi
   type: text
-  label: matrixreason_item17
+  label: WPPSI-IV  Matrix Reasoning Item 17
 
 wppsi_matrixreason_item18:
   form: wppsi
   type: text
-  label: matrixreason_item18
+  label: WPPSI-IV  Matrix Reasoning Item 18
 
 wppsi_matrixreason_item19:
   form: wppsi
   type: text
-  label: matrixreason_item19
+  label: WPPSI-IV  Matrix Reasoning Item 19
 
 wppsi_matrixreason_item20:
   form: wppsi
   type: text
-  label: matrixreason_item20
+  label: WPPSI-IV  Matrix Reasoning Item 20
 
 wppsi_matrixreason_item21:
   form: wppsi
   type: text
-  label: matrixreason_item21
+  label: WPPSI-IV  Matrix Reasoning Item 21
 
 wppsi_matrixreason_item22:
   form: wppsi
   type: text
-  label: matrixreason_item22
+  label: WPPSI-IV  Matrix Reasoning Item 22
 
 wppsi_matrixreason_item23:
   form: wppsi
   type: text
-  label: matrixreason_item23
+  label: WPPSI-IV  Matrix Reasoning Item 23
 
 wppsi_matrixreason_item24:
   form: wppsi
   type: text
-  label: matrixreason_item24
+  label: WPPSI-IV  Matrix Reasoning Item 24
 
 wppsi_matrixreason_item25:
   form: wppsi
   type: text
-  label: matrixreason_item25
+  label: WPPSI-IV  Matrix Reasoning Item 25
 
 wppsi_matrixreason_item26:
   form: wppsi
   type: text
-  label: matrixreason_item26
+  label: WPPSI-IV  Matrix Reasoning Item 26

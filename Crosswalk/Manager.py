@@ -1,4 +1,5 @@
 import pandas as pd
+from collections.abc import Iterable
 
 class Manager:
     def __init__(self, data=None, writer=None, transformer=None):
@@ -6,8 +7,25 @@ class Manager:
         self.writer = writer
         self.transformer = transformer
 
-    def preload_data(self):
-        unique = self.transformer.get_unique_variables()
+
+    def preload_data(self, sources=None):
+        """
+         Preload the data from the datacache.
+        :param sources: If None, all sources will be loaded. Otherwise, a list of sources to load.
+        :return:
+        """
+        if sources is None:
+            sources = self.writer.sources.keys()
+        elif isinstance(sources, str):
+            sources = [sources]
+        elif not isinstance(sources, Iterable):
+            raise ValueError('Sources must be a string or iterable of strings.')
+
+        unique = self.transformer.get_unique_variables() #these are names (not renames) in maps
+
+        # filter out the unique variables not included in the `sources`
+        unique = [x for x in unique if x[0] in sources]
+
         self.data.preload(unique)
 
     def run(self, struct):

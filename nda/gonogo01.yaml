@@ -18,7 +18,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: consented_study,date_interview_ses,date_pgsg,date_taken,go_date,pgng_date,pgngs_date,pgsg_date,study_day,studyday
 
 interview_age:
@@ -36,7 +35,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -953,7 +952,7 @@ mpdat:
 
 timepoint_label:
   type: String
-  length: 20
+  length: 15
   description: Timepoint/visit label
 
 l2_gng_comms:

@@ -18,7 +18,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: assess_date,assessment_date,assessment_dt,bl_visit_date,consentdate,consented_study,date_demographics,date_interview_ses,date_taken,demo_date,demo_rpt_date,interviewdate,intvdate,pds_date,pp_date,profile_date,test_date_tele_screen,testing_date,visit_date
 
 interview_age:
@@ -36,7 +35,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -114,6 +113,7 @@ race:
   - White
   - More than one race
   - Unknown or not reported
+  - Other Non-White
   alias: demo3,demo_race,demog_04,race_category,race_ethnicity,race_par
 
 ethnic_group:
@@ -156,18 +156,18 @@ relationship:
   type: Integer
   description: Relationship of respondent to individual
   range:
-  - 1::95
+  - 1::94
   - -999
   notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
     (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
     Speech and language therapist; 8 = Behavioral therapist; 9 = Paraprofessional;
-    10 = Aide; 11 = Principal; 12 = Administrator; 13 = 90=Other; 14 = Content teacher;
-    15 = Parent center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father;
-    19=Foster mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother;
-    24 = Step-father; 25=Aunt; 26=Uncle; 27=Missing Data; 28=Both parents;31= Grandmother
-    from mother side; 32= Grandfather from mother side; 33= Grandmother from father
-    side; 34= Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39=
-    female caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
+    10 = Aide; 11 = Principal; 12 = Administrator; 14 = Content teacher; 15 = Parent
+    center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father; 19=Foster
+    mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother; 24
+    = Step-father; 25=Aunt; 26=Uncle; 28=Both parents;31= Grandmother from mother
+    side; 32= Grandfather from mother side; 33= Grandmother from father side; 34=
+    Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39= female
+    caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
     44=Friend; 45=Parent; 46=Significant other; 47=Sibling; 48=Son/Daughter; 49=Son-in-law/Daughter-in
     law; 50=Other Relative; 51=Paid caregiver; 52=Friends; 53=Roommate; 54=Supervisor;
     55=mother's boyfriend; 56=other parental figure; 57=Summary; 58=counselor ; 59
@@ -185,7 +185,8 @@ relationship:
     female; 82=Other female; 83=Guardian, male; 84=Other male; 85=Other/Grandparent/Nanny;
     86 = Mother, Father, Guardian; 87 = Daughter, son, grandchild; 88 = Professional
     (e.g., social worker, nurse, therapist, psychiatrist, or group home staff);  -999=Missing;
-    89 = Biological parent; 91 = Stepparent; 92 = Adoptive parent; 93 = Foster parent
+    89 = Biological parent; 90=Other; 91 = Stepparent; 92 = Adoptive parent; 93 =
+    Foster parent; 94 = Co-worker
   codes:
     1: Biological mom
     2: Biological dad
@@ -199,7 +200,6 @@ relationship:
     10: Aide
     11: Principal
     12: Administrator
-    13: 90=Other
     14: Content teacher
     15: Parent center director
     16: Self
@@ -213,7 +213,6 @@ relationship:
     24: Step-father
     25: Aunt
     26: Uncle
-    27: Missing Data
     28: Both parents
     31: Grandmother from mother side
     32: Grandfather from mother side
@@ -275,9 +274,11 @@ relationship:
       home staff)
     -999: Missing
     89: Biological parent
+    90: Other
     91: Stepparent
     92: Adoptive parent
     93: Foster parent
+    94: Co-worker
 
 relation_specify:
   type: String
@@ -375,14 +376,16 @@ bio_mother_education:
   type: String
   length: 75
   description: Biological Mother Highest level of education
-  range:
-  - '?'
   notes: Less than High School;High School Degree;GED; Less than 7th Grade; Jr. High
     School; Some High School; Some College;Associates Degree;Bachelors Degree;Some
     Graduate Work;Graduate Degree; Never attended school ; Primary/all age/ Jnr. Secondary
     ; Secondary/High/Technical ; H.E.A.R.T/ Vocational ; Tertiary College/University
-    ; Other tertiary- specify ; Other education-specify ; 99 ; 77; -999
+    ; Other tertiary- specify ; Other education-specify;99= D/K ; 77= N/A; 999= Missing
   alias: mother_edu1
+  codes:
+    99: D/K
+    77: N/A
+    999: Missing
 
 mothertert_specify1:
   type: String
@@ -1347,10 +1350,14 @@ mini_manic1:
   range:
   - 0
   - 1
-  notes: 0=No; 1=Yes
+  - -9997
+  - -9999
+  notes: 0=No; 1=Yes;-9997=Not applicable; -9999=Missing
   codes:
     0: 'No'
     1: 'Yes'
+    9997: Not applicable
+    -9999: Missing
 
 quesmoth_probhighbp:
   type: String
@@ -2295,8 +2302,9 @@ fsprels:
   description: Which category best describes your current relationship status?
   range:
   - 1::9
+  - 777
   notes: 1= Single/never married; 2= Married; 3= Living together; 4= Domestic partnership;
-    5= Separated; 6= Divorced; 7= Widowed; 8= Engaged; 9=Other
+    5= Separated; 6= Divorced; 7= Widowed; 8= Engaged; 9=Other; 777=Not applicable
   alias: demog_03,marital_status,rel_status
   codes:
     1: Single/never married
@@ -2308,6 +2316,7 @@ fsprels:
     7: Widowed
     8: Engaged
     9: Other
+    777: Not applicable
 
 household_number_in_house:
   type: Integer
@@ -2316,8 +2325,8 @@ household_number_in_house:
 
 pubertal_sex_p:
   type: Integer
-  description: What sex was your child assigned at birth? ?Qu? sexo le fue asignado
-    a su ni?o(a) al nacer?
+  description: "What sex was your child assigned at birth? \xBFQu\xE9 sexo le fue\
+    \ asignado a su ni\xF1o(a) al nacer?"
   range:
   - 1
   - 2
@@ -4183,17 +4192,18 @@ mother_edu_cat:
   range:
   - 0::26
   - 98
-  notes: '0 = Never attended or Kindergarten only; 1-11 = Grades 1=11; 12 = High school
-    No diploma; 13 = GED or equivalent; 14 = High school graduate; 15 = Completed
-    12 years of school (but unable to determine if code 12, 13, or 14); 16 = Some
-    college, no degree; 17 = Associate degree: occupational/technical/vocational program;
-    18 = Associate degree: academic program (includes non-US post high school/pre
-    college levels); 19 = Associate degree (but unable to determine if code 16 or
-    17); 20 = Bachelor degree (e.g., BA, AB, BS, BBA); 21 = Completed 16 years of
-    school (but unable to determine if code 16-20); 22 = Master?s degree (e.g., MA,
-    MS, MEng, MEd, MBA); 23 = Professional school degree (e.g., MD, DDS, DVM, JD);
-    24 = Doctoral degree (e.g., PhD, EdD); 25 = Post Master degree (but unable to
-    determine if code 20 or 21); 26 = Unknown/Missing; 98 = Refused to answer'
+  notes: "0 = Never attended or Kindergarten only; 1-11 = Grades 1=11; 12 = High school\
+    \ No diploma; 13 = GED or equivalent; 14 = High school graduate; 15 = Completed\
+    \ 12 years of school (but unable to determine if code 12, 13, or 14); 16 = Some\
+    \ college, no degree; 17 = Associate degree: occupational/technical/vocational\
+    \ program; 18 = Associate degree: academic program (includes non-US post high\
+    \ school/pre college levels); 19 = Associate degree (but unable to determine if\
+    \ code 16 or 17); 20 = Bachelor degree (e.g., BA, AB, BS, BBA); 21 = Completed\
+    \ 16 years of school (but unable to determine if code 16-20); 22 = Master\xBF\
+    s degree (e.g., MA, MS, MEng, MEd, MBA); 23 = Professional school degree (e.g.,\
+    \ MD, DDS, DVM, JD); 24 = Doctoral degree (e.g., PhD, EdD); 25 = Post Master degree\
+    \ (but unable to determine if code 20 or 21); 26 = Unknown/Missing; 98 = Refused\
+    \ to answer"
   alias: sub_mgrade
   codes:
     0: Never attended or Kindergarten only
@@ -4209,7 +4219,7 @@ mother_edu_cat:
     19: Associate degree (but unable to determine if code 16 or 17)
     20: Bachelor degree (e.g., BA, AB, BS, BBA)
     21: Completed 16 years of school (but unable to determine if code 16-20)
-    22: Master?s degree (e.g., MA, MS, MEng, MEd, MBA)
+    22: "Master\xBFs degree (e.g., MA, MS, MEng, MEd, MBA)"
     23: Professional school degree (e.g., MD, DDS, DVM, JD)
     24: Doctoral degree (e.g., PhD, EdD)
     25: Post Master degree (but unable to determine if code 20 or 21)
@@ -4222,17 +4232,18 @@ father_edu_cat:
   range:
   - 0::26
   - 98
-  notes: '0 = Never attended or Kindergarten only; 1-11 = Grades 1=11; 12 = High school
-    No diploma; 13 = GED or equivalent; 14 = High school graduate; 15 = Completed
-    12 years of school (but unable to determine if code 12, 13, or 14); 16 = Some
-    college, no degree; 17 = Associate degree: occupational/technical/vocational program;
-    18 = Associate degree: academic program (includes non-US post high school/pre
-    college levels); 19 = Associate degree (but unable to determine if code 16 or
-    17); 20 = Bachelor degree (e.g., BA, AB, BS, BBA); 21 = Completed 16 years of
-    school (but unable to determine if code 16-20); 22 = Master?s degree (e.g., MA,
-    MS, MEng, MEd, MBA); 23 = Professional school degree (e.g., MD, DDS, DVM, JD);
-    24 = Doctoral degree (e.g., PhD, EdD); 25 = Post Master degree (but unable to
-    determine if code 20 or 21); 26 = Unknown/Missing; 98 = Refused to answer'
+  notes: "0 = Never attended or Kindergarten only; 1-11 = Grades 1=11; 12 = High school\
+    \ No diploma; 13 = GED or equivalent; 14 = High school graduate; 15 = Completed\
+    \ 12 years of school (but unable to determine if code 12, 13, or 14); 16 = Some\
+    \ college, no degree; 17 = Associate degree: occupational/technical/vocational\
+    \ program; 18 = Associate degree: academic program (includes non-US post high\
+    \ school/pre college levels); 19 = Associate degree (but unable to determine if\
+    \ code 16 or 17); 20 = Bachelor degree (e.g., BA, AB, BS, BBA); 21 = Completed\
+    \ 16 years of school (but unable to determine if code 16-20); 22 = Master\xBF\
+    s degree (e.g., MA, MS, MEng, MEd, MBA); 23 = Professional school degree (e.g.,\
+    \ MD, DDS, DVM, JD); 24 = Doctoral degree (e.g., PhD, EdD); 25 = Post Master degree\
+    \ (but unable to determine if code 20 or 21); 26 = Unknown/Missing; 98 = Refused\
+    \ to answer"
   alias: sub_fgrade
   codes:
     0: Never attended or Kindergarten only
@@ -4248,7 +4259,7 @@ father_edu_cat:
     19: Associate degree (but unable to determine if code 16 or 17)
     20: Bachelor degree (e.g., BA, AB, BS, BBA)
     21: Completed 16 years of school (but unable to determine if code 16-20)
-    22: Master?s degree (e.g., MA, MS, MEng, MEd, MBA)
+    22: "Master\xBFs degree (e.g., MA, MS, MEng, MEd, MBA)"
     23: Professional school degree (e.g., MD, DDS, DVM, JD)
     24: Doctoral degree (e.g., PhD, EdD)
     25: Post Master degree (but unable to determine if code 20 or 21)
@@ -4552,7 +4563,7 @@ outpatient_treatments:
 
 area5_explain:
   type: String
-  length: 255
+  length: 360
   description: Church, religion or spiritual orientation? Explain briefly
   alias: religion,religious_category
 
@@ -5046,12 +5057,14 @@ father_alive:
   - 0
   - 1
   - 3
-  notes: 0 = No; 1 = Yes; 3 = Unknown
+  - 777
+  notes: 0 = No; 1 = Yes; 3 = Unknown; 777=Not applicable
   alias: father_still_living
   codes:
     0: 'No'
     1: 'Yes'
     3: Unknown
+    777: Not applicable
 
 mother_alive:
   type: Integer
@@ -5060,12 +5073,14 @@ mother_alive:
   - 0
   - 1
   - 3
-  notes: 0 = No; 1 = Yes; 3 = Unknown
+  - 777
+  notes: 0 = No; 1 = Yes; 3 = Unknown; 777=Not applicable
   alias: mother_still_living
   codes:
     0: 'No'
     1: 'Yes'
     3: Unknown
+    777: Not applicable
 
 educat:
   type: Float
@@ -5096,9 +5111,9 @@ sexual_orientation:
   type: Integer
   description: 'Sexual Orientation- Do you identify as:'
   range:
-  - 1::9
-  notes: 1= Asexual; 2= Bisexual; 3= Gay; 4= Lesbian; 5= Pansexual;  6= Queer;  7=
-    Questioning;  8= Straight or heterosexual; 9= Other
+  - 1::10
+  notes: 1= Asexual; 2= Bisexual; 3= Gay; 4= Lesbian; 5= Pansexual; 6= Queer; 7= Questioning;
+    8= Straight or heterosexual; 9= Other; 10=Homosexual
   alias: sexual_orient
   codes:
     1: Asexual
@@ -5110,6 +5125,7 @@ sexual_orientation:
     7: Questioning
     8: Straight or heterosexual
     9: Other
+    10: Homosexual
 
 sexual_or_descrip:
   type: String
@@ -5133,10 +5149,10 @@ respond:
   type: Integer
   description: Respondent
   range:
-  - 1::5
+  - 1::7
   - 999
-  notes: 1 = Parent; 2 = Teacher; 3=Self; 4= Other; 5= Significant other; 999 = Not
-    available
+  notes: 1 = Parent; 2 = Teacher; 3=Self; 4= Other; 5= Significant other; 6 = Parent
+    1; 7 = Parent 2; 999 = Not available
   alias: form_ext
   codes:
     1: Parent
@@ -5144,6 +5160,8 @@ respond:
     3: Self
     4: Other
     5: Significant other
+    6: Parent 1
+    7: Parent 2
     999: Not available
 
 hh_grandma:
@@ -5727,3 +5745,8 @@ ps_prime_income:
     7: $130,000 - $149,999
     8: higher than $150,000
     -999: Declined to answer/Respondent does not know
+
+year_mta:
+  type: Integer
+  description: Year in study
+  alias: visit_year

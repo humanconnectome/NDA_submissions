@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
 
 interview_age:
   type: Integer
@@ -33,7 +32,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -3875,11 +3874,13 @@ suic_plan_ever:
   range:
   - 0
   - 1
-  notes: 0=No; 1=Yes
+  - 999
+  notes: 0 = No; 1 = Yes; 999 = N/A or Prefer Not to Answer
   alias: su1b
   codes:
     0: 'No'
     1: 'Yes'
+    999: N/A or Prefer Not to Answer
 
 yrbsms_14:
   type: Integer

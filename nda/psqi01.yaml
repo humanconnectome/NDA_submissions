@@ -29,14 +29,13 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: datacollecteddate,date_psqi,psqi_date,psqidate
 
 sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -692,7 +691,7 @@ psqi10d:
 
 psqi10e:
   type: String
-  length: 250
+  length: 500
   description: 'If you have a room mate or bed partner, ask him/her how often in the
     past month you have had other restlessness while you sleep; please describe:'
   alias: psq_other_restless,psqi_10e,psqi_10e1,psqi_q11e
@@ -1177,8 +1176,8 @@ psqi3:
 psqi4:
   type: String
   length: 25
-  description: DURING THE PAST MONTH, what time?have you usually gotten up in the
-    morning, ON WEEKENDS?
+  description: "DURING THE PAST MONTH, what time\uFFFDhave you usually gotten up in\
+    \ the morning, ON WEEKENDS?"
 
 visit_num:
   type: Integer

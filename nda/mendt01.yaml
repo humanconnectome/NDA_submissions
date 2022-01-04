@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: datacollecteddate,med_current,npmed_doa,pmed_doa,scidmvdate
 
 interview_age:
@@ -34,7 +33,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -51,7 +50,7 @@ sex:
 study:
   type: String
   length: 100
-  description: Study
+  description: Study; The code for each individual study
   alias: rxhx_studyid,studyid
 
 site:
@@ -2900,8 +2899,8 @@ pt_a:
 
 med_a:
   type: Integer
-  description: Was psychiatric medication information collected from the child?s physician
-    for this assessment point?
+  description: "Was psychiatric medication information collected from the child\uFFFD\
+    s physician for this assessment point?"
   range:
   - 0
   - 1

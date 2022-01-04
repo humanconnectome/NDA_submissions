@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
 
 interview_age:
   type: Integer
@@ -34,7 +33,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -102,6 +101,7 @@ race:
   - White
   - More than one race
   - Unknown or not reported
+  - Other Non-White
 
 otherrace:
   type: String
@@ -327,9 +327,10 @@ comments_misc:
 weight_std:
   type: Float
   description: Weight - Standard Unit
-  notes: -1 = Not known
+  notes: -1 = Not known; 999 = Missing
   codes:
     -1: Not known
+    999: Missing
 
 baseline_a_002:
   type: String
@@ -415,6 +416,9 @@ ameno_duration:
 bmi:
   type: Float
   description: body mass index of subject
+  notes: -9 = Missing
+  codes:
+    -9: Missing
 
 diagnosis_other_specify:
   type: String
@@ -645,8 +649,9 @@ fsprels:
   description: Which category best describes your current relationship status?
   range:
   - 1::9
+  - 777
   notes: 1= Single/never married; 2= Married; 3= Living together; 4= Domestic partnership;
-    5= Separated; 6= Divorced; 7= Widowed; 8= Engaged; 9=Other
+    5= Separated; 6= Divorced; 7= Widowed; 8= Engaged; 9=Other; 777=Not applicable
   codes:
     1: Single/never married
     2: Married
@@ -657,6 +662,7 @@ fsprels:
     7: Widowed
     8: Engaged
     9: Other
+    777: Not applicable
 
 marital_status_specify:
   type: String

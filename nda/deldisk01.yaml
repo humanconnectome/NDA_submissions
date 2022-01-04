@@ -18,7 +18,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: sessiondate,studyday
 
 interview_age:
@@ -36,7 +35,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -87,6 +86,7 @@ dd_1:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_1
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -98,6 +98,7 @@ dd_2:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_2
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -109,6 +110,7 @@ dd_3:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_3
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -120,6 +122,7 @@ dd_4:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_4
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -131,6 +134,7 @@ dd_5:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_5
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -142,6 +146,7 @@ dd_6:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_6
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -153,6 +158,7 @@ dd_7:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_7
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -164,6 +170,7 @@ dd_8:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_8
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -175,6 +182,7 @@ dd_9:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_9
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -186,6 +194,7 @@ dd_10:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_10
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -197,6 +206,7 @@ dd_11:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_11
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -208,6 +218,7 @@ dd_12:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_12
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -219,6 +230,7 @@ dd_13:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_13
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -230,6 +242,7 @@ dd_14:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_14
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -241,6 +254,7 @@ dd_15:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_15
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -252,6 +266,7 @@ dd_16:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_16
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -263,6 +278,7 @@ dd_17:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_17
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -274,6 +290,7 @@ dd_18:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_18
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -285,6 +302,7 @@ dd_19:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_19
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -296,6 +314,7 @@ dd_20:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_20
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -307,6 +326,7 @@ dd_21:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_21
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -318,6 +338,7 @@ dd_22:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_22
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -329,6 +350,7 @@ dd_23:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_23
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -340,6 +362,7 @@ dd_24:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_24
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -351,6 +374,7 @@ dd_25:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_25
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -362,6 +386,7 @@ dd_26:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_26
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -373,6 +398,7 @@ dd_27:
   - 0
   - 1
   notes: 0=smaller reward today; 1=larger reward in the specified number of days
+  alias: drd_27
   codes:
     0: smaller reward today
     1: larger reward in the specified number of days
@@ -920,12 +946,14 @@ respondent:
   range:
   - Mother
   - Father
-  - Both
-  - Other
   - Parent
+  - Guardian
   - Teacher
   - Child
   - Self
+  - Caregiver
+  - Partner
+  - Other
 
 sv_6mo_200:
   type: Float
@@ -1124,3 +1152,509 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+ddisc_q1_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 6mo Trial 1
+
+ddisc_q46_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 5yr Trial 1
+
+ddisc_q46_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 5yr Trial 1
+
+ddisc_q47_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 5yr Trial 2
+
+ddisc_q47_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 5yr Trial 2
+
+ddisc_q48_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 5yr Trial 3
+
+ddisc_q48_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 5yr Trial 3
+
+ddisc_q49_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 5yr Trial 4
+
+ddisc_q49_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 5yr Trial 4
+
+ddisc_q50_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 5yr Trial 5
+
+ddisc_q50_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 5yr Trial 5
+
+ddisc_q1_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 6mo Trial 1
+
+ddisc_q51_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 10yr Trial 1
+
+ddisc_q51_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 10yr Trial 1
+
+ddisc_q52_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 10yr Trial 2
+
+ddisc_q52_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 10yr Trial 2
+
+ddisc_q53_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 10yr Trial 3
+
+ddisc_q53_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 10yr Trial 3
+
+ddisc_q54_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 10yr Trial 4
+
+ddisc_q54_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 10yr Trial 4
+
+ddisc_q55_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 10yr Trial 5
+
+ddisc_q55_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 10yr Trial 5
+
+ddisc_q2_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 6mo Trial 2
+
+ddisc_q56_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 1yr Trial 1
+
+ddisc_q56_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 1yr Trial 1
+
+ddisc_q57_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 1yr Trial 2
+
+ddisc_q57_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 1yr Trial 2
+
+ddisc_q58_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 1yr Trial 3
+
+ddisc_q58_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 1yr Trial 3
+
+ddisc_q59_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 1yr Trial 4
+
+ddisc_q59_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 1yr Trial 4
+
+ddisc_q60_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 1yr Trial 5
+
+ddisc_q60_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 1yr Trial 5
+
+ddisc_q2_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 6mo Trial 2
+
+ddisc_q3_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 6mo Trial 3
+
+ddisc_q3_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 6mo Trial 3
+
+ddisc_q4_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 6mo Trial 4
+
+ddisc_q4_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 6mo Trial 4
+
+ddisc_q5_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 6mo Trial 5
+
+ddisc_q5_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 6mo Trial 5
+
+ddisc_q6_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 3yr Trial 1
+
+ddisc_q6_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 3yr Trial 1
+
+ddisc_q7_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 3yr Trial 2
+
+ddisc_q7_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 3yr Trial 2
+
+ddisc_q8_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 3yr Trial 3
+
+ddisc_q8_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 3yr Trial 3
+
+ddisc_q9_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 3yr Trial 4
+
+ddisc_q9_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 3yr Trial 4
+
+ddisc_q10_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 3yr Trial 5
+
+ddisc_q10_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 3yr Trial 5
+
+ddisc_q11_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 1mo Trial 1
+
+ddisc_q11_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 1mo Trial 1
+
+ddisc_q12_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 1mo Trial 2
+
+ddisc_q12_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 1mo Trial 2
+
+ddisc_q13_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 1mo Trial 3
+
+ddisc_q13_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 1mo Trial 3
+
+ddisc_q14_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 1mo Trial 4
+
+ddisc_q14_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 1mo Trial 4
+
+ddisc_q15_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 1mo Trial 5
+
+ddisc_q15_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 1mo Trial 5
+
+ddisc_q16_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 5yr Trial 1
+
+ddisc_q16_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 5yr Trial 1
+
+ddisc_q17_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 5yr Trial 2
+
+ddisc_q17_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 5yr Trial 2
+
+ddisc_q18_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 5yr Trial 3
+
+ddisc_q18_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 5yr Trial 3
+
+ddisc_q19_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 5yr Trial 4
+
+ddisc_q19_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 5yr Trial 4
+
+ddisc_q20_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 5yr Trial 5
+
+ddisc_q20_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 5yr Trial 5
+
+ddisc_q21_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 10yr Trial 1
+
+ddisc_q21_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 10yr Trial 1
+
+ddisc_q22_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 10yr Trial 2
+
+ddisc_q22_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 10yr Trial 2
+
+ddisc_q23_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 10yr Trial 3
+
+ddisc_q23_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 10yr Trial 3
+
+ddisc_q24_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 10yr Trial 4
+
+ddisc_q24_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 10yr Trial 4
+
+ddisc_q25_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 10yr Trial 5
+
+ddisc_q25_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 10yr Trial 5
+
+ddisc_q26_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 1yr Trial 1
+
+ddisc_q26_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 1yr Trial 1
+
+ddisc_q27_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 1yr Trial 2
+
+ddisc_q27_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 1yr Trial 2
+
+ddisc_q28_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 1yr Trial 3
+
+ddisc_q28_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 1yr Trial 3
+
+ddisc_q29_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 1yr Trial 4
+
+ddisc_q29_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 1yr Trial 4
+
+ddisc_q30_resp:
+  type: Integer
+  description: Response for Amount $200, Delay 1yr Trial 5
+
+ddisc_q30_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $200, Delay 1yr Trial 5
+
+ddisc_q31_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 6mo Trial 1
+
+ddisc_q31_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 6mo Trial 1
+
+ddisc_q32_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 6mo Trial 2
+
+ddisc_q32_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 6mo Trial 2
+
+ddisc_q33_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 6mo Trial 3
+
+ddisc_q33_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 6mo Trial 3
+
+ddisc_q34_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 6mo Trial 4
+
+ddisc_q34_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 6mo Trial 4
+
+ddisc_q35_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 6mo Trial 5
+
+ddisc_q35_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 6mo Trial 5
+
+ddisc_q36_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 3yr Trial 1
+
+ddisc_q36_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 3yr Trial 1
+
+ddisc_q37_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 3yr Trial 2
+
+ddisc_q37_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 3yr Trial 2
+
+ddisc_q38_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 3yr Trial 3
+
+ddisc_q38_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 3yr Trial 3
+
+ddisc_q39_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 3yr Trial 4
+
+ddisc_q39_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 3yr Trial 4
+
+ddisc_q40_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 3yr Trial 5
+
+ddisc_q40_ttr:
+  type: Integer
+  description: q40_ttr?(Time to respond (ms) for Amount $40000, Delay 3yr Trial 5
+
+ddisc_q41_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 1mo Trial 1
+
+ddisc_q41_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 1mo Trial 1
+
+ddisc_q42_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 1mo Trial 2
+
+ddisc_q42_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 1mo Trial 2
+
+ddisc_q43_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 1mo Trial 3
+
+ddisc_q43_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 1mo Trial 3
+
+ddisc_q44_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 1mo Trial 4
+
+ddisc_q44_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 1mo Trial 4
+
+ddisc_q45_resp:
+  type: Integer
+  description: Response for Amount $40000, Delay 1mo Trial 5
+
+ddisc_q45_ttr:
+  type: Integer
+  description: Time to respond (ms) for Amount $40000, Delay 1mo Trial 5
+
+reason_explanation_delay_disc:
+  type: String
+  length: 150
+  description: Reason/Explanation for not completing Delay Discounting Task
+
+delay_discounting:
+  type: Integer
+  description: Was the Delay Discounting task completed?
+  range:
+  - 1::3
+  notes: 1 = Completed; 2 = Not Completed; 3 = Other
+  codes:
+    1: Completed
+    2: Not Completed
+    3: Other
+
+ca10:
+  type: Float
+  description: Age (years)
+  alias: subject_age
+
+ccc2datecomp:
+  type: Date
+  description: Date Completed
+  alias: drd_date

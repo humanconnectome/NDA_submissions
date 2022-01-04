@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: adate
 
 interview_age:
@@ -35,7 +34,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -968,3 +967,450 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+visit_year:
+  type: Integer
+  description: Year of visit
+
+fes_52:
+  type: Integer
+  description: We think things out for ourselves in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_53:
+  type: Integer
+  description: Learning about new and different things is very important in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_54:
+  type: Integer
+  description: Nobody in our family is active in sports, Little League, bowling, etc.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_55:
+  type: Integer
+  description: We tell each other about our person problems.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_56:
+  type: Integer
+  description: We come and go as we want in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_57:
+  type: Integer
+  description: We are not that interested in cultural activities.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_58:
+  type: Integer
+  description: We often go to movies, sports events, camping, etc.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_59:
+  type: Integer
+  description: We don?t do things on our own very often in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_60:
+  type: Integer
+  description: If we feel like doing something on the spur of the moment we often
+    just pick up and go.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_61:
+  type: Integer
+  description: There is little privacy in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_62:
+  type: Integer
+  description: We rarely have intellectual discussions.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_63:
+  type: Integer
+  description: Everyone in our family has a hobby or two.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_64:
+  type: Integer
+  description: Someone usually gets upset if you complain in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_65:
+  type: Integer
+  description: Family members almost always rely on themselves when a problem comes
+    up.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_66:
+  type: Integer
+  description: Someone in our family plays a musical instrument.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_67:
+  type: Integer
+  description: Family members are not very involved in recreational activities outside
+    work or school.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_68:
+  type: Integer
+  description: We often talk about political and social problems.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_69:
+  type: Integer
+  description: Money and paying bills are openly talked about in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_70:
+  type: Integer
+  description: Family members strongly encourage each other to stand up for their
+    rights.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_71:
+  type: Integer
+  description: Family members often go to the library.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_72:
+  type: Integer
+  description: Family members sometimes attend courses or take lessons for some hobby
+    or interest (outside of school).
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_73:
+  type: Integer
+  description: We spend most weekends and evenings at home.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_74:
+  type: Integer
+  description: We are usually careful about what we say to each other.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_75:
+  type: Integer
+  description: It?s hard to be by yourself without hurting someone?s feelings in our
+    household.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_76:
+  type: Integer
+  description: Watching T.V. is more important than reading in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_77:
+  type: Integer
+  description: Family members go out a lot.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_78:
+  type: Integer
+  description: There are a lot of spontaneous discussions in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_79:
+  type: Integer
+  description: We are not really encouraged to speak up for ourselves in our family.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_80:
+  type: Integer
+  description: Family members really like music, art and literature.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_81:
+  type: Integer
+  description: Our main form of entertainment is watching T.V. or listening to the
+    radio.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_46:
+  type: Integer
+  description: We say anything we want to around home.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_47:
+  type: Integer
+  description: In our family, we are strongly encouraged to be independent.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_48:
+  type: Integer
+  description: We rarely go to lectures, plays, or concerts.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_49:
+  type: Integer
+  description: Friends often come over for dinner or to visit.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_50:
+  type: Integer
+  description: Family members often keep their feelings to themselves.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_51:
+  type: Integer
+  description: It?s hard to ?blow off steam? at home without upsetting somebody.
+  range:
+  - 0
+  - 1
+  notes: 0= false; 1=true
+  codes:
+    0: 'false'
+    1: 'true'
+
+fes_mre_ss:
+  type: Integer
+  description: Moral-Religious Emphasis Standard Score
+
+fes_org_ss:
+  type: Integer
+  description: Organization Standard Score
+
+fes_ctl_ss:
+  type: Integer
+  description: Control Standard Score
+
+fes_c_ss:
+  type: Integer
+  description: Cohesion Standard Score
+
+fes_ex_ss:
+  type: Integer
+  description: Expressiveness Standard Score
+
+fes_con_ss:
+  type: Integer
+  description: Conflict Standard Score
+
+fes_ind_ss:
+  type: Integer
+  description: Independence Standard Score
+
+fes_ao_ss:
+  type: Integer
+  description: Acheievement Orientation Score
+
+fes_ico_ss:
+  type: Integer
+  description: Intellectual-Cultural Orientation Standard Score
+
+fes_aro_ss:
+  type: Integer
+  description: Active-Recreational Orientation Standard Score

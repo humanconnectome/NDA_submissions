@@ -18,7 +18,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: lvdate_r03
 
 interview_age:
@@ -36,7 +35,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -57,12 +56,14 @@ respondent:
   range:
   - Mother
   - Father
-  - Both
-  - Other
   - Parent
+  - Guardian
   - Teacher
   - Child
   - Self
+  - Caregiver
+  - Partner
+  - Other
 
 cbq01:
   type: Integer

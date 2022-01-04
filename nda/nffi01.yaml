@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
 
 interview_age:
   type: Integer
@@ -33,7 +32,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -64,7 +63,7 @@ nffi_1:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_01,neo_01,neo_ne1,neoffi_1,worrier
+  alias: neo2_01,neo_01,neo_ne1,neoffi_1,nffi00_1,nffi1_1,nffi2_1,worrier
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -144,7 +143,7 @@ nffi_6:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: inferior,neo2_06,neo_06,neo_ne2
+  alias: inferior,neo2_06,neo_06,neo_ne2,nffi00_2,nffi1_2,nffi2_2
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -225,7 +224,7 @@ nffi_11:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_11,neo_11,neo_ne3,neoffi_11,stress
+  alias: neo2_11,neo_11,neo_ne3,neoffi_11,nffi00_3,nffi1_3,nffi2_3,stress
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -305,7 +304,7 @@ nffi_16:
   - 1::5
   - -7
   notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
-  alias: feelblue,neo2_16,neo_16,neo_ne4,neoffi_16
+  alias: feelblue,neo2_16,neo_16,neo_ne4,neoffi_16,nffi00_4,nffi1_4,nffi2_4
   codes:
     5: Strongly Disagree
     4: Disagree
@@ -386,7 +385,7 @@ nffi_21:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: jittery,neo2_21,neo_21,neo_ne5,neoffi_21
+  alias: jittery,neo2_21,neo_21,neo_ne5,neoffi_21,nffi00_5,nffi1_5,nffi2_5
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -466,7 +465,7 @@ nffi_26:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_26,neo_26,neo_ne6,neoffi_26,worthles
+  alias: neo2_26,neo_26,neo_ne6,neoffi_26,nffi00_6,nffi1_6,nffi2_6,worthles
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -546,7 +545,7 @@ nffi_31:
   - 1::5
   - -7
   notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
-  alias: feelfear,neo2_31,neo_31,neo_ne7,neoffi_31
+  alias: feelfear,neo2_31,neo_31,neo_ne7,neoffi_31,nffi00_7,nffi1_7,nffi2_7
   codes:
     5: Strongly Disagree
     4: Disagree
@@ -626,7 +625,7 @@ nffi_36:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_36,neo_36,neo_ne8,neoffi_36,treatme
+  alias: neo2_36,neo_36,neo_ne8,neoffi_36,nffi00_8,nffi1_8,nffi2_8,treatme
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -708,7 +707,7 @@ nffi_41:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: gowrong,neo2_41,neo_41,neo_ne9,neoffi_41
+  alias: gowrong,neo2_41,neo_41,neo_ne9,neoffi_41,nffi00_9,nffi1_9,nffi2_9
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -789,7 +788,7 @@ nffi_46:
   - 1::5
   - -7
   notes: '5=Strongly Disagree; 4=Disagree; 3=Neutral; 2=Agree; 1=Strongly agree; -7=Refused '
-  alias: neo2_46,neo_46,neo_ne10,neoffi_46,saddepr
+  alias: neo2_46,neo_46,neo_ne10,neoffi_46,nffi00_10,nffi1_10,nffi2_10,saddepr
   codes:
     5: Strongly Disagree
     4: Disagree
@@ -870,7 +869,7 @@ nffi_51:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: neo2_51,neo_51,neo_ne11,neoffi_51,solvprob
+  alias: neo2_51,neo_51,neo_ne11,neoffi_51,nffi00_11,nffi1_11,nffi2_11,solvprob
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -950,7 +949,7 @@ nffi_56:
   - 1::5
   - -7
   notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
-  alias: ashamed,neo2_56,neo_56,neo_ne12,neoffi_56
+  alias: ashamed,neo2_56,neo_56,neo_ne12,neoffi_56,nffi00_12,nffi1_12,nffi2_12
   codes:
     1: Strongly Disagree
     2: Disagree
@@ -1106,7 +1105,7 @@ subject_description:
 study:
   type: String
   length: 100
-  description: Study
+  description: Study; The code for each individual study
 
 week:
   type: Float
@@ -1122,9 +1121,92 @@ respondent:
   range:
   - Mother
   - Father
-  - Both
-  - Other
   - Parent
+  - Guardian
   - Teacher
   - Child
   - Self
+  - Caregiver
+  - Partner
+  - Other
+
+neoffi_admin:
+  type: Integer
+  description: Administration Method
+  range:
+  - 1::3
+  notes: 1 = Clinician-administered; 2 = Online; 3 = Paper
+  codes:
+    1: Clinician-administered
+    2: Online
+    3: Paper
+
+neoffi_miss:
+  type: Integer
+  description: Neoffi Misscode
+  range:
+  - 0::26
+  - 99
+  - 925
+  notes: '0 = Data collected prior to implementing missing codes; 1 = Done ? complete;
+    2 = Clinical status of patient; 3 = Physical status of patient; 4 = Time constraints;
+    5 = Therapist neglected to complete or give form to patient; 6 = Patient refusal;
+    7 = This was not a regularly scheduled protocol appointment; 8 = Forms were not
+    in chart, unable to locate hard copy of form; 9 = In process, assessment not returned
+    and is pending next visit; 10 = Assessment returned incomplete, sent back to rater
+    or patient; 11 = Items are missing and cannot be retrieved; 12 = Invalid sample
+    collection; 13 = Partial sample collection; 14 = Lab error; 15 = Not applicable;
+    16 = Contact done via phone; 17 = Unable to be completed due to cognitive status
+    of patient; 18 = Medical data collection deferred pending availability of doctor/nurse;
+    19 = No memory of information; 20 = Patient terminated from study during visit;
+    21 = Equipment not available; 22 = Equipment not working properly; 23 = Not part
+    of protocol at time subject was studied; 24 = Not able to contact subject to schedule;
+    25 = Particularly unable to understand due to language barrier; 26 = Done on WDX,
+    pestering on; 99 = Data flagged by the PI and may need to be excluded from analysis;
+    925 = Skip visit '
+  codes:
+    0: Data collected prior to implementing missing codes
+    1: Done ? complete
+    2: Clinical status of patient
+    3: Physical status of patient
+    4: Time constraints
+    5: Therapist neglected to complete or give form to patient
+    6: Patient refusal
+    7: This was not a regularly scheduled protocol appointment
+    8: Forms were not in chart, unable to locate hard copy of form
+    9: In process, assessment not returned and is pending next visit
+    10: Assessment returned incomplete, sent back to rater or patient
+    11: Items are missing and cannot be retrieved
+    12: Invalid sample collection
+    13: Partial sample collection
+    14: Lab error
+    15: Not applicable
+    16: Contact done via phone
+    17: Unable to be completed due to cognitive status of patient
+    18: Medical data collection deferred pending availability of doctor/nurse
+    19: No memory of information
+    20: Patient terminated from study during visit
+    21: Equipment not available
+    22: Equipment not working properly
+    23: Not part of protocol at time subject was studied
+    24: Not able to contact subject to schedule
+    25: Particularly unable to understand due to language barrier
+    26: Done on WDX, pestering on
+    99: Data flagged by the PI and may need to be excluded from analysis
+    925: Skip visit
+
+nffi_e2a:
+  type: Integer
+  description: I prefer jobs that let me work alone without being bothered by other
+    people
+  range:
+  - 1::5
+  - -7
+  notes: 1=Strongly Disagree; 2=Disagree; 3=Neutral; 4=Agree; 5=Strongly agree; -7=Refused
+  codes:
+    1: Strongly Disagree
+    2: Disagree
+    3: Neutral
+    4: Agree
+    5: Strongly agree
+    -7: Refused

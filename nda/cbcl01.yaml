@@ -18,7 +18,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: CBCL_sss_date,adate,assessment_dt,bl_visit_date,cbc_today,cbcl_date,consentdate,consented_study,date_demographics,date_interview_ses,date_taken,interviewdate,intvdate,lvdate_r03,pp_date,profile_date,testing_date,visit_date
 
 interview_age:
@@ -36,7 +35,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -757,8 +756,8 @@ best_things:
 cbcl1:
   type: Integer
   required: true
-  description: Acts too young for his/her age/ Act??a como si fuera mucho menor que
-    su edad
+  description: "Acts too young for his/her age/ Act\xC3\xBAa como si fuera mucho menor\
+    \ que su edad"
   range:
   - 0
   - 1
@@ -781,8 +780,8 @@ cbcl1:
 cbcl2:
   type: Integer
   required: true
-  description: Drinks alcohol without parents' approval/ Toma bebidas alcoh??licas
-    sin permiso de los padres
+  description: "Drinks alcohol without parents' approval/ Toma bebidas alcoh\xC3\xB3\
+    licas sin permiso de los padres"
   range:
   - 0
   - 1
@@ -828,8 +827,8 @@ cbcl3:
 cbcl4:
   type: Integer
   required: true
-  description: Fails to finish things he/she starts/ Deja sin terminar lo que ??l/ella
-    empieza
+  description: "Fails to finish things he/she starts/ Deja sin terminar lo que \xC3\
+    \xA9l/ella empieza"
   range:
   - 0
   - 1
@@ -899,7 +898,7 @@ cbcl6:
 cbcl7:
   type: Integer
   required: true
-  description: Bragging, boasting/  Es engre??do(a), presumido(a)
+  description: "Bragging, boasting/  Es engre\xC3\xADdo(a), presumido(a)"
   range:
   - 0
   - 1
@@ -922,8 +921,8 @@ cbcl7:
 cbcl8:
   type: Integer
   required: true
-  description: Can't concentrate, can't pay attention for long / No puede concentrarse
-    o prestar atenci??n por mucho tiempo
+  description: "Can't concentrate, can't pay attention for long / No puede concentrarse\
+    \ o prestar atenci\xC3\xB3n por mucho tiempo"
   range:
   - 0
   - 1
@@ -1041,8 +1040,8 @@ cbcl12:
 cbcl13:
   type: Integer
   required: true
-  description: Confused or seems to be in a fog/ Est?? confundido(a) o parece como
-    si estuviera en las nubes
+  description: "Confused or seems to be in a fog/ Est\xC3\xA1 confundido(a) o parece\
+    \ como si estuviera en las nubes"
   range:
   - 0
   - 1
@@ -1110,8 +1109,8 @@ cbcl15:
 cbcl16:
   type: Integer
   required: true
-  description: Cruelty, bullying, or meanness to others / Es cruel, abusador(a), y
-    malo(a) con los dem??s
+  description: "Cruelty, bullying, or meanness to others / Es cruel, abusador(a),\
+    \ y malo(a) con los dem\xC3\xA1s"
   range:
   - 0
   - 1
@@ -1134,8 +1133,8 @@ cbcl16:
 cbcl17:
   type: Integer
   required: true
-  description: Daydreams or gets lost in his/her thoughts/  Sue??a despierto(a), se
-    pierde en sus propios pensamientos
+  description: "Daydreams or gets lost in his/her thoughts/  Sue\xC3\xB1a despierto(a),\
+    \ se pierde en sus propios pensamientos"
   range:
   - 0
   - 1
@@ -1158,8 +1157,8 @@ cbcl17:
 cbcl18:
   type: Integer
   required: true
-  description: Deliberately harms self or attempts suicide/  Se hace da??o a s?? mismo(a)
-    deliberadamente o ha intentado suicidarse
+  description: "Deliberately harms self or attempts suicide/  Se hace da\xC3\xB1o\
+    \ a s\xC3\xAD mismo(a) deliberadamente o ha intentado suicidarse"
   range:
   - 0
   - 1
@@ -1182,7 +1181,7 @@ cbcl18:
 cbcl19:
   type: Integer
   required: true
-  description: Demands a lot of attention/ Exige mucha atenci??n
+  description: "Demands a lot of attention/ Exige mucha atenci\xC3\xB3n"
   range:
   - 0
   - 1
@@ -1321,7 +1320,8 @@ cbcl24:
 cbcl25:
   type: Integer
   required: true
-  description: Doesn't get along with other kids / No se lleva bien con otros ni??os(as)/j??venes
+  description: "Doesn't get along with other kids / No se lleva bien con otros ni\xC3\
+    \xB1os(as)/j\xC3\xB3venes"
   range:
   - 0
   - 1
@@ -1344,8 +1344,8 @@ cbcl25:
 cbcl26:
   type: Integer
   required: true
-  description: Doesn't seem to feel guilty after misbehaving / No parece sentirse
-    culpable despu??s de portarse mal
+  description: "Doesn't seem to feel guilty after misbehaving / No parece sentirse\
+    \ culpable despu\xC3\xA9s de portarse mal"
   range:
   - 0
   - 1
@@ -1533,8 +1533,8 @@ cbcl33:
 cbcl34:
   type: Integer
   required: true
-  description: Feels others are out to get him/her / Siente que los dem??s lo/la quieren
-    perjudicar
+  description: "Feels others are out to get him/her / Siente que los dem\xC3\xA1s\
+    \ lo/la quieren perjudicar"
   range:
   - 0
   - 1
@@ -1627,7 +1627,8 @@ cbcl37:
 cbcl38:
   type: Integer
   required: true
-  description: Gets teased a lot / Los dem??s se burlan de ??l/ella a menudo
+  description: "Gets teased a lot / Los dem\xC3\xA1s se burlan de \xC3\xA9l/ella a\
+    \ menudo"
   range:
   - 0
   - 1
@@ -1650,8 +1651,8 @@ cbcl38:
 cbcl39:
   type: Integer
   required: true
-  description: Hangs around with others who get in trouble / Se junta con ni??os(as)/j??venes
-    que se meten en problemas
+  description: "Hangs around with others who get in trouble / Se junta con ni\xC3\xB1\
+    os(as)/j\xC3\xB3venes que se meten en problemas"
   range:
   - 0
   - 1
@@ -1698,7 +1699,8 @@ cbcl40:
 cbcl41:
   type: Integer
   required: true
-  description: Impulsive or acts without thinking / Impulsivo(a); act??a sin pensar
+  description: "Impulsive or acts without thinking / Impulsivo(a); act\xC3\xBAa sin\
+    \ pensar"
   range:
   - 0
   - 1
@@ -1768,7 +1770,7 @@ cbcl43:
 cbcl44:
   type: Integer
   required: true
-  description: Bites fingernails / Se come/muerde las u??as
+  description: "Bites fingernails / Se come/muerde las u\xC3\xB1as"
   range:
   - 0
   - 1
@@ -1860,7 +1862,8 @@ cbcl47:
 cbcl48:
   type: Integer
   required: true
-  description: Not liked by other kids / No le cae bien a otros ni??os(as)/j??venes
+  description: "Not liked by other kids / No le cae bien a otros ni\xC3\xB1os(as)/j\xC3\
+    \xB3venes"
   range:
   - 0
   - 1
@@ -1883,7 +1886,7 @@ cbcl48:
 cbcl49:
   type: Integer
   required: true
-  description: Constipated, doesn't move bowels / Padece de estre??imiento
+  description: "Constipated, doesn't move bowels / Padece de estre\xC3\xB1imiento"
   range:
   - 0
   - 1
@@ -1998,8 +2001,8 @@ cbcl53:
 cbcl54:
   type: Integer
   required: true
-  description: Overtired without good reason / Se siente demasiado cansado(a) sin
-    raz??n para estarlo
+  description: "Overtired without good reason / Se siente demasiado cansado(a) sin\
+    \ raz\xC3\xB3n para estarlo"
   range:
   - 0
   - 1
@@ -2045,8 +2048,8 @@ cbcl55:
 cbcl56a:
   type: Integer
   required: true
-  description: Aches or pains (not stomach or headaches) / Dolores o molestias (sin
-    que sean del est??mago o dolores de cabeza)
+  description: "Aches or pains (not stomach or headaches) / Dolores o molestias (sin\
+    \ que sean del est\xC3\xB3mago o dolores de cabeza)"
   range:
   - 0
   - 1
@@ -2092,7 +2095,7 @@ cbcl56b:
 cbcl56c:
   type: Integer
   required: true
-  description: Nausea, feels sick / N??useas, ganas de vomitar
+  description: "Nausea, feels sick / N\xC3\xA1useas, ganas de vomitar"
   range:
   - 0
   - 1
@@ -2115,8 +2118,8 @@ cbcl56c:
 cbcl56d:
   type: Integer
   required: true
-  description: Problems with eyes (not if corrected by glasses)  / Problemas con los
-    ojos (no incluya si se corrigi?? con gafas/lentes/espejuelos)
+  description: "Problems with eyes (not if corrected by glasses)  / Problemas con\
+    \ los ojos (no incluya si se corrigi\xC3\xB3 con gafas/lentes/espejuelos)"
   range:
   - 0
   - 1
@@ -2139,7 +2142,8 @@ cbcl56d:
 cbcl56e:
   type: Integer
   required: true
-  description: Rashes or other skin problems / Salpullido o irritaci??n en la piel
+  description: "Rashes or other skin problems / Salpullido o irritaci\xC3\xB3n en\
+    \ la piel"
   range:
   - 0
   - 1
@@ -2162,7 +2166,7 @@ cbcl56e:
 cbcl56f:
   type: Integer
   required: true
-  description: Stomachaches / Dolores de est??mago
+  description: "Stomachaches / Dolores de est\xC3\xB3mago"
   range:
   - 0
   - 1
@@ -2185,7 +2189,7 @@ cbcl56f:
 cbcl56g:
   type: Integer
   required: true
-  description: Vomiting, throwing up / V??mitos
+  description: "Vomiting, throwing up / V\xC3\xB3mitos"
   range:
   - 0
   - 1
@@ -2208,8 +2212,8 @@ cbcl56g:
 cbcl56h:
   type: Integer
   required: true
-  description: Other (physical problems without known physical cause) / Otros (problemas
-    f??sicos sin causa m??dica conocida)
+  description: "Other (physical problems without known physical cause) / Otros (problemas\
+    \ f\xC3\xADsicos sin causa m\xC3\xA9dica conocida)"
   range:
   - 0
   - 1
@@ -2238,7 +2242,8 @@ cbcl56h_des:
 cbcl57:
   type: Integer
   required: true
-  description: Physically attacks people  / Ataca/agrede f??sicamente a otras personas
+  description: "Physically attacks people  / Ataca/agrede f\xC3\xADsicamente a otras\
+    \ personas"
   range:
   - 0
   - 1
@@ -2261,8 +2266,8 @@ cbcl57:
 cbcl58:
   type: Integer
   required: true
-  description: Picks nose, skin, or other parts of body / Mete el dedo en la nariz,
-    se ara??a la piel u otras partes del cuerpo
+  description: "Picks nose, skin, or other parts of body / Mete el dedo en la nariz,\
+    \ se ara\xC3\xB1a la piel u otras partes del cuerpo"
   range:
   - 0
   - 1
@@ -2285,8 +2290,8 @@ cbcl58:
 cbcl59:
   type: Integer
   required: true
-  description: Plays with own sex parts in public / Se toca/juega con sus partes sexuales
-    en p??blico
+  description: "Plays with own sex parts in public / Se toca/juega con sus partes\
+    \ sexuales en p\xC3\xBAblico"
   range:
   - 0
   - 1
@@ -2356,7 +2361,7 @@ cbcl61:
 cbcl62:
   type: Integer
   required: true
-  description: Poorly coordinated or clumsy / Mala coordinaci??n o torpeza
+  description: "Poorly coordinated or clumsy / Mala coordinaci\xC3\xB3n o torpeza"
   range:
   - 0
   - 1
@@ -2379,8 +2384,8 @@ cbcl62:
 cbcl63:
   type: Integer
   required: true
-  description: Prefers being with older kids / Prefiere estar con ni??os(as) mayores
-    que ??l/ella
+  description: "Prefers being with older kids / Prefiere estar con ni\xC3\xB1os(as)\
+    \ mayores que \xC3\xA9l/ella"
   range:
   - 0
   - 1
@@ -2403,8 +2408,8 @@ cbcl63:
 cbcl64:
   type: Integer
   required: true
-  description: Prefers being with younger kids / Prefiere estar con ni??os(as) menores
-    que ??l/ella
+  description: "Prefers being with younger kids / Prefiere estar con ni\xC3\xB1os(as)\
+    \ menores que \xC3\xA9l/ella"
   range:
   - 0
   - 1
@@ -2566,8 +2571,8 @@ cbcl70:
 cbcl71:
   type: Integer
   required: true
-  description: Self-conscious or easily embarrassed / Se coh??be y se averg??enza
-    con facilidad
+  description: "Self-conscious or easily embarrassed / Se coh\xC3\xADbe y se averg\xC3\
+    \xBCenza con facilidad"
   range:
   - 0
   - 1
@@ -2636,8 +2641,8 @@ cbcl73:
 cbcl74:
   type: Integer
   required: true
-  description: Showing off or clowning / Le gusta llamar la atenci??n o hacerse el/la
-    payaso(a), gracioso(a)
+  description: "Showing off or clowning / Le gusta llamar la atenci\xC3\xB3n o hacerse\
+    \ el/la payaso(a), gracioso(a)"
   range:
   - 0
   - 1
@@ -2660,7 +2665,7 @@ cbcl74:
 cbcl75:
   type: Integer
   required: true
-  description: Too shy or timid / Demasiado t??mido(a)
+  description: "Too shy or timid / Demasiado t\xC3\xADmido(a)"
   range:
   - 0
   - 1
@@ -2683,8 +2688,8 @@ cbcl75:
 cbcl76:
   type: Integer
   required: true
-  description: Sleeps less than most kids / Duerme menos que la mayor??a de los/las
-    ni??os(as)/j??venes
+  description: "Sleeps less than most kids / Duerme menos que la mayor\xC3\xADa de\
+    \ los/las ni\xC3\xB1os(as)/j\xC3\xB3venes"
   range:
   - 0
   - 1
@@ -2707,8 +2712,9 @@ cbcl76:
 cbcl77:
   type: Integer
   required: true
-  description: Sleeps more than most kids during day and/or night / Duerme m??s que
-    la mayor??a de los/las ni??os(as)/j??venes durante el d??a y/o la noche
+  description: "Sleeps more than most kids during day and/or night / Duerme m\xC3\xA1\
+    s que la mayor\xC3\xADa de los/las ni\xC3\xB1os(as)/j\xC3\xB3venes durante el\
+    \ d\xC3\xADa y/o la noche"
   range:
   - 0
   - 1
@@ -2731,8 +2737,8 @@ cbcl77:
 cbcl78:
   type: Integer
   required: true
-  description: Inattentive or easily distracted  / No presta atenci??n o se distrae
-    f??cilmente
+  description: "Inattentive or easily distracted  / No presta atenci\xC3\xB3n o se\
+    \ distrae f\xC3\xA1cilmente"
   range:
   - 0
   - 1
@@ -2777,7 +2783,8 @@ cbcl79:
 cbcl80:
   type: Integer
   required: true
-  description: Stares blankly / Se queda con la mirada fija, mirando al vac??o
+  description: "Stares blankly / Se queda con la mirada fija, mirando al vac\xC3\xAD\
+    o"
   range:
   - 0
   - 1
@@ -2939,7 +2946,8 @@ cbcl86:
 cbcl87:
   type: Integer
   required: true
-  description: Sudden changes in mood or feelings /  S??bitos cambios de humor o sentimientos
+  description: "Sudden changes in mood or feelings /  S\xC3\xBAbitos cambios de humor\
+    \ o sentimientos"
   range:
   - 0
   - 1
@@ -3008,7 +3016,8 @@ cbcl89:
 cbcl90:
   type: Integer
   required: true
-  description: Swearing or obscene language / Dice groser??as, usa lenguaje obsceno
+  description: "Swearing or obscene language / Dice groser\xC3\xADas, usa lenguaje\
+    \ obsceno"
   range:
   - 0
   - 1
@@ -3054,7 +3063,7 @@ cbcl91:
 cbcl92:
   type: Integer
   required: true
-  description: Talks or walks in sleep Habla o camina cuando est?? dormido(a)
+  description: "Talks or walks in sleep Habla o camina cuando est\xC3\xA1 dormido(a)"
   range:
   - 0
   - 1
@@ -3100,7 +3109,7 @@ cbcl93:
 cbcl94:
   type: Integer
   required: true
-  description: Teases a lot / Se burla mucho de los dem??s
+  description: "Teases a lot / Se burla mucho de los dem\xC3\xA1s"
   range:
   - 0
   - 1
@@ -3284,8 +3293,8 @@ cbcl101:
 cbcl102:
   type: Integer
   required: true
-  description: Underactive, slow moving, or lacks energy / Poco activo(a), lento(a),
-    o le falta energ??a
+  description: "Underactive, slow moving, or lacks energy / Poco activo(a), lento(a),\
+    \ o le falta energ\xC3\xADa"
   range:
   - 0
   - 1
@@ -3331,7 +3340,7 @@ cbcl103:
 cbcl104:
   type: Integer
   required: true
-  description: Unusually loud / M??s ruidoso(a) de lo com??n
+  description: "Unusually loud / M\xC3\xA1s ruidoso(a) de lo com\xC3\xBAn"
   range:
   - 0
   - 1
@@ -3354,8 +3363,8 @@ cbcl104:
 cbcl105:
   type: Integer
   required: true
-  description: Uses drugs for non medical purposes (don't include alcohol or tobacco)
-    / Usa drogas sin motivo m??dico (no incluya alcohol o tabaco)
+  description: "Uses drugs for non medical purposes (don't include alcohol or tobacco)\
+    \ / Usa drogas sin motivo m\xC3\xA9dico (no incluya alcohol o tabaco)"
   range:
   - 0
   - 1
@@ -3402,7 +3411,8 @@ cbcl106:
 cbcl107:
   type: Integer
   required: true
-  description: Wets self during the day / Se orina en la ropa durante el d??a
+  description: "Wets self during the day / Se orina en la ropa durante el d\xC3\xAD\
+    a"
   range:
   - 0
   - 1
@@ -3493,8 +3503,8 @@ cbcl110:
 cbcl111:
   type: Integer
   required: true
-  description: Withdrawn, doesn't get involved with others / Se a??sla, no se relaciona
-    con los dem??s
+  description: "Withdrawn, doesn't get involved with others / Se a\xC3\xADsla, no\
+    \ se relaciona con los dem\xC3\xA1s"
   range:
   - 0
   - 1
@@ -4271,18 +4281,18 @@ relationship:
   type: Integer
   description: Relationship of respondent to individual
   range:
-  - 1::95
+  - 1::94
   - -999
   notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
     (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
     Speech and language therapist; 8 = Behavioral therapist; 9 = Paraprofessional;
-    10 = Aide; 11 = Principal; 12 = Administrator; 13 = 90=Other; 14 = Content teacher;
-    15 = Parent center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father;
-    19=Foster mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother;
-    24 = Step-father; 25=Aunt; 26=Uncle; 27=Missing Data; 28=Both parents;31= Grandmother
-    from mother side; 32= Grandfather from mother side; 33= Grandmother from father
-    side; 34= Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39=
-    female caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
+    10 = Aide; 11 = Principal; 12 = Administrator; 14 = Content teacher; 15 = Parent
+    center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father; 19=Foster
+    mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother; 24
+    = Step-father; 25=Aunt; 26=Uncle; 28=Both parents;31= Grandmother from mother
+    side; 32= Grandfather from mother side; 33= Grandmother from father side; 34=
+    Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39= female
+    caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
     44=Friend; 45=Parent; 46=Significant other; 47=Sibling; 48=Son/Daughter; 49=Son-in-law/Daughter-in
     law; 50=Other Relative; 51=Paid caregiver; 52=Friends; 53=Roommate; 54=Supervisor;
     55=mother's boyfriend; 56=other parental figure; 57=Summary; 58=counselor ; 59
@@ -4300,7 +4310,8 @@ relationship:
     female; 82=Other female; 83=Guardian, male; 84=Other male; 85=Other/Grandparent/Nanny;
     86 = Mother, Father, Guardian; 87 = Daughter, son, grandchild; 88 = Professional
     (e.g., social worker, nurse, therapist, psychiatrist, or group home staff);  -999=Missing;
-    89 = Biological parent; 91 = Stepparent; 92 = Adoptive parent; 93 = Foster parent
+    89 = Biological parent; 90=Other; 91 = Stepparent; 92 = Adoptive parent; 93 =
+    Foster parent; 94 = Co-worker
   alias: CBCL_sss_relationship,relcbcl
   codes:
     1: Biological mom
@@ -4315,7 +4326,6 @@ relationship:
     10: Aide
     11: Principal
     12: Administrator
-    13: 90=Other
     14: Content teacher
     15: Parent center director
     16: Self
@@ -4329,7 +4339,6 @@ relationship:
     24: Step-father
     25: Aunt
     26: Uncle
-    27: Missing Data
     28: Both parents
     31: Grandmother from mother side
     32: Grandfather from mother side
@@ -4391,9 +4400,11 @@ relationship:
       home staff)
     -999: Missing
     89: Biological parent
+    90: Other
     91: Stepparent
     92: Adoptive parent
     93: Foster parent
+    94: Co-worker
 
 cbcl_anxious_perc:
   type: String
@@ -5258,12 +5269,12 @@ c16:
   range:
   - 0::3
   - 9
-  notes: 0 = Less active;1 = Average;2 = More Active;3 = Don?t know;9 = Missing
+  notes: "0 = Less active;1 = Average;2 = More Active;3 = Don\uFFFDt know;9 = Missing"
   codes:
     0: Less active
     1: Average
     2: More Active
-    3: Don?t know
+    3: "Don\uFFFDt know"
     9: Missing
 
 c17:
@@ -5273,12 +5284,12 @@ c17:
   range:
   - 0::3
   - 9
-  notes: 0 = Less active;1 = Average;2 = More Active;3 = Don?t know;9 = Missing
+  notes: "0 = Less active;1 = Average;2 = More Active;3 = Don\uFFFDt know;9 = Missing"
   codes:
     0: Less active
     1: Average
     2: More Active
-    3: Don?t know
+    3: "Don\uFFFDt know"
     9: Missing
 
 c18:
@@ -5288,12 +5299,12 @@ c18:
   range:
   - 0::3
   - 9
-  notes: 0 = Less active;1 = Average;2 = More Active;3 = Don?t know;9 = Missing
+  notes: "0 = Less active;1 = Average;2 = More Active;3 = Don\uFFFDt know;9 = Missing"
   codes:
     0: Less active
     1: Average
     2: More Active
-    3: Don?t know
+    3: "Don\uFFFDt know"
     9: Missing
 
 c19:
@@ -5319,13 +5330,14 @@ c20:
   range:
   - 0::3
   - 9
-  notes: '0 = Below average;1 = Average;2 = Above Average;3 = Don?t know;9 = Missing  '
+  notes: "0 = Below average;1 = Average;2 = Above Average;3 = Don\uFFFDt know;9 =\
+    \ Missing  "
   alias: wjoba
   codes:
     0: Below average
     1: Average
     2: Above Average
-    3: Don?t know
+    3: "Don\uFFFDt know"
     9: Missing
 
 c21:
@@ -5335,13 +5347,14 @@ c21:
   range:
   - 0::3
   - 9
-  notes: '0 = Below average;1 = Average;2 = Above Average;3 = Don?t know;9 = Missing  '
+  notes: "0 = Below average;1 = Average;2 = Above Average;3 = Don\uFFFDt know;9 =\
+    \ Missing  "
   alias: wjobb
   codes:
     0: Below average
     1: Average
     2: Above Average
-    3: Don?t know
+    3: "Don\uFFFDt know"
     9: Missing
 
 c22:
@@ -5351,13 +5364,14 @@ c22:
   range:
   - 0::3
   - 9
-  notes: '0 = Below average;1 = Average;2 = Above Average;3 = Don?t know;9 = Missing  '
+  notes: "0 = Below average;1 = Average;2 = Above Average;3 = Don\uFFFDt know;9 =\
+    \ Missing  "
   alias: wjobc
   codes:
     0: Below average
     1: Average
     2: Above Average
-    3: Don?t know
+    3: "Don\uFFFDt know"
     9: Missing
 
 c23:
@@ -5535,12 +5549,14 @@ respondent:
   range:
   - Mother
   - Father
-  - Both
-  - Other
   - Parent
+  - Guardian
   - Teacher
   - Child
   - Self
+  - Caregiver
+  - Partner
+  - Other
   alias: filby
 
 respondent_other_specify:
@@ -5683,7 +5699,11 @@ cbc_vii_1:
   type: String
   length: 500
   description: Reason for Child not to Attend School
+  notes: 777=Not applicable; 888=Don't know
   alias: cbcl_why_no_school,ysr_p1_8text
+  codes:
+    777: Not applicable
+    888: Don't know
 
 compact2:
   type: Float
@@ -5910,7 +5930,7 @@ u6to17totalactivities:
 cbcl_2aname:
   type: String
   length: 500
-  description: 'Hobby A ? Name of Hobby A? '
+  description: "Hobby A \uFFFD Name of Hobby A? "
 
 cbcl_2atime:
   type: Integer
@@ -5919,13 +5939,13 @@ cbcl_2atime:
   range:
   - 0::3
   - 9
-  notes: 0 = Less than average; 1 = Average; 2 = More than Average; 3 = Don?t know;
-    9=missing
+  notes: "0 = Less than average; 1 = Average; 2 = More than Average; 3 = Don\uFFFD\
+    t know; 9=missing"
   codes:
     0: Less than average
     1: Average
     2: More than Average
-    3: Don?t know
+    3: "Don\uFFFDt know"
     9: missing
 
 cbcl_2acompare:
@@ -5935,19 +5955,19 @@ cbcl_2acompare:
   range:
   - 0::3
   - 9
-  notes: '0 = Below average; 1 = Average; 2 = Above Average; 3 = Don?t know; 9  =
-    Missing '
+  notes: "0 = Below average; 1 = Average; 2 = Above Average; 3 = Don\uFFFDt know;\
+    \ 9  = Missing "
   codes:
     0: Below average
     1: Average
     2: Above Average
-    3: Don?t know
+    3: "Don\uFFFDt know"
     9: Missing
 
 cbcl_2bname:
   type: String
   length: 500
-  description: 'Hobby B ? Name of Hobby B? '
+  description: "Hobby B \uFFFD Name of Hobby B? "
 
 cbcl_2btime:
   type: Integer
@@ -5956,13 +5976,13 @@ cbcl_2btime:
   range:
   - 0::3
   - 9
-  notes: 0 = Less than average; 1 = Average; 2 = More than Average; 3 = Don?t know;
-    9=missing
+  notes: "0 = Less than average; 1 = Average; 2 = More than Average; 3 = Don\uFFFD\
+    t know; 9=missing"
   codes:
     0: Less than average
     1: Average
     2: More than Average
-    3: Don?t know
+    3: "Don\uFFFDt know"
     9: missing
 
 cbcl_2bcompare:
@@ -5972,13 +5992,13 @@ cbcl_2bcompare:
   range:
   - 0::3
   - 9
-  notes: '0 = Below average; 1 = Average; 2 = Above Average; 3 = Don?t know; 9  =
-    Missing '
+  notes: "0 = Below average; 1 = Average; 2 = Above Average; 3 = Don\uFFFDt know;\
+    \ 9  = Missing "
   codes:
     0: Below average
     1: Average
     2: Above Average
-    3: Don?t know
+    3: "Don\uFFFDt know"
     9: Missing
 
 cbcl_2cname:
@@ -5993,13 +6013,13 @@ cbcl_2ctime:
   range:
   - 0::3
   - 9
-  notes: 0 = Less than average; 1 = Average; 2 = More than Average; 3 = Don?t know;
-    9=missing
+  notes: "0 = Less than average; 1 = Average; 2 = More than Average; 3 = Don\uFFFD\
+    t know; 9=missing"
   codes:
     0: Less than average
     1: Average
     2: More than Average
-    3: Don?t know
+    3: "Don\uFFFDt know"
     9: missing
 
 cbcl_2ccompare:
@@ -6009,13 +6029,13 @@ cbcl_2ccompare:
   range:
   - 0::3
   - 9
-  notes: '0 = Below average; 1 = Average; 2 = Above Average; 3 = Don?t know; 9  =
-    Missing '
+  notes: "0 = Below average; 1 = Average; 2 = Above Average; 3 = Don\uFFFDt know;\
+    \ 9  = Missing "
   codes:
     0: Below average
     1: Average
     2: Above Average
-    3: Don?t know
+    3: "Don\uFFFDt know"
     9: Missing
 
 currschool:
@@ -6038,11 +6058,11 @@ cbcl_7_4ed:
 study:
   type: String
   length: 100
-  description: Study
+  description: Study; The code for each individual study
 
 accult_select_language:
   type: Integer
-  description: Test given in Spanish? ??Espa??ol?
+  description: "Test given in Spanish? \xC2\xBFEspa\xC3\xB1ol?"
   range:
   - 0
   - 1

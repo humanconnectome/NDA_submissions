@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: date_of_interview_contact,ipaqdate,v10_ipaq_date,v1_ipaq_date,v7_ipaq_date
 
 interview_age:
@@ -35,7 +34,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -320,8 +319,8 @@ ipaq_1112_week_mins:
 
 ipaq_1114_week_mins:
   type: Integer
-  description: What is the total amount of time you spent over the last 7 days doing
-    moderate physical activities?? (minutes per week)
+  description: "What is the total amount of time you spent over the last 7 days doing\
+    \ moderate physical activities?\uFFFD (minutes per week)"
 
 ipaq_1116_week_mins:
   type: Integer
@@ -345,3 +344,48 @@ completed:
     1: 'Yes'
     2: Yes, lost
     3: Unverified
+
+visit_year:
+  type: Integer
+  description: Year of visit
+
+ipaq_vigmet:
+  type: Integer
+  description: Vigorous activity MET-min/week
+  notes: 999 = Missing
+  codes:
+    999: Missing
+
+ipaq_modmet:
+  type: Integer
+  description: Moderate activity MET-min/week
+  notes: 999 = Missing
+  codes:
+    999: Missing
+
+ipaq_walkmet:
+  type: Integer
+  description: Walking activity MET-min/week
+  notes: 999 = Missing
+  codes:
+    999: Missing
+
+ipaq_totmet:
+  type: Integer
+  description: Total physical activity MET-min/week
+  notes: 999 = Missing
+  codes:
+    999: Missing
+
+ipaq_cat:
+  type: Integer
+  description: Level of physical activity across all domains
+  range:
+  - 1::3
+  - -999
+  notes: 1 = Inactive; 2 = Minimally active; 3 = HEPA active; -999 = Missing
+  codes:
+    1: Inactive
+    2: Minimally active
+    3: HEPA active
+    -999: Missing

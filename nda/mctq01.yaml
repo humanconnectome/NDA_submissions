@@ -18,7 +18,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: testdate
 
 interview_age:
@@ -36,7 +35,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -603,3 +602,14 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+mctq_shift_worker:
+  type: Integer
+  description: I have been a shift- or night-worker in the past three months
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'

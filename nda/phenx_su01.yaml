@@ -18,7 +18,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
 
 interview_age:
   type: Integer
@@ -34,7 +33,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -57,12 +56,14 @@ alc_30day_freq:
   - 0::30
   - 999
   - -9
-  notes: 'DATEFILL is the date 30 days prior to the date of the interview.  Enter
-    frequency in days.  Definition of a standard drink: 1 12oz bottle of beer, 1 glass
-    4oz non-fortified wine, 1 mixed drink with 1oz liquor.  If respondent needs a
-    visual reference for the size of a drink, use the flashcards from the Wave 1 National
-    Epidemiologic Survey on Alcohol and Related Conditions (NESARC) study.'
+  notes: 'DATEFILL is the date 30 days prior to the date of the interview. Enter frequency
+    in days. Definition of a standard drink: 1 12oz bottle of beer, 1 glass 4oz non-fortified
+    wine, 1 mixed drink with 1oz liquor. If respondent needs a visual reference for
+    the size of a drink, use the flashcards from the Wave 1 National Epidemiologic
+    Survey on Alcohol and Related Conditions (NESARC) study.; -9 = Don''t know/Refused '
   alias: nida_y_alclife3,numdaysalcohol,phenx_alcohol1,su_3
+  codes:
+    -9: Don't know/Refused
 
 alc_30day_freqcode:
   type: Integer
@@ -1355,7 +1356,7 @@ frquency_sedatives_code:
   - 97
   - 99
   notes: 97=Refused; 99=Don't Know
-  alias: nida_y_drug1b
+  alias: nida_y_drug1b,phenx_substance01
   codes:
     97: Refused
     99: Don't Know
@@ -1399,7 +1400,7 @@ frquency_painkillers_code:
   - 97
   - 99
   notes: 97=Refused; 99=Don't Know
-  alias: nida_y_drug3b
+  alias: nida_y_drug3b,phenx_substance02
   codes:
     97: Refused
     99: Don't Know
@@ -1421,7 +1422,7 @@ frquency_stimulants_code:
   - 97
   - 99
   notes: 97=Refused; 99=Don't Know
-  alias: nida_y_drug4b
+  alias: nida_y_drug4b,phenx_substance05
   codes:
     97: Refused
     99: Don't Know
@@ -1443,7 +1444,7 @@ frquency_marijuana_code:
   - 97
   - 99
   notes: 97=Refused; 99=Don't Know
-  alias: nida_y_drug5b
+  alias: nida_y_drug5b,phenx_substance03
   codes:
     97: Refused
     99: Don't Know
@@ -1465,7 +1466,7 @@ frquency_cocaine_code:
   - 97
   - 99
   notes: 97=Refused; 99=Don't Know
-  alias: nida_y_drug6b
+  alias: nida_y_drug6b,phenx_substance04
   codes:
     97: Refused
     99: Don't Know
@@ -1507,7 +1508,7 @@ frquency_hallucinogens_code:
   - 97
   - 99
   notes: 97=Refused; 99=Don't Know
-  alias: nida_y_drug7b
+  alias: nida_y_drug7b,phenx_substance07
   codes:
     97: Refused
     99: Don't Know
@@ -1530,7 +1531,7 @@ frquency_inhalant_code:
   - 97
   - 99
   notes: 97=Refused; 99=Don't Know
-  alias: nida_y_drug8b
+  alias: nida_y_drug8b,phenx_substance08
   codes:
     97: Refused
     99: Don't Know
@@ -1552,7 +1553,7 @@ frquency_heroin_code:
   - 97
   - 99
   notes: 97=Refused; 99=Don't Know
-  alias: nida_y_drug9b
+  alias: nida_y_drug9b,phenx_substance09
   codes:
     97: Refused
     99: Don't Know
@@ -1575,7 +1576,7 @@ frquency_other_code:
   - 97
   - 99
   notes: 97=Refused; 99=Don't Know
-  alias: nida_y_drug10b
+  alias: nida_y_drug10b,phenx_substance10
   codes:
     97: Refused
     99: Don't Know
@@ -2838,7 +2839,7 @@ life_howoftenusedmost:
 
 life_nicotine_dk:
   type: Integer
-  description: Ever used tobacco? Don?t know
+  description: "Ever used tobacco? Don\uFFFDt know"
   range:
   - 0
   - 1
@@ -2948,6 +2949,132 @@ comqother:
 
 timepoint_label:
   type: String
-  length: 20
+  length: 15
   description: Timepoint/visit label
   alias: timepoint
+
+phenx_tobacco05a:
+  type: Integer
+  description: About how long has it been since you COMPLETELY quit smoking cigarettes?
+  range:
+  - 0::99
+  - -7
+  - -9
+  notes: number of [phenx_tobacco05b]; -7 = N/A; -9 = Missing
+  codes:
+    -7: N/A
+    -9: Missing
+
+phenx_tobacco05b:
+  type: Integer
+  description: About how long has it been since you COMPLETELY quit smoking cigarettes?
+    - Enter unit reported
+  range:
+  - 1::4
+  - -7
+  - -9
+  notes: 1 = Days; 2 = Weeks; 3 = Months; 4 = Years; -7 = N/A; -9 = Missing
+  codes:
+    1: Days
+    2: Weeks
+    3: Months
+    4: Years
+    -7: N/A
+    -9: Missing
+
+phenx_tobacco06:
+  type: Integer
+  description: Have you EVER smoked cigarettes EVERY DAY for at least 6 months?
+  range:
+  - 0
+  - 1
+  - -7
+  - -9
+  notes: 0 = No; 1 = Yes; -7 = N/A; -9 = Missing
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -7: N/A
+    -9: Missing
+
+phenx_tobacco07:
+  type: Integer
+  description: When you last smoked every day, on average how many cigarettes did
+    you smoke each day?
+  range:
+  - 0::99
+  - -7
+  - -9
+  notes: number of cigarettes; -7 = N/A; -9 = Missing
+  codes:
+    -7: N/A
+    -9: Missing
+
+phenx_tobacco01:
+  type: Integer
+  description: On the average, about how many cigarettes do you now smoke each day?
+  range:
+  - 0::99
+  - -7
+  - -9
+  notes: number of cigarettes; -7 = N/A; -9 = Missing
+  codes:
+    -7: N/A
+    -9: Missing
+
+phenx_tobacco02:
+  type: Integer
+  description: On how many of the past 30 days did you smoke cigarettes?
+  range:
+  - 0::30
+  - -7
+  - -9
+  notes: number of days; -7 = N/A; -9 = Missing
+  codes:
+    -7: N/A
+    -9: Missing
+
+phenx_tobacco03:
+  type: Integer
+  description: Would you say you smoked on AT LEAST 12 DAYS in the past 30 days?
+  range:
+  - 0
+  - 1
+  - -7
+  - -9
+  notes: 0 = No; 1 = Yes; -7 = N/A; -9 = Missing
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -7: N/A
+    -9: Missing
+
+phenx_tobacco04:
+  type: Integer
+  description: On the average, on those [Q2 days IF entry for Q2 NE D/R. OR (AT LEAST
+    12 days) IF Q3=1 YES] days, how many cigarettes did you usually smoke each day?
+  range:
+  - 0::99
+  - -7
+  - -9
+  notes: number of cigarettes; -7 = N/A; -9 = Missing
+  codes:
+    -7: N/A
+    -9: Missing
+
+phenx_substance06:
+  type: Integer
+  description: Think specifically about the past 30 days up to and including today.
+    During the past 30 days, on how many days did you use club drugs?
+  range:
+  - 0::30
+  - -9
+  notes: number of days; -9 = Don't know/Refused
+  codes:
+    -9: Don't know/Refused
+
+phenx_substance10_notes:
+  type: String
+  length: 200
+  description: 'Names of other medicines used.  '
+  notes: 'Use delimiters like comma, semi-colon, or colon to separate  medicines. '

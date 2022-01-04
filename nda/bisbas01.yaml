@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: bl_visit_date,date_time_bisbas
 
 interview_age:
@@ -35,7 +34,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -56,7 +55,7 @@ bisbas1:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_01
+  alias: bis_bas_01,c_bisbas_1
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -71,7 +70,7 @@ bisbas2:
   - 1::4
   notes: 1= Very true for me; 2= Somewhat true for me; 3= Somewhat false for me; 4=
     Very false for me
-  alias: bis_bas_02,bisbas5_y,bisbas_1,bisbas_14i_r,bisbas_q1
+  alias: bis00_1,bis1_1,bis2_1,bis_bas_02,bisbas5_y,bisbas_1,bisbas_14i_r,bisbas_q1,c_bisbas_2
   codes:
     1: Very true for me
     2: Somewhat true for me
@@ -85,7 +84,7 @@ bisbas3:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_03,bisbas14_y,bisbas_16a,bisbas_2,bisbas_7a,bisbas_q2
+  alias: bis_bas_03,bisbas14_y,bisbas_16a,bisbas_2,bisbas_7a,bisbas_q2,c_bisbas_3
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -99,7 +98,7 @@ bisbas4:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_04,bisbas9_y,bisbas_3,bisbas_6a,bisbas_q3
+  alias: bis_bas_04,bisbas9_y,bisbas_3,bisbas_6a,bisbas_q3,c_bisbas_4
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -113,7 +112,7 @@ bisbas5:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_05,bisbas19_y,bisbas_12a,bisbas_4,bisbas_q4
+  alias: bis_bas_05,bisbas19_y,bisbas_12a,bisbas_4,bisbas_q4,c_bisbas_5
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -127,7 +126,7 @@ bisbas6:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_06
+  alias: bis_bas_06,c_bisbas_6
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -141,7 +140,7 @@ bisbas7:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_07,bisbas8_y,bisbas_2a,bisbas_5,bisbas_q5
+  alias: bis_bas_07,bisbas8_y,bisbas_2a,bisbas_5,bisbas_q5,c_bisbas_7
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -155,7 +154,7 @@ bisbas8:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_08,bisbas3_y,bisbas_6,bisbas_9i,bisbas_q6
+  alias: bis00_2,bis1_2,bis2_2,bis_bas_08,bisbas3_y,bisbas_6,bisbas_9i,bisbas_q6,c_bisbas_8
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -169,7 +168,7 @@ bisbas9:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_09,bisbas13_y,bisbas_3a,bisbas_7,bisbas_q7
+  alias: bis_bas_09,bisbas13_y,bisbas_3a,bisbas_7,bisbas_q7,c_bisbas_9
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -184,7 +183,7 @@ bisbas10:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_10,bisbas17_y,bisbas_4a,bisbas_8,bisbas_q8
+  alias: bis_bas_10,bisbas17_y,bisbas_4a,bisbas_8,bisbas_q8,c_bisbas_10
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -198,7 +197,7 @@ bisbas11:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_11
+  alias: bis_bas_11,c_bisbas_11
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -212,7 +211,7 @@ bisbas12:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_12,bisbas15_y,bisbas_11a,bisbas_9,bisbas_q9
+  alias: bis_bas_12,bisbas15_y,bisbas_11a,bisbas_9,bisbas_q9,c_bisbas_12
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -227,7 +226,7 @@ bisbas13:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_13,bisbas4_y,bisbas_10,bisbas_13i,bisbas_q10
+  alias: bis00_3,bis1_3,bis2_3,bis_bas_13,bisbas4_y,bisbas_10,bisbas_13i,bisbas_q10,c_bisbas_13
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -242,7 +241,7 @@ bisbas14:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_14,bisbas12_y,bisbas_11,bisbas_19a,bisbas_q11
+  alias: bis_bas_14,bisbas12_y,bisbas_11,bisbas_19a,bisbas_q11,c_bisbas_14
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -256,7 +255,7 @@ bisbas15:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_15,bisbas20_y,bisbas_12,bisbas_17a,bisbas_q12
+  alias: bis_bas_15,bisbas20_y,bisbas_12,bisbas_17a,bisbas_q12,c_bisbas_15
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -271,7 +270,7 @@ bisbas16:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_16,bisbas1_y,bisbas_13,bisbas_1i,bisbas_q13
+  alias: bis00_4,bis1_4,bis2_4,bis_bas_16,bisbas1_y,bisbas_13,bisbas_1i,bisbas_q13,c_bisbas_16
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -285,7 +284,7 @@ bisbas17:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_17
+  alias: bis_bas_17,c_bisbas_17
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -299,7 +298,7 @@ bisbas18:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_18,bisbas10_y,bisbas_10a,bisbas_14,bisbas_q14
+  alias: bis_bas_18,bisbas10_y,bisbas_10a,bisbas_14,bisbas_q14,c_bisbas_18
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -313,7 +312,7 @@ bisbas19:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_19,bisbas6_y,bisbas_15,bisbas_18i,bisbas_q15
+  alias: bis00_5,bis1_5,bis2_5,bis_bas_19,bisbas6_y,bisbas_15,bisbas_18i,bisbas_q15,c_bisbas_19
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -327,7 +326,7 @@ bisbas20:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_20,bisbas18_y,bisbas_16,bisbas_8a,bisbas_q16
+  alias: bis_bas_20,bisbas18_y,bisbas_16,bisbas_8a,bisbas_q16,c_bisbas_20
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -341,7 +340,7 @@ bisbas21:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_21,bisbas16_y,bisbas_17,bisbas_7a,bisbas_q17
+  alias: bis_bas_21,bisbas16_y,bisbas_17,bisbas_7a,bisbas_q17,c_bisbas_21
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -355,7 +354,7 @@ bisbas22:
   - 1::4
   notes: 1= Very true for me; 2= Somewhat true for me; 3= Somewhat false for me; 4=
     Very false for me
-  alias: bis_bas_22,bisbas_18,bisbas_q18
+  alias: bis00_6,bis1_6,bis2_6,bis_bas_22,bisbas_18,bisbas_q18,c_bisbas_22
   codes:
     1: Very true for me
     2: Somewhat true for me
@@ -369,7 +368,7 @@ bisbas23:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_23,bisbas11_y,bisbas_15a,bisbas_19,bisbas_q19
+  alias: bis_bas_23,bisbas11_y,bisbas_15a,bisbas_19,bisbas_q19,c_bisbas_23
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -383,7 +382,7 @@ bisbas24:
   - 1::4
   notes: 4= Very true for me; 3= Somewhat true for me; 2= Somewhat false for me; 1=
     Very false for me
-  alias: bis_bas_24,bisbas2_y,bisbas_20,bisbas_5i,bisbas_q20
+  alias: bis00_7,bis1_7,bis2_7,bis_bas_24,bisbas2_y,bisbas_20,bisbas_5i,bisbas_q20,c_bisbas_24
   codes:
     4: Very true for me
     3: Somewhat true for me
@@ -395,7 +394,7 @@ bissc_total:
   required: true
   description: BIS Scale score
   notes: 2,8,13,16,19,22,24; 99= N/A; 999 = Applicable, but missing
-  alias: bis,bis_score,bis_total,bis_y_ss_bis_sum,c_totalbis,phenx_srp_bis
+  alias: bis,bis_score,bis_total,bis_y_ss_bis_sum,c_bisbas_sub_bis,c_totalbis,phenx_srp_bis
   codes:
     99: N/A
     999: Applicable, but missing
@@ -405,7 +404,7 @@ bas_drive:
   required: true
   description: BAS Drive
   notes: "\t3, 9, 12, 21; 99= N/A; 999=Missing"
-  alias: bas_drive_score,bis_y_ss_bas_drive,c_totalbasdrive,phenx_srp_bas_drive
+  alias: bas_drive_score,bis_y_ss_bas_drive,c_bisbas_sub_bas_drive,c_totalbasdrive,phenx_srp_bas_drive
   codes:
     99: N/A
     999: Missing
@@ -415,7 +414,7 @@ bas_fs:
   required: true
   description: BAS Fun seeking
   notes: "\t5, 10, 15, 20; 99= N/A; 999=Missing"
-  alias: bas_fun_seeking,bas_fun_seeking_score,bis_y_ss_bas_fs,c_totalbasfunseek,phenx_srp_bas_funseeking
+  alias: bas_fun_seeking,bas_fun_seeking_score,bis_y_ss_bas_fs,c_bisbas_sub_bas_fun,c_totalbasfunseek,phenx_srp_bas_funseeking
   codes:
     99: N/A
     999: Missing
@@ -425,7 +424,7 @@ bas_rr:
   required: true
   description: BAS Reward responsiveness
   notes: "\t4, 7, 14, 18, 23; 99= N/A; 999=Missing"
-  alias: bas_reward,bas_reward_response_score,bas_reward_responsiveness,bis_y_ss_bas_rr,c_totalbasreward,phenx_srp_bas_rewardresponsiveness
+  alias: bas_reward,bas_reward_response_score,bas_reward_responsiveness,bis_y_ss_bas_rr,c_bisbas_sub_bas_rr,c_totalbasreward,phenx_srp_bas_rewardresponsiveness
   codes:
     99: N/A
     999: Missing
@@ -433,7 +432,7 @@ bas_rr:
 bas_total:
   type: Integer
   description: BAS Total Score
-  alias: bas_score
+  alias: bas_score,c_bisbas_sub_bas
 
 version_form:
   type: String
@@ -1164,12 +1163,14 @@ respondent:
   range:
   - Mother
   - Father
-  - Both
-  - Other
   - Parent
+  - Guardian
   - Teacher
   - Child
   - Self
+  - Caregiver
+  - Partner
+  - Other
 
 bisbas_16a:
   type: Integer

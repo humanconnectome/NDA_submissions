@@ -18,7 +18,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: intvdate,testdate,tox_1,udsdtm,visit_date
 
 interview_age:
@@ -36,7 +35,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -54,17 +53,19 @@ macipds_01:
   type: Integer
   description: 'Visit drug screen was performed at:'
   range:
-  - 1::4
+  - 1::6
   - -999
-  notes: 1=Clinical Visit 1; 2=Clinical Visit 2; 3= Scan Session 1; 4= Scan Session;
-    -999=Don't Know/Missing Data
+  notes: 1 = Clinical Visit 1; 2 = Clinical Visit 2; 3 = Scan Session 1; 4 = Scan
+    Session; 5 = EEG Visit; 6 = Twin visit; -999 = Do Not Know/Missing Data
   alias: uds_visit
   codes:
     1: Clinical Visit 1
     2: Clinical Visit 2
     3: Scan Session 1
     4: Scan Session
-    -999: Don't Know/Missing Data
+    5: EEG Visit
+    6: Twin visit
+    -999: Do Not Know/Missing Data
 
 macipds_02:
   type: Integer
@@ -1359,3 +1360,381 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+antidepressants:
+  type: Integer
+  description: Antidepressants
+  notes: 1= Anafranil (clomipramine hydrchloride);2= Asendin (amoxapine);3= Celexa
+    (citalopram hydrobromide);4= Desyrel (trazodone);5= Effexor (venlafaxine);6= Lexapro
+    (escitalopram oxalate);7= Ludiomil (maprotiline);8= Luvox (fluvoxamine);9= Marplan
+    (isocarboxazid);10= Nardil (phenelzine sulfate);11= Norpramin (desipramine);12=
+    Pamelor/Aventyl (nortriptyline);13= Parnate (tranylcypromine);14= Paxil (paroxetine);15=
+    Prozac (fluoxetine);16= Remeron (mirtazapine);17= Serzone (nefazodone);18= Sinequan
+    (doxepine);19= Surmontil (trimipramine);20= Tofranil (imipramine);21= Vivactil
+    (protriptyline);22= Wellbutrin (bupropion);23= Zoloft (sertraline);24= Cymbalta
+    (duloxetine)
+  codes:
+    1: Anafranil (clomipramine hydrchloride)
+    2: Asendin (amoxapine)
+    3: Celexa (citalopram hydrobromide)
+    4: Desyrel (trazodone)
+    5: Effexor (venlafaxine)
+    6: Lexapro (escitalopram oxalate)
+    7: Ludiomil (maprotiline)
+    8: Luvox (fluvoxamine)
+    9: Marplan (isocarboxazid)
+    10: Nardil (phenelzine sulfate)
+    11: Norpramin (desipramine)
+    12: Pamelor/Aventyl (nortriptyline)
+    13: Parnate (tranylcypromine)
+    14: Paxil (paroxetine)
+    15: Prozac (fluoxetine)
+    16: Remeron (mirtazapine)
+    17: Serzone (nefazodone)
+    18: Sinequan (doxepine)
+    19: Surmontil (trimipramine)
+    20: Tofranil (imipramine)
+    21: Vivactil (protriptyline)
+    22: Wellbutrin (bupropion)
+    23: Zoloft (sertraline)
+    24: Cymbalta (duloxetine)
+
+antipsychotics:
+  type: Integer
+  description: Antipsychotics
+  range:
+  - 1
+  - 0
+  - 99
+  - -999
+  notes: 1= Yes ; 0= No ; 99= D/K ; -999= Missing
+  codes:
+    1: 'Yes'
+    0: 'No'
+    99: D/K
+    -999: Missing
+
+mood_stabilizers:
+  type: Integer
+  description: Tox results for the detection of Mood Stabilizers
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown
+
+anti_epileptics:
+  type: Integer
+  description: Tox results for the detection of Anti-Epileptics
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown
+
+anti_histamines:
+  type: Integer
+  description: Tox results for the detection of Anti-Histamines
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown
+
+anticholinergics:
+  type: Integer
+  description: Tox results for the detection of Anticholinergics
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown
+
+betablockers:
+  type: Integer
+  description: Tox results for the detection of BetaBlockers
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown
+
+other_psychotropic_drug:
+  type: Integer
+  description: Tox results for the detection of Other Psychotropic Drug
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown
+
+non_psychiatric:
+  type: Integer
+  description: Tox results for the detection of Non-Psychiatric
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown
+
+major_stim_cocaine_incl:
+  type: Integer
+  description: Tox results for the detection of Major Stimulants (cocaine included)
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown
+
+nicotine_cotinine:
+  type: Integer
+  description: Tox results for the detection of Nicotine-cotinine
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown
+
+alcohol:
+  type: Integer
+  description: Family history alcohol abuse
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Yes; 1=No; -9 =Unknown
+  codes:
+    0: 'Yes'
+    1: 'No'
+    -9: Unknown
+
+sedative_hypnotic_anxiolitics:
+  type: Integer
+  description: Tox results for the detection of Sedative/Hypnotic/Anxiolitics
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown
+
+opioids:
+  type: Integer
+  description: Tox results for the detection of Opioids
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown
+
+minor_stimulants:
+  type: Integer
+  description: Tox results for the detection of Minor Stimulants
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown
+
+hallucinogens:
+  type: String
+  length: 5
+  description: 'During pregnancy, did birth mother:  Take Hallucinogens (LSD, PCP,
+    Angel Dust, Peyote Mescaline, Mushrooms, Green)'
+  range:
+  - 'Yes'
+  - 'No'
+
+inhalants:
+  type: Integer
+  description: You think you may have a problem with - Gases or Fumes
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+visit_year:
+  type: Integer
+  description: Year of visit
+
+macipds_14:
+  type: Integer
+  description: Positive for Tricyclic Antidepressants?
+  range:
+  - 0::4
+  - 9
+  - -999
+  notes: 0 = No; 1 = Yes; 2 = Unclear or Equivocal; 3 = Results not valid; 4 = Not
+    assessed; 9 = Did not perform; -999 = Don't Know/Missing Data
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Unclear or Equivocal
+    3: Results not valid
+    4: Not assessed
+    9: Did not perform
+    -999: Don't Know/Missing Data
+
+macipds_15:
+  type: Integer
+  description: Positive for Oxycodone?
+  range:
+  - 0::4
+  - 9
+  - -999
+  notes: 0 = No; 1 = Yes; 2 = Unclear or Equivocal; 3 = Results not valid; 4 = Not
+    assessed; 9 = Did not perform; -999 = Don't Know/Missing Data
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Unclear or Equivocal
+    3: Results not valid
+    4: Not assessed
+    9: Did not perform
+    -999: Don't Know/Missing Data
+
+macipds_16:
+  type: Integer
+  description: Positive for Propoxyphene?
+  range:
+  - 0::4
+  - 9
+  - -999
+  notes: 0 = No; 1 = Yes; 2 = Unclear or Equivocal; 3 = Results not valid; 4 = Not
+    assessed; 9 = Did not perform; -999 = Don't Know/Missing Data
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Unclear or Equivocal
+    3: Results not valid
+    4: Not assessed
+    9: Did not perform
+    -999: Don't Know/Missing Data
+
+inhalants_hbcc:
+  type: Integer
+  description: Tox results for the detection of Inhalants
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown
+
+alcohol_hbcc:
+  type: Integer
+  description: Tox results for the detection of Alcohol
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown
+
+antipsychotics_hbcc:
+  type: Integer
+  description: Tox results for the detection of Antipsychotics
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown
+
+cannabinoids:
+  type: Integer
+  description: Tox results for the detection of Cannabinoids
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown
+
+hallucinogens_hbcc:
+  type: Integer
+  description: Tox results for the detection of Hallucinogens
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown
+
+antidepressants_hbcc:
+  type: Integer
+  description: Tox results for the detection of Antidepressants
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0=Negative; 1=Positive; -9 =Unknown
+  codes:
+    0: Negative
+    1: Positive
+    -9: Unknown

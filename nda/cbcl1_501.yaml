@@ -17,7 +17,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -47,25 +47,24 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: CBCL_sss_date,cbcl_date,lvdate_r03,visit_date
 
 relationship:
   type: Integer
   description: Relationship of respondent to individual
   range:
-  - 1::95
+  - 1::94
   - -999
   notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
     (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
     Speech and language therapist; 8 = Behavioral therapist; 9 = Paraprofessional;
-    10 = Aide; 11 = Principal; 12 = Administrator; 13 = 90=Other; 14 = Content teacher;
-    15 = Parent center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father;
-    19=Foster mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother;
-    24 = Step-father; 25=Aunt; 26=Uncle; 27=Missing Data; 28=Both parents;31= Grandmother
-    from mother side; 32= Grandfather from mother side; 33= Grandmother from father
-    side; 34= Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39=
-    female caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
+    10 = Aide; 11 = Principal; 12 = Administrator; 14 = Content teacher; 15 = Parent
+    center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father; 19=Foster
+    mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother; 24
+    = Step-father; 25=Aunt; 26=Uncle; 28=Both parents;31= Grandmother from mother
+    side; 32= Grandfather from mother side; 33= Grandmother from father side; 34=
+    Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39= female
+    caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
     44=Friend; 45=Parent; 46=Significant other; 47=Sibling; 48=Son/Daughter; 49=Son-in-law/Daughter-in
     law; 50=Other Relative; 51=Paid caregiver; 52=Friends; 53=Roommate; 54=Supervisor;
     55=mother's boyfriend; 56=other parental figure; 57=Summary; 58=counselor ; 59
@@ -83,7 +82,8 @@ relationship:
     female; 82=Other female; 83=Guardian, male; 84=Other male; 85=Other/Grandparent/Nanny;
     86 = Mother, Father, Guardian; 87 = Daughter, son, grandchild; 88 = Professional
     (e.g., social worker, nurse, therapist, psychiatrist, or group home staff);  -999=Missing;
-    89 = Biological parent; 91 = Stepparent; 92 = Adoptive parent; 93 = Foster parent
+    89 = Biological parent; 90=Other; 91 = Stepparent; 92 = Adoptive parent; 93 =
+    Foster parent; 94 = Co-worker
   alias: CBCL_sss_relationship,completed_by,p7902completedform
   codes:
     1: Biological mom
@@ -98,7 +98,6 @@ relationship:
     10: Aide
     11: Principal
     12: Administrator
-    13: 90=Other
     14: Content teacher
     15: Parent center director
     16: Self
@@ -112,7 +111,6 @@ relationship:
     24: Step-father
     25: Aunt
     26: Uncle
-    27: Missing Data
     28: Both parents
     31: Grandmother from mother side
     32: Grandfather from mother side
@@ -174,15 +172,17 @@ relationship:
       home staff)
     -999: Missing
     89: Biological parent
+    90: Other
     91: Stepparent
     92: Adoptive parent
     93: Foster parent
+    94: Co-worker
 
 cbcl56a:
   type: Integer
   required: true
-  description: Aches or pains (not stomach or headaches) / Dolores o molestias (sin
-    que sean del est??mago o dolores de cabeza)
+  description: "Aches or pains (not stomach or headaches) / Dolores o molestias (sin\
+    \ que sean del est\xC3\xB3mago o dolores de cabeza)"
   range:
   - 0
   - 1
@@ -205,8 +205,8 @@ cbcl56a:
 cbcl1:
   type: Integer
   required: true
-  description: Acts too young for his/her age/ Act??a como si fuera mucho menor que
-    su edad
+  description: "Acts too young for his/her age/ Act\xC3\xBAa como si fuera mucho menor\
+    \ que su edad"
   range:
   - 0
   - 1
@@ -217,7 +217,7 @@ cbcl1:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre2,cbclyng02_r03,q002_acts_too_young,q2_young?,ycbcl_q2
+  alias: "cbclpre2,cbclyng02_r03,q002_acts_too_young,q2_young\uFFFD,ycbcl_q2"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -248,7 +248,7 @@ cbcl_eye:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre4,cbclyng04_r03,q004_avoids_eye,q4_eye?,ycbcl_q4
+  alias: "cbclpre4,cbclyng04_r03,q004_avoids_eye,q4_eye\uFFFD,ycbcl_q4"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -257,8 +257,8 @@ cbcl_eye:
 cbcl8:
   type: Integer
   required: true
-  description: Can't concentrate, can't pay attention for long / No puede concentrarse
-    o prestar atenci??n por mucho tiempo
+  description: "Can't concentrate, can't pay attention for long / No puede concentrarse\
+    \ o prestar atenci\xC3\xB3n por mucho tiempo"
   range:
   - 0
   - 1
@@ -269,7 +269,7 @@ cbcl8:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre5,cbclyng05_r03,q005_concentrate,q5_attention?,ycbcl_q5
+  alias: "cbclpre5,cbclyng05_r03,q005_concentrate,q5_attention\uFFFD,ycbcl_q5"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -293,7 +293,7 @@ cbcl10:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre6,cbclyng06_r03,q006_restless_hyperactive,q6_hyperactive?,ycbcl_q6
+  alias: "cbclpre6,cbclyng06_r03,q006_restless_hyperactive,q6_hyperactive\uFFFD,ycbcl_q6"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -310,7 +310,7 @@ cbcl_out:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre7,cbclyng07_r03,q007_out_of_place,q7_out?,ycbcl_q7
+  alias: "cbclpre7,cbclyng07_r03,q007_out_of_place,q7_out\uFFFD,ycbcl_q7"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -376,7 +376,7 @@ cbcl_help:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre11,cbclyng11_r03,q011_seeks_help,q11_help?,ycbcl_q11
+  alias: "cbclpre11,cbclyng11_r03,q011_seeks_help,q11_help\uFFFD,ycbcl_q11"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -385,7 +385,7 @@ cbcl_help:
 cbcl49:
   type: Integer
   required: true
-  description: Constipated, doesn't move bowels / Padece de estre??imiento
+  description: "Constipated, doesn't move bowels / Padece de estre\xC3\xB1imiento"
   range:
   - 0
   - 1
@@ -533,7 +533,7 @@ cbcl_diar:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre19,cbclyng19_r03,q019_diarrhea,q19_diarrhea?,ycbcl_q19
+  alias: "cbclpre19,cbclyng19_r03,q019_diarrhea,q19_diarrhea\uFFFD,ycbcl_q19"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -575,7 +575,7 @@ cbcl_alonsleep:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre22,cbclyng22_r03,q022_sleep_alone,q22_sleepalone?,ycbcl_q22
+  alias: "cbclpre22,cbclyng22_r03,q022_sleep_alone,q22_sleepalone\uFFFD,ycbcl_q22"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -589,7 +589,7 @@ cbcl_answer:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre23,cbclyng23_r03,q023_answer_people,q23_answer?,ycbcl_q23
+  alias: "cbclpre23,cbclyng23_r03,q023_answer_people,q23_answer\uFFFD,ycbcl_q23"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -621,7 +621,8 @@ cbcl24:
 cbcl25:
   type: Integer
   required: true
-  description: Doesn't get along with other kids / No se lleva bien con otros ni??os(as)/j??venes
+  description: "Doesn't get along with other kids / No se lleva bien con otros ni\xC3\
+    \xB1os(as)/j\xC3\xB3venes"
   range:
   - 0
   - 1
@@ -632,7 +633,7 @@ cbcl25:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre25,cbclyng25_r03,q025_get_along,q25_getalong?,ycbcl_q25
+  alias: "cbclpre25,cbclyng25_r03,q025_get_along,q25_getalong\uFFFD,ycbcl_q25"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -658,8 +659,8 @@ cbcl_fun:
 cbcl26:
   type: Integer
   required: true
-  description: Doesn't seem to feel guilty after misbehaving / No parece sentirse
-    culpable despu??s de portarse mal
+  description: "Doesn't seem to feel guilty after misbehaving / No parece sentirse\
+    \ culpable despu\xC3\xA9s de portarse mal"
   range:
   - 0
   - 1
@@ -670,7 +671,7 @@ cbcl26:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre27,cbclyng27_r03,q027_feel_guilty,q27_guilty?,ycbcl_q27
+  alias: "cbclpre27,cbclyng27_r03,q027_feel_guilty,q27_guilty\uFFFD,ycbcl_q27"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -687,7 +688,7 @@ cbcl_home:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre28,cbclyng28_r03,q028_go_out_home,q28_home?,ycbcl_q28
+  alias: "cbclpre28,cbclyng28_r03,q028_go_out_home,q28_home\uFFFD,ycbcl_q28"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -701,7 +702,7 @@ cbcl_frust:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre29,cbclyng29_r03,q029_easily_frustrated,q29_frustrated?,ycbcl_q29
+  alias: "cbclpre29,cbclyng29_r03,q029_easily_frustrated,q29_frustrated\uFFFD,ycbcl_q29"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -738,7 +739,7 @@ cbcl_eat:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre31,cbclyng31a_r03,q031_eats_not_food,q31_eatdrink?,ycbcl_q31
+  alias: "cbclpre31,cbclyng31a_r03,q031_eats_not_food,q31_eatdrink\uFFFD,ycbcl_q31"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -759,7 +760,7 @@ cbcl29:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre32,cbclyng32a_r03,q032_fears_animals,q32_fear?,ycbcl_q32
+  alias: "cbclpre32,cbclyng32a_r03,q032_fears_animals,q32_fear\uFFFD,ycbcl_q32"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -776,7 +777,7 @@ cbcl_feel:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre33,cbclyng33_r03,q033_feelings_hurt,q33_feelings?,ycbcl_q33
+  alias: "cbclpre33,cbclyng33_r03,q033_feelings_hurt,q33_feelings\uFFFD,ycbcl_q33"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -797,7 +798,7 @@ cbcl36:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre34,cbclyng34_r03,q034_accident_prone,q34_accident?,ycbcl_q34
+  alias: "cbclpre34,cbclyng34_r03,q034_accident_prone,q34_accident\uFFFD,ycbcl_q34"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -819,7 +820,7 @@ cbcl37:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre35,cbclyng35_r03,q035_gets_fights,q35_fights?,ycbcl_q35
+  alias: "cbclpre35,cbclyng35_r03,q035_gets_fights,q35_fights\uFFFD,ycbcl_q35"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -835,7 +836,7 @@ cbcl_every:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true; 999=NK
-  alias: cbclpre36,cbclyng36_r03,q036_gets_into_everything,q36_getsinto?,ycbcl_q36
+  alias: "cbclpre36,cbclyng36_r03,q036_gets_into_everything,q36_getsinto\uFFFD,ycbcl_q36"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -864,7 +865,7 @@ cbcl_troubsleep:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre38,cbclyng38_r03,q038_trouble_sleep,q38_sleeptrouble?,ycbcl_q38
+  alias: "cbclpre38,cbclyng38_r03,q038_trouble_sleep,q38_sleeptrouble\uFFFD,ycbcl_q38"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -900,7 +901,7 @@ cbcl_hit:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true; 999=NK
-  alias: cbclpre40,cbclyng40_r03,q040_hits_others,q40_hits?,ycbcl_q40
+  alias: "cbclpre40,cbclyng40_r03,q040_hits_others,q40_hits\uFFFD,ycbcl_q40"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -915,7 +916,7 @@ cbcl_breath:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre41,cbclyng41_r03,q041_holds_breath,q41_breath?,ycbcl_q41
+  alias: "cbclpre41,cbclyng41_r03,q041_holds_breath,q41_breath\uFFFD,ycbcl_q41"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -966,7 +967,7 @@ cbcl_angry:
 cbcl56c:
   type: Integer
   required: true
-  description: Nausea, feels sick / N??useas, ganas de vomitar
+  description: "Nausea, feels sick / N\xC3\xA1useas, ganas de vomitar"
   range:
   - 0
   - 1
@@ -977,7 +978,7 @@ cbcl56c:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre45,cbclyng45_r03,q045_nausea,q45_nausea?,ycbcl_q45
+  alias: "cbclpre45,cbclyng45_r03,q045_nausea,q45_nausea\uFFFD,ycbcl_q45"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -1000,7 +1001,7 @@ cbcl46:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre46,cbclyng46a_r03,q046_twitching,q46_nervmovement?,ycbcl_q46
+  alias: "cbclpre46,cbclyng46a_r03,q046_twitching,q46_nervmovement\uFFFD,ycbcl_q46"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -1046,7 +1047,7 @@ cbcl47:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre48,cbclyng48_r03,q048_nightmares,q48_nightmares?,ycbcl_q48
+  alias: "cbclpre48,cbclyng48_r03,q048_nightmares,q48_nightmares\uFFFD,ycbcl_q48"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -1069,7 +1070,7 @@ cbcl53:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre49,cbclyng49_r03,q049_overeating,q49_overeating?,ycbcl_q49
+  alias: "cbclpre49,cbclyng49_r03,q049_overeating,q49_overeating\uFFFD,ycbcl_q49"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -1081,8 +1082,8 @@ cbcl53:
 cbcl54:
   type: Integer
   required: true
-  description: Overtired without good reason / Se siente demasiado cansado(a) sin
-    raz??n para estarlo
+  description: "Overtired without good reason / Se siente demasiado cansado(a) sin\
+    \ raz\xC3\xB3n para estarlo"
   range:
   - 0
   - 1
@@ -1133,7 +1134,8 @@ cbcl_bow:
 cbcl57:
   type: Integer
   required: true
-  description: Physically attacks people  / Ataca/agrede f??sicamente a otras personas
+  description: "Physically attacks people  / Ataca/agrede f\xC3\xADsicamente a otras\
+    \ personas"
   range:
   - 0
   - 1
@@ -1144,7 +1146,7 @@ cbcl57:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre53,cbclyng53_r03,q053_attacks_people,q53_attack?,ycbcl_q53
+  alias: "cbclpre53,cbclyng53_r03,q053_attacks_people,q53_attack\uFFFD,ycbcl_q53"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -1156,8 +1158,8 @@ cbcl57:
 cbcl58:
   type: Integer
   required: true
-  description: Picks nose, skin, or other parts of body / Mete el dedo en la nariz,
-    se ara??a la piel u otras partes del cuerpo
+  description: "Picks nose, skin, or other parts of body / Mete el dedo en la nariz,\
+    \ se ara\xC3\xB1a la piel u otras partes del cuerpo"
   range:
   - 0
   - 1
@@ -1204,7 +1206,7 @@ cbcl60:
 cbcl62:
   type: Integer
   required: true
-  description: Poorly coordinated or clumsy / Mala coordinaci??n o torpeza
+  description: "Poorly coordinated or clumsy / Mala coordinaci\xC3\xB3n o torpeza"
   range:
   - 0
   - 1
@@ -1215,7 +1217,7 @@ cbcl62:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre56,cbclyng56_r03,q056_clumsy,q56_clumsy?,ycbcl_q56
+  alias: "cbclpre56,cbclyng56_r03,q056_clumsy,q56_clumsy\uFFFD,ycbcl_q56"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -1227,8 +1229,8 @@ cbcl62:
 cbcl56d:
   type: Integer
   required: true
-  description: Problems with eyes (not if corrected by glasses)  / Problemas con los
-    ojos (no incluya si se corrigi?? con gafas/lentes/espejuelos)
+  description: "Problems with eyes (not if corrected by glasses)  / Problemas con\
+    \ los ojos (no incluya si se corrigi\xC3\xB3 con gafas/lentes/espejuelos)"
   range:
   - 0
   - 1
@@ -1256,7 +1258,8 @@ cbcl_punish:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre58,cbclyng58_r03,q058_punishment_behav_change,q58_punishment?,ycbcl_q58
+  alias: "cbclpre58,cbclyng58_r03,q058_punishment_behav_change,q58_punishment\uFFFD\
+    ,ycbcl_q58"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -1270,7 +1273,7 @@ cbcl_shift:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre59,cbclyng59_r03,q059_shifts_activity,q59_shifts?,ycbcl_q59
+  alias: "cbclpre59,cbclyng59_r03,q059_shifts_activity,q59_shifts\uFFFD,ycbcl_q59"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -1279,7 +1282,8 @@ cbcl_shift:
 cbcl56e:
   type: Integer
   required: true
-  description: Rashes or other skin problems / Salpullido o irritaci??n en la piel
+  description: "Rashes or other skin problems / Salpullido o irritaci\xC3\xB3n en\
+    \ la piel"
   range:
   - 0
   - 1
@@ -1290,7 +1294,7 @@ cbcl56e:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre60,cbclyng60_r03,q060_rashes,q60_skin?,ycbcl_q60
+  alias: "cbclpre60,cbclyng60_r03,q060_rashes,q60_skin\uFFFD,ycbcl_q60"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -1321,7 +1325,7 @@ cbcl_play:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre62,cbclyng62_r03,q062_refuses_active_games,q62_refuseplay?,ycbcl_q62
+  alias: "cbclpre62,cbclyng62_r03,q062_refuses_active_games,q62_refuseplay\uFFFD,ycbcl_q62"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -1349,7 +1353,7 @@ cbcl_bed:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre64,cbclyng64_r03,q064_resists_bed,q64_resbed?,ycbcl_q64
+  alias: "cbclpre64,cbclyng64_r03,q064_resists_bed,q64_resbed\uFFFD,ycbcl_q64"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -1400,7 +1404,8 @@ cbcl_aff:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre67,cbclyng67_r03,q067_unresponsive_affection,q67_unresponsive?,ycbcl_q67
+  alias: "cbclpre67,cbclyng67_r03,q067_unresponsive_affection,q67_unresponsive\uFFFD\
+    ,ycbcl_q67"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -1409,8 +1414,8 @@ cbcl_aff:
 cbcl71:
   type: Integer
   required: true
-  description: Self-conscious or easily embarrassed / Se coh??be y se averg??enza
-    con facilidad
+  description: "Self-conscious or easily embarrassed / Se coh\xC3\xADbe y se averg\xC3\
+    \xBCenza con facilidad"
   range:
   - 0
   - 1
@@ -1452,7 +1457,7 @@ cbcl_littleaf:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre70,cbclyng70_r03,q070_little_affection,q70_litaffection?,ycbcl_q70
+  alias: "cbclpre70,cbclyng70_r03,q070_little_affection,q70_litaffection\uFFFD,ycbcl_q70"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -1489,7 +1494,7 @@ cbcl_fear:
 cbcl75:
   type: Integer
   required: true
-  description: Too shy or timid / Demasiado t??mido(a)
+  description: "Too shy or timid / Demasiado t\xC3\xADmido(a)"
   range:
   - 0
   - 1
@@ -1512,8 +1517,8 @@ cbcl75:
 cbcl76:
   type: Integer
   required: true
-  description: Sleeps less than most kids / Duerme menos que la mayor??a de los/las
-    ni??os(as)/j??venes
+  description: "Sleeps less than most kids / Duerme menos que la mayor\xC3\xADa de\
+    \ los/las ni\xC3\xB1os(as)/j\xC3\xB3venes"
   range:
   - 0
   - 1
@@ -1560,7 +1565,7 @@ cbcl79:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre76,cbclyng76a_r03,q076_speech_problem,q76_speech?,ycbcl_q76
+  alias: "cbclpre76,cbclyng76a_r03,q076_speech_problem,q76_speech\uFFFD,ycbcl_q76"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -1586,7 +1591,7 @@ cbcl_stares:
 cbcl56f:
   type: Integer
   required: true
-  description: Stomachaches / Dolores de est??mago
+  description: "Stomachaches / Dolores de est\xC3\xB3mago"
   range:
   - 0
   - 1
@@ -1597,7 +1602,7 @@ cbcl56f:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre78,cbclyng78_r03,q078_stomachaches,q78_stomachaches?,ycbcl_q78
+  alias: "cbclpre78,cbclyng78_r03,q078_stomachaches,q78_stomachaches\uFFFD,ycbcl_q78"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -1657,7 +1662,7 @@ cbcl86:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre81,cbclyng81_r03,q081_stubborn,q81_stubborn?,ycbcl_q81
+  alias: "cbclpre81,cbclyng81_r03,q081_stubborn,q81_stubborn\uFFFD,ycbcl_q81"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -1669,7 +1674,8 @@ cbcl86:
 cbcl87:
   type: Integer
   required: true
-  description: Sudden changes in mood or feelings /  S??bitos cambios de humor o sentimientos
+  description: "Sudden changes in mood or feelings /  S\xC3\xBAbitos cambios de humor\
+    \ o sentimientos"
   range:
   - 0
   - 1
@@ -1680,7 +1686,7 @@ cbcl87:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre82,cbclyng82_r03,q082_changes_mood,q82_suddenchange?,ycbcl_q82
+  alias: "cbclpre82,cbclyng82_r03,q082_changes_mood,q82_suddenchange\uFFFD,ycbcl_q82"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -1777,7 +1783,7 @@ cbcl50:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre87,cbclyng87_r03,q087_fearful,q87_toofearful?,ycbcl_q87
+  alias: "cbclpre87,cbclyng87_r03,q087_fearful,q87_toofearful\uFFFD,ycbcl_q87"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -1794,7 +1800,7 @@ cbcl_uncoop:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre88,cbclyng88_r03,q088_uncooperative,q88_uncoop?,ycbcl_q88
+  alias: "cbclpre88,cbclyng88_r03,q088_uncooperative,q88_uncoop\uFFFD,ycbcl_q88"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -1803,8 +1809,8 @@ cbcl_uncoop:
 cbcl102:
   type: Integer
   required: true
-  description: Underactive, slow moving, or lacks energy / Poco activo(a), lento(a),
-    o le falta energ??a
+  description: "Underactive, slow moving, or lacks energy / Poco activo(a), lento(a),\
+    \ o le falta energ\xC3\xADa"
   range:
   - 0
   - 1
@@ -1850,7 +1856,7 @@ cbcl103:
 cbcl104:
   type: Integer
   required: true
-  description: Unusually loud / M??s ruidoso(a) de lo com??n
+  description: "Unusually loud / M\xC3\xA1s ruidoso(a) de lo com\xC3\xBAn"
   range:
   - 0
   - 1
@@ -1861,7 +1867,7 @@ cbcl104:
   notes: 0 = Not True/ No es cierto (que sepa usted); 1 = Somewhat or Sometimes True/  En
     cierta manera; 2 = Very True orOften True/ Muy cierto o cierto con frecuencia;
     ; 999=NA; 77=Refused; 88=Missing
-  alias: cbclpre91,cbclyng91_r03,q091_loud,q91_loud?,ycbcl_q91
+  alias: "cbclpre91,cbclyng91_r03,q091_loud,q91_loud\uFFFD,ycbcl_q91"
   codes:
     0: Not True/ No es cierto (que sepa usted)
     1: Somewhat or Sometimes True/  En cierta manera
@@ -1878,7 +1884,7 @@ cbcl_people:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre92,cbclyng92a_r03,q092_upset_new_people,q92_upsetnew?,ycbcl_q92
+  alias: "cbclpre92,cbclyng92a_r03,q092_upset_new_people,q92_upsetnew\uFFFD,ycbcl_q92"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -1887,7 +1893,7 @@ cbcl_people:
 cbcl56g:
   type: Integer
   required: true
-  description: Vomiting, throwing up / V??mitos
+  description: "Vomiting, throwing up / V\xC3\xB3mitos"
   range:
   - 0
   - 1
@@ -1915,7 +1921,7 @@ cbcl_wake:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre94,cbclyng94_r03,q094_wakes_up_night,q94_wakesoften?,ycbcl_q94
+  alias: "cbclpre94,cbclyng94_r03,q094_wakes_up_night,q94_wakesoften\uFFFD,ycbcl_q94"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -1929,7 +1935,7 @@ cbcl_wand:
   - 0::2
   - 999
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true
-  alias: cbclpre95,cbclyng95_r03,q095_wanders_away,q95_wander?,ycbcl_q95
+  alias: "cbclpre95,cbclyng95_r03,q095_wanders_away,q95_wander\uFFFD,ycbcl_q95"
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -1938,7 +1944,7 @@ cbcl_wand:
 cbcl19:
   type: Integer
   required: true
-  description: Demands a lot of attention/ Exige mucha atenci??n
+  description: "Demands a lot of attention/ Exige mucha atenci\xC3\xB3n"
   range:
   - 0
   - 1
@@ -2044,21 +2050,21 @@ cbcl113a_des:
   length: 500
   description: a. (describe) Please write in any problems your child has that were
     not listed above
-  alias: cbclpre100_1,q100_otherproblems_1?,ycbcl_q100_describe
+  alias: "cbclpre100_1,q100_otherproblems_1\uFFFD,ycbcl_q100_describe"
 
 cbcl113b_des:
   type: String
   length: 500
   description: b. (describe)Please write in any problems your child has that were
     not listed above
-  alias: cbclpre100_2,q100_otherproblems_2?,ycbcl_q101_describe
+  alias: "cbclpre100_2,q100_otherproblems_2\uFFFD,ycbcl_q101_describe"
 
 cbcl113c_des:
   type: String
   length: 500
   description: c. (describe) Please write in any problems your child has that were
     not listed above
-  alias: cbclpre100_3,q100_otherproblems_3?,ycbcl_q102_describe
+  alias: "cbclpre100_3,q100_otherproblems_3\uFFFD,ycbcl_q102_describe"
 
 cbcl_emotional_raw:
   type: Float
@@ -2088,7 +2094,7 @@ cbcl_emotional_perc:
   type: String
   length: 20
   description: Emotionally Reactive Percentile
-  alias: CBCL_er_percentile,cbcl5yf_reactive_percent,emotional_percentile?,emotionally_reactive_percent,ycbcl_per_emoreact
+  alias: "CBCL_er_percentile,cbcl5yf_reactive_percent,emotional_percentile\uFFFD,emotionally_reactive_percent,ycbcl_per_emoreact"
 
 cbcl_anxious_raw:
   type: Float
@@ -2118,7 +2124,7 @@ cbcl_anxious_perc:
   type: String
   length: 20
   description: Anxious/Depressed Percentile
-  alias: CBCL_ad_percentile,anxious_depressed_percent,anxious_percentile?,cbcl5yf_anxdep_percent,ycbcl_per_anxdep
+  alias: "CBCL_ad_percentile,anxious_depressed_percent,anxious_percentile\uFFFD,cbcl5yf_anxdep_percent,ycbcl_per_anxdep"
 
 cbcl_somatic_c_raw:
   type: Float
@@ -2148,7 +2154,8 @@ cbcl_somatic_c_perc:
   type: String
   length: 20
   description: Somatic Complaints Percentile
-  alias: CBCL_sc_percentile,cbcl5yf_somatic_percent,somatic_complaints_percent,somatic_percentile?,ycbcl_per_somcomp
+  alias: "CBCL_sc_percentile,cbcl5yf_somatic_percent,somatic_complaints_percent,somatic_percentile\uFFFD\
+    ,ycbcl_per_somcomp"
 
 cbcl_withdrawn_raw:
   type: Float
@@ -2178,7 +2185,8 @@ cbcl_withdrawn_perc:
   type: String
   length: 20
   description: Withdrawn Percentile
-  alias: CBCL_w_percentile,cbcl5yf_withdrawn_percent,withdrawn_percent,withdrawn_percentile?,ycbcl_per_withdrawn
+  alias: "CBCL_w_percentile,cbcl5yf_withdrawn_percent,withdrawn_percent,withdrawn_percentile\uFFFD\
+    ,ycbcl_per_withdrawn"
 
 cbcl_sleep_raw:
   type: Float
@@ -2208,7 +2216,7 @@ cbcl_sleep_perc:
   type: String
   length: 20
   description: Sleep Problems Percentile
-  alias: CBCL_sp_percentile,cbcl5yf_sleep_percent,sleep_percentile?,sleep_problems_percent,ycbcl_per_sleeprob
+  alias: "CBCL_sp_percentile,cbcl5yf_sleep_percent,sleep_percentile\uFFFD,sleep_problems_percent,ycbcl_per_sleeprob"
 
 cbcl_attention_raw:
   type: Float
@@ -2238,7 +2246,7 @@ cbcl_attention_perc:
   type: String
   length: 20
   description: Attention Problems Percentile
-  alias: CBCL_ap_percentile,attention_percentile?,attention_problems_percent,cbcl5yf_attn_percent,ycbcl_per_attprob
+  alias: "CBCL_ap_percentile,attention_percentile\uFFFD,attention_problems_percent,cbcl5yf_attn_percent,ycbcl_per_attprob"
 
 cbcl_aggressive_raw:
   type: Float
@@ -2248,7 +2256,7 @@ cbcl_aggressive_raw:
   - 0::300
   - 999
   notes: 999 = Missing value
-  alias: CBCL_ab_total_score,aggressive_behavior_total,aggressive_raw?,cbcl5yf_aggr_raw,ebs_7_scale,p7902cbclarftotalscoreab,ycbcl_raw_aggbehav
+  alias: "CBCL_ab_total_score,aggressive_behavior_total,aggressive_raw\uFFFD,cbcl5yf_aggr_raw,ebs_7_scale,p7902cbclarftotalscoreab,ycbcl_raw_aggbehav"
   codes:
     999: Missing value
 
@@ -2260,7 +2268,7 @@ cbcl_aggressive:
   - 0::100
   - 999
   notes: 999 = Missing value
-  alias: CBCL_ab_Tscore,aggressive_behavior_t_score,aggressive_t?,cbcl5yf_aggr_t,p7902cbclarftscoreab,ycbcl_t_aggbehav
+  alias: "CBCL_ab_Tscore,aggressive_behavior_t_score,aggressive_t\uFFFD,cbcl5yf_aggr_t,p7902cbclarftscoreab,ycbcl_t_aggbehav"
   codes:
     999: Missing value
 
@@ -2278,7 +2286,7 @@ cbcl_internal_raw:
   - 0::300
   - 999
   notes: 999 = Missing value
-  alias: CBCL_intProblem_total_score,cbcl5yf_int_raw,internal_raw?,internalizing_problems_total,p7902cbclarftotalscoreip,ycbcl_raw_intprob
+  alias: "CBCL_intProblem_total_score,cbcl5yf_int_raw,internal_raw\uFFFD,internalizing_problems_total,p7902cbclarftotalscoreip,ycbcl_raw_intprob"
   codes:
     999: Missing value
 
@@ -2290,7 +2298,7 @@ cbcl_internal:
   - 0::99
   - 999
   notes: 999 = Missing value
-  alias: CBCL_intProblem_Tscore,cbcl5yf_int_t,internal_t?,internalizing_problems_t_score,p7902cbclarftscoreip,ycbcl_t_intprob
+  alias: "CBCL_intProblem_Tscore,cbcl5yf_int_t,internal_t\uFFFD,internalizing_problems_t_score,p7902cbclarftscoreip,ycbcl_t_intprob"
   codes:
     999: Missing value
 
@@ -2308,7 +2316,7 @@ cbcl_external_raw:
   - 0::300
   - 999
   notes: 999 = Missing value
-  alias: CBCL_extProblem_total_score,cbcl5yf_ext_raw,external_raw?,externalizing_problems_total,p7902cbclarftotalscoreep,ycbcl_raw_extprob
+  alias: "CBCL_extProblem_total_score,cbcl5yf_ext_raw,external_raw\uFFFD,externalizing_problems_total,p7902cbclarftotalscoreep,ycbcl_raw_extprob"
   codes:
     999: Missing value
 
@@ -2320,7 +2328,7 @@ cbcl_external:
   - 0::99
   - 999
   notes: 999 = Missing value
-  alias: CBCL_extProblem_Tscore,cbcl5yf_ext_t,external_t?,externalizing_problems_t_score,p7902cbclarftscoreep,ycbcl_t_extprob
+  alias: "CBCL_extProblem_Tscore,cbcl5yf_ext_t,external_t\uFFFD,externalizing_problems_t_score,p7902cbclarftscoreep,ycbcl_t_extprob"
   codes:
     999: Missing value
 
@@ -2388,7 +2396,8 @@ cbcl_affective_perc:
   type: String
   length: 20
   description: Affective Problems Percentile
-  alias: CBCL_dsm_ap_percentile,affective_problems_percent,dsm_affective_percentile?,ycbcl_per_affprob
+  alias: "CBCL_dsm_ap_percentile,affective_problems_percent,dsm_affective_percentile\uFFFD\
+    ,ycbcl_per_affprob"
 
 cbcl_anxiety_raw:
   type: Float
@@ -2418,7 +2427,8 @@ cbcl_anxiety_perc:
   type: String
   length: 20
   description: Anxiety Problems Percentile
-  alias: CBCL_dsm_anx_percentile,anxiety_problems_percent,cbcl5yf_anx_percent,dsm_anxiety_percentile?,ycbcl_per_anxprob
+  alias: "CBCL_dsm_anx_percentile,anxiety_problems_percent,cbcl5yf_anx_percent,dsm_anxiety_percentile\uFFFD\
+    ,ycbcl_per_anxprob"
 
 cbcl_pervasive_raw:
   type: Float
@@ -2428,7 +2438,7 @@ cbcl_pervasive_raw:
   - 0::300
   - 999
   notes: 999 = Missing value
-  alias: CBCL_dsm_pdp_total_score,dsm_mental_raw?,p7902cbclarftotalscoreperprobl,pervasive_developmental_total,ycbcl_raw_pervdevprob
+  alias: "CBCL_dsm_pdp_total_score,dsm_mental_raw\uFFFD,p7902cbclarftotalscoreperprobl,pervasive_developmental_total,ycbcl_raw_pervdevprob"
   codes:
     999: Missing value
 
@@ -2440,7 +2450,7 @@ cbcl_pervasive:
   - 0::99
   - 999
   notes: 999 = Missing value
-  alias: CBCL_dsm_pdp_Tscore,dsm_mental_t?,p7902cbclarftscoreperproblems,pervasive_developmental_t_score,ycbcl_t_pervdevprob
+  alias: "CBCL_dsm_pdp_Tscore,dsm_mental_t\uFFFD,p7902cbclarftscoreperproblems,pervasive_developmental_t_score,ycbcl_t_pervdevprob"
   codes:
     999: Missing value
 
@@ -2478,7 +2488,8 @@ cbcl_adhd_perc:
   type: String
   length: 20
   description: Attention Deficit/ Hyperactivity Problems Percentile
-  alias: CBCL_dsm_adhp_percentile,add_adhd_percent,cbcl5yf_adhd_percent,dsm_attention_percentile?,ycbcl_per_adhd
+  alias: "CBCL_dsm_adhp_percentile,add_adhd_percent,cbcl5yf_adhd_percent,dsm_attention_percentile\uFFFD\
+    ,ycbcl_per_adhd"
 
 cbcl_oppositional_raw:
   type: Float
@@ -2488,7 +2499,7 @@ cbcl_oppositional_raw:
   - 0::300
   - 999
   notes: 999 = Missing value
-  alias: CBCL_dsm_odp_total_score,cbcl5yf_odd_raw,dsm_oppose_raw?,oppositional_defiant_total,p7902cbclarftotalscoreoppprobl,ycbcl_raw_oppdef
+  alias: "CBCL_dsm_odp_total_score,cbcl5yf_odd_raw,dsm_oppose_raw\uFFFD,oppositional_defiant_total,p7902cbclarftotalscoreoppprobl,ycbcl_raw_oppdef"
   codes:
     999: Missing value
 
@@ -2500,7 +2511,7 @@ cbcl_oppositional:
   - 0::99
   - 999
   notes: 999 = Missing value
-  alias: CBCL_dsm_odp_Tscore,cbcl5yf_odd_t,dsm_oppose_t?,oppositional_defiant_t_score,p7902cbclarftscoreoppproblems,ycbcl_t_oppdef
+  alias: "CBCL_dsm_odp_Tscore,cbcl5yf_odd_t,dsm_oppose_t\uFFFD,oppositional_defiant_t_score,p7902cbclarftscoreoppproblems,ycbcl_t_oppdef"
   codes:
     999: Missing value
 
@@ -2691,7 +2702,8 @@ cbcl10_1_text:
   type: String
   length: 500
   description: 'Describe: Picks nose, skin, or other parts of body'
-  alias: cbclpre54_des,cbclyng54b_r03,q054m_picks_nose_describe,q54_picks_describe?,ycbcl_q54_describe
+  alias: "cbclpre54_des,cbclyng54b_r03,q054m_picks_nose_describe,q54_picks_describe\uFFFD\
+    ,ycbcl_q54_describe"
 
 cbcl13_1_text:
   type: String
@@ -2703,13 +2715,15 @@ cbcl13_6_text:
   type: String
   length: 500
   description: 'Describe: Strange behavior'
-  alias: cbclpre80_des,cbclyng80b_r03,q080m_behavior_describe,q80_strange_describe?,ycbcl_q80_describe
+  alias: "cbclpre80_des,cbclyng80b_r03,q080m_behavior_describe,q80_strange_describe\uFFFD\
+    ,ycbcl_q80_describe"
 
 cbcl24b_text:
   type: String
   length: 500
   description: 'Describe: Doesnt eat well'
-  alias: cbclpre24_des,cbclyng24b_r03,q024m_eat_well_describe,q24_eat_describe?,ycbcl_q24_describe
+  alias: "cbclpre24_des,cbclyng24b_r03,q024m_eat_well_describe,q24_eat_describe\uFFFD\
+    ,ycbcl_q24_describe"
 
 cbcl31b_text:
   type: String
@@ -2721,19 +2735,22 @@ cbcl57b_text:
   type: String
   length: 500
   description: 'Describe: Problems with eyes (without medical cause) '
-  alias: cbclpre57_des,cbclyng57b_r03,q057m_problems_eyes_describe,q57_eyeprob_describe?,ycbcl_q57_describe
+  alias: "cbclpre57_des,cbclyng57b_r03,q057m_problems_eyes_describe,q57_eyeprob_describe\uFFFD\
+    ,ycbcl_q57_describe"
 
 cbcl65b_text:
   type: String
   length: 500
   description: 'Describe: Resists toilet training '
-  alias: cbclpre65_des,cbclyng65b_r03,q065m_toilet_describe,q65_restoilet_describe?,ycbcl_q65_describe
+  alias: "cbclpre65_des,cbclyng65b_r03,q065m_toilet_describe,q65_restoilet_describe\uFFFD\
+    ,ycbcl_q65_describe"
 
 cbcl74b_text:
   type: String
   length: 500
   description: 'Describe: Sleeps less than most kids during day and/ or night '
-  alias: cbclpre74_des,cbclyng74b_r03,q074m_sleeps_less_describe,q74_sleepless_describe?,ycbcl_q74_describe
+  alias: "cbclpre74_des,cbclyng74b_r03,q074m_sleeps_less_describe,q74_sleepless_describe\uFFFD\
+    ,ycbcl_q74_describe"
 
 cbcl92b_text:
   type: String
@@ -2806,7 +2823,7 @@ vi_y_worried_lang_develop:
 study:
   type: String
   length: 100
-  description: Study
+  description: Study; The code for each individual study
 
 site:
   type: String
@@ -2862,7 +2879,7 @@ cbcl5yf_stress_raw:
   - 0::300
   - 999
   notes: 999 = Missing value
-  alias: ycbcl_raw_strssprob
+  alias: cbcl_stress_raw,ycbcl_raw_strssprob
   codes:
     999: Missing value
 
@@ -2873,7 +2890,7 @@ cbcl5yf_stress_t:
   - 0::99
   - 999
   notes: 999 = Missing value
-  alias: ycbcl_t_strssprob
+  alias: cbcl_stress,ycbcl_t_strssprob
   codes:
     999: Missing value
 
@@ -2881,7 +2898,7 @@ cbcl5yf_stress_percent:
   type: String
   length: 20
   description: Stress Problems Percentile
-  alias: ycbcl_per_stressprob
+  alias: cbcl_stress_perc,ycbcl_per_stressprob
 
 cbcl5yf_asd_raw:
   type: Float

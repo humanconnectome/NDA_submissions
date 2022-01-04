@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: SRS_2005_interview_date,date_of_evaluation,measure_date_of_evaluation,visit_date
 
 interview_age:
@@ -35,7 +34,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -61,10 +60,10 @@ respond:
   required: true
   description: Respondent
   range:
-  - 1::5
+  - 1::7
   - 999
-  notes: 1 = Parent; 2 = Teacher; 3=Self; 4= Other; 5= Significant other; 999 = Not
-    available
+  notes: 1 = Parent; 2 = Teacher; 3=Self; 4= Other; 5= Significant other; 6 = Parent
+    1; 7 = Parent 2; 999 = Not available
   alias: SRS_2005_Respond
   codes:
     1: Parent
@@ -72,6 +71,8 @@ respond:
     3: Self
     4: Other
     5: Significant other
+    6: Parent 1
+    7: Parent 2
     999: Not available
 
 respond_detail:
@@ -1590,11 +1591,13 @@ trt_grp:
   - 10
   - 11
   - 12
+  - O
+  - P
   notes: 1=Group 1 first 8 weeks; 1AO=Group 1 8 week add on; 1CT=Group 1 8 week cross
     taper; 2=Group 2; 3=Group 3; 4 =active; 5=sham; 6=none; 7=ESDM High intensity;
     8=ESDM Low intensity; 9=EIBI High intensity; 10=EIBI Low intensity; ESDM = Early
     Start Denver Model; EIBI = Early and Intensive Behavioral Intervention; 11 = Navigator;
-    12 = Care manager
+    12 = Care manager; O=Oxytocin; P=Placebo
   codes:
     1: Group 1 first 8 weeks
     2: Group 2
@@ -1608,6 +1611,8 @@ trt_grp:
     10: EIBI Low intensity
     11: Navigator
     12: Care manager
+    O: Oxytocin
+    P: Placebo
 
 days_baseline:
   type: Integer

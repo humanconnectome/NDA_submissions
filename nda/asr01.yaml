@@ -17,8 +17,7 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
-  alias: adate
+  alias: adate,test_date_ach
 
 interview_age:
   type: Integer
@@ -35,7 +34,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -59,7 +58,7 @@ asr1_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr1,asr_q01_p,q1
+  alias: asr1,asr_q01_p,i_am_too_forgetful,q1
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -78,7 +77,7 @@ asr1_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr2,asr_q02_p,q2
+  alias: asr2,asr_q02_p,i_make_good_use_of_my_oppo,q2
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -97,7 +96,7 @@ asr1_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr3,asr_q03_p,q3
+  alias: asr3,asr_q03_p,i_argue_a_lot,q3
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -116,7 +115,7 @@ asr1_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr4,asr_q04_p,q4
+  alias: asr4,asr_q04_p,i_work_up_to_my_ability,q4
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -135,7 +134,7 @@ asr1_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr5,asr_q05_p,q5
+  alias: asr5,asr_q05_p,i_blame_other_for_my_probl,q5
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -155,7 +154,7 @@ asr1_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr6,asr_q06_p,q6
+  alias: asr6,asr_q06_p,i_use_drugs_other_than_alc,q6
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -168,7 +167,7 @@ asr1_6_text:
   type: String
   length: 500
   description: 'ASR 6 Describe drug use:'
-  alias: asr6des
+  alias: asr6des,describe_i_use_drugs_other
 
 asr2_1:
   type: Integer
@@ -180,7 +179,7 @@ asr2_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr2_7,asr7,asr_q07_p,q7
+  alias: asr2_7,asr7,asr_q07_p,i_brag,q7
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -199,7 +198,7 @@ asr2_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr2_8,asr8,asr_q08_p,oasr_ppl7,q8
+  alias: asr2_8,asr8,asr_q08_p,i_have_trouble_concentrati,oasr_ppl7,q8
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -218,7 +217,7 @@ asr2_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr2_9,asr9,asr_q09_p,oasr_ppl8,q9
+  alias: asr2_9,asr9,asr_q09_p,i_can_t_get_my_mind_off_ce,oasr_ppl8,q9
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -231,7 +230,7 @@ asr2_3_text:
   type: String
   length: 500
   description: 'ASR 9 Describe thoughts:'
-  alias: asr2_9_text,asr9des,oasr_ppl8_des
+  alias: asr2_9_text,asr9des,describe_i_can_t_get_my_mi,oasr_ppl8_des
 
 asr2_4:
   type: Integer
@@ -243,7 +242,7 @@ asr2_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr10,asr2_10,asr_q10_p,oasr_ppl9,q10
+  alias: asr10,asr2_10,asr_q10_p,i_have_trouble_sitting_sti,oasr_ppl9,q10
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -262,7 +261,7 @@ asr2_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr11,asr2_11,asr_q11_p,q11
+  alias: asr11,asr2_11,asr_q11_p,i_am_too_dependent_on_othe,q11
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -281,7 +280,7 @@ asr2_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr12,asr2_12,asr_q12_p,q12
+  alias: asr12,asr2_12,asr_q12_p,i_feel_lonely,q12
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -300,7 +299,7 @@ asr3_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr13,asr3_13,asr_q13_p,oasr_ppl12,q13
+  alias: asr13,asr3_13,asr_q13_p,i_feel_confused_or_in_a_fo,oasr_ppl12,q13
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -319,7 +318,7 @@ asr3_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr14,asr3_14,asr_q14_p,oasr_ppl13,q14
+  alias: asr14,asr3_14,asr_q14_p,i_cry_a_lot,oasr_ppl13,q14
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -338,7 +337,7 @@ asr3_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr15,asr3_15,asr_q15_p,q15
+  alias: asr15,asr3_15,asr_q15_p,i_am_pretty_honest,q15
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -357,7 +356,7 @@ asr3_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr16,asr3_16,asr_q16_p,oasr_ppl15,q16
+  alias: asr16,asr3_16,asr_q16_p,i_am_mean_to_others,oasr_ppl15,q16
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -376,7 +375,7 @@ asr3_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr17,asr3_17,asr_q17_p,q17
+  alias: asr17,asr3_17,asr_q17_p,i_daydream_a_lot,q17
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -395,7 +394,7 @@ asr3_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr18,asr3_18,asr_q18_p,oasr_ppl17,q18
+  alias: asr18,asr3_18,asr_q18_p,i_deliberately_try_to_hurt,oasr_ppl17,q18
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -414,7 +413,7 @@ asr4_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr19,asr4_19,asr_q19_p,q19
+  alias: asr19,asr4_19,asr_q19_p,i_try_to_get_a_lot_of_atte,q19
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -433,7 +432,7 @@ asr4_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr20,asr4_20,asr_q20_p,q20
+  alias: asr20,asr4_20,asr_q20_p,i_damage_or_destroy_my_thi,q20
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -452,7 +451,7 @@ asr4_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr21,asr4_21,asr_q21_p,q21
+  alias: asr21,asr4_21,asr_q21_p,i_damage_or_destroy_things,q21
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -471,7 +470,7 @@ asr4_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr22,asr4_22,asr_q22_p,q22
+  alias: asr22,asr4_22,asr_q22_p,i_worry_about_my_future,q22
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -490,7 +489,7 @@ asr4_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr4_23,asr_q23_p,q23
+  alias: asr4_23,asr_q23_p,i_break_rules_at_work_or_e,q23
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -509,7 +508,7 @@ asr4_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr4_24,asr_q24_p,q24
+  alias: asr4_24,asr_q24_p,i_don_t_eat_as_well_as_i_s,q24
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -528,7 +527,7 @@ asr5_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr5_25,asr_q25_p,q25
+  alias: asr5_25,asr_q25_p,i_don_t_get_along_with_oth,q25
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -547,7 +546,7 @@ asr5_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr26,asr5_26,asr_q26_p,q26
+  alias: asr26,asr5_26,asr_q26_p,i_don_t_fell_guilty_after,q26
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -566,7 +565,7 @@ asr5_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr27,asr5_27,asr_q27_p,q27
+  alias: asr27,asr5_27,asr_q27_p,i_am_jealous_of_others,q27
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -585,7 +584,7 @@ asr5_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr28,asr5_28,asr_q28_p,q28
+  alias: asr28,asr5_28,asr_q28_p,i_get_along_badly_with_my,q28
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -604,7 +603,7 @@ asr5_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr29,asr5_29,asr_q29_p,oasr_ppl26,q29
+  alias: asr29,asr5_29,asr_q29_p,i_am_afraid_of_certain_ani,oasr_ppl26,q29
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -617,7 +616,7 @@ asr5_5_text:
   type: String
   length: 500
   description: 'ASR 29 Describe:'
-  alias: asr29des,asr5_29_text,oasr_ppl26_des
+  alias: asr29des,asr5_29_text,describe_i_am_afraid_of_ce,oasr_ppl26_des
 
 asr5_6:
   type: Integer
@@ -629,7 +628,7 @@ asr5_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr30,asr5_30,asr_q30_p,q30
+  alias: asr30,asr5_30,asr_q30_p,my_relations_with_the_oppo,q30
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -648,7 +647,7 @@ asr6_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr31,asr6_31,asr_q31_p,q31
+  alias: asr31,asr6_31,asr_q31_p,i_am_afraid_i_might_think,q31
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -667,7 +666,7 @@ asr6_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr32,asr6_32,asr_q32_p,q32
+  alias: asr32,asr6_32,asr_q32_p,i_fell_that_i_have_to_be_p,q32
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -686,7 +685,7 @@ asr6_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr33,asr6_33,asr_q33_p,q33
+  alias: asr33,asr6_33,asr_q33_p,i_feel_that_no_one_loves_m,q33
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -705,7 +704,7 @@ asr6_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr34,asr6_34,asr_q34_p,oasr_ppl31,q34
+  alias: asr34,asr6_34,asr_q34_p,i_feel_that_others_are_out,oasr_ppl31,q34
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -724,7 +723,7 @@ asr6_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr35,asr6_35,asr_q35_p,oasr_ppl32,q35
+  alias: asr35,asr6_35,asr_q35_p,i_feel_worthless_or_inferi,oasr_ppl32,q35
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -743,7 +742,7 @@ asr6_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr36,asr6_36,asr_q36_p,q36
+  alias: asr36,asr6_36,asr_q36_p,i_accidentally_get_hurt_a,q36
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -762,7 +761,7 @@ asr7_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr37,asr7_37,asr_q37_p,q37
+  alias: asr37,asr7_37,asr_q37_p,i_get_in_many_flights,q37
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -781,7 +780,7 @@ asr7_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr7_38,asr_q38_p,q38
+  alias: asr7_38,asr_q38_p,my_relations_with_neighbor,q38
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -800,7 +799,7 @@ asr7_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr39,asr7_39,asr_q39_p,q39
+  alias: asr39,asr7_39,asr_q39_p,i_hang_around_people_who_g,q39
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -819,7 +818,7 @@ asr7_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr40,asr7_40,asr_q40_p,oasr_ppl36,q40
+  alias: asr40,asr7_40,asr_q40_p,i_hear_sounds_or_voices_th,oasr_ppl36,q40
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -832,7 +831,7 @@ asr7_4_text:
   type: String
   length: 500
   description: 'ASR 40 Describe:'
-  alias: asr40des,asr7_40_text,oasr_ppl36_des
+  alias: asr40des,asr7_40_text,describe_i_hear_sounds_or,oasr_ppl36_des
 
 asr7_5:
   type: Integer
@@ -844,7 +843,7 @@ asr7_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr41,asr7_41,asr_q41_p,oasr_ppl37,q41
+  alias: asr41,asr7_41,asr_q41_p,i_am_impulsive_or_act_with,oasr_ppl37,q41
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -863,7 +862,7 @@ asr7_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr42,asr7_42,asr_q42_p,q42
+  alias: asr42,asr7_42,asr_q42_p,i_would_rather_be_along_th,q42
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -882,7 +881,7 @@ asr8_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr43,asr8_43,asr_q43_p,q43
+  alias: asr43,asr8_43,asr_q43_p,i_lie_or_cheat,q43
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -901,7 +900,7 @@ asr8_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr44,asr8_44,asr_q44_p,q44
+  alias: asr44,asr8_44,asr_q44_p,i_feel_overwhelmed_by_my_r,q44
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -920,7 +919,7 @@ asr8_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr45,asr8_45,asr_q45_p,oasr_ppl40,q45
+  alias: asr45,asr8_45,asr_q45_p,i_am_nervous_or_tense,oasr_ppl40,q45
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -939,7 +938,7 @@ asr8_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr46,asr8_46,asr_q46_p,q46
+  alias: asr46,asr8_46,asr_q46_p,parts_of_my_body_twitch_or,q46
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -952,7 +951,7 @@ asr8_4_text:
   type: String
   length: 500
   description: 'ASR 46 Describe:'
-  alias: asr46des,asr8_46_text
+  alias: asr46des,asr8_46_text,describe_parts_of_my_body
 
 asr8_5:
   type: Integer
@@ -964,7 +963,7 @@ asr8_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr47,asr8_47,asr_q47_p,q47
+  alias: asr47,asr8_47,asr_q47_p,i_lack_self_confidence,q47
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -983,7 +982,7 @@ asr8_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr48,asr8_48,asr_q48_p,oasr_ppl43,q48
+  alias: asr48,asr8_48,asr_q48_p,i_am_not_liked_by_others,oasr_ppl43,q48
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1002,7 +1001,7 @@ asr9_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr49,asr9_49,asr_q49_p,q49
+  alias: asr49,asr9_49,asr_q49_p,i_can_do_certain_things_be,q49
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1021,7 +1020,7 @@ asr9_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr50,asr9_50,asr_q50_p,oasr_ppl45,q50
+  alias: asr50,asr9_50,asr_q50_p,i_am_too_fearful_or_anxiou,oasr_ppl45,q50
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1040,7 +1039,7 @@ asr9_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr51,asr9_51,asr_q51_p,q51
+  alias: asr51,asr9_51,asr_q51_p,i_feel_dizzy_or_lightheade,q51
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1059,7 +1058,7 @@ asr9_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr52,asr9_52,asr_q52_p,oasr_ppl23,q52
+  alias: asr52,asr9_52,asr_q52_p,i_feel_too_guilty,oasr_ppl23,q52
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1078,7 +1077,7 @@ asr9_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr53,asr9_53,asr_q53_p,q53
+  alias: asr53,asr9_53,asr_q53_p,i_have_trouble_planning_fo,q53
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1097,7 +1096,7 @@ asr9_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr54,asr9_54,asr_q54_p,oasr_ppl48,q54
+  alias: asr54,asr9_54,asr_q54_p,i_feel_tired_without_good,oasr_ppl48,q54
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1116,7 +1115,7 @@ asr10_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr10_55,asr55,asr_q55_p,q55
+  alias: asr10_55,asr55,asr_q55_p,my_moods_swing_between_ela,q55
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1135,7 +1134,7 @@ asr10_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr10_56,asr56
+  alias: a_physical_problems_withou,asr10_56,asr56
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1173,7 +1172,7 @@ asr10_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr10_58,asr56b,asr_q56b_p,oasr_ppl49_2,q56b
+  alias: asr10_58,asr56b,asr_q56b_p,b_headaches,oasr_ppl49_2,q56b
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1192,7 +1191,7 @@ asr10_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr10_59,asr56c,asr_q56c_p,oasr_ppl49_3,q56c
+  alias: asr10_59,asr56c,asr_q56c_p,c_nausea_feel_sick,oasr_ppl49_3,q56c
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1211,7 +1210,7 @@ asr10_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr10_60,asr56d,asr_q56d_p,oasr_ppl49_4,q56d
+  alias: asr10_60,asr56d,asr_q56d_p,d_problems_with_eyes_not_i,oasr_ppl49_4,q56d
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1224,7 +1223,7 @@ asr10_6_text:
   type: String
   length: 500
   description: ASR 56 dd. Describe
-  alias: asr10_60_text,asr56ddes,oasr_ppl49_4_des
+  alias: asr10_60_text,asr56ddes,d_describe_problems_with_e,oasr_ppl49_4_des
 
 asr11_1:
   type: Integer
@@ -1236,7 +1235,7 @@ asr11_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr11_61,asr56e,asr_q56e_p,oasr_ppl49_5,q56e
+  alias: asr11_61,asr56e,asr_q56e_p,e_rashes_or_other_skin_pro,oasr_ppl49_5,q56e
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1255,7 +1254,7 @@ asr11_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr11_62,asr56f,asr_q56f_p,oasr_ppl49_6,q56f
+  alias: asr11_62,asr56f,asr_q56f_p,f_stomachaches,oasr_ppl49_6,q56f
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1274,7 +1273,7 @@ asr11_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr11_63,asr56g,asr_q56g_p,oasr_ppl49_7,q56g
+  alias: asr11_63,asr56g,asr_q56g_p,g_vomiting_throwing_up,oasr_ppl49_7,q56g
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1293,7 +1292,7 @@ asr11_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr11_64,asr56h,asr_q56h_p,oasr_ppl49_8,q56h
+  alias: asr11_64,asr56h,asr_q56h_p,h_heart_pounding_or_racing,oasr_ppl49_8,q56h
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1312,7 +1311,7 @@ asr11_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr11_65,asr56i,asr_q56i_p,oasr_ppl49_9,q56i
+  alias: asr11_65,asr56i,asr_q56i_p,i_numbness_or_tingling_in,oasr_ppl49_9,q56i
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1331,7 +1330,7 @@ asr11_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr11_66,asr57,asr_q57_p,q57
+  alias: asr11_66,asr57,asr_q57_p,i_physically_attack_people,q57
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1350,7 +1349,7 @@ asr12_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr12_67,asr58,asr_q58_p,q58
+  alias: asr12_67,asr58,asr_q58_p,i_pick_my_skin_or_other_pa,q58
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1363,7 +1362,7 @@ asr12_1_text:
   type: String
   length: 500
   description: 'ASR 58 describe:'
-  alias: asr12_67_text,asr58des
+  alias: asr12_67_text,asr58des,describe_i_pick_my_skin_or
 
 asr12_2:
   type: Integer
@@ -1375,7 +1374,7 @@ asr12_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr12_68,asr59,asr_q59_p,q59
+  alias: asr12_68,asr59,asr_q59_p,i_fail_to_finish_things_i,q59
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1394,7 +1393,7 @@ asr12_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr12_69,asr60,asr_q60_p,oasr_ppl53,q60
+  alias: asr12_69,asr60,asr_q60_p,oasr_ppl53,q60,there_is_very_little_that
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1413,7 +1412,7 @@ asr12_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr12_70,asr61,asr_q61_p,q61
+  alias: asr12_70,asr61,asr_q61_p,my_work_performance_is_poo,q61
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1432,7 +1431,7 @@ asr12_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr12_71,asr62,asr_q62_p,q62
+  alias: asr12_71,asr62,asr_q62_p,i_am_poorly_coordinated_or,q62
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1452,7 +1451,7 @@ asr12_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr12_72,asr63,asr_q63_p,q63
+  alias: asr12_72,asr63,asr_q63_p,i_would_rather_be_with_old,q63
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1471,7 +1470,7 @@ asr13_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr13_73,asr64,asr_q64_p,q64
+  alias: asr13_73,asr64,asr_q64_p,i_have_trouble_setting_pri,q64
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1490,7 +1489,7 @@ asr13_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr13_74,asr65,asr_q65_p,q65
+  alias: asr13_74,asr65,asr_q65_p,i_refuse_to_talk,q65
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1509,7 +1508,7 @@ asr13_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr13_75,asr66,asr_q66_p,q66
+  alias: asr13_75,asr66,asr_q66_p,i_repeat_certain_acts_over,q66
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1522,7 +1521,7 @@ asr13_3_text:
   type: String
   length: 500
   description: 'ASR 66 describe:'
-  alias: asr13_75_text,asr66des
+  alias: asr13_75_text,asr66des,describe_i_repeat_certain
 
 asr13_4:
   type: Integer
@@ -1534,7 +1533,7 @@ asr13_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr13_76,asr67,asr_q67_p,q67
+  alias: asr13_76,asr67,asr_q67_p,i_have_trouble_making_or_k,q67
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1553,7 +1552,7 @@ asr13_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr13_77,asr68,asr_q68_p,q68
+  alias: asr13_77,asr68,asr_q68_p,i_scream_or_yell_a_lot,q68
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1572,7 +1571,7 @@ asr13_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr13_78,asr69,asr_q69_p,q69
+  alias: asr13_78,asr69,asr_q69_p,i_am_secretive_or_keep_thi,q69
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1591,7 +1590,7 @@ asr14_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr14_79,asr70,asr_q70_p,oasr_ppl61,q70
+  alias: asr14_79,asr70,asr_q70_p,i_see_things_that_other_pe,oasr_ppl61,q70
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1604,7 +1603,7 @@ asr14_1_text:
   type: String
   length: 500
   description: 'ASR 70 describe:'
-  alias: asr14_79_text,asr70des,oasr_ppl61_des
+  alias: asr14_79_text,asr70des,describe_i_see_things_that,oasr_ppl61_des
 
 asr14_2:
   type: Integer
@@ -1616,7 +1615,7 @@ asr14_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr14_80,asr71,asr_q71_p,q71
+  alias: asr14_80,asr71,asr_q71_p,i_am_self_conscious_or_eas,q71
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1635,7 +1634,7 @@ asr14_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr14_81,asr72,asr_q72_p,q72
+  alias: asr14_81,asr72,asr_q72_p,i_worry_about_my_family,q72
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1654,7 +1653,7 @@ asr14_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr14_82,asr73,asr_q73_p,q73
+  alias: asr14_82,asr73,asr_q73_p,i_meet_my_responsibilities,q73
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1673,7 +1672,7 @@ asr14_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr14_83,asr74,asr_q74_p,q74
+  alias: asr14_83,asr74,asr_q74_p,i_show_off_or_clown,q74
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1692,7 +1691,7 @@ asr14_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr14_84,asr75,asr_q75_p,q75
+  alias: asr14_84,asr75,asr_q75_p,i_am_too_shy_or_timid,q75
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1711,7 +1710,7 @@ asr15_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr15_85,asr76,asr_q76_p,oasr_ppl67,q76
+  alias: asr15_85,asr76,asr_q76_p,my_behavior_is_irresponsib,oasr_ppl67,q76
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1730,7 +1729,7 @@ asr15_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr15_86,asr77,asr_q77_p,q77
+  alias: asr15_86,asr77,asr_q77_p,i_sleep_more_than_most_oth,q77
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1743,7 +1742,7 @@ asr15_2_text:
   type: String
   length: 500
   description: 'ASR 77 describe:'
-  alias: asr15_86_text,asr77des
+  alias: asr15_86_text,asr77des,describe_i_sleep_more_than
 
 asr15_3:
   type: Integer
@@ -1755,7 +1754,7 @@ asr15_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr15_87,asr78,asr_q78_p,oasr_ppl69,q78
+  alias: asr15_87,asr78,asr_q78_p,i_have_trouble_making_deci,oasr_ppl69,q78
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1774,7 +1773,7 @@ asr15_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr15_88,asr79,asr_q79_p,q79
+  alias: asr15_88,asr79,asr_q79_p,i_have_a_speech_problem,q79
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1787,7 +1786,7 @@ asr15_4_text:
   type: String
   length: 500
   description: 'ASR 79 describe:'
-  alias: asr15_88_text,asr79des
+  alias: asr15_88_text,asr79des,describe_i_have_a_speech_p
 
 asr15_5:
   type: Integer
@@ -1799,7 +1798,7 @@ asr15_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr15_89,asr80,asr_q80_p,q80
+  alias: asr15_89,asr80,asr_q80_p,i_stand_up_for_my_rights,q80
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1818,7 +1817,7 @@ asr15_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr15_90,asr81,asr_q81_p,q81
+  alias: asr15_90,asr81,asr_q81_p,my_behavior_is_very_change,q81
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1837,7 +1836,7 @@ asr16_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr16_91,asr82,asr_q82_p,oasr_ppl73,q82
+  alias: asr16_91,asr82,asr_q82_p,i_steal,oasr_ppl73,q82
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1856,7 +1855,7 @@ asr16_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr16_92,asr83,asr_q83_p,q83
+  alias: asr16_92,asr83,asr_q83_p,i_am_easily_bored,q83
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1875,7 +1874,7 @@ asr16_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr16_93,asr84,asr_q84_p,oasr_ppl74,q84
+  alias: asr16_93,asr84,asr_q84_p,i_do_things_that_other_peo,oasr_ppl74,q84
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1888,7 +1887,7 @@ asr16_3_text:
   type: String
   length: 500
   description: 'ASR 84 describe:'
-  alias: asr16_93_text,asr84des,oasr_ppl74_des
+  alias: asr16_93_text,asr84des,describe_i_do_things_that,oasr_ppl74_des
 
 asr16_4:
   type: Integer
@@ -1900,7 +1899,7 @@ asr16_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr16_94,asr85,asr_q85_p,oasr_ppl75,q85
+  alias: asr16_94,asr85,asr_q85_p,i_have_thoughts_that_other,oasr_ppl75,q85
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1913,7 +1912,7 @@ asr16_4_text:
   type: String
   length: 500
   description: 'ASR 85 describe:'
-  alias: asr16_94_text,asr85des,oasr_ppl75_des
+  alias: asr16_94_text,asr85des,describe_i_have_thoughts_t,oasr_ppl75_des
 
 asr16_5:
   type: Integer
@@ -1925,7 +1924,7 @@ asr16_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr16_95,asr86,asr_q86_p,q86
+  alias: asr16_95,asr86,asr_q86_p,i_am_stubborn_sullen_or_ir,q86
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1944,7 +1943,7 @@ asr16_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr16_96,asr87,asr_q87_p,q87
+  alias: asr16_96,asr87,asr_q87_p,my_moods_or_feelings_chang,q87
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1963,7 +1962,7 @@ asr17_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr17_97,asr88,asr_q88_p,q88
+  alias: asr17_97,asr88,asr_q88_p,i_enjoy_being_with_people,q88
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -1982,7 +1981,7 @@ asr17_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr17_98,asr89,asr_q89_p,q89
+  alias: asr17_98,asr89,asr_q89_p,i_rush_into_things_without,q89
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2001,7 +2000,7 @@ asr17_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr17_99,asr90,asr_q90_p,q90
+  alias: asr17_99,asr90,asr_q90_p,i_drink_too_much_alcohol_o,q90
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2020,7 +2019,7 @@ asr17_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr17_100,asr91,asr_q91_p,oasr_ppl81,q91
+  alias: asr17_100,asr91,asr_q91_p,i_think_about_killing_myse,oasr_ppl81,q91
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2039,7 +2038,7 @@ asr17_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr17_101,asr92,asr_q92_p,oasr_ppl82,q92
+  alias: asr17_101,asr92,asr_q92_p,i_do_things_that_may_cause,oasr_ppl82,q92
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2052,7 +2051,7 @@ asr17_5_text:
   type: String
   length: 500
   description: 'ASR 92 describe:'
-  alias: asr17_101_text,asr92des,oasr_ppl82_des
+  alias: asr17_101_text,asr92des,describe_i_do_things_trouble,oasr_ppl82_des
 
 asr17_6:
   type: Integer
@@ -2064,7 +2063,7 @@ asr17_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr17_102,asr93,asr_q93_p,q93
+  alias: asr17_102,asr93,asr_q93_p,i_talk_too_much,q93
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2083,7 +2082,7 @@ asr18_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr18_103,asr94,asr_q94_p,q94
+  alias: asr18_103,asr94,asr_q94_p,i_tease_others_a_lot,q94
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2102,7 +2101,7 @@ asr18_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr18_104,asr95,asr_q95_p,oasr_ppl85,q95
+  alias: asr18_104,asr95,asr_q95_p,i_have_a_hot_temper,oasr_ppl85,q95
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2121,7 +2120,7 @@ asr18_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr18_105,asr96,asr_q96_p,q96
+  alias: asr18_105,asr96,asr_q96_p,i_think_about_sex_too_much,q96
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2140,7 +2139,7 @@ asr18_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr18_106,asr97,asr_q97_p,oasr_ppl87,q97
+  alias: asr18_106,asr97,asr_q97_p,i_threaten_to_hurt_people,oasr_ppl87,q97
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2159,7 +2158,7 @@ asr18_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr18_107,asr98,asr_q98_p,q98
+  alias: asr18_107,asr98,asr_q98_p,i_like_to_help_others,q98
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2178,7 +2177,7 @@ asr18_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr18_108,asr99,asr_q99_p,q99
+  alias: asr18_108,asr99,asr_q99_p,i_dislike_staying_in_one_p,q99
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2197,7 +2196,7 @@ asr19_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr100,asr19_109,asr_q100_p,oasr_ppl90,q100
+  alias: asr100,asr19_109,asr_q100_p,i_have_trouble_sleeping,oasr_ppl90,q100
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2210,7 +2209,7 @@ asr19_1_text:
   type: String
   length: 500
   description: 'ASR 100 describe:'
-  alias: asr100des,asr19_109_text
+  alias: asr100des,asr19_109_text,describe_i_have_trouble_sl
 
 asr19_2:
   type: Integer
@@ -2222,7 +2221,7 @@ asr19_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr101,asr19_110,asr_q101_p,q101
+  alias: asr101,asr19_110,asr_q101_p,i_stay_away_from_my_job_ev,q101
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2241,7 +2240,7 @@ asr19_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr102,asr19_111,asr_q102_p,oasr_ppl92,q102
+  alias: asr102,asr19_111,asr_q102_p,i_don_t_have_much_energy,oasr_ppl92,q102
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2260,7 +2259,7 @@ asr19_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr103,asr19_112,asr_q103_p,oasr_ppl93,q103
+  alias: asr103,asr19_112,asr_q103_p,i_am_unhappy_sad_or_depres,oasr_ppl93,q103
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2279,7 +2278,7 @@ asr19_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr104,asr19_113,asr_q104_p,q104
+  alias: asr104,asr19_113,asr_q104_p,i_am_louder_than_others,q104
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2298,7 +2297,7 @@ asr19_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr105,asr19_114,asr_q105_p,q105
+  alias: asr105,asr19_114,asr_q105_p,people_think_i_am_disorgan,q105
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2317,7 +2316,7 @@ asr20_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr106,asr20_115,asr_q106_p,q106
+  alias: asr106,asr20_115,asr_q106_p,i_try_to_be_fair_to_others,q106
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2336,7 +2335,7 @@ asr20_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr107,asr20_116,asr_q107_p,oasr_ppl97,q107
+  alias: asr107,asr20_116,asr_q107_p,i_feel_that_i_can_t_succee,oasr_ppl97,q107
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2355,7 +2354,7 @@ asr20_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr108,asr20_117,asr_q108_p,q108
+  alias: asr108,asr20_117,asr_q108_p,i_tend_to_lose_things,q108
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2374,7 +2373,7 @@ asr20_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr109,asr20_118,asr_q109_p,q109
+  alias: asr109,asr20_118,asr_q109_p,i_like_to_try_new_things,q109
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2393,7 +2392,7 @@ asr20_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr110,asr20_119,asr_q110_p,q110
+  alias: asr110,asr20_119,asr_q110_p,i_wish_i_were_of_the_oppos,q110
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2412,7 +2411,7 @@ asr20_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr111,asr20_120,asr_q111_p,oasr_ppl99,q111
+  alias: asr111,asr20_120,asr_q111_p,i_keep_from_getting_involv,oasr_ppl99,q111
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2431,7 +2430,7 @@ asr21_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr112,asr21_121,asr_q112_p,oasr_ppl100,q112
+  alias: asr112,asr21_121,asr_q112_p,i_worry_a_lot,oasr_ppl100,q112
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2450,7 +2449,7 @@ asr21_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr113,asr21_122,asr_q113_p,q113
+  alias: asr113,asr21_122,asr_q113_p,i_worry_about_my_relations,q113
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2469,7 +2468,7 @@ asr21_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr114,asr21_123,asr_q114_p,q114
+  alias: asr114,asr21_123,asr_q114_p,i_fail_to_pay_my_debts_or,q114
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2488,7 +2487,7 @@ asr21_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr115,asr21_124,asr_q115_p,oasr_ppl34,q115
+  alias: asr115,asr21_124,asr_q115_p,i_feel_restless_or_fidgety,oasr_ppl34,q115
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2507,7 +2506,7 @@ asr21_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr116,asr21_125,asr_q116_p,q116
+  alias: asr116,asr21_125,asr_q116_p,i_get_upset_too_easily,q116
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2526,7 +2525,7 @@ asr21_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr117,asr21_126,asr_q117_p,q117
+  alias: asr117,asr21_126,asr_q117_p,i_have_trouble_managing_mo,q117
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2545,7 +2544,7 @@ asr22_1:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr118,asr22_127,asr_q118_p,q118
+  alias: asr118,asr22_127,asr_q118_p,i_am_too_impatient,q118
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2564,7 +2563,7 @@ asr22_2:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr119,asr22_128,asr_q119_p,q119
+  alias: asr119,asr22_128,asr_q119_p,i_am_not_good_at_details,q119
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2583,7 +2582,7 @@ asr22_3:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr120,asr22_129,asr_q120_p,q120
+  alias: asr120,asr22_129,asr_q120_p,i_drive_too_fast,q120
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2602,7 +2601,7 @@ asr22_4:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr121,asr22_130,asr_q121_p,q121
+  alias: asr121,asr22_130,asr_q121_p,i_tend_to_be_late_for_appo,q121
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2621,7 +2620,7 @@ asr22_5:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr122,asr22_131,asr_q122_p,q122
+  alias: asr122,asr22_131,asr_q122_p,i_have_trouble_keeping_a_j,q122
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2640,7 +2639,7 @@ asr22_6:
   - 88
   notes: 1= Not True; 2= Somewhat or Sometimes True; 3= Very True or Often True ;
     -99= N/A ; 77= Refused ; 88= Missing
-  alias: asr123,asr22_132,asr_q123_p,q123
+  alias: asr123,asr22_132,asr_q123_p,i_am_a_happy_person,q123
   codes:
     1: Not True
     2: Somewhat or Sometimes True
@@ -2654,7 +2653,7 @@ asr23:
   description: ASR 124 In the past 6 months, about how many times per day did you
     use tobacco (including smokeless tobacco)?
   notes: ' -99= N/A ; 77= Refused ; 88= Missing'
-  alias: asr_q124_p,q124
+  alias: asr_q124_p,in_the_past_6_months_about,q124
   codes:
     -99: N/A
     77: Refused
@@ -2664,7 +2663,7 @@ asr24:
   type: Float
   description: ASR 125 In the past 6 months, on how many days were you drunk?
   notes: ' -99= N/A ; 77= Refused ; 88= Missing'
-  alias: asr_q125_p,q125
+  alias: asr_q125_p,in_the_past_6_months_on_ho,q125
   codes:
     -99: N/A
     77: Refused
@@ -2677,7 +2676,7 @@ asr25:
     nonmedical purposes (including marijuana, cocaine, and other drugs, except alcohol
     and nicotine)?
   notes: ' -99= N/A ; 77= Refused ; 88= Missing'
-  alias: asr_q126_p,q126
+  alias: asr_q126_p,in_the_past_6_months_nonmedical,q126
   codes:
     -99: N/A
     77: Refused
@@ -2698,7 +2697,7 @@ highest_education_specify:
   type: String
   length: 255
   description: 'Please Check Adult''s Highest Education - Other education (specify):'
-  alias: schoolother
+  alias: other_education_specify,schoolother
 
 c23:
   type: Integer
@@ -2719,25 +2718,25 @@ marital_status_specify:
   type: String
   length: 255
   description: 'Other marital status - Please describe:'
-  alias: marstatother
+  alias: marital_status_please_desc,marstatother
 
 job_detail:
   type: String
   length: 255
   description: Please indicate type of program/job and amount of hours per week.
-  alias: jobdescribe
+  alias: jobdescribe,please_describe_your_job_s
 
 resp_occupation:
   type: String
   length: 255
   description: Respondent's occupation
-  alias: yourwork
+  alias: your_work,yourwork
 
 demo_partner_occupation:
   type: String
   length: 100
   description: Spouse/partner Occupation
-  alias: spousework
+  alias: spouse_or_partner_s_work,spousework
 
 highest_education:
   type: Integer
@@ -2765,7 +2764,7 @@ contact_friends:
   - 5 or more
   - Less Than 1
   - Missing/NA
-  alias: friendb
+  alias: b_about_how_many_times_a_m,friendb
 
 gets_along_friends:
   type: String
@@ -2777,7 +2776,7 @@ gets_along_friends:
   - Far Above Average
   - Not Well
   - Missing/NA
-  alias: friendc
+  alias: c_how_well_do_you_get_alon,friendc
 
 friends_visit:
   type: String
@@ -2789,7 +2788,7 @@ friends_visit:
   - 5 or more
   - Less Than 1
   - Missing/NA
-  alias: friendd
+  alias: d_about_how_many_times_a_m,friendd
 
 demo_resp_status:
   type: Integer
@@ -2799,7 +2798,7 @@ demo_resp_status:
   notes: 1 = Married; 2 = Remarried; 3 = Live with partner (not married); 4 = Separated;
     5 = Divorced; 6 = Single (never married); 7 = Widowed; 8=Married or Living Together;9
     = Missing/Not Applicable; 10 = Other; 11=Refused to answer; 12= Engaged
-  alias: marstat
+  alias: marstat,what_is_your_marital_statu
   codes:
     1: Married
     2: Remarried
@@ -2823,7 +2822,7 @@ live_with_spouse:
   - 'No'
   - 'Yes'
   - NA
-  alias: livewith
+  alias: at_any_time_in_the_past_6,livewith
 
 gets_along_spouse:
   type: Integer
@@ -2834,7 +2833,7 @@ gets_along_spouse:
   - 9
   notes: 0 = Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very
     True or Often True;8 = Not Applicable; 9 = Missing
-  alias: spousea
+  alias: a_i_get_along_well_with_my,spousea
   codes:
     0: Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very True
       or Often True
@@ -2850,7 +2849,7 @@ sharing_responsibilities:
   - 9
   notes: 0 = Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very
     True or Often True; 8 = Not Applicable; 9 = Missing
-  alias: spouseb
+  alias: b_my_spouse_or_partner_and,spouseb
   codes:
     0: Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very True
       or Often True
@@ -2866,7 +2865,7 @@ satisfied_spouse:
   - 9
   notes: 0 = Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very
     True or Often True; 8 = Not Applicable; 9 = Missing
-  alias: spousec
+  alias: c_i_feel_satisfied_with_my,spousec
   codes:
     0: Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very True
       or Often True
@@ -2882,7 +2881,7 @@ similar_activites_spouse:
   - 9
   notes: 0 = Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very
     True or Often True; 8 = Not Applicable; 9 = Missing
-  alias: spoused
+  alias: d_my_spouse_or_partner_and,spoused
   codes:
     0: Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very True
       or Often True
@@ -2899,7 +2898,7 @@ disagrees_spouse:
   - 9
   notes: 0 = Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very
     True or Often True; 8 = Not Applicable; 9 = Missing
-  alias: spousee
+  alias: e_my_spouse_or_partner_and,spousee
   codes:
     0: Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very True
       or Often True
@@ -2915,7 +2914,7 @@ trouble_spouse_family:
   - 9
   notes: 0 = Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very
     True or Often True; 8 = Not Applicable; 9 = Missing
-  alias: spousef
+  alias: f_i_have_trouble_with_my_s,spousef
   codes:
     0: Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very True
       or Often True
@@ -2931,7 +2930,7 @@ likes_spouse_friends:
   - 9
   notes: 0 = Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very
     True or Often True; 8 = Not Applicable; 9 = Missing
-  alias: spouseg
+  alias: g_i_like_my_spouse_or_part,spouseg
   codes:
     0: Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very True
       or Often True
@@ -2947,7 +2946,7 @@ annoyed_spouse_behavior:
   - 9
   notes: 0 = Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very
     True or Often True; 8 = Not Applicable; 9 = Missing
-  alias: spouseh
+  alias: h_my_spouse_or_partner_s_b,spouseh
   codes:
     0: Not True (as far as you know), 1 = Somewhat or Sometimes True, 2 = Very True
       or Often True
@@ -3003,7 +3002,7 @@ ill_disable_handicap_yes_no:
   - 'No'
   - 'Yes'
   - Missing
-  alias: illness
+  alias: do_you_have_any_illness_di,illness
 
 life_15:
   type: Integer
@@ -3137,6 +3136,7 @@ edue:
   - 9
   notes: 0 = Not True; 1 = Somewhat or Sometimes True; 2 = Very True or Often True;
     8; Not Applicable; 9 = Missing
+  alias: e_i_do_things_that_may_cau
   codes:
     0: Not True
     1: Somewhat or Sometimes True
@@ -3153,6 +3153,7 @@ familye1:
   - 9
   notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
     3 = No Contact; 4 = Not applicable; 9 = Missing
+  alias: e1_oldest_child
   codes:
     0: Worse than Average
     1: Variable or Average
@@ -3171,6 +3172,7 @@ familye2:
   - 9
   notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
     3 = No Contact; 4 = Not applicable; 9 = Missing
+  alias: e2_2nd_oldest_child
   codes:
     0: Worse than Average
     1: Variable or Average
@@ -3189,6 +3191,7 @@ familye3:
   - 9
   notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
     3 = No Contact; 4 = Not applicable; 9 = Missing
+  alias: e3_3rd_oldest_child
   codes:
     0: Worse than Average
     1: Variable or Average
@@ -3207,6 +3210,7 @@ familye4:
   - 9
   notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
     3 = No Contact; 4 = Not applicable; 9 = Missing
+  alias: e4_other_children
   codes:
     0: Worse than Average
     1: Variable or Average
@@ -3224,6 +3228,7 @@ familyf:
   - 9
   notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
     3 = No Contact; 4 = I have no stepchildren; 9 = Missing
+  alias: f_get_along_with_your_step
   codes:
     0: Worse than Average
     1: Variable or Average
@@ -3241,6 +3246,7 @@ jobc:
   - 9
   notes: 0 = Not True; 1 = Somewhat or Sometimes True; 2 = Very True or Often True;
     8 = Not Applicable; 9 = Missing
+  alias: c_i_do_my_work_well
   codes:
     0: Not True
     1: Somewhat or Sometimes True
@@ -3257,6 +3263,7 @@ jobi:
   - 9
   notes: 0 = Not True; 1 = Somewhat or Sometimes True; 2 = Very True or Often True;
     8 = Not Applicable; 9 = Missing
+  alias: i_i_worry_too_much_about_w
   codes:
     0: Not True
     1: Somewhat or Sometimes True
@@ -3276,6 +3283,7 @@ race:
   - White
   - More than one race
   - Unknown or not reported
+  - Other Non-White
 
 ethnicity:
   type: String
@@ -3295,6 +3303,7 @@ jobb:
   - 9
   notes: 0 = Not True; 1 = Somewhat or Sometimes True; 2 = Very True or Often True;
     8 = Not Applicable; 9 = Missing
+  alias: b_i_have_trouble_getting_a
   codes:
     0: Not True
     1: Somewhat or Sometimes True
@@ -3311,6 +3320,7 @@ familya:
   - 9
   notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
     3 = No Contact; 4 = I have no brothers; 9 = Missing
+  alias: a_get_along_with_your_brot
   codes:
     0: Worse than Average
     1: Variable or Average
@@ -3328,6 +3338,7 @@ familyb:
   - 9
   notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
     3 = No Contact; 4 = I have no sisters; 9 = Missing
+  alias: b_get_along_with_your_sist
   codes:
     0: Worse than Average
     1: Variable or Average
@@ -3345,6 +3356,7 @@ familyc:
   - 9
   notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
     3 = No Contact; 4 = Mother is deceased; 9 = Missing
+  alias: c_get_along_with_your_moth
   codes:
     0: Worse than Average
     1: Variable or Average
@@ -3362,6 +3374,7 @@ familyd:
   - 9
   notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
     3 = No Contact; 4 = Father is deceased;  9 = Missing
+  alias: d_get_along_with_your_fath
   codes:
     0: Worse than Average
     1: Variable or Average
@@ -3384,6 +3397,7 @@ edud:
   - 9
   notes: 0 = Not True; 1 = Somewhat or Sometimes True; 2 = Very True or Often True;
     8; Not Applicable; 9 = Missing
+  alias: d_i_am_satisfied_with_my_e
   codes:
     0: Not True
     1: Somewhat or Sometimes True
@@ -3399,7 +3413,7 @@ jobstress:
   - 9
   notes: 0 = Not True; 1 = Somewhat or Sometimes True; 2 = Very True or Often True;
     8 = Not Applicable; 9 = Missing
-  alias: jobh
+  alias: h_my_job_is_too_stressful,jobh
   codes:
     0: Not True
     1: Somewhat or Sometimes True
@@ -3409,7 +3423,7 @@ jobstress:
 
 accult_select_language:
   type: Integer
-  description: Test given in Spanish? ??Espa??ol?
+  description: "Test given in Spanish? \xC2\xBFEspa\xC3\xB1ol?"
   range:
   - 0
   - 1
@@ -3426,6 +3440,7 @@ asr_31e:
   - 0::4
   notes: 0 = Worse than Average; 1 = Variable or Average; 2 = Better than Average;
     3 = No Contact; 4 = Not applicable
+  alias: e_get_along_with_your_biol
   codes:
     0: Worse than Average
     1: Variable or Average
@@ -3439,6 +3454,7 @@ asr_39a:
   range:
   - 0::2
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true
+  alias: a_i_work_well_with_others
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -3450,6 +3466,7 @@ asr_42d:
   range:
   - 0::2
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true
+  alias: d_i_have_trouble_finishing
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -3461,6 +3478,7 @@ asr_43e:
   range:
   - 0::2
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true
+  alias: e_i_am_satisfied_with_my_w
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -3472,6 +3490,7 @@ asr_44f:
   range:
   - 0::2
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true
+  alias: f_i_do_things_that_may_cau
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -3482,21 +3501,25 @@ asr_49:
   length: 100
   description: If you attend(ed) school, college, or other education/training, what
     kind of program was it?
+  alias: what_kind_of_school_or_pro
 
 asr_50:
   type: String
   length: 100
   description: What degree or diploma are you seeking?
+  alias: what_degree_or_diploma_are
 
 asr_51:
   type: String
   length: 50
   description: What is/was your major in school?
+  alias: major
 
 asr_52:
   type: String
   length: 50
   description: When do you expect to receive your degree or diploma?
+  alias: when_do_you_expect_to_rece
 
 asr_53:
   type: Integer
@@ -3504,6 +3527,7 @@ asr_53:
   range:
   - 0::2
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true
+  alias: a_i_get_along_well_with_ot
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -3515,6 +3539,7 @@ asr_54:
   range:
   - 0::2
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true
+  alias: b_i_achieve_what_i_am_capa
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -3526,6 +3551,7 @@ asr_55:
   range:
   - 0::2
   notes: 0 = Not true; 1 = Somewhat or sometimes true; 2 = Very true or often true
+  alias: c_i_have_trouble_finishing
   codes:
     0: Not true
     1: Somewhat or sometimes true
@@ -3535,6 +3561,7 @@ asr_61:
   type: String
   length: 500
   description: Please describe the best thing about yourself
+  alias: viii_please_describe_the_b
 
 wrkfrpay:
   type: Integer
@@ -3543,11 +3570,13 @@ wrkfrpay:
   - 0
   - 1
   - 9
-  notes: 0=No; 1=Yes; 9=NK
+  - 777
+  notes: 0=No; 1=Yes; 9=NK; 777=Not applicable
   codes:
     0: 'No'
     1: 'Yes'
     9: NK
+    777: Not applicable
 
 sni_8:
   type: Integer
@@ -3570,11 +3599,13 @@ d5o:
   type: String
   length: 150
   description: '"Specify type of disability, health care need or condition"'
+  alias: describe_illness_disabilit
 
 adi_cc_ctcnb:
   type: String
   length: 1024
   description: Current Concerns (specify)
+  alias: vii_please_describe_you_co
 
 asr38:
   type: String
@@ -4086,3 +4117,38 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+paid_jobs_in_past_6_months:
+  type: Integer
+  description: At any time in the past 6 months, did you have any paid jobs (including
+    self-employment and military service)?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+education_in_past_6_months:
+  type: Integer
+  description: At any time in the past 6 months, did you attend school, college, or
+    any other educational or training program?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+close_friends:
+  type: String
+  length: 20
+  description: 'I-A. About how many close friends does he/she have?  '
+  range:
+  - 1
+  - 2 or 3
+  - 4 or more
+  - None
+  alias: a_about_how_many_close_fri

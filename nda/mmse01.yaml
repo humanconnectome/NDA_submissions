@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: mmse_date,testdate,wratdate
 
 interview_age:
@@ -35,7 +34,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -66,7 +65,7 @@ mmse01:
   - 0
   - 1
   notes: 0=Incorrect; 1=Correct
-  alias: date,mmse1_1,mmse4,mmse_3
+  alias: date,mmse1_1,mmse4,mmse_3,mmse_5
   codes:
     0: Incorrect
     1: Correct
@@ -90,7 +89,7 @@ mmse03:
   - 0
   - 1
   notes: 0=Incorrect; 1=Correct
-  alias: mmse1_3,mmse3,mmse_5,month,monthx
+  alias: mmse1_3,mmse3,mmse_3,mmse_5,month,monthx
   codes:
     0: Incorrect
     1: Correct
@@ -150,7 +149,7 @@ mmse08:
   - 0
   - 1
   notes: 0=Incorrect; 1=Correct
-  alias: city,mmse1_8,mmse8,mmse_8
+  alias: city,mmse1_8,mmse8,mmse_7,mmse_8
   codes:
     0: Incorrect
     1: Correct
@@ -162,7 +161,7 @@ mmse09:
   - 0
   - 1
   notes: 0=Incorrect; 1=Correct
-  alias: borough,mmse1_9,mmse_7
+  alias: borough,mmse1_9,mmse_7,mmse_8
   codes:
     0: Incorrect
     1: Correct
@@ -232,7 +231,7 @@ mmse14:
   - 0
   - 1
   notes: 0=Incorrect; 1=Correct
-  alias: backwards1,mmse3b_1
+  alias: backwards1,mmse3b_1,mmse_14
   codes:
     0: Incorrect
     1: Correct
@@ -244,7 +243,7 @@ mmse15:
   - 0
   - 1
   notes: 0=Incorrect; 1=Correct
-  alias: backwards2,mmse3b_2
+  alias: backwards2,mmse3b_2,mmse_15
   codes:
     0: Incorrect
     1: Correct
@@ -256,7 +255,7 @@ mmse16:
   - 0
   - 1
   notes: 0=Incorrect; 1=Correct
-  alias: backwards3,mmse3b_3
+  alias: backwards3,mmse3b_3,mmse_16
   codes:
     0: Incorrect
     1: Correct
@@ -268,7 +267,7 @@ mmse17:
   - 0
   - 1
   notes: 0=Incorrect; 1=Correct
-  alias: backwards4,mmse3b_4
+  alias: backwards4,mmse3b_4,mmse_17
   codes:
     0: Incorrect
     1: Correct
@@ -280,7 +279,7 @@ mmse18:
   - 0
   - 1
   notes: 0=Incorrect; 1=Correct
-  alias: backwards5,mmse3b_5
+  alias: backwards5,mmse3b_5,mmse_18
   codes:
     0: Incorrect
     1: Correct
@@ -330,7 +329,7 @@ mmse22:
   - 0
   - 1
   notes: 0=Incorrect; 1=Correct
-  alias: mmse14_1,mmse5a_1,mmse_22,naming1
+  alias: mmse14_1,mmse5a_1,mmse_22,mmse_23,naming1
   codes:
     0: Incorrect
     1: Correct
@@ -342,7 +341,7 @@ mmse23:
   - 0
   - 1
   notes: 0=Incorrect; 1=Correct
-  alias: mmse15_1,mmse5a_2,mmse_23,naming2
+  alias: mmse15_1,mmse5a_2,mmse_22,mmse_23,naming2
   codes:
     0: Incorrect
     1: Correct
@@ -483,7 +482,7 @@ mmse_ts:
   - 0::30
   notes: 'Created variable with 20% missing data rule applied: Sum of (MMSE01 through
     MMSE30), not including MMSE13A'
-  alias: _score,mmse_tot,mmse_total,mmsetot,mmsetotal
+  alias: _score,mmse_s_adj,mmse_tot,mmse_total,mmsetot,mmsetotal
 
 base1:
   type: Integer
@@ -852,7 +851,7 @@ tomal_wsr_trial1_apple:
   - 0
   - 1
   notes: 0 = Did not recall; 1 = Recalled
-  alias: apple_recall
+  alias: apple_recall,mmse_19
   codes:
     0: Did not recall
     1: Recalled
@@ -875,6 +874,7 @@ table_recall:
   - 0
   - 1
   notes: 0 = Incorrect; 1 = Correct
+  alias: mmse_21
   codes:
     0: Incorrect
     1: Correct
@@ -886,6 +886,7 @@ penny_recall:
   - 0
   - 1
   notes: 0 = Incorrect; 1 = Correct
+  alias: mmse_20
   codes:
     0: Incorrect
     1: Correct
@@ -905,3 +906,74 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+mmse_admin:
+  type: Integer
+  description: Administration Method
+  range:
+  - 1
+  - 2
+  notes: 1 = In-person; 2 = Remotely
+  codes:
+    1: In-person
+    2: Remotely
+
+mmse_assessor:
+  type: Integer
+  description: 'Assessor:'
+  notes: Rater number only
+
+mmse_s_math:
+  type: Integer
+  description: 'MMSE Score (Serial 7''s):'
+
+mmse_s_spell:
+  type: Integer
+  description: 'MMSE Score (WORLD):'
+
+mmse_note:
+  type: Integer
+  description: Note Area for MMSE
+
+mmse_011:
+  type: Integer
+  description: 'Registration: Apple/Pony'
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse_012:
+  type: Integer
+  description: 'Registration: Penny/Quarter'
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+mmse_013:
+  type: Integer
+  description: 'Registration: Table/Orange'
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ca10:
+  type: Float
+  description: Age (years)
+  alias: subject_age
+
+ccc2datecomp:
+  type: Date
+  description: Date Completed
+  alias: mmse_date

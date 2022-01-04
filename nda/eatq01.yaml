@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
 
 interview_age:
   type: Integer
@@ -34,7 +33,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -2169,10 +2168,10 @@ respond:
   required: true
   description: Respondent
   range:
-  - 1::5
+  - 1::7
   - 999
-  notes: 1 = Parent; 2 = Teacher; 3=Self; 4= Other; 5= Significant other; 999 = Not
-    available
+  notes: 1 = Parent; 2 = Teacher; 3=Self; 4= Other; 5= Significant other; 6 = Parent
+    1; 7 = Parent 2; 999 = Not available
   alias: instructions
   codes:
     1: Parent
@@ -2180,6 +2179,8 @@ respond:
     3: Self
     4: Other
     5: Significant other
+    6: Parent 1
+    7: Parent 2
     999: Not available
 
 subjectkey_mother:
@@ -2681,7 +2682,7 @@ timept:
 year_mta:
   type: Integer
   description: Year in study
-  alias: visit_year,visit_year?
+  alias: "visit_year,visit_year\uFFFD"
 
 visit:
   type: String
@@ -2711,9 +2712,9 @@ eatq_p_ss_depressive_nm:
 
 eatq_p_ss_fear:
   type: Float
-  description: 'PhenX Early Adolescent Temperament Q - Parent fear; sum(eatq_phenx_trouble_p,
+  description: PhenX Early Adolescent Temperament Q - Parent fear mean(eatq_phenx_trouble_p,
     eatq_phenx_attachment_p, eatq_phenx_ball_scared_p, eatq_phenx_dark_scared_p, eatq_phenx_alone_p,
-    eatq_phenx_worry_p); Validation: Maximum of 1 item missing'
+    eatq_phenx_worry_p)
 
 eatq_p_ss_fear_nm:
   type: Integer
@@ -2721,10 +2722,9 @@ eatq_p_ss_fear_nm:
 
 eatq_p_ss_frustration:
   type: Float
-  description: 'PhenX Early Adolescent Temperament Q - Parent frustration ; sum(eatq_phenx_annoyed_p,
+  description: PhenX Early Adolescent Temperament Q - Parent frustration mean(eatq_phenx_annoyed_p,
     eatq_phenx_irritated_crit_p, eatq_phenx_irritated_place_p, eatq_phenx_irritated_enjoy_p,
-    eatq_phenx_disagree_p, eatq_phenx_frustrated_p); Validation: Maximum of 1 item
-    missing'
+    eatq_phenx_disagree_p, eatq_phenx_frustrated_p)
 
 eatq_p_ss_frustration_nm:
   type: Integer
@@ -2732,9 +2732,8 @@ eatq_p_ss_frustration_nm:
 
 eatq_p_ss_inhibitory:
   type: Float
-  description: 'PhenX Early Adolescent Temperament Q - Parent inhibitory; sum(eatq_phenx_turn_taking_p,
-    eatq_phenx_open_present_p, eatq_phenx_impulse_p, eatq_phenx_laugh_control_p, eatq_phenx_stick_to_plan_p);
-    Validation: Maximum of 1 item missing'
+  description: PhenX Early Adolescent Temperament Q - Parent inhibitory mean(eatq_phenx_turn_taking_p,
+    eatq_phenx_open_present_p, eatq_phenx_impulse_p, eatq_phenx_laugh_control_p, eatq_phenx_stick_to_plan_p)
 
 eatq_p_ss_inhibitory_nm:
   type: Integer
@@ -2760,10 +2759,9 @@ eatq_p_ss_shyness_nm:
 
 eatq_p_ss_surgency:
   type: Float
-  description: 'PhenX Early Adolescent Temperament Q - Parent surgency; sum(eatq_phenx_africa_p,
+  description: PhenX Early Adolescent Temperament Q - Parent surgency mean(eatq_phenx_africa_p,
     eatq_phenx_ski_slope_p, eatq_phenx_city_move_p, eatq_phenx_sea_dive_p, eatq_phenx_travel_p,
-    eatq_phenx_race_car_p, eatq_phenx_school_excite_p, eatq_phenx_energized_p, eatq_phenx_rides_scared_p);
-    Validation: Maximum of 1 item missing'
+    eatq_phenx_race_car_p, eatq_phenx_school_excite_p, eatq_phenx_energized_p, eatq_phenx_rides_scared_p)
 
 eatq_p_ss_surgency_nm:
   type: Integer

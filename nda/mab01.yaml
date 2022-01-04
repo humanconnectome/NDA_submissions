@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: visit_date
 
 interview_age:
@@ -34,7 +33,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -663,21 +662,21 @@ matern_vag_bleed_expl:
 
 devhx_10a3_p:
   type: Integer
-  description: During the pregnancy with this child, did you/biological mother have
-    any of the following conditions? Severe nausea and vomiting extending past the
-    6th month or accompanied by weight loss? /?N?useas y v?mitos severos que continuaron
-    hasta despu?s del 6.? mes de embarazo o que estuvieron acompa?ados de una p?rdida
-    de peso?
+  description: "During the pregnancy with this child, did you/biological mother have\
+    \ any of the following conditions? Severe nausea and vomiting extending past the\
+    \ 6th month or accompanied by weight loss? /\xBFN\xE1useas y v\xF3mitos severos\
+    \ que continuaron hasta despu\xE9s del 6.\xBA mes de embarazo o que estuvieron\
+    \ acompa\xF1ados de una p\xE9rdida de peso?"
   range:
   - 1
   - 0
   - 999
-  notes: 1 = Yes /S?; 0 = No /No; 999 = Don't know/ No lo s?
+  notes: "1 = Yes /S\xED; 0 = No /No; 999 = Don't know/ No lo s\xE9"
   alias: matern_nausea
   codes:
-    1: Yes /S?
+    1: "Yes /S\xED"
     0: No /No
-    999: Don't know/ No lo s?
+    999: "Don't know/ No lo s\xE9"
 
 matern_nausea_expl:
   type: String

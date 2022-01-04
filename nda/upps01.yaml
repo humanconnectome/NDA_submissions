@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
 
 interview_age:
   type: Integer
@@ -33,7 +32,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -520,8 +519,8 @@ upps_p4:
 
 upps_p5:
   type: Integer
-  description: When I am very happy, I can?t seem to stop myself from doing things
-    that can have bad consequences.
+  description: "When I am very happy, I can\uFFFDt seem to stop myself from doing\
+    \ things that can have bad consequences."
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
@@ -644,13 +643,18 @@ upps_p14:
     / Child: Unfinished tasks really bother me.'
   range:
   - 1::4
-  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  - -8
+  - -9
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly; -8
+    = Do not know; -9 = Refuse to answer
   alias: 40813,upps-p_14,upps14,upps5_y
   codes:
     1: Agree Strongly
     2: Agree Some
     3: Disagree Some
     4: Disagree Strongly
+    -8: Do not know
+    -9: Refuse to answer
 
 upps_p15:
   type: Integer
@@ -752,8 +756,8 @@ upps_p21:
 
 upps_p22:
   type: Integer
-  description: Sometimes when I feel bad, I can?t seem to stop what I am doing even
-    though it is making me feel worse.
+  description: "Sometimes when I feel bad, I can\uFFFDt seem to stop what I am doing\
+    \ even though it is making me feel worse."
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
@@ -770,13 +774,18 @@ upps_p23:
     risks.'
   range:
   - 1::4
-  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  - -8
+  - -9
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly; -8
+    = Do not know; -9 = Refuse to answer
   alias: 40822,upps-p_23,upps12_y,upps23
   codes:
     4: Agree Strongly
     3: Agree Some
     2: Disagree Some
     1: Disagree Strongly
+    -8: Do not know
+    -9: Refuse to answer
 
 upps_p24:
   type: Integer
@@ -809,13 +818,18 @@ upps_p26:
   description: I would enjoy parachute jumping.
   range:
   - 1::4
-  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  - -8
+  - -9
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly; -8
+    = Do not know; -9 = Refuse to answer
   alias: 40825,upps-p_26,upps26
   codes:
     4: Agree Strongly
     3: Agree Some
     2: Disagree Some
     1: Disagree Strongly
+    -8: Do not know
+    -9: Refuse to answer
 
 upps_p27:
   type: Integer
@@ -823,13 +837,18 @@ upps_p27:
     what I start.'
   range:
   - 1::4
-  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  - -8
+  - -9
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly; -8
+    = Do not know; -9 = Refuse to answer
   alias: 40826,upps-p_27,upps15_y,upps27
   codes:
     1: Agree Strongly
     2: Agree Some
     3: Disagree Some
     4: Disagree Strongly
+    -8: Do not know
+    -9: Refuse to answer
 
 upps_p28:
   type: Integer
@@ -905,26 +924,36 @@ upps_p33:
   description: I usually make up my mind through careful reasoning.
   range:
   - 1::4
-  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  - -8
+  - -9
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly; -8
+    = Do not know; -9 = Refuse to answer
   alias: 40832,upps-p_33,upps33
   codes:
     1: Agree Strongly
     2: Agree Some
     3: Disagree Some
     4: Disagree Strongly
+    -8: Do not know
+    -9: Refuse to answer
 
 upps_p34:
   type: Integer
   description: When I feel rejected, I will often say things that I later regret.
   range:
   - 1::4
-  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  - -8
+  - -9
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly; -8
+    = Do not know; -9 = Refuse to answer
   alias: 40833,upps-p_34,upps20_y,upps34
   codes:
     4: Agree Strongly
     3: Agree Some
     2: Disagree Some
     1: Disagree Strongly
+    -8: Do not know
+    -9: Refuse to answer
 
 upps_p35:
   type: Integer
@@ -959,39 +988,54 @@ upps_p37:
     I am a person who always gets the job done.'
   range:
   - 1::4
-  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  - -8
+  - -9
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly; -8
+    = Do not know; -9 = Refuse to answer
   alias: 40836,upps-p_37,upps22_y,upps37
   codes:
     1: Agree Strongly
     2: Agree Some
     3: Disagree Some
     4: Disagree Strongly
+    -8: Do not know
+    -9: Refuse to answer
 
 upps_p38:
   type: Integer
   description: 'Parent: Your child is very careful. / Child: I am a cautious person.'
   range:
   - 1::4
-  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  - -8
+  - -9
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly; -8
+    = Do not know; -9 = Refuse to answer
   alias: 40837,upps-p_38,upps23_y,upps38
   codes:
     1: Agree Strongly
     2: Agree Some
     3: Disagree Some
     4: Disagree Strongly
+    -8: Do not know
+    -9: Refuse to answer
 
 upps_p39:
   type: Integer
   description: It is hard for me to resist acting on my feelings.
   range:
   - 1::4
-  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  - -8
+  - -9
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly; -8
+    = Do not know; -9 = Refuse to answer
   alias: 40838,upps-p_39,upps39
   codes:
     4: Agree Strongly
     3: Agree Some
     2: Disagree Some
     1: Disagree Strongly
+    -8: Do not know
+    -9: Refuse to answer
 
 upps_p40:
   type: Integer
@@ -1011,13 +1055,18 @@ upps_p41:
   description: I sometimes like doing things that are a bit frightening.
   range:
   - 1::4
-  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  - -8
+  - -9
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly; -8
+    = Do not know; -9 = Refuse to answer
   alias: 40840,upps-p_41,upps41
   codes:
     4: Agree Strongly
     3: Agree Some
     2: Disagree Some
     1: Disagree Strongly
+    -8: Do not know
+    -9: Refuse to answer
 
 upps_p42:
   type: Integer
@@ -1025,13 +1074,18 @@ upps_p42:
     / Child: I almost always finish projects that I start.'
   range:
   - 1::4
-  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  - -8
+  - -9
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly; -8
+    = Do not know; -9 = Refuse to answer
   alias: 40841,upps-p_42,upps24_y,upps42
   codes:
     1: Agree Strongly
     2: Agree Some
     3: Disagree Some
     4: Disagree Strongly
+    -8: Do not know
+    -9: Refuse to answer
 
 upps_p43:
   type: Integer
@@ -1054,17 +1108,22 @@ upps_p44:
     upset.
   range:
   - 1::4
-  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  - -8
+  - -9
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly; -8
+    = Do not know; -9 = Refuse to answer
   alias: 40843,upps-p_44,upps44
   codes:
     4: Agree Strongly
     3: Agree Some
     2: Disagree Some
     1: Disagree Strongly
+    -8: Do not know
+    -9: Refuse to answer
 
 upps_p45:
   type: Integer
-  description: When overjoyed, I feel like I can?t stop myself from going overboard.
+  description: "When overjoyed, I feel like I can\uFFFDt stop myself from going overboard."
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
@@ -1081,13 +1140,18 @@ upps_p46:
     slope.
   range:
   - 1::4
-  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  - -8
+  - -9
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly; -8
+    = Do not know; -9 = Refuse to answer
   alias: 40845,upps-p_46,upps27_y,upps46
   codes:
     4: Agree Strongly
     3: Agree Some
     2: Disagree Some
     1: Disagree Strongly
+    -8: Do not know
+    -9: Refuse to answer
 
 upps_p47:
   type: Integer
@@ -1108,13 +1172,18 @@ upps_p48:
   description: I usually think carefully before doing anything.
   range:
   - 1::4
-  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  - -8
+  - -9
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly; -8
+    = Do not know; -9 = Refuse to answer
   alias: 40847,upps-p_48,upps28_y,upps48
   codes:
     1: Agree Strongly
     2: Agree Some
     3: Disagree Some
     4: Disagree Strongly
+    -8: Do not know
+    -9: Refuse to answer
 
 upps_p49:
   type: Integer
@@ -1184,8 +1253,8 @@ upps_p53:
 
 upps_p54:
   type: Integer
-  description: When I am really happy, I often find myself in situations that I normally
-    wouldn?t be comfortable with.
+  description: "When I am really happy, I often find myself in situations that I normally\
+    \ wouldn\uFFFDt be comfortable with."
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
@@ -1201,13 +1270,18 @@ upps_p55:
   description: Before making up my mind, I consider all the advantages and disadvantages.
   range:
   - 1::4
-  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  - -8
+  - -9
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly; -8
+    = Do not know; -9 = Refuse to answer
   alias: 40848,upps-p_55,upps55
   codes:
     1: Agree Strongly
     2: Agree Some
     3: Disagree Some
     4: Disagree Strongly
+    -8: Do not know
+    -9: Refuse to answer
 
 upps_p56:
   type: Integer
@@ -1241,13 +1315,18 @@ upps_p58:
   description: Sometimes I do impulsive things that I later regret.
   range:
   - 1::4
-  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  - -8
+  - -9
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly; -8
+    = Do not know; -9 = Refuse to answer
   alias: 40857,upps-p_58,upps58
   codes:
     4: Agree Strongly
     3: Agree Some
     2: Disagree Some
     1: Disagree Strongly
+    -8: Do not know
+    -9: Refuse to answer
 
 upps_p59:
   type: Integer
@@ -2323,3 +2402,404 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+visit_year:
+  type: Integer
+  description: Year of visit
+
+uppsp_pos4:
+  type: Integer
+  description: I would enjoy the sensation of skiing very fast down a high mountain
+    slope.
+  range:
+  - 1::5
+  - 999
+  notes: 1 = Strongly Disagree; 2 = Disagree; 3 = Neither Agree nor Disagree; 4 =
+    Agree; 5 = Strongly Agree; 999 = NA or Prefer Not to Answer
+  codes:
+    1: Strongly Disagree
+    2: Disagree
+    3: Neither Agree nor Disagree
+    4: Agree
+    5: Strongly Agree
+    999: NA or Prefer Not to Answer
+
+uppsp_neg1:
+  type: Integer
+  description: When I feel bad, I will often do things I later regret in order to
+    make myself feel better now.
+  range:
+  - 1::5
+  - 999
+  notes: 1 = Strongly Disagree; 2 = Disagree; 3 = Neither Agree nor Disagree; 4 =
+    Agree; 5 = Strongly Agree; 999 = NA or Prefer Not to Answer
+  codes:
+    1: Strongly Disagree
+    2: Disagree
+    3: Neither Agree nor Disagree
+    4: Agree
+    5: Strongly Agree
+    999: NA or Prefer Not to Answer
+
+uppsp_neg2:
+  type: Integer
+  description: Sometimes when I feel bad, I can't seem to stop what I am doing even
+    though it is making me feel worse.
+  range:
+  - 1::5
+  - 999
+  notes: 1 = Strongly Disagree; 2 = Disagree; 3 = Neither Agree nor Disagree; 4 =
+    Agree; 5 = Strongly Agree; 999 = NA or Prefer Not to Answer
+  codes:
+    1: Strongly Disagree
+    2: Disagree
+    3: Neither Agree nor Disagree
+    4: Agree
+    5: Strongly Agree
+    999: NA or Prefer Not to Answer
+
+uppsp_neg3:
+  type: Integer
+  description: Unfinished tasks really bother me.
+  range:
+  - 1::5
+  - 999
+  notes: 1 = Strongly Disagree; 2 = Disagree; 3 = Neither Agree nor Disagree; 4 =
+    Agree; 5 = Strongly Agree; 999 = NA or Prefer Not to Answer
+  codes:
+    1: Strongly Disagree
+    2: Disagree
+    3: Neither Agree nor Disagree
+    4: Agree
+    5: Strongly Agree
+    999: NA or Prefer Not to Answer
+
+uppsp_neg4:
+  type: Integer
+  description: I finish what I start.
+  range:
+  - 1::5
+  - 999
+  notes: 1 = Strongly Disagree; 2 = Disagree; 3 = Neither Agree nor Disagree; 4 =
+    Agree; 5 = Strongly Agree; 999 = NA or Prefer Not to Answer
+  codes:
+    1: Strongly Disagree
+    2: Disagree
+    3: Neither Agree nor Disagree
+    4: Agree
+    5: Strongly Agree
+    999: NA or Prefer Not to Answer
+
+uppsp_pos1:
+  type: Integer
+  description: I like to stop and think things over before I do them.
+  range:
+  - 1::5
+  - 999
+  notes: 1 = Strongly Disagree; 2 = Disagree; 3 = Neither Agree nor Disagree; 4 =
+    Agree; 5 = Strongly Agree; 999 = NA or Prefer Not to Answer
+  codes:
+    1: Strongly Disagree
+    2: Disagree
+    3: Neither Agree nor Disagree
+    4: Agree
+    5: Strongly Agree
+    999: NA or Prefer Not to Answer
+
+uppsp_pos2:
+  type: Integer
+  description: I usually think carefully before doing anything.
+  range:
+  - 1::5
+  - 999
+  notes: 1 = Strongly Disagree; 2 = Disagree; 3 = Neither Agree nor Disagree; 4 =
+    Agree; 5 = Strongly Agree; 999 = NA or Prefer Not to Answer
+  codes:
+    1: Strongly Disagree
+    2: Disagree
+    3: Neither Agree nor Disagree
+    4: Agree
+    5: Strongly Agree
+    999: NA or Prefer Not to Answer
+
+uppsp_pos3:
+  type: Integer
+  description: I welcome new and exciting experiences and sensations, even if they
+    are a little frightening and unconventional.
+  range:
+  - 1::5
+  - 999
+  notes: 1 = Strongly Disagree; 2 = Disagree; 3 = Neither Agree nor Disagree; 4 =
+    Agree; 5 = Strongly Agree; 999 = NA or Prefer Not to Answer
+  codes:
+    1: Strongly Disagree
+    2: Disagree
+    3: Neither Agree nor Disagree
+    4: Agree
+    5: Strongly Agree
+    999: NA or Prefer Not to Answer
+
+upps8:
+  type: Integer
+  description: I finish what I've started
+  range:
+  - 1::4
+  notes: 1 = Totally agree; 2 = Somewhat agree; 3 = Somewhat disagree; 4 = Totally
+    disagree
+  codes:
+    1: Totally agree
+    2: Somewhat agree
+    3: Somewhat disagree
+    4: Totally disagree
+
+upps9:
+  type: Integer
+  description: I like taking risks
+  range:
+  - 1::4
+  notes: 1 = Totally disagree; 2 = Somewhat disagree; 3 = Somewhat agree; 4 = Totally
+    agree
+  codes:
+    1: Totally disagree
+    2: Somewhat disagree
+    3: Somewhat agree
+    4: Totally agree
+
+upps10:
+  type: Integer
+  description: When I'm very happy, I have trouble controlling myself
+  range:
+  - 1::4
+  notes: 1 = Totally disagree; 2 = Somewhat disagree; 3 = Somewhat agree; 4 = Totally
+    agree
+  codes:
+    1: Totally disagree
+    2: Somewhat disagree
+    3: Somewhat agree
+    4: Totally agree
+
+upps11:
+  type: Integer
+  description: Once I have started an exercise or homework, I almost always finish
+    it
+  range:
+  - 1::4
+  notes: 1 = Totally agree; 2 = Somewhat agree; 3 = Somewhat disagree; 4 = Totally
+    disagree
+  codes:
+    1: Totally agree
+    2: Somewhat agree
+    3: Somewhat disagree
+    4: Totally disagree
+
+upps12:
+  type: Integer
+  description: When I'm in a bad mood, I often make things worse because I act without
+    thinking
+  range:
+  - 1::4
+  notes: 1 = Totally disagree; 2 = Somewhat disagree; 3 = Somewhat agree; 4 = Totally
+    agree
+  codes:
+    1: Totally disagree
+    2: Somewhat disagree
+    3: Somewhat agree
+    4: Totally agree
+
+upps13:
+  type: Integer
+  description: Usually, I make decisions after a lot of thought
+  range:
+  - 1::4
+  notes: 1 = Totally agree; 2 = Somewhat agree; 3 = Somewhat disagree; 4 = Totally
+    disagree
+  codes:
+    1: Totally agree
+    2: Somewhat agree
+    3: Somewhat disagree
+    4: Totally disagree
+
+upps14:
+  type: Integer
+  description: I usually look for new and exciting things
+  range:
+  - 1::4
+  notes: 1 = Totally disagree; 2 = Somewhat disagree; 3 = Somewhat agree; 4 = Totally
+    agree
+  codes:
+    1: Totally disagree
+    2: Somewhat disagree
+    3: Somewhat agree
+    4: Totally agree
+
+upps15:
+  type: Integer
+  description: When I'm really happy, I act without thinking
+  range:
+  - 1::4
+  notes: 1 = Totally disagree; 2 = Somewhat disagree; 3 = Somewhat agree; 4 = Totally
+    agree
+  codes:
+    1: Totally disagree
+    2: Somewhat disagree
+    3: Somewhat agree
+    4: Totally agree
+
+upps16:
+  type: Integer
+  description: I'm an efficient person, and I always complete my work
+  range:
+  - 1::4
+  notes: 1 = Totally agree; 2 = Somewhat agree; 3 = Somewhat disagree; 4 = Totally
+    disagree
+  codes:
+    1: Totally agree
+    2: Somewhat agree
+    3: Somewhat disagree
+    4: Totally disagree
+
+upps17:
+  type: Integer
+  description: When I feel rejected, I often say things that I regret later
+  range:
+  - 1::4
+  notes: 1 = Totally disagree; 2 = Somewhat disagree; 3 = Somewhat agree; 4 = Totally
+    agree
+  codes:
+    1: Totally disagree
+    2: Somewhat disagree
+    3: Somewhat agree
+    4: Totally agree
+
+upps18:
+  type: Integer
+  description: I like new experiences and feelings even if they frighten me or are
+    a bit against the rules
+  range:
+  - 1::4
+  notes: 1 = Totally disagree; 2 = Somewhat disagree; 3 = Somewhat agree; 4 = Totally
+    agree
+  codes:
+    1: Totally disagree
+    2: Somewhat disagree
+    3: Somewhat agree
+    4: Totally agree
+
+upps19:
+  type: Integer
+  description: Before making a decision, I think about all the good and bad things
+    that could happen
+  range:
+  - 1::4
+  notes: 1 = Totally agree; 2 = Somewhat agree; 3 = Somewhat disagree; 4 = Totally
+    disagree
+  codes:
+    1: Totally agree
+    2: Somewhat agree
+    3: Somewhat disagree
+    4: Totally disagree
+
+upps20:
+  type: Integer
+  description: When I'm very happy, it seems normal to just do whatever I want
+  range:
+  - 1::4
+  notes: 1 = Totally disagree; 2 = Somewhat disagree; 3 = Somewhat agree; 4 = Totally
+    agree
+  codes:
+    1: Totally disagree
+    2: Somewhat disagree
+    3: Somewhat agree
+    4: Totally agree
+
+upps1:
+  type: Integer
+  description: Before doing something, I think about it a lot
+  range:
+  - 1::4
+  notes: 1 = Totally agree; 2 = Somewhat agree; 3 = Somewhat disagree; 4 = Totally
+    disagree
+  codes:
+    1: Totally agree
+    2: Somewhat agree
+    3: Somewhat disagree
+    4: Totally disagree
+
+upps2:
+  type: Integer
+  description: When I'm really happy, I do not necessarily think about the consequences
+    of my actions
+  range:
+  - 1::4
+  notes: 1 = Totally disagree; 2 = Somewhat disagree; 3 = Somewhat agree; 4 = Totally
+    agree
+  codes:
+    1: Totally disagree
+    2: Somewhat disagree
+    3: Somewhat agree
+    4: Totally agree
+
+upps3:
+  type: Integer
+  description: From time to time, I like doing things that are a bit frightening
+  range:
+  - 1::4
+  notes: 1 = Totally disagree; 2 = Somewhat disagree; 3 = Somewhat agree; 4 = Totally
+    agree
+  codes:
+    1: Totally disagree
+    2: Somewhat disagree
+    3: Somewhat agree
+    4: Totally agree
+
+upps4:
+  type: Integer
+  description: When I'm in a bad mood, I act without thinking
+  range:
+  - 1::4
+  notes: 1 = Totally disagree; 2 = Somewhat disagree; 3 = Somewhat agree; 4 = Totally
+    agree
+  codes:
+    1: Totally disagree
+    2: Somewhat disagree
+    3: Somewhat agree
+    4: Totally agree
+
+upps5:
+  type: Integer
+  description: I usually prefer to finish what I've started
+  range:
+  - 1::4
+  notes: 1 = Totally agree; 2 = Somewhat agree; 3 = Somewhat disagree; 4 = Totally
+    disagree
+  codes:
+    1: Totally agree
+    2: Somewhat agree
+    3: Somewhat disagree
+    4: Totally disagree
+
+upps6:
+  type: Integer
+  description: I usually think in a careful, organized way
+  range:
+  - 1::4
+  notes: 1 = Totally agree; 2 = Somewhat agree; 3 = Somewhat disagree; 4 = Totally
+    disagree
+  codes:
+    1: Totally agree
+    2: Somewhat agree
+    3: Somewhat disagree
+    4: Totally disagree
+
+upps7:
+  type: Integer
+  description: When I'm arguing, I often say things that I regret later
+  range:
+  - 1::4
+  notes: 1 = Totally disagree; 2 = Somewhat disagree; 3 = Somewhat agree; 4 = Totally
+    agree
+  codes:
+    1: Totally disagree
+    2: Somewhat disagree
+    3: Somewhat agree
+    4: Totally agree

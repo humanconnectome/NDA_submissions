@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: date_bis
 
 interview_age:
@@ -34,7 +33,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -60,9 +59,10 @@ gbi1:
     \ or jumping from one activity to another?"
   range:
   - 0::3
+  - 99
   notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
     constantly
-  alias: gbi_4,gbi_p1,gen_child_behav_1
+  alias: gbi_4,gbi_p1,gen_child_behav_1,p_gbi1
   codes:
     0: Never - Hardly ever
     1: Sometimes
@@ -71,22 +71,23 @@ gbi1:
 
 gbi2:
   type: Integer
-  description: P.Have there been periods of several days or more when your child's
-    friends or other family members told you that your child seemed unusually happy
-    or high - clearly different from his/her usual self or from a typical good mood?/
-    S.Have there been periods of several days or more when your friends or other family
-    members told you that you seemed unusually happy or high ? clearly different from
-    your usual self or from a typical good mood?
+  description: "P.Have there been periods of several days or more when your child's\
+    \ friends or other family members told you that your child seemed unusually happy\
+    \ or high - clearly different from his/her usual self or from a typical good mood?/\
+    \ S.Have there been periods of several days or more when your friends or other\
+    \ family members told you that you seemed unusually happy or high \u2013 clearly\
+    \ different from your usual self or from a typical good mood?"
   range:
   - 0::3
-  notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
-    constantly
-  alias: gbi_11,gbi_p2,gen_child_behav_2
+  - 99
+  notes: 1 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
+    constantly; 99 = prefer not to answer
+  alias: gbi_11,gbi_p2,gen_child_behav_2,p_gbi2
   codes:
-    0: Never - Hardly ever
     1: Sometimes
     2: Often
     3: Very often - almost constantly
+    99: prefer not to answer
 
 gbi3:
   type: Integer
@@ -95,9 +96,10 @@ gbi3:
     forth from happy to sad or high to low?
   range:
   - 0::3
+  - 99
   notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
     constantly
-  alias: gbi_19,gbi_p3,gen_child_behav_3
+  alias: gbi_19,gbi_p3,gen_child_behav_3,p_gbi3
   codes:
     0: Never - Hardly ever
     1: Sometimes
@@ -114,14 +116,16 @@ gbi4:
     than usual (other than related to the menstrual cycle)?
   range:
   - 0::3
+  - 99
   notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
-    constantly
-  alias: gbi_p4,gen_child_behav_4,s7upchildself1
+    constantly; 99 = prefer not to answer
+  alias: gbi_p4,gen_child_behav_4,p_gbi4,s7upchildself1
   codes:
     0: Never - Hardly ever
     1: Sometimes
     2: Often
     3: Very often - almost constantly
+    99: prefer not to answer
 
 gbi5:
   type: Integer
@@ -134,14 +138,16 @@ gbi5:
     inner feelings of rage or an urge to smash or destroy things?
   range:
   - 0::3
+  - 99
   notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
-    constantly
-  alias: gbi_27,gbi_p5,gen_child_behav_5
+    constantly; 99 = prefer not to answer
+  alias: gbi_27,gbi_p5,gen_child_behav_5,p_gbi5
   codes:
     0: Never - Hardly ever
     1: Sometimes
     2: Often
     3: Very often - almost constantly
+    99: prefer not to answer
 
 gbi6:
   type: Integer
@@ -152,14 +158,16 @@ gbi6:
     days or more, it took you over an hour to get to sleep at night?
   range:
   - 0::3
+  - 99
   notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
-    constantly
-  alias: gbi_p6,gen_child_behav_6,s7upchildself3
+    constantly; 99 = prefer not to answer
+  alias: gbi_p6,gen_child_behav_6,p_gbi6,s7upchildself3
   codes:
     0: Never - Hardly ever
     1: Sometimes
     2: Often
     3: Very often - almost constantly
+    99: prefer not to answer
 
 gbi7:
   type: Integer
@@ -168,14 +176,16 @@ gbi7:
     energy are generally up or down, but rarely in the middle?
   range:
   - 0::3
+  - 99
   notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
-    constantly
-  alias: gbi_40,gbi_p7,gen_child_behav_7
+    constantly; 99 = prefer not to answer
+  alias: gbi_40,gbi_p7,gen_child_behav_7,p_gbi7
   codes:
     0: Never - Hardly ever
     1: Sometimes
     2: Often
     3: Very often - almost constantly
+    99: prefer not to answer
 
 gbi8:
   type: Integer
@@ -187,14 +197,16 @@ gbi8:
     and overflowing with energy?
   range:
   - 0::3
+  - 99
   notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
-    constantly
-  alias: gbi_53,gbi_p8,gen_child_behav_8
+    constantly; 99 = prefer not to answer
+  alias: gbi_53,gbi_p8,gen_child_behav_8,p_gbi8
   codes:
     0: Never - Hardly ever
     1: Sometimes
     2: Often
     3: Very often - almost constantly
+    99: prefer not to answer
 
 gbi9:
   type: Integer
@@ -206,37 +218,42 @@ gbi9:
     (other than related to the menstrual cycle?)
   range:
   - 0::3
+  - 99
   notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
-    constantly
-  alias: gbi_54,gbi_p9,gen_child_behav_9
+    constantly; 99 = prefer not to answer
+  alias: gbi_54,gbi_p9,gen_child_behav_9,p_gbi9
   codes:
     0: Never - Hardly ever
     1: Sometimes
     2: Often
     3: Very often - almost constantly
+    99: prefer not to answer
 
 gbi10:
   type: Integer
-  description: P. Has your child had times when his/her thoughts and ideas came so
-    fast that he/she couldn't get them all out, or they came so quickly others complained
-    that they couldn't keep up with your child's ideas? S. Have you had times when
-    your thoughts and ideas came so fast that you couldn?t get them all out, or they
-    came so quickly others complained that they couldn?t keep up with your ideas?
+  description: "P. Has your child had times when his/her thoughts and ideas came so\
+    \ fast that he/she couldn't get them all out, or they came so quickly others complained\
+    \ that they couldn't keep up with your child's ideas? S. Have you had times when\
+    \ your thoughts and ideas came so fast that you couldn\u2019t get them all out,\
+    \ or they came so quickly others complained that they couldn\u2019t keep up with\
+    \ your ideas?"
   range:
   - 0::3
+  - 99
   notes: 0 = Never - Hardly ever; 1 = Sometimes; 2 = Often; 3 = Very often - almost
-    constantly
-  alias: gbi_p10,gen_child_behav_10,s7upchildself7
+    constantly; 99 = prefer not to answer
+  alias: gbi_p10,gen_child_behav_10,p_gbi10,s7upchildself7
   codes:
     0: Never - Hardly ever
     1: Sometimes
     2: Often
     3: Very often - almost constantly
+    99: prefer not to answer
 
 gbitotal:
   type: Integer
   description: General Behavior total score
-  alias: gbi_miss,gbi_total
+  alias: gbi_miss,gbi_total,p_gbi_total
 
 comments_misc:
   type: String
@@ -248,16 +265,18 @@ respond:
   type: Integer
   description: Respondent
   range:
-  - 1::5
+  - 1::7
   - 999
-  notes: 1 = Parent; 2 = Teacher; 3=Self; 4= Other; 5= Significant other; 999 = Not
-    available
+  notes: 1 = Parent; 2 = Teacher; 3=Self; 4= Other; 5= Significant other; 6 = Parent
+    1; 7 = Parent 2; 999 = Not available
   codes:
     1: Parent
     2: Teacher
     3: Self
     4: Other
     5: Significant other
+    6: Parent 1
+    7: Parent 2
     999: Not available
 
 gbi11:
@@ -705,10 +724,10 @@ gbi_21:
 
 gbi_24:
   type: Integer
-  description: Have you found that your enjoyment in eating changes ? from periods
-    of two or more days when food tastes exceptionally good, clearly better than usual,
-    to other periods of several days or more when food seems rather flavorless and
-    perhaps you don't enjoy eating at all?
+  description: "Have you found that your enjoyment in eating changes \uFFFD from periods\
+    \ of two or more days when food tastes exceptionally good, clearly better than\
+    \ usual, to other periods of several days or more when food seems rather flavorless\
+    \ and perhaps you don't enjoy eating at all?"
   range:
   - 0::3
   notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
@@ -923,9 +942,9 @@ gbi_45:
 
 gbi_48:
   type: Integer
-  description: Have you found that your thinking changes greatly ? that there are
-    periods of several days or more when you think better than most people, and other
-    periods when your mind doesn't work well at all?
+  description: "Have you found that your thinking changes greatly \uFFFD that there\
+    \ are periods of several days or more when you think better than most people,\
+    \ and other periods when your mind doesn't work well at all?"
   range:
   - 0::3
   notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or
@@ -967,10 +986,11 @@ gbi_50:
 
 gbi_51:
   type: Integer
-  description: Have there been times when you have done things ? like perhaps driving
-    recklessly, taking a trip on the spur of the moment, creating a public disturbance,
-    being more sexually active than usual, getting into fights, destroying property,
-    or getting into trouble with the law ? which you later thought showed poor judgment?
+  description: "Have there been times when you have done things \uFFFD like perhaps\
+    \ driving recklessly, taking a trip on the spur of the moment, creating a public\
+    \ disturbance, being more sexually active than usual, getting into fights, destroying\
+    \ property, or getting into trouble with the law \uFFFD which you later thought\
+    \ showed poor judgment?"
   range:
   - 0::3
   notes: 0 = Never or hardly ever ; 1 = Sometimes ; 2 = Often ; 3 = Very often or

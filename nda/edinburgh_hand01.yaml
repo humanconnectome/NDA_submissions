@@ -36,7 +36,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: ehi_time,hand_doa,handedness_date,handsum_doa,testdate,visit_date
 
 interview_age:
@@ -65,7 +64,7 @@ writing:
   - oh
   notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
     np=no preference; oh=sometimes uses other hand
-  alias: edinburgh_handedness_1,ehi1,ehi1b,ehi_01,hand1,hand_1_writing,hand_writing,handedness_1,iihandwr,ohq_writing,short_handform_writing
+  alias: edinburgh_handedness_1,ehi1,ehi1b,ehi_01,hand1,hand_1_writing,hand_writing,handedness_1,iihandwr,ohq_writing,p_ehi_1,short_handform_writing
   codes:
     SPR: Strongly Prefer Right
     SPL: Strongly Prefer Left
@@ -88,7 +87,7 @@ drawing:
   - oh
   notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
     np=no preference; oh=sometimes uses other hand
-  alias: draw,edinburgh_handedness_2,ehi2,ehi_02,hand2,hand2l_drawing,hand2r_drawing,hand_2_drawing,handedness_2,ohq_drawing
+  alias: draw,edinburgh_handedness_2,ehi2,ehi_02,hand2,hand2l_drawing,hand2r_drawing,hand_2_drawing,handedness_2,ohq_drawing,p_ehi_2
   codes:
     SPR: Strongly Prefer Right
     SPL: Strongly Prefer Left
@@ -111,7 +110,7 @@ throwing:
   - oh
   notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
     np=no preference; oh=sometimes uses other hand
-  alias: edinburgh_handedness_3,ehi2b,ehi3,ehi_03,hand3,hand3l_throwing,hand3r_throwing,hand_3_throwing,hand_throwing,handedness_3,iihandth,ohq_throwing,short_handform_throwing,throw
+  alias: edinburgh_handedness_3,ehi2b,ehi3,ehi_03,hand3,hand3l_throwing,hand3r_throwing,hand_3_throwing,hand_throwing,handedness_3,iihandth,ohq_throwing,p_ehi_3,short_handform_throwing,throw
   codes:
     SPR: Strongly Prefer Right
     SPL: Strongly Prefer Left
@@ -134,7 +133,7 @@ scissors:
   - oh
   notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
     np=no preference; oh=sometimes uses other hand
-  alias: edinburgh_handedness_4,ehi4,ehi_04,hand4,hand4l_scissors,hand4r_scissors,hand7,hand_4_scissors,hand_scissors,handedness_4,iihandsc,ohq_scissors,scissor,short_handform_scissors
+  alias: edinburgh_handedness_4,ehi4,ehi_04,hand4,hand4l_scissors,hand4r_scissors,hand7,hand_4_scissors,hand_scissors,handedness_4,iihandsc,ohq_scissors,p_ehi_4,scissor,short_handform_scissors
   codes:
     SPR: Strongly Prefer Right
     SPL: Strongly Prefer Left
@@ -180,7 +179,7 @@ toothbrush:
   - oh
   notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
     np=no preference; oh=sometimes uses other hand
-  alias: edinburgh_handedness_5,ehi3b,ehi5,ehi_06,hand4,hand5,hand5l_toothbrush,hand5r_toothbrush,hand_5_toothbrush,hand_toothbrush,handedness_5,iihandto,ohq_toothbrush,tooth
+  alias: edinburgh_handedness_5,ehi3b,ehi5,ehi_06,hand4,hand5,hand5l_toothbrush,hand5r_toothbrush,hand_5_toothbrush,hand_toothbrush,handedness_5,iihandto,ohq_toothbrush,p_ehi_5,tooth
   codes:
     SPR: Strongly Prefer Right
     SPL: Strongly Prefer Left
@@ -203,7 +202,7 @@ knife_no_fork:
   - oh
   notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
     np=no preference; oh=sometimes uses other hand
-  alias: edinburgh_handedness_6,ehi6,ehi_07,hand6,hand6l_knife,hand6r_knife,hand_6_knife,hand_knife,handedness_6,iihandkn,knife,ohq_knife
+  alias: edinburgh_handedness_6,ehi6,ehi_07,hand6,hand6l_knife,hand6r_knife,hand_6_knife,hand_knife,handedness_6,iihandkn,knife,ohq_knife,p_ehi_6
   codes:
     SPR: Strongly Prefer Right
     SPL: Strongly Prefer Left
@@ -226,7 +225,7 @@ spoon:
   - oh
   notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
     np=no preference; oh=sometimes uses other hand
-  alias: edinburgh_handedness_7,ehi4b,ehi7,hand6,hand7,hand7l_spoon,hand7r_spoon,hand_7_spoon,hand_spoon,handedness_7,iihandsp,ohq_spoon,short_handform_spoon
+  alias: edinburgh_handedness_7,ehi4b,ehi7,hand6,hand7,hand7l_spoon,hand7r_spoon,hand_7_spoon,hand_spoon,handedness_7,iihandsp,ohq_spoon,p_ehi_7,short_handform_spoon
   codes:
     SPR: Strongly Prefer Right
     SPL: Strongly Prefer Left
@@ -383,7 +382,7 @@ broom:
   - oh
   notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
     np=no preference; oh=sometimes uses other hand
-  alias: broom_upper_hand,edinburgh_handedness_8,ehi8,ehi_08,hand8,hand8l_broom,hand8r_broom,hand_8_broom,handedness_8,iihandbr,ohq_broom
+  alias: broom_upper_hand,edinburgh_handedness_8,ehi8,ehi_08,hand8,hand8l_broom,hand8r_broom,hand_8_broom,handedness_8,iihandbr,ohq_broom,p_ehi_8
   codes:
     SPR: Strongly Prefer Right
     SPL: Strongly Prefer Left
@@ -428,7 +427,7 @@ match:
   - oh
   notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
     np=no preference; oh=sometimes uses other hand
-  alias: edinburgh_handedness_9,ehi9,ehi_09,hand9,hand9l_match,hand9r_match,hand_9_match,hand_match,handedness_9,iihandma,ohq_match,strike,striking_a_match
+  alias: edinburgh_handedness_9,ehi9,ehi_09,hand9,hand9l_match,hand9r_match,hand_9_match,hand_match,handedness_9,iihandma,ohq_match,p_ehi_9,strike,striking_a_match
   codes:
     SPR: Strongly Prefer Right
     SPL: Strongly Prefer Left
@@ -451,7 +450,7 @@ box:
   - oh
   notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
     np=no preference; oh=sometimes uses other hand
-  alias: edinburgh_handedness_10,ehi_10,hand10,hand10l_box,hand10r_box,hand_10_box,handedness_10,iihandbo,open,opening_box_lid
+  alias: edinburgh_handedness_10,ehi_10,hand10,hand10l_box,hand10r_box,hand_10_box,handedness_10,iihandbo,open,opening_box_lid,p_ehi_10
   codes:
     SPR: Strongly Prefer Right
     SPL: Strongly Prefer Left
@@ -518,7 +517,7 @@ foot:
   - oh
   notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
     np=no preference; oh=sometimes uses other hand
-  alias: edinburgh_handedness_11,hand11,iihandfk,ohq_kickball
+  alias: edinburgh_handedness_11,hand11,iihandfk,ohq_kickball,p_ehi_11
   codes:
     SPR: Strongly Prefer Right
     SPL: Strongly Prefer Left
@@ -541,7 +540,7 @@ eye:
   - oh
   notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
     np=no preference; oh=sometimes uses other hand
-  alias: edinburgh_handedness_12,hand12,iihandey,ohq_eye
+  alias: edinburgh_handedness_12,hand12,iihandey,ohq_eye,p_ehi_12
   codes:
     SPR: Strongly Prefer Right
     SPL: Strongly Prefer Left
@@ -558,7 +557,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -586,17 +585,17 @@ site:
 ehiscore:
   type: Float
   description: EHI Score
-  alias: edinburgh_handedness_13,ehi_res,ehi_result
+  alias: edinburgh_handedness_13,ehi_res,ehi_result,p_ehi_score
 
 edh_lft:
   type: Float
   description: Edinburgh Handedness Number of left responses
-  alias: ehi_totl,hand_total_left,handsum_total_left,leftscore
+  alias: ehi_totl,hand_total_left,handsum_total_left,leftscore,p_ehi_calc_left
 
 edh_rgt:
   type: Float
   description: Edinburgh Handedness Number of right responses
-  alias: ehi_totr,hand_total_right,handsum_total_right,rightscore
+  alias: ehi_totr,hand_total_right,handsum_total_right,p_ehi_calc_right,rightscore
 
 edh_bth:
   type: Float
@@ -662,18 +661,18 @@ relationship:
   type: Integer
   description: Relationship of respondent to individual
   range:
-  - 1::95
+  - 1::94
   - -999
   notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
     (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
     Speech and language therapist; 8 = Behavioral therapist; 9 = Paraprofessional;
-    10 = Aide; 11 = Principal; 12 = Administrator; 13 = 90=Other; 14 = Content teacher;
-    15 = Parent center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father;
-    19=Foster mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother;
-    24 = Step-father; 25=Aunt; 26=Uncle; 27=Missing Data; 28=Both parents;31= Grandmother
-    from mother side; 32= Grandfather from mother side; 33= Grandmother from father
-    side; 34= Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39=
-    female caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
+    10 = Aide; 11 = Principal; 12 = Administrator; 14 = Content teacher; 15 = Parent
+    center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father; 19=Foster
+    mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother; 24
+    = Step-father; 25=Aunt; 26=Uncle; 28=Both parents;31= Grandmother from mother
+    side; 32= Grandfather from mother side; 33= Grandmother from father side; 34=
+    Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39= female
+    caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
     44=Friend; 45=Parent; 46=Significant other; 47=Sibling; 48=Son/Daughter; 49=Son-in-law/Daughter-in
     law; 50=Other Relative; 51=Paid caregiver; 52=Friends; 53=Roommate; 54=Supervisor;
     55=mother's boyfriend; 56=other parental figure; 57=Summary; 58=counselor ; 59
@@ -691,7 +690,8 @@ relationship:
     female; 82=Other female; 83=Guardian, male; 84=Other male; 85=Other/Grandparent/Nanny;
     86 = Mother, Father, Guardian; 87 = Daughter, son, grandchild; 88 = Professional
     (e.g., social worker, nurse, therapist, psychiatrist, or group home staff);  -999=Missing;
-    89 = Biological parent; 91 = Stepparent; 92 = Adoptive parent; 93 = Foster parent
+    89 = Biological parent; 90=Other; 91 = Stepparent; 92 = Adoptive parent; 93 =
+    Foster parent; 94 = Co-worker
   alias: relneuro
   codes:
     1: Biological mom
@@ -706,7 +706,6 @@ relationship:
     10: Aide
     11: Principal
     12: Administrator
-    13: 90=Other
     14: Content teacher
     15: Parent center director
     16: Self
@@ -720,7 +719,6 @@ relationship:
     24: Step-father
     25: Aunt
     26: Uncle
-    27: Missing Data
     28: Both parents
     31: Grandmother from mother side
     32: Grandfather from mother side
@@ -782,9 +780,11 @@ relationship:
       home staff)
     -999: Missing
     89: Biological parent
+    90: Other
     91: Stepparent
     92: Adoptive parent
     93: Foster parent
+    94: Co-worker
 
 actbdic:
   type: Integer
@@ -872,7 +872,7 @@ subject_description:
 study:
   type: String
   length: 100
-  description: Study
+  description: Study; The code for each individual study
 
 week:
   type: Float
@@ -1159,7 +1159,8 @@ hand_score:
 
 handedness_11:
   type: Integer
-  description: How do you write? (see image below)
+  description: 1= LN - Left Normal; 2= LI - Left Inverted; 3= RI - Right Inverted;
+    4= RN - Right Normal
   range:
   - 1::4
   notes: 1= LN; 2= LI; 3= RI; 4= RN
@@ -1173,3 +1174,255 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+hi_6:
+  type: Integer
+  description: Show me how you would use a toothbrush
+  range:
+  - 0
+  - 1
+  - -1
+  notes: 0 = R.L (Ambiguous); 1 = R (Right); -1 = L (Left)
+  codes:
+    0: R.L (Ambiguous)
+    1: R (Right)
+    -1: L (Left)
+
+hi_7:
+  type: Integer
+  description: Show me how you would use a knife (when used as an eating utensil with
+    a fork)
+  range:
+  - 0
+  - 1
+  - -1
+  notes: 0 = R.L (Ambiguous); 1 = R (Right); -1 = L (Left)
+  codes:
+    0: R.L (Ambiguous)
+    1: R (Right)
+    -1: L (Left)
+
+hi_8:
+  type: Integer
+  description: Show me how you would use a knife (when not used with a fork, as for
+    slicing bread)
+  range:
+  - 0
+  - 1
+  - -1
+  notes: 0 = R.L (Ambiguous); 1 = R (Right); -1 = L (Left)
+  codes:
+    0: R.L (Ambiguous)
+    1: R (Right)
+    -1: L (Left)
+
+hi_9:
+  type: Integer
+  description: Show me how you would eat with a spoon
+  range:
+  - 0
+  - 1
+  - -1
+  notes: 0 = R.L (Ambiguous); 1 = R (Right); -1 = L (Left)
+  codes:
+    0: R.L (Ambiguous)
+    1: R (Right)
+    -1: L (Left)
+
+hi_10:
+  type: Integer
+  description: Show me how you would use a hammer to drive a nail
+  range:
+  - 0
+  - 1
+  - -1
+  notes: 0 = R.L (Ambiguous); 1 = R (Right); -1 = L (Left)
+  codes:
+    0: R.L (Ambiguous)
+    1: R (Right)
+    -1: L (Left)
+
+hi_11:
+  type: Integer
+  description: Show me how you would use a screwdriver
+  range:
+  - 0
+  - 1
+  - -1
+  notes: 0 = R.L (Ambiguous); 1 = R (Right); -1 = L (Left)
+  codes:
+    0: R.L (Ambiguous)
+    1: R (Right)
+    -1: L (Left)
+
+hi_12:
+  type: Integer
+  description: Show me how you would use a tennis racquet
+  range:
+  - 0
+  - 1
+  - -1
+  notes: 0 = R.L (Ambiguous); 1 = R (Right); -1 = L (Left)
+  codes:
+    0: R.L (Ambiguous)
+    1: R (Right)
+    -1: L (Left)
+
+hi_16:
+  type: Integer
+  description: Show me how you would use a rake (note upper hand)
+  range:
+  - 0
+  - 1
+  - -1
+  notes: 0 = R.L (Ambiguous); 1 = R (Right); -1 = L (Left)
+  codes:
+    0: R.L (Ambiguous)
+    1: R (Right)
+    -1: L (Left)
+
+hi_17:
+  type: Integer
+  description: Show me how you would strike a match on a matchbook (note hand with
+    match)
+  range:
+  - 0
+  - 1
+  - -1
+  notes: 0 = R.L (Ambiguous); 1 = R (Right); -1 = L (Left)
+  codes:
+    0: R.L (Ambiguous)
+    1: R (Right)
+    -1: L (Left)
+
+hi_18:
+  type: Integer
+  description: Show me how you would open a box (note hand on lid)
+  range:
+  - 0
+  - 1
+  - -1
+  notes: 0 = R.L (Ambiguous); 1 = R (Right); -1 = L (Left)
+  codes:
+    0: R.L (Ambiguous)
+    1: R (Right)
+    -1: L (Left)
+
+hi_19:
+  type: Integer
+  description: Show me how you would deal cards to me (note hand dealing)
+  range:
+  - 0
+  - 1
+  - -1
+  notes: 0 = R.L (Ambiguous); 1 = R (Right); -1 = L (Left)
+  codes:
+    0: R.L (Ambiguous)
+    1: R (Right)
+    -1: L (Left)
+
+hi_20:
+  type: Integer
+  description: Show me how you would thread a needle (note hand that moves)
+  range:
+  - 0
+  - 1
+  - -1
+  notes: 0 = R.L (Ambiguous); 1 = R (Right); -1 = L (Left)
+  codes:
+    0: R.L (Ambiguous)
+    1: R (Right)
+    -1: L (Left)
+
+hi_3:
+  type: Integer
+  description: Show me how you would throw a ball
+  range:
+  - 0
+  - 1
+  - -1
+  notes: 0 = R.L (Ambiguous); 1 = R (Right); -1 = L (Left)
+  codes:
+    0: R.L (Ambiguous)
+    1: R (Right)
+    -1: L (Left)
+
+hi_4:
+  type: Integer
+  description: Show me how you would use scissors
+  range:
+  - 0
+  - 1
+  - -1
+  notes: 0 = R.L (Ambiguous); 1 = R (Right); -1 = L (Left)
+  codes:
+    0: R.L (Ambiguous)
+    1: R (Right)
+    -1: L (Left)
+
+hi_5:
+  type: Integer
+  description: Show me how you would use a comb
+  range:
+  - 0
+  - 1
+  - -1
+  notes: 0 = R.L (Ambiguous); 1 = R (Right); -1 = L (Left)
+  codes:
+    0: R.L (Ambiguous)
+    1: R (Right)
+    -1: L (Left)
+
+visit_year:
+  type: Integer
+  description: Year of visit
+
+hand_3:
+  type: Integer
+  description: Show me how you would write a letter
+  range:
+  - 0
+  - 1
+  - -1
+  notes: 0 = R.L (Ambiguous); 1 = R (Right); -1 = L (Left)
+  codes:
+    0: R.L (Ambiguous)
+    1: R (Right)
+    -1: L (Left)
+
+hand_6:
+  type: Integer
+  description: Show me how you would use tooth brush
+  range:
+  - 0
+  - 1
+  - -1
+  notes: 0 = R.L (Ambiguous); 1 = R (Right); -1 = L (Left)
+  codes:
+    0: R.L (Ambiguous)
+    1: R (Right)
+    -1: L (Left)
+
+hand_change:
+  type: Integer
+  description: Has anyone, including yourself, tried to change what hand you use for
+    any of the tasks listed above or for any other tasks?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+hand_foot2:
+  type: Integer
+  description: Pretend that there is a bug on the floor. Show me which foot you would
+    use to squash it
+  range:
+  - 1
+  - 2
+  notes: 1 = left; 2 = right
+  codes:
+    1: left
+    2: right

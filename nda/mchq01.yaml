@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: date_ctq,v2_ctq_date
 
 interview_age:
@@ -35,7 +34,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -281,7 +280,7 @@ mchq_17:
 
 mchq_18:
   type: String
-  length: 100
+  length: 500
   description: Do you have regular menstrual cycles. If no, explain
   alias: mstrl2_reason
 
@@ -1135,29 +1134,29 @@ straw_code:
   - 1.12004
   - 1.13004
   - 1.14004
-  - 1.1100700000000001
-  - 1.1200700000000001
-  - 1.1300700000000001
-  - 1.1400700000000001
+  - 1.11007
+  - 1.12007
+  - 1.13007
+  - 1.14007
   - 2.2001
   - 2.2003
-  notes: '1.11 = Postmenopausal: plus 1a; 1.12 = Postmenopausal: plus 1b ; 1.13 =
-    Postmenopausal:  plus 1c; 1.14 = Postmenopausal: plus 2; 1.21 = Postmenopausal;
-    1.22 = No periods for 12 months other reason; 2 = Late Transition; 2.2 = Skipped
-    periods not necessarily due to natural menopause; 3 = Early Transition ; 4.1 =
-    Late Reproductive (i.e., late premenopausal); 4.2 = Reproductive(i.e., premenopausal);
-    1.11002 = Postmenopausal plus 1a, no periods for 12 months other reason.?;1.12002
-    = Postmenopausal plus 1b, no periods for 12 months other reason.?;1.13002 = Postmenopausal
-    plus 1c, no periods for 12 months other reason.?;1.14002 = Postmenopausal plus
-    2, no periods for 12 months other reason.;1.11004 = Postmenopausal plus 1a, no
-    periods for 12 months, IUD, Norplant, etc..?;1.12004 = Postmenopausal plus 1b,
-    no periods for 12 months, IUD, Norplant, etc..?;1.13004 = Postmenopausal plus
-    1c, no periods for 12 months, IUD, Norplant, etc..?;1.14004 = Postmenopausal plus
-    2, no periods for 12 months, IUD, Norplant, etc..;1.11007 = Postmenopausal plus
-    1a, unknown.?;1.12007 = Postmenopausal plus 1b, unknown.?;1.13007 = Postmenopausal
-    plus 1c, unknown.?;1.14007 = Postmenopausal plus 2, unknown.;2.2001 = Skipped
-    periods not necessarily due to natural menopause.?;2.2003 = Skipped periods, birth
-    control injection or other med. - codes are explained in https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3580996/'
+  notes: "1.11 = Postmenopausal: plus 1a; 1.12 = Postmenopausal: plus 1b ; 1.13 =\
+    \ Postmenopausal:  plus 1c; 1.14 = Postmenopausal: plus 2; 1.21 = Postmenopausal;\
+    \ 1.22 = No periods for 12 months other reason; 2 = Late Transition; 2.2 = Skipped\
+    \ periods not necessarily due to natural menopause; 3 = Early Transition ; 4.1\
+    \ = Late Reproductive (i.e., late premenopausal); 4.2 = Reproductive(i.e., premenopausal);\
+    \ 1.11002 = Postmenopausal plus 1a, no periods for 12 months other reason.\_;1.12002\
+    \ = Postmenopausal plus 1b, no periods for 12 months other reason.\_;1.13002 =\
+    \ Postmenopausal plus 1c, no periods for 12 months other reason.\_;1.14002 = Postmenopausal\
+    \ plus 2, no periods for 12 months other reason.;1.11004 = Postmenopausal plus\
+    \ 1a, no periods for 12 months, IUD, Norplant, etc..\_;1.12004 = Postmenopausal\
+    \ plus 1b, no periods for 12 months, IUD, Norplant, etc..\_;1.13004 = Postmenopausal\
+    \ plus 1c, no periods for 12 months, IUD, Norplant, etc..\_;1.14004 = Postmenopausal\
+    \ plus 2, no periods for 12 months, IUD, Norplant, etc..;1.11007 = Postmenopausal\
+    \ plus 1a, unknown.\_;1.12007 = Postmenopausal plus 1b, unknown.\_;1.13007 = Postmenopausal\
+    \ plus 1c, unknown.\_;1.14007 = Postmenopausal plus 2, unknown.;2.2001 = Skipped\
+    \ periods not necessarily due to natural menopause.\_;2.2003 = Skipped periods,\
+    \ birth control injection or other med. - codes are explained in https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3580996/"
   codes:
     1.11: 'Postmenopausal: plus 1a'
     1.12: 'Postmenopausal: plus 1b'
@@ -1170,19 +1169,19 @@ straw_code:
     3: Early Transition
     4.1: Late Reproductive (i.e., late premenopausal)
     4.2: Reproductive(i.e., premenopausal)
-    1.11002: Postmenopausal plus 1a, no periods for 12 months other reason.?
-    1.12002: Postmenopausal plus 1b, no periods for 12 months other reason.?
-    1.13002: Postmenopausal plus 1c, no periods for 12 months other reason.?
+    1.11002: Postmenopausal plus 1a, no periods for 12 months other reason.
+    1.12002: Postmenopausal plus 1b, no periods for 12 months other reason.
+    1.13002: Postmenopausal plus 1c, no periods for 12 months other reason.
     1.14002: Postmenopausal plus 2, no periods for 12 months other reason.
-    1.11004: Postmenopausal plus 1a, no periods for 12 months, IUD, Norplant, etc..?
-    1.12004: Postmenopausal plus 1b, no periods for 12 months, IUD, Norplant, etc..?
-    1.13004: Postmenopausal plus 1c, no periods for 12 months, IUD, Norplant, etc..?
+    1.11004: Postmenopausal plus 1a, no periods for 12 months, IUD, Norplant, etc..
+    1.12004: Postmenopausal plus 1b, no periods for 12 months, IUD, Norplant, etc..
+    1.13004: Postmenopausal plus 1c, no periods for 12 months, IUD, Norplant, etc..
     1.14004: Postmenopausal plus 2, no periods for 12 months, IUD, Norplant, etc..
-    1.1100700000000001: Postmenopausal plus 1a, unknown.?
-    1.1200700000000001: Postmenopausal plus 1b, unknown.?
-    1.1300700000000001: Postmenopausal plus 1c, unknown.?
-    1.1400700000000001: Postmenopausal plus 2, unknown.
-    2.2001: Skipped periods not necessarily due to natural menopause.?
+    1.11007: Postmenopausal plus 1a, unknown.
+    1.12007: Postmenopausal plus 1b, unknown.
+    1.13007: Postmenopausal plus 1c, unknown.
+    1.14007: Postmenopausal plus 2, unknown.
+    2.2001: Skipped periods not necessarily due to natural menopause.
     2.2003: Skipped periods, birth control injection or other med. - codes are explained
       in https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3580996/
 

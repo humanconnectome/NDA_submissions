@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
 
 interview_age:
   type: Integer
@@ -33,7 +32,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -955,7 +954,10 @@ neo_n:
   range:
   - 0::192
   - 999
+  notes: 999 = Missing
   alias: neo2_score_ne,neocnx,neopnx
+  codes:
+    999: Missing
 
 neo_e:
   type: Integer
@@ -964,7 +966,10 @@ neo_e:
   range:
   - 0::192
   - 999
+  notes: 999 = Missing
   alias: neo2_score_ex,neocex,neopex
+  codes:
+    999: Missing
 
 neo_o:
   type: Integer
@@ -973,7 +978,10 @@ neo_o:
   range:
   - 0::192
   - 999
+  notes: 999 = Missing
   alias: neo2_score_op,neocox,neopox
+  codes:
+    999: Missing
 
 neo_a:
   type: Integer
@@ -982,7 +990,10 @@ neo_a:
   range:
   - 0::192
   - 999
+  notes: 999 = Missing
   alias: neo2_score_ag,neocax,neopax
+  codes:
+    999: Missing
 
 neo_c:
   type: Integer
@@ -991,7 +1002,10 @@ neo_c:
   range:
   - 0::192
   - 999
+  notes: 999 = Missing
   alias: neo2_score_co,neoccx,neopcx
+  codes:
+    999: Missing
 
 neo_n_t:
   type: Integer
@@ -1103,18 +1117,18 @@ relationship:
   type: Integer
   description: Relationship of respondent to individual
   range:
-  - 1::95
+  - 1::94
   - -999
   notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
     (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
     Speech and language therapist; 8 = Behavioral therapist; 9 = Paraprofessional;
-    10 = Aide; 11 = Principal; 12 = Administrator; 13 = 90=Other; 14 = Content teacher;
-    15 = Parent center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father;
-    19=Foster mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother;
-    24 = Step-father; 25=Aunt; 26=Uncle; 27=Missing Data; 28=Both parents;31= Grandmother
-    from mother side; 32= Grandfather from mother side; 33= Grandmother from father
-    side; 34= Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39=
-    female caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
+    10 = Aide; 11 = Principal; 12 = Administrator; 14 = Content teacher; 15 = Parent
+    center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father; 19=Foster
+    mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother; 24
+    = Step-father; 25=Aunt; 26=Uncle; 28=Both parents;31= Grandmother from mother
+    side; 32= Grandfather from mother side; 33= Grandmother from father side; 34=
+    Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39= female
+    caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
     44=Friend; 45=Parent; 46=Significant other; 47=Sibling; 48=Son/Daughter; 49=Son-in-law/Daughter-in
     law; 50=Other Relative; 51=Paid caregiver; 52=Friends; 53=Roommate; 54=Supervisor;
     55=mother's boyfriend; 56=other parental figure; 57=Summary; 58=counselor ; 59
@@ -1132,7 +1146,8 @@ relationship:
     female; 82=Other female; 83=Guardian, male; 84=Other male; 85=Other/Grandparent/Nanny;
     86 = Mother, Father, Guardian; 87 = Daughter, son, grandchild; 88 = Professional
     (e.g., social worker, nurse, therapist, psychiatrist, or group home staff);  -999=Missing;
-    89 = Biological parent; 91 = Stepparent; 92 = Adoptive parent; 93 = Foster parent
+    89 = Biological parent; 90=Other; 91 = Stepparent; 92 = Adoptive parent; 93 =
+    Foster parent; 94 = Co-worker
   alias: relneoc,relneop
   codes:
     1: Biological mom
@@ -1147,7 +1162,6 @@ relationship:
     10: Aide
     11: Principal
     12: Administrator
-    13: 90=Other
     14: Content teacher
     15: Parent center director
     16: Self
@@ -1161,7 +1175,6 @@ relationship:
     24: Step-father
     25: Aunt
     26: Uncle
-    27: Missing Data
     28: Both parents
     31: Grandmother from mother side
     32: Grandfather from mother side
@@ -1223,9 +1236,11 @@ relationship:
       home staff)
     -999: Missing
     89: Biological parent
+    90: Other
     91: Stepparent
     92: Adoptive parent
     93: Foster parent
+    94: Co-worker
 
 actbdic:
   type: Integer
@@ -1281,7 +1296,7 @@ week:
 study:
   type: String
   length: 100
-  description: Study
+  description: Study; The code for each individual study
 
 subject_description:
   type: String

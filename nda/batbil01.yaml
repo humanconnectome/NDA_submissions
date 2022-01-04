@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
 
 interview_age:
   type: Integer
@@ -33,7 +32,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -5690,3 +5689,431 @@ batlq_score15:
   type: Integer
   description: 'While skydiving. Loss of consciousness/knocked out:   Dazed and/or
     Memory Gap: SCORE:'
+
+batl_s1d_time:
+  type: Integer
+  description: For how long were you confused or forgetting what happened after your
+    worst blast head injury?
+  range:
+  - 0
+  - 1
+  notes: 0= Less than 24 hours; 1 = more than 24 hours
+  codes:
+    0: Less than 24 hours
+    1: more than 24 hours
+
+batl_s2a:
+  type: Integer
+  description: During your military service, were you exposed to a high rate of munitions
+    or explosives that may have been associated with specific duties either in combat
+    or during training?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+batl_s2b:
+  type: Integer
+  description: Which type of munition(s) were you repetitively exposed to?
+  range:
+  - 0::4
+  notes: 0= Breach Training; 1= Large caliber automatic weapons; 2= Artillery or other
+    large munitions; 3= Anti-tank weapons; 4= Other shoulder fired rockets
+  codes:
+    0: Breach Training
+    1: Large caliber automatic weapons
+    2: Artillery or other large munitions
+    3: Anti-tank weapons
+    4: Other shoulder fired rockets
+
+batl_s2c:
+  type: Integer
+  description: Estimate the total number of times you were exposed to these munitions
+  range:
+  - 0::7
+  notes: 0= 0; 1= 1-5; 2= 6-10; 3= 11-50; 4= 51-100; 5= 101-500; 6= 501-1000; 7=1001+
+  codes:
+    0: '0'
+    1: 1-5
+    2: 6-10
+    3: 11-50
+    4: 51-100
+    5: 101-500
+    6: 501-1000
+    7: 1001+
+
+batl_s3a:
+  type: Integer
+  description: During your military service, were you exposed to any physical blows
+    to the head?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+batl_s3b:
+  type: Integer
+  description: Were any of the blows strong enough to cause you to lose consciousness
+    or get knocked out? For example, were you on the ground and unresponsive?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+batl_s3b_time:
+  type: Integer
+  description: Choose the answer that best describes how long you lost consciousness
+    or were ''knocked out'' after your worst blow to the head?
+  range:
+  - 0::2
+  notes: 0= Less than 30 minutes; 1 = Less than 24 hours; 2 = more than 24 hours
+  codes:
+    0: Less than 30 minutes
+    1: Less than 24 hours
+    2: more than 24 hours
+
+batl_s3c:
+  type: Integer
+  description: Were you so confused that you were unable to think clearly? And/or
+    did you forget some/all of the head injury event? For example, were you so confused
+    that you would be unable to complete a simple math problem?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+batl_s3c_time:
+  type: Integer
+  description: Choose the answer that best describes how long you were confused or
+    forgot what happened after your worst blast head injury?
+  range:
+  - 0
+  - 1
+  notes: 0= Less than 24 hours; 1 = more than 24 hours
+  codes:
+    0: Less than 24 hours
+    1: more than 24 hours
+
+batl_s4a:
+  type: Integer
+  description: Is there anything else during your military service that exposed you
+    to a high rate of repetitive blows to the head?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+batl_s4b:
+  type: Integer
+  description: Choose the activity(ies) that led to these repetitive blows to the
+    head
+  range:
+  - 0::4
+  notes: 0= Combat; 1= Training Exercises/Combatives; 2= Military Jumps; 3= Motor
+    Vehicle Accidents (MVAs); 4= Falls; Fights/Assaults
+  codes:
+    0: Combat
+    1: Training Exercises/Combatives
+    2: Military Jumps
+    3: Motor Vehicle Accidents (MVAs)
+    4: Falls
+
+batl_s4c:
+  type: Integer
+  description: Estimate the total number of times that these repetitive blows happened
+  range:
+  - 0::7
+  notes: 0= 0; 1= 1-5; 2= 6-10; 3= 11-50; 4= 51-100; 5= 101-500; 6= 501-1000; 7 1001+
+  codes:
+    0: '0'
+    1: 1-5
+    2: 6-10
+    3: 11-50
+    4: 51-100
+    5: 101-500
+    6: 501-1000
+
+batl_s5a:
+  type: Integer
+  description: During your civilian life were you ever exposed to other types of blows
+    to the head?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+batl_s5b:
+  type: Integer
+  description: Were any of the blows strong enough to cause you to lose consciousness
+    or get knocked out? For example, were you on the ground and unresponsive?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+batl_s5b_time:
+  type: Integer
+  description: For how long you did you lose consciousness or were ''knocked out''
+    after your worst blow to the head?
+  range:
+  - 0::2
+  notes: 0= Less than 30 minutes; 1 = Less than 24 hours; 2 = more than 24 hours
+  codes:
+    0: Less than 30 minutes
+    1: Less than 24 hours
+    2: more than 24 hours
+
+batl_s5c:
+  type: Integer
+  description: Were you so confused that you were unable to think clearly? And/or
+    did you forget some/all of the head injury event? For example, were you so confused
+    that you would be unable to complete a simple math problem?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+batl_s5c_time:
+  type: Integer
+  description: For how long you were confused or forgetting what happened after your
+    worst blast head injury?
+  range:
+  - 0
+  - 1
+  notes: 0= Less than 24 hours; 1 = more than 24 hours
+  codes:
+    0: Less than 24 hours
+    1: more than 24 hours
+
+batl_s6a:
+  type: Integer
+  description: Is there anything else during your Civilian Life that exposed you to
+    a high rate of repetitive blows to the head?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+batl_s6b:
+  type: Integer
+  description: Choose the activity(ies) that led to these repetitive blows to the
+    head
+  range:
+  - 0::3
+  notes: 0= Impact Sports; 1= Motor Vehicle Accidents (MVAs); 2= Fights or Assaults;
+    3= Domestic Violence
+  codes:
+    0: Impact Sports
+    1: Motor Vehicle Accidents (MVAs)
+    2: Fights or Assaults
+    3: Domestic Violence
+
+batl_s6c:
+  type: Integer
+  description: Estimate the total number of times that these repetitive blows happened
+  range:
+  - 0::7
+  notes: 0= 0; 1= 1-5; 2= 6-10; 3= 11-50; 4= 51-100; 5= 101-500; 6= 501-1000; 7 1001+
+  codes:
+    0: '0'
+    1: 1-5
+    2: 6-10
+    3: 11-50
+    4: 51-100
+    5: 101-500
+    6: 501-1000
+
+batl_s1a:
+  type: Integer
+  description: During your military service, were you exposed to any blasts or explosions
+    within 100 meters?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+batl_s7a:
+  type: Integer
+  description: During your civilian life, were you exposed to any blasts or explosions
+    within 100 meters?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+batl_s7a_type:
+  type: String
+  length: 250
+  description: Specify type of Blast/Explosion exposed to
+
+batl_s7b10:
+  type: Integer
+  description: How many of these blasts were within 10 meters?
+
+batl_s7b100:
+  type: Integer
+  description: How many of these blasts were between 11 and 100 meters?
+
+batl_s7c:
+  type: Integer
+  description: Were any of the blasts strong enough to cause you to lose consciousness
+    or get knocked out? For example, were you on the ground and unresponsive?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+batl_s7c_time:
+  type: Integer
+  description: For how long you lost consciousness or were ''knocked out'' after your
+    worst blast head injury?
+  range:
+  - 0::2
+  notes: 0= Less than 30 minutes; 1 = Less than 24 hours; 2 = more than 24 hours
+  codes:
+    0: Less than 30 minutes
+    1: Less than 24 hours
+    2: more than 24 hours
+
+batl_s7d:
+  type: Integer
+  description: Were you so confused that you were unable to think clearly, and/or
+    did you forget some of the blast event? For example, were you so confused that
+    you would be unable to complete a simple math problem?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+batl_s7d_time:
+  type: Integer
+  description: Choose the answer that best describes how long you were confused or
+    forgot what happened after your worst blast head injury?
+  range:
+  - 0
+  - 1
+  notes: 0= Less than 24 hours; 1 = more than 24 hours
+  codes:
+    0: Less than 24 hours
+    1: more than 24 hours
+
+batl_smilblst_tot:
+  type: Integer
+  description: 'Total Number of Military Blasts Exposed to '
+
+batl_scivblst_tot:
+  type: Integer
+  description: Total Number of Civilian Blasts Exposed to
+
+batl_s1a_type:
+  type: String
+  length: 250
+  description: Specify type of Blast/Explosion exposed to
+
+batl_smilblst_scr:
+  type: Integer
+  description: Military Blast TBI Score
+
+batl_scivblst_scr:
+  type: Integer
+  description: Civilian Blast TBI Score
+
+batl_smilblnt_scr:
+  type: Integer
+  description: Military Repetitive, Subconcussive Blunt Exposures TBI Score
+
+batl_scivblnt_scr:
+  type: Integer
+  description: Civilian Repetitive Subconcussive Blunt Exposures TBI Score
+
+batl_soth_scr:
+  type: Integer
+  description: Other Reptitive Hits or Blows to Head Military TBI Score
+
+batl_soth_civscr:
+  type: Integer
+  description: Other Reptitive Hits or Blows to Head Civliian TBI Score
+
+batl_s1b10:
+  type: Integer
+  description: How many of these blasts were within 10 meters?
+
+batl_s1b100:
+  type: Integer
+  description: How many of these blasts were between 11 and 100 meters?
+
+batl_s1c:
+  type: Integer
+  description: Were any of the blasts strong enough to cause you to lose consciousness
+    or get knocked out? For example, were you on the ground and unresponsive?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+batl_s1c_time:
+  type: Integer
+  description: For how long did you lose consciousness or were knocked out after your
+    worst blast head injury?
+  range:
+  - 0::2
+  notes: 0= Less than 30 minutes; 1 = Less than 24 hours; 2 = more than 24 hours
+  codes:
+    0: Less than 30 minutes
+    1: Less than 24 hours
+    2: more than 24 hours
+
+batl_s1d:
+  type: Integer
+  description: Were you so confused that you were unable to think clearly, and/or
+    did you forget some of the blast event? For example, were you so confused that
+    you would be unable to complete a simple math problem?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'

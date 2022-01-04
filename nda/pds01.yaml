@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: bl_visit_date,pds_date
 
 interview_age:
@@ -35,7 +34,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -54,10 +53,10 @@ respond:
   required: true
   description: Respondent
   range:
-  - 1::5
+  - 1::7
   - 999
-  notes: 1 = Parent; 2 = Teacher; 3=Self; 4= Other; 5= Significant other; 999 = Not
-    available
+  notes: 1 = Parent; 2 = Teacher; 3=Self; 4= Other; 5= Significant other; 6 = Parent
+    1; 7 = Parent 2; 999 = Not available
   alias: pds_respondent,respondent,who
   codes:
     1: Parent
@@ -65,6 +64,8 @@ respond:
     3: Self
     4: Other
     5: Significant other
+    6: Parent 1
+    7: Parent 2
     999: Not available
 
 pds_1:
@@ -409,11 +410,13 @@ trt_grp:
   - 10
   - 11
   - 12
+  - O
+  - P
   notes: 1=Group 1 first 8 weeks; 1AO=Group 1 8 week add on; 1CT=Group 1 8 week cross
     taper; 2=Group 2; 3=Group 3; 4 =active; 5=sham; 6=none; 7=ESDM High intensity;
     8=ESDM Low intensity; 9=EIBI High intensity; 10=EIBI Low intensity; ESDM = Early
     Start Denver Model; EIBI = Early and Intensive Behavioral Intervention; 11 = Navigator;
-    12 = Care manager
+    12 = Care manager; O=Oxytocin; P=Placebo
   codes:
     1: Group 1 first 8 weeks
     2: Group 2
@@ -427,6 +430,8 @@ trt_grp:
     10: EIBI Low intensity
     11: Navigator
     12: Care manager
+    O: Oxytocin
+    P: Placebo
 
 days_baseline:
   type: Integer
@@ -469,18 +474,18 @@ relationship:
   type: Integer
   description: Relationship of respondent to individual
   range:
-  - 1::95
+  - 1::94
   - -999
   notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
     (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
     Speech and language therapist; 8 = Behavioral therapist; 9 = Paraprofessional;
-    10 = Aide; 11 = Principal; 12 = Administrator; 13 = 90=Other; 14 = Content teacher;
-    15 = Parent center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father;
-    19=Foster mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother;
-    24 = Step-father; 25=Aunt; 26=Uncle; 27=Missing Data; 28=Both parents;31= Grandmother
-    from mother side; 32= Grandfather from mother side; 33= Grandmother from father
-    side; 34= Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39=
-    female caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
+    10 = Aide; 11 = Principal; 12 = Administrator; 14 = Content teacher; 15 = Parent
+    center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father; 19=Foster
+    mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother; 24
+    = Step-father; 25=Aunt; 26=Uncle; 28=Both parents;31= Grandmother from mother
+    side; 32= Grandfather from mother side; 33= Grandmother from father side; 34=
+    Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39= female
+    caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
     44=Friend; 45=Parent; 46=Significant other; 47=Sibling; 48=Son/Daughter; 49=Son-in-law/Daughter-in
     law; 50=Other Relative; 51=Paid caregiver; 52=Friends; 53=Roommate; 54=Supervisor;
     55=mother's boyfriend; 56=other parental figure; 57=Summary; 58=counselor ; 59
@@ -498,7 +503,8 @@ relationship:
     female; 82=Other female; 83=Guardian, male; 84=Other male; 85=Other/Grandparent/Nanny;
     86 = Mother, Father, Guardian; 87 = Daughter, son, grandchild; 88 = Professional
     (e.g., social worker, nurse, therapist, psychiatrist, or group home staff);  -999=Missing;
-    89 = Biological parent; 91 = Stepparent; 92 = Adoptive parent; 93 = Foster parent
+    89 = Biological parent; 90=Other; 91 = Stepparent; 92 = Adoptive parent; 93 =
+    Foster parent; 94 = Co-worker
   alias: infrmnt2
   codes:
     1: Biological mom
@@ -513,7 +519,6 @@ relationship:
     10: Aide
     11: Principal
     12: Administrator
-    13: 90=Other
     14: Content teacher
     15: Parent center director
     16: Self
@@ -527,7 +532,6 @@ relationship:
     24: Step-father
     25: Aunt
     26: Uncle
-    27: Missing Data
     28: Both parents
     31: Grandmother from mother side
     32: Grandfather from mother side
@@ -589,9 +593,11 @@ relationship:
       home staff)
     -999: Missing
     89: Biological parent
+    90: Other
     91: Stepparent
     92: Adoptive parent
     93: Foster parent
+    94: Co-worker
 
 pds5:
   type: Integer
@@ -733,18 +739,20 @@ pufe_005ct:
 height_std:
   type: Float
   description: Height - Standard Unit
-  notes: -1 = Not known
+  notes: -1 = Not known; 999 = Missing
   alias: pds_ch_ft,pds_ch_in,pds_height_ft,pds_q6,pufe_006t,puma_006t
   codes:
     -1: Not known
+    999: Missing
 
 weight_std:
   type: Float
   description: Weight - Standard Unit
-  notes: -1 = Not known
+  notes: -1 = Not known; 999 = Missing
   alias: pds_ch_wgt,pds_q8,pds_weight,pufe_007t,puma_007t
   codes:
     -1: Not known
+    999: Missing
 
 comments_misc:
   type: String
@@ -786,7 +794,7 @@ visit_num:
 
 accult_select_language:
   type: Integer
-  description: Test given in Spanish? ??Espa??ol?
+  description: "Test given in Spanish? \xC2\xBFEspa\xC3\xB1ol?"
   range:
   - 0
   - 1
@@ -852,8 +860,8 @@ usingbc:
 
 menstrualcycle5_y:
   type: Integer
-  description: Do you/does your child experience premenstrual symptoms, such as irritability,
-    fatigue, etc., which start before a period and stop within a few days of bleeding?
+  description: Do you  experience premenstrual symptoms, such as irritability, fatigue,
+    etc., which start before a period and stop within a few days of bleeding?
   range:
   - 1::4
   - 777
@@ -871,8 +879,8 @@ menstrualcycle5_y:
 
 menstrualcycle6_y:
   type: Integer
-  description: Do your/your child's premenstrual symptoms interfere with your/her
-    relationships with family and friends, productivity, and/or social life activities?
+  description: Do your premenstrual symptoms interfere with your/her relationships
+    with family and friends, productivity, and/or social life activities?
   range:
   - 1::4
   - 777
@@ -927,8 +935,8 @@ q19_a1b:
   - -7
   - -8
   - -9
-  notes: '"Round to the nearest ? in. Field should not be left blank. If missing,
-    please use -7,-8, -9."'
+  notes: "\"Round to the nearest \xBC in. Field should not be left blank. If missing,\
+    \ please use -7,-8, -9.\""
   alias: afhinches_1_text,amhinches_1_text,pds_height_now_4,pfhinches_1_text,pmhinches_1_text
 
 neuro_q10_weight_kg:
@@ -1025,8 +1033,8 @@ gynecological_hist_6:
 
 menstrualcycle4_y:
   type: Integer
-  description: Are you/is your child currently using hormonal birth control (eg. the
-    pill, hormone patch, hormone injection)?
+  description: Are you currently using hormonal birth control (eg. the pill, hormone
+    patch, hormone injection)?
   range:
   - 1
   - 0
@@ -1304,3 +1312,212 @@ pregnant:
     2: DK
     7: Refused
     999: Legimately skipped
+
+visit_year:
+  type: Integer
+  description: Year of visit
+
+pdsm_1:
+  type: Integer
+  description: Would you say your growth in height...
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Has not yet begun to spurt or grow really fast; 1 = Has barely started;
+    2 = Has definitely started; 3 = Seems completed; 999 = N/A or Prefer Not to Answer
+  codes:
+    0: Has not yet begun to spurt or grow really fast
+    1: Has barely started
+    2: Has definitely started
+    3: Seems completed
+    999: N/A or Prefer Not to Answer
+
+pdsm_2:
+  type: Integer
+  description: And how about the growth of body hair? (Body hair means underarm and
+    pubic hair) Would you say that your body hair has...
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Has not yet started growing; 1 = Has barely started growing; 2 = Is definitely
+    underway; 3 = Seems completed; 999 = N/A or Prefer Not to Answer
+  codes:
+    0: Has not yet started growing
+    1: Has barely started growing
+    2: Is definitely underway
+    3: Seems completed
+    999: N/A or Prefer Not to Answer
+
+pdsm_3:
+  type: Integer
+  description: What about skin changes, especially pimples?
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Has not yet started showing changes; 1 = Have barely started showing
+    changes; 2 = Skin changes are definitely underway; 3 = Skin changes seem completed;
+    999 = N/A or Prefer Not to Answer
+  codes:
+    0: Has not yet started showing changes
+    1: Have barely started showing changes
+    2: Skin changes are definitely underway
+    3: Skin changes seem completed
+    999: N/A or Prefer Not to Answer
+
+pdsm_4:
+  type: Integer
+  description: Have you noticed a deepening of your voice?
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Has not yet started changing; 1 = Has barely started showing any changes;
+    2 = Voice change is definitely underway; 3 = Voice change seems completed; 999
+    = N/A or Prefer Not to Answer
+  codes:
+    0: Has not yet started changing
+    1: Has barely started showing any changes
+    2: Voice change is definitely underway
+    3: Voice change seems completed
+    999: N/A or Prefer Not to Answer
+
+pdsm_5:
+  type: Integer
+  description: Have you begun to grow hair on your face?
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Have not yet started growing facial hair; 1 = Have barely started growing
+    facial hair; 2 = Facial hair growth is definitely underway; 3 = Facial hair growth
+    seems completed; 999 = N/A or Prefer Not to Answer
+  codes:
+    0: Have not yet started growing facial hair
+    1: Have barely started growing facial hair
+    2: Facial hair growth is definitely underway
+    3: Facial hair growth seems completed
+    999: N/A or Prefer Not to Answer
+
+pdsm_6:
+  type: Integer
+  description: Do you think your development is any earlier or later than most other
+    boys your age?
+  range:
+  - 0::5
+  - 999
+  notes: 0 = Much earlier; 1 = Somewhat earlier; 2 = About the same; 4 = Somewhat
+    later; 5 = Much later; 999 = N/A or Prefer Not to Answer
+  codes:
+    0: Much earlier
+    1: Somewhat earlier
+    2: About the same
+    4: Somewhat later
+    5: Much later
+    999: N/A or Prefer Not to Answer
+
+pdsf_1:
+  type: Integer
+  description: Would you say your growth in height...
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Has not yet begun to spurt or grow really fast; 1 = Has barely started;
+    2 = Has definitely started; 3 = Seems completed; 999 = N/A or Prefer Not to Answer
+  codes:
+    0: Has not yet begun to spurt or grow really fast
+    1: Has barely started
+    2: Has definitely started
+    3: Seems completed
+    999: N/A or Prefer Not to Answer
+
+pdsf_2:
+  type: Integer
+  description: And how about the growth of body hair? (Body hair means underarm and
+    pubic hair) Would you say that your body hair has...
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Has not yet started growing; 1 = Has barely started growing; 2 = Is definitely
+    underway; 3 = Seems completed; 999 = N/A or Prefer Not to Answer
+  codes:
+    0: Has not yet started growing
+    1: Has barely started growing
+    2: Is definitely underway
+    3: Seems completed
+    999: N/A or Prefer Not to Answer
+
+pdsf_3:
+  type: Integer
+  description: What about skin changes, especially pimples?
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Has not yet started showing changes; 1 = Have barely started showing
+    changes; 2 = Skin changes are definitely underway; 3 = Skin changes seem completed;
+    999 = N/A or Prefer Not to Answer
+  codes:
+    0: Has not yet started showing changes
+    1: Have barely started showing changes
+    2: Skin changes are definitely underway
+    3: Skin changes seem completed
+    999: N/A or Prefer Not to Answer
+
+pdsf_4:
+  type: Integer
+  description: Have your breasts begun to grow?
+  range:
+  - 0::3
+  - 999
+  notes: 0 = Have not yet started growing; 1 = Have barely started changing; 2 = Breast
+    growth is definitely underway; 3 = Breast growth seems completed; 999 = N/A or
+    Prefer Not to Answer
+  codes:
+    0: Have not yet started growing
+    1: Have barely started changing
+    2: Breast growth is definitely underway
+    3: Breast growth seems completed
+    999: N/A or Prefer Not to Answer
+
+pdsf_5:
+  type: Integer
+  description: Do you think your development is any earlier or later than most other
+    girls your age?
+  range:
+  - 0::5
+  - 999
+  notes: 0 = Much earlier; 1 = Somewhat earlier; 2 = About the same; 4 = Somewhat
+    later; 5 = Much later; 999 = N/A or Prefer Not to Answer
+  codes:
+    0: Much earlier
+    1: Somewhat earlier
+    2: About the same
+    4: Somewhat later
+    5: Much later
+    999: N/A or Prefer Not to Answer
+
+pdsf_6:
+  type: Integer
+  description: Have you begun to menstruate or get your period?
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0 = No; 1 = Yes; 999 = N/A or Prefer Not to Answer
+  codes:
+    0: 'No'
+    1: 'Yes'
+    999: N/A or Prefer Not to Answer
+
+pdsf_7:
+  type: Integer
+  description: How old were you when you first menstruated or got your period?
+
+teen_timepoint:
+  type: Integer
+  description: Time point
+  range:
+  - 1::3
+  notes: 1 = Teen's approximately 13 years old; 2 = Teen's approximately 14 years
+    old; 3 = Teen's approximately 15 years old
+  codes:
+    1: Teen's approximately 13 years old
+    2: Teen's approximately 14 years old
+    3: Teen's approximately 15 years old

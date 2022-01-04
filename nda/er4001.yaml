@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: interviewyear,studyday
 
 interview_age:
@@ -35,7 +34,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -54,12 +53,12 @@ er40_c_cr:
   description: Correct Responses
   range:
   - 0::40
-  alias: er40_d_cr,er40d.er40_cr,k_er40d.er40_cr,k_er40d_er40_cr,penn_ert_crrct
+  alias: er40_d_cr,er40_d_er40d_cr,er40d.er40_cr,k_er40d.er40_cr,k_er40d_er40_cr,penn_ert_crrct
 
 er40_c_rtcr:
   type: Float
   description: Correct Responses Median Response Time (ms)
-  alias: er40_d_rtcr,er40d.er40_crt,k_er40d.er40_crt,k_er40d_er40_crt,penn_ert_meanrt_crrct
+  alias: er40_d_er40d_rtcr,er40_d_rtcr,er40d.er40_crt,k_er40d.er40_crt,k_er40d_er40_crt,penn_ert_meanrt_crrct
 
 er40_c_rt:
   type: Float
@@ -69,107 +68,107 @@ er40_c_rt:
 er40_c_fcrt:
   type: Float
   description: Correct Female Identifications Median Response Time (ms)
-  alias: er40_d_fcrt,k_er40d.er40fcrt,k_er40d_er40fcrt
+  alias: er40_d_er40d_fcrt,er40_d_fcrt,k_er40d.er40fcrt,k_er40d_er40fcrt
 
 er40_c_mcrt:
   type: Float
   description: Correct Male Identifications Median Response Time (ms)
-  alias: er40_d_mcrt,k_er40d.er40mcrt,k_er40d_er40mcrt
+  alias: er40_d_er40d_mcrt,er40_d_mcrt,k_er40d.er40mcrt,k_er40d_er40mcrt
 
 er40_c_ang:
   type: Integer
   description: Correct Anger Identifications
   range:
   - 0::8
-  alias: er40_d_ang,k_er40d.er40ang,k_er40d_er40ang,penn_ert_crrct_anger
+  alias: er40_d_ang,er40_d_er40d_ang,k_er40d.er40ang,k_er40d_er40ang,penn_ert_crrct_anger
 
 er40_c_fear:
   type: Integer
   description: Correct Fear Identifications
   range:
   - 0::8
-  alias: er40_d_fear,k_er40d.er40fear,k_er40d_er40fear,penn_ert_crrct_fear
+  alias: er40_d_er40d_fear,er40_d_fear,k_er40d.er40fear,k_er40d_er40fear,penn_ert_crrct_fear
 
 er40_c_hap:
   type: Integer
   description: Correct Happy Identifications
   range:
   - 0::8
-  alias: er40_d_hap,k_er40d.er40hap,k_er40d_er40hap,penn_ert_crrct_happy
+  alias: er40_d_er40d_hap,er40_d_hap,k_er40d.er40hap,k_er40d_er40hap,penn_ert_crrct_happy
 
 er40_c_noe:
   type: Integer
   description: Correct Neutral Identifications
   range:
   - 0::8
-  alias: er40_d_noe,k_er40d.er40noe,k_er40d_er40noe,penn_ert_crrct_neutral
+  alias: er40_d_er40d_noe,er40_d_noe,k_er40d.er40noe,k_er40d_er40noe,penn_ert_crrct_neutral
 
 er40_c_sad:
   type: Integer
   description: Correct Sad Identifications
   range:
   - 0::8
-  alias: er40_d_sad,k_er40d.er40sad,k_er40d_er40sad,penn_ert_crrct_sad
+  alias: er40_d_er40d_sad,er40_d_sad,k_er40d.er40sad,k_er40d_er40sad,penn_ert_crrct_sad
 
 er40_c_fpa:
   type: Integer
   description: False Positive Anger Responses
   range:
   - 0::32
-  alias: k_er40d.er40_fpa,k_er40d_er40_fpa,penn_ert_falsepos_anger
+  alias: er40_d_er40d_fpa,k_er40d.er40_fpa,k_er40d_er40_fpa,penn_ert_falsepos_anger
 
 er40_c_fpf:
   type: Integer
   description: False Positive Fear Responses
   range:
   - 0::32
-  alias: k_er40d.er40_fpf,k_er40d_er40_fpf,penn_ert_falsepos_fear
+  alias: er40_d_er40d_fpf,k_er40d.er40_fpf,k_er40d_er40_fpf,penn_ert_falsepos_fear
 
 er40_c_fph:
   type: Integer
   description: False Positive Happy Responses
   range:
   - 0::32
-  alias: k_er40d.er40_fph,k_er40d_er40_fph,penn_ert_falsepos_happy
+  alias: er40_d_er40d_fph,k_er40d.er40_fph,k_er40d_er40_fph,penn_ert_falsepos_happy
 
 er40_c_fpn:
   type: Integer
   description: False Positive Neutral Responses
   range:
   - 0::32
-  alias: k_er40d.er40_fpn,k_er40d_er40_fpn,penn_ert_falsepos_neutral
+  alias: er40_d_er40d_fpn,k_er40d.er40_fpn,k_er40d_er40_fpn,penn_ert_falsepos_neutral
 
 er40_c_fps:
   type: Integer
   description: False Positive Sad Responses
   range:
   - 0::32
-  alias: k_er40d.er40_fps,k_er40d_er40_fps,penn_ert_falsepos_sad
+  alias: er40_d_er40d_fps,k_er40d.er40_fps,k_er40d_er40_fps,penn_ert_falsepos_sad
 
 er40_c_fpart:
   type: Float
   description: Median Response Time for ER40_C False Positive Anger Responses (ms)
-  alias: emorecog_angry_medianrtc,k_er40d.er40_fpart,k_er40d_er40_fpart
+  alias: emorecog_angry_medianrtc,er40_d_er40d_fpart,k_er40d.er40_fpart,k_er40d_er40_fpart
 
 er40_c_fpfrt:
   type: Float
   description: Median Response Time for ER40_C False Positive Fear Responses (ms)
-  alias: emorecog_fearful_medianrtc,k_er40d.er40_fpfrt,k_er40d_er40_fpfrt
+  alias: emorecog_fearful_medianrtc,er40_d_er40d_fpfrt,k_er40d.er40_fpfrt,k_er40d_er40_fpfrt
 
 er40_c_fphrt:
   type: Float
   description: Median Response Time for ER40_C False Positive Happy Responses (ms)
-  alias: emorecog_happy_medianrtc,k_er40d.er40_fphrt,k_er40d_er40_fphrt
+  alias: emorecog_happy_medianrtc,er40_d_er40d_fphrt,k_er40d.er40_fphrt,k_er40d_er40_fphrt
 
 er40_c_fpnrt:
   type: Float
   description: Median Response Time for ER40_C False Positive Neutral Responses (ms)
-  alias: k_er40d.er40_fpnrt,k_er40d_er40_fpnrt
+  alias: er40_d_er40d_fpnrt,k_er40d.er40_fpnrt,k_er40d_er40_fpnrt
 
 er40_c_fpsrt:
   type: Float
   description: Median Response Time for ER40_C False Positive Sad Responses (ms)
-  alias: emorecog_sad_medianrtc,k_er40d.er40_fpsrt,k_er40d_er40_fpsrt
+  alias: emorecog_sad_medianrtc,er40_d_er40d_fpsrt,k_er40d.er40_fpsrt,k_er40d_er40_fpsrt
 
 er40_c_cnt_250:
   type: Integer
@@ -272,7 +271,7 @@ version_form:
   type: String
   length: 121
   description: Form used/assessment name
-  alias: emorecog_version,k_er40d.valid_code,k_er40d_valid_code
+  alias: emorecog_version,er40_d_scorvers,k_er40d.valid_code,k_er40d_valid_code
 
 aurora_device:
   type: Integer
@@ -2349,51 +2348,53 @@ respondent:
   range:
   - Mother
   - Father
-  - Both
-  - Other
   - Parent
+  - Guardian
   - Teacher
   - Child
   - Self
+  - Caregiver
+  - Partner
+  - Other
 
 er40_d_fc:
   type: Integer
   description: ER40 Correct Female Identifications
   range:
   - 0::20
-  alias: k_er40d.er40_fc,k_er40d_er40_fc
+  alias: er40_d_er40d_fc,k_er40d.er40_fc,k_er40d_er40_fc
 
 er40_d_mc:
   type: Integer
   description: ER40 Correct Male Identifications
   range:
   - 0::20
-  alias: k_er40d.er40_mc,k_er40d_er40_mc
+  alias: er40_d_er40d_mc,k_er40d.er40_mc,k_er40d_er40_mc
 
 er40_d_angrt:
   type: Float
   description: Median Response Time for ER40 Correct Anger Identifications (ms)
-  alias: k_er40d.er40angrt,k_er40d_er40angrt
+  alias: er40_d_er40d_angrt,k_er40d.er40angrt,k_er40d_er40angrt
 
 er40_d_fearrt:
   type: Float
   description: Median Response Time for ER40 Correct Fear Identifications (ms)
-  alias: k_er40d.er40fearrt,k_er40d_er40fearrt
+  alias: er40_d_er40d_fearrt,k_er40d.er40fearrt,k_er40d_er40fearrt
 
 er40_d_haprt:
   type: Float
   description: Median Response Time for ER40 Correct Happy Identifications (ms)
-  alias: k_er40d.er40haprt,k_er40d_er40haprt
+  alias: er40_d_er40d_haprt,k_er40d.er40haprt,k_er40d_er40haprt
 
 er40_d_noert:
   type: Float
   description: Median Response Time for ER40 Correct Neutral Identifications (ms)
-  alias: k_er40d.er40noert,k_er40d_er40noert
+  alias: er40_d_er40d_noert,k_er40d.er40noert,k_er40d_er40noert
 
 er40_d_sadrt:
   type: Float
   description: Median Response Time for ER40 Correct Sad Identifications (ms)
-  alias: k_er40d.er40sadrt,k_er40d_er40sadrt
+  alias: er40_d_er40d_sadrt,k_er40d.er40sadrt,k_er40d_er40sadrt
 
 mpdat:
   type: Float
@@ -2903,3 +2904,177 @@ cr_t16:
 cr_t17:
   type: Float
   description: Confidence response time(in seconds)-Trial 17
+
+er40_d_er40d_facr:
+  type: Integer
+  description: Total Correct Responses for Female Anger trials
+
+er40_d_er40d_ffcr:
+  type: Integer
+  description: Total Correct Responses for Female Fear trials
+
+er40_d_er40d_fhcr:
+  type: Integer
+  description: Total Correct Responses for Female Happy trials
+
+er40_d_er40d_fncr:
+  type: Integer
+  description: Total Correct Responses for Female No Emotion trials
+
+er40_d_er40d_fscr:
+  type: Integer
+  description: Total Correct Responses for Female Sad trials
+
+er40_d_er40d_macr:
+  type: Integer
+  description: Total Correct Responses for Male Anger trials
+
+er40_d_er40d_mfcr:
+  type: Integer
+  description: Total Correct Responses for Male Fear trials
+
+er40_d_er40d_mhcr:
+  type: Integer
+  description: Total Correct Responses for Male Happy trials
+
+er40_d_er40d_mncr:
+  type: Integer
+  description: Total Correct Responses for Male No Emotion trials
+
+er40_d_er40d_mscr:
+  type: Integer
+  description: Total Correct Responses for Male Sad trials
+
+er40_d_er40d_fart:
+  type: Float
+  description: Median Response Time for Correct Responses to Female Anger trials (ms)
+
+er40_d_er40d_ffrt:
+  type: Float
+  description: Median Response Time for Correct Responses to Female Fear trials (ms)
+
+er40_d_er40d_fhrt:
+  type: Float
+  description: Median Response Time for Correct Responses to Female Happy trials (ms)
+
+er40_d_er40d_fnrt:
+  type: Float
+  description: Median Response Time for Correct Responses to Female No Emotion trials
+    (ms)
+
+er40_d_er40d_fsrt:
+  type: Float
+  description: Median Response Time for Correct Responses to Female Sad trials (ms)
+
+er40_d_er40d_mart:
+  type: Float
+  description: Median Response Time for Correct Responses to Male Anger trials (ms)
+
+er40_d_er40d_mfrt:
+  type: Float
+  description: Median Response Time for Correct Responses to Male Fear trials (ms)
+
+er40_d_er40d_mhrt:
+  type: Float
+  description: Median Response Time for Correct Responses to Male Happy trials (ms)
+
+er40_d_er40d_mnrt:
+  type: Float
+  description: Median Response Time for Correct Responses to Male No Emotion trials
+    (ms)
+
+er40_d_er40d_msrt:
+  type: Float
+  description: Median Response Time for Correct Responses to Male Sad trials (ms)
+
+er40_d_er40d_faert:
+  type: Float
+  description: Median Response Time for Incorrect Responses for Female Anger trials
+    (ms)
+
+er40_d_er40d_ffert:
+  type: Float
+  description: Median Response Time for Incorrect Responses for Female Fear trials
+    (ms)
+
+er40_d_er40d_fhert:
+  type: Float
+  description: Median Response Time for Incorrect Responses for Female Happy trials
+    (ms)
+
+er40_d_er40d_fnert:
+  type: Float
+  description: Median Response Time for Incorrect Responses for Female No Emotion
+    trials (ms)
+
+er40_d_er40d_fsert:
+  type: Float
+  description: Median Response Time for Incorrect Responses for Female Sad trials
+    (ms)
+
+er40_d_er40d_maert:
+  type: Float
+  description: Median Response Time for Incorrect Responses for Male Anger trials
+    (ms)
+
+er40_d_er40d_mfert:
+  type: Float
+  description: Median Response Time for Incorrect Responses for Male Fear trials (ms)
+
+er40_d_er40d_mhert:
+  type: Float
+  description: Median Response Time for Incorrect Responses for Male Happy trials
+    (ms)
+
+er40_d_er40d_mnert:
+  type: Float
+  description: Median Response Time for Incorrect Responses for Male No Emotion trials
+    (ms)
+
+er40_d_er40d_msert:
+  type: Float
+  description: Median Response Time for Incorrect Responses for Male Sad trials (ms)
+
+er40_d_er40d_cacr:
+  type: Integer
+  description: Total Correct Responses for Caucasian face trials
+
+er40_d_er40d_aacr:
+  type: Integer
+  description: Total Correct Responses for African American face trials
+
+er40_d_er40d_othcr:
+  type: Integer
+  description: Total Correct Responses for Non-Caucasian and Non-African American
+    face trials
+
+er40_d_er40d_cacrt:
+  type: Float
+  description: Median Response Time for Correct Responses for Caucasian faces trials
+    (ms)
+
+er40_d_er40d_aacrt:
+  type: Float
+  description: Median Response Time for Correct Responses for African American faces
+    trials (ms)
+
+er40_d_er40d_othcrt:
+  type: Float
+  description: Median Response Time for Correct Responses for Non-Caucasian and Non-African
+    American face trials (ms)
+
+reason_explanation_emot:
+  type: String
+  length: 150
+  description: Reason/Explanation for not completing the Emotion Recognition Task
+
+emotion_recognition:
+  type: Integer
+  description: Was the Emotion Recognition task completed?
+  range:
+  - 1::3
+  notes: 1 = Completed; 2 = Not Completed; 3 = Other
+  codes:
+    1: Completed
+    2: Not Completed
+    3: Other

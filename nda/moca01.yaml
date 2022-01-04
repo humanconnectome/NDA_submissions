@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: interview_date_moca
 
 interview_age:
@@ -34,7 +33,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -69,14 +68,22 @@ visuospatial_executive:
   description: Trail, cube, and clock drawings
   range:
   - 0::5
+  - 999
+  notes: 999 = Missing
   alias: vse
+  codes:
+    999: Missing
 
 naming:
   type: Integer
   description: Animal name recall task
   range:
   - 0::3
+  - 999
+  notes: 999 = Missing
   alias: n
+  codes:
+    999: Missing
 
 memory_1st:
   type: String
@@ -129,7 +136,11 @@ moca_total:
   description: Montreal Cognitive Assessment Total Score
   range:
   - 0::31
+  - 999
+  notes: 999 = Missing
   alias: moca_sum
+  codes:
+    999: Missing
 
 attention_digit:
   type: Integer
@@ -220,7 +231,7 @@ moca_edu:
 study:
   type: String
   length: 100
-  description: Study
+  description: Study; The code for each individual study
 
 memory_2nd___3:
   type: Integer
@@ -331,3 +342,70 @@ memory_2nd___2:
   codes:
     0: Unchecked
     1: Checked
+
+mini_moca:
+  type: Integer
+  description: Was the MINI-MOCA conducted?
+  range:
+  - 1
+  - 2
+  notes: 1 = Yes; 2 = No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+mini_language_letter:
+  type: Integer
+  description: MINI-MOCA - Language Fluency
+
+mini_orientation:
+  type: Integer
+  description: MINI-MOCA - Orientation
+
+mini_recall:
+  type: Integer
+  description: MINI-MOCA - Recall
+
+mini_moca_total:
+  type: Float
+  description: MINI-MOCA - Total
+
+mini_memory_2nd___3:
+  type: Integer
+  description: MINI-MOCA - Memory/ Attention - 2nd Trial - Juice
+
+mini_memory_2nd___4:
+  type: Integer
+  description: MINI-MOCA - Memory/ Attention - 2nd Trial - Violin
+
+mini_memory_2nd___5:
+  type: Integer
+  description: MINI-MOCA - Memory/ Attention - 2nd Trial - Square
+
+mini_memory_1st___1:
+  type: Integer
+  description: MINI-MOCA - Memory/ Attention - 1st Trial - Coat
+
+mini_memory_1st___2:
+  type: Integer
+  description: MINI-MOCA - Memory/ Attention - 1st Trial - Notebook
+
+mini_memory_1st___3:
+  type: Integer
+  description: MINI-MOCA - Memory/ Attention - 1st Trial - Juice
+
+mini_memory_1st___4:
+  type: Integer
+  description: MINI-MOCA - Memory/ Attention - 1st Trial - Violin
+
+mini_memory_1st___5:
+  type: Integer
+  description: MINI-MOCA - Memory/ Attention - 1st Trial - Square
+
+mini_memory_2nd___1:
+  type: Integer
+  description: MINI-MOCA - Memory/ Attention - 2nd Trial - Coat
+
+mini_memory_2nd___2:
+  type: Integer
+  description: MINI-MOCA - Memory/ Attention - 2nd Trial - Notebook

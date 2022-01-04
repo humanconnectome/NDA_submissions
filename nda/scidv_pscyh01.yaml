@@ -17,7 +17,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: p4
 
 interview_age:
@@ -34,7 +33,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -77,8 +76,9 @@ scidv_b2:
   - 1::3
   - -7
   - -9
+  - -1
   notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
-    = missing or not reported
+    = missing or not reported; -1 = Inadequate Information/Unknown
   alias: b2,cce_delusions10,pce_delusions10,sce_delusions10,scidv_bc2
   codes:
     1: absent or false
@@ -86,6 +86,7 @@ scidv_b2:
     3: threshold or true
     -7: N/A
     -9: missing or not reported
+    -1: Inadequate Information/Unknown
 
 scidv_b3:
   type: Integer
@@ -94,8 +95,9 @@ scidv_b3:
   - 1::3
   - -7
   - -9
+  - -1
   notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
-    = missing or not reported
+    = missing or not reported; -1 = Inadequate Information/Unknown
   alias: b3,cce_delusions1,pce_delusions1,sce_delusions1,scidv_bc3
   codes:
     1: absent or false
@@ -103,6 +105,7 @@ scidv_b3:
     3: threshold or true
     -7: N/A
     -9: missing or not reported
+    -1: Inadequate Information/Unknown
 
 scidv_b4:
   type: Integer
@@ -111,8 +114,9 @@ scidv_b4:
   - 1::3
   - -7
   - -9
+  - -1
   notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
-    = missing or not reported
+    = missing or not reported; -1 = Inadequate Information/Unknown
   alias: b4,cce_delusions4,pce_delusions4,sce_delusions4,scidv_bc4
   codes:
     1: absent or false
@@ -120,6 +124,7 @@ scidv_b4:
     3: threshold or true
     -7: N/A
     -9: missing or not reported
+    -1: Inadequate Information/Unknown
 
 scidv_b5:
   type: Integer
@@ -128,8 +133,9 @@ scidv_b5:
   - 1::3
   - -7
   - -9
+  - -1
   notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
-    = missing or not reported
+    = missing or not reported; -1 = Inadequate Information/Unknown
   alias: b5,cce_delusions2,pce_delusions2,sce_delusions2,scidv_bc5
   codes:
     1: absent or false
@@ -137,6 +143,7 @@ scidv_b5:
     3: threshold or true
     -7: N/A
     -9: missing or not reported
+    -1: Inadequate Information/Unknown
 
 scidv_b6:
   type: Integer
@@ -145,8 +152,9 @@ scidv_b6:
   - 1::3
   - -7
   - -9
+  - -1
   notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
-    = missing or not reported
+    = missing or not reported; -1 = Inadequate Information/Unknown
   alias: b6,scidv_bc6
   codes:
     1: absent or false
@@ -154,6 +162,7 @@ scidv_b6:
     3: threshold or true
     -7: N/A
     -9: missing or not reported
+    -1: Inadequate Information/Unknown
 
 scidv_b7:
   type: Integer
@@ -162,8 +171,9 @@ scidv_b7:
   - 1::3
   - -7
   - -9
+  - -1
   notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
-    = missing or not reported
+    = missing or not reported; -1 = Inadequate Information/Unknown
   alias: b7,scidv_bc7
   codes:
     1: absent or false
@@ -171,6 +181,7 @@ scidv_b7:
     3: threshold or true
     -7: N/A
     -9: missing or not reported
+    -1: Inadequate Information/Unknown
 
 scidv_b8:
   type: Integer
@@ -179,8 +190,9 @@ scidv_b8:
   - 1::3
   - -7
   - -9
+  - -1
   notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
-    = missing or not reported
+    = missing or not reported; -1 = Inadequate Information/Unknown
   alias: b8,scidv_bc8
   codes:
     1: absent or false
@@ -188,6 +200,7 @@ scidv_b8:
     3: threshold or true
     -7: N/A
     -9: missing or not reported
+    -1: Inadequate Information/Unknown
 
 scidmodb11:
   type: Integer
@@ -209,12 +222,14 @@ d7pce:
   description: Thought Insertion
   range:
   - 0::3
-  notes: 1=Absent; 2=Suspected or Likely; 3= Definite
+  - -1
+  notes: 1=Absent; 2=Suspected or Likely; 3= Definite; -1 = Inadequate Information/Unknown
   alias: b10,cce_delusions7,pce_delusions7,sce_delusions7,scidv_b10,scidv_bc10
   codes:
     1: Absent
     2: Suspected or Likely
     3: Definite
+    -1: Inadequate Information/Unknown
 
 scidv_b11:
   type: Integer
@@ -223,8 +238,9 @@ scidv_b11:
   - 1::3
   - -7
   - -9
+  - -1
   notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
-    = missing or not reported
+    = missing or not reported; -1 = Inadequate Information/Unknown
   alias: b11,cce_delusions8,pce_delusions8,sce_delusions8,scidv_bc11
   codes:
     1: absent or false
@@ -232,6 +248,7 @@ scidv_b11:
     3: threshold or true
     -7: N/A
     -9: missing or not reported
+    -1: Inadequate Information/Unknown
 
 scidmodb14:
   type: Integer
@@ -346,8 +363,9 @@ scidv_b19:
   - 1::3
   - -7
   - -9
+  - -1
   notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
-    = missing or not reported
+    = missing or not reported; -1 = Inadequate Information/Unknown
   alias: b19,scidv_bc17
   codes:
     1: absent or false
@@ -355,6 +373,7 @@ scidv_b19:
     3: threshold or true
     -7: N/A
     -9: missing or not reported
+    -1: Inadequate Information/Unknown
 
 scid_bc25:
   type: Integer
@@ -376,8 +395,9 @@ scidv_b21:
   - 1::3
   - -7
   - -9
+  - -1
   notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
-    = missing or not reported
+    = missing or not reported; -1 = Inadequate Information/Unknown
   alias: b21,scidv_bc19
   codes:
     1: absent or false
@@ -385,6 +405,7 @@ scidv_b21:
     3: threshold or true
     -7: N/A
     -9: missing or not reported
+    -1: Inadequate Information/Unknown
 
 scidv_b22:
   type: Integer
@@ -1186,35 +1207,39 @@ scidv_c79:
   type: Integer
   description: Any psychotic item coded 3
   range:
-  - 1
-  - 3
+  - 1::3
   - -7
   - -9
-  notes: 1= absent or false; 3 = threshold or true; -7 = N/A; -9 = missing or not
-    reported
+  - -1
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported; -1 = Inadequate Information/Unknown
   alias: scidv_bc20
   codes:
     1: absent or false
+    2: subthreshold
     3: threshold or true
     -7: N/A
     -9: missing or not reported
+    -1: Inadequate Information/Unknown
 
 scidv_c80:
   type: Integer
   description: Psychotic symptoms occur at times other than mood episodes
   range:
-  - 1
-  - 3
+  - 1::3
   - -7
   - -9
-  notes: 1= absent or false; 3 = threshold or true; -7 = N/A; -9 = missing or not
-    reported
+  - -1
+  notes: 1= absent or false; 2 = subthreshold; 3 = threshold or true; -7 = N/A; -9
+    = missing or not reported; -1 = Inadequate Information/Unknown
   alias: scidv_bc21
   codes:
     1: absent or false
+    2: subthreshold
     3: threshold or true
     -7: N/A
     -9: missing or not reported
+    -1: Inadequate Information/Unknown
 
 psref_al:
   type: Integer
@@ -1929,9 +1954,10 @@ c52:
 caarms1p1_q8:
   type: String
   length: 100
-  description: 'Made thoughts, feelings, impulses:  Have you felt that someone, or
-    something, outside yourself has been controlling your thoughts, feelings, actions
-    or urges?  Have you had feelings or impulses that don?t seem to come from yourself?'
+  description: "Made thoughts, feelings, impulses:  Have you felt that someone, or\
+    \ something, outside yourself has been controlling your thoughts, feelings, actions\
+    \ or urges?  Have you had feelings or impulses that don\uFFFDt seem to come from\
+    \ yourself?"
   alias: b9_describe
 
 c53:
@@ -2098,16 +2124,18 @@ c76:
 caarms1p2_q2:
   type: String
   length: 100
-  description: 'Grandiose Ideas: Have you been feeling that you are especially important
-    in some way, or that you have powers to do things that other people can?t do?'
+  description: "Grandiose Ideas: Have you been feeling that you are especially important\
+    \ in some way, or that you have powers to do things that other people can\uFFFD\
+    t do?"
   alias: b3_describe
 
 caarms1p2_q3:
   type: String
   length: 100
-  description: 'Somatic Ideas: Have you had the feeling that something odd is going
-    on with your body that you can?t explain? What is it like? Do you feel that your
-    body has changed in some way, or that there is a problem with your body shape?'
+  description: "Somatic Ideas: Have you had the feeling that something odd is going\
+    \ on with your body that you can\uFFFDt explain? What is it like? Do you feel\
+    \ that your body has changed in some way, or that there is a problem with your\
+    \ body shape?"
   alias: b4_describe
 
 caarms1p2_q4:

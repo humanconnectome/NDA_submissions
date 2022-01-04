@@ -18,7 +18,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: complete_date,demo_:doi
 
 interview_age:
@@ -36,7 +35,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -54,18 +53,18 @@ relationship:
   type: Integer
   description: Relationship of respondent to individual
   range:
-  - 1::95
+  - 1::94
   - -999
   notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
     (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
     Speech and language therapist; 8 = Behavioral therapist; 9 = Paraprofessional;
-    10 = Aide; 11 = Principal; 12 = Administrator; 13 = 90=Other; 14 = Content teacher;
-    15 = Parent center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father;
-    19=Foster mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother;
-    24 = Step-father; 25=Aunt; 26=Uncle; 27=Missing Data; 28=Both parents;31= Grandmother
-    from mother side; 32= Grandfather from mother side; 33= Grandmother from father
-    side; 34= Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39=
-    female caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
+    10 = Aide; 11 = Principal; 12 = Administrator; 14 = Content teacher; 15 = Parent
+    center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father; 19=Foster
+    mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother; 24
+    = Step-father; 25=Aunt; 26=Uncle; 28=Both parents;31= Grandmother from mother
+    side; 32= Grandfather from mother side; 33= Grandmother from father side; 34=
+    Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39= female
+    caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
     44=Friend; 45=Parent; 46=Significant other; 47=Sibling; 48=Son/Daughter; 49=Son-in-law/Daughter-in
     law; 50=Other Relative; 51=Paid caregiver; 52=Friends; 53=Roommate; 54=Supervisor;
     55=mother's boyfriend; 56=other parental figure; 57=Summary; 58=counselor ; 59
@@ -83,7 +82,8 @@ relationship:
     female; 82=Other female; 83=Guardian, male; 84=Other male; 85=Other/Grandparent/Nanny;
     86 = Mother, Father, Guardian; 87 = Daughter, son, grandchild; 88 = Professional
     (e.g., social worker, nurse, therapist, psychiatrist, or group home staff);  -999=Missing;
-    89 = Biological parent; 91 = Stepparent; 92 = Adoptive parent; 93 = Foster parent
+    89 = Biological parent; 90=Other; 91 = Stepparent; 92 = Adoptive parent; 93 =
+    Foster parent; 94 = Co-worker
   alias: asd_respnum,completed_by,respondent
   codes:
     1: Biological mom
@@ -98,7 +98,6 @@ relationship:
     10: Aide
     11: Principal
     12: Administrator
-    13: 90=Other
     14: Content teacher
     15: Parent center director
     16: Self
@@ -112,7 +111,6 @@ relationship:
     24: Step-father
     25: Aunt
     26: Uncle
-    27: Missing Data
     28: Both parents
     31: Grandmother from mother side
     32: Grandfather from mother side
@@ -174,9 +172,11 @@ relationship:
       home staff)
     -999: Missing
     89: Biological parent
+    90: Other
     91: Stepparent
     92: Adoptive parent
     93: Foster parent
+    94: Co-worker
 
 resp_sex:
   type: Integer
@@ -195,13 +195,16 @@ p_c_sdq_1:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q1_considerate_feelings?,sdq1112_1,sdq510_1,sdq:_1,sdq_pt_1,sdq_s_1
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: "q1_considerate_feelings\uFFFD,sdq1112_1,sdq510_1,sdq:_1,sdq_p_1,sdq_pt_1,sdq_s_1,sdqp_1"
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_1_rc:
   type: Integer
@@ -222,13 +225,16 @@ p_c_sdq_2:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q2_restless_overactive,sdq1112_2,sdq510_2,sdq:_2,sdq_pt_2,sdq_s_2
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: q2_restless_overactive,sdq1112_2,sdq510_2,sdq:_2,sdq_p_2,sdq_pt_2,sdq_s_2,sdqp_2
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_2_rc:
   type: Integer
@@ -249,13 +255,16 @@ p_c_sdq_3:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q3_complains_aches,sdq1112_3,sdq510_3,sdq:_3,sdq_pt_3,sdq_s_3
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: q3_complains_aches,sdq1112_3,sdq510_3,sdq:_3,sdq_p_3,sdq_pt_3,sdq_s_3,sdqp_3
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_3_rc:
   type: Integer
@@ -276,13 +285,16 @@ p_c_sdq_4:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q4_shares_readily?,sdq1112_4,sdq510_4,sdq:_4,sdq_pt_4,sdq_s_4
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: "q4_shares_readily\uFFFD,sdq1112_4,sdq510_4,sdq:_4,sdq_p_4,sdq_pt_4,sdq_s_4,sdqp_4"
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_4_rc:
   type: Integer
@@ -303,13 +315,16 @@ p_c_sdq_5:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q5_loses_temper?,sdq1112_5,sdq510_5,sdq:_5,sdq_pt_5,sdq_s_5
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: "q5_loses_temper\uFFFD,sdq1112_5,sdq510_5,sdq:_5,sdq_p_5,sdq_pt_5,sdq_s_5,sdqp_5"
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_5_rc:
   type: Integer
@@ -330,13 +345,16 @@ p_c_sdq_6:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q6_solitary?,sdq1112_6,sdq510_6,sdq:_6,sdq_pt_6,sdq_s_6
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: "q6_solitary\uFFFD,sdq1112_6,sdq510_6,sdq:_6,sdq_p_6,sdq_pt_6,sdq_s_6,sdqp_6"
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_6_rc:
   type: Integer
@@ -357,13 +375,16 @@ p_c_sdq_7:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q7_well_behaved?,sdq1112_7,sdq510_7,sdq:_7
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: "q7_well_behaved\uFFFD,sdq1112_7,sdq510_7,sdq:_7,sdq_p_7"
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_7_rc:
   type: Integer
@@ -372,7 +393,7 @@ p_c_sdq_7_rc:
   - 0::2
   - -888
   notes: 2=Not True; 1= Somewhat True; 0=Certainly True; -888=missing
-  alias: sdq_pt_7,sdq_s_7
+  alias: sdq_pt_7,sdq_s_7,sdqp_7
   codes:
     2: Not True
     1: Somewhat True
@@ -385,13 +406,16 @@ p_c_sdq_8:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q8_many_worries?,sdq1112_8,sdq510_8,sdq:_8,sdq_pt_8,sdq_s_8
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: "q8_many_worries\uFFFD,sdq1112_8,sdq510_8,sdq:_8,sdq_p_8,sdq_pt_8,sdq_s_8,sdqp_8"
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_8_rc:
   type: Integer
@@ -412,13 +436,16 @@ p_c_sdq_9:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q9_helpful_to_hurt,sdq1112_9,sdq510_9,sdq:_9,sdq_pt_9,sdq_s_9
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: q9_helpful_to_hurt,sdq1112_9,sdq510_9,sdq:_9,sdq_p_9,sdq_pt_9,sdq_s_9,sdqp_9
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_9_rc:
   type: Integer
@@ -439,13 +466,16 @@ p_c_sdq_10:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q10_fidgeting?,sdq1112_10,sdq510_10,sdq:_10,sdq_pt_10,sdq_s_10
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: "q10_fidgeting\uFFFD,sdq1112_10,sdq510_10,sdq:_10,sdq_p_10,sdq_pt_10,sdq_s_10,sdqp_10"
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_10_rc:
   type: Integer
@@ -466,13 +496,16 @@ p_c_sdq_11:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q11_has_good_friend?,sdq1112_11,sdq510_11,sdq:_11,sdq_pt_11,sdq_s_11
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: "q11_has_good_friend\uFFFD,sdq1112_11,sdq510_11,sdq:_11,sdq_p_11,sdq_pt_11,sdq_s_11"
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_11_rc:
   type: Integer
@@ -481,6 +514,7 @@ p_c_sdq_11_rc:
   - 0::2
   - -888
   notes: 2=Not True; 1= Somewhat True; 0=Certainly True; -888=missing
+  alias: sdqp_11
   codes:
     2: Not True
     1: Somewhat True
@@ -493,13 +527,16 @@ p_c_sdq_12:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q12_often_fights,sdq1112_12,sdq510_12,sdq:_12,sdq_pt_12,sdq_s_12
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: q12_often_fights,sdq1112_12,sdq510_12,sdq:_12,sdq_p_12,sdq_pt_12,sdq_s_12,sdqp_12
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_12_rc:
   type: Integer
@@ -520,13 +557,16 @@ p_c_sdq_13:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q13_often_unhappy?,sdq1112_13,sdq510_13,sdq:_13,sdq_pt_13,sdq_s_13
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: "q13_often_unhappy\uFFFD,sdq1112_13,sdq510_13,sdq:_13,sdq_p_13,sdq_pt_13,sdq_s_13,sdqp_13"
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_13_rc:
   type: Integer
@@ -547,13 +587,16 @@ p_c_sdq_14:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q14_generally_liked?,sdq1112_14,sdq510_14,sdq:_14
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: "q14_generally_liked\uFFFD,sdq1112_14,sdq510_14,sdq:_14,sdq_p_14"
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_14_rc:
   type: Integer
@@ -562,7 +605,7 @@ p_c_sdq_14_rc:
   - 0::2
   - -888
   notes: 2=Not True; 1= Somewhat True; 0=Certainly True; -888=missing
-  alias: sdq_pt_14,sdq_s_14
+  alias: sdq_pt_14,sdq_s_14,sdqp_14
   codes:
     2: Not True
     1: Somewhat True
@@ -575,13 +618,16 @@ p_c_sdq_15:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q15_easily_distracted?,sdq1112_15,sdq510_15,sdq:_15,sdq_pt_15,sdq_s_15
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: "q15_easily_distracted\uFFFD,sdq1112_15,sdq510_15,sdq:_15,sdq_p_15,sdq_pt_15,sdq_s_15,sdqp_15"
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_15_rc:
   type: Integer
@@ -602,13 +648,16 @@ p_c_sdq_16:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q16_nervous?,sdq1112_16,sdq510_16,sdq:_16,sdq_pt_16,sdq_s_16
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: "q16_nervous\uFFFD,sdq1112_16,sdq510_16,sdq:_16,sdq_p_16,sdq_pt_16,sdq_s_16,sdqp_16"
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_16_rc:
   type: Integer
@@ -629,13 +678,16 @@ p_c_sdq_17:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q17_kind_younger_children?,sdq1112_17,sdq510_17,sdq:_17,sdq_pt_17,sdq_s_17
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: "q17_kind_younger_children\uFFFD,sdq1112_17,sdq510_17,sdq:_17,sdq_p_17,sdq_pt_17,sdq_s_17,sdqp_17"
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_17_rc:
   type: Integer
@@ -656,13 +708,16 @@ p_c_sdq_18:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q18_argumentative_adults,sdq1112_18,sdq510_18,sdq:_18,sdq_pt_18,sdq_s_18
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: q18_argumentative_adults,sdq1112_18,sdq510_18,sdq:_18,sdq_p_18,sdq_pt_18,sdq_s_18,sdqp_18
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_18_rc:
   type: Integer
@@ -683,13 +738,16 @@ p_c_sdq_19:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q19_picked_on?,sdq1112_19,sdq510_19,sdq:_19,sdq_pt_19,sdq_s_19
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: "q19_picked_on\uFFFD,sdq1112_19,sdq510_19,sdq:_19,sdq_p_19,sdq_pt_19,sdq_s_19,sdqp_19"
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_19_rc:
   type: Integer
@@ -710,13 +768,16 @@ p_c_sdq_20:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q20_offers_help?,sdq1112_20,sdq510_20,sdq:_20,sdq_pt_20,sdq_s_20
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: "q20_offers_help\uFFFD,sdq1112_20,sdq510_20,sdq:_20,sdq_p_20,sdq_pt_20,sdq_s_20,sdqp_20"
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_20_rc:
   type: Integer
@@ -737,13 +798,16 @@ p_c_sdq_21:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q21_stop_and_think,sdq1112_21,sdq510_21,sdq:_21,sdq_pt_21,sdq_s_21
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: q21_stop_and_think,sdq1112_21,sdq510_21,sdq:_21,sdq_p_21,sdq_pt_21,sdq_s_21
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_21_rc:
   type: Integer
@@ -752,6 +816,7 @@ p_c_sdq_21_rc:
   - 0::2
   - -888
   notes: 2=Not True; 1= Somewhat True; 0=Certainly True; -888=missing
+  alias: sdqp_21
   codes:
     2: Not True
     1: Somewhat True
@@ -764,13 +829,16 @@ p_c_sdq_22:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q22_spiteful,sdq1112_22,sdq510_22,sdq:_22,sdq_pt_22,sdq_s_22
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: q22_spiteful,sdq1112_22,sdq510_22,sdq:_22,sdq_p_22,sdq_pt_22,sdq_s_22,sdqp_22
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_22_rc:
   type: Integer
@@ -791,13 +859,16 @@ p_c_sdq_23:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q23_along_adults,sdq1112_23,sdq510_23,sdq:_23,sdq_pt_23,sdq_s_23
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: q23_along_adults,sdq1112_23,sdq510_23,sdq:_23,sdq_p_23,sdq_pt_23,sdq_s_23,sdqp_23
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_23_rc:
   type: Integer
@@ -818,13 +889,16 @@ p_c_sdq_24:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q24_many_fears,sdq1112_24,sdq510_24,sdq:_24,sdq_pt_24,sdq_s_24
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: q24_many_fears,sdq1112_24,sdq510_24,sdq:_24,sdq_p_24,sdq_pt_24,sdq_s_24,sdqp_24
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_24_rc:
   type: Integer
@@ -845,13 +919,16 @@ p_c_sdq_25:
   range:
   - 0::2
   - -888
-  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing
-  alias: q25_good_attention,sdq1112_25,sdq510_25,sdq:_25
+  - 999
+  notes: 0=Not True; 1= Somewhat True; 2=Certainly True; -888= missing; 999 = N/A
+    or Prefer Not to Answer
+  alias: q25_good_attention,sdq1112_25,sdq510_25,sdq:_25,sdq_p_25
   codes:
     0: Not True
     1: Somewhat True
     2: Certainly True
     -888: missing
+    999: N/A or Prefer Not to Answer
 
 p_c_sdq_25_rc:
   type: Integer
@@ -860,7 +937,7 @@ p_c_sdq_25_rc:
   - 0::2
   - -888
   notes: 2=Not True; 1= Somewhat True; 0=Certainly True; -888=missing
-  alias: sdq_pt_25,sdq_s_25
+  alias: sdq_pt_25,sdq_s_25,sdqp_25
   codes:
     2: Not True
     1: Somewhat True
@@ -908,7 +985,7 @@ p_c_sdq_28:
   - -888
   notes: 0= No; 1 = Yes-Minor difficulties; 2= Yes- definite difficulties; 3 = Yes-
     severe difficulties; -888=missing
-  alias: q28_do_diffs_distress?
+  alias: "q28_do_diffs_distress\uFFFD"
   codes:
     0: 'No'
     1: Yes-Minor difficulties
@@ -938,7 +1015,7 @@ p_c_sdq_29:
   - 0::3
   - -888
   notes: 0 = Not at all; 1 = Only a little; 2 = Quite a lot; 3 = A great deal; -888=missing
-  alias: q29_interfere_home_life?
+  alias: "q29_interfere_home_life\uFFFD"
   codes:
     0: Not at all
     1: Only a little
@@ -967,7 +1044,7 @@ p_c_sdq_30:
   - 0::3
   - -888
   notes: 0 = Not at all; 1 = Only a little; 2 = Quite a lot; 3 = A great deal; -888=missing
-  alias: q30_interfere_friendships?
+  alias: "q30_interfere_friendships\uFFFD"
   codes:
     0: Not at all
     1: Only a little
@@ -1025,7 +1102,7 @@ p_c_sdq_32:
   - 0::3
   - -888
   notes: 0 = Not at all; 1 = Only a little; 2 = Quite a lot; 3 = A great deal; -888=missing
-  alias: q32_interfere_leisure?
+  alias: "q32_interfere_leisure\uFFFD"
   codes:
     0: Not at all
     1: Only a little
@@ -1064,7 +1141,7 @@ p_c_sdq_33:
 p_c_sdq_co_rs:
   type: Integer
   description: Conduct problems Scale-raw score
-  alias: conduct_problems_scale,sdq:cps_total,sdq_pt_conduct,sdq_s_conduct
+  alias: conduct_problems_scale,sdq:cps_total,sdq_pt_conduct,sdq_s_conduct,sdqp_con
 
 p_c_sdq_co_ts:
   type: Integer
@@ -1073,7 +1150,7 @@ p_c_sdq_co_ts:
 p_c_sdq_em_rs:
   type: Integer
   description: Emotional Problems Scale-raw score
-  alias: emotional_problems_scale,sdq:eps_total,sdq_pt_emotion,sdq_s_emotion
+  alias: emotional_problems_scale,sdq:eps_total,sdq_pt_emotion,sdq_s_emotion,sdqp_emo
 
 p_c_sdq_em_ts:
   type: Integer
@@ -1082,7 +1159,7 @@ p_c_sdq_em_ts:
 p_c_sdq_hy_rs:
   type: Integer
   description: Hyperactivity scale-raw score
-  alias: hyperactivity_scale,sdq:has_total,sdq_pt_hyperactivity,sdq_s_hyperactivity
+  alias: hyperactivity_scale,sdq:has_total,sdq_pt_hyperactivity,sdq_s_hyperactivity,sdqp_hyp
 
 p_c_sdq_hy_ts:
   type: Integer
@@ -1100,7 +1177,7 @@ p_c_sdq_im_ts:
 p_c_sdq_pe_rs:
   type: Integer
   description: Peer problems scale-raw score
-  alias: peer_problems_scale,sdq:pps_total,sdq_pt_peer,sdq_s_peer
+  alias: peer_problems_scale,sdq:pps_total,sdq_pt_peer,sdq_s_peer,sdqp_rel
 
 p_c_sdq_pe_ts:
   type: Integer
@@ -1109,7 +1186,7 @@ p_c_sdq_pe_ts:
 p_c_sdq_px_rs:
   type: Integer
   description: Total difficulties score-raw score
-  alias: sdq_pt_total,sdq_s_total,total_difficulties_scale
+  alias: sdq_pt_total,sdq_s_total,sdqp_tot,total_difficulties_scale
 
 p_c_sdq_px_ts:
   type: Integer
@@ -1118,7 +1195,7 @@ p_c_sdq_px_ts:
 p_c_sdq_so_rs:
   type: Integer
   description: Prosocial scale-Raw score
-  alias: prosocial_scale,sdq:pss_total,sdq_pt_prosocial,sdq_s_prosocial
+  alias: prosocial_scale,sdq:pss_total,sdq_pt_prosocial,sdq_s_prosocial,sdqp_pro
 
 p_c_sdq_so_ts:
   type: Integer
@@ -1158,10 +1235,14 @@ sdq_08:
   range:
   - 0
   - 1
-  notes: 1 = Yes; 0= No
+  - 666
+  - 777
+  notes: 0=No; 1=Yes; 666=Missing; 777=Not applicable
   codes:
-    1: 'Yes'
     0: 'No'
+    1: 'Yes'
+    666: Missing
+    777: Not applicable
 
 sdq_09:
   type: Integer
@@ -1170,10 +1251,14 @@ sdq_09:
   range:
   - 0
   - 1
-  notes: 1 = Yes; 0= No
+  - 666
+  - 777
+  notes: 0=No; 1=Yes; 666=Missing; 777=Not applicable
   codes:
-    1: 'Yes'
     0: 'No'
+    1: 'Yes'
+    666: Missing
+    777: Not applicable
 
 sdq_10:
   type: Integer
@@ -1182,106 +1267,145 @@ sdq_10:
   range:
   - 0
   - 1
-  notes: 1 = Yes; 0= No
+  - 666
+  - 777
+  notes: 0=No; 1=Yes; 666=Missing; 777=Not applicable
   codes:
-    1: 'Yes'
     0: 'No'
+    1: 'Yes'
+    666: Missing
+    777: Not applicable
 
 sdq_01:
   type: Integer
   description: Do the difficulties upset or distress your child?
   range:
   - 1::5
-  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 =  Rarely; 1 = Never
+  - 666
+  - 777
+  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 = Rarely; 1 = Never; 666=Missing;
+    777=Not applicable
   codes:
     5: Always
     4: Most of the time
     3: Sometimes
     2: Rarely
     1: Never
+    666: Missing
+    777: Not applicable
 
 sdq_02:
   type: Integer
   description: Do the difficulties interfere with your child?s family life?
   range:
   - 1::5
-  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 =  Rarely; 1 = Never
+  - 666
+  - 777
+  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 = Rarely; 1 = Never; 666=Missing;
+    777=Not applicable
   codes:
     5: Always
     4: Most of the time
     3: Sometimes
     2: Rarely
     1: Never
+    666: Missing
+    777: Not applicable
 
 sdq_03:
   type: Integer
   description: Do the difficulties interfere with your child?s friendships?
   range:
   - 1::5
-  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 =  Rarely; 1 = Never
+  - 666
+  - 777
+  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 = Rarely; 1 = Never; 666=Missing;
+    777=Not applicable
   codes:
     5: Always
     4: Most of the time
     3: Sometimes
     2: Rarely
     1: Never
+    666: Missing
+    777: Not applicable
 
 sdq_04:
   type: Integer
   description: Do the difficulties interfere with your child?s classroom learning?
   range:
   - 1::5
-  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 =  Rarely; 1 = Never
+  - 666
+  - 777
+  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 = Rarely; 1 = Never; 666=Missing;
+    777=Not applicable
   codes:
     5: Always
     4: Most of the time
     3: Sometimes
     2: Rarely
     1: Never
+    666: Missing
+    777: Not applicable
 
 sdq_05:
   type: Integer
   description: Do the difficulties interfere with your child?s leisure activities?
   range:
   - 1::5
-  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 =  Rarely; 1 = Never
+  - 666
+  - 777
+  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 = Rarely; 1 = Never; 666=Missing;
+    777=Not applicable
   codes:
     5: Always
     4: Most of the time
     3: Sometimes
     2: Rarely
     1: Never
+    666: Missing
+    777: Not applicable
 
 sdq_06:
   type: Integer
   description: Do the difficulties put a burden on you or the family as a whole?
   range:
   - 1::5
-  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 =  Rarely; 1 = Never
+  - 666
+  - 777
+  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 = Rarely; 1 = Never; 666=Missing;
+    777=Not applicable
   codes:
     5: Always
     4: Most of the time
     3: Sometimes
     2: Rarely
     1: Never
+    666: Missing
+    777: Not applicable
 
 sdq_07:
   type: Integer
   description: Do the difficulties interfere with your child?s home life?
   range:
   - 1::5
-  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 =  Rarely; 1 = Never
+  - 666
+  - 777
+  notes: 5 = Always; 4 = Most of the time; 3 = Sometimes; 2 = Rarely; 1 = Never; 666=Missing;
+    777=Not applicable
   codes:
     5: Always
     4: Most of the time
     3: Sometimes
     2: Rarely
     1: Never
+    666: Missing
+    777: Not applicable
 
 year_mta:
   type: Integer
   description: Year in study
-  alias: visit_year,visit_year?
+  alias: "visit_year,visit_year\uFFFD"
 
 version_form:
   type: String
@@ -1292,3 +1416,368 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+sdq_c_8:
+  type: Integer
+  description: I worried a lot
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_9:
+  type: Integer
+  description: I was helpful if someone was hurt, upset or feeling ill
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_10:
+  type: Integer
+  description: I was constantly fidgeting or squirming
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_11:
+  type: Integer
+  description: I had one good friend or more
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_12:
+  type: Integer
+  description: I fought a lot. I could make other people do what I wanted
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_13:
+  type: Integer
+  description: I was often unhappy, depressed or tearful
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_14:
+  type: Integer
+  description: Other people my age generally liked me
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_15:
+  type: Integer
+  description: I was easily distracted, I found it difficult to concentrate
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_16:
+  type: Integer
+  description: I was nervous in new situations. I easily lost confidence
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_17:
+  type: Integer
+  description: I was kind to younger children
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_18:
+  type: Integer
+  description: I was often accused of lying or cheating
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_19:
+  type: Integer
+  description: Other children or young people picked on me or bullied me
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_20:
+  type: Integer
+  description: I often volunteered to help others (parents, teachers, children)
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_21:
+  type: Integer
+  description: I think before I did things
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_22:
+  type: Integer
+  description: I took things that were not mine from home, school or elsewhere
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_23:
+  type: Integer
+  description: I got along better with adults than with people my own age
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_24:
+  type: Integer
+  description: I had many fears, I was easily scared
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_25:
+  type: Integer
+  description: I generally finish the work I'm doing, and my attention is good.
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_1:
+  type: Integer
+  description: I tried to be nice to other people. I cared about their feelings
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_2:
+  type: Integer
+  description: I was restless, I could not stay still for long
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_3:
+  type: Integer
+  description: I got a lot of headaches, stomach-aches, or sickness
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_4:
+  type: Integer
+  description: I shared with others, for example games, music, food
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_5:
+  type: Integer
+  description: I got very angry and often lost my temper
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_6:
+  type: Integer
+  description: I preferred to be alone than with people of my age
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+sdq_c_7:
+  type: Integer
+  description: I usually did as I was told
+  range:
+  - 0::2
+  - 999
+  notes: 0 = Not True; 1 = Somewhat True; 2 = Certainly True; 999 = N/A or Prefer
+    Not to Answer
+  codes:
+    0: Not True
+    1: Somewhat True
+    2: Certainly True
+    999: N/A or Prefer Not to Answer
+
+time__point01:
+  type: Integer
+  description: Timepoint
+  range:
+  - 1::6
+  notes: 1 = Screening; 2 = Baseline; 3 = Mid-way; 4 = One Month; 5 = Three Months;
+    6 = Final
+  codes:
+    1: Screening
+    2: Baseline
+    3: Mid-way
+    4: One Month
+    5: Three Months
+    6: Final

@@ -18,7 +18,6 @@ interview_date:
   required: true
   description: Date on which the interview/genetic test/sampling/imaging/biospecimen
     was completed. MM/DD/YYYY
-  notes: Required field
   alias: ans_date,bl_visit_date,consented_study,date_interview_ses,date_vitals,date_vitals2_d6c,hwv_doa,intvdate,sdate,testdate,v10_avs_date,v1_avs_date,v2_avs_date,v3_avs_date,v4_avs_date,v5_avs_date,v6_avs_date,v7_avs_date,v8_avs_date,v9_avs_date,visit_date,vitaldt
 
 interview_age:
@@ -36,7 +35,7 @@ sex:
   type: String
   length: 20
   required: true
-  description: Sex of the subject
+  description: Sex of subject at birth
   range:
   - M
   - F
@@ -58,17 +57,26 @@ bas_time:
 blood_ps_base:
   type: Integer
   description: baseline systolic blood pressure
+  notes: 999 = Missing
   alias: syst1,systolicbp,vsfa2,vssa4
+  codes:
+    999: Missing
 
 blood_pd_base:
   type: Integer
   description: baseline diastolic blood pressure
+  notes: 999 = Missing
   alias: dias1,diastolicbp,vsfa3,vssa5
+  codes:
+    999: Missing
 
 heart_rate_base:
   type: Float
   description: baseline heart rate
+  notes: 999 = Missing
   alias: ch_hr_baseline,heart_rate,heart_rate_base1_3y,heart_rate_base1_5y,heart_rate_base1_7y,heart_rate_base2_3y,heart_rate_base2_5y,heart_rate_base2_7y,pulserate,vsfa4,vssa6
+  codes:
+    999: Missing
 
 temp_base:
   type: Integer
@@ -136,12 +144,18 @@ vital_collect:
 height_met:
   type: Float
   description: Height - Metric Unit
-  alias: Vital_Ht,c_height,ch_height_baseline,ht_cm,hwb_cm,hwv_height_cm,svshght,v10_avs_height,v1_avs_height,v2_avs_height,v3_avs_height,v4_avs_height,v5_avs_height,v6_avs_height,v7_avs_height,v8_avs_height,v9_avs_height,vs_htm,vssa2a,vtl003
+  notes: 999 = Missing
+  alias: Vital_Ht,c_height,ch_height_baseline,height,ht_cm,hwb_cm,hwv_height_cm,svshght,v10_avs_height,v1_avs_height,v2_avs_height,v3_avs_height,v4_avs_height,v5_avs_height,v6_avs_height,v7_avs_height,v8_avs_height,v9_avs_height,vs_htm,vssa2a,vtl003
+  codes:
+    999: Missing
 
 weight_met:
   type: Float
   description: Weight - Metric Unit
-  alias: Vital_Wt,blvswght,c_weight,ch_weight_baseline,hwb_kg,hwv_weight_kg,svswght,v10_avs_weight,v1_avs_weight,v2_avs_weight,v3_avs_weight,v4_avs_weight,v5_avs_weight,v6_avs_weight,v7_avs_weight,v8_avs_weight,v9_avs_weight,vs_wtk,vsfa1,vssa1,vtl002,wt_kg,wtkg
+  notes: 999 = Missing
+  alias: Vital_Wt,blvswght,c_weight,ch_weight_baseline,hwb_kg,hwv_weight_kg,svswght,v10_avs_weight,v1_avs_weight,v2_avs_weight,v3_avs_weight,v4_avs_weight,v5_avs_weight,v6_avs_weight,v7_avs_weight,v8_avs_weight,v9_avs_weight,vs_wtk,vsfa1,vssa1,vtl002,weight,wt_kg,wtkg
+  codes:
+    999: Missing
 
 temperature:
   type: Float
@@ -195,7 +209,10 @@ phase_ct:
 bmi:
   type: Float
   description: body mass index of subject
+  notes: -9 = Missing
   alias: blbmi,c_bmi,ch_bmi_baseline,current_bmi,hwb_ckbmilb,hwv_bmi_m,hwv_bmi_nm,scrnbmi,vs_bmi,vssa3
+  codes:
+    -9: Missing
 
 waist:
   type: Float
@@ -432,18 +449,20 @@ heart_rate:
 height_std:
   type: Float
   description: Height - Standard Unit
-  notes: -1 = Not known
+  notes: -1 = Not known; 999 = Missing
   alias: HEIGHT,current_height,height,height_in_inches,heightin,ht,ht_cm,vsfa1a,vssa1a,vtl011
   codes:
     -1: Not known
+    999: Missing
 
 weight_std:
   type: Float
   description: Weight - Standard Unit
-  notes: -1 = Not known
+  notes: -1 = Not known; 999 = Missing
   alias: WEIGHT,current_weight,vsfa2a,vssa2d,weight,weight_in_lbs,weight_in_lbs2_311,wt,wt_kg
   codes:
     -1: Not known
+    999: Missing
 
 vtl004a:
   type: Integer
@@ -533,18 +552,18 @@ relationship:
   type: Integer
   description: Relationship of respondent to individual
   range:
-  - 1::95
+  - 1::94
   - -999
   notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
     (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
     Speech and language therapist; 8 = Behavioral therapist; 9 = Paraprofessional;
-    10 = Aide; 11 = Principal; 12 = Administrator; 13 = 90=Other; 14 = Content teacher;
-    15 = Parent center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father;
-    19=Foster mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother;
-    24 = Step-father; 25=Aunt; 26=Uncle; 27=Missing Data; 28=Both parents;31= Grandmother
-    from mother side; 32= Grandfather from mother side; 33= Grandmother from father
-    side; 34= Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39=
-    female caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
+    10 = Aide; 11 = Principal; 12 = Administrator; 14 = Content teacher; 15 = Parent
+    center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father; 19=Foster
+    mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother; 24
+    = Step-father; 25=Aunt; 26=Uncle; 28=Both parents;31= Grandmother from mother
+    side; 32= Grandfather from mother side; 33= Grandmother from father side; 34=
+    Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39= female
+    caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
     44=Friend; 45=Parent; 46=Significant other; 47=Sibling; 48=Son/Daughter; 49=Son-in-law/Daughter-in
     law; 50=Other Relative; 51=Paid caregiver; 52=Friends; 53=Roommate; 54=Supervisor;
     55=mother's boyfriend; 56=other parental figure; 57=Summary; 58=counselor ; 59
@@ -562,7 +581,8 @@ relationship:
     female; 82=Other female; 83=Guardian, male; 84=Other male; 85=Other/Grandparent/Nanny;
     86 = Mother, Father, Guardian; 87 = Daughter, son, grandchild; 88 = Professional
     (e.g., social worker, nurse, therapist, psychiatrist, or group home staff);  -999=Missing;
-    89 = Biological parent; 91 = Stepparent; 92 = Adoptive parent; 93 = Foster parent
+    89 = Biological parent; 90=Other; 91 = Stepparent; 92 = Adoptive parent; 93 =
+    Foster parent; 94 = Co-worker
   alias: infrmnt2,relvital
   codes:
     1: Biological mom
@@ -577,7 +597,6 @@ relationship:
     10: Aide
     11: Principal
     12: Administrator
-    13: 90=Other
     14: Content teacher
     15: Parent center director
     16: Self
@@ -591,7 +610,6 @@ relationship:
     24: Step-father
     25: Aunt
     26: Uncle
-    27: Missing Data
     28: Both parents
     31: Grandmother from mother side
     32: Grandfather from mother side
@@ -653,9 +671,11 @@ relationship:
       home staff)
     -999: Missing
     89: Biological parent
+    90: Other
     91: Stepparent
     92: Adoptive parent
     93: Foster parent
+    94: Co-worker
 
 actbdic:
   type: Integer
@@ -709,7 +729,7 @@ age:
 respct:
   type: Float
   description: Respirations per minute
-  alias: respiratoryrate
+  alias: respiration,respiratoryrate
 
 cough:
   type: Integer
@@ -1148,11 +1168,13 @@ trt_grp:
   - 10
   - 11
   - 12
+  - O
+  - P
   notes: 1=Group 1 first 8 weeks; 1AO=Group 1 8 week add on; 1CT=Group 1 8 week cross
     taper; 2=Group 2; 3=Group 3; 4 =active; 5=sham; 6=none; 7=ESDM High intensity;
     8=ESDM Low intensity; 9=EIBI High intensity; 10=EIBI Low intensity; ESDM = Early
     Start Denver Model; EIBI = Early and Intensive Behavioral Intervention; 11 = Navigator;
-    12 = Care manager
+    12 = Care manager; O=Oxytocin; P=Placebo
   codes:
     1: Group 1 first 8 weeks
     2: Group 2
@@ -1166,6 +1188,8 @@ trt_grp:
     10: EIBI Low intensity
     11: Navigator
     12: Care manager
+    O: Oxytocin
+    P: Placebo
 
 etype:
   type: String
@@ -1324,7 +1348,7 @@ chng_bmi:
 study:
   type: String
   length: 100
-  description: Study
+  description: Study; The code for each individual study
   alias: studyid
 
 completed:
@@ -1618,12 +1642,12 @@ vis_type:
 blood_ps:
   type: Integer
   description: systolic blood pressure
-  alias: bp1,bp13,bp17,bp21,bp25,bp29,bp33,bp37,bp41,bp45,bp49,bp5,bp53,bp57,bp61,bp65,bp69,bp73,bp77,bp9,bp_syst,bpsystolic,hwv_bp_systolic
+  alias: bp1,bp13,bp17,bp21,bp25,bp29,bp33,bp37,bp41,bp45,bp49,bp5,bp53,bp57,bp61,bp65,bp69,bp73,bp77,bp9,bp_syst,bpsystolic,hwv_bp_systolic,sys_bp
 
 blood_pd:
   type: Integer
   description: diastolic blood pressure
-  alias: bp10,bp14,bp18,bp2,bp22,bp26,bp30,bp34,bp38,bp42,bp46,bp50,bp54,bp58,bp6,bp62,bp66,bp70,bp74,bp78,bp_dias,bpdiastolic,diastoli,hwv_bp_diastolic
+  alias: bp10,bp14,bp18,bp2,bp22,bp26,bp30,bp34,bp38,bp42,bp46,bp50,bp54,bp58,bp6,bp62,bp66,bp70,bp74,bp78,bp_dias,bpdiastolic,dias_bp,diastoli,hwv_bp_diastolic
 
 date_updated:
   type: Date
@@ -2014,7 +2038,7 @@ armused:
   - 1
   - 2
   notes: 1= Right; 2=Left
-  alias: ch_arm_baseline
+  alias: arm,ch_arm_baseline
   codes:
     1: Right
     2: Left
@@ -2157,7 +2181,7 @@ mnstrdt:
 
 mchq_18:
   type: String
-  length: 100
+  length: 500
   description: Do you have regular menstrual cycles. If no, explain
   alias: no_lmp_follow_up_comments
 
@@ -2441,3 +2465,105 @@ bp3:
   type: Float
   description: Mean Arterial Pressure (MAP)
   alias: bp11,bp15,bp19,bp23,bp27,bp31,bp35,bp39,bp43,bp47,bp51,bp55,bp59,bp63,bp67,bp7,bp71,bp75,bp79
+
+cuff_size:
+  type: Integer
+  description: Cuff Size
+  range:
+  - 1::6
+  - -999
+  notes: 1 = Infant; 2 = Child; 3 = Small adult; 4 = Regular adult; 5 = Large adult;
+    6 = Thigh; -999 = No information
+  codes:
+    1: Infant
+    2: Child
+    3: Small adult
+    4: Regular adult
+    5: Large adult
+    6: Thigh
+    -999: No information
+
+code:
+  type: Integer
+  description: Research code in the system
+
+handedness_01:
+  type: Integer
+  description: Handedness based on self report.
+  range:
+  - 1::3
+  - -999
+  notes: 1 = Right; 2 = Left; 3 = Both; -999 = N/A or missing
+  alias: handedness
+  codes:
+    1: Right
+    2: Left
+    3: Both
+    -999: N/A or missing
+
+time_vitals:
+  type: Integer
+  description: At which time point were the vitals conducted?
+  range:
+  - 0::9
+  notes: 0= At Arrival; 1= Resting Baseline; 2= 0 minutes post-IV bolus infusion;
+    3= 15 minutes; 4= 30 minutes; 5= 60 minutes; 6= 120 minutes; 7= 180 minutes; 8=
+    240 minutes; 9= 300 minutes
+  codes:
+    0: At Arrival
+    1: Resting Baseline
+    2: 0 minutes post-IV bolus infusion
+    3: 15 minutes
+    4: 30 minutes
+    5: 60 minutes
+    6: 120 minutes
+    7: 180 minutes
+    8: 240 minutes
+    9: 300 minutes
+
+vital_sysbp_sit:
+  type: Integer
+  description: What is the Sitting Blood Pressure (sitting for at least 5 minutes)?
+  range:
+  - 0::500
+  - 999
+  notes: in mmHg (systolic); 999=NK/missing
+  codes:
+    999: NK/missing
+
+vital_diabp_sit:
+  type: Integer
+  description: What is the Sitting Heart Blood Pressure (sitting for at least 5 minutes)?
+  range:
+  - 0::500
+  notes: in mmHg (diastolic)
+
+heart_rate_sit:
+  type: Integer
+  description: What is the Sitting Heart Rate (sitting for at least 5 minutes)?
+
+vital_sysbp_stand:
+  type: Integer
+  description: What is the Standing Blood Pressure (standing for 30 seconds)?
+  range:
+  - 0::500
+  - 999
+  notes: in mmHg (systolic); 999=NK/missing
+  codes:
+    999: NK/missing
+
+vital_diabp_stand:
+  type: Integer
+  description: What is the Standing Blood Pressure (standing for 30 seconds)?
+  range:
+  - 0::500
+  notes: in mmHg (diastolic)
+
+heart_rate_stand:
+  type: Integer
+  description: What is the Standing Heart Rate (standing for 30 seconds)?
+
+puls_ox:
+  type: String
+  length: 250
+  description: What does the Pulse Oximeter read?

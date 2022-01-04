@@ -216,7 +216,7 @@ class QintLoader(RedcapLoader):
 
     def _post_load_hook_(self, df):
         visit = config['visit']
-        df = df[df.visit == visit]
+        df = df[df.visit.isin(visit)]
         print(df.shape)
         df = df.rename(columns={"subjectid": "subject"})
         

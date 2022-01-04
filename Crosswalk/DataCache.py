@@ -18,6 +18,9 @@ class DataCache:
             d[source].add(field)
 
         for source, fields in d.items():
+            if source not in self.sources:
+                print(f'The source "{source}" is used in the maps, but not defined in DataCache. Skipping preload.')
+                continue
             start = time.time()
             df, DF = self.sources[source].load(list(fields))
             self.df[source] = df

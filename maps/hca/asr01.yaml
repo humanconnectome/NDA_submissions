@@ -23,6 +23,9 @@ elements:
   rename: interview_age
   source: hcpa
 
+- name: redcap_event_name
+  rename: event
+  source: hcpa
 
 - name: gender
   rename: sex

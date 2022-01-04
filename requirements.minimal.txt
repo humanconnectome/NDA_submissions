@@ -1,0 +1,14 @@
+beautifulsoup4
+boto3
+boxsdk
+ccf @ git+https://github.com/humanconnectome/ccf_libs
+ipykernel
+nda-tools
+openpyxl
+pandas
+PyJWT
+PyYAML
+requests
+requests-toolbelt
+tqdm
+xlrd

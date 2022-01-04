@@ -45,9 +45,9 @@ class Loader:
         print(df.redcap_event_name.unique())
         print(filename)
         rosetta=pd.read_csv(filename)
-        rosetta = rosetta[['subjectped', 'nda_guid', 'nda_gender', 'nda_interview_date', 'nda_interview_age']]
-        rosetta.columns = ['subject', 'subjectkey', 'gender', 'interview_date', 'interview_age']
-        df = rosetta.merge(df, on='subject', suffixes=('', '_alt'))
+        rosetta = rosetta[['REDCap_id','subject', 'redcap_event_name','pseudo_guid', 'M/F', 'event_date', 'event_age']]
+        rosetta.columns = ['id','subject', 'redcap_event_name','subjectkey', 'gender', 'interview_date', 'interview_age']
+        df = rosetta.merge(df, on=['id','redcap_event_name'], suffixes=('', '_alt'))
         df['source'] = self.name
         return df
 

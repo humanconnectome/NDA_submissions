@@ -1,5 +1,7 @@
 import os
+import io
 import pandas as pd
+import requests
 from ccf.box import CachedBox
 from ccf.easy_yaml import EasyYaml
 from ccf.redcap import CachedRedcap

@@ -44,12 +44,10 @@ class Loader:
         This is also a good place to merge additional data.
         """
         filename = config['rosetta']['filename']
-        print(df.redcap_event_name.unique())
-        print(filename)
         rosetta=pd.read_csv(filename)
-        rosetta = rosetta[['REDCap_id','subject', 'redcap_event_name','pseudo_guid', 'M/F', 'event_date', 'event_age']]
-        rosetta.columns = ['id','subject', 'redcap_event_name','subjectkey', 'gender', 'interview_date', 'interview_age']
-        df = rosetta.merge(df, on=['id','redcap_event_name'], suffixes=('', '_alt'))
+        rosetta = rosetta[['REDCap_id','subject', 'redcap_event','pseudo_guid', 'M/F', 'event_date', 'event_age']]
+        rosetta.columns = ['id','subject', 'redcap_event','subjectkey', 'gender', 'interview_date', 'interview_age']
+        df = rosetta.merge(df, on=['subject','redcap_event'], suffixes=('', '_alt'))
         df['source'] = self.name
         return df
 
@@ -129,7 +127,12 @@ class RedcapLoader(Loader):
     def _load_hook_(self, fields):
         redcap = CachedRedcap()
         df = redcap.get_behavioral(self.get_source_name(), list(fields))
-        print(df.redcap_event_name.unique())
+        renames = LoadSettings()['Redcap']['datasources'][self.get_source_name()]['event_names']
+        fromnames = LoadSettings()['Redcap']['datasources'][self.get_source_name()]['events']
+        a = dict(zip(fromnames, renames))
+        df["redcap_event"] = df['redcap_event_name'].map(a)
+        backfill = df.loc[df.redcap_event == 'V1'][['id', 'subject']]
+        df = pd.merge(df.drop(columns='subject'), backfill, how='left', on='id')
         return df
 
     def _detect_missing_fields_hook_(self, df, fields):

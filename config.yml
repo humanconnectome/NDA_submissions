@@ -25,6 +25,9 @@ Redcap:
       events: 
         - visit_1_arm_1
         - visit_2_arm_1
+      event_names:
+        - V1
+        - V2
       fields:
         idvar: id
         dobvar: dob
@@ -37,6 +40,9 @@ Redcap:
       events:
         - visit_1_arm_1
         - visit_2_arm_1
+      event_names:
+        - V1
+        - V2
       fields:
         idvar: id
         eventvar: redcap_event_name

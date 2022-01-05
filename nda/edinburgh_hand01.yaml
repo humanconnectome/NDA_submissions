@@ -64,7 +64,7 @@ writing:
   - oh
   notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
     np=no preference; oh=sometimes uses other hand
-  alias: edinburgh_handedness_1,ehi1,ehi1b,ehi_01,hand1,hand_1_writing,hand_writing,handedness_1,iihandwr,ohq_writing,p_ehi_1,short_handform_writing
+  alias: edinburgh_handedness_1,ehi1,ehi1b,ehi_01,hand1,hand_1_writing,hand_writing,handedness1,handedness_1,iihandwr,ohq_writing,p_ehi_1,short_handform_writing
   codes:
     SPR: Strongly Prefer Right
     SPL: Strongly Prefer Left
@@ -110,7 +110,7 @@ throwing:
   - oh
   notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
     np=no preference; oh=sometimes uses other hand
-  alias: edinburgh_handedness_3,ehi2b,ehi3,ehi_03,hand3,hand3l_throwing,hand3r_throwing,hand_3_throwing,hand_throwing,handedness_3,iihandth,ohq_throwing,p_ehi_3,short_handform_throwing,throw
+  alias: edinburgh_handedness_3,ehi2b,ehi3,ehi_03,hand3,hand3l_throwing,hand3r_throwing,hand_3_throwing,hand_throwing,handedness2,handedness_3,iihandth,ohq_throwing,p_ehi_3,short_handform_throwing,throw
   codes:
     SPR: Strongly Prefer Right
     SPL: Strongly Prefer Left
@@ -179,7 +179,7 @@ toothbrush:
   - oh
   notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
     np=no preference; oh=sometimes uses other hand
-  alias: edinburgh_handedness_5,ehi3b,ehi5,ehi_06,hand4,hand5,hand5l_toothbrush,hand5r_toothbrush,hand_5_toothbrush,hand_toothbrush,handedness_5,iihandto,ohq_toothbrush,p_ehi_5,tooth
+  alias: edinburgh_handedness_5,ehi3b,ehi5,ehi_06,hand4,hand5,hand5l_toothbrush,hand5r_toothbrush,hand_5_toothbrush,hand_toothbrush,handedness3,handedness_5,iihandto,ohq_toothbrush,p_ehi_5,tooth
   codes:
     SPR: Strongly Prefer Right
     SPL: Strongly Prefer Left
@@ -225,7 +225,7 @@ spoon:
   - oh
   notes: SPR=Strongly Prefer Right; SPL=Strongly Prefer Left; ne =not experienced;
     np=no preference; oh=sometimes uses other hand
-  alias: edinburgh_handedness_7,ehi4b,ehi7,hand6,hand7,hand7l_spoon,hand7r_spoon,hand_7_spoon,hand_spoon,handedness_7,iihandsp,ohq_spoon,p_ehi_7,short_handform_spoon
+  alias: edinburgh_handedness_7,ehi4b,ehi7,hand6,hand7,hand7l_spoon,hand7r_spoon,hand_7_spoon,hand_spoon,handedness4,handedness_7,iihandsp,ohq_spoon,p_ehi_7,short_handform_spoon
   codes:
     SPR: Strongly Prefer Right
     SPL: Strongly Prefer Left
@@ -1144,6 +1144,7 @@ hcp_handedness_score:
     where values for elements are coded left=-10, spl/usually left=-5, np=0, spr/usually
     right=5, and right=10. Missing elements are assigned the median of subject's other
     summands.
+  alias: handedness_lq
   codes:
     np: 0, spr/usually right=5, and right=10. Missing elements are assigned the median
       of subject's other summands.

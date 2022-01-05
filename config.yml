@@ -16,13 +16,17 @@ Redcap:
         - 1
         - 2
         - 3
+    PennCNP:
+      visit:
+        - 1
+        - 2
+        - 3
     hcpa:
       events: 
         - visit_1_arm_1
         - visit_2_arm_1
       fields:
         idvar: id
-        eventvar: redcap_event_name
         dobvar: dob
         field: subject_id
         interview_date: v1_date
@@ -45,6 +49,7 @@ Redcap:
       events:
         - visit_arm_1
       fields:
+        eventvar: redcap_event_name
         dobvar: dob
         field: subject_id
         interview_date: intake_date
@@ -56,6 +61,7 @@ Redcap:
         - visit_2_arm_1
         - visit_3_arm_1
       fields:
+        eventvar: redcap_event_name
         dobvar: dob
         field: subject_id
         interview_date: intake_date
@@ -69,6 +75,7 @@ Redcap:
       fields:
         field: parent_id
         #interview_date: intake_date
+        eventvar: redcap_event_name
         sexatbirth: gender
         sitenum: site
 

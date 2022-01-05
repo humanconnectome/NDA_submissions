@@ -6197,3 +6197,15 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+teen_timepoint:
+  type: Integer
+  description: Time point
+  range:
+  - 1::3
+  notes: 1 = Teen's approximately 13 years old; 2 = Teen's approximately 14 years
+    old; 3 = Teen's approximately 15 years old
+  codes:
+    1: Teen's approximately 13 years old
+    2: Teen's approximately 14 years old
+    3: Teen's approximately 15 years old

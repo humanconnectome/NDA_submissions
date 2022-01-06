@@ -49,6 +49,7 @@ class Loader:
         rosetta.columns = ['id','subject', 'redcap_event','subjectkey', 'gender', 'interview_date', 'interview_age']
         df = rosetta.merge(df, on=['subject','redcap_event'], suffixes=('', '_alt'))
         df['source'] = self.name
+
         return df
 
     def _detect_missing_fields_hook_(self, df, fields):
@@ -93,9 +94,10 @@ class BoxLoader(Loader):
         return df
 
     def _post_load_hook_(self, df):
-        visit = "V" + str(config['visit'])
-        df = df[df.assessment == visit]
+        fromnames = LoadSettings()['Redcap']['datasources'][self.get_source_name()]['events']
+        df = df[df.assessment.isin(fromnames)]
         df = df.rename(columns={"subid": "subject"})
+        df['redcap_event']=df.assessment
         return super()._post_load_hook_(df)
 
 
@@ -131,7 +133,7 @@ class RedcapLoader(Loader):
         fromnames = LoadSettings()['Redcap']['datasources'][self.get_source_name()]['events']
         a = dict(zip(fromnames, renames))
         df["redcap_event"] = df['redcap_event_name'].map(a)
-        backfill = df.loc[df.redcap_event == 'V1'][['id', 'subject']]
+        backfill = df.loc[df.redcap_event == 'V1'][['id', 'subject']] #only V1 has subject identifiers
         df = pd.merge(df.drop(columns='subject'), backfill, how='left', on='id')
         return df
 
@@ -217,14 +219,16 @@ class QintLoader(RedcapLoader):
         exclude = ['subject', 'subjectkey', 'gender', 'interview_date', 'interview_age']
         fields = [x for x in fields if x not in exclude]
         df = redcap(self.get_source_name(), fields)
+        renames = LoadSettings()['Redcap']['datasources'][self.get_source_name()]['event_names']
+        fromnames = LoadSettings()['Redcap']['datasources'][self.get_source_name()]['visit']
+        a = dict(zip(list(map(str, fromnames)), renames))
+        df["redcap_event"] = df['visit'].map(a)
         return df
 
     def _post_load_hook_(self, df):
-        visit = config['visit']
-        df = df[df.visit.isin(visit)]
-        print(df.shape)
+        visit = config['Redcap']['datasources'][self.get_source_name()]['visit']
+        df = df[df.visit.isin(list(map(str, visit)))]
         df = df.rename(columns={"subjectid": "subject"})
-        
         return super()._post_load_hook_(df)
 
     

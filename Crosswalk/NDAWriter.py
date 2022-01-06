@@ -40,8 +40,9 @@ def validate_numbers_in_range(definition, field):
 
 def validate_integer(definition, field):
     field = pd.to_numeric(field, 'coerce')
-    if field.dtype.lower() == 'float64':
-        field = field.round().astype('Int64')
+    #if field.dtype.lower() == 'float64':
+    if field.dtype == 'float64':
+            field = field.round().astype('Int64')
     field = validate_numbers_in_range(definition, field)
     return field
 

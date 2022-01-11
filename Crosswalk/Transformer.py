@@ -40,7 +40,6 @@ class Transformer:
         contents = self.Y(filepath)
         element_list = contents['elements']
         print("Loading  ",filepath)
-        
         elements = []
         for item in element_list:
             item['struct'] = struct

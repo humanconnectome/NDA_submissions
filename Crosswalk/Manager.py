@@ -20,12 +20,10 @@ class Manager:
             sources = [sources]
         elif not isinstance(sources, Iterable):
             raise ValueError('Sources must be a string or iterable of strings.')
-
         unique = self.transformer.get_unique_variables() #these are names (not renames) in maps
 
         # filter out the unique variables not included in the `sources`
         unique = [x for x in unique if x[0] in sources]
-
         self.data.preload(unique)
 
     def run(self, struct):

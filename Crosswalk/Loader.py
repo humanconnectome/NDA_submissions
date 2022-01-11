@@ -80,6 +80,7 @@ class Loader:
         df, DF = self._create_shadow_dataframe(df, fields)
         df = df.replace('nan', pd.NA)
         DF = DF.replace('nan', '').fillna('')
+        print('Shape of loaded data',df.shape)
         return df, DF
 
 
@@ -188,7 +189,7 @@ class RedcapLoader(Loader):
 
 
 class ParentLoader(RedcapLoader):
-    def __init__(self, definitions_dir="./definitions/"):
+    def __init__(self, name, definitions_dir="./definitions/"):
         super().__init__('parent', definitions_dir)
 
     def _fields_hook_(self, fields):

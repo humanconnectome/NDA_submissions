@@ -3078,3 +3078,107 @@ phenx_substance10_notes:
   length: 200
   description: 'Names of other medicines used.  '
   notes: 'Use delimiters like comma, semi-colon, or colon to separate  medicines. '
+
+oft30_drink:
+  type: Integer
+  description: How often did you use Any alcoholic drink (e.g., beer, wine, wine cooler,
+    shot of liquor, mixed drink) in the past 30 days?
+  range:
+  - 0::4
+  notes: 0= Never; 1= Less than 1 day a week; 2= 1-2 days a week; 3= 3-4 days a week;
+    4= Every or nearly every day
+  codes:
+    0: Never
+    1: Less than 1 day a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+
+oft30_marj:
+  type: Integer
+  description: How often did you use Marijuana, pot, grass, hashish, or synthetic
+    marijuana (e.g., K2, Spice) in the past 30 days?
+  range:
+  - 0::4
+  notes: 0= Never; 1= Less than 1 day a week; 2= 1-2 days a week; 3= 3-4 days a week;
+    4= Every or nearly every day
+  codes:
+    0: Never
+    1: Less than 1 day a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+
+oft30_opioid:
+  type: Integer
+  description: How often did you use Any illegal opioid (e.g., heroin, street fentanyl)
+    or any prescription pain reliever or opioid (e.g., OxyContin, Percocet, Opana,
+    Vicodin, Dilaudid) taken either without your health care provider?s prescription
+    or more than prescribed to get high, buzzed, or numbed out in the past 30 days?
+  range:
+  - 0::4
+  notes: 0= Never; 1= Less than 1 day a week; 2= 1-2 days a week; 3= 3-4 days a week;
+    4= Every or nearly every day
+  codes:
+    0: Never
+    1: Less than 1 day a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+
+oft30_stim:
+  type: Integer
+  description: How often did you use Any illegal stimulant (e.g., cocaine, blow, crack,
+    crystal meth, ice, speed, meth) or any prescription stimulant (e.g., Adderall,
+    Ritalin, diet pills) taken either without your health care provider?s prescription
+    or more than prescribed to get high, buzzed, or numbed out in the past 30 days?
+  range:
+  - 0::4
+  notes: 0= Never; 1= Less than 1 day a week; 2= 1-2 days a week; 3= 3-4 days a week;
+    4= Every or nearly every day
+  codes:
+    0: Never
+    1: Less than 1 day a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+
+oft30_stmr:
+  type: Integer
+  description: How often did you use A prescription sedative, tranquilizer, or muscle
+    relaxer (e.g., Nembutal, Ativan, Valium, Xanax, Ambien, Klonopin) taken either
+    without your health care provider?s prescription or more than prescribed to get
+    high, buzzed, or numbed out in the past 30 days?
+  range:
+  - 0::4
+  notes: 0= Never; 1= Less than 1 day a week; 2= 1-2 days a week; 3= 3-4 days a week;
+    4= Every or nearly every day
+  codes:
+    0: Never
+    1: Less than 1 day a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+
+oft30_recrd:
+  type: Integer
+  description: How often did you use Any other kind of illegal or recreational drug
+    (e.g., ecstasy, MDMA, molly, LSD, special K, mushrooms, poppers, whippets, GHB,
+    bath salts) in the past 30 days?
+  range:
+  - 0::4
+  notes: 0= Never; 1= Less than 1 day a week; 2= 1-2 days a week; 3= 3-4 days a week;
+    4= Every or nearly every day
+  codes:
+    0: Never
+    1: Less than 1 day a week
+    2: 1-2 days a week
+    3: 3-4 days a week
+    4: Every or nearly every day
+
+drinks30_num:
+  type: Integer
+  description: When you drank in the past 30 days, about how many beers, glasses of
+    wine, wine coolers, shots of liquor or mixed drinks did you have, on average,
+    per day?
+  notes: Number of drinks per day

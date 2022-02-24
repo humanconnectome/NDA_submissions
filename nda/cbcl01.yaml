@@ -6209,3 +6209,93 @@ teen_timepoint:
     1: Teen's approximately 13 years old
     2: Teen's approximately 14 years old
     3: Teen's approximately 15 years old
+
+cbcl66_des:
+  type: String
+  length: 500
+  description: Repeats certain acts over and over, compulsions - Description
+
+cbcl70_des:
+  type: String
+  length: 500
+  description: Sees things that are not there - Description
+
+cbcl73_des:
+  type: String
+  length: 500
+  description: Sexual problems - Description
+
+cbcl77_des:
+  type: String
+  length: 500
+  description: Sleeps more than most kids during day and/or night - Description
+
+cbcl79_des:
+  type: String
+  length: 500
+  description: Speech problem - Description
+
+cbcl83_des:
+  type: String
+  length: 500
+  description: Stores up too many things he or she does not need - Description
+
+cbcl84_des:
+  type: String
+  length: 500
+  description: Strange behavior - Description
+
+cbcl85_des:
+  type: String
+  length: 500
+  description: Strange ideas - Description
+
+cbcl92_des:
+  type: String
+  length: 500
+  description: Talks or walks in sleep - Description
+
+cbcl100_des:
+  type: String
+  length: 500
+  description: Trouble sleeping - Description
+
+cbcl105_des:
+  type: String
+  length: 500
+  description: Uses drugs for non-medical purposes - Description
+
+cbcl2_des:
+  type: String
+  length: 500
+  description: Drinks alcohol without parental approval - Description
+
+cbcl9_des:
+  type: String
+  length: 500
+  description: Can't get his or her mind off certain thoughts/obsessions - Description
+
+cbcl29_des:
+  type: String
+  length: 500
+  description: Fears certain animals, situations, or places, other than school - Description
+
+cbcl40_des:
+  type: String
+  length: 500
+  description: Hears sound or voices that are not there - Description
+
+cbcl46_des:
+  type: String
+  length: 500
+  description: Nervous movements or twitching - Description
+
+cbcl56_d_des:
+  type: String
+  length: 500
+  description: Problems with eyes (not if corrected by glasses) - Description
+
+cbcl58_des:
+  type: String
+  length: 500
+  description: Picks nose, skin, or other parts of body - Description

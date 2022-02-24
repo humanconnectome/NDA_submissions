@@ -6117,3 +6117,51 @@ batl_s1d:
   codes:
     0: 'No'
     1: 'Yes'
+
+batl_s1c2_time:
+  type: Integer
+  description: Choose the answer that best describes how long you lost consciousness
+    or were 'knocked out' after your worst blast head injury?
+  range:
+  - 0
+  - 1
+  notes: '0= Less than 30 minutes; 1 = 30 minutes or more '
+  codes:
+    0: Less than 30 minutes
+    1: 30 minutes or more
+
+batl_s3b2_time:
+  type: Integer
+  description: Choose the answer that best describes how long you lost consciousness
+    or were 'knocked out' after your worst blow to the head?
+  range:
+  - 0
+  - 1
+  notes: '0= Less than 30 minutes; 1 = 30 minutes or more '
+  codes:
+    0: Less than 30 minutes
+    1: 30 minutes or more
+
+batl_s5b2_time:
+  type: Integer
+  description: Choose the answer that best describes how long you lost consciousness
+    or were 'knocked out' after your worst blow to the head?
+  range:
+  - 0
+  - 1
+  notes: '0= Less than 30 minutes; 1 = 30 minutes or more '
+  codes:
+    0: Less than 30 minutes
+    1: 30 minutes or more
+
+batl_s7c2_time:
+  type: Integer
+  description: Choose the answer that best describes how long you lost consciousness
+    or were 'knocked out' after your worst blast head injury?
+  range:
+  - 0
+  - 1
+  notes: '0= Less than 30 minutes; 1 = 30 minutes or more '
+  codes:
+    0: Less than 30 minutes
+    1: 30 minutes or more

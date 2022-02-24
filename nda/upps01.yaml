@@ -2803,3 +2803,261 @@ upps7:
     2: Somewhat disagree
     3: Somewhat agree
     4: Totally agree
+
+suppsp_p8:
+  type: Integer
+  description: Sometimes when I feel bad, I can''t seem to stop what I am doing even
+    though it is making me feel worse.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+suppsp_p9:
+  type: Integer
+  description: I quite enjoy taking risks.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+suppsp_p10:
+  type: Integer
+  description: I tend to lose control when I am in a great mood.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+suppsp_p11:
+  type: Integer
+  description: I finish what I start.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+suppsp_p12:
+  type: Integer
+  description: I tend to value and follow a rational, ''sensible'' approach to things.
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+suppsp_p13:
+  type: Integer
+  description: When I am upset I often act without thinking.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+suppsp_p14:
+  type: Integer
+  description: I welcome new and exciting experiences and sensations, even if they
+    are a little frightening and unconventional.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+suppsp_p15:
+  type: Integer
+  description: When I feel rejected, I will often say things that I later regret.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+suppsp_p16:
+  type: Integer
+  description: I would like to learn to fly an airplane.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+suppsp_p17:
+  type: Integer
+  description: Others are shocked or worried about the things I do when I am feeling
+    very excited.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+suppsp_p18:
+  type: Integer
+  description: I would enjoy the sensation of skiing very fast down a high mountain
+    slope.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+suppsp_p19:
+  type: Integer
+  description: I usually think carefully before doing anything.
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+suppsp_p20:
+  type: Integer
+  description: I tend to act without thinking when I am really excited.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+suppsp_lapers:
+  type: Float
+  description: Lack of Perseverance score
+
+suppsp_laprem:
+  type: Float
+  description: Lack of Premeditation score
+
+suppsp_senseek:
+  type: Float
+  description: Sensation seeking score
+
+suppsp_p1:
+  type: Integer
+  description: I generally like to see things through to the end.
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+suppsp_p2:
+  type: Integer
+  description: My thinking is usually careful and purposeful.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+suppsp_p3:
+  type: Integer
+  description: When I am in great mood, I tend to get into situations that could cause
+    me problems.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+suppsp_p4:
+  type: Integer
+  description: Unfinished tasks really bother me.
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+suppsp_p5:
+  type: Integer
+  description: I like to stop and think things over before I do them.
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly
+
+suppsp_p6:
+  type: Integer
+  description: When I feel bad, I will often do things I later regret in order to
+    make myself feel better now.
+  range:
+  - 1::4
+  notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
+  codes:
+    4: Agree Strongly
+    3: Agree Some
+    2: Disagree Some
+    1: Disagree Strongly
+
+suppsp_p7:
+  type: Integer
+  description: Once I get going on something I hate to stop.
+  range:
+  - 1::4
+  notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
+  codes:
+    1: Agree Strongly
+    2: Agree Some
+    3: Disagree Some
+    4: Disagree Strongly

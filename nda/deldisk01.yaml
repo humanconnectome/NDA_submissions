@@ -1658,3 +1658,52 @@ ccc2datecomp:
   type: Date
   description: Date Completed
   alias: drd_date
+
+p_30:
+  type: Float
+  description: Indifference point 30 days delay
+
+p_90:
+  type: Float
+  description: Indifference point 90 days delay
+
+p_180:
+  type: Float
+  description: Indifference point 180 days delay
+
+visit_year:
+  type: Integer
+  description: Year of visit
+
+disc_k_valid:
+  type: Float
+  description: k from delayed reward discounting task
+  notes: -777 = did not pass validity criteria
+  codes:
+    -777: did not pass validity criteria
+
+lnk_valid:
+  type: Float
+  description: ln(k) from delayed reward discounting task
+  notes: -777 = did not pass validity criteria
+  codes:
+    -777: did not pass validity criteria
+
+auc_valid:
+  type: Float
+  description: Area Under the Curve from delayed reward discounting task
+  notes: -777 = did not pass validity criteria
+  codes:
+    -777: did not pass validity criteria
+
+discr2_rec:
+  type: Float
+  description: R^2 from delayed reward discounting task recoded
+
+p_0:
+  type: Float
+  description: Indifference point 0 days
+
+p_7:
+  type: Float
+  description: Indifference point 7 days delay

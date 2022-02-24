@@ -1308,3 +1308,8 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+timepoint_label:
+  type: String
+  length: 15
+  description: Timepoint/visit label

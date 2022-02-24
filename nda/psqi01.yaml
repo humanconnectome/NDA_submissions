@@ -1348,3 +1348,7 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+visit_year:
+  type: Integer
+  description: Year of visit

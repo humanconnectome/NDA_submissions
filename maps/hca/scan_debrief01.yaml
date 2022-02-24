@@ -36,17 +36,17 @@ elements:
   name: satisfaction1
   source: hcpa
 
-- rename: satisfaction1more
-  name: satisfaction1more
-  source: hcpa
+#- rename: satisfaction1more
+#  name: satisfaction1more
+#  source: hcpa
 
 - rename: satisfaction2
   name: satisfaction2
   source: hcpa
 
-- rename: satisfaction2more
-  name: satisfaction2more
-  source: hcpa
+#- rename: satisfaction2more
+#  name: satisfaction2more
+#  source: hcpa
 
 - rename: satisfaction3
   name: satisfaction3
@@ -60,13 +60,13 @@ elements:
   name: satisfaction4more
   source: hcpa
 
-- rename: satisfaction5
-  name: satisfaction5
-  source: hcpa
+#- rename: satisfaction5
+#  name: satisfaction5
+#  source: hcpa
 
-- rename: satisfaction6
-  name: satisfaction6
-  source: hcpa
+#- rename: satisfaction6
+#  name: satisfaction6
+#  source: hcpa
 
 - rename: satisfaction7
   name: satisfaction7

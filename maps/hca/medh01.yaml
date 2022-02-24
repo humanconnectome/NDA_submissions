@@ -84,9 +84,10 @@ elements:
   name: dental6
   source: hcpa
 
-- rename: dental6_1
-  name: dental6_1
-  source: hcpa
+# free text field too long
+#- rename: dental6_1
+#  name: dental6_1
+#  source: hcpa
 
 - rename: dental6_2
   name: dental6_2

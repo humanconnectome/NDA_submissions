@@ -1,0 +1,518 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: clinical_barcode,id,subject_id
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  alias: bl_visit_date,date,date_time_trails
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: age_months,ch_age
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of subject at birth
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: ch_sex,gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+versionchildadult:
+  type: String
+  length: 5
+  required: true
+  description: Version of form given (Child or Adult)
+  range:
+  - Child
+  - Adult
+
+tmta_raw:
+  type: Float
+  description: 'Trailmaking test part A (Paper & pencil): Time to completion (Seconds)'
+  alias: tmt_a,tmta,trail_a,traila_time_seconds,trails_a_numbers_time,trails_a_time
+
+partaerrors:
+  type: Integer
+  description: Part A Number of Errors
+  alias: traila_numerrors,trails_a_errors,trails_a_numbers_errors
+
+tmtb_raw:
+  type: Float
+  description: 'Trailmaking test Part B (Paper & pencil): Time to completion (Seconds)'
+  alias: tmt_b,tmtb,trail_b,trailb_time_seconds,trails_b_numlet_time,trails_b_time,trailsb_raw
+
+partberrors:
+  type: Integer
+  description: Part B Number of Errors
+  alias: trailb_numerrors,trails_b_errors,trails_b_numlet_errors
+
+totalcpz:
+  type: Integer
+  description: Meds Total CPZ Equivalent
+
+iqundr70:
+  type: Integer
+  description: IQ less than 70
+  range:
+  - 0
+  - 1
+  notes: 0= no; 1= yes
+  codes:
+    0: 'no'
+    1: 'yes'
+
+seizures:
+  type: Integer
+  required: true
+  description: Does (did) the subject have Seizures?
+  range:
+  - 0
+  - 1
+  - 2
+  - 999
+  notes: 0 = No; 1 = Yes; 2 = Unknown; 999 =NA/missing
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Unknown
+    999: NA/missing
+
+days_baseline:
+  type: Integer
+  description: Days since baseline
+  alias: dayneuro
+
+assbdic:
+  type: String
+  length: 5
+  description: Assessment Point
+  range:
+  - D
+  - 14
+  - E
+  - 24
+  - LB
+  - 36
+  - 72
+  - 96
+  - 120
+  - 9
+  - B
+  - 3
+  - 7
+  - 144
+  - 168
+  - 192
+  - C
+  notes: D=MTA baseline assessment; 14=MTA 14 month assessment; E=MTA early termination
+    assessment; B = MTA Pre-Baseline Screening Assessment (579/579); 09 = MTA 9 Month
+    Assessment (530/530); 24=MTA 24 month assessment; LB=LNCG baseline assessment;
+    36=MTA and LNCG 3 year assessment; 72=MTA and LNCG 6 year assessment; 96=MTA and
+    LNCG 8 year assessment; 03 = MTA 3 Month Assessment (438/687);120=MTA and LNCG
+    10 year assessment; 7= 7th Grade Assessment (221/276); 144 = MTA & LNCG 12 Month
+    Assessment (578/578); 168 = MTA & LNCG 14 Month Assessment (585/585); 192 = MTA
+    & LNCG 16 Month Assessment (505/505); C = MTA Pre-Baseline Screening Assessment
+    (78/78)
+  alias: assneuro
+  codes:
+    D: MTA baseline assessment
+    14: MTA 14 month assessment
+    E: MTA early termination assessment
+    B: MTA Pre-Baseline Screening Assessment (579/579)
+    9: MTA 9 Month Assessment (530/530)
+    24: MTA 24 month assessment
+    LB: LNCG baseline assessment
+    36: MTA and LNCG 3 year assessment
+    72: MTA and LNCG 6 year assessment
+    96: MTA and LNCG 8 year assessment
+    3: MTA 3 Month Assessment (438/687)
+    120: MTA and LNCG 10 year assessment
+    7: 7th Grade Assessment (221/276)
+    144: MTA & LNCG 12 Month Assessment (578/578)
+    168: MTA & LNCG 14 Month Assessment (585/585)
+    192: MTA & LNCG 16 Month Assessment (505/505)
+    C: MTA Pre-Baseline Screening Assessment (78/78)
+
+relationship:
+  type: Integer
+  description: Relationship of respondent to individual
+  range:
+  - 1::94
+  - -999
+  notes: 1 = Biological mom; 2 = Biological dad; 3 = Grandparent; 4 = Special education
+    (sped) teacher; 5 = General education teacher; 6 = Occupational therapist; 7 =
+    Speech and language therapist; 8 = Behavioral therapist; 9 = Paraprofessional;
+    10 = Aide; 11 = Principal; 12 = Administrator; 14 = Content teacher; 15 = Parent
+    center director; 16 = Self; 17=Adoptive mother; 18=Adoptive father; 19=Foster
+    mother; 20 = Foster father; 21=Grandmother; 22=Grandfather; 23=Step-mother; 24
+    = Step-father; 25=Aunt; 26=Uncle; 28=Both parents;31= Grandmother from mother
+    side; 32= Grandfather from mother side; 33= Grandmother from father side; 34=
+    Grandfather from father side; 36= Brother; 37= Sister; 38= Cousin; 39= female
+    caregiver; 40=male caregiver; 41=Female child; 42=Male child; 43=Spouse/Mate;
+    44=Friend; 45=Parent; 46=Significant other; 47=Sibling; 48=Son/Daughter; 49=Son-in-law/Daughter-in
+    law; 50=Other Relative; 51=Paid caregiver; 52=Friends; 53=Roommate; 54=Supervisor;
+    55=mother's boyfriend; 56=other parental figure; 57=Summary; 58=counselor ; 59
+    = other female relative; 60 = other male relative; 61 = non-relative ; 62=Maternal
+    Aunt; 63=Maternal Uncle; 64=Maternal Cousin; 65 = Paternal Aunt; 66=Paternal Uncle;
+    67=Paternal Cousin ; 68=Biological/Adoptive Mother and Grandmother; 69=Biological/Adoptive
+    Mother and Stepmother and Grandmother; 70=Biological/Adoptive Mother and Grandmother
+    and Foster Father; 71=Biological/Adoptive Mother and Stepmother and Foster Mother;
+    72=Biological/Adoptive Mother and Foster Mother; 73=Biological/Adoptive Mother
+    and Biological/Adoptive Father; 74=Biological/Adoptive Mother and Stepmother and
+    Biological/Adoptive Father; 75=Biological/Adoptive Mother and Other; 76=Biological/Adoptive
+    Mother and Stepmother and Stepfather; 77=Biological/Adoptive Mother and Stepfather;
+    78=Biological/Adoptive Mother and Grandfather; 79=Biological/Adoptive Mother and
+    Stepmother and Foster Father; 80=Biological/Adoptive Mother and Stepmother; 81=Guardian,
+    female; 82=Other female; 83=Guardian, male; 84=Other male; 85=Other/Grandparent/Nanny;
+    86 = Mother, Father, Guardian; 87 = Daughter, son, grandchild; 88 = Professional
+    (e.g., social worker, nurse, therapist, psychiatrist, or group home staff);  -999=Missing;
+    89 = Biological parent; 90=Other; 91 = Stepparent; 92 = Adoptive parent; 93 =
+    Foster parent; 94 = Co-worker
+  alias: relneuro
+  codes:
+    1: Biological mom
+    2: Biological dad
+    3: Grandparent
+    4: Special education (sped) teacher
+    5: General education teacher
+    6: Occupational therapist
+    7: Speech and language therapist
+    8: Behavioral therapist
+    9: Paraprofessional
+    10: Aide
+    11: Principal
+    12: Administrator
+    14: Content teacher
+    15: Parent center director
+    16: Self
+    17: Adoptive mother
+    18: Adoptive father
+    19: Foster mother
+    20: Foster father
+    21: Grandmother
+    22: Grandfather
+    23: Step-mother
+    24: Step-father
+    25: Aunt
+    26: Uncle
+    28: Both parents
+    31: Grandmother from mother side
+    32: Grandfather from mother side
+    33: Grandmother from father side
+    34: Grandfather from father side
+    36: Brother
+    37: Sister
+    38: Cousin
+    39: female caregiver
+    40: male caregiver
+    41: Female child
+    42: Male child
+    43: Spouse/Mate
+    44: Friend
+    45: Parent
+    46: Significant other
+    47: Sibling
+    48: Son/Daughter
+    49: Son-in-law/Daughter-in law
+    50: Other Relative
+    51: Paid caregiver
+    52: Friends
+    53: Roommate
+    54: Supervisor
+    55: mother's boyfriend
+    56: other parental figure
+    57: Summary
+    58: counselor
+    59: other female relative
+    60: other male relative
+    61: non-relative
+    62: Maternal Aunt
+    63: Maternal Uncle
+    64: Maternal Cousin
+    65: Paternal Aunt
+    66: Paternal Uncle
+    67: Paternal Cousin
+    68: Biological/Adoptive Mother and Grandmother
+    69: Biological/Adoptive Mother and Stepmother and Grandmother
+    70: Biological/Adoptive Mother and Grandmother and Foster Father
+    71: Biological/Adoptive Mother and Stepmother and Foster Mother
+    72: Biological/Adoptive Mother and Foster Mother
+    73: Biological/Adoptive Mother and Biological/Adoptive Father
+    74: Biological/Adoptive Mother and Stepmother and Biological/Adoptive Father
+    75: Biological/Adoptive Mother and Other
+    76: Biological/Adoptive Mother and Stepmother and Stepfather
+    77: Biological/Adoptive Mother and Stepfather
+    78: Biological/Adoptive Mother and Grandfather
+    79: Biological/Adoptive Mother and Stepmother and Foster Father
+    80: Biological/Adoptive Mother and Stepmother
+    81: Guardian, female
+    82: Other female
+    83: Guardian, male
+    84: Other male
+    85: Other/Grandparent/Nanny
+    86: Mother, Father, Guardian
+    87: Daughter, son, grandchild
+    88: Professional (e.g., social worker, nurse, therapist, psychiatrist, or group
+      home staff)
+    -999: Missing
+    89: Biological parent
+    90: Other
+    91: Stepparent
+    92: Adoptive parent
+    93: Foster parent
+    94: Co-worker
+
+actbdic:
+  type: Integer
+  description: Active status
+  range:
+  - 0::5
+  notes: 0=Inactive-Data collected after the 14 month treatment phase/after early
+    termination from treatment phase/prior to treatment phase; 1=Active-Data collected
+    during the 14 month treatment phase while subject received originally assigned
+    treatment regardless of degree of compliance; 2=Active-This is the last active
+    assessment for subjects who were about to violate treatment arm by receiving alternate
+    treatment; 3=Active-This is the last active assessment for subjects who were about
+    to leave the study by moving away;4=Yes, Active; 5=No, Not Active
+  alias: actneuro
+  codes:
+    0: Inactive-Data collected after the 14 month treatment phase/after early termination
+      from treatment phase/prior to treatment phase
+    1: Active-Data collected during the 14 month treatment phase while subject received
+      originally assigned treatment regardless of degree of compliance
+    2: Active-This is the last active assessment for subjects who were about to violate
+      treatment arm by receiving alternate treatment
+    3: Active-This is the last active assessment for subjects who were about to leave
+      the study by moving away
+    4: Yes, Active
+    5: No, Not Active
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+  alias: sitenum
+
+sjtyp:
+  type: Integer
+  description: Subject type
+  range:
+  - 1
+  - 2
+  notes: 1=MTA randomized trial subject; 2=Local normative comparison group (LNCG)
+    subject
+  codes:
+    1: MTA randomized trial subject
+    2: Local normative comparison group (LNCG) subject
+
+trails_at:
+  type: Integer
+  description: Trail making test part A - T score
+
+trails_bt:
+  type: Integer
+  description: Trail making test part B - T score
+
+visit:
+  type: String
+  length: 60
+  description: Visit name
+  alias: assessment_number
+
+visnum:
+  type: Float
+  description: Numeric Visit Number
+  notes: '-1.5 = Pre-Screening; -1 = Screening; 0 = Baseline; ## = Visit ## (from
+    1 to 10); Whole numbers = standard monthly visits; #.001 - #.009 = Unscheduled;
+    #.1 = End of Phase 1; #.2 = End of Phase 2; #.3 = End of Phase 3; #.4 = End of
+    Open Choice Phase; #.5 = End of Study; #.6 = Genetic Analysis; 1000=all visits'
+  codes:
+    -1.5: Pre-Screening
+    -1: Screening
+    0: Baseline
+    9: Unscheduled
+    1: End of Phase 1
+    2: End of Phase 2
+    3: End of Phase 3
+    4: End of Open Choice Phase
+    5: End of Study
+    6: Genetic Analysis
+    1000: all visits
+
+me2:
+  type: Integer
+  description: Status
+  range:
+  - 0
+  - 1
+  notes: 0 = Past [Inactive]; 1 = Active
+  codes:
+    0: Past [Inactive]
+    1: Active
+
+tmt_ratio:
+  type: Float
+  description: 'Trail Making Test B: Trail Making Test A'
+  notes: '[tmtb_raw]/[tmta_raw] '
+
+traila_completion_status:
+  type: Integer
+  description: Indicate completion status of Trail making test part  A
+  range:
+  - 0::1
+  notes: 0 = Not completed; 1 = Completed
+  codes:
+    0: Not completed
+    1: Completed
+
+traila_correct_lines:
+  type: Integer
+  description: Trail making test part A - number of correct lines
+  alias: trails_a.trails_a_cr
+
+traila_scaled_score:
+  type: Integer
+  description: Trail making test part A - scaled score
+  alias: tmta_scaled,trails_a_scaled_score
+
+traila_perrank:
+  type: Float
+  description: Trail making test part A Percentile Rank
+  range:
+  - 0::100
+
+traila_range:
+  type: Integer
+  description: Trail making test part A - range
+  range:
+  - 1::7
+  notes: 1 = Impaired; 2 = Borderline; 3 = Low Average; 4 = Average; 5 = High Average;
+    6 = Superior; 7 = Very Superior
+  codes:
+    1: Impaired
+    2: Borderline
+    3: Low Average
+    4: Average
+    5: High Average
+    6: Superior
+    7: Very Superior
+
+trailb_completion_status:
+  type: Integer
+  description: Indicate completion status of Trail making test part B
+  range:
+  - 0::1
+  notes: 0 = Not completed; 1 = Completed
+  codes:
+    0: Not completed
+    1: Completed
+
+trailb_correct_lines:
+  type: Integer
+  description: Trail making test part B - number of correct lines
+  alias: trails_b.trails_b_cr
+
+trailb_scaled_score:
+  type: Integer
+  description: Trail making test part B - scaled score
+  alias: tmtb_scaled,trails_b_scaled_score,trailsb_t
+
+trailb_perrank:
+  type: Float
+  description: Trail making test part B Percentile Rank
+  range:
+  - 0::100
+
+trailb_range:
+  type: Integer
+  description: Trail making test part B - range
+  range:
+  - 1::7
+  notes: 1 = Impaired; 2 = Borderline; 3 = Low Average; 4 = Average; 5 = High Average;
+    6 = Superior; 7 = Very Superior
+  codes:
+    1: Impaired
+    2: Borderline
+    3: Low Average
+    4: Average
+    5: High Average
+    6: Superior
+    7: Very Superior
+
+pretrails_time:
+  type: Float
+  description: 'Trailmaking Pretrials: Time to Completion (Seconds)'
+
+pretrails_errors:
+  type: Integer
+  description: 'Trailmaking Pretrials: Number of Errors'
+
+trails_a_trails_a_rt:
+  type: Float
+  description: Trails A- Total Response Time for all Test Responses  (ms)
+  alias: trails_a.trails_a_rt
+
+trails_b_trails_b_rt:
+  type: Float
+  description: Trails B- Total Response Time for all Test Responses (ms)
+  alias: trails_b.trails_b_rt
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+
+trailsb_complete:
+  type: Integer
+  description: Did SP finish Trail B in 300 seconds or less?
+  range:
+  - 1::4
+  notes: 1 = Yes; 2 = No; 3 = Refused; 4 = N/A
+  codes:
+    1: 'Yes'
+    2: 'No'
+    3: Refused
+    4: N/A
+
+trails_b_complete:
+  type: Integer
+  description: Complete?
+  range:
+  - 0::2
+  notes: 0 = Incomplete; 1 = Unverified; 2 = Complete
+  codes:
+    0: Incomplete
+    1: Unverified
+    2: Complete

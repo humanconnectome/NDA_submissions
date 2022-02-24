@@ -1427,3 +1427,89 @@ hand_foot2:
   codes:
     1: left
     2: right
+
+handedness1:
+  type: Integer
+  description: 'Writing:'
+  range:
+  - 100
+  - 50
+  - 0
+  - -50
+  - -100
+  - 9999
+  notes: 100= Always right; 50= Usually right; 0= No preference; -50= Usually left;
+    -100= Always left; 9999= Unknown (not answered)
+  codes:
+    100: Always right
+    50: Usually right
+    0: No preference
+    -50: Usually left
+    -100: Always left
+    9999: Unknown (not answered)
+
+handedness2:
+  type: Integer
+  description: 'Throwing a baseball:'
+  range:
+  - 100
+  - 50
+  - 0
+  - -50
+  - -100
+  - 9999
+  notes: 100= Always right; 50= Usually right; 0= No preference; -50= Usually left;
+    -100= Always left; 9999= Unknown (not answered)
+  codes:
+    100: Always right
+    50: Usually right
+    0: No preference
+    -50: Usually left
+    -100: Always left
+    9999: Unknown (not answered)
+
+handedness3:
+  type: Integer
+  description: 'Brushing your teeth:'
+  range:
+  - 100
+  - 50
+  - 0
+  - -50
+  - -100
+  - 9999
+  notes: 100= Always right; 50= Usually right; 0= No preference; -50= Usually left;
+    -100= Always left; 9999= Unknown (not answered)
+  codes:
+    100: Always right
+    50: Usually right
+    0: No preference
+    -50: Usually left
+    -100: Always left
+    9999: Unknown (not answered)
+
+handedness4:
+  type: Integer
+  description: 'Using a spoon:'
+  range:
+  - 100
+  - 50
+  - 0
+  - -50
+  - -100
+  - 9999
+  notes: 100= Always right; 50= Usually right; 0= No preference; -50= Usually left;
+    -100= Always left; 9999= Unknown (not answered)
+  codes:
+    100: Always right
+    50: Usually right
+    0: No preference
+    -50: Usually left
+    -100: Always left
+    9999: Unknown (not answered)
+
+handedness_lq:
+  type: Integer
+  description: Laterality quotient
+  notes: '(sum([handedness1], [handedness2], [handedness3], [handedness4]))/4 LH:
+    -100 to -60; MH: -60 to 60; RH: 61 tp 100'

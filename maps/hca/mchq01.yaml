@@ -79,10 +79,10 @@ elements:
   name: mstrl2_cycle
   source: hcpa
 
-- rename: meau_01b
-  name: mstrl2_last
-  source: hcpa
-  func: format_date
+#- rename: meau_01b
+#  name: mstrl2_last
+#  source: hcpa
+#  func: format_date
 
 - rename: straw1
   name: straw1

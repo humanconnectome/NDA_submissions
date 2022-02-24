@@ -3105,3 +3105,1239 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+ctrf_8:
+  type: Integer
+  description: Can''t stand waiting; wants everything now?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_91:
+  type: Integer
+  description: Unusually loud?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_92:
+  type: Integer
+  description: Upset by new people or situations?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_92text:
+  type: String
+  length: 250
+  description: 'Describe the following: Upset by new people or situations'
+
+ctrf_93:
+  type: Integer
+  description: Vomiting, throwing up (without medical cause)?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_94:
+  type: Integer
+  description: Unclean personal appearance?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_95:
+  type: Integer
+  description: Wanders away?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_96:
+  type: Integer
+  description: Wants a lot of attention?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_97:
+  type: Integer
+  description: Whining?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_98:
+  type: Integer
+  description: Withdrawn, doesn''t get involved with others?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_99:
+  type: Integer
+  description: Worries?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_9:
+  type: Integer
+  description: Chews on things that aren''t edible?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_100:
+  type: String
+  length: 250
+  description: 'Describe the following: Worries'
+
+ctrf_10:
+  type: Integer
+  description: Clings to adults or too dependent?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_11:
+  type: Integer
+  description: Constantly seeks help?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_12:
+  type: Integer
+  description: Apathetic or unmotivated?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_13:
+  type: Integer
+  description: Cries a lot?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_14:
+  type: Integer
+  description: Cruel to animals?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_15:
+  type: Integer
+  description: Defiant?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_16:
+  type: Integer
+  description: Demands must be met immediately?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_17:
+  type: Integer
+  description: Destroys his/her own things?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_18:
+  type: Integer
+  description: Destroys property belonging to others?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_19:
+  type: Integer
+  description: Daydreams or gets lost in his/her thoughts?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_20:
+  type: Integer
+  description: Disobedient?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_21:
+  type: Integer
+  description: Disturbed by any change in routine?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_22:
+  type: Integer
+  description: Cruelty, bullying, or meanness to others?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_23:
+  type: Integer
+  description: Doesn''t answer when people talk to him/her?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_24:
+  type: Integer
+  description: Difficulty following directions?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_25:
+  type: Integer
+  description: Doesn''t get along with other children?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_26:
+  type: Integer
+  description: Doesn''t know how to have fun; acts like a little adult?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_27:
+  type: Integer
+  description: Doesn''t seem to feel guilty after misbehaving?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_1:
+  type: Integer
+  description: Aches or pains (without medical cause; do not include stomach or headaches)?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_28:
+  type: Integer
+  description: Disturbs other children?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_29:
+  type: Integer
+  description: Easily frustrated?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_30:
+  type: Integer
+  description: Easily jealous?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_31:
+  type: Integer
+  description: Eats or drinks things that are not food ? do not include sweets?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_31text:
+  type: String
+  length: 250
+  description: 'Describe the following: Eats or drinks things that are not food ?
+    do not include sweets'
+
+ctrf_32:
+  type: Integer
+  description: Fears certain animals, situations, or places other than daycare or
+    school?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_32text:
+  type: String
+  length: 250
+  description: 'Describe the following: Fears certain animals, situations, or places
+    other than daycare or school'
+
+ctrf_33:
+  type: Integer
+  description: Feelings are easily hurt?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_34:
+  type: Integer
+  description: Gets hurt a lot, accident-prone?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_35:
+  type: Integer
+  description: Gets in many fights?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_2:
+  type: Integer
+  description: Acts too young for age?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_36:
+  type: Integer
+  description: Gets into everything?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_37:
+  type: Integer
+  description: Gets too upset when separated from parents?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_38:
+  type: Integer
+  description: Explosive and unpredictable behavior?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_39:
+  type: Integer
+  description: Headaches (without medical cause)?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_40:
+  type: Integer
+  description: Hits others?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_41:
+  type: Integer
+  description: Holds his/her breath?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_42:
+  type: Integer
+  description: Hurts animals or people without meaning to?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_43:
+  type: Integer
+  description: Looks unhappy without good reason?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_44:
+  type: Integer
+  description: Angry moods?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_45:
+  type: Integer
+  description: Nausea, feels sick (without medical cause)?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_3:
+  type: Integer
+  description: Afraid to try new things?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_46:
+  type: Integer
+  description: Nervous movements or twitching?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_46text:
+  type: String
+  length: 250
+  description: 'Describe the following: Nervous movements or twitching'
+
+ctrf_47:
+  type: Integer
+  description: Nervous, highstrung, or tense?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_48:
+  type: Integer
+  description: Fails to carry out assigned tasks?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_49:
+  type: Integer
+  description: Fears daycare or school?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_50:
+  type: Integer
+  description: Overtired?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_51:
+  type: Integer
+  description: Fidgets?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_52:
+  type: Integer
+  description: Gets teased by other children?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_53:
+  type: Integer
+  description: Physically attacks people?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_54:
+  type: Integer
+  description: Picks nose, skin, or other parts of body?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_4:
+  type: Integer
+  description: Avoids looking others in the eye?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_54text:
+  type: String
+  length: 250
+  description: 'Describe the following: Picks nose, skin, or other parts of body'
+
+ctrf_55:
+  type: Integer
+  description: Plays with own sex parts too much?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_56:
+  type: Integer
+  description: Poorly coordinated or clumsy?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_57:
+  type: Integer
+  description: Problems with eyes without medical cause?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_57text:
+  type: String
+  length: 250
+  description: 'Describe the following: Problems with eyes without medical cause'
+
+ctrf_58:
+  type: Integer
+  description: Punishment doesn''t change his/her behavior?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_59:
+  type: Integer
+  description: Quickly shifts from one activity to another?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_60:
+  type: Integer
+  description: Rashes or other skin problems (without medical cause)?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_61:
+  type: Integer
+  description: Refuses to eat?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_62:
+  type: Integer
+  description: Refuses to play active games?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_5:
+  type: Integer
+  description: Can''t concentrate, can''t pay attention for long?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_63:
+  type: Integer
+  description: Repeatedly rocks head or body?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_64:
+  type: Integer
+  description: Inattentive, easily distracted?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_65:
+  type: Integer
+  description: Lying or cheating?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_66:
+  type: Integer
+  description: Screams a lot?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_67:
+  type: Integer
+  description: Seems unresponsive to affection?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_68:
+  type: Integer
+  description: Self-conscious or easily embarrassed?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_69:
+  type: Integer
+  description: Selfish or won''t share?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_70:
+  type: Integer
+  description: Shows little affection toward people?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_71:
+  type: Integer
+  description: Shows little interest in things around him/her?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_72:
+  type: Integer
+  description: Shows too little fear of getting hurt?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_6:
+  type: Integer
+  description: Can''t sit still, restless or hyperactive?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_73:
+  type: Integer
+  description: Too shy or timid?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_74:
+  type: Integer
+  description: Not liked by other children?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_75:
+  type: Integer
+  description: Overactive?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_76:
+  type: Integer
+  description: Speech problem?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_76text:
+  type: String
+  length: 250
+  description: 'Describe the following: Speech problem'
+
+ctrf_77:
+  type: Integer
+  description: Stares into space or seems preoccupied?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_78:
+  type: Integer
+  description: Stomachaches or cramps (without medical cause)?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_79:
+  type: Integer
+  description: Overconforms to rules?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_80:
+  type: Integer
+  description: Strange behavior?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_80text:
+  type: String
+  length: 250
+  description: 'Describe the following: Strange behavior'
+
+ctrf_7:
+  type: Integer
+  description: Can''t stand having things out of place?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_81:
+  type: Integer
+  description: Stubborn, sullen, or irritable?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_82:
+  type: Integer
+  description: Sudden changes in mood or feelings?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_83:
+  type: Integer
+  description: Sulks a lot?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_84:
+  type: Integer
+  description: Teases a lot?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_85:
+  type: Integer
+  description: Temper tantrums or hot temper?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_86:
+  type: Integer
+  description: Too concerned with neatness or cleanliness?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_87:
+  type: Integer
+  description: Too fearful or anxious?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_88:
+  type: Integer
+  description: Uncooperative?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_89:
+  type: Integer
+  description: Underactive, slow moving, or lacks energy?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True
+
+ctrf_90:
+  type: Integer
+  description: Unhappy, sad, or depressed?
+  range:
+  - 0::2
+  notes: 0 = Not True (as far as you know); 1 = Somewhat or Sometimes True; 2 = Very
+    True or Often True
+  codes:
+    0: Not True (as far as you know)
+    1: Somewhat or Sometimes True
+    2: Very True or Often True

@@ -149,9 +149,9 @@ elements:
   recode:
     2: 0
 
-- rename: psqi5j_1
-  name: psqi5j_1
-  source: hcpa
+#- rename: psqi5j_1
+#  name: psqi5j_1
+#  source: hcpa
 
 - rename: psqi5j_2
   name: psqi5j_2

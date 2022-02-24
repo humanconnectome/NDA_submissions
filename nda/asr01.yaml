@@ -4152,3 +4152,108 @@ close_friends:
   - 4 or more
   - None
   alias: a_about_how_many_close_fri
+
+asr6m_adhd_1:
+  type: Integer
+  description: In the past 6 months, how often have You avoided or delayed getting
+    started when you had a task that required a lot of thought
+  range:
+  - 0::4
+  notes: 0= Never; 1= Rarely; 2=Sometimes; 3= Oten; 4= Very Often
+  codes:
+    0: Never
+    1: Rarely
+    2: Sometimes
+    3: Oten
+    4: Very Often
+
+asr6m_adhd_2:
+  type: Integer
+  description: In the past 6 months, how often did you have problems remembering appointments
+    or obligations
+  range:
+  - 0::5
+  notes: 0= Never; 1= Rarely; 2=Sometimes; 3= Oten; 4= Very Often
+  codes:
+    0: Never
+    1: Rarely
+    2: Sometimes
+    3: Oten
+    4: Very Often
+
+asr6m_adhd_3:
+  type: Integer
+  description: In the past 6 months, how often did you have difficulty getting things
+    in order when you had to do a task that required organization
+  range:
+  - 0::6
+  notes: 0= Never; 1= Rarely; 2=Sometimes; 3= Oten; 4= Very Often
+  codes:
+    0: Never
+    1: Rarely
+    2: Sometimes
+    3: Oten
+    4: Very Often
+
+asr6m_adhd_4:
+  type: Integer
+  description: 'In the past 6 months, how often did you have trouble wrapping up the
+    final details of a project once the challenging parts were done '
+  range:
+  - 0::7
+  notes: 0= Never; 1= Rarely; 2=Sometimes; 3= Oten; 4= Very Often
+  codes:
+    0: Never
+    1: Rarely
+    2: Sometimes
+    3: Oten
+    4: Very Often
+
+asr6m_adhd_5:
+  type: Integer
+  description: In the past 6 months, how often did you feel overly active and compelled
+    to do things, like you were driven by a motor
+  range:
+  - 0::8
+  notes: 0= Never; 1= Rarely; 2=Sometimes; 3= Oten; 4= Very Often
+  codes:
+    0: Never
+    1: Rarely
+    2: Sometimes
+    3: Oten
+    4: Very Often
+
+asr6m_adhd_6:
+  type: Integer
+  description: In the past 6 months, how often did you fidget or squirm with your
+    hands or feet when you had to sit down for a long time
+  range:
+  - 0::9
+  notes: 0= Never; 1= Rarely; 2=Sometimes; 3= Oten; 4= Very Often
+  codes:
+    0: Never
+    1: Rarely
+    2: Sometimes
+    3: Oten
+    4: Very Often
+
+asr6m_adhd_age:
+  type: Integer
+  description: About how old were you the very first time you had these kinds of problems
+    with organization, concentration, or impulsivity?
+
+asr_intr_rs:
+  type: Integer
+  description: Intrusive Raw Score
+
+asr_intr_ts:
+  type: Float
+  description: Intrusive T-Score
+
+asr_othpx_ts:
+  type: Float
+  description: Other Problems T-Score
+
+visit_year:
+  type: Integer
+  description: Year of visit

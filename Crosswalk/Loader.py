@@ -45,7 +45,7 @@ class Loader:
         """
         filename = config['rosetta']['filename']
         rosetta=pd.read_csv(filename)
-        rosetta = rosetta[['REDCap_id','subject', 'redcap_event','pseudo_guid', 'M/F', 'event_date', 'event_age']]
+        rosetta = rosetta[['REDCap_id','subject', 'redcap_event','pseudo_guid', 'M/F', 'nda_interview_date', 'nda_age']]
         rosetta.columns = ['id','subject', 'redcap_event','subjectkey', 'gender', 'interview_date', 'interview_age']
         df = rosetta.merge(df, on=['subject','redcap_event'], suffixes=('', '_alt'))
         df['source'] = self.name

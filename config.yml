@@ -7,11 +7,15 @@ root:
 config_files:
   box: ./creds/BoxApp.json
 rosetta:  
-  filename: 'HCA_AllSources_11_19_2021.csv'
+  filename: '/home/petra/CCF_QC/PreRelease/HCD_Inventory_Restricted_2022-02-04.csv'
 Redcap:
   api_url: https://redcap.wustl.edu/redcap/srvrs/prod_v3_1_0_001/redcap/api/
   datasources:
     qint:
+      event_names:
+          - V1
+          - V2
+          - V3
       visit:
         - 1
         - 2
@@ -21,6 +25,10 @@ Redcap:
         - 1
         - 2
         - 3
+      events:
+        - V1
+        - V2
+        - V3
     hcpa:
       events: 
         - visit_1_arm_1
@@ -35,27 +43,14 @@ Redcap:
         interview_date: v1_date
         sexatbirth: gender
         sitenum: site
-  behavioral:
-    hcpa:
-      events:
-        - visit_1_arm_1
-        - visit_2_arm_1
-      event_names:
-        - V1
-        - V2
-      fields:
-        idvar: id
-        eventvar: redcap_event_name
-        dobvar: dob
-        field: subject_id
-        interview_date: v1_date
-        sexatbirth: gender
-        sitenum: site
     teen:
       events:
         - visit_arm_1
+      event_names:
+        - V1
       fields:
-        eventvar: redcap_event_name
+        #eventvar: redcap_event_name
+        idvar: id
         dobvar: dob
         field: subject_id
         interview_date: intake_date
@@ -66,8 +61,13 @@ Redcap:
         - visit_1_arm_1
         - visit_2_arm_1
         - visit_3_arm_1
+      event_names:
+        - V1
+        - V2
+        - V3
       fields:
-        eventvar: redcap_event_name
+        idvar: id
+        #eventvar: redcap_event_name
         dobvar: dob
         field: subject_id
         interview_date: intake_date
@@ -78,10 +78,78 @@ Redcap:
         - visit_1_arm_1
         - visit_2_arm_1
         - visit_3_arm_1
+      event_names:
+        - V1
+        - V2
+        - V3
       fields:
+        idvar: id
         field: parent_id
-        #interview_date: intake_date
-        eventvar: redcap_event_name
+        interview_date: intake_date
+        #eventvar: redcap_event_name
+        sexatbirth: gender
+        sitenum: site
+
+  behavioral:
+    hcpa:
+      events:
+        - visit_1_arm_1
+        - visit_2_arm_1
+      event_names:
+        - V1
+        - V2
+      fields:
+        idvar: id
+        #eventvar: redcap_event_name
+        dobvar: dob
+        field: subject_id
+        interview_date: v1_date
+        sexatbirth: gender
+        sitenum: site
+    teen:
+      events:
+        - visit_arm_1
+      event_names:
+        - V1
+      fields:
+        #eventvar: redcap_event_name
+        idvar: id
+        dobvar: dob
+        field: subject_id
+        interview_date: intake_date
+        sexatbirth: gender
+        sitenum: site
+    child:
+      events:
+        - visit_1_arm_1
+        - visit_2_arm_1
+        - visit_3_arm_1
+      event_names:
+        - V1
+        - V2
+        - V3
+      fields:
+        idvar: id
+        #eventvar: redcap_event_name
+        dobvar: dob
+        field: subject_id
+        interview_date: intake_date
+        sexatbirth: gender
+        sitenum: site
+    parent:
+      events:
+        - visit_1_arm_1
+        - visit_2_arm_1
+        - visit_3_arm_1
+      event_names:
+        - V1
+        - V2
+        - V3
+      fields:
+        idvar: id
+        field: parent_id
+        interview_date: intake_date
+        #eventvar: redcap_event_name
         sexatbirth: gender
         sitenum: site
 

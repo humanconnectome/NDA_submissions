@@ -1,0 +1,17 @@
+struct: dummy01
+instrument: Initialize Schematic Variables dont send
+elements:
+
+- name: redcap_event_name
+  rename: redcap_event_name
+  source:
+  - child
+  - teen
+  - parent
+
+- name: dob
+  source:
+  - child
+  - teen
+  - parent
+  

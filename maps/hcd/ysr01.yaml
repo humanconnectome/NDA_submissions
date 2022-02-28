@@ -47,10 +47,10 @@ elements:
   source:
   - child
 
-- rename: cbcl1_2_text
-  name: ysra_item2_2
-  source:
-  - child
+#- rename: cbcl1_2_text
+#  name: ysra_item2_2
+#  source:
+#  - child
 
 - rename: ysr_3
   name: ysra_item3
@@ -87,10 +87,10 @@ elements:
   source:
   - child
 
-- rename: cbcl2_3_text
-  name: ysra_item9_2
-  source:
-  - child
+#- rename: cbcl2_3_text
+#  name: ysra_item9_2
+#  source:
+#  - child
 
 - rename: ysr_10
   name: ysra_item10
@@ -192,10 +192,10 @@ elements:
   source:
   - child
 
-- rename: cbcl5_2_text
-  name: ysra_item29_2
-  source:
-  - child
+#- rename: cbcl5_2_text
+#  name: ysra_item29_2
+#  source:
+#  - child
 
 - rename: ysr_30
   name: ysra_item30
@@ -252,10 +252,10 @@ elements:
   source:
   - child
 
-- rename: cbcl6_6_text
-  name: ysra_item40_2
-  source:
-  - child
+#- rename: cbcl6_6_text
+#  name: ysra_item40_2
+#  source:
+#  - child
 
 - rename: ysr_41
   name: ysra_item41
@@ -287,10 +287,10 @@ elements:
   source:
   - child
 
-- rename: cbcl7_3_text
-  name: ysra_item46_2
-  source:
-  - child
+#- rename: cbcl7_3_text
+#  name: ysra_item46_2
+#  source:
+#  - child
 
 - rename: ysr_47
   name: ysra_item47
@@ -357,10 +357,10 @@ elements:
   source:
   - child
 
-- rename: cbcl9_2_text
-  name: ysra_item56_4_2
-  source:
-  - child
+#- rename: cbcl9_2_text
+#  name: ysra_item56_4_2
+#  source:
+#  - child
 
 - rename: ysr_60
   name: ysra_item56_5
@@ -382,10 +382,10 @@ elements:
   source:
   - child
 
-- rename: cbcl56h_des
-  name: ysra_item56_8_2
-  source:
-  - child
+#- rename: cbcl56h_des
+#  name: ysra_item56_8_2
+#  source:
+#  - child
 
 - rename: ysr_64
   name: ysra_item57
@@ -397,10 +397,10 @@ elements:
   source:
   - child
 
-- rename: cbcl10_1_text
-  name: ysra_item58_2
-  source:
-  - child
+#- rename: cbcl10_1_text
+#  name: ysra_item58_2
+#  source:
+#  - child
 
 - rename: ysr_66
   name: ysra_item59
@@ -442,10 +442,10 @@ elements:
   source:
   - child
 
-- rename: cbcl11_2_text
-  name: ysra_item66_2
-  source:
-  - child
+#- rename: cbcl11_2_text
+#  name: ysra_item66_2
+#  source:
+#  - child
 
 - rename: ysr_74
   name: ysra_item67
@@ -467,10 +467,10 @@ elements:
   source:
   - child
 
-- rename: cbcl11_6_text
-  name: ysra_item70_2
-  source:
-  - child
+#- rename: cbcl11_6_text
+#  name: ysra_item70_2
+#  source:
+#  - child
 
 - rename: ysr_78
   name: ysra_item71
@@ -507,10 +507,10 @@ elements:
   source:
   - child
 
-- rename: cbcl12_6_text
-  name: ysra_item77_2
-  source:
-  - child
+#- rename: cbcl12_6_text
+#  name: ysra_item77_2
+#  source:
+#  - child
 
 - rename: tr78
   name: ysra_item78
@@ -522,10 +522,10 @@ elements:
   source:
   - child
 
-- rename: cbcl13_1_text
-  name: ysra_item79_2
-  source:
-  - child
+#- rename: cbcl13_1_text
+#  name: ysra_item79_2
+#  source:
+#  - child
 
 - rename: ysr_87
   name: ysra_item80
@@ -547,30 +547,30 @@ elements:
   source:
   - child
 
-- rename: cbcl13_5_text
-  name: ysra_item83_2
-  source:
-  - child
+#- rename: cbcl13_5_text
+#  name: ysra_item83_2
+#  source:
+#  - child
 
 - rename: ysr_91
   name: ysra_item84_1
   source:
   - child
 
-- rename: cbcl13_6_text
-  name: ysra_item84_2
-  source:
-  - child
+#- rename: cbcl13_6_text
+#  name: ysra_item84_2
+#  source:
+#  - child
 
 - rename: ysr_92
   name: ysra_item85_1
   source:
   - child
 
-- rename: cbcl13_7_text
-  name: ysra_item85_2
-  source:
-  - child
+#- rename: cbcl13_7_text
+#  name: ysra_item85_2
+#  source:
+#  - child
 
 - rename: ysr_93
   name: ysra_item86
@@ -647,10 +647,10 @@ elements:
   source:
   - child
 
-- rename: cbcl16_1_text
-  name: ysra_item100_2
-  source:
-  - child
+#- rename: cbcl16_1_text
+#  name: ysra_item100_2
+#  source:
+#  - child
 
 - rename: ysr_108
   name: ysra_item101
@@ -677,10 +677,10 @@ elements:
   source:
   - child
 
-- rename: cbcl16_6_text
-  name: ysra_item105_2
-  source:
-  - child
+#- rename: cbcl16_6_text
+#  name: ysra_item105_2
+#  source:
+#  - child
 
 - rename: ysr_113
   name: ysra_item106

@@ -1100,11 +1100,11 @@ elements:
   - child
   - teen
 
-- name: nida_y_drug10other
-  rename: otdrug
-  source:
-  - child
-  - teen
+#- name: nida_y_drug10other
+#  rename: otdrug
+#  source:
+#  - child
+#  - teen
 
 - name: nida_y_drug10a
   rename: first_use_age_other

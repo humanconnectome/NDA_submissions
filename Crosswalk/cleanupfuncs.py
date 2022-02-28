@@ -22,7 +22,8 @@ def redcleanup(structure="lbadl01", filePath="./prepped/hcd/", extraomitcol1='NO
         subfields.remove('comqother')
     except:
         pass
-    if structure=='bsc01':
+    if 'hca' in filePath and structure=='bsc01':
+        print('study says hca- say WHAT?')
         df=df.loc[~((df.ed1_blood==0) & (df.ed1_saliva==0))]
     if extraomitcol1 and extraomitcol1 != 'NO':
         subfields.remove(extraomitcol1)
@@ -128,11 +129,11 @@ def cbcl999(structure="cbcl01", filePath="./prepped/hcd/"):
     df = pd.read_csv(filePath + structure + ".csv", header=1)
     print("NumRows Before: " + str(df.shape[0]))
     df = df.loc[~((df.cbcl1 == 999) & (df.cbcl2 == 999) & (df.cbcl3 == 999) & (df.cbcl4 == 999))].copy()
-    df = df.drop(
-        columns=['cbcl1_2_text', 'cbcl2_3_text', 'cbcl5_2_text', 'cbcl6_6_text', 'cbcl7_3_text', 'cbcl9_2_text',
-                 'cbcl56h_des', 'cbcl10_1_text', 'cbcl11_2_text', 'cbcl11_6_text', 'cbcl12_6_text', 'cbcl13_1_text',
-                 'cbcl13_5_text', 'cbcl13_6_text', 'cbcl13_7_text', 'cbcl14_7_text', 'cbcl16_1_text', 'cbcl16_6_text',
-                 'cbcl113a_des', 'cbcl113b_des', 'cbcl113c_des'])
+    #df = df.drop(
+    #    columns=['cbcl1_2_text', 'cbcl2_3_text', 'cbcl5_2_text', 'cbcl6_6_text', 'cbcl7_3_text', 'cbcl9_2_text',
+    #             'cbcl56h_des', 'cbcl10_1_text', 'cbcl11_2_text', 'cbcl11_6_text', 'cbcl12_6_text', 'cbcl13_1_text',
+    #             'cbcl13_5_text', 'cbcl13_6_text', 'cbcl13_7_text', 'cbcl14_7_text', 'cbcl16_1_text', 'cbcl16_6_text',
+    #             'cbcl113a_des', 'cbcl113b_des', 'cbcl113c_des'])
     print("NumRows After: " + str(df.shape[0]))
     with open(filePath + structure + ".csv", 'w') as f:
         f.write(strucroot + "," + str(int(strucnum)) + "\n")
@@ -146,10 +147,10 @@ def cbcl1_5_999(structure="cbcl1_501", filePath="./prepped/hcd/"):
     df = pd.read_csv(filePath + structure + ".csv", header=1)
     print("NumRows Before: " + str(df.shape[0]))
     df = df.loc[~((df.cbcl1 == 999) & (df.cbcl56a == 999) & (df.cbcl_nt == 999) & (df.cbcl_eye == 999))].copy()
-    df = df.drop(
-        columns=['cbcl24b_text', 'cbcl31b_text', 'cbcl5_2_text', 'cbcl7_3_text', 'cbcl10_1_text', 'cbcl57b_text',
-                 'cbcl65b_text', 'cbcl74b_text', 'cbcl13_1_text', 'cbcl13_6_text', 'cbcl92b_text', 'cbcl113a_des',
-                 'cbcl113b_des', 'cbcl113c_des', 'cbclpre101_des', 'adis_concern_what', 'trf_best'])
+    #df = df.drop(
+    #    columns=['cbcl24b_text', 'cbcl31b_text', 'cbcl5_2_text', 'cbcl7_3_text', 'cbcl10_1_text', 'cbcl57b_text',
+    #             'cbcl65b_text', 'cbcl74b_text', 'cbcl13_1_text', 'cbcl13_6_text', 'cbcl92b_text', 'cbcl113a_des',
+    #             'cbcl113b_des', 'cbcl113c_des', 'cbclpre101_des', 'adis_concern_what', 'trf_best'])
     print("NumRows After: " + str(df.shape[0]))
     with open(filePath + structure + ".csv", 'w') as f:
         f.write(strucroot + "," + str(int(strucnum)) + "\n")
@@ -219,7 +220,8 @@ def integercleanup(structure='asr01', filePath="./prepped/hcd/", varlist=['a']):
     strucnum = structure[-2:]
     df = pd.read_csv(filePath + structure + ".csv", header=1)
     for v in varlist:
-        df[v] = df[v].fillna(-9999).astype(int).astype(str).str.replace('-9999', '')
+        #df[v] = df[v].fillna(-9999).astype(int).astype(str).str.replace('-9999', '')
+        df[v] = pd.to_numeric(df[v], errors='coerce').astype('Int64')
     with open(filePath + structure + ".csv", 'w') as f:
         f.write(strucroot + "," + str(int(strucnum)) + "\n")
         df.to_csv(f, index=False)

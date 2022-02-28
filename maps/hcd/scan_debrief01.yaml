@@ -48,84 +48,84 @@ elements:
       code: return "caregiver about child subject"
 
 
-- name: satisfaction1
-  rename: satisfaction1
-  source:
-  - child
-  - teen
+#- name: satisfaction1
+#  rename: satisfaction1
+#  source:
+#  - child
+#  - teen
 
-- name: satisfaction3
-  rename: satisfaction3
-  source:
-  - child
-  - teen
+#- name: satisfaction3
+#  rename: satisfaction3
+#  source:
+#  - child
+#  - teen
 
-- name: satisfaction4
-  rename: satisfaction4
-  source:
-  - child
-  - teen
+#- name: satisfaction4
+#  rename: satisfaction4
+#  source:
+#  - child
+#  - teen
 
-- name: satisfaction7
-  rename: satisfaction7a
-  source:
-  - child
-  - teen
+#- name: satisfaction7
+#  rename: satisfaction7a
+#  source:
+#  - child
+#  - teen
 
-- name: satisfaction8
-  rename: satisfaction8
-  source:
-  - teen
+#- name: satisfaction8
+#  rename: satisfaction8
+#  source:
+#  - teen
 
 - rename: satisfaction8b
   name: satisfaction8
   source:
     - child
 
-- name: satisfaction9
-  rename: satisfaction9
-  source:
-  - child
-  - teen
+#- name: satisfaction9
+#  rename: satisfaction9
+#  source:
+#  - child
+#  - teen
 
-- name: satisfaction57_1
-  rename: satisfaction57_1
-  source:
-  - child
+#- name: satisfaction57_1
+#  rename: satisfaction57_1
+#  source:
+#  - child
 
-- name: satisfaction57_10
-  rename: satisfaction57_10
-  source:
-  - child
+#- name: satisfaction57_10
+#  rename: satisfaction57_10
+#  source:
+#  - child
 
-- name: satisfaction57_2
-  rename: satisfaction57_2
-  source:
-  - child
+#- name: satisfaction57_2
+#  rename: satisfaction57_2
+#  source:
+#  - child
 
-- name: satisfaction57_3
-  rename: satisfaction57_3
-  source:
-  - child
+#- name: satisfaction57_3
+#  rename: satisfaction57_3
+#  source:
+#  - child
 
-- name: satisfaction57_4
-  rename: satisfaction57_4
-  source:
-  - child
+#- name: satisfaction57_4
+#  rename: satisfaction57_4
+#  source:
+#  - child
 
-- name: satisfaction57_7
-  rename: satisfaction57_7
-  source:
-  - child
+#- name: satisfaction57_7
+#  rename: satisfaction57_7
+#  source:
+#  - child
 
-- name: satisfaction57_8
-  rename: satisfaction57_8
-  source:
-  - child
+#- name: satisfaction57_8
+#  rename: satisfaction57_8
+#  source:
+#  - child
 
-- name: satisfaction2
-  rename: satisfaction2
-  source:
-  - child
-  - teen
-  - parent
+#- name: satisfaction2
+#  rename: satisfaction2
+#  source:
+#  - child
+#  - teen
+#  - parent

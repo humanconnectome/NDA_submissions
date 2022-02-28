@@ -181,10 +181,10 @@ elements:
   source:
   - parent
 
-- name: cbclpre24_des
-  rename: cbcl24b_text
-  source:
-  - parent
+#- name: cbclpre24_des
+#  rename: cbcl24b_text
+#  source:
+#  - parent
 
 - name: cbclpre25
   rename: cbcl25
@@ -228,10 +228,10 @@ elements:
   source:
   - parent
 
-- name: cbclpre31_des
-  rename: cbcl31b_text
-  source:
-  - parent
+#- name: cbclpre31_des
+#  rename: cbcl31b_text
+#  source:
+#  - parent
 
 - name: cbclpre32
   rename: cbcl29
@@ -239,10 +239,10 @@ elements:
   source:
   - parent
 
-- name: cbclpre32_des
-  rename: cbcl5_2_text
-  source:
-  - parent
+#- name: cbclpre32_des
+#  rename: cbcl5_2_text
+#  source:
+#  - parent
 
 - name: cbclpre33
   rename: cbcl_feel
@@ -333,10 +333,10 @@ elements:
   source:
   - parent
 
-- name: cbclpre46_des
-  rename: cbcl7_3_text
-  source:
-  - parent
+#- name: cbclpre46_des
+#  rename: cbcl7_3_text
+#  source:
+#  - parent
 
 - name: cbclpre47
   rename: cbcl45
@@ -386,10 +386,10 @@ elements:
   source:
   - parent
 
-- name: cbclpre54_des
-  rename: cbcl10_1_text
-  source:
-  - parent
+#- name: cbclpre54_des
+#  rename: cbcl10_1_text
+#  source:
+#  - parent
 
 - name: cbclpre55
   rename: cbcl60
@@ -409,10 +409,10 @@ elements:
   source:
   - parent
 
-- name: cbclpre57_des
-  rename: cbcl57b_text
-  source:
-  - parent
+#- name: cbclpre57_des
+#  rename: cbcl57b_text
+#  source:
+#  - parent
 
 - name: cbclpre58
   rename: cbcl_punish
@@ -462,10 +462,10 @@ elements:
   source:
   - parent
 
-- name: cbclpre65_des
-  rename: cbcl65b_text
-  source:
-  - parent
+#- name: cbclpre65_des
+#  rename: cbcl65b_text
+#  source:
+#  - parent
 
 - name: cbclpre66
   rename: cbcl68
@@ -521,10 +521,10 @@ elements:
   source:
   - parent
 
-- name: cbclpre74_des
-  rename: cbcl74b_text
-  source:
-  - parent
+#- name: cbclpre74_des
+#  rename: cbcl74b_text
+#  source:
+#  - parent
 
 - name: cbclpre75
   rename: cbcl_smear
@@ -538,10 +538,10 @@ elements:
   source:
   - parent
 
-- name: cbclpre76_des
-  rename: cbcl13_1_text
-  source:
-  - parent
+#- name: cbclpre76_des
+#  rename: cbcl13_1_text
+#  source:
+#  - parent
 
 - name: cbclpre77
   rename: cbcl_stares
@@ -567,10 +567,10 @@ elements:
   source:
   - parent
 
-- name: cbclpre80_des
-  rename: cbcl13_6_text
-  source:
-  - parent
+#- name: cbclpre80_des
+#  rename: cbcl13_6_text
+#  source:
+#  - parent
 
 - name: cbclpre81
   rename: cbcl86
@@ -644,10 +644,10 @@ elements:
   source:
   - parent
 
-- name: cbclpre92_des
-  rename: cbcl92b_text
-  source:
-  - parent
+#- name: cbclpre92_des
+#  rename: cbcl92b_text
+#  source:
+#  - parent
 
 - name: cbclpre93
   rename: cbcl56g
@@ -696,30 +696,30 @@ elements:
   source:
   - parent
 
-- name: cbclpre100_1
-  rename: cbcl113a_des
-  source:
-  - parent
+#- name: cbclpre100_1
+#  rename: cbcl113a_des
+#  source:
+#  - parent
 
 - name: cbclpre100_1_rating
   rename: cbcl113a
   source:
   - parent
 
-- name: cbclpre100_2
-  rename: cbcl113b_des
-  source:
-  - parent
+#- name: cbclpre100_2
+#  rename: cbcl113b_des
+#  source:
+#  - parent
 
 - name: cbclpre100_2_rating
   rename: cbcl113b
   source:
   - parent
 
-- name: cbclpre100_3
-  rename: cbcl113c_des
-  source:
-  - parent
+#- name: cbclpre100_3
+#  rename: cbcl113c_des
+#  source:
+#  - parent
 
 - name: cbclpre100_3_rating
   rename: cbcl113c
@@ -731,20 +731,20 @@ elements:
   source:
   - parent
 
-- name: cbclpre101_des
-  rename: cbclpre101_des
-  source:
-  - parent
+#- name: cbclpre101_des
+#  rename: cbclpre101_des
+#  source:
+#  - parent
 
-- name: cbclpre102
-  rename: adis_concern_what
-  source:
-  - parent
+#- name: cbclpre102
+#  rename: adis_concern_what
+#  source:
+#  - parent
 
-- name: cbclpre103
-  rename: trf_best
-  source:
-  - parent
+#- name: cbclpre103
+#  rename: trf_best
+#  source:
+#  - parent
 
 - rename: cbcl_emotional_raw
   source: ["parent"]

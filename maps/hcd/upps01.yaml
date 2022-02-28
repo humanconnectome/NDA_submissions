@@ -57,15 +57,20 @@ elements:
 - rename: upps_p4
   name: upps3_y
   source:
-  - child
-  - teen
-  - parent:
-      name: upps_p3
+  - child:
       recode:
         1: 4
         2: 3
         3: 2
         4: 1
+  - teen:
+      recode:
+        1: 4
+        2: 3
+        3: 2
+        4: 1
+  - parent:
+      name: upps_p3
       request: Please rename this column "upps_p4" to avoid a naming conflict.
 
 - rename: upps_p14
@@ -237,12 +242,6 @@ elements:
 
 - rename: upps_negu
   name: upps_neg
-  source:
-  - child
-  - teen
-
-- rename: premed_score
-  name: upps_plan
   source:
   - child
   - teen
@@ -582,16 +581,14 @@ elements:
   - parent:
       name: upps_lackprsv
 
-- rename: premed_score
-  name: upps_premed
-  source:
-  - parent
-
+#upps_plan is an element and an alias to premed_score.  Parent and child ultimately map to premed_score, but because of the conflict have to map them to upps_plan
 - rename: upps_plan
   name: upps_plan
   source:
   - child
   - teen
+  - parent:
+      name: upps_premed
 
 - rename: senseek_score
   name: upps_sens

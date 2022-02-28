@@ -1,0 +1,436 @@
+elements:
+
+- name: subjectkey
+  rename: subjectkey
+  source:
+  - teen
+  - child
+
+- name: subject
+  rename: src_subject_id
+  source:
+  - teen
+  - child
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+  - teen
+  - child
+
+- name: interview_age
+  rename: interview_age
+  source:
+  - teen
+  - child
+
+- name: gender
+  rename: sex
+  source:
+  - teen
+  - child
+
+#- rename: comqother
+# code: return "subject about self"
+# source:
+# - teen
+# - child
+  
+
+- rename: nffi_1
+  name: neo1
+  source:
+  - teen
+  - child
+
+- rename: nffi_2
+  name: neo2
+  source:
+  - teen
+  - child
+
+- rename: nffi_3
+  name: neo3
+  source:
+  - teen
+  - child
+
+- rename: nffi_4
+  name: neo4  
+  source:
+  - teen
+  - child
+
+- rename: nffi_5
+  name: neo5
+  source:
+  - teen
+  - child
+
+- rename: nffi_6
+  name: neo6
+  source:
+  - teen
+  - child
+
+- rename: nffi_7
+  name: neo7
+  source:
+  - teen
+  - child
+
+- rename: nffi_8
+  name: neo8
+  source:
+  - teen
+  - child
+
+- rename: nffi_9
+  name: neo9
+  source:
+  - teen
+  - child
+
+- rename: nffi_10
+  name: neo10
+  source:
+  - teen
+  - child
+
+- rename: nffi_11
+  name: neo11
+  source:
+  - teen
+  - child
+
+- rename: nffi_12
+  name: neo12
+  source:
+  - teen
+  - child
+
+- rename: nffi_13
+  name: neo13
+  source:
+  - teen
+  - child
+
+- rename: nffi_14
+  name: neo14
+  source:
+  - teen
+  - child
+
+- rename: nffi_15
+  name: neo15
+  source:
+  - teen
+  - child
+
+- rename: nffi_16
+  name: neo16
+  source:
+  - teen
+  - child
+
+- rename: nffi_17
+  name: neo17
+  source:
+  - teen
+  - child
+
+- rename: nffi_18
+  name: neo18
+  source:
+  - teen
+  - child
+
+- rename: nffi_19
+  name: neo19
+  source:
+  - teen
+  - child
+
+- rename: nffi_20
+  name: neo20
+  source:
+  - teen
+  - child
+
+- rename: nffi_21
+  name: neo21
+  source:
+  - teen
+  - child
+
+- rename: nffi_22
+  name: neo22
+  source:
+  - teen
+  - child
+
+- rename: nffi_23
+  name: neo23
+  source:
+  - teen
+  - child
+
+- rename: nffi_24
+  name: neo24
+  source:
+  - teen
+  - child
+
+- rename: nffi_25
+  name: neo25
+  source:
+  - teen
+  - child
+
+- rename: nffi_26
+  name: neo26
+  source:
+  - teen
+  - child
+
+- rename: nffi_27
+  name: neo27
+  source:
+  - teen
+  - child
+
+- rename: nffi_28
+  name: neo28
+  source:
+  - teen
+  - child
+
+- rename: nffi_29
+  name: neo29
+  source:
+  - teen
+  - child
+
+- rename: nffi_30
+  name: neo30
+  source:
+  - teen
+  - child
+
+- rename: nffi_31
+  name: neo31
+  source:
+  - teen
+  - child
+
+- rename: nffi_32
+  name: neo32
+  source:
+  - teen
+  - child
+
+- rename: nffi_33
+  name: neo33
+  source:
+  - teen
+  - child
+
+- rename: nffi_34
+  name: neo34
+  source:
+  - teen
+  - child
+
+- rename: nffi_35
+  name: neo35
+  source:
+  - teen
+  - child
+
+- rename: nffi_36
+  name: neo36
+  source:
+  - teen
+  - child
+
+- rename: nffi_37
+  name: neo37
+  source:
+  - teen
+  - child
+
+- rename: nffi_38
+  name: neo38
+  source:
+  - teen
+  - child
+
+- rename: nffi_39
+  name: neo39
+  source:
+  - teen
+  - child
+
+- rename: nffi_40
+  name: neo40
+  source:
+  - teen
+  - child
+
+- rename: nffi_41
+  name: neo41
+  source:
+  - teen
+  - child
+
+- rename: nffi_42
+  name: neo42
+  source:
+  - teen
+  - child
+
+- rename: nffi_43
+  name: neo43
+  source:
+  - teen
+  - child
+
+- rename: nffi_44
+  name: neo44
+  source:
+  - teen
+  - child
+
+- rename: nffi_45
+  name: neo45
+  source:
+  - teen
+  - child
+
+- rename: nffi_46
+  name: neo46
+  source:
+  - teen
+  - child
+
+- rename: nffi_47
+  name: neo47
+  source:
+  - teen
+  - child
+
+- rename: nffi_48
+  name: neo48
+  source:
+  - teen
+  - child
+
+- rename: nffi_49
+  name: neo49
+  source:
+  - teen
+  - child
+
+- rename: nffi_50
+  name: neo50
+  source:
+  - teen
+  - child
+
+- rename: nffi_51
+  name: neo51
+  source:
+  - teen
+  - child
+
+- rename: nffi_52
+  name: neo52
+  source:
+  - teen
+  - child
+
+- rename: nffi_53
+  name: neo53
+  source:
+  - teen
+  - child
+
+- rename: nffi_54
+  name: neo54
+  source:
+  - teen
+  - child
+
+- rename: nffi_55
+  name: neo55
+  source:
+  - teen
+  - child
+
+- rename: nffi_56
+  name: neo56
+  source:
+  - teen
+  - child
+
+- rename: nffi_57
+  name: neo57
+  source:
+  - teen
+  - child
+
+- rename: nffi_58
+  name: neo58
+  source:
+  - teen
+  - child
+
+- rename: nffi_59
+  name: neo59
+  source:
+  - teen
+  - child
+
+- rename: nffi_60
+  name: neo60
+  source:
+  - teen
+  - child
+
+- rename: neo2_score_ne
+  name: neo_n
+  code: return x.fillna(999)
+  source:
+  - teen
+  - child
+
+- rename: neo2_score_ex
+  name: neo_e
+  code: return x.fillna(999)
+  source:
+  - teen
+  - child
+
+- rename: neo2_score_op
+  name: neo_o
+  code: return x.fillna(999)
+  source:
+  - teen
+  - child
+
+- rename: neo2_score_ag
+  name: neo_a
+  code: return x.fillna(999)
+  source:
+  - teen
+  - child
+
+- rename: neo2_score_co
+  name: neo_c
+  code: return x.fillna(999)
+  source:
+  - teen
+  - child
+
+

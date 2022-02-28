@@ -145,13 +145,13 @@ elements:
   source:
   - parent
 
-- code: pass
-  name: medhx_1a_other
-  rename: medhis_1a_other
-  request: Please keep data for these columns in their own rows, with 'version_form'
-    labeling them ''''Past Year''''.
-  source:
-  - parent
+#- code: pass
+#  name: medhx_1a_other
+#  rename: medhis_1a_other
+#  request: Please keep data for these columns in their own rows, with 'version_form'
+#    labeling them ''''Past Year''''.
+#  source:
+#  - parent
 
 - name: medhx_2a
   rename: wk_asthma
@@ -254,15 +254,15 @@ elements:
   source:
   - parent
 
-- name: medhx_2_notes
-  rename: medhis_2_notes
-  source:
-  - parent
+#- name: medhx_2_notes
+#  rename: medhis_2_notes
+#  source:
+#  - parent
 
-- name: medhx_2_notes2
-  rename: medhis_2_notes2
-  source:
-  - parent
+#- name: medhx_2_notes2
+#  rename: medhis_2_notes2
+#  source:
+#  - parent
 
 - name: medhx_4a
   rename: ph_119
@@ -321,10 +321,10 @@ elements:
   source:
   - parent
 
-- name: medhx_6e_describe
-  rename: medhis_6e_describe
-  source:
-  - parent
+#- name: medhx_6e_describe
+#  rename: medhis_6e_describe
+#  source:
+#  - parent
 
 - name: medhx_6e_times
   rename: medhis_6e_times
@@ -790,11 +790,11 @@ elements:
   rename: childhospital
   source:
   - parent
-
-- name: medhx_8b_describe
-  rename: medhis_8b_describe
-  source:
-  - parent
+#
+#- name: medhx_8b_describe
+#  rename: medhis_8b_describe
+#  source:
+#  - parent
 
 - name: medhx_9a
   rename: medhis_9a

@@ -9,6 +9,13 @@ elements:
   - teen
   - parent
 
+#- name: redcap_event_name
+#  rename: event
+#  source:
+#  - child
+#  - teen
+#  - parent
+
 - name: subject
   rename: src_subject_id
   source:

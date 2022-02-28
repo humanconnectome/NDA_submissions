@@ -2,6 +2,13 @@ struct: asr01
 instrument: Adult Self Report
 elements:
 
+#- name: redcap_event_name
+#  rename: event
+#  source:
+#  - child
+#  - teen
+#  - parent
+  
 - name: subjectkey
   rename: subjectkey
   source:
@@ -106,11 +113,11 @@ elements:
   - child
   - teen
 
-- name: asr6des
-  rename: asr1_6_text
-  source:
-  - child
-  - teen
+#- name: asr6des
+#  rename: asr1_6_text
+#  source:
+#  - child
+#  - teen
 
 - name: asr7
   rename: asr2_1
@@ -145,11 +152,11 @@ elements:
   - child
   - teen
 
-- name: asr9des
-  rename: asr2_3_text
-  source:
-  - child
-  - teen
+#- name: asr9des
+#  rename: asr2_3_text
+#  source:
+#  - child
+#  - teen
 
 - name: asr10
   rename: asr2_4
@@ -377,11 +384,11 @@ elements:
   - child
   - teen
 
-- name: asr29des
-  rename: asr5_5_text
-  source:
-  - child
-  - teen
+#- name: asr29des
+#  rename: asr5_5_text
+#  source:
+#  - child
+#  - teen
 
 - name: asr30
   rename: asr5_6
@@ -506,11 +513,11 @@ elements:
   - child
   - teen
 
-- name: asr40des
-  rename: asr7_4_text
-  source:
-  - child
-  - teen
+#- name: asr40des
+#  rename: asr7_4_text
+#  source:
+#  - child
+#  - teen
 
 - name: asr41
   rename: asr7_5
@@ -578,11 +585,11 @@ elements:
   - child
   - teen
 
-- name: asr46des
-  rename: asr8_4_text
-  source:
-  - child
-  - teen
+#- name: asr46des
+#  rename: asr8_4_text
+#  source:
+#  - child
+#  - teen
 
 - name: asr47
   rename: asr8_5
@@ -727,11 +734,11 @@ elements:
   - child
   - teen
 
-- name: asr56ddes
-  rename: asr10_6_text
-  source:
-  - child
-  - teen
+#- name: asr56ddes
+#  rename: asr10_6_text
+#  source:
+#  - child
+#  - teen
 
 - name: asr56e
   rename: asr11_1
@@ -810,11 +817,11 @@ elements:
   - child
   - teen
 
-- name: asr58des
-  rename: asr12_1_text
-  source:
-  - child
-  - teen
+#- name: asr58des
+#  rename: asr12_1_text
+#  source:
+#  - child
+#  - teen
 
 - name: asr59
   rename: asr12_2
@@ -904,11 +911,11 @@ elements:
   - child
   - teen
 
-- name: asr66des
-  rename: asr13_3_text
-  source:
-  - child
-  - teen
+#- name: asr66des
+#  rename: asr13_3_text
+#  source:
+#  - child
+#  - teen
 
 - name: asr67
   rename: asr13_4
@@ -954,11 +961,11 @@ elements:
   - child
   - teen
 
-- name: asr70des
-  rename: asr14_1_text
-  source:
-  - child
-  - teen
+#- name: asr70des
+#  rename: asr14_1_text
+#  source:
+#  - child
+#  - teen
 
 - name: asr71
   rename: asr14_2
@@ -1037,11 +1044,11 @@ elements:
   - child
   - teen
 
-- name: asr77des
-  rename: asr15_2_text
-  source:
-  - child
-  - teen
+#- name: asr77des
+#  rename: asr15_2_text
+#  source:
+#  - child
+#  - teen
 
 - name: asr78
   rename: asr15_3
@@ -1065,11 +1072,11 @@ elements:
   - child
   - teen
 
-- name: asr79des
-  rename: asr15_4_text
-  source:
-  - child
-  - teen
+#- name: asr79des
+#  rename: asr15_4_text
+#  source:
+#  - child
+#  - teen
 
 - name: asr80
   rename: asr15_5
@@ -1126,11 +1133,11 @@ elements:
   - child
   - teen
 
-- name: asr84des
-  rename: asr16_3_text
-  source:
-  - child
-  - teen
+#- name: asr84des
+#  rename: asr16_3_text
+#  source:
+#  - child
+#  - teen
 
 - name: asr85
   rename: asr16_4
@@ -1143,11 +1150,11 @@ elements:
   - child
   - teen
 
-- name: asr85des
-  rename: asr16_4_text
-  source:
-  - child
-  - teen
+#- name: asr85des
+#  rename: asr16_4_text
+#  source:
+#  - child
+#  - teen
 
 - name: asr86
   rename: asr16_5
@@ -1226,11 +1233,11 @@ elements:
   - child
   - teen
 
-- name: asr92des
-  rename: asr17_5_text
-  source:
-  - child
-  - teen
+#- name: asr92des
+#  rename: asr17_5_text
+#  source:
+#  - child
+#  - teen
 
 - name: asr93
   rename: asr17_6
@@ -1320,11 +1327,11 @@ elements:
   - child
   - teen
 
-- name: asr100des
-  rename: asr19_1_text
-  source:
-  - child
-  - teen
+#- name: asr100des
+#  rename: asr19_1_text
+#  source:
+#  - child
+#  - teen
 
 - name: asr101
   rename: asr19_2

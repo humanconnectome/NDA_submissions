@@ -1,0 +1,419 @@
+elements:
+- name: subjectkey
+  rename: subjectkey
+  source:
+    - ksads
+
+- name: subject
+  rename: src_subject_id
+  source:
+    - ksads
+
+- name: interview_date
+  rename: interview_date
+  func: format_date
+  source:
+    - ksads
+
+- name: interview_age
+  rename: interview_age
+  source:
+    - ksads
+
+- name: gender
+  rename: sex
+  source:
+    - ksads
+
+- name: patienttype
+  rename: comqother
+  source:
+    - ksads
+  recode: 
+    "T": "subject about self"
+    "P": "caregiver about child subject"
+
+
+
+#- name: ksads2142
+#  rename: ethnicity
+#  source: 
+#    - ksads
+#
+#- name: ksads2143
+#  rename: fsprg
+#  source: 
+#    - ksads
+
+- name: ksads1
+  rename: aescode
+  source: 
+    - ksads
+
+- name: ksads4
+  rename: ksads4
+  source: 
+    - ksads
+
+- name: ksads5
+  rename: mother_branching
+  source: 
+    - ksads
+
+- name: ksads6
+  rename: ksads6
+  source: 
+    - ksads
+
+- name: ksads7
+  rename: ksads7
+  source: 
+    - ksads
+
+- name: ksads8
+  rename: father_branching
+  source: 
+    - ksads
+
+- name: ksads9
+  rename: ksads9
+  source: 
+    - ksads
+
+- name: ksads10
+  rename: ksads10
+  source: 
+    - ksads
+
+- name: ksads11
+  rename: ksads11
+  source: 
+    - ksads
+
+- name: ksads12
+  rename: ksads12
+  source: 
+    - ksads
+
+- name: ksads13
+  rename: currgradelevel
+  source: 
+    - ksads
+
+- name: ksads14
+  rename: cbfrepeatheldback
+  source: 
+    - ksads
+
+- name: ksads15
+  rename: ksads15
+  source: 
+    - ksads
+
+- name: ksads16
+  rename: ksads16
+  source: 
+    - ksads
+
+- name: ksads17
+  rename: ksads17
+  source: 
+    - ksads
+
+- name: ksads18
+  rename: ksads18
+  source: 
+    - ksads
+
+- name: ksads19
+  rename: ksads19
+  source: 
+    - ksads
+
+- name: ksads20
+  rename: ksads20
+  source: 
+    - ksads
+
+- name: ksads21
+  rename: ksads21
+  source: 
+    - ksads
+
+- name: ksads22
+  rename: ksads22
+  source: 
+    - ksads
+
+- name: ksads23
+  rename: ksads23
+  source: 
+    - ksads
+
+- name: ksads24
+  rename: ksads24
+  source: 
+    - ksads
+
+- name: ksads25
+  rename: ksads25
+  source: 
+    - ksads
+
+- name: ksads26
+  rename: ksads26
+  source: 
+    - ksads
+  recode: 
+    "Yes": 1
+    "No": 0
+    "nan": 
+    
+
+- name: ksads27
+  rename: ksads27
+  source: 
+    - ksads
+
+- name: ksads28
+  rename: ksads28
+  source: 
+    - ksads
+
+- name: ksads29
+  rename: demo_sex_tgender
+  source: 
+    - ksads
+
+- name: ksads30
+  rename: ksads30
+  source: 
+    - ksads
+
+- name: ksads31
+  rename: ksads31
+  source: 
+    - ksads
+
+- name: ksads32
+  rename: comments1
+  source: 
+    - ksads
+
+#- name: ksads33
+#  rename: 
+#  source: 
+#    - ksads
+
+- name: ksads34
+  rename: ksads34
+  source: 
+    - ksads
+
+- name: ksads35
+  rename: ksads35
+  source: 
+    - ksads
+
+- name: ksads36
+  rename: ksads36
+  source: 
+    - ksads
+
+- name: ksads37
+  rename: ksads37
+  source: 
+    - ksads
+
+- name: ksads38
+  rename: ksads38
+  source: 
+    - ksads
+
+- name: ksads39
+  rename: ksads39
+  source: 
+    - ksads
+
+- name: ksads40
+  rename: ksads40
+  source: 
+    - ksads
+
+- name: ksads41
+  rename: ksads41
+  source: 
+    - ksads
+
+- name: ksads42
+  rename: ksads42
+  source: 
+    - ksads
+
+- name: ksads43
+  rename: ksads43
+  source: 
+    - ksads
+
+- name: ksads44
+  rename: ksads44
+  source: 
+    - ksads
+
+- name: ksads45
+  rename: ksads45
+  source: 
+    - ksads
+
+- name: ksads46
+  rename: ksads46
+  source: 
+    - ksads
+
+- name: ksads47
+  rename: ksads47
+  source: 
+    - ksads
+
+- name: ksads48
+  rename: ksads48
+  source: 
+    - ksads
+
+- name: ksads49
+  rename: ksads49
+  source: 
+    - ksads
+
+- name: ksads50
+  rename: ksads50
+  source: 
+    - ksads
+
+- name: ksads51
+  rename: ksads51
+  source: 
+    - ksads
+
+- name: ksads52
+  rename: ksads52
+  source: 
+    - ksads
+
+- name: ksads53
+  rename: ksads_bully_raw_26
+  source: 
+    - ksads
+  recode: 
+    "Yes": 1
+    "No": 0
+    "nan": 
+
+- name: ksads54
+  rename: ksads54
+  source: 
+    - ksads
+
+- name: ksads55
+  rename: ksads55
+  source: 
+    - ksads
+
+- name: ksads56
+  rename: ksads56
+  source: 
+    - ksads
+
+- name: ksads57
+  rename: ksads57
+  source: 
+    - ksads
+
+- name: ksads58
+  rename: dem_24_health
+  source: 
+    - ksads
+
+- name: ksads59
+  rename: fscphpsp
+  source: 
+    - ksads
+
+- name: ksads60
+  rename: qaet4
+  source: 
+    - ksads
+  recode: 
+    "Yes": 1
+    "No": 0
+    "nan": 
+
+- name: ksads61
+  rename: ksads61
+  source: 
+    - ksads
+
+- name: ksads62
+  rename: ph_11
+  source: 
+    - ksads
+
+- name: ksads63
+  rename: matern_gest_wks
+  source: 
+    - ksads
+
+- name: ksads64
+  rename: ksads64
+  source: 
+    - ksads
+
+- name: ksads65
+  rename: ksads65
+  source: 
+    - ksads
+
+- name: ksads66
+  rename: ksads66
+  source: 
+    - ksads
+
+- name: ksads67
+  rename: ksads67
+  source: 
+    - ksads
+
+- name: ksads68
+  rename: ksads68
+  source: 
+    - ksads
+
+- name: ksads69
+  rename: ksads69
+  source: 
+    - ksads
+
+- name: ksads70
+  rename: dem_42_med
+  source: 
+    - ksads
+
+- name: ksads71
+  rename: ksads71
+  source: 
+    - ksads
+
+- name: ksads72
+  rename: ksads72
+  source: 
+    - ksads
+
+- name: ksads73
+  rename: ksads73
+  source: 
+    - ksads
+
+- name: ksads74
+  rename: comments2
+  source: 
+    - ksads

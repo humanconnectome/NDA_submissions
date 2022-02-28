@@ -110,21 +110,21 @@ elements:
   - child
   - teen
 
-- name: pds_sub_mss_date
-  rename: pubertyg_15
-  source:
-  - child
-  - teen
-  - parent:
-      name: pds_p_mss_date
+#- name: pds_sub_mss_date
+#  rename: pubertyg_15
+#  source:
+#  - child
+#  - teen
+#  - parent:
+#      name: pds_p_mss_date
 
-- name: pds_sub_mss_last
-  rename: menstrualcycle1_y
-  source:
-  - child
-  - teen
-  - parent:
-      name: pds_p_mss_last
+#- name: pds_sub_mss_last
+#  rename: menstrualcycle1_y
+#  source:
+#  - child
+#  - teen
+#  - parent:
+#      name: pds_p_mss_last
 
 - name: pds_sub_mss_average
   rename: pufe_005bt

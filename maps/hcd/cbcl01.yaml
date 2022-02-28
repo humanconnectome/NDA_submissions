@@ -54,10 +54,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem2_2
-  rename: cbcl1_2_text
-  source:
-  - parent
+#- name: cbclschitem2_2
+#  rename: cbcl1_2_text
+#  source:
+#  - parent
 
 - name: cbclschitem3
   rename: cbcl3
@@ -101,10 +101,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem9_2
-  rename: cbcl2_3_text
-  source:
-  - parent
+#- name: cbclschitem9_2
+#  rename: cbcl2_3_text
+#  source:
+#  - parent
 
 - name: cbclschitem10
   rename: cbcl10
@@ -226,10 +226,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem29_2
-  rename: cbcl5_2_text
-  source:
-  - parent
+#- name: cbclschitem29_2
+#  rename: cbcl5_2_text
+#  source:
+#  - parent
 
 - name: cbclschitem30
   rename: cbcl30
@@ -302,10 +302,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem40_2
-  rename: cbcl6_6_text
-  source:
-  - parent
+#- name: cbclschitem40_2
+#  rename: cbcl6_6_text
+#  source:
+#  - parent
 
 - name: cbclschitem41
   rename: cbcl41
@@ -343,10 +343,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem46_2
-  rename: cbcl7_3_text
-  source:
-  - parent
+#- name: cbclschitem46_2
+#  rename: cbcl7_3_text
+#  source:
+#  - parent
 
 - name: cbclschitem47
   rename: cbcl47
@@ -426,10 +426,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem56_4_2
-  rename: cbcl9_2_text
-  source:
-  - parent
+#- name: cbclschitem56_4_2
+#  rename: cbcl9_2_text
+#  source:
+#  - parent
 
 - name: cbclschitem56_5
   rename: cbcl56e
@@ -450,15 +450,16 @@ elements:
   - parent
 
 - name: cbclschitem56_8_1
+
   rename: cbcl56h
   code: return x.fillna(999)
   source:
   - parent
 
-- name: cbclschitem56_8_2
-  rename: cbcl56h_des
-  source:
-  - parent
+#- name: cbclschitem56_8_2
+#  rename: cbcl56h_des
+#  source:
+#  - parent
 
 - name: cbclschitem57
   rename: cbcl57
@@ -472,10 +473,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem58_2
-  rename: cbcl10_1_text
-  source:
-  - parent
+#- name: cbclschitem58_2
+#  rename: cbcl10_1_text
+#  source:
+#  - parent
 
 - name: cbclschitem59
   rename: cbcl59
@@ -525,10 +526,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem66_2
-  rename: cbcl11_2_text
-  source:
-  - parent
+#- name: cbclschitem66_2
+#  rename: cbcl11_2_text
+#  source:
+#  - parent
 
 - name: cbclschitem67
   rename: cbcl67
@@ -554,10 +555,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem70_2
-  rename: cbcl11_6_text
-  source:
-  - parent
+#- name: cbclschitem70_2
+#  rename: cbcl11_6_text
+#  source:
+#  - parent
 
 - name: cbclschitem71
   rename: cbcl71
@@ -577,11 +578,11 @@ elements:
   source:
   - parent
 
-- name: cbclschitem73_2
-  rename: cbcl12_2_text
-  code: return x.fillna(999)
-  source:
-  - parent
+#- name: cbclschitem73_2
+#  rename: cbcl12_2_text
+#  code: return x.fillna(999)
+#  source:
+#  - parent
 
 - name: cbclschitem74
   rename: cbcl74
@@ -607,10 +608,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem77_2
-  rename: cbcl12_6_text
-  source:
-  - parent
+#- name: cbclschitem77_2
+#  rename: cbcl12_6_text
+#  source:
+#  - parent
 
 - name: cbclschitem78
   rename: cbcl78
@@ -624,10 +625,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem79_2
-  rename: cbcl13_1_text
-  source:
-  - parent
+#- name: cbclschitem79_2
+#  rename: cbcl13_1_text
+#  source:
+#  - parent
 
 - name: cbclschitem80
   rename: cbcl80
@@ -653,10 +654,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem83_2
-  rename: cbcl13_5_text
-  source:
-  - parent
+#- name: cbclschitem83_2
+#  rename: cbcl13_5_text
+#  source:
+#  - parent
 
 - name: cbclschitem84_1
   rename: cbcl84
@@ -664,10 +665,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem84_2
-  rename: cbcl13_6_text
-  source:
-  - parent
+#- name: cbclschitem84_2
+#  rename: cbcl13_6_text
+#  source:
+#  - parent
 
 - name: cbclschitem85_1
   rename: cbcl85
@@ -675,10 +676,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem85_2
-  rename: cbcl13_7_text
-  source:
-  - parent
+#- name: cbclschitem85_2
+#  rename: cbcl13_7_text
+#  source:
+#  - parent
 
 - name: cbclschitem86
   rename: cbcl86
@@ -722,10 +723,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem92_2
-  rename: cbcl14_7_text
-  source:
-  - parent
+#- name: cbclschitem92_2
+#  rename: cbcl14_7_text
+#  source:
+#  - parent
 
 - name: cbclschitem93
   rename: cbcl93
@@ -775,10 +776,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem100_2
-  rename: cbcl16_1_text
-  source:
-  - parent
+#- name: cbclschitem100_2
+#  rename: cbcl16_1_text
+#  source:
+#  - parent
 
 - name: cbclschitem101
   rename: cbcl101
@@ -810,10 +811,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem105_2
-  rename: cbcl16_6_text
-  source:
-  - parent
+#- name: cbclschitem105_2
+#  rename: cbcl16_6_text
+#  source:
+#  - parent
 
 - name: cbclschitem106
   rename: cbcl106
@@ -857,10 +858,10 @@ elements:
   source:
   - parent
 
-- name: cbclschitem113
-  rename: cbclpre100
-  source:
-  - parent
+#- name: cbclschitem113
+#  rename: cbclpre100
+#  source:
+#  - parent
 
 - name: cbclschitem113_1
   rename: cbcl113a_des
@@ -872,20 +873,20 @@ elements:
   source:
   - parent
 
-- name: cbclschitem114_1
-  rename: cbcl113b_des
-  source:
-  - parent
+#- name: cbclschitem114_1
+#  rename: cbcl113b_des
+#  source:
+#  - parent
 
 - name: cbclschitem114_2
   rename: cbcl113b
   source:
   - parent
 
-- name: cbclschitem115_1
-  rename: cbcl113c_des
-  source:
-  - parent
+#- name: cbclschitem115_1
+#  rename: cbcl113c_des
+#  source:
+#  - parent
 
 - name: cbclschitem115_2
   rename: cbcl113c

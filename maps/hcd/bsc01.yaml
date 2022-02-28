@@ -134,11 +134,11 @@ elements:
   - child
   - teen
 
-- name: hair4_1
-  rename: hair4_1
-  source:
-  - child
-  - teen
+#- name: hair4_1
+#  rename: hair4_1
+#  source:
+#  - child
+#  - teen
 
 - name: hair4_2
   rename: hair4_2
@@ -242,11 +242,11 @@ elements:
   - child
   - teen
 
-- name: salisaliva_notes
-  rename: comments
-  source:
-  - child
-  - teen
+#- name: salisaliva_notes
+#  rename: comments
+#  source:
+#  - child
+#  - teen
 
 - name: salisaliva_timetofrz
   rename: salisaliva_timetofrz

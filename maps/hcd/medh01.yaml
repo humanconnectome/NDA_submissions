@@ -776,10 +776,10 @@ elements:
   source:
   - parent
 
-- name: medhx_6t_describe
-  rename: medhis_6t_describe
-  source:
-  - parent
+#- name: medhx_6t_describe
+#  rename: medhis_6t_describe
+#  source:
+#  - parent
 
 - name: medhx_6t_times
   rename: medhis_6t_times

@@ -160,11 +160,14 @@ elements:
   source:
   - teen
 
+#this is an 'other please describe' varialbe in Teen
 - name: psqi5j
   rename: psqi5j
   source:
   - teen
 
+# teen and adult not matched to same variable.  
+# adult goes to psqi5j_2 which is 1:3 and not transformed.  Teens is 0:3
 - name: psqi5j_2
   rename: psqip6b_5
   request: Please increment your 0::3 scale to a 1::4 scale and rename this column

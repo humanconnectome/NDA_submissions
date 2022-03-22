@@ -56,9 +56,9 @@ elements:
   name: satisfaction4
   source: hcpa
 
-- rename: satisfaction4more
-  name: satisfaction4more
-  source: hcpa
+#- rename: satisfaction4more
+#  name: satisfaction4more
+#  source: hcpa
 
 #- rename: satisfaction5
 #  name: satisfaction5

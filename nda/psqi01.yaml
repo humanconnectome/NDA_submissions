@@ -1352,3 +1352,21 @@ comqother:
 visit_year:
   type: Integer
   description: Year of visit
+
+timepoint_label:
+  type: String
+  length: 50
+  description: Timepoint/visit label
+
+psqi__10:
+  type: Integer
+  description: Do you have a bed partner or roommate?
+  range:
+  - 0::3
+  notes: 0 = No bed partner or roommate; 1 = Partner/roommate in other room; 2 = Partner
+    in same room but not same bed; 3 = Partner in same bed
+  codes:
+    0: No bed partner or roommate
+    1: Partner/roommate in other room
+    2: Partner in same room but not same bed
+    3: Partner in same bed

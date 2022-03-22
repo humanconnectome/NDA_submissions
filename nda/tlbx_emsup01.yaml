@@ -1,0 +1,410 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,record_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  alias: asrsdate
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of subject at birth
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+primary_language:
+  type: String
+  length: 255
+  description: Subject's Primary Language
+
+nih_pin:
+  type: String
+  length: 25
+  description: PIN number assigned by the NIH Toolbox
+  alias: pin
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: assessment_name
+
+nih_tlbx_se:
+  type: Float
+  description: Standard Error
+  notes: 999=NA/NK/missing
+  alias: nihtbx_emosupport_se,se
+  codes:
+    999: NA/NK/missing
+
+nih_tlbx_tscore:
+  type: Float
+  description: T-score
+  range:
+  - 0::200
+  - 999
+  notes: 999=NA/NK/missing
+  alias: nihtbx_emosupport_tscore,tscore
+  codes:
+    999: NA/NK/missing
+
+nih_tlbx_theta:
+  type: Float
+  description: Theta
+  notes: 999=NA/NK/missing
+  alias: emotionsupport18_85,emotionsupport8_17,nihtbx_emosupport_theta,perchostility18_85,perchostility8_17,theta
+  codes:
+    999: NA/NK/missing
+
+soc200:
+  type: Integer
+  description: In the past month, please describe how often... I have someone who
+    understands my problems.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs1a1
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc203:
+  type: Integer
+  description: In the past month, please describe how often... I have someone who
+    will listen to me when I need to talk.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs1a2
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc204:
+  type: Integer
+  description: In the past month, please describe how often... I feel there are people
+    I can talk to if I am upset.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs1a3
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc205:
+  type: Integer
+  description: In the past month, please describe how often... I have someone to talk
+    with when I have a bad day.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs1a4
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc206:
+  type: Integer
+  description: In the past month, please describe how often... I have someone I trust
+    to talk with about my problems.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs1a5
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc207:
+  type: Integer
+  description: In the past month, please describe how often... I have someone I trust
+    to talk with about my feelings.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs1a6
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc210:
+  type: Integer
+  description: In the past month, please describe how often... Someone is around to
+    make my meals if I am unable to do it myself.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs1b1,toolbox_1,toolbox_1_fu
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc212:
+  type: Integer
+  description: In the past month, please describe how often... I have someone to take
+    me shopping if I need it.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs1b2,toolbox_2,toolbox_2_fu
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc213:
+  type: Integer
+  description: In the past month, please describe how often... I have someone to help
+    me if I'm sick in bed.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs1b3,toolbox_3,toolbox_3_fu
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc214:
+  type: Integer
+  description: In the past month, please describe how often... I have someone to pick
+    up medicine for me if I need it.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs1b4,toolbox_4,toolbox_4_fu
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc215:
+  type: Integer
+  description: In the past month, please describe how often... I have someone to take
+    me to the doctor if I need it.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs1b5,toolbox_5,toolbox_5_fu
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc216:
+  type: Integer
+  description: In the past month, please describe how often... There is someone around
+    to help me if I need it.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs1b6,toolbox_6,toolbox_6_fu
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc217:
+  type: Integer
+  description: In the past month, please describe how often... I can find someone
+    to drive me places if I need it.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs1b7,toolbox_7,toolbox_7_fu
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc218:
+  type: Integer
+  description: In the past month, please describe how often... I can get help cleaning
+    up around my home if I need it.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs1b8,toolbox_8,toolbox_8_fu
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc222:
+  type: Integer
+  description: In the past month, please describe how often... I can get helpful advice
+    from others when dealing with a problem.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs1a7
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc225:
+  type: Integer
+  description: In the past month, please describe how often... I get useful advice
+    about important things in my life.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc226:
+  type: Integer
+  description: In the past month, please describe how often... I have someone to talk
+    with about school problems.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc229:
+  type: Integer
+  description: In the past month, please describe how often... I have someone to turn
+    to for suggestions about how to deal with a problem.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs1a8
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+aescode:
+  type: Integer
+  description: Staff code number of person completing this form
+  alias: asrsra
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+  alias: notes
+
+nih_tlbx_rawscore:
+  type: Integer
+  description: RawScore
+  alias: nihtbx_emosupport_rawscore,rawscore
+
+interview_language:
+  type: String
+  length: 255
+  description: Language Used in the Interview
+  alias: language
+
+nih_tlbx_fctsc:
+  type: Float
+  description: Fully-Corrected T-Score
+  range:
+  - 0::120
+  alias: fully_corrected_t_score
+
+wcst_ni:
+  type: Integer
+  description: Number of Items
+  alias: itmcnt
+
+prsupport39:
+  type: Integer
+  description: 'PROMIS T-score: Instrumental Support'
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)
+  alias: respondent
+
+fneproc:
+  type: String
+  length: 20
+  description: name of trial procedure being run

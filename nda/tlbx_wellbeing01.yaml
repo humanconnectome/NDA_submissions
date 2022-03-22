@@ -1,0 +1,1817 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  alias: pa_visit
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of subject at birth
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+primary_language:
+  type: String
+  length: 255
+  description: Subject's Primary Language
+  alias: language
+
+nih_pin:
+  type: String
+  length: 25
+  description: PIN number assigned by the NIH Toolbox
+  alias: pin
+
+pa068:
+  type: Integer
+  description: S. I would like to change many things in my life. P. My child would
+    like to change many things in his/her life.
+  range:
+  - 1::5
+  notes: 1=strongly disagree; 5 or 7=strongly agree
+  alias: papxy068
+  codes:
+    1: strongly disagree
+    7: strongly agree
+
+pa069:
+  type: Integer
+  description: S. I wish I had a different kind of life. P.My child wishes he/she
+    had a different kind of life.
+  range:
+  - 1::5
+  notes: 1=strongly disagree; 5 or 7=strongly agree
+  alias: papxy069
+  codes:
+    1: strongly disagree
+    7: strongly agree
+
+pa070:
+  type: Integer
+  description: S. I have a good life. P.My child has a good life.
+  range:
+  - 1::5
+  notes: 1=strongly disagree; 5 or 7=strongly agree
+  alias: papxy070
+  codes:
+    1: strongly disagree
+    7: strongly agree
+
+pa071:
+  type: Integer
+  description: S. I have what I want in life. P.My child has what he/she wants in
+    life.
+  range:
+  - 1::5
+  notes: 1=strongly disagree; 5 or 7=strongly agree
+  alias: papxy071
+  codes:
+    1: strongly disagree
+    7: strongly agree
+
+pa072:
+  type: Integer
+  description: S.  My life is better than most peoples lives. P.My child's life is
+    better than most kids
+  range:
+  - 1::5
+  notes: 1=strongly disagree; 5 or 7=strongly agree
+  alias: pa072m,papxy072
+  codes:
+    1: strongly disagree
+    7: strongly agree
+
+pa075:
+  type: Integer
+  description: Indicate how much you agree or disagree; I feel a sense of purpose
+    in my life.
+  range:
+  - 1::5
+  notes: 1=strongly disagree; 5 or 7=strongly agree
+  codes:
+    1: strongly disagree
+    7: strongly agree
+
+papxy066:
+  type: Integer
+  description: P. My child's life is going well. S. My life is going well
+  range:
+  - 1::5
+  notes: 1=strongly disagree; 5 or 7=strongly agree
+  alias: pa066
+  codes:
+    1: strongly disagree
+    7: strongly agree
+
+papxy067:
+  type: Integer
+  description: P. My child's life is just right. S.My life situation is just right
+  range:
+  - 1::5
+  notes: 1=strongly disagree; 5 or 7=strongly agree
+  alias: pa067
+  codes:
+    1: strongly disagree
+    7: strongly agree
+
+nih_tlbx_tscore:
+  type: Float
+  required: true
+  description: T-score
+  range:
+  - 0::200
+  - 999
+  notes: 999=NA/NK/missing
+  alias: gls_t_score,gls_t_score_par,nihtbx_lifesat_par_tscore,nihtbx_lifesat_tscore,tscore
+  codes:
+    999: NA/NK/missing
+
+nih_tlbx_theta:
+  type: Float
+  required: true
+  description: Theta
+  notes: 999=NA/NK/missing
+  alias: gls_theta_score,gls_theta_score_par,nihtbx_lifesat_theta,positiveaffect13_17,positiveaffect18_85,positiveaffect8_12,positiveaffectprox3_7,positiveaffectprox8_12,theta,tlbx_wellbeing01
+  codes:
+    999: NA/NK/missing
+
+pa050:
+  type: Integer
+  description: I understand my life's meaning.
+  range:
+  - 1::5
+  notes: 1=Strongly disagree; 2=Disagree; 3=Neither agree nor disagree; 4=Agree; 5=Strongly
+    agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Neither agree nor disagree
+    4: Agree
+    5: Strongly agree
+
+pa051:
+  type: Integer
+  description: My life has a clear sense of purpose.
+  range:
+  - 1::5
+  notes: 1=Strongly disagree; 2=Disagree; 3=Neither agree nor disagree; 4=Agree; 5=Strongly
+    agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Neither agree nor disagree
+    4: Agree
+    5: Strongly agree
+
+pa052:
+  type: Integer
+  description: I have a good sense of what makes my life meaningful.
+  range:
+  - 1::5
+  notes: 1=Strongly disagree; 2=Disagree; 3=Neither agree nor disagree; 4=Agree; 5=Strongly
+    agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Neither agree nor disagree
+    4: Agree
+    5: Strongly agree
+
+pa053:
+  type: Integer
+  description: I have discovered a satisfying life purpose.
+  range:
+  - 1::5
+  notes: 1=Strongly disagree; 2=Disagree; 3=Neither agree nor disagree; 4=Agree; 5=Strongly
+    agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Neither agree nor disagree
+    4: Agree
+    5: Strongly agree
+
+pa054:
+  type: Integer
+  description: My life has no clear purpose.
+  range:
+  - 1::5
+  notes: 1=Strongly disagree; 2=Disagree; 3=Neither agree nor disagree; 4=Agree; 5=Strongly
+    agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Neither agree nor disagree
+    4: Agree
+    5: Strongly agree
+
+pa057:
+  type: Integer
+  description: I generally feel that what I do in my life is valuable and worthwhile.
+  range:
+  - 1::5
+  notes: 1=Strongly disagree; 2=Disagree; 3=Neither agree nor disagree; 4=Agree; 5=Strongly
+    agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Neither agree nor disagree
+    4: Agree
+    5: Strongly agree
+
+pa058:
+  type: Integer
+  description: I feel grateful for each day.
+  range:
+  - 1::5
+  notes: 1=Strongly disagree; 2=Disagree; 3=Neither agree nor disagree; 4=Agree; 5=Strongly
+    agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Neither agree nor disagree
+    4: Agree
+    5: Strongly agree
+
+pa059:
+  type: Integer
+  description: My daily life is full of things that are interesting to me.
+  range:
+  - 1::5
+  notes: 1=Strongly disagree; 2=Disagree; 3=Neither agree nor disagree; 4=Agree; 5=Strongly
+    agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Neither agree nor disagree
+    4: Agree
+    5: Strongly agree
+
+pa060:
+  type: Integer
+  description: There is not enough purpose in my life.
+  range:
+  - 1::5
+  notes: 1=Strongly disagree; 2=Disagree; 3=Neither agree nor disagree; 4=Agree; 5=Strongly
+    agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Neither agree nor disagree
+    4: Agree
+    5: Strongly agree
+
+pa061:
+  type: Integer
+  description: To me; the things I do are all worthwhile.
+  range:
+  - 1::5
+  notes: 1=Strongly disagree; 2=Disagree; 3=Neither agree nor disagree; 4=Agree; 5=Strongly
+    agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Neither agree nor disagree
+    4: Agree
+    5: Strongly agree
+
+pa062:
+  type: Integer
+  description: Most of what I do seems trivial and unimportant to me.
+  range:
+  - 1::5
+  notes: 1=Strongly disagree; 2=Disagree; 3=Neither agree nor disagree; 4=Agree; 5=Strongly
+    agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Neither agree nor disagree
+    4: Agree
+    5: Strongly agree
+
+pa063:
+  type: Integer
+  description: I value my activities a lot.
+  range:
+  - 1::5
+  notes: 1=Strongly disagree; 2=Disagree; 3=Neither agree nor disagree; 4=Agree; 5=Strongly
+    agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Neither agree nor disagree
+    4: Agree
+    5: Strongly agree
+
+pa064:
+  type: Integer
+  description: I don't care very much about the things I do.
+  range:
+  - 1::5
+  notes: 1=Strongly disagree; 2=Disagree; 3=Neither agree nor disagree; 4=Agree; 5=Strongly
+    agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Neither agree nor disagree
+    4: Agree
+    5: Strongly agree
+
+pa065:
+  type: Integer
+  description: I have lots of reasons for living.
+  range:
+  - 1::5
+  notes: 1=Strongly disagree; 2=Disagree; 3=Neither agree nor disagree; 4=Agree; 5=Strongly
+    agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Neither agree nor disagree
+    4: Agree
+    5: Strongly agree
+
+pa073:
+  type: Integer
+  description: I have a reason for living.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa074:
+  type: Integer
+  description: My life has been productive.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa075m:
+  type: Integer
+  description: I feel a sense of purpose in my life.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa076:
+  type: Integer
+  description: My life lacks meaning and purpose.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+nih_tlbx_rawscore:
+  type: Integer
+  required: true
+  description: RawScore
+  alias: gls_score,gls_score_par,lifesatisfacprox3_12,nihtbx_lifesat_par_rawscore,nihtbx_lifesat_rawscore,rawscore
+
+nih_tlbx_se:
+  type: Float
+  required: true
+  description: Standard Error
+  notes: 999=NA/NK/missing
+  alias: gls_se_par,gls_se_score,nihtbx_lifesat_se,se
+  codes:
+    999: NA/NK/missing
+
+pa001:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt cheerful / Parent report:
+    In the past 7 days, my child was cheerful'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: pa1,papxy001
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa002:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt attentive / Parent report:
+    In the past 7 days, my child was attentive'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: pa2,papxy002
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa005:
+  type: Integer
+  description: In the past 7 days; I felt relaxed
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa006:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt delighted / Parent report:
+    In the past 7 days, my child was delighted'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: pa3,papxy006
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa007:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt inspired / Parent report:
+    In the past 7 days, my child was inspired'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: papxy007
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa008:
+  type: Integer
+  description: In the past 7 days; I felt fearless
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa010:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt happy / Parent report: In
+    the past 7 days, my child was happy'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: pa4,papxy010
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa014:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt joyful / Parent report: In
+    the past 7 days, my child was joyful'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: pa5,papxy014
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa015:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt excited / Parent report: In
+    the past 7 days, my child was excited'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: papxy015
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa016:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt proud / Parent report: In
+    the past 7 days, my child was proud'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: papxy016
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa017:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt lively / Parent report: In
+    the past 7 days, my child was lively'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: papxy017
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa018:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt at ease / Parent report: In
+    the past 7 days, my child was at ease'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: papxy018
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa019:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt enthusiastic / Parent report:
+    In the past 7 days, my child was enthusiastic'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: pa6,papxy019
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa020:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt determined / Parent report:
+    In the past 7 days, my child was determined'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: pa7,papxy020
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa021:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt interested / Parent report:
+    In the past 7 days, my child was interested'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: pa8,papxy021
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa022:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt confident / Parent report:
+    In the past 7 days, my child was confident'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: papxy022
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pc_6:
+  type: Integer
+  description: In the past 7 days...I have been able to concentrate
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa025:
+  type: Integer
+  description: In the past 7 days; I was thinking creatively
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: pa9
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa026:
+  type: Integer
+  description: In the past 7 days; I liked myself
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: pa10
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa027:
+  type: Integer
+  description: In the past 7 days; My future looked good
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa029:
+  type: Integer
+  description: In the past 7 days; I smiled and laughed a lot
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa030:
+  type: Integer
+  description: In the past 7 days; I felt peaceful
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: pa11
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa032:
+  type: Integer
+  description: In the past 7 days; I was able to reach down deep into myself for comfort
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa033:
+  type: Integer
+  description: In the past 7 days; I felt a sense of harmony within myself
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa034:
+  type: Integer
+  description: In the past 7 days; I generally enjoyed the things I did
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa035:
+  type: Integer
+  description: In the past 7 days; I felt lighthearted
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa036:
+  type: Integer
+  description: In the past 7 days; I felt satisfied
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa037:
+  type: Integer
+  description: In the past 7 days; I felt good-natured
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: pa12
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa039:
+  type: Integer
+  description: In the past 7 days; I felt useful
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: pa13
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa040:
+  type: Integer
+  description: In the past 7 days; I felt optimistic
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa041:
+  type: Integer
+  description: In the past 7 days; I felt interested in other people
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa042:
+  type: Integer
+  description: In the past 7 days; I felt understood
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: pa14
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa043:
+  type: Integer
+  description: In the past 7 days; I felt grateful
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa044:
+  type: Integer
+  description: In the past 7 days; I felt content
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: pa15
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa004:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt strong / Parent report: In
+    the past 7 days, my child was strong'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: papxy004
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa009:
+  type: Integer
+  description: In the past 7 days; I felt calm
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa011:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt alert / Parent report: In
+    the past 7 days, my child was alert'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: papxy011
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa013:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt active / Parent report: In
+    the past 7 days, my child was active'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: papxy13
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa023:
+  type: Integer
+  description: 'Self-report: In the past 7 days; I felt energetic / Parent report:
+    In the past 7 days, my child was energetic'
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: papxy23
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa028:
+  type: Integer
+  description: In the past 7 days; I had energy to spare
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa038:
+  type: Integer
+  description: In the past 7 days; I felt clear-headed
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa077:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with my education.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa078:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with my present
+    job or work.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa079:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with my well-being
+    from spiritual; religious or philosophical beliefs.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa080:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with my housing.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa081:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with my family
+    life.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa082:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with my health.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa083:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with my friends
+    and social life.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa084:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with my neighborhood
+    overall.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa085:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with my ability
+    to help others.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa086:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with my achievement
+    of my goals.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa087:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with my leisure.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa088:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with my physical
+    safety.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa089:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with my energy
+    level.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa103:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with my hobbies
+    and free time activities.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa104:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with the clothes;
+    games; toys; and other things I have.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa105:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with how much
+    time I get from my parents.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa106:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with how much
+    attention I get from my parents.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa107:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with how I
+    get along with my brother(s) or sister(s).
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa108:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with the friends
+    I have.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa109:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with how I
+    get along with my friends.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa110:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with my size
+    and appearance.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa112:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with my skills
+    and talents.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa113:
+  type: Integer
+  description: Indicate how much you agree or disagree; I am satisfied with the neighborhood
+    and community in which I live.
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: assessment_name,gls_version,inst
+
+visit_num:
+  type: Integer
+  description: Visit number
+  range:
+  - 1::3
+  notes: 1=Baseline, 2=12 Month, 3=24 Month
+  codes:
+    1: Baseline, 2=12 Month, 3=24 Month
+
+pa049m:
+  type: Integer
+  description: My life situation is excellent.
+  range:
+  - 1::7
+  notes: 1= Strongly disagree, 2= Disagree, 3= Slightly disagree, 4= Neither agree
+    nor disagree, 5= Slightly agree, 6= Agree, 7= Strongly agree
+  codes:
+    1: Strongly disagree, 2= Disagree, 3= Slightly disagree, 4= Neither agree nor
+      disagree, 5= Slightly agree, 6= Agree, 7= Strongly agree
+
+pa049m_theta:
+  type: Float
+  description: PA049m Theta
+
+pa049m_tscore:
+  type: Float
+  description: PA049m T score
+
+pa049m_se:
+  type: Float
+  description: PA049m SE
+
+pa066_theta:
+  type: Float
+  description: PA066 Theta
+
+pa066_tscore:
+  type: Float
+  description: PA066 T Score
+
+pa066_se:
+  type: Float
+  description: PA066 SE
+
+pa046:
+  type: Integer
+  description: If I could live my life over, I would change almost nothing.
+  range:
+  - 1::7
+  notes: 1= Strongly disagree, 2= Disagree, 3= Slightly disagree, 4= Neither agree
+    nor disagree, 5= Slightly agree, 6= Agree, 7= Strongly agree
+  codes:
+    1: Strongly disagree, 2= Disagree, 3= Slightly disagree, 4= Neither agree nor
+      disagree, 5= Slightly agree, 6= Agree, 7= Strongly agree
+
+pa046_theta:
+  type: Float
+  description: PA046 Theta
+
+pa046_tscore:
+  type: Float
+  description: PA046 T Score
+
+pa046_se:
+  type: Float
+  description: PA046 SE
+
+pa067_theta:
+  type: Float
+  description: PA067 Theta
+
+pa067_tscore:
+  type: Float
+  description: PA067 T Score
+
+pa067_se:
+  type: Float
+  description: PA067 SE
+
+pa047:
+  type: Integer
+  description: I am satisfied with my life.
+  range:
+  - 1::7
+  notes: 1= Strongly disagree, 2= Disagree, 3= Slightly disagree, 4= Neither agree
+    nor disagree, 5= Slightly agree, 6= Agree, 7= Strongly agree
+  codes:
+    1: Strongly disagree, 2= Disagree, 3= Slightly disagree, 4= Neither agree nor
+      disagree, 5= Slightly agree, 6= Agree, 7= Strongly agree
+
+pa047_theta:
+  type: Float
+  description: PA047 Theta
+
+pa047_tscore:
+  type: Float
+  description: PA047 T Score
+
+pa047_se:
+  type: Float
+  description: PA047 SE
+
+pa070_theta:
+  type: Float
+  description: PA070 Theta
+
+pa070_tscore:
+  type: Float
+  description: PA070 T Score
+
+pa070_se:
+  type: Float
+  description: PA070 SE
+
+pa071_theta:
+  type: Float
+  description: PA071 Theta
+
+pa071_tscore:
+  type: Float
+  description: PA071 T Score
+
+pa071_se:
+  type: Float
+  description: PA071 SE
+
+pa048:
+  type: Integer
+  description: So far I have gotten the important things I want in life.
+  range:
+  - 1::7
+  notes: 1= Strongly disagree, 2= Disagree, 3= Slightly disagree, 4= Neither agree
+    nor disagree, 5= Slightly agree, 6= Agree, 7= Strongly agree
+  codes:
+    1: Strongly disagree, 2= Disagree, 3= Slightly disagree, 4= Neither agree nor
+      disagree, 5= Slightly agree, 6= Agree, 7= Strongly agree
+
+pa048_theta:
+  type: Float
+  description: PA048 Theta
+
+pa048_tscore:
+  type: Float
+  description: PA048 T Score
+
+pa048_se:
+  type: Float
+  description: PA048 SE
+
+pa045m:
+  type: Integer
+  description: In most ways, my life is close to perfect.
+  range:
+  - 1::7
+  notes: 1= Strongly disagree, 2= Disagree, 3= Slightly disagree, 4= Neither agree
+    nor disagree, 5= Slightly agree, 6= Agree, 7= Strongly agree
+  codes:
+    1: Strongly disagree, 2= Disagree, 3= Slightly disagree, 4= Neither agree nor
+      disagree, 5= Slightly agree, 6= Agree, 7= Strongly agree
+
+pa045m_theta:
+  type: Float
+  description: PA045m Theta
+
+pa045m_tscore:
+  type: Float
+  description: PA045m T Score
+
+pa045m_se:
+  type: Float
+  description: PA045m SE
+
+pa069_theta:
+  type: Float
+  description: PA069 Theta
+
+pa069_tscore:
+  type: Float
+  description: PA069 T Score
+
+pa069_se:
+  type: Float
+  description: PA069 SE
+
+papxy066_theta:
+  type: Float
+  description: PA066 Theta
+
+papxy066_tscore:
+  type: Float
+  description: PA066 T Score
+
+papxy066_se:
+  type: Float
+  description: PA066 SE
+
+papxy067_theta:
+  type: Float
+  description: PA067 Theta
+
+papxy067_tscore:
+  type: Float
+  description: PA067 T Score
+
+papxy067_se:
+  type: Float
+  description: PA067 SE
+
+papxy069_theta:
+  type: Float
+  description: PA069 Theta
+
+papxy069_tscore:
+  type: Float
+  description: PA069 T Score
+
+papxy069_se:
+  type: Float
+  description: PA069 SE
+
+papxy070_theta:
+  type: Float
+  description: PA070 Theta
+
+papxy070_tscore:
+  type: Float
+  description: PA070 T Score
+
+papxy070_se:
+  type: Float
+  description: PA070 SE
+
+papxy071_theta:
+  type: Float
+  description: PA071 Theta
+
+papxy071_tscore:
+  type: Float
+  description: PA071 T Score
+
+papxy071_se:
+  type: Float
+  description: PA071 SE
+
+tlbxpa_rs:
+  type: Integer
+  description: Positive affect raw score
+  alias: nihtbx_posaffect_par_rawscore,nihtbx_posaffect_rawscore
+
+tlbxpa_ts:
+  type: Integer
+  description: Positive affect t-score
+  alias: nihtbx_posaffect_par_tscore,nihtbx_posaffect_tscore
+
+tlbxmp_rs:
+  type: Integer
+  description: Meaning and Purpose raw score
+  alias: nihtbx_meaning_rawscore,patot
+
+tlbxmp_ts:
+  type: Integer
+  description: Meaning and Purpose t-score
+  alias: nihtbx_meaning_tscore
+
+pa024:
+  type: Integer
+  description: I felt terrified
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pa045mr:
+  type: Integer
+  description: 'Indicate how much you agree or disagree: In most ways, my life is
+    close to perfect'
+  range:
+  - 1::7
+  notes: 1=Strongly disagree; 2=Disagree; 3=Slightly Disagree; 4=Neither agree nor
+    disagree; 5=Slightly Agree; 6=Agree; 7=Strongly Agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Slightly Disagree
+    4: Neither agree nor disagree
+    5: Slightly Agree
+    6: Agree
+    7: Strongly Agree
+
+pa046mr:
+  type: Integer
+  description: If I could live my life over, I would change almost nothing.
+  range:
+  - 1::7
+  notes: 1=Strongly disagree; 2=Disagree; 3=Slightly Disagree; 4=Neither agree nor
+    disagree; 5=Slightly Agree; 6=Agree; 7=Strongly Agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Slightly Disagree
+    4: Neither agree nor disagree
+    5: Slightly Agree
+    6: Agree
+    7: Strongly Agree
+
+pa047mr:
+  type: Integer
+  description: I am satisfied with my life.
+  range:
+  - 1::7
+  notes: 1=Strongly disagree; 2=Disagree; 3=Slightly Disagree; 4=Neither agree nor
+    disagree; 5=Slightly Agree; 6=Agree; 7=Strongly Agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Slightly Disagree
+    4: Neither agree nor disagree
+    5: Slightly Agree
+    6: Agree
+    7: Strongly Agree
+
+pa049mr:
+  type: Integer
+  description: My life situation is excellent.
+  range:
+  - 1::7
+  notes: 1=Strongly disagree; 2=Disagree; 3=Slightly Disagree; 4=Neither agree nor
+    disagree; 5=Slightly Agree; 6=Agree; 7=Strongly Agree
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Slightly Disagree
+    4: Neither agree nor disagree
+    5: Slightly Agree
+    6: Agree
+    7: Strongly Agree
+
+pa049mr_theta:
+  type: Float
+  description: PA049m Theta
+
+pa049mr_tscore:
+  type: Float
+  description: PA049m T score
+
+pa049mr_se:
+  type: Float
+  description: PA049m SE
+
+pa045mr_theta:
+  type: Float
+  description: PA049m Theta
+
+pa045mr_tscore:
+  type: Float
+  description: PA049m T score
+
+pa045mr_se:
+  type: Float
+  description: PA049m SE
+
+pa047mr_theta:
+  type: Float
+  description: PA049m Theta
+
+pa047mr_tscore:
+  type: Float
+  description: PA049m T score
+
+pa047mr_se:
+  type: Float
+  description: PA049m SE
+
+pa046mr_theta:
+  type: Float
+  description: PA049m Theta
+
+pa046mr_tscore:
+  type: Float
+  description: PA049m T score
+
+pa046mr_se:
+  type: Float
+  description: PA049m SE
+
+interview_language:
+  type: String
+  length: 255
+  description: Language Used in the Interview
+
+nih_tlbx_fctsc:
+  type: Float
+  description: Fully-Corrected T-Score
+  range:
+  - 0::120
+  alias: fully_corrected_t_score
+
+wcst_ni:
+  type: Integer
+  description: Number of Items
+  alias: itmcnt
+
+prsupport41:
+  type: Integer
+  description: 'PROMIS T-score: Emotional Support'
+
+responsetime:
+  type: Float
+  description: Response Time (ms)
+
+pa_046:
+  type: Integer
+  description: 'Indicate how much you agree or disagree: If I could live my life over,
+    I would change almost nothing.'
+  range:
+  - 1::7
+  notes: '1=Strongly disagree; 2=Disagree; 3=Slightly disagree; 4=Neither agree nor
+    disagree; 5=Slightly agree; 6=Agree; 7=Strongly agree '
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Slightly disagree
+    4: Neither agree nor disagree
+    5: Slightly agree
+    6: Agree
+    7: Strongly agree
+
+pa_047:
+  type: Integer
+  description: 'Indicate how much you agree or disagree: I am satisfied with my life.'
+  range:
+  - 1::7
+  notes: '1=Strongly disagree; 2=Disagree; 3=Slightly disagree; 4=Neither agree nor
+    disagree; 5=Slightly agree; 6=Agree; 7=Strongly agree '
+  codes:
+    1: Strongly disagree
+    2: Disagree
+    3: Slightly disagree
+    4: Neither agree nor disagree
+    5: Slightly agree
+    6: Agree
+    7: Strongly agree
+
+wq_surveystatus:
+  type: Integer
+  description: Overall instrument status
+  range:
+  - 1::6
+  notes: Not started = 1; Started - not finished = 2; Finished = 3; Other = 4; Unknown
+    = 5; 6 = Not complete
+  alias: instrumentstatus2
+  codes:
+    6: Not complete
+
+instrumentbreakoff:
+  type: Integer
+  description: Was the assessment ended prematurely (broken off)?
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)
+  alias: respondent
+
+fneproc:
+  type: String
+  length: 20
+  description: name of trial procedure being run

@@ -1,0 +1,1432 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: guid
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: asd_child_id,hcpa_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  alias: nihtbx_cardsort_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: ccc2_interview_age
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of subject at birth
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+
+nih_pin:
+  type: String
+  length: 25
+  description: PIN number assigned by the NIH Toolbox
+  alias: pin
+
+phne_sc_2:
+  type: String
+  length: 40
+  description: What is your highest grade completed in school?
+  alias: nih_tb_education_info
+
+ques_gradalbm:
+  type: String
+  length: 255
+  description: Last grade completed -Biological Mother
+  alias: nih_tb_parent_education
+
+behavioralobservations_hand:
+  type: String
+  length: 255
+  description: Handedness
+  alias: nih_tb_handedness_info
+
+nih_dccsmixed_shape_repeat1:
+  type: Integer
+  description: DCCS Trial 1, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat1
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat2:
+  type: Integer
+  description: DCCS Trial 2, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat2
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat3:
+  type: Integer
+  description: DCCS Trial 3, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat3
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat4:
+  type: Integer
+  description: DCCS Trial 4, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat4
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_color_switch5:
+  type: Integer
+  description: DCCS Trial 5, color trial, switch trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_color_switch5
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat6:
+  type: Integer
+  description: DCCS Trial 6, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat6
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat7:
+  type: Integer
+  description: DCCS Trial 7, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat7
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat8:
+  type: Integer
+  description: DCCS Trial 8, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat8
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_color_switch9:
+  type: Integer
+  description: DCCS Trial 9, color trial, switch trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_color_switch9
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat10:
+  type: Integer
+  description: DCCS Trial 10, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat10
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat11:
+  type: Integer
+  description: DCCS Trial 11, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat11
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat12:
+  type: Integer
+  description: DCCS Trial 12, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat12
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat13:
+  type: Integer
+  description: DCCS Trial 13, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat13
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat14:
+  type: Integer
+  description: DCCS Trial 14, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat14
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_color_switch15:
+  type: Integer
+  description: DCCS Trial 15, color trial, switch trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_color_switch15
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat16:
+  type: Integer
+  description: DCCS Trial 16, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat16
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat17:
+  type: Integer
+  description: DCCS Trial 17, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat17
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_color_switch18:
+  type: Integer
+  description: DCCS Trial 18, color trial, switch trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_color_switch18
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat19:
+  type: Integer
+  description: DCCS Trial 19, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat19
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat20:
+  type: Integer
+  description: DCCS Trial 20, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat20
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat21:
+  type: Integer
+  description: DCCS Trial 21, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat21
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_color_switch22:
+  type: Integer
+  description: DCCS Trial 22, color trial, switch trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_color_switch22
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat23:
+  type: Integer
+  description: DCCS Trial 23, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat23
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat24:
+  type: Integer
+  description: DCCS Trial 24, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat24
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat25:
+  type: Integer
+  description: DCCS Trial 25, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat25
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat26:
+  type: Integer
+  description: DCCS Trial 26, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat26
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_color_switch27:
+  type: Integer
+  description: DCCS Trial 27, color trial, switch trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_color_switch27
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat28:
+  type: Integer
+  description: DCCS Trial 28, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat28
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_shape_repeat29:
+  type: Integer
+  description: DCCS Trial 29, shape trial, repeat trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_shape_repeat29
+  codes:
+    0: incorrect 1=correct
+
+nih_dccsmixed_color_switch30:
+  type: Integer
+  description: DCCS Trial 30, color trial, switch trial
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: dccsmixed_color_switch30
+  codes:
+    0: incorrect 1=correct
+
+nih_dccs_rt1:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 1
+
+nih_dccs_rt2:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 2
+
+nih_dccs_rt3:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 3
+
+nih_dccs_rt4:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 4
+
+nih_dccs_rt5:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 5
+
+nih_dccs_rt6:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 6
+
+nih_dccs_rt7:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 7
+
+nih_dccs_rt8:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 8
+
+nih_dccs_rt9:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 9
+
+nih_dccs_rt10:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 10
+
+nih_dccs_rt11:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 11
+
+nih_dccs_rt12:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 12
+
+nih_dccs_rt13:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 13
+
+nih_dccs_rt14:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 14
+
+nih_dccs_rt15:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 15
+
+nih_dccs_rt16:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 16
+
+nih_dccs_rt17:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 17
+
+nih_dccs_rt18:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 18
+
+nih_dccs_rt19:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 19
+
+nih_dccs_rt20:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 20
+
+nih_dccs_rt21:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 21
+
+nih_dccs_rt22:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 22
+
+nih_dccs_rt23:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 23
+
+nih_dccs_rt24:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 24
+
+nih_dccs_rt25:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 25
+
+nih_dccs_rt26:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 26
+
+nih_dccs_rt27:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 27
+
+nih_dccs_rt28:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 28
+
+nih_dccs_rt29:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 29
+
+nih_dccs_rt30:
+  type: Integer
+  description: DCCS Reaction time (ms) for mixed trial 30
+
+nih_dccs_raw:
+  type: Integer
+  description: DCCS Raw Score
+  range:
+  - 0::40
+  - 999
+  notes: 999=no score
+  alias: nihtbx_cardsort_rawscore,nihtbx_demo_rescore_rawdccs,rawscore
+  codes:
+    999: no score
+
+nih_dccs_computed:
+  type: Float
+  description: Computed Score for DCCS subtest
+  range:
+  - 0::1000
+  - 999
+  notes: 999=no score
+  alias: computed_score,dccsscore,nihtbx_cardsort_computedscore,nihtbx_cardsort_cs,nihtbx_demo_rescore_computeddccs,tbx_dccs_score
+  codes:
+    999: no score
+
+nih_dccs_unadjusted:
+  type: Float
+  description: Unadjusted scaled score for DCCS subtest
+  range:
+  - 0::200
+  - 999
+  notes: 999=no score
+  alias: dimchangeuncscore,nihtbx_cardsort_uncorrected,nihtbx_demo_rescore_uncorrdccs,uncorrected_standard_score
+  codes:
+    999: no score
+
+nih_dccs_ageadjusted:
+  type: Float
+  description: Age Adjusted scaled score for DCCS subtest
+  range:
+  - 0::200
+  - 999
+  notes: 999=no score
+  alias: age-corrected_standard_score,age_corrected_standard_score,dimchangeagecorrscore,nihtbx_cardsort_agecorrected,nihtbx_demo_rescore_agecorrdccs
+  codes:
+    999: no score
+
+nih_dccs_natperc:
+  type: Float
+  description: Age Adjusted National Percentile for DCCS subtest
+  range:
+  - 0::100
+  - 999
+  notes: 999=no score
+  alias: national_percentile__age_adjusted_,nihtbx_cardsort_percentile
+  codes:
+    999: no score
+
+dccs_condition_order:
+  type: String
+  length: 15
+  description: The order in which the tasks are administered (either color or shape
+    first)
+  range:
+  - Color/Shape
+  - Shape/Color
+
+dccs_pre_switch:
+  type: Integer
+  description: Score out of six from first task (either shape or color based)
+  range:
+  - 0::1260
+
+dccs_post_switch:
+  type: Integer
+  description: Score out of six from second task (either shape or color based)
+  range:
+  - 0::1260
+
+dccs_border_task:
+  type: Integer
+  description: Score out of six from border task
+  range:
+  - 0::1260
+
+tbx_failed_dccs:
+  type: Integer
+  description: flag for failure of subtest
+  range:
+  - 0
+  - 1
+  notes: 0=False; 1=True
+  codes:
+    0: 'False'
+    1: 'True'
+
+tbx_dccs_pre_rt:
+  type: Float
+  description: preswitch median reaction time
+
+tbx_dccs_pst_rt:
+  type: Float
+  description: postswitch median reaction time
+
+tbx_dccs_d_rt:
+  type: Float
+  description: dominant stimuli median reaction time
+
+tbx_dccs_nd_rt:
+  type: Float
+  description: non-dominant stimuli median reaction time
+
+tbx_dccs_mixed_nd_acc:
+  type: Integer
+  description: mixed block, non-dominant accuracy score
+
+tbx_dccs_pre_cue:
+  type: String
+  length: 10
+  description: preswitch cue
+
+tbx_dccs_pst_cue:
+  type: String
+  length: 10
+  description: postswitch cue
+
+tbx_dccs_dom_cue:
+  type: String
+  length: 10
+  description: dominant cue score
+
+tbx_dccs_pre_acc:
+  type: Integer
+  description: preswitch accuracy
+
+tbx_dccs_post_acc:
+  type: Integer
+  description: postswitch accuracy score
+
+tbx_dccs_mixed_d_acc:
+  type: Integer
+  description: mixed block, dominant accuracy score
+
+tbx_dccs_pre_p:
+  type: Float
+  description: preswitch accuracy (percent)
+
+tbx_dccs_post_p:
+  type: Float
+  description: postswitch accuracy score (percent)
+
+tbx_dccs_dom_p:
+  type: Float
+  description: mixed block, dominant accuracy score (percent)
+
+tbx_dccs_ndom_p:
+  type: Float
+  description: mixed block, non-dominant accuracy score (percent)
+
+nih_tlbx_accsc:
+  type: Float
+
+nih_tlbx_rtsc:
+  type: Float
+
+dccs_shape_instr1:
+  type: Integer
+  description: DCCS Shape Instruction Item 1
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_instr2:
+  type: Integer
+  description: DCCS Shape Instruction Item 2
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_prac1:
+  type: Integer
+  description: DCCS Shape Practice Item 1
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_prac2:
+  type: Integer
+  description: DCCS Shape Practice Item 2
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_prac3:
+  type: Integer
+  description: DCCS Shape Practice Item 3
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_prac4:
+  type: Integer
+  description: DCCS Shape Practice Item 4
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_prac5:
+  type: Integer
+  description: DCCS Shape Practice Item 5
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_instr1:
+  type: Integer
+  description: DCCS Color Instruction Item 1
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_instr2:
+  type: Integer
+  description: DCCS Color Instruction Item 2
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_prac1:
+  type: Integer
+  description: DCCS Color Practice Item 1
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_prac2:
+  type: Integer
+  description: DCCS Color Practice Item 2
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_prac3:
+  type: Integer
+  description: DCCS Color Practice Item 3
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_prac4:
+  type: Integer
+  description: DCCS Color Practice Item 4
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_prac5:
+  type: Integer
+  description: DCCS Color Practice Item 5
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_instr9:
+  type: Integer
+  description: DCCS Color Instruction Item 9
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_instr10:
+  type: Integer
+  description: DCCS Color Instruction Item 10
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_preswitch1:
+  type: Integer
+  description: DCCS Color Item 1, prior to dimension switch
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_preswitch1_t:
+  type: Integer
+  description: DCCS Color Item 1, prior to dimension switch, response time (ms)
+
+dccs_color_preswitch2:
+  type: Integer
+  description: DCCS Color Item 2, prior to dimension switch
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_preswitch2_t:
+  type: Integer
+  description: DCCS Color Item 2, prior to dimension switch, response time (ms)
+
+dccs_color_preswitch3:
+  type: Integer
+  description: DCCS Color Item 3, prior to dimension switch
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_preswitch3_t:
+  type: Integer
+  description: DCCS Color Item 3, prior to dimension switch, response time (ms)
+
+dccs_color_preswitch4:
+  type: Integer
+  description: DCCS Color Item 4, prior to dimension switch
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_preswitch4_t:
+  type: Integer
+  description: DCCS Color Item 4, prior to dimension switch, response time (ms)
+
+dccs_color_preswitch5:
+  type: Integer
+  description: DCCS Color Item 5, prior to dimension switch
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_preswitch5_t:
+  type: Integer
+  description: DCCS Color Item 5, prior to dimension switch, response time (ms)
+
+dccs_shape_instr9:
+  type: Integer
+  description: DCCS Shape Instruction Item 9
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_instr10:
+  type: Integer
+  description: DCCS Shape Instruction Item 10
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_postswitch1:
+  type: Integer
+  description: DCCS Shape Item 1, after dimension switch
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_postswitch1_t:
+  type: Integer
+  description: DCCS Shape Item 1, after dimension switch, response time (ms)
+
+dccs_shape_postswitch2:
+  type: Integer
+  description: DCCS Shape Item 2, after dimension switch
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_postswitch2_t:
+  type: Integer
+  description: DCCS Shape Item 2, after dimension switch, response time (ms)
+
+dccs_shape_postswitch3:
+  type: Integer
+  description: DCCS Shape Item 3, after dimension switch
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_postswitch3_t:
+  type: Integer
+  description: DCCS Shape Item 3, after dimension switch, response time (ms)
+
+dccs_shape_postswitch4:
+  type: Integer
+  description: DCCS Shape Item 4, after dimension switch
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_postswitch4_t:
+  type: Integer
+  description: DCCS Shape Item 4, after dimension switch, response time (ms)
+
+dccs_shape_postswitch5:
+  type: Integer
+  description: DCCS Shape Item 5, after dimension switch
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_postswitch5_t:
+  type: Integer
+  description: DCCS Shape Item 5, after dimension switch, response time (ms)
+
+dccs_shape_instr11:
+  type: Integer
+  description: DCCS Shape Instruction Item 11
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_instr12:
+  type: Integer
+  description: DCCS Shape Instruction Item 12
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_instr11:
+  type: Integer
+  description: DCCS Color Instruction Item 11
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_instr12:
+  type: Integer
+  description: DCCS Color Instruction Item 12
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_instr5:
+  type: Integer
+  description: DCCS Shape Instruction Item 5
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_instr6:
+  type: Integer
+  description: DCCS Shape Instruction Item 6
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_prac6:
+  type: Integer
+  description: DCCS Shape Practice Item 6
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_prac7:
+  type: Integer
+  description: DCCS Shape Practice Item 7
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_prac8:
+  type: Integer
+  description: DCCS Shape Practice Item 8
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_instr7:
+  type: Integer
+  description: DCCS Shape Instruction Item 7
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_instr8:
+  type: Integer
+  description: DCCS Shape Instruction Item 8
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_prac9:
+  type: Integer
+  description: DCCS Shape Practice Item 9
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_prac10:
+  type: Integer
+  description: DCCS Shape Practice Item 10
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_prac11:
+  type: Integer
+  description: DCCS Shape Practice Item 11
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_shape_prac12:
+  type: Integer
+  description: DCCS Shape Practice Item 12
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_instr5:
+  type: Integer
+  description: DCCS Color Instruction Item 5
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_instr6:
+  type: Integer
+  description: DCCS Color Instruction Item 6
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_prac6:
+  type: Integer
+  description: DCCS Color Practice Item 6
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_prac7:
+  type: Integer
+  description: DCCS Color Practice Item 7
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_prac8:
+  type: Integer
+  description: DCCS Color Practice Item 8
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_instr7:
+  type: Integer
+  description: DCCS Color Instruction Item 7
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_instr8:
+  type: Integer
+  description: DCCS Color Instruction Item 8
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_prac9:
+  type: Integer
+  description: DCCS Color Practice Item 9
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_prac10:
+  type: Integer
+  description: DCCS Color Practice Item 10
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_prac11:
+  type: Integer
+  description: DCCS Color Practice Item 11
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+dccs_color_prac12:
+  type: Integer
+  description: DCCS Color Practice Item 12
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+prob_admin:
+  type: Integer
+  description: Flagged for potentially problematic test administration
+  range:
+  - 1
+  notes: 1=Flagged
+  alias: flag_cognition_dccs
+  codes:
+    1: Flagged
+
+overallrt:
+  type: Integer
+  description: Mean reaction time from Flanker congruent and DCCS dominant trials
+    (ms)
+
+accult_select_language:
+  type: Integer
+  description: "Test given in Spanish? \xC2\xBFEspa\xC3\xB1ol?"
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: nihtbx_cardsort_language
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+visit:
+  type: String
+  length: 60
+  description: Visit name
+  alias: eventname
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: assessment_name,nihtbx_cardsort_v
+
+wcst_ni:
+  type: Integer
+  description: Number of Items
+  alias: itmcnt,nihtbx_cardsort_itmcnt
+
+nih_tlbx_theta:
+  type: Float
+  description: Theta
+  notes: 999=NA/NK/missing
+  alias: nihtbx_cardsort_theta
+  codes:
+    999: NA/NK/missing
+
+nih_tlbx_fctsc:
+  type: Float
+  description: Fully-Corrected T-Score
+  range:
+  - 0::120
+  alias: dimchangetscore,nihtbx_cardsort_fc,nihtbx_cardsort_fullycorrected,nihtbx_demo_rescore_fulltdccs
+
+acc:
+  type: Float
+  description: Accuracy
+  alias: nihtbx_demo_rescore_dccsaccuracy
+
+rt:
+  type: Float
+  description: Reaction Time
+  alias: nihtbx_demo_rescore_dccsreactiontime
+
+respondent:
+  type: String
+  length: 20
+  description: Respondent
+  range:
+  - Mother
+  - Father
+  - Parent
+  - Guardian
+  - Teacher
+  - Child
+  - Self
+  - Caregiver
+  - Partner
+  - Other
+
+dode:
+  type: String
+  length: 10
+  description: Date of Data Entry
+
+interview_language:
+  type: String
+  length: 255
+  description: Language Used in the Interview
+  alias: language,nihtbx_cardsort_language
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)
+
+fneproc:
+  type: String
+  length: 20
+  description: name of trial procedure being run

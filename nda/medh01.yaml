@@ -391,7 +391,7 @@ menstrualcycle3_y:
   notes: 1 = Yes; 0 = No; 2 = Don't know; 3 = Refuse to answer; The following questions
     are about the history of your menstrual cycle. If you do not remember specific
     details, just try to answer as best you can.
-  alias: esq8_fem_3
+  alias: esq8_fem_3,q4
   codes:
     1: 'Yes'
     0: 'No'
@@ -411,7 +411,7 @@ contr:
   - 0
   - 1
   notes: 0=No; 1=Yes
-  alias: esq9_fem
+  alias: esq9_fem,q5
   codes:
     0: 'No'
     1: 'Yes'
@@ -692,7 +692,7 @@ dental6:
 
 dental6_1:
   type: String
-  length: 65
+  length: 86
   description: Any other metal posts, implants or anything else? If Yes, What?
 
 dental6_2:
@@ -1249,11 +1249,11 @@ q17_b14:
     \ with Heart /Problemas del coraz\xF3n"
   range:
   - 0::2
-  notes: 0 = No, 1 = Yes, 2 = Not sure//Now I'd like to ask you about your child's
+  notes: 0 = No, 1 = Yes, 2 = Not sure/Now I'd like to ask you about your child's
     use of health services during the past year and throughout his/her whole life.
   alias: medhx_2o
   codes:
-    0: No, 1 = Yes, 2 = Not sure//Now I'd like to ask you about your child's use of
+    0: No, 1 = Yes, 2 = Not sure/Now I'd like to ask you about your child's use of
       health services during the past year and throughout his/her whole life.
 
 seq1c_2:
@@ -1327,11 +1327,11 @@ cfmh_chd_seizure:
 wk_asthma:
   type: Integer
   description: "Has she/he ever been to a doctor for any of these things\u2026Asthma\
-    \ /Asma\r"
+    \ /Asma"
   range:
   - 0
   - 1
-  notes: No = 0; Yes = 1;//Now I'd like to ask you about your child's use of health
+  notes: No = 0; Yes = 1;Now I'd like to ask you about your child's use of health
     services during the past year and throughout his/her whole life.
   alias: medhx_2a
   codes:
@@ -2148,3 +2148,116 @@ comqother:
   type: String
   length: 255
   description: Respondent - Other (text)
+
+q6_menstrual:
+  type: Integer
+  description: Are you currently pregnant or lactating?
+  range:
+  - 0::3
+  notes: 0= No; 1= Yes; 2= Don't know; 3= Refuse to answer
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Don't know
+    3: Refuse to answer
+
+q7_menstrual:
+  type: Integer
+  description: Have you had a hysterectomy?
+  range:
+  - 0::3
+  notes: 0= No; 1= Yes; 2= Don't know; 3= Refuse to answer
+  codes:
+    0: 'No'
+    1: 'Yes'
+    2: Don't know
+    3: Refuse to answer
+
+q9_demo:
+  type: Integer
+  description: Have you had anything to eat or drink in the last two hours?
+  range:
+  - 0::1
+  notes: 0= No; 1= Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+q9_answer:
+  type: String
+  length: 2000
+  description: 'Yes (please list what you''ve had to eat or drink in the last two
+    hours)  '
+
+q10_demo:
+  type: Integer
+  description: Are you currently taking a corticosteroid medication?
+  range:
+  - 0::1
+  - 3
+  notes: 0= No; 1= Yes; 3= Prefer Not to Answer
+  codes:
+    0: 'No'
+    1: 'Yes'
+    3: Prefer Not to Answer
+
+q11_demo:
+  type: Integer
+  description: Are you currently taking a beta blocker medication?
+  range:
+  - 0::1
+  - 3
+  notes: 0= No; 1= Yes; 3= Prefer Not to Answer
+  codes:
+    0: 'No'
+    1: 'Yes'
+    3: Prefer Not to Answer
+
+q12_demo:
+  type: Integer
+  description: Are you currently taking an antidepressant and/or a medication to reduce
+    anxiety?
+  range:
+  - 1::1
+  - 3
+  notes: 0= No; 1= Yes; 3= Prefer Not to Answer
+  codes:
+    0: 'No'
+    1: 'Yes'
+    3: Prefer Not to Answer
+
+q2_menstrual:
+  type: Date
+  description: What was the date of the first day of your last period?
+  notes: MM/DD/YYY
+
+q3_menstrual:
+  type: Integer
+  description: On average, how many days are there between the first day of your last
+    period and the first day of your next period? (e.g., 30 days)
+  notes: Number of Days
+
+same_past01:
+  type: String
+  length: 500
+  description: Diagnosis/Type of Surgery
+
+same_past02:
+  type: String
+  length: 100
+  description: Body System
+
+same_past03:
+  type: Date
+  description: 'Time of Medical History: Start Date'
+  notes: MM/DD/YYYY
+
+same_past04:
+  type: Date
+  description: 'Time of Medical History: Stop Date'
+  notes: MM/DD/YYYY
+
+same_past05:
+  type: String
+  length: 100
+  description: Check if ongoing

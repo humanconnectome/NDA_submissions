@@ -53,7 +53,7 @@ comqother:
 
 ccf_sai_p_activities:
   type: String
-  length: 430
+  length: 453
   description: Please indicate whether your child has EVER participated in any of
     the following sports and activities continuously for 4 months or more (e.g., for
     a season in sports, or at least four months of lessons, group participation, etc).

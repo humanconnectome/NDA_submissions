@@ -1,0 +1,6199 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of subject at birth
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+aant_tb_better:
+  type: Integer
+  description: Hearing threshold Toolbox score in better ear
+
+aant_tb_left:
+  type: Integer
+  description: Hearing threshold Toolbox score in left ear
+
+aant_tb_right:
+  type: Integer
+  description: Hearing threshold Toolbox score in right ear
+
+adultodoridscore:
+  type: Integer
+  description: Adult Odor ID Score
+
+annt1000lcatchtrialdata:
+  type: Integer
+  description: Hearing Threshold - 1000 dB - Left Ear - Catch Trial Data
+
+annt1000ldata:
+  type: Integer
+  description: Hearing Threshold - 1000 dB - Left Ear - Data
+
+annt1000lqa_ncatchtrials:
+  type: Integer
+  description: Hearing Threshold - 1000 dB - Left Ear - Number of Catch Trials
+
+annt1000lqafinalr:
+  type: Integer
+  description: Hearing Threshold - 1000 dB - Left Ear - QA Final R
+
+annt1000lthreshold:
+  type: Integer
+  description: Hearing Threshold - 1000 dB - Left Ear - Threshold
+
+annt1000rcatchtrialdata:
+  type: Integer
+  description: Hearing Threshold - 1000 dB - Right Ear - Catch Trial Data
+
+annt1000rdata:
+  type: Integer
+  description: Hearing Threshold - 1000 dB - Right Ear - Data
+
+annt1000rqa_ncatchtrials:
+  type: Integer
+  description: Hearing Threshold - 1000 dB - Right Ear - Number of Catch Trials
+
+annt1000rqafinalr:
+  type: Integer
+  description: Hearing Threshold - 1000 dB - Right Ear - QA Final R
+
+annt1000rthreshold:
+  type: Integer
+  description: Hearing Threshold - 1000 dB - Right Ear - Threshold
+
+annt2000lcatchtrialdata:
+  type: Integer
+  description: Hearing Threshold - 2000 dB - Left Ear - Catch Trial Data
+
+annt2000ldata:
+  type: Integer
+  description: Hearing Threshold - 2000 dB - Left Ear - Data
+
+annt2000lqa_ncatchtrials:
+  type: Integer
+  description: Hearing Threshold - 2000 dB - Left Ear - Number of Catch Trials
+
+annt2000lqafinalr:
+  type: Integer
+  description: Hearing Threshold - 2000 dB - Left Ear - QA Final R
+
+annt2000lthreshold:
+  type: Integer
+  description: Hearing Threshold - 2000 dB - Left Ear - Threshold
+
+annt2000rcatchtrialdata:
+  type: Integer
+  description: Hearing Threshold - 2000 dB - Right Ear - Catch Trial Data
+
+annt2000rdata:
+  type: Integer
+  description: Hearing Threshold - 2000 dB - Right Ear - Data
+
+annt2000rqa_ncatchtrials:
+  type: Integer
+  description: Hearing Threshold - 2000 dB - Right Ear - Number of Catch Trials
+
+annt2000rqafinalr:
+  type: Integer
+  description: Hearing Threshold - 2000 dB - Right Ear - QA Final R
+
+annt2000rthreshold:
+  type: Integer
+  description: Hearing Threshold - 2000 dB - Right Ear - Threshold
+
+annt4000lcatchtrialdata:
+  type: Integer
+  description: Hearing Threshold - 4000 dB - Left Ear - Catch Trial Data
+
+annt4000ldata:
+  type: Integer
+  description: Hearing Threshold - 4000 dB - Left Ear - Data
+
+annt4000lqa_ncatchtrials:
+  type: Integer
+  description: Hearing Threshold - 4000 dB - Left Ear - Number of Catch Trials
+
+annt4000lqafinalr:
+  type: Integer
+  description: Hearing Threshold - 4000 dB - Left Ear - QA Final R
+
+annt4000lthreshold:
+  type: Integer
+  description: Hearing Threshold - 4000 dB - Left Ear - Threshold
+
+annt4000rcatchtrialdata:
+  type: Integer
+  description: Hearing Threshold - 4000 dB - Right Ear - Catch Trial Data
+
+annt4000rdata:
+  type: Integer
+  description: Hearing Threshold - 4000 dB - Right Ear - Data
+
+annt4000rqa_ncatchtrials:
+  type: Integer
+  description: Hearing Threshold - 4000 dB - Right Ear - Number of Catch Trials
+
+annt4000rqafinalr:
+  type: Integer
+  description: Hearing Threshold - 4000 dB - Right Ear - QA Final R
+
+annt4000rthreshold:
+  type: Integer
+  description: Hearing Threshold - 4000 dB - Right Ear - Threshold
+
+annt500lcatchtrialdata:
+  type: Integer
+  description: Hearing Threshold - 500 dB - Left Ear - Catch Trial Data
+
+annt500ldata:
+  type: Integer
+  description: Hearing Threshold - 500 dB - Left Ear - Data
+
+annt500lqa_ncatchtrials:
+  type: Integer
+  description: Hearing Threshold - 500 dB - Left Ear - Number of Catch Trials
+
+annt500lqafinalr:
+  type: Integer
+  description: Hearing Threshold - 500 dB - Left Ear - QA Final R
+
+annt500lthreshold:
+  type: Integer
+  description: Hearing Threshold - 500 dB - Left Ear - Threshold
+
+annt500rcatchtrialdata:
+  type: Integer
+  description: Hearing Threshold - 500 dB - Right Ear - Catch Trial Data
+
+annt500rdata:
+  type: Integer
+  description: Hearing Threshold - 500 dB - Right Ear - Data
+
+annt500rqa_ncatchtrials:
+  type: Integer
+  description: Hearing Threshold - 500 dB - Right Ear - Number of Catch Trials
+
+annt500rqafinalr:
+  type: Integer
+  description: Hearing Threshold - 500 dB - Right Ear - QA Final R
+
+annt500rthreshold:
+  type: Integer
+  description: Hearing Threshold - 500 dB - Right Ear - Threshold
+
+annt6000lcatchtrialdata:
+  type: Integer
+  description: Hearing Threshold - 6000 dB - Left Ear - Catch Trial Data
+
+annt6000ldata:
+  type: Integer
+  description: Hearing Threshold - 6000 dB - Left Ear - Data
+
+annt6000lqa_ncatchtrials:
+  type: Integer
+  description: Hearing Threshold - 6000 dB - Left Ear - Number of Catch Trials
+
+annt6000lqafinalr:
+  type: Integer
+  description: Hearing Threshold - 6000 dB - Left Ear - QA Final R
+
+annt6000lthreshold:
+  type: Integer
+  description: Hearing Threshold - 6000 dB - Left Ear - Threshold
+
+annt6000rcatchtrialdata:
+  type: Integer
+  description: Hearing Threshold - 6000 dB - Right Ear - Catch Trial Data
+
+annt6000rdata:
+  type: Integer
+  description: Hearing Threshold - 6000 dB - Right Ear - Data
+
+annt6000rqa_ncatchtrials:
+  type: Integer
+  description: Hearing Threshold - 6000 dB - Right Ear - Number of Catch Trials
+
+annt6000rqafinalr:
+  type: Integer
+  description: Hearing Threshold - 6000 dB - Right Ear - QA Final R
+
+annt6000rthreshold:
+  type: Integer
+  description: Hearing Threshold - 6000 dB - Right Ear - Threshold
+
+annt8000lcatchtrialdata:
+  type: Integer
+  description: Hearing Threshold - 8000 dB - Left Ear - Catch Trial Data
+
+annt8000ldata:
+  type: Integer
+  description: Hearing Threshold - 8000 dB - Left Ear - Data
+
+annt8000lqa_ncatchtrials:
+  type: Integer
+  description: Hearing Threshold - 8000 dB - Left Ear - Number of Catch Trials
+
+annt8000lqafinalr:
+  type: Integer
+  description: Hearing Threshold - 8000 dB - Left Ear - QA Final R
+
+annt8000lthreshold:
+  type: Integer
+  description: Hearing Threshold - 8000 dB - Left Ear - Threshold
+
+annt8000rcatchtrialdata:
+  type: Integer
+  description: Hearing Threshold - 8000 dB - Right Ear - Catch Trial Data
+
+annt8000rdata:
+  type: Integer
+  description: Hearing Threshold - 8000 dB - Right Ear - Data
+
+annt8000rqa_ncatchtrials:
+  type: Integer
+  description: Hearing Threshold - 8000 dB - Right Ear - Number of Catch Trials
+
+annt8000rqafinalr:
+  type: Integer
+  description: Hearing Threshold - 8000 dB - Right Ear - QA Final R
+
+annt8000rthreshold:
+  type: Integer
+  description: Hearing Threshold - 8000 dB - Right Ear - Threshold
+
+anntadultpractice1:
+  type: Integer
+  description: Choose LOUDER if this sound is too soft. Choose OK if this is loud
+    enough.
+  range:
+  - 1
+  - 2
+  notes: 1=Louder; 2=Ok
+  codes:
+    1: Louder
+    2: Ok
+
+anntadultpractice3:
+  type: Integer
+  description: Did you hear a beep?
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+anntadultpractice4:
+  type: Integer
+  description: Choose "Yes" only when you hear a beep
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+anntchildpractice1:
+  type: Integer
+  description: Choose the big ear if you can hear me OK. Choose the little ear if
+    I'm talking too softly.
+  range:
+  - 1
+  - 2
+  notes: 1=big ear; 2=little ear
+  codes:
+    1: big ear
+    2: little ear
+
+anntchildpractice4:
+  type: Integer
+  description: Choose the bird if you heard a whistle.  Choose the rabbit if you did
+    not hear a whistle.
+  range:
+  - 1
+  - 2
+  notes: 1=bird; 2=rabbit
+  codes:
+    1: bird
+    2: rabbit
+
+anntchildpractice6:
+  type: Integer
+  description: Choose the bird if you heard a whistle.  Choose the rabbit if you did
+    not hear a whistle.
+  range:
+  - 1
+  - 2
+  notes: 1=bird; 2=rabbit
+  codes:
+    1: bird
+    2: rabbit
+
+anntchildpractice7:
+  type: Integer
+  description: Choose the bird if you heard a whistle.  Choose the rabbit if you did
+    not hear a whistle.
+  range:
+  - 1
+  - 2
+  notes: 1=bird; 2=rabbit
+  codes:
+    1: bird
+    2: rabbit
+
+anntqa1000l_nfalsealarms:
+  type: Integer
+  description: Hearing Threshold - 1000 dB - Left Ear - Number of False Alarms
+
+anntqa1000l_nresponsecount:
+  type: Integer
+  description: Hearing Threshold - 1000 dB - Left Ear - Response Count
+
+anntqa1000lfalsealarmrate:
+  type: Integer
+  description: Hearing Threshold - 1000 dB - Left Ear - False Alarm Rate
+
+anntqa1000r_nfalsealarms:
+  type: Integer
+  description: Hearing Threshold - 1000 dB - Right Ear - Number of False Alarms
+
+anntqa1000r_nresponsecount:
+  type: Integer
+  description: Hearing Threshold - 1000 dB - Right Ear - Response Count
+
+anntqa1000rfalsealarmrate:
+  type: Integer
+  description: Hearing Threshold - 1000 dB - Right Ear - False Alarm Rate
+
+anntqa2000l_nfalsealarms:
+  type: Integer
+  description: Hearing Threshold - 2000 dB - Left Ear - Number of False Alarms
+
+anntqa2000l_nresponsecount:
+  type: Integer
+  description: Hearing Threshold - 2000 dB - Left Ear - Response Count
+
+anntqa2000lfalsealarmrate:
+  type: Integer
+  description: Hearing Threshold - 2000 dB - Left Ear - False Alarm Rate
+
+anntqa2000r_nfalsealarms:
+  type: Integer
+  description: Hearing Threshold - 2000 dB - Right Ear - Number of False Alarms
+
+anntqa2000r_nresponsecount:
+  type: Integer
+  description: Hearing Threshold - 2000 dB - Right Ear - Response Count
+
+anntqa2000rfalsealarmrate:
+  type: Integer
+  description: Hearing Threshold - 2000 dB - Right Ear - False Alarm Rate
+
+anntqa4000l_nfalsealarms:
+  type: Integer
+  description: Hearing Threshold - 4000 dB - Left Ear - Number of False Alarms
+
+anntqa4000l_nresponsecount:
+  type: Integer
+  description: Hearing Threshold - 4000 dB - Left Ear - Response Count
+
+anntqa4000lfalsealarmrate:
+  type: Integer
+  description: Hearing Threshold - 4000 dB - Left Ear - False Alarm Rate
+
+anntqa4000r_nfalsealarms:
+  type: Integer
+  description: Hearing Threshold - 4000 dB - Right Ear - Number of False Alarms
+
+anntqa4000r_nresponsecount:
+  type: Integer
+  description: Hearing Threshold - 4000 dB - Right Ear - Response Count
+
+anntqa4000rfalsealarmrate:
+  type: Integer
+  description: Hearing Threshold - 4000 dB - Right Ear - False Alarm Rate
+
+anntqa500l_nfalsealarms:
+  type: Integer
+  description: Hearing Threshold - 500 dB - Left Ear - Number of False Alarms
+
+anntqa500l_nresponsecount:
+  type: Integer
+  description: Hearing Threshold - 500 dB - Left Ear - Response Count
+
+anntqa500lfalsealarmrate:
+  type: Integer
+  description: Hearing Threshold - 500 dB - Left Ear - False Alarm Rate
+
+anntqa500r_nfalsealarms:
+  type: Integer
+  description: Hearing Threshold - 500 dB - Right Ear - Number of False Alarms
+
+anntqa500r_nresponsecount:
+  type: Integer
+  description: Hearing Threshold - 500 dB - Right Ear - Response Count
+
+anntqa500rfalsealarmrate:
+  type: Integer
+  description: Hearing Threshold - 500 dB - Right Ear - False Alarm Rate
+
+anntqa6000l_nfalsealarms:
+  type: Integer
+  description: Hearing Threshold - 6000 dB - Left Ear - Number of False Alarms
+
+anntqa6000l_nresponsecount:
+  type: Integer
+  description: Hearing Threshold - 6000 dB - Left Ear - Response Count
+
+anntqa6000lfalsealarmrate:
+  type: Integer
+  description: Hearing Threshold - 6000 dB - Left Ear - False Alarm Rate
+
+anntqa6000r_nfalsealarms:
+  type: Integer
+  description: Hearing Threshold - 6000 dB - Right Ear - Number of False Alarms
+
+anntqa6000r_nresponsecount:
+  type: Integer
+  description: Hearing Threshold - 6000 dB - Right Ear - Response Count
+
+anntqa6000rfalsealarmrate:
+  type: Integer
+  description: Hearing Threshold - 6000 dB - Right Ear - False Alarm Rate
+
+anntqa8000l_nfalsealarms:
+  type: Integer
+  description: Hearing Threshold - 8000 dB - Left Ear - Number of False Alarms
+
+anntqa8000l_nresponsecount:
+  type: Integer
+  description: Hearing Threshold - 8000 dB - Left Ear - Response Count
+
+anntqa8000lfalsealarmrate:
+  type: Integer
+  description: Hearing Threshold - 8000 dB - Left Ear - False Alarm Rate
+
+anntqa8000r_nfalsealarms:
+  type: Integer
+  description: Hearing Threshold - 8000 dB - Right Ear - Number of False Alarms
+
+anntqa8000r_nresponsecount:
+  type: Integer
+  description: Hearing Threshold - 8000 dB - Right Ear - Response Count
+
+anntqa8000rfalsealarmrate:
+  type: Integer
+  description: Hearing Threshold - 8000 dB - Right Ear - False Alarm Rate
+
+anntteenpractice1:
+  type: Integer
+  description: Choose LOUDER if this sound is too soft. Choose OK if this is loud
+    enough.
+  range:
+  - 1
+  - 2
+  notes: 1=Louder; 2=Ok
+  codes:
+    1: Louder
+    2: Ok
+
+anntteenpractice3:
+  type: Integer
+  description: Did you hear a beep?
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+anntteenpractice4:
+  type: Integer
+  description: Choose "Yes" only when you hear a beep
+  range:
+  - 1
+  - 2
+  notes: 1=Yes; 2=No
+  codes:
+    1: 'Yes'
+    2: 'No'
+
+auwinleftlist1_0db:
+  type: Integer
+  description: Words-in-Noise - List 1 - Left Ear - 0dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=read; 2=life; 4=bath; 8=get; 16=gaze
+  codes:
+    1: read
+    2: life
+    4: bath
+    8: get
+    16: gaze
+
+auwinleftlist1_12db:
+  type: Integer
+  description: Words-in-Noise - List 1 - Left Ear - 12dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=rush; 2=tool; 4=voice; 8=shack; 16; hate
+  codes:
+    1: rush
+    2: tool
+    4: voice
+    8: shack
+
+auwinleftlist1_16db:
+  type: Integer
+  description: Words-in-Noise - List 1 - Left Ear - 16dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=judge; 2=time; 4=base; 8=red; 16=wire
+  codes:
+    1: judge
+    2: time
+    4: base
+    8: red
+    16: wire
+
+auwinleftlist1_20db:
+  type: Integer
+  description: Words-in-Noise - List 1 - Left Ear - 20dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=kick; 2=luck; 4=ditch; 8=chair; 16=ring
+  codes:
+    1: kick
+    2: luck
+    4: ditch
+    8: chair
+    16: ring
+
+auwinleftlist1_24db:
+  type: Integer
+  description: Words-in-Noise - List 1 - Left Ear - 24dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=pain; 2=wheat; 4=cool; 8=dodge; 16=youth
+  codes:
+    1: pain
+    2: wheat
+    4: cool
+    8: dodge
+    16: youth
+
+auwinleftlist1_4db:
+  type: Integer
+  description: Words-in-Noise - List 1 - Left Ear - 4dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=mood; 2=talk; 4=learn; 8=far; 16=note
+  codes:
+    1: mood
+    2: talk
+    4: learn
+    8: far
+    16: note
+
+auwinleftlist1_8db:
+  type: Integer
+  description: Words-in-Noise - List 1 - Left Ear - 8dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=pick; 2=young; 4=turn; 8=half; 16=bite
+  codes:
+    1: pick
+    2: young
+    4: turn
+    8: half
+    16: bite
+
+auwinleftlist2_0db:
+  type: Integer
+  description: Words-in-Noise - List 2 - Left Ear - 0dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=nice; 2=kill; 4=dab; 8=back; 16=calm
+  codes:
+    1: nice
+    2: kill
+    4: dab
+    8: back
+    16: calm
+
+auwinleftlist2_12db:
+  type: Integer
+  description: Words-in-Noise - List 2 - Left Ear - 12dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=chief; 2=pass; 4=good; 8=witch; 16=search
+  codes:
+    1: chief
+    2: pass
+    4: good
+    8: witch
+    16: search
+
+auwinleftlist2_16db:
+  type: Integer
+  description: Words-in-Noise - List 2 - Left Ear - 16dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=date; 2=gas; 4=dog; 8=have; 16=live
+  codes:
+    1: date
+    2: gas
+    4: dog
+    8: have
+    16: live
+
+auwinleftlist2_20db:
+  type: Integer
+  description: Words-in-Noise - List 2 - Left Ear - 20dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=gun; 2=such; 4=shawl; 8=haze; 16=tire
+  codes:
+    1: gun
+    2: such
+    4: shawl
+    8: haze
+    16: tire
+
+auwinleftlist2_24db:
+  type: Integer
+  description: Words-in-Noise - List 2 - Left Ear - 24dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=food; 2=juice; 4=hire; 8=late; 16=road
+  codes:
+    1: food
+    2: juice
+    4: hire
+    8: late
+    16: road
+
+auwinleftlist2_4db:
+  type: Integer
+  description: Words-in-Noise - List 2 - Left Ear - 4dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=mouse; 2=sheep; 4=mess; 8=beg; 16=long
+  codes:
+    1: mouse
+    2: sheep
+    4: mess
+    8: beg
+    16: long
+
+auwinleftlist2_8db:
+  type: Integer
+  description: Words-in-Noise - List 2 - Left Ear - 8dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=deep; 2=make; 4=doll; 8=soap; 16=sour
+  codes:
+    1: deep
+    2: make
+    4: doll
+    8: soap
+    16: sour
+
+auwinrightlist1_0db:
+  type: Integer
+  description: Words-in-Noise - List 1 - Right Ear - 0dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=gaze; 2=life; 4=get; 8=read; 16=bath
+  codes:
+    1: gaze
+    2: life
+    4: get
+    8: read
+    16: bath
+
+auwinrightlist1_12db:
+  type: Integer
+  description: Words-in-Noise - List 1 - Right Ear - 12dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=hate; 2=shack; 4=tool; 8=voice; 16=rush
+  codes:
+    1: hate
+    2: shack
+    4: tool
+    8: voice
+    16: rush
+
+auwinrightlist1_16db:
+  type: Integer
+  description: Words-in-Noise - List 1 - Right Ear - 16dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=base; 2=wire; 4=red; 8=time; 16=judge
+  codes:
+    1: base
+    2: wire
+    4: red
+    8: time
+    16: judge
+
+auwinrightlist1_20db:
+  type: Integer
+  description: Words-in-Noise - List 1 - Right Ear - 20dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=ditch; 2=ring; 4=kick; 8=chair; 16=luck
+  codes:
+    1: ditch
+    2: ring
+    4: kick
+    8: chair
+    16: luck
+
+auwinrightlist1_24db:
+  type: Integer
+  description: Words-in-Noise - List 1 - Right Ear - 24dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=pain; 2=youth; 4=wheat; 8=dodge; 16=cool
+  codes:
+    1: pain
+    2: youth
+    4: wheat
+    8: dodge
+    16: cool
+
+auwinrightlist1_4db:
+  type: Integer
+  description: Words-in-Noise - List 1 - Right Ear - 4dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=far; 2=learn; 4=mood; 8=talk; 16=note
+  codes:
+    1: far
+    2: learn
+    4: mood
+    8: talk
+    16: note
+
+auwinrightlist1_8db:
+  type: Integer
+  description: Words-in-Noise - List 1 - Right Ear - 8dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=turn; 2=young; 4=bite; 8=pick; 16=half
+  codes:
+    1: turn
+    2: young
+    4: bite
+    8: pick
+    16: half
+
+auwinrightlist2_0db:
+  type: Integer
+  description: Words-in-Noise - List 2 - Right Ear - 0dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=back; 2=dab; 4=kill; 8=nice; 16=calm
+  codes:
+    1: back
+    2: dab
+    4: kill
+    8: nice
+    16: calm
+
+auwinrightlist2_12db:
+  type: Integer
+  description: Words-in-Noise - List 2 - Right Ear - 12dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=good; 2=search; 4=pass; 8=witch; 16=chief
+  codes:
+    1: good
+    2: search
+    4: pass
+    8: witch
+    16: chief
+
+auwinrightlist2_16db:
+  type: Integer
+  description: Words-in-Noise - List 2 - Right Ear - 16dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=live; 2=date; 4=gas; 8=have; 16=dog
+  codes:
+    1: live
+    2: date
+    4: gas
+    8: have
+    16: dog
+
+auwinrightlist2_20db:
+  type: Integer
+  description: Words-in-Noise - List 2 - Right Ear - 20dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=tire; 2=such; 4=shawl; 8=haze; 16=gun
+  codes:
+    1: tire
+    2: such
+    4: shawl
+    8: haze
+    16: gun
+
+auwinrightlist2_24db:
+  type: Integer
+  description: Words-in-Noise - List 2 - Right Ear - 24dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=food; 2=road; 4=juice; 8=late; 16=hire
+  codes:
+    1: food
+    2: road
+    4: juice
+    8: late
+    16: hire
+
+auwinrightlist2_4db:
+  type: Integer
+  description: Words-in-Noise - List 2 - Right Ear - 4dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=beg; 2=mess; 4=long; 8=mouse; 16=sheep
+  codes:
+    1: beg
+    2: mess
+    4: long
+    8: mouse
+    16: sheep
+
+auwinrightlist2_8db:
+  type: Integer
+  description: Words-in-Noise - List 2 - Right Ear - 8dB (bitwise variable)
+  range:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  notes: 1=sour; 2=doll; 4=deep; 8=soap; 16=make
+  codes:
+    1: sour
+    2: doll
+    4: deep
+    8: soap
+    16: make
+
+dvadiffavg:
+  type: Integer
+  description: DVA Difference Score Average of right and left
+
+dvadifflscore:
+  type: Integer
+  description: DVA Difference Score Left
+
+dvadiffrscore:
+  type: Integer
+  description: DVA Difference Score Right
+
+flag_sensory_hearingthreshold:
+  type: Integer
+  description: Sensory - Hearing Threshold - Flagged for potentially problematic test
+    administration
+  range:
+  - 1
+  notes: 1=Flagged
+  codes:
+    1: Flagged
+
+flag_sensory_taste:
+  type: Integer
+  description: Sensory - Taste - Flagged for potentially problematic test administration
+  range:
+  - 1
+  notes: 1=Flagged
+  codes:
+    1: Flagged
+
+flag_sensory_vision:
+  type: Integer
+  description: Sensory - Vision - Flagged for potentially problematic test administration
+  range:
+  - 1
+  notes: 1=Flagged
+  codes:
+    1: Flagged
+
+hhia_score:
+  type: Integer
+  description: Hearing Handicap Inventory - Adults
+
+hhia_se_1_01:
+  type: Integer
+  description: Does a hearing problem cause you to feel embarrassed when meeting new
+    people?
+  range:
+  - 1::3
+  notes: 1=Yes; 2=Sometimes; 3=No
+  codes:
+    1: 'Yes'
+    2: Sometimes
+    3: 'No'
+
+hhia_se_2_02:
+  type: Integer
+  description: Does a hearing problem cause you to feel frustrated when talking to
+    members of your family?
+  range:
+  - 1::3
+  notes: 1=Yes; 2=Sometimes; 3=No
+  codes:
+    1: 'Yes'
+    2: Sometimes
+    3: 'No'
+
+hhia_se_4_04:
+  type: Integer
+  description: Do you feel handicapped by a hearing problem?
+  range:
+  - 1::3
+  notes: 1=Yes; 2=Sometimes; 3=No
+  codes:
+    1: 'Yes'
+    2: Sometimes
+    3: 'No'
+
+hhia_se_9_09:
+  type: Integer
+  description: Do you feel that any difficulty with your hearing limits or hampers
+    your personal or social life?
+  range:
+  - 1::3
+  notes: 1=Yes; 2=Sometimes; 3=No
+  codes:
+    1: 'Yes'
+    2: Sometimes
+    3: 'No'
+
+hhia_ss_10_10:
+  type: Integer
+  description: Does a hearing problem cause you difficulty when in a restaurant with
+    relatives or friends?
+  range:
+  - 1::3
+  notes: 1=Yes; 2=Sometimes; 3=No
+  codes:
+    1: 'Yes'
+    2: Sometimes
+    3: 'No'
+
+hhia_ss_3_03:
+  type: Integer
+  description: Does a hearing problem cause you difficulty hearing/understanding coworkers;
+    clients; or customers?
+  range:
+  - 1::3
+  notes: 1=Yes; 2=Sometimes; 3=No
+  codes:
+    1: 'Yes'
+    2: Sometimes
+    3: 'No'
+
+hhia_ss_5_05:
+  type: Integer
+  description: Does a hearing problem cause you difficulty when visiting friends;
+    relatives; or neighbors?
+  range:
+  - 1::3
+  notes: 1=Yes; 2=Sometimes; 3=No
+  codes:
+    1: 'Yes'
+    2: Sometimes
+    3: 'No'
+
+hhia_ss_6_06:
+  type: Integer
+  description: Does a hearing problem cause you difficulty in the movies or theater?
+  range:
+  - 1::3
+  notes: 1=Yes; 2=Sometimes; 3=No
+  codes:
+    1: 'Yes'
+    2: Sometimes
+    3: 'No'
+
+hhia_ss_7_07:
+  type: Integer
+  description: Does a hearing problem cause you to have arguments with family members?
+  range:
+  - 1::3
+  notes: 1=Yes; 2=Sometimes; 3=No
+  codes:
+    1: 'Yes'
+    2: Sometimes
+    3: 'No'
+
+hhia_ss_8_08:
+  type: Integer
+  description: Does a hearing problem cause you difficulty when listening to TV or
+    radio?
+  range:
+  - 1::3
+  notes: 1=Yes; 2=Sometimes; 3=No
+  codes:
+    1: 'Yes'
+    2: Sometimes
+    3: 'No'
+
+hhie_score:
+  type: Integer
+  description: Hearing Handicap Inventory - Elderly
+
+hhie_ss_3_12:
+  type: Integer
+  description: Do you have difficulty hearing when someone speaks in a whisper?
+  range:
+  - 1::3
+  notes: 1=Yes; 2=Sometimes; 3=No
+  codes:
+    1: 'Yes'
+    2: Sometimes
+    3: 'No'
+
+hhie_ss_6_11:
+  type: Integer
+  description: Does a hearing problem cause you to attend religious services less
+    often than you would like?
+  range:
+  - 1::3
+  notes: 1=Yes; 2=Sometimes; 3=No
+  codes:
+    1: 'Yes'
+    2: Sometimes
+    3: 'No'
+
+nih_tlbx_agegencsc:
+  type: Float
+  required: true
+  description: Age-Gender-Corrected T-score
+  range:
+  - 0::250
+  - 999
+  notes: 999=NA/NK/missing
+  alias: fully_corrected_t_score
+  codes:
+    999: NA/NK/missing
+
+nih_tlbx_rawscore:
+  type: Integer
+  required: true
+  description: RawScore
+  alias: rawscore
+
+nih_tlbx_se:
+  type: Float
+  required: true
+  description: Standard Error
+  notes: 999=NA/NK/missing
+  alias: nihtbx_pain_se,se
+  codes:
+    999: NA/NK/missing
+
+nih_tlbx_theta:
+  type: Float
+  required: true
+  description: Theta
+  notes: 999=NA/NK/missing
+  alias: nihtbx_pain_theta,theta
+  codes:
+    999: NA/NK/missing
+
+nih_tlbx_tscore:
+  type: Float
+  required: true
+  description: T-score
+  range:
+  - 0::200
+  - 999
+  notes: 999=NA/NK/missing
+  codes:
+    999: NA/NK/missing
+
+odoridscore:
+  type: Integer
+  description: Odor ID Score (Peds and Adult collapsed)
+
+ol01ncinnamon:
+  type: Integer
+  description: Odor ID - Odor 1 - Cinnamon
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ol02nlemon:
+  type: Integer
+  description: Odor ID - Odor 2 - Lemon
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ol03nplaydoh:
+  type: Integer
+  description: Odor ID - Odor 3 - Play Doh
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ol04nbubblegum:
+  type: Integer
+  description: Odor ID - Odor 4 - Bubble Gum
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ol05nchocolate:
+  type: Integer
+  description: Odor ID - Odor 5 - Chocolate
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ol06npopcorn:
+  type: Integer
+  description: Odor ID - Odor 6 - Popcorn
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ol07ncoffee:
+  type: Integer
+  description: Odor ID - Odor 7 - Coffee
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ol08nsmoke:
+  type: Integer
+  description: Odor ID - Odor 8 - Smoke
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ol09nnaturalgas:
+  type: Integer
+  description: Odor ID - Odor 9 - Natural Gas
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ol10nflower:
+  type: Integer
+  description: Odor ID - Odor 10 - Flower
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ol1familiarbubblegumid:
+  type: Integer
+  description: Odor ID - Did the child identify the bubble gum?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol1familiarbubblegumsmell:
+  type: Integer
+  description: Odor ID - Has the child ever tasted or smelled bubble gum?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol1familiarchocolateid:
+  type: Integer
+  description: Odor ID - Did the child identify the chocolate?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol1familiarchocolatesmell:
+  type: Integer
+  description: Odor ID - Has the child ever tasted or smelled chocolate?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol1familiarcinnamonid:
+  type: Integer
+  description: Odor ID - Did the child identify the cinnamon?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol1familiarcinnamonsmell:
+  type: Integer
+  description: Odor ID - Has the child ever tasted or smelled cinnamon?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol1familiarcoffeeid:
+  type: Integer
+  description: Odor ID - Did the child identify the coffee?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol1familiarcoffeesmell:
+  type: Integer
+  description: Odor ID - Has the child ever tasted or smelled coffee?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol1familiarflowerid:
+  type: Integer
+  description: Odor ID - Did the child identify the flower?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol1familiarflowersmell:
+  type: Integer
+  description: Odor ID - Has the child ever smelled a flower?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol1familiarlemonid:
+  type: Integer
+  description: Odor ID - Did the child identify the lemon?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol1familiarlemonsmell:
+  type: Integer
+  description: Odor ID - Has the child ever tasted or smelled lemon?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol1familiarplaydohid:
+  type: Integer
+  description: Odor ID - Did the child identify the play doh?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol1familiarplaydohsmell:
+  type: Integer
+  description: Odor ID - Has the child ever smelled play doh?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol1familiarpopcornid:
+  type: Integer
+  description: Odor ID - Did the child identify the popcorn?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol1familiarpopcornsmell:
+  type: Integer
+  description: Odor ID - Has the child ever tasted or smelled popcorn?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol2familiarbubblegumid:
+  type: Integer
+  description: Odor ID - Did the child identify the bubble gum on the second try?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol2familiarchocolateid:
+  type: Integer
+  description: Odor ID - Did the child identify the chocolate on the second try?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol2familiarcinnamonid:
+  type: Integer
+  description: Odor ID - Did the child identify the cinnamon on the second try?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol2familiarcoffeeid:
+  type: Integer
+  description: Odor ID - Did the child identify the coffee on the second try?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol2familiarflowerid:
+  type: Integer
+  description: Odor ID - Did the child identify the flower on the second try?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol2familiarlemonid:
+  type: Integer
+  description: Did the child identify the lemon on the second try?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol2familiarplaydohid:
+  type: Integer
+  description: Did the child identify the play doh on the second try?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+ol2familiarpopcornid:
+  type: Integer
+  description: Odor ID - Did the child identify the popcorn on the second try?
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+pedsodoridscore:
+  type: Integer
+  description: Pediatric Odor ID Score
+  alias: uncorrected_standard_score
+
+pssr13_17_01:
+  type: Integer
+  description: How would you rate your pain right now?
+
+pssr13_17_02:
+  type: Integer
+  description: In the past 7 days; how would you rate your pain on average?
+
+pssr13_17_03:
+  type: Integer
+  description: In the past 7 days; how intense was your lowest level of pain?
+  range:
+  - 1::5
+  notes: 1=Had no pain; 2=Mild; 3=Moderate; 4=Severe; 5=Very severe
+  codes:
+    1: Had no pain
+    2: Mild
+    3: Moderate
+    4: Severe
+    5: Very severe
+
+pssr13_17_04:
+  type: Integer
+  description: In the past 7 days; how intense was your pain at its worst?
+  range:
+  - 1::5
+  notes: 1=Had no pain; 2=Mild; 3=Moderate; 4=Severe; 5=Very severe
+  codes:
+    1: Had no pain
+    2: Mild
+    3: Moderate
+    4: Severe
+    5: Very severe
+
+pssr13_17_05:
+  type: Integer
+  description: In the past 7 days; how often did your pain feel intolerable?
+  range:
+  - 1::6
+  notes: 1=Had no pain; 2=Never; 3=Rarely; 4=Sometimes; 5=Often; 6=Always
+  codes:
+    1: Had no pain
+    2: Never
+    3: Rarely
+    4: Sometimes
+    5: Often
+    6: Always
+
+pssr13_17_06:
+  type: Integer
+  description: In the past 7 days; I felt angry when I had pain.
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometime; 3=Often; 4=Almost Always
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometime
+    3: Often
+    4: Almost Always
+
+pssr13_17_07:
+  type: Integer
+  description: In the past 7 days; I had trouble doing schoolwork when I had pain.
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometime; 3=Often; 4=Almost Always
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometime
+    3: Often
+    4: Almost Always
+
+pssr13_17_08:
+  type: Integer
+  description: In the past 7 days; I had trouble sleeping when I had pain.
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometime; 3=Often; 4=Almost Always
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometime
+    3: Often
+    4: Almost Always
+
+pssr13_17_09:
+  type: Integer
+  description: In the past 7 days; it was hard for me to pay attention when I had
+    pain.
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometime; 3=Often; 4=Almost Always
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometime
+    3: Often
+    4: Almost Always
+
+pssr13_17_10:
+  type: Integer
+  description: In the past 7 days; it was hard for me to run when I had pain.
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometime; 3=Often; 4=Almost Always
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometime
+    3: Often
+    4: Almost Always
+
+pssr13_17_11:
+  type: Integer
+  description: In the past 7 days; it was hard for me to walk one block when I had
+    pain.
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometime; 3=Often; 4=Almost Always
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometime
+    3: Often
+    4: Almost Always
+
+pssr13_17_12:
+  type: Integer
+  description: In the past 7 days; it was hard to have fun when I had pain.
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometime; 3=Often; 4=Almost Always
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometime
+    3: Often
+    4: Almost Always
+
+pssr13_17_13:
+  type: Integer
+  description: In the past 7 days; it was hard to stay standing when I had pain.
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometime; 3=Often; 4=Almost Always
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometime
+    3: Often
+    4: Almost Always
+
+pssr13_17_14:
+  type: Integer
+  description: In the past 7 days; how much did pain interfere with your day to day
+    activities?
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: painin9
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pssr13_17_15:
+  type: Integer
+  description: In the past 7 days; how much did pain interfere with work around the
+    home?
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: painin22
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pssr13_17_16:
+  type: Integer
+  description: In the past 7 days; how much did pain interfere with your ability to
+    participate in social activities?
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: painin31
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pssr13_17_17:
+  type: Integer
+  description: In the past 7 days; how much did pain interfere with your household
+    chores?
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: painin34,painin48
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pssr13_17_18:
+  type: Integer
+  description: In the past 7 days; how much did pain interfere with the things you
+    usually do for fun?
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: painin12
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pssr13_17_19:
+  type: Integer
+  description: In the past 7 days; how much did pain interfere with your enjoyment
+    of social activities?
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  alias: painin36
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pssr18_85_01:
+  type: Integer
+  description: How would you rate your pain right now?
+
+pssr18_85_02:
+  type: Integer
+  description: In the past 7 days; how would you rate your pain on average?
+
+pssr18_85_03:
+  type: Integer
+  description: In the past 7 days; how intense was your lowest level of pain?
+  range:
+  - 1::5
+  notes: 1=Had no pain; 2=Mild; 3=Moderate; 4=Severe; 5=Very severe
+  codes:
+    1: Had no pain
+    2: Mild
+    3: Moderate
+    4: Severe
+    5: Very severe
+
+pssr18_85_04:
+  type: Integer
+  description: In the past 7 days; how intense was your pain at its worst?
+  range:
+  - 1::5
+  notes: 1=Had no pain; 2=Mild; 3=Moderate; 4=Severe; 5=Very severe
+  alias: painqu6
+  codes:
+    1: Had no pain
+    2: Mild
+    3: Moderate
+    4: Severe
+    5: Very severe
+
+pssr18_85_05:
+  type: Integer
+  description: In the past 7 days; how often did your pain feel intolerable?
+  range:
+  - 1::6
+  notes: 1=Had no pain; 2=Never; 3=Rarely; 4=Sometimes; 5=Often; 6=Always
+  codes:
+    1: Had no pain
+    2: Never
+    3: Rarely
+    4: Sometimes
+    5: Often
+    6: Always
+
+pssr18_85_06:
+  type: Integer
+  description: In the past 7 days; how much did pain interfere with your day to day
+    activities?
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pssr18_85_07:
+  type: Integer
+  description: In the past 7 days; how much did pain interfere with work around the
+    home?
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pssr18_85_08:
+  type: Integer
+  description: In the past 7 days; how much did pain interfere with your ability to
+    participate in social activities?
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pssr18_85_09:
+  type: Integer
+  description: In the past 7 days; how much did pain interfere with your household
+    chores?
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pssr18_85_10:
+  type: Integer
+  description: In the past 7 days; how much did pain interfere with the things you
+    usually do for fun?
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pssr18_85_11:
+  type: Integer
+  description: In the past 7 days; how much did pain interfere with your enjoyment
+    of social activities?
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Somewhat; 4=Quite a bit; 5=Very much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+pssr8_12_01:
+  type: Integer
+  description: How would you rate your pain right now?
+
+pssr8_12_02:
+  type: Integer
+  description: In the past 7 days; I felt angry when I had pain.
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometime; 3=Often; 4=Almost Always
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometime
+    3: Often
+    4: Almost Always
+
+pssr8_12_03:
+  type: Integer
+  description: In the past 7 days; I had trouble doing schoolwork when I had pain.
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometime; 3=Often; 4=Almost Always
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometime
+    3: Often
+    4: Almost Always
+
+pssr8_12_04:
+  type: Integer
+  description: In the past 7 days; I had trouble sleeping when I had pain.
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometime; 3=Often; 4=Almost Always
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometime
+    3: Often
+    4: Almost Always
+
+pssr8_12_05:
+  type: Integer
+  description: In the past 7 days; it was hard for me to pay attention when I had
+    pain.
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometime; 3=Often; 4=Almost Always
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometime
+    3: Often
+    4: Almost Always
+
+pssr8_12_06:
+  type: Integer
+  description: In the past 7 days; it was hard for me to run when I had pain.
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometime; 3=Often; 4=Almost Always
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometime
+    3: Often
+    4: Almost Always
+
+pssr8_12_07:
+  type: Integer
+  description: In the past 7 days; it was hard for me to walk one block when I had
+    pain.
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometime; 3=Often; 4=Almost Always
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometime
+    3: Often
+    4: Almost Always
+
+pssr8_12_08:
+  type: Integer
+  description: In the past 7 days; it was hard to have fun when I had pain.
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometime; 3=Often; 4=Almost Always
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometime
+    3: Often
+    4: Almost Always
+
+pssr8_12_09:
+  type: Integer
+  description: In the past 7 days; it was hard to stay standing when I had pain.
+  range:
+  - 0::4
+  notes: 0=Never; 1=Almost never; 2=Sometime; 3=Often; 4=Almost Always
+  codes:
+    0: Never
+    1: Almost never
+    2: Sometime
+    3: Often
+    4: Almost Always
+
+pssr8_12_10:
+  type: Integer
+  description: In the past 7 days; how would you rate your pain on average?
+  range:
+  - 0::10
+  notes: 0 = No pain; 10 = Worst pain imaginable
+  codes:
+    0: No pain
+    10: Worst pain imaginable
+
+staticvalogmar:
+  type: Float
+  description: Static Visual Acuity logMAR score
+  alias: nihtbx_visualacuity_logmar,static_visual_acuity_logmar
+
+sucroseprefscore:
+  type: Integer
+  description: Sucrose Preference Score
+
+taspt101:
+  type: Integer
+  description: Sucrose Preference - Trial 1
+  range:
+  - 1
+  - 2
+  notes: 1=6%; 2=24%
+  codes:
+    1: 6%
+    2: 24%
+
+taspt201:
+  type: Integer
+  description: Sucrose Preference - Trial 2-1
+  range:
+  - 1
+  - 2
+  notes: 1=3%; 2=6%
+  codes:
+    1: 3%
+    2: 6%
+
+taspt202:
+  type: Integer
+  description: Sucrose Preference - Trial 2-2
+  range:
+  - 1
+  - 2
+  notes: 1=12%; 2=24%
+  codes:
+    1: 12%
+    2: 24%
+
+taspt301:
+  type: Integer
+  description: Sucrose Preference - Trial 3-1
+  range:
+  - 1
+  - 2
+  notes: 1=3%; 2=6%
+  codes:
+    1: 3%
+    2: 6%
+
+taspt302:
+  type: Integer
+  description: Sucrose Preference - Trial 3-2
+  range:
+  - 1
+  - 2
+  notes: 1=6%; 2=12%
+  codes:
+    1: 6%
+    2: 12%
+
+taspt304:
+  type: Integer
+  description: Sucrose Preference - Trial 3-4
+  range:
+  - 1
+  - 2
+  notes: 1=24%; 2=36%
+  codes:
+    1: 24%
+    2: 36%
+
+taspt401:
+  type: Integer
+  description: Sucrose Preference - Trial 4-1
+  range:
+  - 1
+  - 2
+  notes: 1=3%; 2=6%
+  codes:
+    1: 3%
+    2: 6%
+
+taspt402:
+  type: Integer
+  description: Sucrose Preference - Trial 4-2
+  range:
+  - 1
+  - 2
+  notes: 1=6%; 2=12%
+  codes:
+    1: 6%
+    2: 12%
+
+taspt403:
+  type: Integer
+  description: Sucrose Preference - Trial 4-3
+  range:
+  - 1
+  - 2
+  notes: 1=12%; 2=24%
+  codes:
+    1: 12%
+    2: 24%
+
+taspt404:
+  type: Integer
+  description: Sucrose Preference - Trial 4-4
+  range:
+  - 1
+  - 2
+  notes: 1=24%; 2=36%
+  codes:
+    1: 24%
+    2: 36%
+
+taspt501:
+  type: Integer
+  description: Sucrose Preference - Trial 5-1
+  range:
+  - 1
+  - 2
+  notes: 1=3%; 2=6%
+  codes:
+    1: 3%
+    2: 6%
+
+taspt503:
+  type: Integer
+  description: Sucrose Preference - Trial 5-3
+  range:
+  - 1
+  - 2
+  notes: 1=12%; 2=24%
+  codes:
+    1: 12%
+    2: 24%
+
+taspt504:
+  type: Integer
+  description: Sucrose Preference - Trial 5-4
+  range:
+  - 1
+  - 2
+  notes: 1=24%; 2=36%
+  codes:
+    1: 24%
+    2: 36%
+
+taspt602:
+  type: Integer
+  description: Sucrose Preference - Trial 6-2
+  range:
+  - 1
+  - 2
+  notes: 1=6%; 2=12%
+  codes:
+    1: 6%
+    2: 12%
+
+taspt604:
+  type: Integer
+  description: Sucrose Preference - Trial 6-4
+  range:
+  - 1
+  - 2
+  notes: 1=24%; 2=36%
+  codes:
+    1: 24%
+    2: 36%
+
+taspt701:
+  type: Integer
+  description: Sucrose Preference - Trial 7-1
+  range:
+  - 1
+  - 2
+  notes: 1=3%; 2=6%
+  codes:
+    1: 3%
+    2: 6%
+
+taspt703:
+  type: Integer
+  description: Sucrose Preference - Trial 7-3
+  range:
+  - 1
+  - 2
+  notes: 1=12%; 2=24%
+  codes:
+    1: 12%
+    2: 24%
+
+taspt704:
+  type: Integer
+  description: Sucrose Preference - Trial 7-4
+  range:
+  - 1
+  - 2
+  notes: 1=24%; 2=36%
+  codes:
+    1: 24%
+    2: 36%
+
+taspt801:
+  type: Integer
+  description: Sucrose Preference - Trial 8-1
+  range:
+  - 1
+  - 2
+  notes: 1=3%; 2=6%
+  codes:
+    1: 3%
+    2: 6%
+
+taspt902:
+  type: Integer
+  description: Sucrose Preference - Trial 9-2
+  range:
+  - 1
+  - 2
+  notes: 1=6%; 2=12%
+  codes:
+    1: 6%
+    2: 12%
+
+tatip4:
+  type: Integer
+  description: Taste Intensity - Rate the intensity or strength of the brightest light
+    you have ever seen
+
+tatiproptp2:
+  type: Integer
+  description: Taste Intensity - How strong or intense is the brightness of a well-lit
+    room?
+
+tatiproptp3:
+  type: Integer
+  description: Taste Intensity - How strong or intense is the brightness of a dimly-lit
+    restaurant?
+
+tatiquininet2:
+  type: Integer
+  description: Taste Intensity - Tip of tongue - Quinine
+  range:
+  - 0::100
+
+tatiquininet4:
+  type: Integer
+  description: Taste Intensity - Whole mouth - Quinine
+  range:
+  - 0::100
+
+tatisaltt3:
+  type: Integer
+  description: Taste Intensity - Tip of tongue - Salt
+  range:
+  - 0::100
+
+tatisaltt5:
+  type: Integer
+  description: Taste Intensity - Whole mouth - Salt
+  range:
+  - 0::100
+
+upsit_score:
+  type: Integer
+  description: UPSIT Score
+
+upsit01:
+  type: Integer
+  description: UPSIT - Odor 1 - Pizza
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit02:
+  type: Integer
+  description: UPSIT - Odor 2 - Bubble gum
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit03:
+  type: Integer
+  description: UPSIT - Odor 3 - Methol
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit04:
+  type: Integer
+  description: UPSIT - Odor 4 - Cherry
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit05:
+  type: Integer
+  description: UPSIT - Odor 5 - Motor oil
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit06:
+  type: Integer
+  description: UPSIT - Odor 6 - Mint
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit07:
+  type: Integer
+  description: UPSIT - Odor 7 - Banana
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit08:
+  type: Integer
+  description: UPSIT - Odor 8 - Clove
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit09:
+  type: Integer
+  description: UPSIT - Odor 9 - Leather
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit10:
+  type: Integer
+  description: UPSIT - Odor 10 - Coconut
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit11:
+  type: Integer
+  description: UPSIT - Odor 11 - Onion
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit12:
+  type: Integer
+  description: UPSIT - Odor 12 - Fruit punch
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit13:
+  type: Integer
+  description: UPSIT - Odor 13 - Licorice
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit14:
+  type: Integer
+  description: UPSIT - Odor 14 - Cheddar cheese
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit15:
+  type: Integer
+  description: UPSIT - Odor 15 - Cinnamon
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit16:
+  type: Integer
+  description: UPSIT - Odor 16 - Gasoline
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit17:
+  type: Integer
+  description: UPSIT - Odor 17 - Strawberry
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit18:
+  type: Integer
+  description: UPSIT - Odor 18 - Cedar
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit19:
+  type: Integer
+  description: UPSIT - Odor 19 - Chocolate
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit20:
+  type: Integer
+  description: UPSIT - Odor 20 - Gingerbread
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit21:
+  type: Integer
+  description: UPSIT - Odor 21 - Lilac
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit22:
+  type: Integer
+  description: UPSIT - Odor 22 - Turpentine
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit23:
+  type: Integer
+  description: UPSIT - Odor 23 - Peach
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit24:
+  type: Integer
+  description: UPSIT - Odor 24 - Root beer
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit25:
+  type: Integer
+  description: UPSIT - Odor 25 - Dill pickle
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit26:
+  type: Integer
+  description: UPSIT - Odor 26 - Pineapple
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit27:
+  type: Integer
+  description: UPSIT - Odor 27 - Lime
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit28:
+  type: Integer
+  description: UPSIT - Odor 28 - Orange
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit29:
+  type: Integer
+  description: UPSIT - Odor 29 - Wintergreen
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit30:
+  type: Integer
+  description: UPSIT - Odor 30 - Watermelon
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit31:
+  type: Integer
+  description: UPSIT - Odor 31 - Paint thinner
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit32:
+  type: Integer
+  description: UPSIT - Odor 32 - Grass
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit33:
+  type: Integer
+  description: UPSIT - Odor 33 - Smoke
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit34:
+  type: Integer
+  description: UPSIT - Odor 34 - Pine
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit35:
+  type: Integer
+  description: UPSIT - Odor 35 - Grape
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit36:
+  type: Integer
+  description: UPSIT - Odor 36 - Lemon
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit37:
+  type: Integer
+  description: UPSIT - Odor 37 - Soap
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit38:
+  type: Integer
+  description: UPSIT - Odor 38 - Natural gas
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit39:
+  type: Integer
+  description: UPSIT - Odor 39 - Rose
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+upsit40:
+  type: Integer
+  description: UPSIT - Odor 40 - Peanut
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+vbdva_hasprogressivelenses:
+  type: Integer
+  description: Has Progressive Lenses?
+
+vbdva_practicedata:
+  type: Integer
+  description: Dynamic Visual Acuity Practice Data
+
+vbdva_practicenofviews:
+  type: Integer
+  description: Dynamic Visual Acuity Practice Number of Views
+
+vbdva_practicetestscore:
+  type: Integer
+  description: Dynamic Visual Acuity Practice Test Score
+
+vbdva_statdata:
+  type: Integer
+  description: Static Acuity Test Data
+
+vbdva_statdata_progressive:
+  type: Integer
+  description: Static Test Results Progressive Lens Wearers
+
+vbdva_statnofviews:
+  type: Integer
+  description: Static Visual Acuity Number of Views
+
+vbdva_statnofviews_prog:
+  type: Integer
+  description: Static Visual Acuity Number of Views Progressive Lens Wearers
+
+vbdva_statpracticedata:
+  type: Integer
+  description: Static Visual Acuity Practice Data
+
+vbdva_statpracticenofviews:
+  type: Integer
+  description: Static Visual Acuity Practice Number of Views
+  alias: nihtbx_visualacuity_itmcnt
+
+vbdva_stattestscore:
+  type: Integer
+  description: Static Visual Acuity Test Score
+  alias: nihtbx_visualacuity_uncorrected,uncorrected_standard_score
+
+vbdva_stattestscore_prog:
+  type: Integer
+  description: Static Visual Acuity Test Score Progressive Lens Wearers
+
+vbdva_testdataleft:
+  type: Integer
+  description: Dynamic Visual Acuity Test Data - Left
+
+vbdva_testdataright:
+  type: Integer
+  description: Dynamic Visual Acuity Test Data - Right
+
+vbdva_testnofviewsleft:
+  type: Integer
+  description: Dynamic Visual Acuity Number of Views Left
+
+vbdva_testnofviewsright:
+  type: Integer
+  description: Dynamic Visual Acuity Number of Views Right
+
+vbdva_testscoreleft:
+  type: Integer
+  description: Dynamic Visual Acuity Test Score Left
+
+vbdva_testscoreright:
+  type: Integer
+  description: Dynamic Visual Acuity Test Score Right
+
+vbdva_trainingdata:
+  type: Integer
+  description: Dynamic Visual Acuity Training Data
+
+vbdva_trainingnofviews:
+  type: Integer
+  description: Dynamic Visual Acuity Training Number of Views
+
+vbdva_trainingtestscore:
+  type: Integer
+  description: Dynamic Visual Acuity Training Test Score
+
+vs_color:
+  type: Integer
+  description: Vision-Related Quality of Life - Color Vision
+
+vs_general:
+  type: Integer
+  description: Vision-Related Quality of Life - Distance Vision
+
+vs_near:
+  type: Integer
+  description: Vision-Related Quality of Life - Near Vision
+
+vs_psychsoc:
+  type: Integer
+  description: Vision-Related Quality of Life - Ocular Symptoms
+
+vs_role:
+  type: Integer
+  description: Vision-Related Quality of Life - Psychosocial
+
+vs_symptoms:
+  type: Integer
+  description: Vision-Related Quality of Life - Role Performance
+
+vs01:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to match the
+    colors of your clothes?
+  range:
+  - 1::5
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+
+vs02:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to recognize
+    colors?
+  range:
+  - 1::5
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do
+
+vs03:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to distinguish
+    between colors?
+  range:
+  - 1::5
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do
+
+vs04:
+  type: Integer
+  description: How difficult is it for you to see in bright sunlight?
+  range:
+  - 1::5
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to see in bright sunlight
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to see in bright sunlight
+
+vs05:
+  type: Integer
+  description: How difficult is it for you to see in fluorescent lighting such as
+    in stores and offices?
+  range:
+  - 1::5
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to see in fluorescent lighting
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to see in fluorescent lighting
+
+vs06:
+  type: Integer
+  description: How difficult is it for you to see at night?
+  range:
+  - 1::5
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to see at night
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to see at night
+
+vs07:
+  type: Integer
+  description: How difficult is it for you to see street signs at night when you are
+    in a car?
+  range:
+  - 1::5
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to see street signs from a car at night
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to see street signs from a car at night
+
+vs08:
+  type: Integer
+  description: How difficult is it for you to see when you go from a lighted area
+    into a  dark place?
+  range:
+  - 1::5
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to see when going from a lighted area into a dark place
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to see when going from a lighted area into a dark place
+
+vs09:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to read in dim
+    light?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to read in dim light; 6=Unable to read in dim light because
+    of another reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to read in dim light
+    6: Unable to read in dim light because of another reason
+
+vs10:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to go up or down  steps;
+    stairs; or curbs?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight; 6=Unable to go upor down steps,
+    stairs, or curbs because of another reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Unable to go upor down steps, stairs, or curbs because of another reason
+
+vs11:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to get around
+    outdoors?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight; 6=Unable to get around outdoors
+    because of another reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Unable to get around outdoors because of another reason
+
+vs12:
+  type: Integer
+  description: How difficult is it for you to see moving objects?
+  range:
+  - 1::5
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+
+vs13:
+  type: Integer
+  description: How difficult is it for you to see street signs?
+  range:
+  - 1::5
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+
+vs14:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to see television?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight; 6=Unable to see television because
+    of another reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Unable to see television because of another reason
+
+vs15:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to drive at night?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight; 6=Unable to see at night because
+    of another reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Unable to see at night because of another reason
+
+vs16:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to drive due
+    to glare from oncoming headlights?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight; 6=Unable to drive because of another
+    reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Unable to drive because of another reason
+
+vs17:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to recognize
+    people from across a room?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight ; 6 = Stopped doing this for other
+    reasons, or not interested in doing this
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Stopped doing this for other reasons, or not interested in doing this
+
+vs18:
+  type: Integer
+  description: In general; how would you rate your eyesight for seeing things at a
+    distance?
+  range:
+  - 1::5
+  notes: 1=Poor; 2=Fair; 3=Good; 4=Very good; 5=Excellent
+  codes:
+    1: Poor
+    2: Fair
+    3: Good
+    4: Very good
+    5: Excellent
+
+vs19:
+  type: Integer
+  description: How much of a problem do you have with seeing things at a distance  during
+    the day?
+  range:
+  - 1::5
+  notes: 1=No problem at all; 2=A little bit of a problem; 3=Somewhat of a problem;
+    4=Very much of a problem; 5=Unable to see
+  codes:
+    1: No problem at all
+    2: A little bit of a problem
+    3: Somewhat of a problem
+    4: Very much of a problem
+    5: Unable to see
+
+vs20:
+  type: Integer
+  description: How much of a problem do you have with seeing things at a distance  at
+    nighttime?
+  range:
+  - 1::5
+  notes: 1=No problem at all; 2=A little bit of a problem; 3=Somewhat of a problem;
+    4=Very much of a problem; 5=Unable to see
+  codes:
+    1: No problem at all
+    2: A little bit of a problem
+    3: Somewhat of a problem
+    4: Very much of a problem
+    5: Unable to see
+
+vs21:
+  type: Integer
+  description: In general; how would you rate your eyesight for seeing things  close
+    up?
+  range:
+  - 1::5
+  notes: 1=Poor; 2=Fair; 3=Good; 4=Very good; 5=Excellent
+  codes:
+    1: Poor
+    2: Fair
+    3: Good
+    4: Very good
+    5: Excellent
+
+vs22:
+  type: Integer
+  description: How much of a problem do you have with seeing things close up  during
+    the day?
+  range:
+  - 1::5
+  notes: 1=No problem at all; 2=A little bit of a problem; 3=Somewhat of a problem;
+    4=Very much of a problem; 5=Unable to see
+  codes:
+    1: No problem at all
+    2: A little bit of a problem
+    3: Somewhat of a problem
+    4: Very much of a problem
+    5: Unable to see
+
+vs23:
+  type: Integer
+  description: How much of a problem do you have with seeing things close up  at nighttime?
+  range:
+  - 1::5
+  notes: 1=No problem at all; 2=A little bit of a problem; 3=Somewhat of a problem;
+    4=Very much of a problem; 5=Unable to see
+  codes:
+    1: No problem at all
+    2: A little bit of a problem
+    3: Somewhat of a problem
+    4: Very much of a problem
+    5: Unable to see
+
+vs24:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to read a newspaper
+    or book?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight; 6=Unable to read a newspaper or
+    book because of another reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Unable to read a newspaper or book because of another reason
+
+vs25:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to find an item
+    on a crowded shelf?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight; 6=Unable to find an item on a crowded
+    shelf because of another reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Unable to find an item on a crowded shelf because of another reason
+
+vs26:
+  type: Integer
+  description: How difficult is it for you to see a sign when there are other signs
+    around it?
+  range:
+  - 1::5
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+
+vs27:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to read small
+    print on medicine bottles; telephone books; legal forms; or bills you receive
+    in the mail?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight; 6=Unable to read labels or instructions
+    because of another reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Unable to read labels or instructions because of another reason
+
+vs28:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to use a computer?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight; 6=Unable to use a computer because
+    of another reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Unable to use a computer because of another reason
+
+vs29:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to operate a
+    household appliance like a microwave; a washing machine; or a toaster oven?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight; 6=Unable to operate a household
+    appliance because of another reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Unable to operate a household appliance because of another reason
+
+vs30:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to write?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight; 6=Unable to write because of another
+    reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Unable to write because of another reason
+
+vs31:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to do work or
+    hobbies that require you to see up close; such as cooking or fixing things around
+    the house?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight; 6=Unable to work or hobbies that
+    require me to see up close because of another reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Unable to work or hobbies that require me to see up close because of another
+      reason
+
+vs32:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to recognize
+    people when they are standing or sitting near you?
+  range:
+  - 1::5
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+
+vs33:
+  type: Integer
+  description: In the last 7 days; how much of a problem did you have with glare from
+    bright lights?
+  range:
+  - 1::4
+  notes: 1=No problem at all; 2=A little bit of a problem; 3=Somewhat of a problem;
+    4=Very much of a problem
+  codes:
+    1: No problem at all
+    2: A little bit of a problem
+    3: Somewhat of a problem
+    4: Very much of a problem
+
+vs34:
+  type: Integer
+  description: In the last 7 days; how much of a problem did you have with burning
+    or stinging eyes?
+  range:
+  - 1::4
+  notes: 1=No problem at all; 2=A little bit of a problem; 3=Somewhat of a problem;
+    4=Very much of a problem
+  codes:
+    1: No problem at all
+    2: A little bit of a problem
+    3: Somewhat of a problem
+    4: Very much of a problem
+
+vs35:
+  type: Integer
+  description: In the last 7 days; how much of a problem did you have with redness
+    in your eyes?
+  range:
+  - 1::4
+  notes: 1=No problem at all; 2=A little bit of a problem; 3=Somewhat of a problem;
+    4=Very much of a problem
+  codes:
+    1: No problem at all
+    2: A little bit of a problem
+    3: Somewhat of a problem
+    4: Very much of a problem
+
+vs36:
+  type: Integer
+  description: In the last 7 days; how much of a problem did you have with headaches
+    because of your vision; or because of your glasses or contact lenses?
+  range:
+  - 1::4
+  notes: 1=No problem at all; 2=A little bit of a problem; 3=Somewhat of a problem;
+    4=Very much of a problem
+  codes:
+    1: No problem at all
+    2: A little bit of a problem
+    3: Somewhat of a problem
+    4: Very much of a problem
+
+vs37:
+  type: Integer
+  description: In the last 7 days; how much of a problem did you have with your eyes
+    being sensitive to light?
+  range:
+  - 1::4
+  notes: 1=No problem at all; 2=A little bit of a problem; 3=Somewhat of a problem;
+    4=Very much of a problem
+  codes:
+    1: No problem at all
+    2: A little bit of a problem
+    3: Somewhat of a problem
+    4: Very much of a problem
+
+vs38:
+  type: Integer
+  description: In the last 7 days; how much of a problem did you have with blurry
+    vision?
+  range:
+  - 1::4
+  notes: 1=No problem at all; 2=A little bit of a problem; 3=Somewhat of a problem;
+    4=Very much of a problem
+  codes:
+    1: No problem at all
+    2: A little bit of a problem
+    3: Somewhat of a problem
+    4: Very much of a problem
+
+vs39:
+  type: Integer
+  description: In the last 7 days; how much of a problem did you have with itching
+    in or around your eyes?
+  range:
+  - 1::4
+  notes: 1=No problem at all; 2=A little bit of a problem; 3=Somewhat of a problem;
+    4=Very much of a problem
+  codes:
+    1: No problem at all
+    2: A little bit of a problem
+    3: Somewhat of a problem
+    4: Very much of a problem
+
+vs40:
+  type: Integer
+  description: In the last 7 days; how frustrated or upset did you feel because of
+    your eyesight?
+  range:
+  - 1::4
+  notes: 1=Did not feel frustrated or upset at all; 2=Felt a little bit frustrated
+    or upset; 3=Felt somewhat frustrated or upset; 4=Felt frustrated or upset a lot
+  codes:
+    1: Did not feel frustrated or upset at all
+    2: Felt a little bit frustrated or upset
+    3: Felt somewhat frustrated or upset
+    4: Felt frustrated or upset a lot
+
+vs41:
+  type: Integer
+  description: In the last 7 days; how annoyed or angry did you feel because of your
+    eyesight?
+  range:
+  - 1::4
+  notes: 1=Did not feel frustrated or upset at all; 2=Felt a little bit frustrated
+    or upset; 3=Felt somewhat frustrated or upset; 4=Felt frustrated or upset a lot
+  codes:
+    1: Did not feel frustrated or upset at all
+    2: Felt a little bit frustrated or upset
+    3: Felt somewhat frustrated or upset
+    4: Felt frustrated or upset a lot
+
+vs42:
+  type: Integer
+  description: In the last 7 days; how much did you feel like a burden on others because
+    of your eyesight?
+  range:
+  - 1::4
+  notes: 1=Did not feel like a burden at all; 2=Felt a little bit like a burden; 3=Felt
+    somewhat like a burden; 4=Felt like a burden a lot
+  codes:
+    1: Did not feel like a burden at all
+    2: Felt a little bit like a burden
+    3: Felt somewhat like a burden
+    4: Felt like a burden a lot
+
+vs43:
+  type: Integer
+  description: In the last 7 days; how sad or depressed did you feel because of your
+    eyesight?
+  range:
+  - 1::4
+  notes: 1=Did not feel sad or depressed at all; 2=Felt a little bit sad or depressed;
+    3=Felt somewhat sad or depressed; 4=Felt sad or depressed a lot
+  codes:
+    1: Did not feel sad or depressed at all
+    2: Felt a little bit sad or depressed
+    3: Felt somewhat sad or depressed
+    4: Felt sad or depressed a lot
+
+vs44:
+  type: Integer
+  description: In the last 7 days; how socially isolated did you feel because of your
+    eyesight?
+  range:
+  - 1::4
+  notes: 1=Did not feel socially isolated at all; 2=Felt a little bit socially isolated;
+    3=Felt somewhat socially isolated; 4=Felt socially isolated a lot
+  codes:
+    1: Did not feel socially isolated at all
+    2: Felt a little bit socially isolated
+    3: Felt somewhat socially isolated
+    4: Felt socially isolated a lot
+
+vs45:
+  type: Integer
+  description: In the last 7 days; how concerned or worried about your safety at home
+    did you feel because of your eyesight?
+  range:
+  - 1::4
+  notes: 1=Did not feel worried or concerned at all; 2=Felt a little bit worried or
+    concerned; 3=Felt somewhat worried or concerned; 4=Felt worried or concerned a
+    lot;
+  codes:
+    1: Did not feel worried or concerned at all
+    2: Felt a little bit worried or concerned
+    3: Felt somewhat worried or concerned
+    4: Felt worried or concerned a lot
+
+vs46:
+  type: Integer
+  description: In the last 7 days; how worried were you about your eyesight?
+  range:
+  - 1::4
+  notes: 1=Not worried at all; 2=A little bit worried; 3=Somewhat worried; 4=A lot
+    worried
+  codes:
+    1: Not worried at all
+    2: A little bit worried
+    3: Somewhat worried
+    4: A lot worried
+
+vs47:
+  type: Integer
+  description: How much do you have to rely on other people to do things because of
+    your eyesight?
+  range:
+  - 1::4
+  notes: 1=Do not rely on other people at all; 2=Rely a little bit on other people;
+    3=Rely somewhat on other people; 4=Rely a lot on other people
+  codes:
+    1: Do not rely on other people at all
+    2: Rely a little bit on other people
+    3: Rely somewhat on other people
+    4: Rely a lot on other people
+
+vs48:
+  type: Integer
+  description: Because of your eyesight; how difficult is it for you to visit with
+    friends or family?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight; 6=Unable to visit with friend or
+    family because of another reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Unable to visit with friend or family because of another reason
+
+vs49:
+  type: Integer
+  description: Because of your eyesight; how limited are you in doing your daily activities?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight; 6=Unable or limited in daily activities
+    because of another reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Unable or limited in daily activities because of another reason
+
+vs50:
+  type: Integer
+  description: Because of your eyesight; how limited are you in doing your daily work
+    whether inside or outside the house?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight; 6=Unable or limited in daily work
+    because of another reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Unable or limited in daily work because of another reason
+
+vs51:
+  type: Integer
+  description: Because of your eyesight; how much less do you accomplish than you
+    would like?
+  range:
+  - 1::4
+  notes: 1=Do not accomplish less at all; 2=Accomplish a little bit less; 3=Accomplish
+    somewhat less; 4=Accomplish a lot less;
+  codes:
+    1: Do not accomplish less at all
+    2: Accomplish a little bit less
+    3: Accomplish somewhat less
+    4: Accomplish a lot less
+
+vs52:
+  type: Integer
+  description: Because of your eyesight; how much are you limited in how long you
+    can work or do other activities?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight; 6=Unable or limited in work or
+    other activities because of another reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Unable or limited in work or other activities because of another reason
+
+vs53:
+  type: Integer
+  description: Because of your eyesight; how much do you require help from others
+    with your work or other activities?
+  range:
+  - 1::6
+  notes: 1=Not difficult at all; 2=A little bit difficult; 3=Somewhat difficult; 4=Very
+    difficult; 5=Unable to do because of eyesight; 6=Unable or require help from others
+    with work or other activities because of another reason
+  codes:
+    1: Not difficult at all
+    2: A little bit difficult
+    3: Somewhat difficult
+    4: Very difficult
+    5: Unable to do because of eyesight
+    6: Unable or require help from others with work or other activities because of
+      another reason
+
+winleft_ncorr:
+  type: Integer
+  description: Words in Noise Number Correct Left
+  alias: nihtbx_wordsnoise_raw_left,raw_score_left_ear
+
+winleft_thresholdscore:
+  type: Float
+  description: Words in Noise Decibel Threshold Left
+  alias: nihtbx_wordsnoise_thresh_left,threshold_left_ear
+
+winright_ncorr:
+  type: Integer
+  description: Words in Noise Number Correct Right
+  alias: nihtbx_wordsnoise_raw_right,raw_score_right_ear
+
+winright_thresholdscore:
+  type: Float
+  description: Words in Noise Decibel Threshold Right
+  alias: nihtbx_wordsnoise_thresh_right,threshold_right_ear
+
+nih_pin:
+  type: String
+  length: 25
+  description: PIN number assigned by the NIH Toolbox
+  alias: pin
+
+tsc_pain:
+  type: Float
+  description: Pain Interference Survey t-score
+  alias: tscore
+
+raw_pain:
+  type: Integer
+  description: Pain Interference Survey raw score
+  alias: nihtbx_pain_rawscore
+
+raw_oi:
+  type: Integer
+  description: Odor Identification Test raw score
+  alias: nihtbx_odor_rawscore
+
+raw_vat:
+  type: Integer
+  description: Visual Acuity Test raw score
+  alias: nihtbx_visualacuity_rawscore
+
+painin1:
+  type: Integer
+  description: How difficult was it for you to take in new information because of
+    pain?
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+painin3:
+  type: Integer
+  description: How much did pain interfere with your enjoyment of life?
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+painin6:
+  type: Integer
+  description: How much did pain interfere with your close personal relationships?
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+painin13:
+  type: Integer
+  description: How much did pain interfere with your family life?
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+painin16:
+  type: Integer
+  description: How often did pain make you feel depressed?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painin19:
+  type: Integer
+  description: How much did pain make it difficult to fall asleep?
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+painin20:
+  type: Integer
+  description: How much did pain feel like a burden to you?
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+painin29:
+  type: Integer
+  description: How often was your pain so severe you could think of nothing else?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painin35:
+  type: Integer
+  description: How much did pain interfere with your ability to make trips from home
+    that kept you gone for more than 2 hours?
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+painin37:
+  type: Integer
+  description: How often did pain make you feel anxious?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painin39:
+  type: Integer
+  description: How often did pain make simple tasks hard to complete?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painin49:
+  type: Integer
+  description: How much did pain interfere with your ability to remember things?
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+painin53:
+  type: Integer
+  description: How often did pain restrict your social life to your home?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painin56:
+  type: Integer
+  description: How irritable did you feel because of pain?
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+painin5:
+  type: Integer
+  description: How much did pain interfere with your ability to participate in leisure
+    activities?
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+painin8:
+  type: Integer
+  description: How much did pain interfere with your ability to concentrate?
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+painin10:
+  type: Integer
+  description: How much did pain interfere with your enjoyment of recreational activities?
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+painin38:
+  type: Integer
+  description: How often did you avoid social activities because it might make you
+    hurt more?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painin40:
+  type: Integer
+  description: How often did pain prevent you from walking more than 1 mile?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painin42:
+  type: Integer
+  description: How often did pain prevent you from standing for more than one hour?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painin46:
+  type: Integer
+  description: How often did pain make it difficult for you to plan social activities?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painin47:
+  type: Integer
+  description: How often did pain prevent you from standing for more than 30 minutes?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painin50:
+  type: Integer
+  description: How often did pain prevent you from sitting for more than 30 minutes?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painin51:
+  type: Integer
+  description: How often did pain prevent you from sitting for more than 10  minutes?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: assessment_name,inst
+
+painin52:
+  type: Integer
+  description: How often was it hard to plan social activities because you didn't
+    know if you would be in pain?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painin54:
+  type: Integer
+  description: How often did pain keep you from getting into a standing position?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painin55:
+  type: Integer
+  description: How often did pain prevent you from sitting for more than one hour?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+rpain_com16:
+  type: Integer
+  description: Pain interfered with my sex life.
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+rpain8:
+  type: Integer
+  description: I experienced excruciating pain.
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+rpain22:
+  type: Integer
+  description: I was more sensitive to pain than usual.
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+rpain24:
+  type: Integer
+  description: Numbness interfered with my ability to do things.
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+rpain25:
+  type: Integer
+  description: I was not able to accomplish as much as I'd like because of pain.
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+rpain27:
+  type: Integer
+  description: Shoulder pain interfered with my ability to do things.
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+rpain39:
+  type: Integer
+  description: Pain interfered with my ability to care for family members.
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+wcst_ni:
+  type: Integer
+  description: Number of Items
+  alias: itmcnt
+
+rpain41:
+  type: Integer
+  description: Muscle pain interfered with my daily activities.
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+painin11:
+  type: Integer
+  description: How often did you feel emotionally tense because of your pain?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+rpain43:
+  type: Integer
+  description: Back pain interfered with my ability to do things.
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+rpain46:
+  type: Integer
+  description: My pain was so bad that I wanted to give up on everything.
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+painbe9:
+  type: Integer
+  description: When I was in pain I became angry.
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painbe16:
+  type: Integer
+  description: When I was in pain I appeared upset or sad.
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painbe23:
+  type: Integer
+  description: When I was in pain I asked one or more people to leave me alone.
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painbe32:
+  type: Integer
+  description: When I was in pain I became quiet and withdrawn.
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+interfer:
+  type: Integer
+  description: During the past week how much did pain interfere with your normal work
+    (including both work outside the home and housework)?
+  range:
+  - 1::5
+  notes: 1=Not at all; 2=A little bit; 3=Moderately; 4=Quite a bit; 5=Extremely
+  alias: painin18
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Moderately
+    4: Quite a bit
+    5: Extremely
+
+pb_raw:
+  type: Float
+  description: Pain Behavior Raw Score
+
+pb_t:
+  type: Float
+  description: Pain Behavior T Score
+
+pb_se:
+  type: Float
+  description: Pain Behavior Standard Error
+
+painin14:
+  type: Integer
+  description: How much did pain interfere with doing your tasks away from home (e.g.,
+    getting groceries, running errands)?
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+painin17:
+  type: Integer
+  description: How much did pain interfere with your relationships with other people?
+  range:
+  - 1::5
+  notes: 1 = Not at all; 2 = A little bit; 3 = Somewhat; 4 = Quite a bit; 5 = Very
+    much
+  codes:
+    1: Not at all
+    2: A little bit
+    3: Somewhat
+    4: Quite a bit
+    5: Very much
+
+interview_language:
+  type: String
+  length: 255
+  description: Language Used in the Interview
+  alias: language
+
+painin24:
+  type: Integer
+  description: How often was pain distressing to you?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painin26:
+  type: Integer
+  description: How often did pain keep you from socializing with others?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+painin32:
+  type: Integer
+  description: How often did pain make you feel discouraged?
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Often; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Often
+    5: Always
+
+age_corrected_standard_score:
+  type: Integer
+  description: Age-Corrected Standard Score
+
+natl_percentile__age_adjusted_:
+  type: Integer
+  description: National Percentile (age adjusted)
+  range:
+  - 1::100
+  - 999
+  alias: national_percentile__age_adjusted_
+
+dominant_score:
+  type: Integer
+  description: 'Words-In-Noise Test: Dominant Score'
+  alias: words_in_noise_test__dominant_score
+
+non_dominant_score:
+  type: Integer
+  description: 'Words-In-Noise Test: Non-Dominant Score'
+  alias: words_in_noise_test__non_dominant_score
+
+nih_tlbx_fctsc:
+  type: Float
+  description: Fully-Corrected T-Score
+  range:
+  - 0::120
+  alias: fully_corrected_t_score
+
+h_20_p1:
+  type: Integer
+  description: Letter H presented at 20/20 acuity (subject sees at 20 feet as well
+    as normative sample does at 20 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+n_40_p1:
+  type: Integer
+  description: Letter N presented at 20/40 acuity (subject sees at 20 feet as well
+    as normative sample does at 40 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+n_50_p1:
+  type: Integer
+  description: Letter N presented at 20/50 acuity (subject sees at 20 feet as well
+    as normative sample does at 50 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+n_64_p1:
+  type: Integer
+  description: Letter N presented at 20/64 acuity (subject sees at 20 feet as well
+    as normative sample does at 64 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+n_80_p1:
+  type: Integer
+  description: Letter N presented at 20/80 acuity (subject sees at 20 feet as well
+    as normative sample does at 80 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+o_125_p1:
+  type: Integer
+  description: Letter O presented at 20/125 acuity (subject sees at 20 feet as well
+    as normative sample does at 125 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+o_80_p1:
+  type: Integer
+  description: Letter O presented at 20/80 acuity (subject sees at 20 feet as well
+    as normative sample does at 80 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+r_100_p1:
+  type: Integer
+  description: Letter R presented at 20/100 acuity (subject sees at 20 feet as well
+    as normative sample does at 100 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+r_10_p1:
+  type: Integer
+  description: Letter R presented at 20/10 acuity (subject sees at 20 feet as well
+    as normative sample does at 10 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+r_125_p1:
+  type: Integer
+  description: Letter R presented at 20/125 acuity (subject sees at 20 feet as well
+    as normative sample does at 125 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+r_12_p1:
+  type: Integer
+  description: Letter R presented at 20/12 acuity (subject sees at 20 feet as well
+    as normative sample does at 12 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+h_25_p1:
+  type: Integer
+  description: Letter H presented at 20/25 acuity (subject sees at 20 feet as well
+    as normative sample does at 25 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+r_16_p1:
+  type: Integer
+  description: Letter R presented at 20/16 acuity (subject sees at 20 feet as well
+    as normative sample does at 16 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+r_20_p1:
+  type: Integer
+  description: Letter R presented at 20/20 acuity (subject sees at 20 feet as well
+    as normative sample does at 20 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+r_25_p1:
+  type: Integer
+  description: Letter R presented at 20/25 acuity (subject sees at 20 feet as well
+    as normative sample does at 25 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+r_32_p1:
+  type: Integer
+  description: Letter R presented at 20/32 acuity (subject sees at 20 feet as well
+    as normative sample does at 32 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+r_32_p2:
+  type: Integer
+  description: Letter R presented at 20/32 acuity (subject sees at 20 feet as well
+    as normative sample does at 32 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+r_40_p1:
+  type: Integer
+  description: Letter R presented at 20/40 acuity (subject sees at 20 feet as well
+    as normative sample does at 40 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+r_40_p2:
+  type: Integer
+  description: Letter R presented at 20/40 acuity (subject sees at 20 feet as well
+    as normative sample does at 40 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+r_50_p1:
+  type: Integer
+  description: Letter R presented at 20/50 acuity (subject sees at 20 feet as well
+    as normative sample does at 50 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+r_64_p1:
+  type: Integer
+  description: Letter R presented at 20/64 acuity (subject sees at 20 feet as well
+    as normative sample does at 64 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+r_80_p1:
+  type: Integer
+  description: Letter R presented at 20/80 acuity (subject sees at 20 feet as well
+    as normative sample does at 80 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+h_32_p1:
+  type: Integer
+  description: Letter H presented at 20/32 acuity (subject sees at 20 feet as well
+    as normative sample does at 32 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+s_100_p1:
+  type: Integer
+  description: Letter S presented at 20/100 acuity (subject sees at 20 feet as well
+    as normative sample does at 100 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+s_12_p1:
+  type: Integer
+  description: Letter S presented at 20/12 acuity (subject sees at 20 feet as well
+    as normative sample does at 12 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+s_32_p1:
+  type: Integer
+  description: Letter S presented at 20/32 acuity (subject sees at 20 feet as well
+    as normative sample does at 32 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+s_50_p1:
+  type: Integer
+  description: Letter S presented at 20/50 acuity (subject sees at 20 feet as well
+    as normative sample does at 50 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+s_64_p1:
+  type: Integer
+  description: Letter S presented at 20/64 acuity (subject sees at 20 feet as well
+    as normative sample does at 64 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_125_p1:
+  type: Integer
+  description: Letter V presented at 20/125 acuity (subject sees at 20 feet as well
+    as normative sample does at 125 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_20_p1:
+  type: Integer
+  description: Letter V presented at 20/20 acuity (subject sees at 20 feet as well
+    as normative sample does at 20 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_20_p2:
+  type: Integer
+  description: Letter V presented at 20/20 acuity (subject sees at 20 feet as well
+    as normative sample does at 20 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_25_p1:
+  type: Integer
+  description: Letter V presented at 20/25 acuity (subject sees at 20 feet as well
+    as normative sample does at 25 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_25_p2:
+  type: Integer
+  description: Letter V presented at 20/25 acuity (subject sees at 20 feet as well
+    as normative sample does at 25 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+h_400_p1:
+  type: Integer
+  description: Letter H presented at 20/400 acuity (subject sees at 20 feet as well
+    as normative sample does at 400 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_64_p2:
+  type: Integer
+  description: Letter V presented at 20/64 acuity (subject sees at 20 feet as well
+    as normative sample does at 64 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+z_100_p1:
+  type: Integer
+  description: Letter Z presented at 20/100 acuity (subject sees at 20 feet as well
+    as normative sample does at 100 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+z_10_p1:
+  type: Integer
+  description: Letter Z presented at 20/10 acuity (subject sees at 20 feet as well
+    as normative sample does at 10 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+z_12_p1:
+  type: Integer
+  description: Letter Z presented at 20/12 acuity (subject sees at 20 feet as well
+    as normative sample does at 12 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+z_25_p1:
+  type: Integer
+  description: Letter Z presented at 20/25 acuity (subject sees at 20 feet as well
+    as normative sample does at 25 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+z_32_p1:
+  type: Integer
+  description: Letter Z presented at 20/32 acuity (subject sees at 20 feet as well
+    as normative sample does at 32 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+z_50_p1:
+  type: Integer
+  description: Letter Z presented at 20/50 acuity (subject sees at 20 feet as well
+    as normative sample does at 50 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+h_40_p1:
+  type: Integer
+  description: Letter H presented at 20/40 acuity (subject sees at 20 feet as well
+    as normative sample does at 40 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+h_50_p1:
+  type: Integer
+  description: Letter H presented at 20/50 acuity (subject sees at 20 feet as well
+    as normative sample does at 50 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+h_50_p2:
+  type: Integer
+  description: Letter H presented at 20/50 acuity (subject sees at 20 feet as well
+    as normative sample does at 50 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+h_64_p1:
+  type: Integer
+  description: Letter H presented at 20/64 acuity (subject sees at 20 feet as well
+    as normative sample does at 64 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+o_10_p1:
+  type: Integer
+  description: Letter O presented at 20/10 acuity (subject sees at 20 feet as well
+    as normative sample does at 10 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+o_10_p2:
+  type: Integer
+  description: Letter O presented at 20/10 acuity (subject sees at 20 feet as well
+    as normative sample does at 10 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+o_12_p1:
+  type: Integer
+  description: Letter O presented at 20/12 acuity (subject sees at 20 feet as well
+    as normative sample does at 12 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+o_12_p2:
+  type: Integer
+  description: Letter O presented at 20/12 acuity (subject sees at 20 feet as well
+    as normative sample does at 12 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+o_12_p3:
+  type: Integer
+  description: Letter O presented at 20/12 acuity (subject sees at 20 feet as well
+    as normative sample does at 12 feet), Run 3
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+o_16_p1:
+  type: Integer
+  description: Letter O presented at 20/16 acuity (subject sees at 20 feet as well
+    as normative sample does at 16 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+o_20_p1:
+  type: Integer
+  description: Letter O presented at 20/20 acuity (subject sees at 20 feet as well
+    as normative sample does at 20 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+o_25_p1:
+  type: Integer
+  description: Letter O presented at 20/25 acuity (subject sees at 20 feet as well
+    as normative sample does at 25 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+o_32_p1:
+  type: Integer
+  description: Letter O presented at 20/32 acuity (subject sees at 20 feet as well
+    as normative sample does at 32 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+o_400_p1:
+  type: Integer
+  description: Letter O presented at 20/400 acuity (subject sees at 20 feet as well
+    as normative sample does at 400 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+o_40_p1:
+  type: Integer
+  description: Letter O presented at 20/40 acuity (subject sees at 20 feet as well
+    as normative sample does at 40 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+o_50_p1:
+  type: Integer
+  description: Letter O presented at 20/50 acuity (subject sees at 20 feet as well
+    as normative sample does at 50 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+h_10_p1:
+  type: Integer
+  description: Letter H presented at 20/10 acuity (subject sees at 20 feet as well
+    as normative sample does at 10 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+o_64_p1:
+  type: Integer
+  description: Letter O presented at 20/64 acuity (subject sees at 20 feet as well
+    as normative sample does at 64 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+o_64_p2:
+  type: Integer
+  description: Letter O presented at 20/64 acuity (subject sees at 20 feet as well
+    as normative sample does at 64 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+t_10_p1:
+  type: Integer
+  description: Letter T presented at 20/10 acuity (subject sees at 20 feet as well
+    as normative sample does at 10 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+t_10_p2:
+  type: Integer
+  description: Letter T presented at 20/10 acuity (subject sees at 20 feet as well
+    as normative sample does at 10 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+t_10_p3:
+  type: Integer
+  description: Letter T presented at 20/10 acuity (subject sees at 20 feet as well
+    as normative sample does at 10 feet), Run 3
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+t_12_p1:
+  type: Integer
+  description: Letter T presented at 20/12 acuity (subject sees at 20 feet as well
+    as normative sample does at 12 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+t_12_p2:
+  type: Integer
+  description: Letter T presented at 20/12 acuity (subject sees at 20 feet as well
+    as normative sample does at 12 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+t_16_p1:
+  type: Integer
+  description: Letter T presented at 20/16 acuity (subject sees at 20 feet as well
+    as normative sample does at 16 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+t_20_p1:
+  type: Integer
+  description: Letter T presented at 20/20 acuity (subject sees at 20 feet as well
+    as normative sample does at 20 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+t_25_p1:
+  type: Integer
+  description: Letter T presented at 20/25 acuity (subject sees at 20 feet as well
+    as normative sample does at 25 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+h_10_p2:
+  type: Integer
+  description: Letter H presented at 20/10 acuity (subject sees at 20 feet as well
+    as normative sample does at 10 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+t_32_p1:
+  type: Integer
+  description: Letter T presented at 20/32 acuity (subject sees at 20 feet as well
+    as normative sample does at 32 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+t_40_p1:
+  type: Integer
+  description: Letter T presented at 20/40 acuity (subject sees at 20 feet as well
+    as normative sample does at 40 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+t_50_p1:
+  type: Integer
+  description: Letter T presented at 20/50 acuity (subject sees at 20 feet as well
+    as normative sample does at 50 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+t_64_p1:
+  type: Integer
+  description: Letter T presented at 20/64 acuity (subject sees at 20 feet as well
+    as normative sample does at 64 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+t_64_p2:
+  type: Integer
+  description: Letter T presented at 20/64 acuity (subject sees at 20 feet as well
+    as normative sample does at 64 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_10_p1:
+  type: Integer
+  description: Letter V presented at 20/10 acuity (subject sees at 20 feet as well
+    as normative sample does at 10 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_10_p2:
+  type: Integer
+  description: Letter V presented at 20/10 acuity (subject sees at 20 feet as well
+    as normative sample does at 10 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_12_p1:
+  type: Integer
+  description: Letter V presented at 20/12 acuity (subject sees at 20 feet as well
+    as normative sample does at 12 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_12_p2:
+  type: Integer
+  description: Letter V presented at 20/12 acuity (subject sees at 20 feet as well
+    as normative sample does at 12 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_16_p1:
+  type: Integer
+  description: Letter V presented at 20/16 acuity (subject sees at 20 feet as well
+    as normative sample does at 16 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+h_12_p1:
+  type: Integer
+  description: Letter H presented at 20/12 acuity (subject sees at 20 feet as well
+    as normative sample does at 12 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_16_p2:
+  type: Integer
+  description: Letter V presented at 20/16 acuity (subject sees at 20 feet as well
+    as normative sample does at 16 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_32_p1:
+  type: Integer
+  description: Letter V presented at 20/32 acuity (subject sees at 20 feet as well
+    as normative sample does at 32 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_400_p1:
+  type: Integer
+  description: Letter V presented at 20/400 acuity (subject sees at 20 feet as well
+    as normative sample does at 400 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_40_p1:
+  type: Integer
+  description: Letter V presented at 20/40 acuity (subject sees at 20 feet as well
+    as normative sample does at 40 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_50_p1:
+  type: Integer
+  description: Letter V presented at 20/50 acuity (subject sees at 20 feet as well
+    as normative sample does at 50 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_50_p2:
+  type: Integer
+  description: Letter V presented at 20/50 acuity (subject sees at 20 feet as well
+    as normative sample does at 50 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+v_64_p1:
+  type: Integer
+  description: Letter V presented at 20/64 acuity (subject sees at 20 feet as well
+    as normative sample does at 64 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+instrumentrcreason:
+  type: Integer
+  description: Problem with administration
+  range:
+  - 1::10
+  - -5
+  notes: 1 = Safety Exclusion ; 2 = Participant/Respondent Refused ; 3 = No Time ;
+    4 = Physical Limitations ; 5 = Communication Problems ; 6 = Language Barrier ;
+    7 = Equipment Failure ; 8 = Ineligible ; 9 = Participant Ill/Emergency ; 10 =
+    Target Respondent Unavailable; -5 = Other
+  codes:
+    1: Safety Exclusion
+    2: Participant/Respondent Refused
+    3: No Time
+    4: Physical Limitations
+    5: Communication Problems
+    6: Language Barrier
+    7: Equipment Failure
+    8: Ineligible
+    9: Participant Ill/Emergency
+    10: Target Respondent Unavailable
+    -5: Other
+
+instrumentrcreasonother:
+  type: String
+  length: 250
+  description: Problem with administration, Other (specify)
+
+static_visual_acuity_snellen:
+  type: String
+  length: 20
+  description: Snellen Visual Acuity, given as 20/x, where x is the distance in feet
+    at which the subject sees as clearly as a normative sample
+
+h_12_p2:
+  type: Integer
+  description: Letter H presented at 20/12 acuity (subject sees at 20 feet as well
+    as normative sample does at 12 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+c_100_p1:
+  type: Integer
+  description: Letter C presented at 20/100 acuity (subject sees at 20 feet as well
+    as normative sample does at 100 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+c_12_p1:
+  type: Integer
+  description: Letter C presented at 20/12 acuity (subject sees at 20 feet as well
+    as normative sample does at 12 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+c_16_p1:
+  type: Integer
+  description: Letter C presented at 20/16 acuity (subject sees at 20 feet as well
+    as normative sample does at 16 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+c_25_p1:
+  type: Integer
+  description: Letter C presented at 20/25 acuity (subject sees at 20 feet as well
+    as normative sample does at 25 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+c_40_p1:
+  type: Integer
+  description: Letter C presented at 20/40 acuity (subject sees at 20 feet as well
+    as normative sample does at 40 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+c_80_p1:
+  type: Integer
+  description: Letter C presented at 20/80 acuity (subject sees at 20 feet as well
+    as normative sample does at 80 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+d_10_p1:
+  type: Integer
+  description: Letter D presented at 20/10 acuity (subject sees at 20 feet as well
+    as normative sample does at 10 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+d_10_p2:
+  type: Integer
+  description: Letter D presented at 20/10 acuity (subject sees at 20 feet as well
+    as normative sample does at 10 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+d_125_p1:
+  type: Integer
+  description: Letter D presented at 20/125 acuity (subject sees at 20 feet as well
+    as normative sample does at 125 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+d_12_p1:
+  type: Integer
+  description: Letter D presented at 20/12 acuity (subject sees at 20 feet as well
+    as normative sample does at 12 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+h_16_p1:
+  type: Integer
+  description: Letter H presented at 20/16 acuity (subject sees at 20 feet as well
+    as normative sample does at 16 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+d_16_p1:
+  type: Integer
+  description: Letter D presented at 20/16 acuity (subject sees at 20 feet as well
+    as normative sample does at 16 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+d_20_p1:
+  type: Integer
+  description: Letter D presented at 20/20 acuity (subject sees at 20 feet as well
+    as normative sample does at 20 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+d_20_p2:
+  type: Integer
+  description: Letter D presented at 20/20 acuity (subject sees at 20 feet as well
+    as normative sample does at 20 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+d_25_p1:
+  type: Integer
+  description: Letter D presented at 20/25 acuity (subject sees at 20 feet as well
+    as normative sample does at 25 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+d_32_p1:
+  type: Integer
+  description: Letter D presented at 20/32 acuity (subject sees at 20 feet as well
+    as normative sample does at 32 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+d_32_p2:
+  type: Integer
+  description: Letter D presented at 20/32 acuity (subject sees at 20 feet as well
+    as normative sample does at 32 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+d_40_p1:
+  type: Integer
+  description: Letter D presented at 20/40 acuity (subject sees at 20 feet as well
+    as normative sample does at 40 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+d_40_p2:
+  type: Integer
+  description: Letter D presented at 20/40 acuity (subject sees at 20 feet as well
+    as normative sample does at 40 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+d_50_p1:
+  type: Integer
+  description: Letter D presented at 20/50 acuity (subject sees at 20 feet as well
+    as normative sample does at 50 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+d_64_p1:
+  type: Integer
+  description: Letter D presented at 20/64 acuity (subject sees at 20 feet as well
+    as normative sample does at 64 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+h_16_p2:
+  type: Integer
+  description: Letter H presented at 20/16 acuity (subject sees at 20 feet as well
+    as normative sample does at 16 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+h_100_p1:
+  type: Integer
+  description: Letter H presented at 20/100 acuity (subject sees at 20 feet as well
+    as normative sample does at 100 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+h_125_p1:
+  type: Integer
+  description: Letter H presented at 20/125 acuity (subject sees at 20 feet as well
+    as normative sample does at 125 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+h_80_p1:
+  type: Integer
+  description: Letter H presented at 20/80 acuity (subject sees at 20 feet as well
+    as normative sample does at 80 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+k_10_p1:
+  type: Integer
+  description: Letter K presented at 20/10 acuity (subject sees at 20 feet as well
+    as normative sample does at 10 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+k_10_p2:
+  type: Integer
+  description: Letter K presented at 20/10 acuity (subject sees at 20 feet as well
+    as normative sample does at 10 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+k_12_p1:
+  type: Integer
+  description: Letter K presented at 20/12 acuity (subject sees at 20 feet as well
+    as normative sample does at 12 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+k_16_p1:
+  type: Integer
+  description: Letter K presented at 20/16 acuity (subject sees at 20 feet as well
+    as normative sample does at 16 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+k_20_p1:
+  type: Integer
+  description: Letter K presented at 20/20 acuity (subject sees at 20 feet as well
+    as normative sample does at 20 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+k_20_p2:
+  type: Integer
+  description: Letter K presented at 20/20 acuity (subject sees at 20 feet as well
+    as normative sample does at 20 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+k_25_p1:
+  type: Integer
+  description: Letter K presented at 20/25 acuity (subject sees at 20 feet as well
+    as normative sample does at 25 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+h_16_p3:
+  type: Integer
+  description: Letter H presented at 20/16 acuity (subject sees at 20 feet as well
+    as normative sample does at 16 feet), Run 3
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+k_32_p1:
+  type: Integer
+  description: Letter K presented at 20/32 acuity (subject sees at 20 feet as well
+    as normative sample does at 32 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+k_32_p2:
+  type: Integer
+  description: Letter K presented at 20/32 acuity (subject sees at 20 feet as well
+    as normative sample does at 32 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+k_40_p1:
+  type: Integer
+  description: Letter K presented at 20/40 acuity (subject sees at 20 feet as well
+    as normative sample does at 40 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+k_40_p2:
+  type: Integer
+  description: Letter K presented at 20/40 acuity (subject sees at 20 feet as well
+    as normative sample does at 40 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+k_50_p1:
+  type: Integer
+  description: Letter K presented at 20/50 acuity (subject sees at 20 feet as well
+    as normative sample does at 50 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+k_50_p2:
+  type: Integer
+  description: Letter K presented at 20/50 acuity (subject sees at 20 feet as well
+    as normative sample does at 50 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+k_64_p1:
+  type: Integer
+  description: Letter K presented at 20/64 acuity (subject sees at 20 feet as well
+    as normative sample does at 64 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+k_64_p2:
+  type: Integer
+  description: Letter K presented at 20/64 acuity (subject sees at 20 feet as well
+    as normative sample does at 64 feet), Run 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+n_16_p1:
+  type: Integer
+  description: Letter N presented at 20/16 acuity (subject sees at 20 feet as well
+    as normative sample does at 16 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+n_20_p1:
+  type: Integer
+  description: Letter N presented at 20/20 acuity (subject sees at 20 feet as well
+    as normative sample does at 20 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+k_80_p1:
+  type: Integer
+  description: Letter K presented at 20/80 acuity (subject sees at 20 feet as well
+    as normative sample does at 80 feet), Run 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)
+  alias: respondent
+
+fneproc:
+  type: String
+  length: 20
+  description: name of trial procedure being run
+
+painqu8:
+  type: Integer
+  description: How intense was your average pain?
+  range:
+  - 1::5
+  notes: 1= No pain; 2= Mild; 3= Moderate; 4= Severe; 5= Very severe
+  codes:
+    1: No pain
+    2: Mild
+    3: Moderate
+    4: Severe
+    5: Very severe
+
+painqu21:
+  type: Integer
+  description: What is your level of pain right now?
+  range:
+  - 1::5
+  notes: 1= No pain; 2= Mild; 3= Moderate; 4= Severe; 5= Very severe
+  codes:
+    1: No pain
+    2: Mild
+    3: Moderate
+    4: Severe
+    5: Very severe

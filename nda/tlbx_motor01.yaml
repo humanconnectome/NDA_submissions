@@ -1,0 +1,374 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of subject at birth
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: assessment_name
+
+dx9hltime:
+  type: Float
+  description: Dexterity - 9 Hole Pegboard - Left hand time
+  alias: lhand_ta,nine_peg_lh_trial
+
+dx9hrtime:
+  type: Float
+  description: Dexterity - 9 Hole Pegboard - Right hand time
+  alias: nine_peg_rh_trial,rhand_ta
+
+en6m50_2m_10ft_marks:
+  type: Integer
+  description: Endurance - 2 minute walk - Number of 10 ft marks
+  alias: two_min_10ft
+
+en6m50_2m_ft:
+  type: Integer
+  description: Endurance - 2 minute walk - Feet
+  alias: endurancescore,two_min_add_ft
+
+en6m50_2m_inches:
+  type: Integer
+  description: Endurance - 2 minute walk - Inches
+  alias: two_min_add_in
+
+en6m50_2m_turns:
+  type: Integer
+  description: Endurance - 2 minute walk - Number of course turns
+  alias: two_min_turns
+
+end_2m_fctsc:
+  type: Float
+  description: Endurance - Fully Corrected T-Score
+
+end_2m_standardsc:
+  type: Float
+  description: Endurance -Normative Standard Score
+  alias: nihtbx_endurance_uncorrected,uncorrected_standard_score
+
+flag_motor_balance:
+  type: Integer
+  description: Motor - Balance - Flagged for potentially problematic test administration
+  range:
+  - 1
+  notes: 1=Flagged
+  codes:
+    1: Flagged
+
+flag_motor_dexterity:
+  type: Integer
+  description: Motor - Dexterity - Flagged for potentially problematic test administration
+  range:
+  - 1
+  notes: 1=Flagged
+  codes:
+    1: Flagged
+
+flag_motor_endurance:
+  type: Integer
+  description: Motor - Endurance - Flagged for potentially problematic test administration
+  range:
+  - 1
+  notes: 1=Flagged
+  codes:
+    1: Flagged
+
+flag_motor_locomotion:
+  type: Integer
+  description: Motor - Locomotion - Flagged for potentially problematic test administration
+  range:
+  - 1
+  notes: 1=Flagged
+  codes:
+    1: Flagged
+
+flag_motor_ues:
+  type: Integer
+  description: Motor - Upper Extremity Strength - Flagged for potentially problematic
+    test administration
+  range:
+  - 1
+  notes: 1=Flagged
+  codes:
+    1: Flagged
+
+grip_standardsc_dom:
+  type: Float
+  description: 9-Hole Grip Strength Dominant Hand Normative Standard Score
+  alias: nihtbx_grip_dominant,nihtbx_pegboard_uncorrected_dominant,uncorrected_standard_scores_dominant
+
+grip_standardsc_nondom:
+  type: Float
+  description: 9-Hole Grip Strength Non-Dominant Hand Normative Standard Score
+  alias: nihtbx_grip_nondominant,nihtbx_pegboard_uncorrected_nondominant
+
+grip_tsc_dom:
+  type: Float
+  description: 9-Hole Grip Strength Dominant Hand Fully Corrected T-Score
+
+grip_tsc_nondom:
+  type: Float
+  description: 9-Hole Grip Strength Non-Dominant Hand Fully Corrected T-Score
+
+lo4mt_fastscore:
+  type: Integer
+  description: Locomotion - 4 meter walk - Fast Pace - time, seconds
+
+lo4mt_usualpacescore:
+  type: Integer
+  description: Locomotion - 4 meter walk - Usual Pace - time, seconds
+
+lo4mt1:
+  type: Float
+  description: Locomotion - 4 meter walk - Trial 1 (Usual Pace) Time
+  alias: gait_spd_t1
+
+lo4mt2:
+  type: Float
+  description: Locomotion - 4 meter walk - Trial 2 (Fast Pace) Time
+  alias: gait_spd_t2
+
+loco_comscore:
+  type: Float
+  description: Locomotion - 4 meter walk - Computed Score
+  alias: computed_score,nihtbx_gaitspeed_computedscore
+
+loco_rawscore:
+  type: Float
+  description: Locomotion - 4 meter walk - Raw Score
+  alias: nihtbx_gaitspeed_rawscore,rawscore
+
+msgslt1:
+  type: Integer
+  description: Upper Extremity Muscle Strength - Grip Strength - Left hand
+  notes: Pounds of Force
+
+msgsrt1:
+  type: Integer
+  description: Upper Extremity Muscle Strength - Grip Strength - Right hand
+  notes: Pounds of Force
+
+nih_tlbx_agecsc_dominant:
+  type: Float
+  description: Age-Corrected Standard Scores Dominant
+  alias: age_corrected_standard_scores_dominant,grip_acss_dom
+
+nih_tlbx_agecsc_nondom:
+  type: Float
+  description: Age-Corrected Standard Scores Non-Dominant
+  alias: age_corrected_standard_scores_non_dominant,grip_acss_nondom
+
+nih_tlbx_domsc:
+  type: Float
+  description: Dominant Score
+  alias: dominant_score,grip_score_dom
+
+nih_tlbx_nondomsc:
+  type: Float
+  description: Non-Dominant Score
+  alias: grip_score_nondom,non_dominant_score
+
+nih_tlbx_standardsc_dominant:
+  type: Float
+  description: Uncorrected Standard Scores Dominant
+  alias: grip_uss_dom
+
+nih_tlbx_standardsc_nondom:
+  type: Float
+  description: Uncorrected Standard Scores Non-Dominant
+  alias: grip_uss_nondom
+
+pegboard_standardsc_dom:
+  type: Float
+  description: 9-Hole Pegboard Dominant Hand Raw Score
+  alias: dx9hdomscore,nihtbx_pegboard_dominant
+
+pegboard_standardsc_nondom:
+  type: Float
+  description: 9-Hole Pegboard Non-Dominant Hand Raw Score
+  alias: dx9hnondomscore,nihtbx_pegboard_nondominant
+
+pegboard_tsc_dom:
+  type: Float
+  description: 9-Hole Pegboard Dominant Hand Fully Corrected T-Score
+
+pegboard_tsc_nondom:
+  type: Float
+  description: 9-Hole Pegboard Non-Dominant Hand Fully Corrected T-Score
+
+nih_pin:
+  type: String
+  length: 25
+  description: PIN number assigned by the NIH Toolbox
+  alias: pin
+
+sd_sbt:
+  type: Float
+  description: Standing Balance Test standard error
+
+theta_sbt:
+  type: Float
+  description: Standing Balance Test theta
+
+raw_wet:
+  type: Integer
+  description: 2-Minute Walk Endurance Test
+  alias: nihtbx_endurance_rawscore
+
+ninehole_pctl_nondom:
+  type: Integer
+  description: 9-Hole Pegboard Dexterity Test National Percentile (age adjusted) Non-Dominant
+    hand
+  range:
+  - 0::100
+  alias: national_percentile__age_adjusted__non_dominant
+
+msgs_dominanttrial:
+  type: Float
+  description: 'Grip Strength Test Dominant hand: pounds of force exerted at maximum
+    (to the tenth of a pound)'
+  alias: grip_str_dom
+
+msgs_nondominanttrial:
+  type: Float
+  description: 'Grip Strength Test Non-dominant hand: pounds of force exerted at maximum
+    (to the tenth of a pound)'
+  alias: grip_str_non
+
+grip_dom_pctl:
+  type: Integer
+  description: Grip Strength Test National Percentile (age adjusted) Dominant hand
+  range:
+  - 0::100
+
+grip_nondom_pctl:
+  type: Integer
+  description: Grip Strength Test National Percentile (age adjusted) Non-Dominant
+    hand
+  range:
+  - 0::100
+
+interview_language:
+  type: String
+  length: 255
+  description: Language Used in the Interview
+  alias: language
+
+wcst_ni:
+  type: Integer
+  description: Number of Items
+  alias: itmcnt
+
+twomin_acss:
+  type: Integer
+  description: 2-Minute Walk Endurance Test Age-Corrected Standard Score
+  alias: age_corrected_standard_score
+
+twomin_pctl:
+  type: Integer
+  description: 2-Minute Walk Endurance Test National Percentile (age adjusted)
+  range:
+  - 0::100
+  alias: national_percentile__age_adjusted_
+
+dx9hdominanttime:
+  type: Float
+  description: '9-Hole Pegboard Dexterity Test: Dominant Hand - time to completion'
+  notes: Time is in seconds, to the hundredth of a second
+
+dx9hnondominanttime:
+  type: Float
+  description: '9-Hole Pegboard Dexterity Test: Non-Dominant Hand - time to completion'
+  notes: Time is in seconds, to the hundredth of a second
+
+ninehole_pctl_dom:
+  type: Integer
+  description: 9-Hole Pegboard Dexterity Test National Percentile (age adjusted) Dominant
+    hand
+  range:
+  - 0::100
+  alias: national_percentile__age_adjusted__dominant
+
+instrumentrcreason:
+  type: Integer
+  description: Problem with administration
+  range:
+  - 1::10
+  - -5
+  notes: 1 = Safety Exclusion ; 2 = Participant/Respondent Refused ; 3 = No Time ;
+    4 = Physical Limitations ; 5 = Communication Problems ; 6 = Language Barrier ;
+    7 = Equipment Failure ; 8 = Ineligible ; 9 = Participant Ill/Emergency ; 10 =
+    Target Respondent Unavailable; -5 = Other
+  codes:
+    1: Safety Exclusion
+    2: Participant/Respondent Refused
+    3: No Time
+    4: Physical Limitations
+    5: Communication Problems
+    6: Language Barrier
+    7: Equipment Failure
+    8: Ineligible
+    9: Participant Ill/Emergency
+    10: Target Respondent Unavailable
+    -5: Other
+
+instrumentrcreasonother:
+  type: String
+  length: 250
+  description: Problem with administration, Other (specify)
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)
+  alias: respondent
+
+fneproc:
+  type: String
+  length: 20
+  description: name of trial procedure being run

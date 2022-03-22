@@ -1,0 +1,3603 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: guid,guid_id
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: asd_child_id,hcpa_id,record_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  alias: nihtbx_pattern_date,tcb_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: ccc2_interview_age
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of subject at birth
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: dem_gender,gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+
+nih_pin:
+  type: String
+  length: 25
+  description: PIN number assigned by the NIH Toolbox
+  alias: pin
+
+phne_sc_2:
+  type: String
+  length: 40
+  description: What is your highest grade completed in school?
+  alias: nih_tb_education_info,tcb_edu
+
+ques_gradalbm:
+  type: String
+  length: 255
+  description: Last grade completed -Biological Mother
+  alias: nih_tb_parent_education,tcb_mothr_edu
+
+behavioralobservations_hand:
+  type: String
+  length: 255
+  description: Handedness
+  alias: nih_tb_handedness_info,tcb_hand
+
+nih_patterncomp_1:
+  type: Integer
+  description: Score on Pattern Comparison Trial 1
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_2:
+  type: Integer
+  description: Score on Pattern Comparison Trial 2
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_3:
+  type: Integer
+  description: Score on Pattern Comparison Trial 3
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_4:
+  type: Integer
+  description: Score on Pattern Comparison Trial 4
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_5:
+  type: Integer
+  description: Score on Pattern Comparison Trial 5
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_6:
+  type: Integer
+  description: Score on Pattern Comparison Trial 6
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_7:
+  type: Integer
+  description: Score on Pattern Comparison Trial 7
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_8:
+  type: Integer
+  description: Score on Pattern Comparison Trial 8
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_9:
+  type: Integer
+  description: Score on Pattern Comparison Trial 9
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_10:
+  type: Integer
+  description: Score on Pattern Comparison Trial 10
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_11:
+  type: Integer
+  description: Score on Pattern Comparison Trial 11
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_12:
+  type: Integer
+  description: Score on Pattern Comparison Trial 12
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_13:
+  type: Integer
+  description: Score on Pattern Comparison Trial 13
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_14:
+  type: Integer
+  description: Score on Pattern Comparison Trial 14
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_15:
+  type: Integer
+  description: Score on Pattern Comparison Trial 15
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_16:
+  type: Integer
+  description: Score on Pattern Comparison Trial 16
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_17:
+  type: Integer
+  description: Score on Pattern Comparison Trial 17
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_18:
+  type: Integer
+  description: Score on Pattern Comparison Trial 18
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_19:
+  type: Integer
+  description: Score on Pattern Comparison Trial 19
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_20:
+  type: Integer
+  description: Score on Pattern Comparison Trial 20
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_21:
+  type: Integer
+  description: Score on Pattern Comparison Trial 21
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_22:
+  type: Integer
+  description: Score on Pattern Comparison Trial 22
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_23:
+  type: Integer
+  description: Score on Pattern Comparison Trial 23
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_24:
+  type: Integer
+  description: Score on Pattern Comparison Trial 24
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_25:
+  type: Integer
+  description: Score on Pattern Comparison Trial 25
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_26:
+  type: Integer
+  description: Score on Pattern Comparison Trial 26
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_27:
+  type: Integer
+  description: Score on Pattern Comparison Trial 27
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_28:
+  type: Integer
+  description: Score on Pattern Comparison Trial 28
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_29:
+  type: Integer
+  description: Score on Pattern Comparison Trial 29
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_30:
+  type: Integer
+  description: Score on Pattern Comparison Trial 30
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_31:
+  type: Integer
+  description: Score on Pattern Comparison Trial 31
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_32:
+  type: Integer
+  description: Score on Pattern Comparison Trial 32
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_33:
+  type: Integer
+  description: Score on Pattern Comparison Trial 33
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_34:
+  type: Integer
+  description: Score on Pattern Comparison Trial 34
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_35:
+  type: Integer
+  description: Score on Pattern Comparison Trial 35
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_36:
+  type: Integer
+  description: Score on Pattern Comparison Trial 36
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_37:
+  type: Integer
+  description: Score on Pattern Comparison Trial 37
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_38:
+  type: Integer
+  description: Score on Pattern Comparison Trial 38
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_39:
+  type: Integer
+  description: Score on Pattern Comparison Trial 39
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_40:
+  type: Integer
+  description: Score on Pattern Comparison Trial 40
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_41:
+  type: Integer
+  description: Score on Pattern Comparison Trial 41
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_42:
+  type: Integer
+  description: Score on Pattern Comparison Trial 42
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_43:
+  type: Integer
+  description: Score on Pattern Comparison Trial 43
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_44:
+  type: Integer
+  description: Score on Pattern Comparison Trial 44
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_45:
+  type: Integer
+  description: Score on Pattern Comparison Trial 45
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_46:
+  type: Integer
+  description: Score on Pattern Comparison Trial 46
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_47:
+  type: Integer
+  description: Score on Pattern Comparison Trial 47
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_48:
+  type: Integer
+  description: Score on Pattern Comparison Trial 48
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_49:
+  type: Integer
+  description: Score on Pattern Comparison Trial 49
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_50:
+  type: Integer
+  description: Score on Pattern Comparison Trial 50
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_51:
+  type: Integer
+  description: Score on Pattern Comparison Trial 51
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_52:
+  type: Integer
+  description: Score on Pattern Comparison Trial 52
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_53:
+  type: Integer
+  description: Score on Pattern Comparison Trial 53
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_54:
+  type: Integer
+  description: Score on Pattern Comparison Trial 54
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_55:
+  type: Integer
+  description: Score on Pattern Comparison Trial 55
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_56:
+  type: Integer
+  description: Score on Pattern Comparison Trial 56
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_57:
+  type: Integer
+  description: Score on Pattern Comparison Trial 57
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_58:
+  type: Integer
+  description: Score on Pattern Comparison Trial 58
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_59:
+  type: Integer
+  description: Score on Pattern Comparison Trial 59
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_60:
+  type: Integer
+  description: Score on Pattern Comparison Trial 60
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_61:
+  type: Integer
+  description: Score on Pattern Comparison Trial 61
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_62:
+  type: Integer
+  description: Score on Pattern Comparison Trial 62
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_63:
+  type: Integer
+  description: Score on Pattern Comparison Trial 63
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_64:
+  type: Integer
+  description: Score on Pattern Comparison Trial 64
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_65:
+  type: Integer
+  description: Score on Pattern Comparison Trial 65
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_66:
+  type: Integer
+  description: Score on Pattern Comparison Trial 66
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_67:
+  type: Integer
+  description: Score on Pattern Comparison Trial 67
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_68:
+  type: Integer
+  description: Score on Pattern Comparison Trial 68
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_69:
+  type: Integer
+  description: Score on Pattern Comparison Trial 69
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_70:
+  type: Integer
+  description: Score on Pattern Comparison Trial 70
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_71:
+  type: Integer
+  description: Score on Pattern Comparison Trial 71
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_72:
+  type: Integer
+  description: Score on Pattern Comparison Trial 72
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_73:
+  type: Integer
+  description: Score on Pattern Comparison Trial 73
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_74:
+  type: Integer
+  description: Score on Pattern Comparison Trial 74
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_75:
+  type: Integer
+  description: Score on Pattern Comparison Trial 75
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_76:
+  type: Integer
+  description: Score on Pattern Comparison Trial 76
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_77:
+  type: Integer
+  description: Score on Pattern Comparison Trial 77
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_78:
+  type: Integer
+  description: Score on Pattern Comparison Trial 78
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_79:
+  type: Integer
+  description: Score on Pattern Comparison Trial 79
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_80:
+  type: Integer
+  description: Score on Pattern Comparison Trial 80
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_81:
+  type: Integer
+  description: Score on Pattern Comparison Trial 81
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_82:
+  type: Integer
+  description: Score on Pattern Comparison Trial 82
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_83:
+  type: Integer
+  description: Score on Pattern Comparison Trial 83
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_84:
+  type: Integer
+  description: Score on Pattern Comparison Trial 84
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_85:
+  type: Integer
+  description: Score on Pattern Comparison Trial 85
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_86:
+  type: Integer
+  description: Score on Pattern Comparison Trial 86
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_87:
+  type: Integer
+  description: Score on Pattern Comparison Trial 87
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_88:
+  type: Integer
+  description: Score on Pattern Comparison Trial 88
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_89:
+  type: Integer
+  description: Score on Pattern Comparison Trial 89
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_90:
+  type: Integer
+  description: Score on Pattern Comparison Trial 90
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_91:
+  type: Integer
+  description: Score on Pattern Comparison Trial 91
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_92:
+  type: Integer
+  description: Score on Pattern Comparison Trial 92
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_93:
+  type: Integer
+  description: Score on Pattern Comparison Trial 93
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_94:
+  type: Integer
+  description: Score on Pattern Comparison Trial 94
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_95:
+  type: Integer
+  description: Score on Pattern Comparison Trial 95
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_96:
+  type: Integer
+  description: Score on Pattern Comparison Trial 96
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_97:
+  type: Integer
+  description: Score on Pattern Comparison Trial 97
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_98:
+  type: Integer
+  description: Score on Pattern Comparison Trial 98
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_99:
+  type: Integer
+  description: Score on Pattern Comparison Trial 99
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_100:
+  type: Integer
+  description: Score on Pattern Comparison Trial 100
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_101:
+  type: Integer
+  description: Score on Pattern Comparison Trial 101
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_102:
+  type: Integer
+  description: Score on Pattern Comparison Trial 102
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_103:
+  type: Integer
+  description: Score on Pattern Comparison Trial 103
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_104:
+  type: Integer
+  description: Score on Pattern Comparison Trial 104
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_105:
+  type: Integer
+  description: Score on Pattern Comparison Trial 105
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_106:
+  type: Integer
+  description: Score on Pattern Comparison Trial 106
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_107:
+  type: Integer
+  description: Score on Pattern Comparison Trial 107
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_108:
+  type: Integer
+  description: Score on Pattern Comparison Trial 108
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_109:
+  type: Integer
+  description: Score on Pattern Comparison Trial 109
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_110:
+  type: Integer
+  description: Score on Pattern Comparison Trial 110
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_111:
+  type: Integer
+  description: Score on Pattern Comparison Trial 111
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_112:
+  type: Integer
+  description: Score on Pattern Comparison Trial 112
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_113:
+  type: Integer
+  description: Score on Pattern Comparison Trial 113
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_114:
+  type: Integer
+  description: Score on Pattern Comparison Trial 114
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_115:
+  type: Integer
+  description: Score on Pattern Comparison Trial 115
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_116:
+  type: Integer
+  description: Score on Pattern Comparison Trial 116
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_117:
+  type: Integer
+  description: Score on Pattern Comparison Trial 117
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_118:
+  type: Integer
+  description: Score on Pattern Comparison Trial 118
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_119:
+  type: Integer
+  description: Score on Pattern Comparison Trial 119
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_120:
+  type: Integer
+  description: Score on Pattern Comparison Trial 120
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_121:
+  type: Integer
+  description: Score on Pattern Comparison Trial 121
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_122:
+  type: Integer
+  description: Score on Pattern Comparison Trial 122
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_123:
+  type: Integer
+  description: Score on Pattern Comparison Trial 123
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_124:
+  type: Integer
+  description: Score on Pattern Comparison Trial 124
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_125:
+  type: Integer
+  description: Score on Pattern Comparison Trial 125
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_126:
+  type: Integer
+  description: Score on Pattern Comparison Trial 126
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_127:
+  type: Integer
+  description: Score on Pattern Comparison Trial 127
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_128:
+  type: Integer
+  description: Score on Pattern Comparison Trial 128
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_129:
+  type: Integer
+  description: Score on Pattern Comparison Trial 129
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_130:
+  type: Integer
+  description: Score on Pattern Comparison Trial 130
+  range:
+  - 0
+  - 1
+  - 999
+  notes: 0=incorrect; 1=correct; 999=did not reach this trial
+  codes:
+    0: incorrect
+    1: correct
+    999: did not reach this trial
+
+nih_patterncomp_raw:
+  type: Integer
+  description: Pattern Comparison Raw Score
+  range:
+  - 0::130
+  - 999
+  notes: 999=no score
+  alias: _patternsum,nihtbx_demo_rescore_rawpatterncomp,nihtbx_pattern_rawscore,oldpatterncompscore,rawscore,tbx_pspac_scr,tcb_ptrncomp_raw
+  codes:
+    999: no score
+
+nih_patterncomp_unadjusted:
+  type: Float
+  description: Unadjusted scaled score for PatternComp subtest
+  range:
+  - 0::220
+  - 999
+  notes: 999=no score
+  alias: nihtbx_demo_rescore_uncorrpatterncomp,nihtbx_pattern_agecorrected,nihtbx_pattern_uncorrected,patternuncscore,tcb_ptrncomp_uncorscr,uncorrected_standard,uncorrected_standard_score
+  codes:
+    999: no score
+
+nih_patterncomp_ageadjusted:
+  type: Float
+  description: Age Adjusted scaled score for PatternComp subtest
+  range:
+  - 0::200
+  - 999
+  notes: 999=no score
+  alias: age_corrected_standard,age_corrected_standard_score,nihtbx_demo_rescore_agecorrpatterncomp,nihtbx_pattern_agecorrected,patternagecorrscore,tcb_ptrncomp_age_ss
+  codes:
+    999: no score
+
+nih_patterncomp_natperc:
+  type: Float
+  description: Age Adjusted National Percentile for PatternComp subtest
+  range:
+  - 0::100
+  - 999
+  notes: 999=no score
+  alias: national_percentile__age_adjusted_,nihtbx_pattern_percentile
+  codes:
+    999: no score
+
+pattern_total_pg1:
+  type: Integer
+  description: Pattern total pg1
+  alias: pattern1,patternscorepg1
+
+pattern_total_pg2:
+  type: Integer
+  description: Pattern total pg2
+  alias: patter2,pattern2,patternscorepg2
+
+tbx_pspac_seen:
+  type: Integer
+  description: Number of items seen
+  alias: nihtbx_pattern_itmcnt,tcb_ptrncomp_item
+
+nih_tlbx_fctsc:
+  type: Float
+  description: Fully-Corrected T-Score
+  range:
+  - 0::120
+  alias: fully_corrected_t,nihtbx_demo_rescore_fulltpatterncomp,nihtbx_pattern_fc,nihtbx_pattern_fullycorrected,patterntscore,tcb_ptrncomp_full_tscr
+
+tbx_failed_dccs:
+  type: Integer
+  description: flag for failure of subtest
+  range:
+  - 0
+  - 1
+  notes: 0=False; 1=True
+  codes:
+    0: 'False'
+    1: 'True'
+
+pspacpa1:
+  type: Integer
+  description: Pattern Comparison Processing Speed Practice item A1
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspacpa1score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspacpa2:
+  type: Integer
+  description: Pattern Comparison Processing Speed Practice item A2
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspacpa2score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspacpa3:
+  type: Integer
+  description: Pattern Comparison Processing Speed Practice item A3
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspacpa3score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspacpa4:
+  type: Integer
+  description: Pattern Comparison Processing Speed Practice item A4
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspacpa4score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspacpa5:
+  type: Integer
+  description: Pattern Comparison Processing Speed Practice item A5
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspacpa5score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspacpa6:
+  type: Integer
+  description: Pattern Comparison Processing Speed Practice item A6
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspacpa6score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspacpc1:
+  type: Integer
+  description: Pattern Comparison Processing Speed Practice item C1
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspacpc2:
+  type: Integer
+  description: Pattern Comparison Processing Speed Practice item C2
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspacpc2score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspacpc3:
+  type: Integer
+  description: Pattern Comparison Processing Speed Practice item C3
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspacpc3score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac002:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 002
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac002score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac003:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 003
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac003score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac004:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 004
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac004score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac005:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 005
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac005score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac006:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 006
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac006score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac007:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 007
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac007score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac008:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 008
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac008score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac010:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 010
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac010score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac013:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 013
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac013score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac014:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 014
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac014score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac015:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 015
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac015score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac016:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 016
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac016score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac017:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 017
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac017score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac018:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 018
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac018score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac019:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 019
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac019score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac020:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 020
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac020score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac021:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 021
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac021score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac022:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 022
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac022score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac023:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 023
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac023score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac024:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 024
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac024score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac027:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 027
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac027score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac028:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 028
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac028score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac029:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 029
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac029score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac030:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 030
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac030score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac031:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 031
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac031score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac032:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 032
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac032score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac034:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 034
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac034score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac036:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 036
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac036score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac037:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 037
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac037score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac038:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 038
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac038score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac039:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 039
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac039score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac041:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 041
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac041score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac043:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 043
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac043score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac044:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 044
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac044score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac045:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 045
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac045score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac046:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 046
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac046score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac047:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 047
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac047score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac050:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 050
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac050score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac051:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 051
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac051score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac052:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 052
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac052score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac053:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 053
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac053score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac055:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 055
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac055score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac056:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 056
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac056score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac058:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 058
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac058score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac059:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 059
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac059score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac060:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 060
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac060score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac061:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 061
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac061score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac062:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 062
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac062score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac063:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 063
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac063score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac064:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 064
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac064score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac065:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 065
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac065score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac066:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 066
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac066score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac068:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 068
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac068score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac070:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 070
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac070score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac071:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 071
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac071score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac072:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 072
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac072score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac073:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 073
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac073score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac075:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 075
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac075score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac076:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 076
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac076score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac077:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 077
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac077score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac079:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 079
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac079score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac082:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 082
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac082score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac083:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 083
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac083score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac085:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 085
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac085score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac086:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 086
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac086score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac087:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 087
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac087score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac088:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 088
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac088score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac089:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 089
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac089score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac090:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 090
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac090score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac091:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 091
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac091score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac092:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 092
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac092score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac093:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 093
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac093score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac094:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 094
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac094score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac095:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 095
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac095score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac096:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 096
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac096score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac097:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 097
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac097score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac098:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 098
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac098score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac099:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 099
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac099score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac100:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 100
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac100score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac102:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 102
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac102score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac103:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 103
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac103score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac104:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 104
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac104score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac106:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 106
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac106score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac108:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 108
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac108score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac109:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 109
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac109score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac110:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 110
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac110score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac111:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 111
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac111score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac112:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 112
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac112score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac113:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 113
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac113score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac115:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 115
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac115score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac116:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 116
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac116score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac118:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 118
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac118score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac119:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 119
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac119score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac120:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 120
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac120score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac121:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 121
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac121score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac122:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 122
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac122score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac123:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 123
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac123score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac124:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 124
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac124score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac125:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 125
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac125score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac129:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 129
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac129score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac131:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 131
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac131score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac133:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 133
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac133score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac134:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 134
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac134score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac135:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 135
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac135score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac136:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 136
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac136score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac137:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 137
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac137score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac138:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 138
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac138score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac139:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 139
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac139score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac140:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 140
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac140score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac141:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 141
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac141score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac142:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 142
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac142score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac143:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 143
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac143score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac145:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 145
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac145score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac146:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 146
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac146score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac148:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 148
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac148score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac149:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 149
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac149score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac150:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 150
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac150score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac157:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 157
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac157score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac160:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 160
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac160score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac162:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 162
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac162score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac164:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 164
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac164score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac165:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 165
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac165score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac167:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 167
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac167score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac168:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 168
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac168score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac182:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 182
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac182score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac212:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 212
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac212score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac226:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 226
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac226score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac237:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 237
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac237score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac243:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 243
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac243score
+  codes:
+    0: Incorrect
+    1: Correct
+
+pspac253:
+  type: Integer
+  description: Pattern Comparison Processing Speed item 253
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: pspac253score
+  codes:
+    0: Incorrect
+    1: Correct
+
+prob_admin:
+  type: Integer
+  description: Flagged for potentially problematic test administration
+  range:
+  - 1
+  notes: 1=Flagged
+  alias: flag_cognition_patterncomparison
+  codes:
+    1: Flagged
+
+accult_select_language:
+  type: Integer
+  description: "Test given in Spanish? \xC2\xBFEspa\xC3\xB1ol?"
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: nihtbx_pattern_language
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+visit:
+  type: String
+  length: 60
+  description: Visit name
+  alias: eventname
+
+nih_tlbx_theta:
+  type: Float
+  description: Theta
+  notes: 999=NA/NK/missing
+  alias: nihtbx_pattern_theta,tcb_ptrncomp_theta
+  codes:
+    999: NA/NK/missing
+
+tbx_comsc:
+  type: Integer
+  description: Computed score
+  alias: computed_score,nihtbx_demo_rescore_computedpatterncomp,nihtbx_pattern_computedscore,nihtbx_pattern_cs,tcb_ptrncomp_compscr
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: assessment_name,nihtbx_pattern_v
+
+respondent:
+  type: String
+  length: 20
+  description: Respondent
+  range:
+  - Mother
+  - Father
+  - Parent
+  - Guardian
+  - Teacher
+  - Child
+  - Self
+  - Caregiver
+  - Partner
+  - Other
+
+dode:
+  type: String
+  length: 10
+  description: Date of Data Entry
+
+interview_language:
+  type: String
+  length: 255
+  description: Language Used in the Interview
+  alias: language,nihtbx_pattern_language
+
+wcst_ni:
+  type: Integer
+  description: Number of Items
+  alias: itmcnt
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)
+
+fneproc:
+  type: String
+  length: 20
+  description: name of trial procedure being run

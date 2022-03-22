@@ -1,0 +1,568 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,record_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  alias: asrsdate
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of subject at birth
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+primary_language:
+  type: String
+  length: 255
+  description: Subject's Primary Language
+
+nih_pin:
+  type: String
+  length: 25
+  description: PIN number assigned by the NIH Toolbox
+  alias: pin
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: assessment_name,pr_version
+
+nih_tlbx_se:
+  type: Float
+  required: true
+  description: Standard Error
+  notes: 999=NA/NK/missing
+  alias: nihtbx_rejection_se,pr_se_score,pr_se_score_par,se
+  codes:
+    999: NA/NK/missing
+
+nih_tlbx_tscore:
+  type: Float
+  required: true
+  description: T-score
+  range:
+  - 0::200
+  - 999
+  notes: 999=NA/NK/missing
+  alias: nihtbx_rejection_tscore,pr_theta_score,pr_theta_score_par,tscore
+  codes:
+    999: NA/NK/missing
+
+nih_tlbx_theta:
+  type: Float
+  required: true
+  description: Theta
+  notes: 999=NA/NK/missing
+  alias: nihtbx_rejection_theta,peerrejectprox3_12,percrejection18_85,percrejection8_17,pr_t_score,pr_t_score_par,theta
+  codes:
+    999: NA/NK/missing
+
+pedpxysd01:
+  type: Integer
+  description: In the past month; please describe how often your child is left out
+    by other children.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+pedpxysd02:
+  type: Integer
+  description: In the past month; please describe how often other children refuse
+    to let your child play with them.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+pedpxysd03:
+  type: Integer
+  description: In the past month; please describe how often your child is not chosen
+    as a playmate.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+pedpxysd04:
+  type: Integer
+  description: In the past month; please describe how often your child is actively
+    rejected by other children who refuse to play with him/her.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+pedpxysd05:
+  type: Integer
+  description: In the past month; please describe how often your child is avoided
+    by other children.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+pedpxysd06:
+  type: Integer
+  description: In the past month; please describe how often your child is not well
+    liked by other children.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+pedpxysd07:
+  type: Integer
+  description: In the past month; please describe how often your child is picked on
+    by other children.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+pedpxysd08:
+  type: Integer
+  description: In the past month; please describe how often your child is teased and
+    made fun of by other children.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+pedpxysd09:
+  type: Integer
+  description: In the past month; please describe how often your child is pushed or
+    shoved around by other children.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc276:
+  type: Integer
+  description: Act like my problems aren't that important.
+  range:
+  - 1::5
+  notes: 1= Never, 2= Rarely, 3= Sometimes, 4= Usually, 5= Always
+  alias: sd1b
+  codes:
+    1: Never, 2= Rarely, 3= Sometimes, 4= Usually, 5= Always
+
+soc276_theta:
+  type: Float
+  description: soc276 Theta
+
+soc276_tscore:
+  type: Float
+  description: soc276 T Score
+
+soc276_se:
+  type: Float
+  description: soc276 SE
+
+soc279:
+  type: Integer
+  description: Act like they don't have time for me.
+  range:
+  - 1::5
+  notes: 1= Never, 2= Rarely, 3= Sometimes, 4= Usually, 5= Always
+  alias: sd1d
+  codes:
+    1: Never, 2= Rarely, 3= Sometimes, 4= Usually, 5= Always
+
+soc279_theta:
+  type: Float
+  description: soc279 Theta
+
+soc279_tscore:
+  type: Float
+  description: soc279 T Score
+
+soc279_se:
+  type: Float
+  description: soc276 SE
+
+soc281:
+  type: Integer
+  description: Act like they don't care about me.
+  range:
+  - 1::5
+  notes: 1= Never, 2= Rarely, 3= Sometimes, 4= Usually, 5= Always
+  alias: sd1f
+  codes:
+    1: Never, 2= Rarely, 3= Sometimes, 4= Usually, 5= Always
+
+soc281_theta:
+  type: Float
+  description: soc281 Theta
+
+soc281_tscore:
+  type: Float
+  description: soc281 T Score
+
+soc281_se:
+  type: Float
+  description: soc281 SE
+
+soc283:
+  type: Integer
+  description: Put me down.
+  notes: 1= Never, 2= Rarely, 3= Sometimes, 4= Usually, 5= Always
+  codes:
+    1: Never, 2= Rarely, 3= Sometimes, 4= Usually, 5= Always
+
+soc283_theta:
+  type: Float
+  description: soc283 Theta
+
+soc283_tscore:
+  type: Float
+  description: soc283 T Score
+
+soc283_se:
+  type: Float
+  description: soc283 SE
+
+soc287:
+  type: Integer
+  description: Make me feel like I don't fit in.
+  range:
+  - 1::5
+  notes: 1= Never, 2= Rarely, 3= Sometimes, 4= Usually, 5= Always
+  codes:
+    1: Never, 2= Rarely, 3= Sometimes, 4= Usually, 5= Always
+
+soc287_theta:
+  type: Float
+  description: soc287 Theta
+
+soc287_tscore:
+  type: Float
+  description: soc287 T Score
+
+soc287_se:
+  type: Float
+  description: soc287 SE
+
+pedpxysd01_theta:
+  type: Float
+  description: pedpxysd01 Theta
+
+pedpxysd01_tscore:
+  type: Float
+  description: pedpxysd01 T Score
+
+pedpxysd01_se:
+  type: Float
+  description: pedpxysd01 SE
+
+pedpxysd02_theta:
+  type: Float
+  description: pedpxysd02 Theta
+
+pedpxysd02_tscore:
+  type: Float
+  description: pedpxysd02 T Score
+
+pedpxysd02_se:
+  type: Float
+  description: pedpxysd02 SE
+
+pedpxysd03_theta:
+  type: Float
+  description: pedpxysd03 Theta
+
+pedpxysd03_tscore:
+  type: Float
+  description: pedpxysd03 T Score
+
+pedpxysd03_se:
+  type: Float
+  description: pedpxysd03 SE
+
+pedpxysd04_theta:
+  type: Float
+  description: pedpxysd04 Theta
+
+pedpxysd04_tscore:
+  type: Float
+  description: pedpxysd04 T Score
+
+pedpxysd04_se:
+  type: Float
+  description: pedpxysd04
+
+pedpxysd05_theta:
+  type: Float
+  description: pedpxysd05 Theta
+
+pedpxysd05_tscore:
+  type: Float
+  description: pedpxysd05 T Score
+
+pedpxysd05_se:
+  type: Float
+  description: pedpxysd05 SE
+
+pedpxysd06_theta:
+  type: Float
+  description: pedpxysd06 Theta
+
+pedpxysd06_tscore:
+  type: Float
+  description: pedpxysd06 T Score
+
+pedpxysd06_se:
+  type: Float
+  description: pedpxysd06 SE
+
+pedpxysd07_theta:
+  type: Float
+  description: pedpxysd07 Theta
+
+pedpxysd07_tscore:
+  type: Float
+  description: pedpxysd07 T Score
+
+pedpxysd07_se:
+  type: Float
+  description: pedpxysd07 SE
+
+pedpxysd08_theta:
+  type: Float
+  description: pedpxysd08 Theta
+
+pedpxysd08_tscore:
+  type: Float
+  description: pedpxysd08 T Score
+
+pedpxysd08_se:
+  type: Float
+  description: pedpxysd08 SE
+
+pedpxysd09_theta:
+  type: Float
+  description: pedpxysd09 Theta
+
+pedpxysd09_tscore:
+  type: Float
+  description: pedpxysd09 T Score
+
+pedpxysd09_se:
+  type: Float
+  description: pedpxysd09 SE
+
+pr_score:
+  type: Integer
+  description: Peer Rejection Score
+  alias: nihtbx_rejection_par_rawscore,pr_score_par,rawscore
+
+visit_num:
+  type: Integer
+  description: Visit number
+  range:
+  - 1::3
+  notes: 1=Baseline, 2=12 Month, 3=24 Month
+  codes:
+    1: Baseline, 2=12 Month, 3=24 Month
+
+aescode:
+  type: Integer
+  description: Staff code number of person completing this form
+  alias: asrsra
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+  alias: notes
+
+sd1a:
+  type: Integer
+  description: 'Past Month: Perceived Rejection: Don''t listen when I ask for help'
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Usually; 5 = Always
+  alias: soc275
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+sd1c:
+  type: Integer
+  description: 'Past Month: Perceived Rejection: Let me down when I am counting on
+    them'
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Usually; 5 = Always
+  alias: soc277
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+sd1e:
+  type: Integer
+  description: 'Past Month: Perceived Rejection: Act like they don''t want to hear
+    about my problems'
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Usually; 5 = Always
+  alias: soc280
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+sd1g:
+  type: Integer
+  description: 'Past Month: Perceived Rejection: Act like they can''t be bothered
+    by me or my problems'
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Usually; 5 = Always
+  alias: soc282
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+sd1h:
+  type: Integer
+  description: 'Past Month: Perceived Rejection: Avoid talking to me'
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Usually; 5 = Always
+  alias: soc286
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+fspgod:
+  type: String
+  length: 70
+  description: Subject's gender OTHER describe
+
+interview_language:
+  type: String
+  length: 255
+  description: Language Used in the Interview
+  alias: language
+
+wcst_ni:
+  type: Integer
+  description: Number of Items
+  alias: itmcnt
+
+nih_tlbx_fctsc:
+  type: Float
+  description: Fully-Corrected T-Score
+  range:
+  - 0::120
+  alias: fully_corrected_t_score
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)
+  alias: respondent
+
+fneproc:
+  type: String
+  length: 20
+  description: name of trial procedure being run

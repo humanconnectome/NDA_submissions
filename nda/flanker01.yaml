@@ -1,0 +1,1822 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: guid,guid_id
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: asd_child_id,hcpa_id,record_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  alias: nihtbx_flanker_date,tcb_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: ccc2_interview_age
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of subject at birth
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: dem_gender,gender,sex
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+
+nih_pin:
+  type: String
+  length: 25
+  description: PIN number assigned by the NIH Toolbox
+  alias: pin
+
+phne_sc_2:
+  type: String
+  length: 40
+  description: What is your highest grade completed in school?
+  alias: nih_tb_parent_education,tcb_edu
+
+ques_gradalbm:
+  type: String
+  length: 255
+  description: Last grade completed -Biological Mother
+  alias: nih_tb_handedness_info,tcb_mothr_edu
+
+behavioralobservations_hand:
+  type: String
+  length: 255
+  description: Handedness
+  alias: tcb_hand
+
+nih_flanker_congruent2:
+  type: Integer
+  description: Score on trial 2, congruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_congruent2score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_incongruent3:
+  type: Integer
+  description: Score on trial 3, incongruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_incongruent3score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_congruent4:
+  type: Integer
+  description: Score on trial 4, congruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_congruent4score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_incongruent5:
+  type: Integer
+  description: Score on trial 5, incongruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_incongruent5score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_congruent6:
+  type: Integer
+  description: Score on trial 6, congruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_congruent6score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_incongruent7:
+  type: Integer
+  description: Score on trial 7, incongruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_incongruent7score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_congruent8:
+  type: Integer
+  description: Score on trial 8, congruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_congruent8score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_congruent9:
+  type: Integer
+  description: Score on trial 9, congruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_congruent9score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_incongruent10:
+  type: Integer
+  description: Score on trial 10, incongruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_incongruent10score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_congruent11:
+  type: Integer
+  description: Score on trial 11, congruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_congruent11score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_congruent12:
+  type: Integer
+  description: Score on trial 12, congruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_congruent12score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_incongruent13:
+  type: Integer
+  description: Score on trial 13, incongruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_incongruent13score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_congruent14:
+  type: Integer
+  description: Score on trial 14, congruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_congruent14score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_incongruent15:
+  type: Integer
+  description: Score on trial 15, incongruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_incongruent15score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_congruent16:
+  type: Integer
+  description: Score on trial 16, congruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_congruent16score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_incongruent17:
+  type: Integer
+  description: Score on trial 17, incongruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_incongruent17score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_congruent18:
+  type: Integer
+  description: Score on trial 18, congruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_congruent18score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_congruent19:
+  type: Integer
+  description: Score on trial 19, congruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_congruent19score
+  codes:
+    0: incorrect 1=correct
+
+nih_flanker_incongruent20:
+  type: Integer
+  description: Score on trial 20, incongruent
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect 1=correct
+  alias: flanker_arrow_incongruent20score
+  codes:
+    0: incorrect 1=correct
+
+nih_flankerrt_congruent1:
+  type: Integer
+  description: Reaction time (ms)  on trial 1
+  alias: flanker_arrow_congruent1responsetime
+
+nih_flankerrt_congruent2:
+  type: Integer
+  description: Reaction time (ms)  on trial 2
+  alias: flanker_arrow_congruent2responsetime
+
+nih_flankerrt_incongruent3:
+  type: Integer
+  description: Reaction time (ms)  on trial 3
+  alias: flanker_arrow_incongruent3responsetime
+
+nih_flankerrt_congruent4:
+  type: Integer
+  description: Reaction time (ms)  on trial 4
+  alias: flanker_arrow_congruent4responsetime
+
+nih_flankerrt_incongruent5:
+  type: Integer
+  description: Reaction time (ms)  on trial 5
+  alias: flanker_arrow_incongruent5responsetime
+
+nih_flankerrt_congruent6:
+  type: Integer
+  description: Reaction time (ms)  on trial 6
+  alias: flanker_arrow_congruent6responsetime
+
+nih_flankerrt_incongruent7:
+  type: Integer
+  description: Reaction time (ms)  on trial 7
+  alias: flanker_arrow_incongruent7responsetime
+
+nih_flankerrt_congruent8:
+  type: Integer
+  description: Reaction time (ms)  on trial 8
+  alias: flanker_arrow_congruent8responsetime
+
+nih_flankerrt_congruent9:
+  type: Integer
+  description: Reaction time (ms)  on trial 9
+  alias: flanker_arrow_congruent9responsetime
+
+nih_flankerrt_incongruent10:
+  type: Integer
+  description: Reaction time (ms)  on trial 10
+  alias: flanker_arrow_incongruent10responsetime
+
+nih_flankerrt_congruent11:
+  type: Integer
+  description: Reaction time (ms)  on trial 11
+  alias: flanker_arrow_congruent11responsetime
+
+nih_flankerrt_congruent12:
+  type: Integer
+  description: Reaction time (ms)  on trial 12
+  alias: flanker_arrow_congruent12responsetime
+
+nih_flankerrt_incongruent13:
+  type: Integer
+  description: Reaction time (ms)  on trial 13
+  alias: flanker_arrow_incongruent13responsetime
+
+nih_flankerrt_congruent14:
+  type: Integer
+  description: Reaction time (ms)  on trial 14
+  alias: flanker_arrow_congruent14responsetime
+
+nih_flankerrt_incongruent15:
+  type: Integer
+  description: Reaction time (ms)  on trial 15
+  alias: flanker_arrow_incongruent15responsetime
+
+nih_flankerrt_congruent16:
+  type: Integer
+  description: Reaction time (ms)  on trial 16
+  alias: flanker_arrow_congruent16responsetime
+
+nih_flankerrt_incongruent17:
+  type: Integer
+  description: Reaction time (ms)  on trial 17
+  alias: flanker_arrow_incongruent17responsetime
+
+nih_flankerrt_congruent18:
+  type: Integer
+  description: Reaction time (ms)  on trial 18
+  alias: flanker_arrow_congruent18responsetime
+
+nih_flankerrt_congruent19:
+  type: Integer
+  description: Reaction time (ms)  on trial 19
+  alias: flanker_arrow_congruent19responsetime
+
+nih_flankerrt_incongruent20:
+  type: Integer
+  description: Reaction time (ms)  on trial 20
+  alias: flanker_arrow_incongruent20responsetime
+
+nih_flanker_raw:
+  type: Integer
+  description: Flanker Raw Score
+  range:
+  - 0::40
+  - 999
+  notes: Raw score on Flanker subtest
+  alias: nihtbx_demo_rescore_rawflanker,nihtbx_flanker_rawscore,rawscore,tcb_flnkr_raw
+
+nih_flanker_computed:
+  type: Float
+  description: Computed Score for Flanker subtest
+  range:
+  - 0::1000
+  - 999
+  notes: Computed score provided by NIH (equal to accuracy)
+  alias: computed_score,nihtbx_demo_rescore_computedflanker,nihtbx_flanker_computedscore,nihtbx_flanker_cs,tbx_flanker_score,tcb_flnkr_compscr
+
+nih_flanker_unadjusted:
+  type: Float
+  description: Unadjusted scaled score for Flanker subtest
+  range:
+  - 0::200
+  - 999
+  alias: flankeruncscore,nihtbx_demo_rescore_uncorrflanker,nihtbx_flanker_uncorrected,tcb_flnkr_uncorscr,uncorrected_standard,uncorrected_standard_score
+
+nih_flanker_ageadjusted:
+  type: Float
+  description: Age Adjusted scaled score for Flanker subtest
+  range:
+  - 0::200
+  - 999
+  alias: age_corrected_standard,age_corrected_standard_score,flankeragecorrscore,nihtbx_demo_rescore_agecorrflanker,nihtbx_flanker_agecorrected,nihtbx_flanker_computedscore,tcb_flnkr_age_ss
+
+nih_flanker_natperc:
+  type: Float
+  description: Age Adjusted National Percentile for Flanker subtest
+  range:
+  - 0::100
+  - 999
+  alias: national_percentile__age_adjusted_,nihtbx_flanker_percentile
+
+tbx_fish1con_acc:
+  type: Integer
+  description: flanker - fish 1 congruent accuracy
+  alias: flanker_fish_congruent1
+
+tbx_fish2con_acc:
+  type: Integer
+  description: flanker - fish 2 congruent accuracy
+  alias: flanker_fish_congruent2
+
+tbx_fish1incon_acc:
+  type: Integer
+  description: flanker - fish 1 incongruent accuracy
+
+tbx_fish2incon_acc:
+  type: Integer
+  description: flanker - fish 2 incongruent accuracy
+
+tbx_arrowscon_acc:
+  type: Integer
+  description: flanker - arrows congruent accuracy
+
+tbx_arrowsincon_acc:
+  type: Integer
+  description: flanker - arrows incongruent accuracy
+
+tbx_fish1con_rt:
+  type: Float
+  description: flanker - fish 1 congruent median reaction time
+  alias: flanker_fish_congruent1_t
+
+tbx_fish2con_rt:
+  type: Float
+  description: flanker - fish 2 congruent median reaction time
+  alias: flanker_fish_congruent2_t
+
+tbx_fish1incon_rt:
+  type: Float
+  description: flanker - fish 1 incongruent median reaction time
+
+tbx_fish2incon_rt:
+  type: Float
+  description: flanker - fish 2 incongruent median reaction time
+
+tbx_arrowscon_rt:
+  type: Float
+  description: flanker - arrows congruent median reaction time
+
+tbx_arrowsincon_rt:
+  type: Float
+  description: flanker - arrows incongruent median reaction time
+
+tbx_flkr_fish1con_p:
+  type: Float
+  description: flanker - fish 1 congruent accuracy (percent)
+
+tbx_flkr_fish1incon_p:
+  type: Float
+  description: flanker - fish 1 incongruent accuracy (percent)
+
+tbx_flkr_fish2con_p:
+  type: Float
+  description: flanker - fish 2 congruent accuracy (percent)
+
+tbx_flkr_fish2incon_p:
+  type: Float
+  description: flanker - fish2 incongruent accuracy (percent)
+
+tbx_flkr_arwcon_p:
+  type: Float
+  description: flanker - arrows congruent accuracy (percent)
+
+tbx_flkr_arwincon_p:
+  type: Float
+  description: flanker - arrows incongruent accuracy (percent)
+
+flkr_fass:
+  type: Integer
+  description: Fully adjusted scale score
+  alias: flankertscore,nihtbx_demo_rescore_fulltflanker,nihtbx_flanker_fullycorrected
+
+flkr_cart:
+  type: Integer
+  description: Computer Accuracy plus Reaction Time score
+  range:
+  - 0::10
+  alias: flankerscore
+
+tbx_failed_dccs:
+  type: Integer
+  description: flag for failure of subtest
+  range:
+  - 0
+  - 1
+  notes: 0=False; 1=True
+  alias: tbx_failed_flanker
+  codes:
+    0: 'False'
+    1: 'True'
+
+flanker_fish_instr1:
+  type: Integer
+  description: Flanker Fish Instruction Item 1
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_instr1score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_instr2:
+  type: Integer
+  description: Flanker Fish Instruction Item 2
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_instr2score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_instr3:
+  type: Integer
+  description: Flanker Fish Instruction Item 3
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_instr3score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_instr4:
+  type: Integer
+  description: Flanker Fish Instruction Item 4
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_instr4score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_instr5:
+  type: Integer
+  description: Flanker Fish Instruction Item 5
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_instr5score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_instr6:
+  type: Integer
+  description: Flanker Fish Instruction Item 6
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_instr6score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_instr7t1:
+  type: Integer
+  description: Flanker Fish Instruction Item 7 T1
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_instr8t1:
+  type: Integer
+  description: Flanker Fish Instruction Item 8 T1
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_instr8t2:
+  type: Integer
+  description: Flanker Fish Instruction Item 8 T2
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_prac1:
+  type: Integer
+  description: Flanker Fish Practice Item 1
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_prac1score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_prac2:
+  type: Integer
+  description: Flanker Fish Practice Item 2
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_prac2score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_prac3:
+  type: Integer
+  description: Flanker Fish Practice Item 3
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_prac3score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_prac4:
+  type: Integer
+  description: Flanker Fish Practice Item 4
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_prac4score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_prac5:
+  type: Integer
+  description: Flanker Fish Practice Item 5
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_prac5score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_prac6:
+  type: Integer
+  description: Flanker Fish Practice Item 6
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_prac6score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_prac7:
+  type: Integer
+  description: Flanker Fish Practice Item 7
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_prac7score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_prac8:
+  type: Integer
+  description: Flanker Fish Practice Item 8
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_prac8score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_prac9:
+  type: Integer
+  description: Flanker Fish Practice Item 9
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_prac9score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_prac10:
+  type: Integer
+  description: Flanker Fish Practice Item 10
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_prac10score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_prac11:
+  type: Integer
+  description: Flanker Fish Practice Item 11
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_prac11score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_prac12:
+  type: Integer
+  description: Flanker Fish Practice Item 12
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_prac12score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_incongruent3:
+  type: Integer
+  description: Flanker Fish Incongruent Item 3
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_incongruent3score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_incongruent3_t:
+  type: Float
+  description: Flanker Fish Incongruent Item 3, response time (ms)
+  alias: flanker_fish_incongruent3responsetime
+
+flanker_fish_congruent4:
+  type: Integer
+  description: Flanker Fish Congruent Item 4
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_congruent4score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_congruent4_t:
+  type: Float
+  description: Flanker Fish Congruent Item 4, response time (ms)
+  alias: flanker_fish_congruent4responsetime
+
+flanker_fish_incongruent5:
+  type: Integer
+  description: Flanker Fish Incongruent Item 5
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_incongruent5score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_incongruent5_t:
+  type: Float
+  description: Flanker Fish Incongruent Item 5, response time (ms)
+  alias: flanker_fish_incongruent5responsetime
+
+flanker_fish_congruent6:
+  type: Integer
+  description: Flanker Fish Congruent Item 6
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_congruent6score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_congruent6_t:
+  type: Float
+  description: Flanker Fish Congruent Item 6, response time (ms)
+  alias: flanker_fish_congruent6responsetime
+
+flanker_fish_incongruent7:
+  type: Integer
+  description: Flanker Fish Incongruent Item 7
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_incongruent7score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_incongruent7_t:
+  type: Float
+  description: Flanker Fish Incongruent Item 7, response time (ms)
+  alias: flanker_fish_incongruent7responsetime
+
+flanker_fish_congruent8:
+  type: Integer
+  description: Flanker Fish Congruent Item 8
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_congruent8score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_congruent8_t:
+  type: Float
+  description: Flanker Fish Congruent Item 8, response time (ms)
+  alias: flanker_fish_congruent8responsetime
+
+flanker_fish_congruent9:
+  type: Integer
+  description: Flanker Fish Congruent Item 9
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_congruent9score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_congruent9_t:
+  type: Float
+  description: Flanker Fish Congruent Item 9, response time (ms)
+  alias: flanker_fish_congruent9responsetime
+
+flanker_fish_incongruent10:
+  type: Integer
+  description: Flanker Fish Incongruent Item 10
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_incongruent10score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_incongruent10_t:
+  type: Float
+  description: Flanker Fish Incongruent Item 10, response time (ms)
+  alias: flanker_fish_incongruent10responsetime
+
+flanker_fish_congruent11:
+  type: Integer
+  description: Flanker Fish Congruent Item 11
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_congruent11score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_congruent11_t:
+  type: Float
+  description: Flanker Fish Congruent Item 11, response time (ms)
+  alias: flanker_fish_congruent11responsetime
+
+flanker_fish_congruent12:
+  type: Integer
+  description: Flanker Fish Congruent Item 12
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_congruent12score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_congruent12_t:
+  type: Float
+  description: Flanker Fish Congruent Item 12, response time (ms)
+  alias: flanker_fish_congruent12responsetime
+
+flanker_fish_incongruent13:
+  type: Integer
+  description: Flanker Fish Incongruent Item 13
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_incongruent13score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_incongruent13_t:
+  type: Float
+  description: Flanker Fish Incongruent Item 13, response time (ms)
+  alias: flanker_fish_incongruent13responsetime
+
+flanker_fish_congruent14:
+  type: Integer
+  description: Flanker Fish Congruent Item 14
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_congruent14score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_congruent14_t:
+  type: Float
+  description: Flanker Fish Congruent Item 14, response time (ms)
+  alias: flanker_fish_congruent14responsetime
+
+flanker_fish_incongruent15:
+  type: Integer
+  description: Flanker Fish Incongruent Item 15
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_incongruent15score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_incongruent15_t:
+  type: Float
+  description: Flanker Fish Incongruent Item 15, response time (ms)
+  alias: flanker_fish_incongruent15responsetime
+
+flanker_fish_congruent16:
+  type: Integer
+  description: Flanker Fish Congruent Item 16
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_congruent16score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_congruent16_t:
+  type: Float
+  description: Flanker Fish Congruent Item 16, response time (ms)
+  alias: flanker_fish_congruent16responsetime
+
+flanker_fish_incongruent17:
+  type: Integer
+  description: Flanker Fish Incongruent Item 17
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_incongruent17score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_incongruent17_t:
+  type: Float
+  description: Flanker Fish Incongruent Item 17, response time (ms)
+  alias: flanker_fish_incongruent17responsetime
+
+flanker_fish_congruent18:
+  type: Integer
+  description: Flanker Fish Congruent Item 18
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_congruent18score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_congruent18_t:
+  type: Float
+  description: Flanker Fish Congruent Item 18, response time (ms)
+  alias: flanker_fish_congruent18responsetime
+
+flanker_fish_congruent19:
+  type: Integer
+  description: Flanker Fish Congruent Item 19
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_congruent19score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_congruent19_t:
+  type: Float
+  description: Flanker Fish Congruent Item 19, response time (ms)
+  alias: flanker_fish_congruent19responsetime
+
+flanker_fish_incongruent20:
+  type: Integer
+  description: Flanker Fish Incongruent Item 20
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_fish_incongruent20score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_fish_incongruent20_t:
+  type: Float
+  description: Flanker Fish Incongruent Item 20, response time (ms)
+  alias: flanker_fish_incongruent20responsetime
+
+flanker_arrow_instr1:
+  type: Integer
+  description: Flanker Arrow Instruction Item 1
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_instr1score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_instr2:
+  type: Integer
+  description: Flanker Arrow Instruction Item 2
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_instr2score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_instr3:
+  type: Integer
+  description: Flanker Arrow Instruction Item 3
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_instr3score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_instr4:
+  type: Integer
+  description: Flanker Arrow Instruction Item 4
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_instr4score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_instr5t1:
+  type: Integer
+  description: Flanker Arrow Instruction Item 5 T1
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_instr5score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_instr6t1:
+  type: Integer
+  description: Flanker Arrow Instruction Item 6 T1
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_instr6score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_instr6t2:
+  type: Integer
+  description: Flanker Arrow Instruction Item 6 T2
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_instr7score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_prac1:
+  type: Integer
+  description: Flanker Arrow Practice Item 1
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_prac1score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_prac2:
+  type: Integer
+  description: Flanker Arrow Practice Item 2
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_prac2score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_prac3:
+  type: Integer
+  description: Flanker Arrow Practice Item 3
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_prac3score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_prac4:
+  type: Integer
+  description: Flanker Arrow Practice Item 4
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_prac4score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_prac5:
+  type: Integer
+  description: Flanker Arrow Practice Item 5
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_prac5score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_prac6:
+  type: Integer
+  description: Flanker Arrow Practice Item 6
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_prac6score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_prac7:
+  type: Integer
+  description: Flanker Arrow Practice Item 7
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_prac7score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_prac8:
+  type: Integer
+  description: Flanker Arrow Practice Item 8
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_prac8score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_prac9:
+  type: Integer
+  description: Flanker Arrow Practice Item 9
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_prac9score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_prac10:
+  type: Integer
+  description: Flanker Arrow Practice Item 10
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_prac10score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_prac11:
+  type: Integer
+  description: Flanker Arrow Practice Item 11
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_prac11score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_prac12:
+  type: Integer
+  description: Flanker Arrow Practice Item 12
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: flanker_arrow_prac12score
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_congruent1:
+  type: Integer
+  description: Flanker Arrow Congruent Item 1
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_congruent1_t:
+  type: Float
+  description: Flanker Arrow Congruent Item 1, resopnse time (ms)
+
+flanker_arrow_congruent2:
+  type: Integer
+  description: Flanker Arrow Congruent Item 2
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_congruent2_t:
+  type: Float
+  description: Flanker Arrow Congruent Item 2, resopnse time (ms)
+
+flanker_arrow_incongruent3:
+  type: Integer
+  description: Flanker Arrow Incongruent Item 3
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_incongruent3_t:
+  type: Float
+  description: Flanker Arrow Incongruent Item 3, response time (ms)
+
+flanker_arrow_congruent4:
+  type: Integer
+  description: Flanker Arrow Congruent Item 4
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_congruent4_t:
+  type: Float
+  description: Flanker Arrow Congruent Item 4, resopnse time (ms)
+
+flanker_arrow_incongruent5:
+  type: Integer
+  description: Flanker Arrow Incongruent Item 5
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_incongruent5_t:
+  type: Float
+  description: Flanker Arrow Incongruent Item 5, response time (ms)
+
+flanker_arrow_congruent6:
+  type: Integer
+  description: Flanker Arrow Congruent Item 6
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_congruent6_t:
+  type: Float
+  description: Flanker Arrow Congruent Item 6, resopnse time (ms)
+
+flanker_arrow_incongruent7:
+  type: Integer
+  description: Flanker Arrow Incongruent Item 7
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_incongruent7_t:
+  type: Float
+  description: Flanker Arrow Incongruent Item 7, response time (ms)
+
+flanker_arrow_congruent8:
+  type: Integer
+  description: Flanker Arrow Congruent Item 8
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_congruent8_t:
+  type: Float
+  description: Flanker Arrow Congruent Item 8, resopnse time (ms)
+
+flanker_arrow_congruent9:
+  type: Integer
+  description: Flanker Arrow Congruent Item 9
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_congruent9_t:
+  type: Float
+  description: Flanker Arrow Congruent Item 9, resopnse time (ms)
+
+flanker_arrow_incongruent10:
+  type: Integer
+  description: Flanker Arrow Incongruent Item 10
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_incongruent10_t:
+  type: Float
+  description: Flanker Arrow Incongruent Item 10, response time (ms)
+
+flanker_arrow_congruent11:
+  type: Integer
+  description: Flanker Arrow Congruent Item 11
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_congruent11_t:
+  type: Float
+  description: Flanker Arrow Congruent Item 11, resopnse time (ms)
+
+flanker_arrow_congruent12:
+  type: Integer
+  description: Flanker Arrow Congruent Item 12
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_congruent12_t:
+  type: Float
+  description: Flanker Arrow Congruent Item 12, resopnse time (ms)
+
+flanker_arrow_incongruent13:
+  type: Integer
+  description: Flanker Arrow Incongruent Item 13
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_incongruent13_t:
+  type: Float
+  description: Flanker Arrow Incongruent Item 13, response time (ms)
+
+flanker_arrow_congruent14:
+  type: Integer
+  description: Flanker Arrow Congruent Item 14
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_congruent14_t:
+  type: Float
+  description: Flanker Arrow Congruent Item 14, resopnse time (ms)
+
+flanker_arrow_incongruent15:
+  type: Integer
+  description: Flanker Arrow Incongruent Item 15
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_incongruent15_t:
+  type: Float
+  description: Flanker Arrow Incongruent Item 15, response time (ms)
+
+flanker_arrow_congruent16:
+  type: Integer
+  description: Flanker Arrow Congruent Item 16
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_congruent16_t:
+  type: Float
+  description: Flanker Arrow Congruent Item 16, resopnse time (ms)
+
+flanker_arrow_incongruent17:
+  type: Integer
+  description: Flanker Arrow Incongruent Item 17
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_incongruent17_t:
+  type: Float
+  description: Flanker Arrow Incongruent Item 17, response time (ms)
+
+flanker_arrow_congruent18:
+  type: Integer
+  description: Flanker Arrow Congruent Item 18
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_congruent18_t:
+  type: Float
+  description: Flanker Arrow Congruent Item 18, resopnse time (ms)
+
+flanker_arrow_congruent19:
+  type: Integer
+  description: Flanker Arrow Congruent Item 19
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_congruent19_t:
+  type: Float
+  description: Flanker Arrow Congruent Item 19, resopnse time (ms)
+
+flanker_arrow_incongruent20:
+  type: Integer
+  description: Flanker Arrow Incongruent Item 20
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+flanker_arrow_incongruent20_t:
+  type: Float
+  description: Flanker Arrow Incongruent Item 20, response time (ms)
+
+prob_admin:
+  type: Integer
+  description: Flagged for potentially problematic test administration
+  range:
+  - 1
+  notes: 1=Flagged
+  alias: flag_cognition_flanker
+  codes:
+    1: Flagged
+
+overallrt:
+  type: Integer
+  description: Mean reaction time from Flanker congruent and DCCS dominant trials
+    (ms)
+
+tbx_attention_score:
+  type: Float
+  description: Computed Attention score
+
+congresperrortc:
+  type: Integer
+  description: Congruent Response Error Total Count
+
+incongresperrortc:
+  type: Integer
+  description: Incongruent Response Error Total Count
+
+congrespcortc:
+  type: Integer
+  description: Congruent Response Correct Total Count
+
+incongrespcortc:
+  type: Integer
+  description: Incongruent Response Correct Total Count
+
+congresperrorrt:
+  type: Integer
+  description: Congruent Response Error Reaction Time
+
+incongresperrorrt:
+  type: Integer
+  description: Incongruent Response Error Reaction Time
+
+congrespcorrt:
+  type: Integer
+  description: Congruent Response Correct Reaction Time
+
+incongrespcorrt:
+  type: Integer
+  description: Incongruent Response Correct Reaction Time
+
+erp_con:
+  type: Integer
+  description: Event-related potentials for congruent trials
+
+erp_incon:
+  type: Integer
+  description: Event-related potentials for incongruent trials
+
+accult_select_language:
+  type: Integer
+  description: "Test given in Spanish? \xC2\xBFEspa\xC3\xB1ol?"
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: nihtbx_flanker_language
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+visit:
+  type: String
+  length: 60
+  description: Visit name
+  alias: eventname
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: assessment_name,nihtbx_flanker_v
+
+wcst_ni:
+  type: Integer
+  description: Number of Items
+  alias: itmcnt,nihtbx_flanker_itmcnt
+
+nih_tlbx_theta:
+  type: Float
+  description: Theta
+  notes: 999=NA/NK/missing
+  alias: nihtbx_flanker_theta,tcb_flnkr_theta
+  codes:
+    999: NA/NK/missing
+
+acc:
+  type: Float
+  description: Accuracy
+  alias: nihtbx_demo_rescore_flankeraccuracy,trial_acc
+
+rt:
+  type: Float
+  description: Reaction Time
+  alias: nihtbx_demo_rescore_flankerreactiontime,trial_rt
+
+respondent:
+  type: String
+  length: 20
+  description: Respondent
+  range:
+  - Mother
+  - Father
+  - Parent
+  - Guardian
+  - Teacher
+  - Child
+  - Self
+  - Caregiver
+  - Partner
+  - Other
+
+dode:
+  type: String
+  length: 10
+  description: Date of Data Entry
+
+interview_language:
+  type: String
+  length: 255
+  description: Language Used in the Interview
+  alias: language,nihtbx_flanker_language
+
+nih_tlbx_fctsc:
+  type: Float
+  description: Fully-Corrected T-Score
+  range:
+  - 0::120
+  alias: fully_corrected_t,nihtbx_flanker_fc,tcb_flnkr_full_tscr
+
+alltrials200_1:
+  type: Integer
+  description: Trial number
+  alias: trial_number
+
+pictureslide_duration_1:
+  type: Integer
+  description: Trial stimulus duration
+  alias: trial_stimulusduration
+
+trial_trialtype:
+  type: Integer
+  description: Trial type
+  range:
+  - 1
+  - 2
+  notes: 1= Non-Repeat; 2= Repeat
+  codes:
+    1: Non-Repeat
+    2: Repeat
+
+iti:
+  type: Float
+  description: Inter-trial interval (ms)
+  range:
+  - 0::5000
+  alias: trial_iti
+
+src_subject_group:
+  type: Integer
+  description: Subject group
+  range:
+  - 1::3
+  notes: 1= Control; 2= Schizophrenic; 3= Schizoaffective
+  codes:
+    1: Control
+    2: Schizophrenic
+    3: Schizoaffective
+
+trial_stimulustype:
+  type: Integer
+  description: 'Stimulus type '
+  range:
+  - 1
+  - 2
+  notes: 1= Incongruent; 2= Congruent
+  codes:
+    1: Incongruent
+    2: Congruent
+
+session:
+  type: Integer
+  description: Session
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)
+
+fneproc:
+  type: String
+  length: 20
+  description: name of trial procedure being run
+
+nihtfass:
+  type: Integer
+  description: Age-Corrected Standard Score

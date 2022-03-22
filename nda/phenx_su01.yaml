@@ -1740,7 +1740,7 @@ llifetime_use_other:
 cigarette_30day_smoking:
   type: Integer
   description: Now think about the past 30 days, including today. During the past
-    30 days, have you smoked part or all of a cigarette? PX030801_30Day_Cigarette_Smoking
+    30 days, have you smoked part or all of a roll-your-own tobacco cigarette? PX030801_30Day_Cigarette_Smoking
   range:
   - 1
   - 2
@@ -2949,7 +2949,7 @@ comqother:
 
 timepoint_label:
   type: String
-  length: 15
+  length: 50
   description: Timepoint/visit label
   alias: timepoint
 

@@ -1,0 +1,532 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,subject
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  alias: asrsdate
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of subject at birth
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+cares23x:
+  type: Integer
+  description: 'I find that friends or relatives have difficulty talking with me about
+    my
+
+    health'
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+iso_caps1:
+  type: Integer
+  description: I feel isolated even when I am not alone
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+iso_caps2:
+  type: Integer
+  description: I feel that people avoid talking to me
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+iso_caps3:
+  type: Integer
+  description: I feel detached from other people
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+iso_caps9:
+  type: Integer
+  description: I feel like a stranger to those around me
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+scsc2x3:
+  type: Integer
+  description: 'People get the wrong idea about my
+
+    situation'
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+scsc3x2:
+  type: Integer
+  description: I feel that some of my friends avoid me
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+ss10x:
+  type: Integer
+  description: 'I feel that some of my family members
+
+    avoid me'
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+ucla11x2:
+  type: Integer
+  description: I feel left out
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: soc254
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+ucla13x3:
+  type: Integer
+  description: I feel that people barely know me
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+ucla14x2:
+  type: Integer
+  description: I feel isolated from others
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+ucla18x2:
+  type: Integer
+  description: 'I feel that people are around me but not
+
+    with me'
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+ucla7x2:
+  type: Integer
+  description: I feel that I am no longer close to anyone
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs4c,soc255
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+ucla8x3:
+  type: Integer
+  description: 'I feel that I am alone in my interests and
+
+    ideas'
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soil_rs:
+  type: Integer
+  required: true
+  description: Social Isolation raw score
+  notes: 999=NA/NK/missing
+  alias: lon_score,rawscore
+  codes:
+    999: NA/NK/missing
+
+soil_ts:
+  type: Float
+  required: true
+  description: Social Isolation  T score
+  notes: 999=NA/NK/missing
+  alias: lon_t_score,tscore
+  codes:
+    999: NA/NK/missing
+
+soil_se:
+  type: Float
+  required: true
+  description: Social Isolation standard error
+  notes: 999=NA/NK/missing
+  alias: lon_se_score,se
+  codes:
+    999: NA/NK/missing
+
+nih_pin:
+  type: String
+  length: 25
+  description: PIN number assigned by the NIH Toolbox
+  alias: pin
+
+soc252:
+  type: Integer
+  description: 'In the past month, please describe how often: I feel that I have nobody
+    to talk to.'
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc253:
+  type: Integer
+  description: 'In the past month, please describe how often: I feel alone and apart
+    from others.'
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs4a
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc258:
+  type: Integer
+  description: 'In the past month, please describe how often: I feel that I don''t
+    have any friends.'
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc259:
+  type: Integer
+  description: 'In the past month, please describe how often: I feel that there is
+    no one I can go to when I need help.'
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs4b
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc260:
+  type: Integer
+  description: 'In the past month, please describe how often: I feel alone.'
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs4d
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+soc261:
+  type: Integer
+  description: 'In the past month, please describe how often: I feel lonely.'
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  alias: asrs4e
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+nih_tlbx_theta:
+  type: Float
+  description: Theta
+  notes: 999=NA/NK/missing
+  alias: lon_theta_score,loneliness8_17,theta
+  codes:
+    999: NA/NK/missing
+
+soc252_theta:
+  type: Float
+  description: soc252 Theta
+
+soc252_tscore:
+  type: Float
+  description: soc252 T Score
+
+soc252_se:
+  type: Float
+  description: soc252 SE
+
+soc253_theta:
+  type: Float
+  description: soc253 Theta
+
+soc253_tscore:
+  type: Float
+  description: soc253 T Score
+
+soc253_se:
+  type: Float
+  description: soc253 SE
+
+soc254:
+  type: Integer
+  description: In the past month, please descrbe how often I feel left out.
+  range:
+  - 1::5
+  notes: 1= Never, 2= Rarely, 3= Sometimes, 4= Usually, 5= Always
+  codes:
+    1: Never, 2= Rarely, 3= Sometimes, 4= Usually, 5= Always
+
+soc254_theta:
+  type: Float
+  description: soc254 Theta
+
+soc254_tscore:
+  type: Float
+  description: soc254 T Score
+
+soc254_se:
+  type: Float
+  description: soc254 SE
+
+soc258_theta:
+  type: Float
+  description: soc258 Theta
+
+soc258_tscore:
+  type: Float
+  description: soc258 T Score
+
+soc258_se:
+  type: Float
+  description: soc258 SE
+
+soc259_theta:
+  type: Float
+  description: soc259 Theta
+
+soc259_tscore:
+  type: Float
+  description: soc259 T Score
+
+soc259_se:
+  type: Float
+  description: soc259 SE
+
+soc260_theta:
+  type: Float
+  description: soc260 Theta
+
+soc260_tscore:
+  type: Float
+  description: soc260 T Score
+
+soc260_se:
+  type: Float
+  description: soc260 SE
+
+soc261_theta:
+  type: Float
+  description: soc261 Theta
+
+soc261_tscore:
+  type: Float
+  description: soc261 T Score
+
+soc261_se:
+  type: Float
+  description: soc261 SE
+
+aescode:
+  type: Integer
+  description: Staff code number of person completing this form
+  alias: asrsra
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+  alias: notes
+
+asrs4c:
+  type: Integer
+  description: 'Past Month: Loneliness: I feel that I am no longer close to anyone'
+  range:
+  - 1::5
+  notes: 1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Usually; 5 = Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: assessment_name
+
+visit_num:
+  type: Integer
+  description: Visit number
+  range:
+  - 1::3
+  notes: 1=Baseline, 2=12 Month, 3=24 Month
+  codes:
+    1: Baseline, 2=12 Month, 3=24 Month
+
+interview_language:
+  type: String
+  length: 255
+  description: Language Used in the Interview
+  alias: language
+
+nih_tlbx_fctsc:
+  type: Float
+  description: Fully-Corrected T-Score
+  range:
+  - 0::120
+  alias: fully_corrected_t_score
+
+wcst_ni:
+  type: Integer
+  description: Number of Items
+  alias: itmcnt
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)
+  alias: respondent
+
+fneproc:
+  type: String
+  length: 20
+  description: name of trial procedure being run

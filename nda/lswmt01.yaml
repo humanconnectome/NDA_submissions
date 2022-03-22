@@ -1,0 +1,1745 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: guid_id
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,record_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  alias: nihtbx_list_date,tcb_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of subject at birth
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: dem_gender,gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+tbx_failed_dccs:
+  type: Integer
+  description: flag for failure of subtest
+  range:
+  - 0
+  - 1
+  notes: 0=False; 1=True
+  alias: tbx_failed_list_sorting
+  codes:
+    0: 'False'
+    1: 'True'
+
+tbx_ls:
+  type: Integer
+  description: List Sort Test total score
+  alias: listsortscore,nihtbx_demo_rescore_rawlistsort,nihtbx_list_rawscore,rawscore,tcb_lstsrt_raw
+
+tbx_ls1_prac:
+  type: Integer
+  description: 1 list practice score
+
+tbx_ls2_prac:
+  type: Integer
+  description: 2 list practice score
+
+tbx_ls1:
+  type: Integer
+  description: 1 list score
+
+tbx_ls2:
+  type: Integer
+  description: 2 list score
+
+l1p1q1:
+  type: Integer
+  description: List 1 Presentation 1 Question 1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p1q2:
+  type: Integer
+  description: List 1 Presentation 1 Question 2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p1q3:
+  type: Integer
+  description: List 1 Presentation 1 Question 3
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p2q1:
+  type: Integer
+  description: List 1 Presentation 2 Question 2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p2q2:
+  type: Integer
+  description: List 1 Presentation 2 Question 2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p2q3:
+  type: Integer
+  description: List 1 Presentation 2 Question 3
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p1q1:
+  type: Integer
+  description: List 2 Presentation 1 Question 1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p1q2:
+  type: Integer
+  description: List 2 Presentation 1 Question 2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p1q3:
+  type: Integer
+  description: List 2 Presentation 1 Question 3
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p2q1:
+  type: Integer
+  description: List 2 Presentation 2 Question 2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p2q2:
+  type: Integer
+  description: List 2 Presentation 2 Question 2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p2q3:
+  type: Integer
+  description: List 2 Presentation 2 Question 3
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: assessment_name,nihtbx_list_v,tcb_lstsrt_form
+
+l1p1qa1:
+  type: Integer
+  description: List 1 Presentation 1. Question A1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p1qa2:
+  type: Integer
+  description: List 1 Presentation 1. Question A2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p1qb1:
+  type: Integer
+  description: List 1 Presentation 1. Question B1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p1qb2:
+  type: Integer
+  description: List 1 Presentation 1. Question B2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p2qa1:
+  type: Integer
+  description: List 1 Presentation 2. Question A1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p2qa2:
+  type: Integer
+  description: List 1 Presentation 2. Question A2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p2qb1:
+  type: Integer
+  description: List 1 Presentation 2. Question B1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p2qb2:
+  type: Integer
+  description: List 1 Presentation 2. Question B2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p2qc1:
+  type: Integer
+  description: List 1 Presentation 2. Question C1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p2qc2:
+  type: Integer
+  description: List 1 Presentation 2. Question C2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p3qa1:
+  type: Integer
+  description: List 1 Presentation 3. Question A1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p3qa2:
+  type: Integer
+  description: List 1 Presentation 3. Question A2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p3qb1:
+  type: Integer
+  description: List 1 Presentation 3. Question B1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p3qb2:
+  type: Integer
+  description: List 1 Presentation 3. Question B2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p4qa1:
+  type: Integer
+  description: List 1 Presentation 4. Question A1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p4qa2:
+  type: Integer
+  description: List 1 Presentation 4. Question A2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p4qb1:
+  type: Integer
+  description: List 1 Presentation 4. Question B1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p4qb2:
+  type: Integer
+  description: List 1 Presentation 4. Question B2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p4qc1:
+  type: Integer
+  description: List 1 Presentation 4. Question C1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l1p4qc2:
+  type: Integer
+  description: List 1 Presentation 4. Question C2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p1qa1:
+  type: Integer
+  description: List 2 Presentation 1. Question A1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p1qa2:
+  type: Integer
+  description: List 2 Presentation 1. Question A2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p1qb1:
+  type: Integer
+  description: List 2 Presentation 1. Question B1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p1qb2:
+  type: Integer
+  description: List 2 Presentation 1. Question B2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p2qa1:
+  type: Integer
+  description: List 2 Presentation 2. Question A1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p2qa2:
+  type: Integer
+  description: List 2 Presentation 2. Question A2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p2qb1:
+  type: Integer
+  description: List 2 Presentation 2. Question B1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p2qb2:
+  type: Integer
+  description: List 2 Presentation 2. Question B2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p2qc1:
+  type: Integer
+  description: List 2 Presentation 2. Question C1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p2qc2:
+  type: Integer
+  description: List 2 Presentation 2. Question C2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p3qa1:
+  type: Integer
+  description: List 2 Presentation 3. Question A1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p3qa2:
+  type: Integer
+  description: List 2 Presentation 3. Question A2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p3qb1:
+  type: Integer
+  description: List 2 Presentation 3. Question B1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p3qb2:
+  type: Integer
+  description: List 2 Presentation 3. Question B2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p4qa1:
+  type: Integer
+  description: List 2 Presentation 4. Question A1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p4qa2:
+  type: Integer
+  description: List 2 Presentation 4. Question A2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p4qb1:
+  type: Integer
+  description: List 2 Presentation 4. Question B1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p4qb2:
+  type: Integer
+  description: List 2 Presentation 4. Question B2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p4qc1:
+  type: Integer
+  description: List 2 Presentation 4. Question C1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p4qc2:
+  type: Integer
+  description: List 2 Presentation 4. Question C2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p4qd1:
+  type: Integer
+  description: List 2 Presentation 4. Question D1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+l2p4qd2:
+  type: Integer
+  description: List 2 Presentation 4. Question D2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+nih_tlbx_tscore:
+  type: Float
+  description: T-score
+  range:
+  - 0::200
+  - 999
+  notes: 999=NA/NK/missing
+  alias: nihtbx_demo_rescore_uncorrlistsort,nihtbx_list_uncorrected,tcb_lstsrt_tscr,wmuncscore
+  codes:
+    999: NA/NK/missing
+
+nih_tlbx_agegencsc:
+  type: Float
+  description: Age-Gender-Corrected T-score
+  range:
+  - 0::250
+  - 999
+  notes: 999=NA/NK/missing
+  alias: nihtbx_demo_rescore_agecorrlistsort,nihtbx_list_agecorrected,wmagecorrscore
+  codes:
+    999: NA/NK/missing
+
+nih_tlbx_fctsc:
+  type: Float
+  description: Fully-Corrected T-Score
+  range:
+  - 0::120
+  alias: nihtbx_demo_rescore_fulltlistsort,nihtbx_list_fc,nihtbx_list_fullycorrected,tcb_lstsrt_full_tscr,wmtscore
+
+nih_tlbx_natperc:
+  type: Float
+  description: National Percentile
+  range:
+  - 0::100
+  alias: nihtbx_list_percentile
+
+nih_pin:
+  type: String
+  length: 25
+  description: PIN number assigned by the NIH Toolbox
+  alias: pin
+
+wmls1lnap01:
+  type: Integer
+  description: List sorting, 1 list, practice item 1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1lnap02:
+  type: Integer
+  description: 'List sorting, 1 list, practice item 2 '
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1lncp01qa:
+  type: Integer
+  description: List sorting, 1 list, practice item 1 Question A
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1lncp01qb:
+  type: Integer
+  description: List sorting, 1 list, practice item 1 Question B
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1lncp02qa:
+  type: Integer
+  description: List sorting, 1 list, practice item 2 Question A
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1lncp02qb:
+  type: Integer
+  description: List sorting, 1 list, practice item 2 Question B
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1lncp02qc:
+  type: Integer
+  description: List sorting, 1 list, practice item 2 Question C
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1lncp03qa:
+  type: Integer
+  description: List sorting, 1 list, practice item 3 Question A
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1lncp03qb:
+  type: Integer
+  description: List sorting, 1 list, practice item 3 Question B
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1lncp04qa:
+  type: Integer
+  description: List sorting, 1 list, practice item 4 Question A
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1lncp04qb:
+  type: Integer
+  description: List sorting, 1 list, practice item 4 Question B
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1lncp04qc:
+  type: Integer
+  description: List sorting, 1 list, practice item 4 Question C
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1l2t1:
+  type: Integer
+  description: List sorting working memory test, one list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1l2t3:
+  type: Integer
+  description: List sorting working memory test, one list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1l3t1:
+  type: Integer
+  description: List sorting working memory test, one list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1l3t3:
+  type: Integer
+  description: List sorting working memory test, one list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1l4t2:
+  type: Integer
+  description: List sorting working memory test, one list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1l4t3:
+  type: Integer
+  description: List sorting working memory test, one list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1l5t1:
+  type: Integer
+  description: List sorting working memory test, one list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1l5t2:
+  type: Integer
+  description: List sorting working memory test, one list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1l6t1:
+  type: Integer
+  description: List sorting working memory test, one list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1l6t3:
+  type: Integer
+  description: List sorting working memory test, one list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1l7t1:
+  type: Integer
+  description: List sorting working memory test, one list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1l7t2:
+  type: Integer
+  description: List sorting working memory test, one list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1l8t1:
+  type: Integer
+  description: List sorting working memory test, one list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls1l8t2:
+  type: Integer
+  description: List sorting working memory test, one list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2lnap01:
+  type: Integer
+  description: List sorting, 2 list, practice item 1
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2lap02:
+  type: Integer
+  description: List sorting, 2 list, practice item 2
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2lncp01qa:
+  type: Integer
+  description: List sorting, 2 list, practice item 1 Question A
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2lncp01qb:
+  type: Integer
+  description: List sorting, 2 list, practice item 1 Question B
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2lncp02qa:
+  type: Integer
+  description: List sorting, 2 list, practice item 2 Question A
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2lncp02qb:
+  type: Integer
+  description: List sorting, 2 list, practice item 2 Question B
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2lncp02qc:
+  type: Integer
+  description: List sorting, 2 list, practice item 2 Question C
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2lncp03qa:
+  type: Integer
+  description: List sorting, 2 list, practice item 3 Question A
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2lncp03qb:
+  type: Integer
+  description: List sorting, 2 list, practice item 3 Question B
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2lncp03qc:
+  type: Integer
+  description: List sorting, 2 list, practice item 3 Question C
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2lncp04qa:
+  type: Integer
+  description: List sorting, 2 list, practice item 4 Question A
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2lncp04qb:
+  type: Integer
+  description: List sorting, 2 list, practice item 4 Question B
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2lncp04qc:
+  type: Integer
+  description: List sorting, 2 list, practice item 4 Question C
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2lncp04qd:
+  type: Integer
+  description: List sorting, 2 list, practice item 4 Question D
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2l03a:
+  type: Integer
+  description: List sorting working memory test, two list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2l03t3:
+  type: Integer
+  description: List sorting working memory test, two list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2l04a:
+  type: Integer
+  description: List sorting working memory test, two list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2l04t1:
+  type: Integer
+  description: List sorting working memory test, two list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2l04t2:
+  type: Integer
+  description: List sorting working memory test, two list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2l05t1:
+  type: Integer
+  description: List sorting working memory test, two list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2l05t3:
+  type: Integer
+  description: List sorting working memory test, two list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2l06b:
+  type: Integer
+  description: List sorting working memory test, two list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2l06t3:
+  type: Integer
+  description: List sorting working memory test, two list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2l07t1:
+  type: Integer
+  description: List sorting working memory test, two list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2l07t3:
+  type: Integer
+  description: List sorting working memory test, two list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+wmls2l08t1:
+  type: Integer
+  description: List sorting working memory test, two list item
+  range:
+  - 0
+  - 1
+  notes: 0=incorrect;1=correct
+  codes:
+    0: incorrect
+    1: correct
+
+prob_admin:
+  type: Integer
+  description: Flagged for potentially problematic test administration
+  range:
+  - 1
+  notes: 1=Flagged
+  alias: flag_cognition_listsorting
+  codes:
+    1: Flagged
+
+accult_select_language:
+  type: Integer
+  description: "Test given in Spanish? \xC2\xBFEspa\xC3\xB1ol?"
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: nihtbx_list_language
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+visit:
+  type: String
+  length: 60
+  description: Visit name
+  alias: eventname
+
+wcst_ni:
+  type: Integer
+  description: Number of Items
+  alias: itmcnt,nihtbx_calist_itmcnt,nihtbx_list_itmcnt,tcb_lstsrt_item
+
+nih_tlbx_theta:
+  type: Float
+  description: Theta
+  notes: 999=NA/NK/missing
+  alias: nihtbx_list_theta,tcb_lstsrt_theta
+  codes:
+    999: NA/NK/missing
+
+tbx_comsc:
+  type: Integer
+  description: Computed score
+  alias: nihtbx_list_computed,nihtbx_list_cs,tcb_lstsrt_compscr
+
+respondent:
+  type: String
+  length: 20
+  description: Respondent
+  range:
+  - Mother
+  - Father
+  - Parent
+  - Guardian
+  - Teacher
+  - Child
+  - Self
+  - Caregiver
+  - Partner
+  - Other
+
+dode:
+  type: String
+  length: 10
+  description: Date of Data Entry
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+
+interview_language:
+  type: String
+  length: 255
+  description: Language Used in the Interview
+  alias: language,nihtbx_list_language
+
+age_corrected_standard_score:
+  type: Integer
+  description: Age-Corrected Standard Score
+  alias: nihtbx_list_agecorrected,tcb_lstsrt_age_ss
+
+ls1lap1:
+  type: Integer
+  description: Horse,Dog,series|Dog Horse
+  range:
+  - 1::4
+  notes: '1=That''s right!; 2=Let''s try that again. You saw a DOG and a HORSE; the
+    DOG is smaller than the HORSE. Now say the animals in size order. ;3=Let''s try
+    that one more time. You saw a DOG and a HORSE; the DOG is smaller than the HORSE.
+    Now say the smaller animal and then the bigger animal. ; 4= If participant does
+    not know animals in size order after 3 trials, click this button; then click NEXT.  Test
+    will be discontinued. '
+  codes:
+    1: That's right!
+    2: Let's try that again. You saw a DOG and a HORSE
+    3: Let's try that one more time. You saw a DOG and a HORSE
+    4: If participant does not know animals in size order after 3 trials, click this
+      button
+
+ls1lap2:
+  type: Integer
+  description: Elephant,Rabbit,Sheep,series|Rabbit Sheep Elephant
+  range:
+  - 1::4
+  notes: '1=If participant says RABBIT, SHEEP, ELEPHANT, say: That''s right. Click
+    this button; then click NEXT.; 2=If participant gives wrong order, say: Let''s
+    try that again.  You saw a RABBIT, SHEEP and ELEPHANT; the RABBIT is smaller than
+    the SHEEP and the SHEEP is smaller than the ELEPHANT. The RABBIT is the smallest
+    animal, the SHEEP is the NEXT biggest animal, and the ELEPHANT is the biggest
+    animal.  Now, tell me the animals in size order, starting with the smallest animal.   If
+    participant says RABBIT, SHEEP, ELEPHANT, say: That''s right.  Click this button;
+    then click NEXT.; 3=If incorrect again, say: Let''s try that one more time.  Click
+    PLAY again; when the screen is blank, repeat above. If participant says RABBIT,
+    SHEEP, ELEPHANT, say: That''s right.  Click this button; then click NEXT; 4=If
+    participant does not know animals in size order after 3 trials, click this button;
+    then click NEXT.  Test will be discontinued. '
+  codes:
+    1: 'If participant says RABBIT, SHEEP, ELEPHANT, say: That''s right. Click this
+      button'
+    2: 'If participant gives wrong order, say: Let''s try that again.  You saw a RABBIT,
+      SHEEP and ELEPHANT'
+    3: 'If incorrect again, say: Let''s try that one more time.  Click PLAY again'
+    4: If participant does not know animals in size order after 3 trials, click this
+      button
+
+ls2lap1:
+  type: Integer
+  description: Bear,Banana,series|Banana Bear (examiner record)
+  range:
+  - 1::4
+  notes: '1=If participant says BANANA, BEAR, say: That''s right.  Click this button;
+    then click NEXT. ;2=If participant does not say BANANA, BEAR, say: Let''s try
+    that again. The BEAR is an animal; the BANANA is a food. Now you tell me the food
+    first and then the animal. If correct, say: That''s right.  Click this button;
+    then click NEXT. ;3=If incorrect again, say: Let''s try that once more. Click
+    PLAY again.  When screen is blank, repeat above. If participant knows food, then
+    animal, say: That''s right. Click this button; then click NEXT. ;4=If participant
+    does not know food and then animal after 3 trials, click this button; then click
+    NEXT. Test will be discontinued. '
+  codes:
+    1: 'If participant says BANANA, BEAR, say: That''s right.  Click this button'
+    2: 'If participant does not say BANANA, BEAR, say: Let''s try that again. The
+      BEAR is an animal'
+    3: 'If incorrect again, say: Let''s try that once more. Click PLAY again.  When
+      screen is blank, repeat above. If participant knows food, then animal, say:
+      That''s right. Click this button'
+    4: If participant does not know food and then animal after 3 trials, click this
+      button
+
+ls2lap2:
+  type: Integer
+  description: Frog,Pineapple,Tiger,series|Pineapple Frog Tiger
+  range:
+  - 1::4
+  notes: '1=If participant says PINEAPPLE, FROG, TIGER, say: That''s right.  Click
+    this button; then click NEXT. ;2=If participant gives a wrong order, say: Let''s
+    try that again.  You saw a frog, a pineapple, and a tiger.  The pineapple is a
+    food; the frog is the smallest animal, and the tiger is the biggest animal.  Now,
+    you tell me the food in size order starting with the smallest food, and THEN the
+    animals in size order, from smallest to biggest.  If participant says PINEAPPLE,
+    FROG, TIGER, say: That''s right. Click this button; then click NEXT. ;3=If incorrect
+    again, say: Let''s try that once more. Click PLAY again.  When screen is blank,
+    repeat above. If participant knows food, then animals in size order, say: That''s
+    right. Click this button; then click NEXT. ;4=If participant does not know food
+    and then animals after 3 trials, click this button; then click NEXT. Test will
+    be discontinued. '
+  codes:
+    1: 'If participant says PINEAPPLE, FROG, TIGER, say: That''s right.  Click this
+      button'
+    2: 'If participant gives a wrong order, say: Let''s try that again.  You saw a
+      frog, a pineapple, and a tiger.  The pineapple is a food'
+    3: 'If incorrect again, say: Let''s try that once more. Click PLAY again.  When
+      screen is blank, repeat above. If participant knows food, then animals in size
+      order, say: That''s right. Click this button'
+    4: If participant does not know food and then animals after 3 trials, click this
+      button
+
+uss:
+  type: Integer
+  description: NIH Toolbox Uncorrected Standard Score
+  alias: nihtbx_list_uncorrected,uncorrected_standard_score
+
+ls1lcp3qb:
+  type: Integer
+  description: Dog,Horse,series|Dog Horse, 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls1lcp4qa:
+  type: Integer
+  description: Rabbit,Sheep,Elephant,series| Rabbit Sheep Elephant, 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls1lcp4qb:
+  type: Integer
+  description: Rabbit,Sheep,Elephant,series| Rabbit Sheep Elephant, 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls1lcp4qc:
+  type: Integer
+  description: Rabbit,Sheep,Elephant,series| Rabbit Sheep Elephant, 3
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls2lcp1qa:
+  type: Integer
+  description: bear banana, 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls2lcp1qb:
+  type: Integer
+  description: bear banana, 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls2lcp2qa:
+  type: Integer
+  description: pineapple frog tiger, 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls2lcp2qb:
+  type: Integer
+  description: pineapple frog tiger, 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls2lcp2qc:
+  type: Integer
+  description: pineapple frog tiger, 3
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls2lcp3qa:
+  type: Integer
+  description: Bear,Banana,series|Banana Bear, 3
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls2lcp3qb:
+  type: Integer
+  description: Bear,Banana,series|Banana Bear, 4
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls2lcp3qc:
+  type: Integer
+  description: Bear,Banana,series|Banana Bear, 5
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls2lcp4qa:
+  type: Integer
+  description: Pineapple,Frog,Tiger,series|Pineapple Frog Tiger, 4
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls2lcp4qb:
+  type: Integer
+  description: Pineapple,Frog,Tiger,series|Pineapple Frog Tiger, 5
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls2lcp4qc:
+  type: Integer
+  description: Pineapple,Frog,Tiger,series|Pineapple Frog Tiger, 6
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls2lcp4qd:
+  type: Integer
+  description: Pineapple,Frog,Tiger,series|Pineapple Frog Tiger, 7
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+natl_percentile__age_adjusted_:
+  type: Integer
+  description: National Percentile (age adjusted)
+  range:
+  - 1::100
+  - 999
+
+onel1child:
+  type: Integer
+  description: dog horse, 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  alias: 1l1child
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls1lcp1qb:
+  type: Integer
+  description: dog horse, 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls1lcp2qa:
+  type: Integer
+  description: rabbit sheep elephant, 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls1lcp2qb:
+  type: Integer
+  description: rabbit sheep elephant, 2
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls1lcp2qc:
+  type: Integer
+  description: rabbit sheep elephant, 3
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+ls1lcp3qa:
+  type: Integer
+  description: Dog,Horse,series|Dog Horse, 1
+  range:
+  - 0
+  - 1
+  notes: 0 = Incorrect ; 1 = Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)
+
+fneproc:
+  type: String
+  length: 20
+  description: name of trial procedure being run
+
+nihtlsts:
+  type: Float
+  description: Fully-corrected T Score

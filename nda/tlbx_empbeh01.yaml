@@ -1,0 +1,272 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of subject at birth
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+primary_language:
+  type: String
+  length: 255
+  description: Subject's Primary Language
+
+nih_pin:
+  type: String
+  length: 25
+  description: PIN number assigned by the NIH Toolbox
+  alias: pin
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: assessment_name
+
+nih_tlbx_se:
+  type: Float
+  required: true
+  description: Standard Error
+  notes: 999=NA/NK/missing
+  alias: nihtbx_empathy_par_se,se
+  codes:
+    999: NA/NK/missing
+
+nih_tlbx_tscore:
+  type: Float
+  required: true
+  description: T-score
+  range:
+  - 0::200
+  - 999
+  notes: 999=NA/NK/missing
+  alias: nihtbx_empathy_par_tscore,tscore
+  codes:
+    999: NA/NK/missing
+
+nih_tlbx_theta:
+  type: Float
+  required: true
+  description: Theta
+  notes: 999=NA/NK/missing
+  alias: empathicbehavprox3_12,nihtbx_empathy_par_theta,theta
+  codes:
+    999: NA/NK/missing
+
+pedpxypsd1:
+  type: Integer
+  description: In the past month; please decide how often your child will try to stop
+    a fight or argument.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+pedpxypsd10:
+  type: Integer
+  description: In the past month; please decide how often your child takes the opportunity
+    to praise the work of less able children.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+pedpxypsd11:
+  type: Integer
+  description: In the past month; please decide how often your child shows sympathy
+    to someone who has made a mistake.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+pedpxypsd12:
+  type: Integer
+  description: In the past month; please describe how often your child offers to help
+    other children who are having difficulty.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+pedpxypsd13:
+  type: Integer
+  description: In the past month; please describe how often your child helps other
+    children who are feeling sick.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+pedpxypsd15:
+  type: Integer
+  description: In the past month; please describe how often your child comforts a
+    child who is crying or upset.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+pedpxypsd18:
+  type: Integer
+  description: In the past month; please describe how often your child claps or smiles
+    if someone else does something well.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+pedpxypsd3:
+  type: Integer
+  description: In the past month; please decide how often your child will invite other
+    children to join in a game.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+pedpxypsd4:
+  type: Integer
+  description: In the past month; please describe how often your child tries to help
+    someone who has been hurt.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+pedpxypsd6:
+  type: Integer
+  description: In the past month; please describe how often your child shares candies
+    and extra food.
+  range:
+  - 1::5
+  notes: 1=Never; 2=Rarely; 3=Sometimes; 4=Usually; 5=Always
+  codes:
+    1: Never
+    2: Rarely
+    3: Sometimes
+    4: Usually
+    5: Always
+
+wcst_ni:
+  type: Integer
+  description: Number of Items
+  alias: itmcnt
+
+interview_language:
+  type: String
+  length: 255
+  description: Language Used in the Interview
+  alias: language
+
+nih_tlbx_rawscore:
+  type: Integer
+  description: RawScore
+  alias: rawscore
+
+nih_tlbx_fctsc:
+  type: Float
+  description: Fully-Corrected T-Score
+  range:
+  - 0::120
+  alias: fully_corrected_t_score
+
+evt_conint:
+  type: String
+  length: 10
+  description: Confidence Interval
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)
+
+fneproc:
+  type: String
+  length: 20
+  description: name of trial procedure being run

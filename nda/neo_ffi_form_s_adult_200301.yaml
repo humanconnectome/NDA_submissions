@@ -1311,5 +1311,5 @@ comqother:
 
 timepoint_label:
   type: String
-  length: 15
+  length: 50
   description: Timepoint/visit label

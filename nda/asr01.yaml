@@ -4257,3 +4257,15 @@ asr_othpx_ts:
 visit_year:
   type: Integer
   description: Year of visit
+
+asr_vii:
+  type: Integer
+  description: Do you have any concerns or worries about family, work, education,
+    or other things?
+  range:
+  - 0
+  - 1
+  notes: 0= No; 1= Yes
+  codes:
+    0: 'No'
+    1: 'Yes'

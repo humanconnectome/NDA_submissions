@@ -58,7 +58,7 @@ psysoc_64:
 
 colorvsn2:
   type: String
-  length: 50
+  length: 53
   description: 'Farnsworth Color Vision: Test 1:'
   notes: Numbers range from 1 to 15. Any order is possible.
 
@@ -76,7 +76,7 @@ colorvsn_add:
 
 colorvsn3:
   type: String
-  length: 50
+  length: 52
   description: 'Farnsworth Color Vision: Test 2:'
   notes: Numbers range from 1 to 15. Any order is possible.
 

@@ -897,13 +897,13 @@ bisbas_r_1:
     fear or nervousness.
   range:
   - 1::4
-  notes: 1= Strongly Agree; 2= Agree; 3= Disagree; 4= Strongly Disagree
+  notes: 1= Strongly Disagree; 2= Disagree; 3= Agree; 4= Strongly Agree
   alias: phenx_srp_1
   codes:
-    1: Strongly Agree
-    2: Agree
-    3: Disagree
-    4: Strongly Disagree
+    1: Strongly Disagree
+    2: Disagree
+    3: Agree
+    4: Strongly Agree
 
 bisbas_r_2:
   type: Integer
@@ -1122,13 +1122,13 @@ bisbas_r_18:
   description: I have very few fears compared to my friends.
   range:
   - 1::4
-  notes: 1= Strongly Agree; 2= Agree; 3= Disagree; 4= Strongly Disagree
+  notes: 1= Strongly Disagree; 2= Disagree; 3= Agree; 4= Strongly Agree
   alias: phenx_srp_18
   codes:
-    1: Strongly Agree
-    2: Agree
-    3: Disagree
-    4: Strongly Disagree
+    1: Strongly Disagree
+    2: Disagree
+    3: Agree
+    4: Strongly Agree
 
 bisbas_r_19:
   type: Integer

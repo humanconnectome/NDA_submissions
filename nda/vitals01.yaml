@@ -1173,12 +1173,13 @@ trt_grp:
   - CCA
   - GCT
   - TCT
+  - TAU
   notes: 1=Group 1 first 8 weeks; 1AO=Group 1 8 week add on; 1CT=Group 1 8 week cross
     taper; 2=Group 2; 3=Group 3; 4 =active; 5=sham; 6=none; 7=ESDM High intensity;
     8=ESDM Low intensity; 9=EIBI High intensity; 10=EIBI Low intensity; ESDM = Early
     Start Denver Model; EIBI = Early and Intensive Behavioral Intervention; 11 = Navigator;
     12 = Care manager; O=Oxytocin; P=Placebo; CCA=Community Control Arm; GCT=Generalized
-    Cognitive Training; TCT=Targeted Cognitive Training
+    Cognitive Training; TCT=Targeted Cognitive Training; TAU=Treatment as Usual
   codes:
     1: Group 1 first 8 weeks
     2: Group 2
@@ -1197,6 +1198,7 @@ trt_grp:
     CCA: Community Control Arm
     GCT: Generalized Cognitive Training
     TCT: Targeted Cognitive Training
+    TAU: Treatment as Usual
 
 etype:
   type: String
@@ -2574,3 +2576,136 @@ puls_ox:
   type: String
   length: 250
   description: What does the Pulse Oximeter read?
+
+same_vitals8:
+  type: String
+  length: 1000
+  description: Neck if abnormal, please specify
+
+same_vitals9:
+  type: Integer
+  description: Lymph Nodes Findings
+  range:
+  - 1::3
+  notes: 1 = Normal; 2 = Abnormal; 3 = Not done
+  codes:
+    1: Normal
+    2: Abnormal
+    3: Not done
+
+same_vitals10:
+  type: String
+  length: 1000
+  description: Lymph Nodes if abnormal, please specify
+
+same_vitals11:
+  type: Integer
+  description: Chest Findings
+  range:
+  - 1::3
+  notes: 1 = Normal; 2 = Abnormal; 3 = Not done
+  codes:
+    1: Normal
+    2: Abnormal
+    3: Not done
+
+same_vitals12:
+  type: String
+  length: 1000
+  description: Chest if abnormal, please specify
+
+same_vitals13:
+  type: Integer
+  description: Heart Findings
+  range:
+  - 1::3
+  notes: 1 = Normal; 2 = Abnormal; 3 = Not done
+  codes:
+    1: Normal
+    2: Abnormal
+    3: Not done
+
+same_vitals14:
+  type: String
+  length: 1000
+  description: Heart if abnormal, please specify
+
+same_vitals15:
+  type: String
+  length: 250
+  description: Other, specify
+
+same_vitals16:
+  type: Integer
+  description: Other Findings
+  range:
+  - 1::3
+  notes: 1 = Normal; 2 = Abnormal; 3 = Not done
+  codes:
+    1: Normal
+    2: Abnormal
+    3: Not done
+
+same_vitals17:
+  type: String
+  length: 1000
+  description: Other if abnormal, please specify
+
+same_vitals1:
+  type: Integer
+  description: General Appearance Findings
+  range:
+  - 1::3
+  notes: 1 = Normal; 2 = Abnormal; 3 = Not done
+  codes:
+    1: Normal
+    2: Abnormal
+    3: Not done
+
+same_vitals2:
+  type: String
+  length: 1000
+  description: General Appearance if abnormal, please specify
+
+same_vitals3:
+  type: Integer
+  description: Skin Findings
+  range:
+  - 1::3
+  notes: 1 = Normal; 2 = Abnormal; 3 = Not done
+  codes:
+    1: Normal
+    2: Abnormal
+    3: Not done
+
+same_vitals4:
+  type: String
+  length: 1000
+  description: Skin if abnormal, please specify
+
+same_vitals5:
+  type: Integer
+  description: Head, Eyes, Ears, Nose, Throat Findings
+  range:
+  - 1::3
+  notes: 1 = Normal; 2 = Abnormal; 3 = Not done
+  codes:
+    1: Normal
+    2: Abnormal
+    3: Not done
+
+same_vitals6:
+  type: String
+  length: 1000
+  description: Head, Eyes, Ears, Nose, Throat if abnormal, please specify
+
+same_vitals7:
+  type: Integer
+  description: Neck Findings
+  range:
+  - 1::3
+  notes: 1 = Normal; 2 = Abnormal; 3 = Not done
+  codes:
+    1: Normal
+    2: Abnormal
+    3: Not done

@@ -1,0 +1,4599 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: guid_id
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,record_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  alias: nihtbx_picvocab_date,tcb_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of subject at birth
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: dem_gender,gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+tbx_vocab_theta:
+  type: Float
+  description: TPVT theta score
+  alias: engvocabtheta,nihtbx_demo_rescore_thetaengvocab,nihtbx_picvocab_theta,spanvocabtheta,tbx_reading_form,tcb_vocb_theta,theta
+
+tbx_vocab_se:
+  type: Float
+  description: TPVT standard error
+  alias: engvocabse,nihtbx_picvocab_se,se,spanvocabse,tcb_vocb_se
+
+tpvt_acss:
+  type: Integer
+  description: TPVT age-corrected standard score
+  alias: age_corrected_standard_score,nihtbx_demo_rescore_agecorrengvocab,nihtbx_picvocab_agecorrected,pvtagecorrscore,tcb_vocb_age_ss
+
+tpvt_uss:
+  type: Integer
+  description: TPVT uncorrected standard score
+  alias: nihtbx_demo_rescore_uncorrengvocab,nihtbx_picvocab_uncorrected,pvtuncscore,tcb_vocb_uncorscr,uncorrected_standard_score
+
+tpvt_fcts:
+  type: Integer
+  description: TPVT fully corrected T-score
+  alias: nihtbx_demo_rescore_fulltengvocab,nihtbx_picvocab_fc,nihtbx_picvocab_fullycorrected,pvttscore,tcb_vocb_full_tscr
+
+tpvt_perc:
+  type: Float
+  description: TPVT percentile
+  alias: national_percentile__age_adjusted_,nihtbx_picvocab_percentile
+
+lavoc001:
+  type: Integer
+  description: Picture Vocabulary Item 001
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc002:
+  type: Integer
+  description: Picture Vocabulary Item 002
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc003:
+  type: Integer
+  description: Picture Vocabulary Item 003
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc004:
+  type: Integer
+  description: Picture Vocabulary Item 004
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc005:
+  type: Integer
+  description: Picture Vocabulary Item 005
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc006:
+  type: Integer
+  description: Picture Vocabulary Item 006
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc008:
+  type: Integer
+  description: Picture Vocabulary Item 008
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc009:
+  type: Integer
+  description: Picture Vocabulary Item 009
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc010:
+  type: Integer
+  description: Picture Vocabulary Item 010
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc011:
+  type: Integer
+  description: Picture Vocabulary Item 011
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc013:
+  type: Integer
+  description: Picture Vocabulary Item 013
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc014:
+  type: Integer
+  description: Picture Vocabulary Item 014
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc015:
+  type: Integer
+  description: Picture Vocabulary Item 015
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc016:
+  type: Integer
+  description: Picture Vocabulary Item 016
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc017:
+  type: Integer
+  description: Picture Vocabulary Item 017
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc018:
+  type: Integer
+  description: Picture Vocabulary Item 018
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc019:
+  type: Integer
+  description: Picture Vocabulary Item 019
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc021:
+  type: Integer
+  description: Picture Vocabulary Item 021
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc022:
+  type: Integer
+  description: Picture Vocabulary Item 022
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc023:
+  type: Integer
+  description: Picture Vocabulary Item 023
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc024:
+  type: Integer
+  description: Picture Vocabulary Item 024
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc026:
+  type: Integer
+  description: Picture Vocabulary Item 026
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc027:
+  type: Integer
+  description: Picture Vocabulary Item 027
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc028:
+  type: Integer
+  description: Picture Vocabulary Item 028
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc029:
+  type: Integer
+  description: Picture Vocabulary Item 029
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc032:
+  type: Integer
+  description: Picture Vocabulary Item 032
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc034:
+  type: Integer
+  description: Picture Vocabulary Item 034
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc037:
+  type: Integer
+  description: Picture Vocabulary Item 037
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc038:
+  type: Integer
+  description: Picture Vocabulary Item 038
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc039:
+  type: Integer
+  description: Picture Vocabulary Item 039
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc040:
+  type: Integer
+  description: Picture Vocabulary Item 040
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc041:
+  type: Integer
+  description: Picture Vocabulary Item 041
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc042:
+  type: Integer
+  description: Picture Vocabulary Item 042
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc044:
+  type: Integer
+  description: Picture Vocabulary Item 044
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc046:
+  type: Integer
+  description: Picture Vocabulary Item 046
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc047:
+  type: Integer
+  description: Picture Vocabulary Item 047
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc048:
+  type: Integer
+  description: Picture Vocabulary Item 048
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc049:
+  type: Integer
+  description: Picture Vocabulary Item 049
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc051:
+  type: Integer
+  description: Picture Vocabulary Item 051
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc052:
+  type: Integer
+  description: Picture Vocabulary Item 052
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc053:
+  type: Integer
+  description: Picture Vocabulary Item 053
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc054:
+  type: Integer
+  description: Picture Vocabulary Item 054
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc055:
+  type: Integer
+  description: Picture Vocabulary Item 055
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc057:
+  type: Integer
+  description: Picture Vocabulary Item 057
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc058:
+  type: Integer
+  description: Picture Vocabulary Item 058
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc059:
+  type: Integer
+  description: Picture Vocabulary Item 059
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc061:
+  type: Integer
+  description: Picture Vocabulary Item 061
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc062:
+  type: Integer
+  description: Picture Vocabulary Item 062
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc063:
+  type: Integer
+  description: Picture Vocabulary Item 063
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc064:
+  type: Integer
+  description: Picture Vocabulary Item 064
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc065:
+  type: Integer
+  description: Picture Vocabulary Item 065
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc066:
+  type: Integer
+  description: Picture Vocabulary Item 066
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc067:
+  type: Integer
+  description: Picture Vocabulary Item 067
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc068:
+  type: Integer
+  description: Picture Vocabulary Item 068
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc071:
+  type: Integer
+  description: Picture Vocabulary Item 071
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc072:
+  type: Integer
+  description: Picture Vocabulary Item 072
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc073:
+  type: Integer
+  description: Picture Vocabulary Item 073
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc075:
+  type: Integer
+  description: Picture Vocabulary Item 075
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc077:
+  type: Integer
+  description: Picture Vocabulary Item 077
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc078:
+  type: Integer
+  description: Picture Vocabulary Item 078
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc079:
+  type: Integer
+  description: Picture Vocabulary Item 079
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc080:
+  type: Integer
+  description: Picture Vocabulary Item 080
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc081:
+  type: Integer
+  description: Picture Vocabulary Item 081
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc082:
+  type: Integer
+  description: Picture Vocabulary Item 082
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc083:
+  type: Integer
+  description: Picture Vocabulary Item 083
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc084:
+  type: Integer
+  description: Picture Vocabulary Item 084
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc086:
+  type: Integer
+  description: Picture Vocabulary Item 086
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc087:
+  type: Integer
+  description: Picture Vocabulary Item 087
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc088:
+  type: Integer
+  description: Picture Vocabulary Item 088
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc090:
+  type: Integer
+  description: Picture Vocabulary Item 090
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc091:
+  type: Integer
+  description: Picture Vocabulary Item 091
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc092:
+  type: Integer
+  description: Picture Vocabulary Item 092
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc093:
+  type: Integer
+  description: Picture Vocabulary Item 093
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc095:
+  type: Integer
+  description: Picture Vocabulary Item 095
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc096:
+  type: Integer
+  description: Picture Vocabulary Item 096
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc097:
+  type: Integer
+  description: Picture Vocabulary Item 097
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc098:
+  type: Integer
+  description: Picture Vocabulary Item 098
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc100:
+  type: Integer
+  description: Picture Vocabulary Item 100
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc101:
+  type: Integer
+  description: Picture Vocabulary Item 101
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc102:
+  type: Integer
+  description: Picture Vocabulary Item 102
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc103:
+  type: Integer
+  description: Picture Vocabulary Item 103
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc105:
+  type: Integer
+  description: Picture Vocabulary Item 105
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc110:
+  type: Integer
+  description: Picture Vocabulary Item 110
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc112:
+  type: Integer
+  description: Picture Vocabulary Item 112
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc113:
+  type: Integer
+  description: Picture Vocabulary Item 113
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc114:
+  type: Integer
+  description: Picture Vocabulary Item 114
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc116:
+  type: Integer
+  description: Picture Vocabulary Item 116
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc117:
+  type: Integer
+  description: Picture Vocabulary Item 117
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc118:
+  type: Integer
+  description: Picture Vocabulary Item 118
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc119:
+  type: Integer
+  description: Picture Vocabulary Item 119
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc120:
+  type: Integer
+  description: Picture Vocabulary Item 120
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc121:
+  type: Integer
+  description: Picture Vocabulary Item 121
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc123:
+  type: Integer
+  description: Picture Vocabulary Item 123
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc126:
+  type: Integer
+  description: Picture Vocabulary Item 126
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc127:
+  type: Integer
+  description: Picture Vocabulary Item 127
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc128:
+  type: Integer
+  description: Picture Vocabulary Item 128
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc129:
+  type: Integer
+  description: Picture Vocabulary Item 129
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc130:
+  type: Integer
+  description: Picture Vocabulary Item 130
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc131:
+  type: Integer
+  description: Picture Vocabulary Item 131
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc132:
+  type: Integer
+  description: Picture Vocabulary Item 132
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc134:
+  type: Integer
+  description: Picture Vocabulary Item 134
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc135:
+  type: Integer
+  description: Picture Vocabulary Item 135
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc136:
+  type: Integer
+  description: Picture Vocabulary Item 136
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc137:
+  type: Integer
+  description: Picture Vocabulary Item 137
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc140:
+  type: Integer
+  description: Picture Vocabulary Item 140
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc142:
+  type: Integer
+  description: Picture Vocabulary Item 142
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc143:
+  type: Integer
+  description: Picture Vocabulary Item 143
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc145:
+  type: Integer
+  description: Picture Vocabulary Item 145
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc148:
+  type: Integer
+  description: Picture Vocabulary Item 148
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc150:
+  type: Integer
+  description: Picture Vocabulary Item 150
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc152:
+  type: Integer
+  description: Picture Vocabulary Item 152
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc155:
+  type: Integer
+  description: Picture Vocabulary Item 155
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc157:
+  type: Integer
+  description: Picture Vocabulary Item 157
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc158:
+  type: Integer
+  description: Picture Vocabulary Item 158
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc160:
+  type: Integer
+  description: Picture Vocabulary Item 160
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc161:
+  type: Integer
+  description: Picture Vocabulary Item 161
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc162:
+  type: Integer
+  description: Picture Vocabulary Item 162
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc163:
+  type: Integer
+  description: Picture Vocabulary Item 163
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc164:
+  type: Integer
+  description: Picture Vocabulary Item 164
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc165:
+  type: Integer
+  description: Picture Vocabulary Item 165
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc166:
+  type: Integer
+  description: Picture Vocabulary Item 166
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc167:
+  type: Integer
+  description: Picture Vocabulary Item 167
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc168:
+  type: Integer
+  description: Picture Vocabulary Item 168
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc169:
+  type: Integer
+  description: Picture Vocabulary Item 169
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc170:
+  type: Integer
+  description: Picture Vocabulary Item 170
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc171:
+  type: Integer
+  description: Picture Vocabulary Item 171
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc172:
+  type: Integer
+  description: Picture Vocabulary Item 172
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc173:
+  type: Integer
+  description: Picture Vocabulary Item 173
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc175:
+  type: Integer
+  description: Picture Vocabulary Item 175
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc176:
+  type: Integer
+  description: Picture Vocabulary Item 176
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc177:
+  type: Integer
+  description: Picture Vocabulary Item 177
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc179:
+  type: Integer
+  description: Picture Vocabulary Item 179
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc180:
+  type: Integer
+  description: Picture Vocabulary Item 180
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc181:
+  type: Integer
+  description: Picture Vocabulary Item 181
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc182:
+  type: Integer
+  description: Picture Vocabulary Item 182
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc183:
+  type: Integer
+  description: Picture Vocabulary Item 183
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc184:
+  type: Integer
+  description: Picture Vocabulary Item 184
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc185:
+  type: Integer
+  description: Picture Vocabulary Item 185
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc187:
+  type: Integer
+  description: Picture Vocabulary Item 187
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc188:
+  type: Integer
+  description: Picture Vocabulary Item 188
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc189:
+  type: Integer
+  description: Picture Vocabulary Item 189
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc190:
+  type: Integer
+  description: Picture Vocabulary Item 190
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc191:
+  type: Integer
+  description: Picture Vocabulary Item 191
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc193:
+  type: Integer
+  description: Picture Vocabulary Item 193
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc194:
+  type: Integer
+  description: Picture Vocabulary Item 194
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc196:
+  type: Integer
+  description: Picture Vocabulary Item 196
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc197:
+  type: Integer
+  description: Picture Vocabulary Item 197
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc199:
+  type: Integer
+  description: Picture Vocabulary Item 199
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc201:
+  type: Integer
+  description: Picture Vocabulary Item 201
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc203:
+  type: Integer
+  description: Picture Vocabulary Item 203
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc204:
+  type: Integer
+  description: Picture Vocabulary Item 204
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc205:
+  type: Integer
+  description: Picture Vocabulary Item 205
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc206:
+  type: Integer
+  description: Picture Vocabulary Item 206
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc207:
+  type: Integer
+  description: Picture Vocabulary Item 207
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc210:
+  type: Integer
+  description: Picture Vocabulary Item 210
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc214:
+  type: Integer
+  description: Picture Vocabulary Item 214
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc215:
+  type: Integer
+  description: Picture Vocabulary Item 215
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc216:
+  type: Integer
+  description: Picture Vocabulary Item 216
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc217:
+  type: Integer
+  description: Picture Vocabulary Item 217
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc219:
+  type: Integer
+  description: Picture Vocabulary Item 219
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc220:
+  type: Integer
+  description: Picture Vocabulary Item 220
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc221:
+  type: Integer
+  description: Picture Vocabulary Item 221
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc222:
+  type: Integer
+  description: Picture Vocabulary Item 222
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc224:
+  type: Integer
+  description: Picture Vocabulary Item 224
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc225:
+  type: Integer
+  description: Picture Vocabulary Item 225
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc226:
+  type: Integer
+  description: Picture Vocabulary Item 226
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc227:
+  type: Integer
+  description: Picture Vocabulary Item 227
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc229:
+  type: Integer
+  description: Picture Vocabulary Item 229
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc230:
+  type: Integer
+  description: Picture Vocabulary Item 230
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc231:
+  type: Integer
+  description: Picture Vocabulary Item 231
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc232:
+  type: Integer
+  description: Picture Vocabulary Item 232
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc233:
+  type: Integer
+  description: Picture Vocabulary Item 233
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc234:
+  type: Integer
+  description: Picture Vocabulary Item 234
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc235:
+  type: Integer
+  description: Picture Vocabulary Item 235
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc236:
+  type: Integer
+  description: Picture Vocabulary Item 236
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc237:
+  type: Integer
+  description: Picture Vocabulary Item 237
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc238:
+  type: Integer
+  description: Picture Vocabulary Item 238
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc239:
+  type: Integer
+  description: Picture Vocabulary Item 239
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc240:
+  type: Integer
+  description: Picture Vocabulary Item 240
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc241:
+  type: Integer
+  description: Picture Vocabulary Item 241
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc242:
+  type: Integer
+  description: Picture Vocabulary Item 242
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc244:
+  type: Integer
+  description: Picture Vocabulary Item 244
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc245:
+  type: Integer
+  description: Picture Vocabulary Item 245
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc246:
+  type: Integer
+  description: Picture Vocabulary Item 246
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc249:
+  type: Integer
+  description: Picture Vocabulary Item 249
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc250:
+  type: Integer
+  description: Picture Vocabulary Item 250
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc251:
+  type: Integer
+  description: Picture Vocabulary Item 251
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc253:
+  type: Integer
+  description: Picture Vocabulary Item 253
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc255:
+  type: Integer
+  description: Picture Vocabulary Item 255
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc257:
+  type: Integer
+  description: Picture Vocabulary Item 257
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc259:
+  type: Integer
+  description: Picture Vocabulary Item 259
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc260:
+  type: Integer
+  description: Picture Vocabulary Item 260
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc261:
+  type: Integer
+  description: Picture Vocabulary Item 261
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc263:
+  type: Integer
+  description: Picture Vocabulary Item 263
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc265:
+  type: Integer
+  description: Picture Vocabulary Item 265
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc268:
+  type: Integer
+  description: Picture Vocabulary Item 268
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc269:
+  type: Integer
+  description: Picture Vocabulary Item 269
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc270:
+  type: Integer
+  description: Picture Vocabulary Item 270
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc271:
+  type: Integer
+  description: Picture Vocabulary Item 271
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc276:
+  type: Integer
+  description: Picture Vocabulary Item 276
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc277:
+  type: Integer
+  description: Picture Vocabulary Item 277
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc278:
+  type: Integer
+  description: Picture Vocabulary Item 278
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc279:
+  type: Integer
+  description: Picture Vocabulary Item 279
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc282:
+  type: Integer
+  description: Picture Vocabulary Item 282
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc286:
+  type: Integer
+  description: Picture Vocabulary Item 286
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc287:
+  type: Integer
+  description: Picture Vocabulary Item 287
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc288:
+  type: Integer
+  description: Picture Vocabulary Item 288
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc292:
+  type: Integer
+  description: Picture Vocabulary Item 292
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc295:
+  type: Integer
+  description: Picture Vocabulary Item 295
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc297:
+  type: Integer
+  description: Picture Vocabulary Item 297
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc300:
+  type: Integer
+  description: Picture Vocabulary Item 300
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc302:
+  type: Integer
+  description: Picture Vocabulary Item 302
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc303:
+  type: Integer
+  description: Picture Vocabulary Item 303
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc306:
+  type: Integer
+  description: Picture Vocabulary Item 306
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc307:
+  type: Integer
+  description: Picture Vocabulary Item 307
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc308:
+  type: Integer
+  description: Picture Vocabulary Item 308
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc310:
+  type: Integer
+  description: Picture Vocabulary Item 310
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc311:
+  type: Integer
+  description: Picture Vocabulary Item 311
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc314:
+  type: Integer
+  description: Picture Vocabulary Item 314
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc315:
+  type: Integer
+  description: Picture Vocabulary Item 315
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc316:
+  type: Integer
+  description: Picture Vocabulary Item 316
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc317:
+  type: Integer
+  description: Picture Vocabulary Item 317
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc318:
+  type: Integer
+  description: Picture Vocabulary Item 318
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc319:
+  type: Integer
+  description: Picture Vocabulary Item 319
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc320:
+  type: Integer
+  description: Picture Vocabulary Item 320
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc322:
+  type: Integer
+  description: Picture Vocabulary Item 322
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc323:
+  type: Integer
+  description: Picture Vocabulary Item 323
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc325:
+  type: Integer
+  description: Picture Vocabulary Item 325
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc328:
+  type: Integer
+  description: Picture Vocabulary Item 328
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc329:
+  type: Integer
+  description: Picture Vocabulary Item 329
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc330:
+  type: Integer
+  description: Picture Vocabulary Item 330
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc331:
+  type: Integer
+  description: Picture Vocabulary Item 331
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc332:
+  type: Integer
+  description: Picture Vocabulary Item 332
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc333:
+  type: Integer
+  description: Picture Vocabulary Item 333
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc335:
+  type: Integer
+  description: Picture Vocabulary Item 335
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc337:
+  type: Integer
+  description: Picture Vocabulary Item 337
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc339:
+  type: Integer
+  description: Picture Vocabulary Item 339
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc341:
+  type: Integer
+  description: Picture Vocabulary Item 341
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc342:
+  type: Integer
+  description: Picture Vocabulary Item 342
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc343:
+  type: Integer
+  description: Picture Vocabulary Item 343
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc345:
+  type: Integer
+  description: Picture Vocabulary Item 345
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc346:
+  type: Integer
+  description: Picture Vocabulary Item 346
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc348:
+  type: Integer
+  description: Picture Vocabulary Item 348
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc350:
+  type: Integer
+  description: Picture Vocabulary Item 350
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc353:
+  type: Integer
+  description: Picture Vocabulary Item 353
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc355:
+  type: Integer
+  description: Picture Vocabulary Item 355
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc359:
+  type: Integer
+  description: Picture Vocabulary Item 359
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc360:
+  type: Integer
+  description: Picture Vocabulary Item 360
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc361:
+  type: Integer
+  description: Picture Vocabulary Item 361
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc362:
+  type: Integer
+  description: Picture Vocabulary Item 362
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc363:
+  type: Integer
+  description: Picture Vocabulary Item 363
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc364:
+  type: Integer
+  description: Picture Vocabulary Item 364
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc365:
+  type: Integer
+  description: Picture Vocabulary Item 365
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc366:
+  type: Integer
+  description: Picture Vocabulary Item 366
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc367:
+  type: Integer
+  description: Picture Vocabulary Item 367
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc368:
+  type: Integer
+  description: Picture Vocabulary Item 368
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc369:
+  type: Integer
+  description: Picture Vocabulary Item 369
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc370:
+  type: Integer
+  description: Picture Vocabulary Item 370
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc371:
+  type: Integer
+  description: Picture Vocabulary Item 371
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc372:
+  type: Integer
+  description: Picture Vocabulary Item 372
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc374:
+  type: Integer
+  description: Picture Vocabulary Item 374
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc377:
+  type: Integer
+  description: Picture Vocabulary Item 377
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc378:
+  type: Integer
+  description: Picture Vocabulary Item 378
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc380:
+  type: Integer
+  description: Picture Vocabulary Item 380
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc381:
+  type: Integer
+  description: Picture Vocabulary Item 381
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc382:
+  type: Integer
+  description: Picture Vocabulary Item 382
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc384:
+  type: Integer
+  description: Picture Vocabulary Item 384
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc385:
+  type: Integer
+  description: Picture Vocabulary Item 385
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc386:
+  type: Integer
+  description: Picture Vocabulary Item 386
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc387:
+  type: Integer
+  description: Picture Vocabulary Item 387
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc389:
+  type: Integer
+  description: Picture Vocabulary Item 389
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc394:
+  type: Integer
+  description: Picture Vocabulary Item 394
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc399:
+  type: Integer
+  description: Picture Vocabulary Item 399
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc400:
+  type: Integer
+  description: Picture Vocabulary Item 400
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc403:
+  type: Integer
+  description: Picture Vocabulary Item 403
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc404:
+  type: Integer
+  description: Picture Vocabulary Item 404
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc405:
+  type: Integer
+  description: Picture Vocabulary Item 405
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc406:
+  type: Integer
+  description: Picture Vocabulary Item 406
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc408:
+  type: Integer
+  description: Picture Vocabulary Item 408
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc409:
+  type: Integer
+  description: Picture Vocabulary Item 409
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc412:
+  type: Integer
+  description: Picture Vocabulary Item 412
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc414:
+  type: Integer
+  description: Picture Vocabulary Item 414
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc416:
+  type: Integer
+  description: Picture Vocabulary Item 416
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc418:
+  type: Integer
+  description: Picture Vocabulary Item 418
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc419:
+  type: Integer
+  description: Picture Vocabulary Item 419
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc421:
+  type: Integer
+  description: Picture Vocabulary Item 421
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc422:
+  type: Integer
+  description: Picture Vocabulary Item 422
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc424:
+  type: Integer
+  description: Picture Vocabulary Item 424
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc427:
+  type: Integer
+  description: Picture Vocabulary Item 427
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc428:
+  type: Integer
+  description: Picture Vocabulary Item 428
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc430:
+  type: Integer
+  description: Picture Vocabulary Item 430
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc437:
+  type: Integer
+  description: Picture Vocabulary Item 437
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc438:
+  type: Integer
+  description: Picture Vocabulary Item 438
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc442:
+  type: Integer
+  description: Picture Vocabulary Item 442
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc443:
+  type: Integer
+  description: Picture Vocabulary Item 443
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc446:
+  type: Integer
+  description: Picture Vocabulary Item 446
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc447:
+  type: Integer
+  description: Picture Vocabulary Item 447
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc448:
+  type: Integer
+  description: Picture Vocabulary Item 448
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc449:
+  type: Integer
+  description: Picture Vocabulary Item 449
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc451:
+  type: Integer
+  description: Picture Vocabulary Item 451
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc452:
+  type: Integer
+  description: Picture Vocabulary Item 452
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc455:
+  type: Integer
+  description: Picture Vocabulary Item 455
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc456:
+  type: Integer
+  description: Picture Vocabulary Item 456
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc460:
+  type: Integer
+  description: Picture Vocabulary Item 460
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc462:
+  type: Integer
+  description: Picture Vocabulary Item 462
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc463:
+  type: Integer
+  description: Picture Vocabulary Item 463
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc464:
+  type: Integer
+  description: Picture Vocabulary Item 464
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc465:
+  type: Integer
+  description: Picture Vocabulary Item 465
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc467:
+  type: Integer
+  description: Picture Vocabulary Item 467
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc469:
+  type: Integer
+  description: Picture Vocabulary Item 469
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc471:
+  type: Integer
+  description: Picture Vocabulary Item 471
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc472:
+  type: Integer
+  description: Picture Vocabulary Item 472
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc473:
+  type: Integer
+  description: Picture Vocabulary Item 473
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc474:
+  type: Integer
+  description: Picture Vocabulary Item 474
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc475:
+  type: Integer
+  description: Picture Vocabulary Item 475
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc476:
+  type: Integer
+  description: Picture Vocabulary Item 476
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc478:
+  type: Integer
+  description: Picture Vocabulary Item 478
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc479:
+  type: Integer
+  description: Picture Vocabulary Item 479
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc480:
+  type: Integer
+  description: Picture Vocabulary Item 480
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc481:
+  type: Integer
+  description: Picture Vocabulary Item 481
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc484:
+  type: Integer
+  description: Picture Vocabulary Item 484
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc486:
+  type: Integer
+  description: Picture Vocabulary Item 486
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc491:
+  type: Integer
+  description: Picture Vocabulary Item 491
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc492:
+  type: Integer
+  description: Picture Vocabulary Item 492
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc493:
+  type: Integer
+  description: Picture Vocabulary Item 493
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc495:
+  type: Integer
+  description: Picture Vocabulary Item 495
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc501:
+  type: Integer
+  description: Picture Vocabulary Item 501
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc502:
+  type: Integer
+  description: Picture Vocabulary Item 502
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc504:
+  type: Integer
+  description: Picture Vocabulary Item 504
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc505:
+  type: Integer
+  description: Picture Vocabulary Item 505
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc506:
+  type: Integer
+  description: Picture Vocabulary Item 506
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc507:
+  type: Integer
+  description: Picture Vocabulary Item 507
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc508:
+  type: Integer
+  description: Picture Vocabulary Item 508
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc509:
+  type: Integer
+  description: Picture Vocabulary Item 509
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc510:
+  type: Integer
+  description: Picture Vocabulary Item 510
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc511:
+  type: Integer
+  description: Picture Vocabulary Item 511
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc512:
+  type: Integer
+  description: Picture Vocabulary Item 512
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc513:
+  type: Integer
+  description: Picture Vocabulary Item 513
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc514:
+  type: Integer
+  description: Picture Vocabulary Item 514
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc515:
+  type: Integer
+  description: Picture Vocabulary Item 515
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc517:
+  type: Integer
+  description: Picture Vocabulary Item 517
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc518:
+  type: Integer
+  description: Picture Vocabulary Item 518
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc519:
+  type: Integer
+  description: Picture Vocabulary Item 519
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc520:
+  type: Integer
+  description: Picture Vocabulary Item 520
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc521:
+  type: Integer
+  description: Picture Vocabulary Item 521
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc522:
+  type: Integer
+  description: Picture Vocabulary Item 522
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc523:
+  type: Integer
+  description: Picture Vocabulary Item 523
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc524:
+  type: Integer
+  description: Picture Vocabulary Item 524
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc526:
+  type: Integer
+  description: Picture Vocabulary Item 526
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc528:
+  type: Integer
+  description: Picture Vocabulary Item 528
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc530:
+  type: Integer
+  description: Picture Vocabulary Item 530
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc531:
+  type: Integer
+  description: Picture Vocabulary Item 531
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc532:
+  type: Integer
+  description: Picture Vocabulary Item 532
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc534:
+  type: Integer
+  description: Picture Vocabulary Item 534
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc537:
+  type: Integer
+  description: Picture Vocabulary Item 537
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc538:
+  type: Integer
+  description: Picture Vocabulary Item 538
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc539:
+  type: Integer
+  description: Picture Vocabulary Item 539
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc541:
+  type: Integer
+  description: Picture Vocabulary Item 541
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc544:
+  type: Integer
+  description: Picture Vocabulary Item 544
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc545:
+  type: Integer
+  description: Picture Vocabulary Item 545
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc549:
+  type: Integer
+  description: Picture Vocabulary Item 549
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc550:
+  type: Integer
+  description: Picture Vocabulary Item 550
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc551:
+  type: Integer
+  description: Picture Vocabulary Item 551
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc553:
+  type: Integer
+  description: Picture Vocabulary Item 553
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc555:
+  type: Integer
+  description: Picture Vocabulary Item 555
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc556:
+  type: Integer
+  description: Picture Vocabulary Item 556
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc557:
+  type: Integer
+  description: Picture Vocabulary Item 557
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc558:
+  type: Integer
+  description: Picture Vocabulary Item 558
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc560:
+  type: Integer
+  description: Picture Vocabulary Item 560
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc562:
+  type: Integer
+  description: Picture Vocabulary Item 562
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc563:
+  type: Integer
+  description: Picture Vocabulary Item 563
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc564:
+  type: Integer
+  description: Picture Vocabulary Item 564
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc565:
+  type: Integer
+  description: Picture Vocabulary Item 565
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc567:
+  type: Integer
+  description: Picture Vocabulary Item 567
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc568:
+  type: Integer
+  description: Picture Vocabulary Item 568
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc569:
+  type: Integer
+  description: Picture Vocabulary Item 569
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc572:
+  type: Integer
+  description: Picture Vocabulary Item 572
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc573:
+  type: Integer
+  description: Picture Vocabulary Item 573
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc574:
+  type: Integer
+  description: Picture Vocabulary Item 574
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc575:
+  type: Integer
+  description: Picture Vocabulary Item 575
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc576:
+  type: Integer
+  description: Picture Vocabulary Item 576
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc578:
+  type: Integer
+  description: Picture Vocabulary Item 578
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc580:
+  type: Integer
+  description: Picture Vocabulary Item 580
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc581:
+  type: Integer
+  description: Picture Vocabulary Item 581
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc585:
+  type: Integer
+  description: Picture Vocabulary Item 585
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc586:
+  type: Integer
+  description: Picture Vocabulary Item 586
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc587:
+  type: Integer
+  description: Picture Vocabulary Item 587
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc589:
+  type: Integer
+  description: Picture Vocabulary Item 589
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc590:
+  type: Integer
+  description: Picture Vocabulary Item 590
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc591:
+  type: Integer
+  description: Picture Vocabulary Item 591
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc592:
+  type: Integer
+  description: Picture Vocabulary Item 592
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc599:
+  type: Integer
+  description: Picture Vocabulary Item 599
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc600:
+  type: Integer
+  description: Picture Vocabulary Item 600
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc601:
+  type: Integer
+  description: Picture Vocabulary Item 601
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc602:
+  type: Integer
+  description: Picture Vocabulary Item 602
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc603:
+  type: Integer
+  description: Picture Vocabulary Item 603
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc604:
+  type: Integer
+  description: Picture Vocabulary Item 604
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc608:
+  type: Integer
+  description: Picture Vocabulary Item 608
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc610:
+  type: Integer
+  description: Picture Vocabulary Item 610
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc615:
+  type: Integer
+  description: Picture Vocabulary Item 615
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc616:
+  type: Integer
+  description: Picture Vocabulary Item 616
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+lavoc620:
+  type: Integer
+  description: Picture Vocabulary Item 620
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  codes:
+    0: Incorrect
+    1: Correct
+
+prob_admin:
+  type: Integer
+  description: Flagged for potentially problematic test administration
+  range:
+  - 1
+  notes: 1=Flagged
+  alias: flag_cognition_vocabulary
+  codes:
+    1: Flagged
+
+tlbx_readcount:
+  type: Integer
+  description: English Reading Number of items
+  alias: engvocabcount,spanvocabcount
+
+tlbx_readncorr:
+  type: Integer
+  description: English Reading Number Correct
+  alias: engvocabncorr,spanvocabncorr
+
+lavoc_screen:
+  type: Integer
+  description: Vocabulary Starting theta based on age/education
+  alias: splavoc_screen
+
+accult_select_language:
+  type: Integer
+  description: "Test given in Spanish? \xC2\xBFEspa\xC3\xB1ol?"
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: nihtbx_picvocab_language
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+visit:
+  type: String
+  length: 60
+  description: Visit name
+  alias: eventname
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: assessment_name,nihtbx_picvocab_v
+
+wcst_ni:
+  type: Integer
+  description: Number of Items
+  alias: itmcnt,nihtbx_picvocab_itmcnt
+
+tbx_comsc:
+  type: Integer
+  description: Computed score
+  alias: nihtbx_demo_rescore_computedengvocab,nihtbx_picvocab_computedscore,nihtbx_picvocab_cs
+
+dode:
+  type: String
+  length: 10
+  description: Date of Data Entry
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+
+nih_pin:
+  type: String
+  length: 25
+  description: PIN number assigned by the NIH Toolbox
+  alias: pin
+
+interview_language:
+  type: String
+  length: 255
+  description: Language Used in the Interview
+  alias: language,nihtbx_picvocab_language
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)
+  alias: respondent
+
+fneproc:
+  type: String
+  length: 20
+  description: name of trial procedure being run
+
+nihtbx_picvocabrs:
+  type: Integer
+  description: NIH Toolbox Picture Vocabulary Test RawScore
+  alias: tcb_vocb_raw

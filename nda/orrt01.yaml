@@ -1,0 +1,3833 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: guid_id
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: hcpa_id,record_id,subject
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  alias: nihtbx_reading_date,tcb_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of subject at birth
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: dem_gender,gender
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: assessment_name,nihtbx_reading_v,tbx_reading_form
+
+tbx_reading_score:
+  type: Integer
+  description: Reading test score
+  alias: nih_tlbx_tscore,nihtbx_reading_rawscore,tcb_read_raw,uncorrected_standard_score
+
+read_acss:
+  type: Integer
+  description: Reading test Age-Corrected Standard Score
+  alias: age_corrected_standard,age_corrected_standard_score,nih_tlbx_agegencsc,nihtbx_demo_rescore_agecorrengread,nihtbx_reading_agecorrected,oralagecorrscore,tcb_read_age_ss
+
+read_fcts:
+  type: Integer
+  description: Reading test Fully Corrected T-score
+  alias: fully_corrected_t,nih_tlbx_fctsc,nihtbx_demo_rescore_fulltengread,nihtbx_reading_fc,nihtbx_reading_fullycorrected,oraltscore,tcb_read_full_tscr
+
+read_uss:
+  type: Integer
+  description: Reading test Uncorrected Standard Score
+  alias: nihtbx_demo_rescore_uncorrengread,nihtbx_reading_uncorrected,oraluncscore,tcb_read_uncorscr,uncorrected_standard
+
+read_perc:
+  type: String
+  length: 10
+  description: Reading test  Percentile
+  alias: national_percentile__age_adjusted_,nih_tlbx_natperc,nihtbx_reading_percentile
+
+primary_language:
+  type: String
+  length: 255
+  description: Subject's Primary Language
+  alias: language,nihtbx_reading_language
+
+nih_pin:
+  type: String
+  length: 25
+  description: PIN number assigned by the NIH Toolbox
+  alias: pin
+
+tbx_failed_dccs:
+  type: Integer
+  description: flag for failure of subtest
+  range:
+  - 0
+  - 1
+  notes: 0=False; 1=True
+  codes:
+    0: 'False'
+    1: 'True'
+
+reading_screen:
+  type: Float
+  description: Reading - English - Starting theta based on age/ education
+
+lare001:
+  type: Integer
+  description: Oral Reading Recognition Item  001
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre001
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare002:
+  type: Integer
+  description: Oral Reading Recognition Item  002
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre002
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare003:
+  type: Integer
+  description: Oral Reading Recognition Item  003
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre003
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare004:
+  type: Integer
+  description: Oral Reading Recognition Item  004
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre004
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare005:
+  type: Integer
+  description: Oral Reading Recognition Item  005
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre005
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare006:
+  type: Integer
+  description: Oral Reading Recognition Item  006
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre006
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare007:
+  type: Integer
+  description: Oral Reading Recognition Item  007
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre007
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare008:
+  type: Integer
+  description: Oral Reading Recognition Item  008
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre008
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare009:
+  type: Integer
+  description: Oral Reading Recognition Item  009
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre009
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare011:
+  type: Integer
+  description: Oral Reading Recognition Item  011
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre011
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare012:
+  type: Integer
+  description: Oral Reading Recognition Item  012
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre012
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare013:
+  type: Integer
+  description: Oral Reading Recognition Item  013
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre013
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare014:
+  type: Integer
+  description: Oral Reading Recognition Item  014
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre014
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare016:
+  type: Integer
+  description: Oral Reading Recognition Item  016
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre016
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare017:
+  type: Integer
+  description: Oral Reading Recognition Item  017
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre017
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare018:
+  type: Integer
+  description: Oral Reading Recognition Item  018
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre018
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare019:
+  type: Integer
+  description: Oral Reading Recognition Item  019
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre019
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare020:
+  type: Integer
+  description: Oral Reading Recognition Item  020
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre020
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare021:
+  type: Integer
+  description: Oral Reading Recognition Item  021
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre021
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare022:
+  type: Integer
+  description: Oral Reading Recognition Item  022
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre022
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare023:
+  type: Integer
+  description: Oral Reading Recognition Item  023
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre023
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare024:
+  type: Integer
+  description: Oral Reading Recognition Item  024
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre024
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare025:
+  type: Integer
+  description: Oral Reading Recognition Item  025
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre025
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare026:
+  type: Integer
+  description: Oral Reading Recognition Item  026
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre026
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare027:
+  type: Integer
+  description: Oral Reading Recognition Item  027
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre027
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare028:
+  type: Integer
+  description: Oral Reading Recognition Item  028
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre028
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare029:
+  type: Integer
+  description: Oral Reading Recognition Item  029
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre029
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare030:
+  type: Integer
+  description: Oral Reading Recognition Item  030
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre030
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare031:
+  type: Integer
+  description: Oral Reading Recognition Item  031
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre031
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare032:
+  type: Integer
+  description: Oral Reading Recognition Item  032
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre032
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare033:
+  type: Integer
+  description: Oral Reading Recognition Item  033
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre033
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare034:
+  type: Integer
+  description: Oral Reading Recognition Item  034
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre034
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare035:
+  type: Integer
+  description: Oral Reading Recognition Item  035
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre035
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare036:
+  type: Integer
+  description: Oral Reading Recognition Item  036
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre036
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare037:
+  type: Integer
+  description: Oral Reading Recognition Item  037
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre037
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare038:
+  type: Integer
+  description: Oral Reading Recognition Item  038
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre038
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare039:
+  type: Integer
+  description: Oral Reading Recognition Item  039
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre039
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare040:
+  type: Integer
+  description: Oral Reading Recognition Item  040
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre040
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare041:
+  type: Integer
+  description: Oral Reading Recognition Item  041
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre041
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare042:
+  type: Integer
+  description: Oral Reading Recognition Item  042
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre042
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare043:
+  type: Integer
+  description: Oral Reading Recognition Item  043
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre043
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare044:
+  type: Integer
+  description: Oral Reading Recognition Item  044
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre044
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare045:
+  type: Integer
+  description: Oral Reading Recognition Item  045
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre045
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare046:
+  type: Integer
+  description: Oral Reading Recognition Item  046
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre046
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare048:
+  type: Integer
+  description: Oral Reading Recognition Item  048
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre048
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare049:
+  type: Integer
+  description: Oral Reading Recognition Item  049
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre049
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare050:
+  type: Integer
+  description: Oral Reading Recognition Item  050
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre050
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare051:
+  type: Integer
+  description: Oral Reading Recognition Item  051
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre051
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare052:
+  type: Integer
+  description: Oral Reading Recognition Item  052
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre052
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare053:
+  type: Integer
+  description: Oral Reading Recognition Item  053
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre053
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare054:
+  type: Integer
+  description: Oral Reading Recognition Item  054
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre054
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare055:
+  type: Integer
+  description: Oral Reading Recognition Item  055
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre055
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare056:
+  type: Integer
+  description: Oral Reading Recognition Item  056
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre056
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare057:
+  type: Integer
+  description: Oral Reading Recognition Item  057
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre057
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare058:
+  type: Integer
+  description: Oral Reading Recognition Item  058
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre058
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare059:
+  type: Integer
+  description: Oral Reading Recognition Item  059
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre059
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare060:
+  type: Integer
+  description: Oral Reading Recognition Item  060
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre060
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare061:
+  type: Integer
+  description: Oral Reading Recognition Item  061
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre061
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare062:
+  type: Integer
+  description: Oral Reading Recognition Item  062
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre062
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare063:
+  type: Integer
+  description: Oral Reading Recognition Item  063
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre063
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare064:
+  type: Integer
+  description: Oral Reading Recognition Item  064
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre064
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare065:
+  type: Integer
+  description: Oral Reading Recognition Item  065
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre065
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare066:
+  type: Integer
+  description: Oral Reading Recognition Item  066
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre066
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare067:
+  type: Integer
+  description: Oral Reading Recognition Item  067
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre067
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare068:
+  type: Integer
+  description: Oral Reading Recognition Item  068
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre068
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare069:
+  type: Integer
+  description: Oral Reading Recognition Item  069
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre069
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare070:
+  type: Integer
+  description: Oral Reading Recognition Item  070
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre070
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare071:
+  type: Integer
+  description: Oral Reading Recognition Item  071
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre071
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare072:
+  type: Integer
+  description: Oral Reading Recognition Item  072
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre072
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare073:
+  type: Integer
+  description: Oral Reading Recognition Item  073
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre073
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare074:
+  type: Integer
+  description: Oral Reading Recognition Item  074
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre074
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare075:
+  type: Integer
+  description: Oral Reading Recognition Item  075
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre075
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare076:
+  type: Integer
+  description: Oral Reading Recognition Item  076
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre076
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare077:
+  type: Integer
+  description: Oral Reading Recognition Item  077
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre077
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare078:
+  type: Integer
+  description: Oral Reading Recognition Item  078
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre078
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare079:
+  type: Integer
+  description: Oral Reading Recognition Item  079
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre079
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare080:
+  type: Integer
+  description: Oral Reading Recognition Item  080
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre080
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare081:
+  type: Integer
+  description: Oral Reading Recognition Item  081
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre081
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare082:
+  type: Integer
+  description: Oral Reading Recognition Item  082
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre082
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare083:
+  type: Integer
+  description: Oral Reading Recognition Item  083
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre083
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare084:
+  type: Integer
+  description: Oral Reading Recognition Item  084
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre084
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare085:
+  type: Integer
+  description: Oral Reading Recognition Item  085
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre085
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare086:
+  type: Integer
+  description: Oral Reading Recognition Item  086
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre086
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare087:
+  type: Integer
+  description: Oral Reading Recognition Item  087
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre087
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare088:
+  type: Integer
+  description: Oral Reading Recognition Item  088
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre088
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare089:
+  type: Integer
+  description: Oral Reading Recognition Item  089
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre089
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare090:
+  type: Integer
+  description: Oral Reading Recognition Item  090
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre090
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare091:
+  type: Integer
+  description: Oral Reading Recognition Item  091
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre091
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare092:
+  type: Integer
+  description: Oral Reading Recognition Item  092
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre092
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare093:
+  type: Integer
+  description: Oral Reading Recognition Item  093
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre093
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare094:
+  type: Integer
+  description: Oral Reading Recognition Item  094
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre094
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare095:
+  type: Integer
+  description: Oral Reading Recognition Item  095
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre095
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare096:
+  type: Integer
+  description: Oral Reading Recognition Item  096
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre096
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare097:
+  type: Integer
+  description: Oral Reading Recognition Item  097
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre097
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare098:
+  type: Integer
+  description: Oral Reading Recognition Item  098
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre098
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare099:
+  type: Integer
+  description: Oral Reading Recognition Item  099
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre099
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare100:
+  type: Integer
+  description: Oral Reading Recognition Item  100
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre100
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare101:
+  type: Integer
+  description: Oral Reading Recognition Item  101
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre101
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare102:
+  type: Integer
+  description: Oral Reading Recognition Item  102
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre102
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare103:
+  type: Integer
+  description: Oral Reading Recognition Item  103
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre103
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare104:
+  type: Integer
+  description: Oral Reading Recognition Item  104
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre104
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare105:
+  type: Integer
+  description: Oral Reading Recognition Item  105
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre105
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare106:
+  type: Integer
+  description: Oral Reading Recognition Item  106
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre106
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare107:
+  type: Integer
+  description: Oral Reading Recognition Item  107
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre107
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare108:
+  type: Integer
+  description: Oral Reading Recognition Item  108
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre108
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare109:
+  type: Integer
+  description: Oral Reading Recognition Item  109
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre109
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare110:
+  type: Integer
+  description: Oral Reading Recognition Item  110
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre110
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare111:
+  type: Integer
+  description: Oral Reading Recognition Item  111
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre111
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare112:
+  type: Integer
+  description: Oral Reading Recognition Item  112
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre112
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare113:
+  type: Integer
+  description: Oral Reading Recognition Item  113
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre113
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare114:
+  type: Integer
+  description: Oral Reading Recognition Item  114
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre114
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare115:
+  type: Integer
+  description: Oral Reading Recognition Item  115
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre115
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare116:
+  type: Integer
+  description: Oral Reading Recognition Item  116
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre116
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare117:
+  type: Integer
+  description: Oral Reading Recognition Item  117
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre117
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare118:
+  type: Integer
+  description: Oral Reading Recognition Item  118
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre118
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare119:
+  type: Integer
+  description: Oral Reading Recognition Item  119
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre119
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare120:
+  type: Integer
+  description: Oral Reading Recognition Item  120
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre120
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare121:
+  type: Integer
+  description: Oral Reading Recognition Item  121
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre121
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare122:
+  type: Integer
+  description: Oral Reading Recognition Item  122
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre122
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare125:
+  type: Integer
+  description: Oral Reading Recognition Item  125
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre125
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare126:
+  type: Integer
+  description: Oral Reading Recognition Item  126
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre126
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare127:
+  type: Integer
+  description: Oral Reading Recognition Item  127
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre127
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare128:
+  type: Integer
+  description: Oral Reading Recognition Item  128
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre128
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare129:
+  type: Integer
+  description: Oral Reading Recognition Item  129
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre129
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare130:
+  type: Integer
+  description: Oral Reading Recognition Item  130
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre130
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare131:
+  type: Integer
+  description: Oral Reading Recognition Item  131
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre131
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare132:
+  type: Integer
+  description: Oral Reading Recognition Item  132
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre132
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare133:
+  type: Integer
+  description: Oral Reading Recognition Item  133
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre133
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare134:
+  type: Integer
+  description: Oral Reading Recognition Item  134
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre134
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare135:
+  type: Integer
+  description: Oral Reading Recognition Item  135
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre135
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare136:
+  type: Integer
+  description: Oral Reading Recognition Item  136
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre136
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare137:
+  type: Integer
+  description: Oral Reading Recognition Item  137
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre137
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare138:
+  type: Integer
+  description: Oral Reading Recognition Item  138
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre138
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare139:
+  type: Integer
+  description: Oral Reading Recognition Item  139
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre139
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare140:
+  type: Integer
+  description: Oral Reading Recognition Item  140
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre140
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare141:
+  type: Integer
+  description: Oral Reading Recognition Item  141
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre141
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare142:
+  type: Integer
+  description: Oral Reading Recognition Item  142
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre142
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare143:
+  type: Integer
+  description: Oral Reading Recognition Item  143
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre143
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare144:
+  type: Integer
+  description: Oral Reading Recognition Item  144
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre144
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare145:
+  type: Integer
+  description: Oral Reading Recognition Item  145
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre145
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare146:
+  type: Integer
+  description: Oral Reading Recognition Item  146
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre146
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare147:
+  type: Integer
+  description: Oral Reading Recognition Item  147
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre147
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare148:
+  type: Integer
+  description: Oral Reading Recognition Item  148
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre148
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare149:
+  type: Integer
+  description: Oral Reading Recognition Item  149
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre149
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare150:
+  type: Integer
+  description: Oral Reading Recognition Item  150
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre150
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare152:
+  type: Integer
+  description: Oral Reading Recognition Item  152
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre152
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare153:
+  type: Integer
+  description: Oral Reading Recognition Item  153
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre153
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare154:
+  type: Integer
+  description: Oral Reading Recognition Item  154
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre154
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare155:
+  type: Integer
+  description: Oral Reading Recognition Item  155
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre155
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare156:
+  type: Integer
+  description: Oral Reading Recognition Item  156
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre156
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare157:
+  type: Integer
+  description: Oral Reading Recognition Item  157
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre157
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare158:
+  type: Integer
+  description: Oral Reading Recognition Item  158
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre158
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare159:
+  type: Integer
+  description: Oral Reading Recognition Item  159
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre159
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare160:
+  type: Integer
+  description: Oral Reading Recognition Item  160
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre160
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare161:
+  type: Integer
+  description: Oral Reading Recognition Item  161
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre161
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare162:
+  type: Integer
+  description: Oral Reading Recognition Item  162
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre162
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare163:
+  type: Integer
+  description: Oral Reading Recognition Item  163
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre163
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare164:
+  type: Integer
+  description: Oral Reading Recognition Item  164
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre164
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare165:
+  type: Integer
+  description: Oral Reading Recognition Item  165
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre165
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare166:
+  type: Integer
+  description: Oral Reading Recognition Item  166
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre166
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare167:
+  type: Integer
+  description: Oral Reading Recognition Item  167
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre167
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare168:
+  type: Integer
+  description: Oral Reading Recognition Item  168
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre168
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare169:
+  type: Integer
+  description: Oral Reading Recognition Item  169
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre169
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare170:
+  type: Integer
+  description: Oral Reading Recognition Item  170
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre170
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare171:
+  type: Integer
+  description: Oral Reading Recognition Item  171
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre171
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare172:
+  type: Integer
+  description: Oral Reading Recognition Item  172
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre172
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare173:
+  type: Integer
+  description: Oral Reading Recognition Item  173
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre173
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare174:
+  type: Integer
+  description: Oral Reading Recognition Item  174
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre174
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare175:
+  type: Integer
+  description: Oral Reading Recognition Item  175
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre175
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare176:
+  type: Integer
+  description: Oral Reading Recognition Item  176
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre176
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare177:
+  type: Integer
+  description: Oral Reading Recognition Item  177
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre177
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare178:
+  type: Integer
+  description: Oral Reading Recognition Item  178
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre178
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare179:
+  type: Integer
+  description: Oral Reading Recognition Item  179
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre179
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare180:
+  type: Integer
+  description: Oral Reading Recognition Item  180
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre180
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare181:
+  type: Integer
+  description: Oral Reading Recognition Item  181
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre181
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare182:
+  type: Integer
+  description: Oral Reading Recognition Item  182
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre182
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare183:
+  type: Integer
+  description: Oral Reading Recognition Item  183
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre183
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare184:
+  type: Integer
+  description: Oral Reading Recognition Item  184
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre184
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare185:
+  type: Integer
+  description: Oral Reading Recognition Item  185
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre185
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare186:
+  type: Integer
+  description: Oral Reading Recognition Item  186
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre186
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare187:
+  type: Integer
+  description: Oral Reading Recognition Item  187
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre187
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare188:
+  type: Integer
+  description: Oral Reading Recognition Item  188
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre188
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare189:
+  type: Integer
+  description: Oral Reading Recognition Item  189
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre189
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare190:
+  type: Integer
+  description: Oral Reading Recognition Item  190
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre190
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare191:
+  type: Integer
+  description: Oral Reading Recognition Item  191
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre191
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare192:
+  type: Integer
+  description: Oral Reading Recognition Item  192
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre192
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare193:
+  type: Integer
+  description: Oral Reading Recognition Item  193
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre193
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare194:
+  type: Integer
+  description: Oral Reading Recognition Item  194
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre194
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare195:
+  type: Integer
+  description: Oral Reading Recognition Item  195
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre195
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare196:
+  type: Integer
+  description: Oral Reading Recognition Item  196
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre196
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare197:
+  type: Integer
+  description: Oral Reading Recognition Item  197
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre197
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare198:
+  type: Integer
+  description: Oral Reading Recognition Item  198
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre198
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare199:
+  type: Integer
+  description: Oral Reading Recognition Item  199
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre199
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare200:
+  type: Integer
+  description: Oral Reading Recognition Item  200
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre200
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare201:
+  type: Integer
+  description: Oral Reading Recognition Item  201
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre201
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare202:
+  type: Integer
+  description: Oral Reading Recognition Item  202
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre202
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare203:
+  type: Integer
+  description: Oral Reading Recognition Item  203
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre203
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare204:
+  type: Integer
+  description: Oral Reading Recognition Item  204
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre204
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare205:
+  type: Integer
+  description: Oral Reading Recognition Item  205
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre205
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare206:
+  type: Integer
+  description: Oral Reading Recognition Item  206
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre206
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare207:
+  type: Integer
+  description: Oral Reading Recognition Item  207
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre207
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare208:
+  type: Integer
+  description: Oral Reading Recognition Item  208
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre208
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare209:
+  type: Integer
+  description: Oral Reading Recognition Item  209
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre209
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare210:
+  type: Integer
+  description: Oral Reading Recognition Item  210
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre210
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare211:
+  type: Integer
+  description: Oral Reading Recognition Item  211
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre211
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare212:
+  type: Integer
+  description: Oral Reading Recognition Item  212
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre212
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare213:
+  type: Integer
+  description: Oral Reading Recognition Item  213
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre213
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare214:
+  type: Integer
+  description: Oral Reading Recognition Item  214
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre214
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare215:
+  type: Integer
+  description: Oral Reading Recognition Item  215
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre215
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare216:
+  type: Integer
+  description: Oral Reading Recognition Item  216
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre216
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare217:
+  type: Integer
+  description: Oral Reading Recognition Item  217
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre217
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare218:
+  type: Integer
+  description: Oral Reading Recognition Item  218
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre218
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare219:
+  type: Integer
+  description: Oral Reading Recognition Item  219
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre219
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare220:
+  type: Integer
+  description: Oral Reading Recognition Item  220
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre220
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare221:
+  type: Integer
+  description: Oral Reading Recognition Item  221
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre221
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare222:
+  type: Integer
+  description: Oral Reading Recognition Item  222
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre222
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare223:
+  type: Integer
+  description: Oral Reading Recognition Item  223
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre223
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare224:
+  type: Integer
+  description: Oral Reading Recognition Item  224
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre224
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare225:
+  type: Integer
+  description: Oral Reading Recognition Item  225
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre225
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare226:
+  type: Integer
+  description: Oral Reading Recognition Item  226
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre226
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare227:
+  type: Integer
+  description: Oral Reading Recognition Item  227
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre227
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare228:
+  type: Integer
+  description: Oral Reading Recognition Item  228
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre228
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare229:
+  type: Integer
+  description: Oral Reading Recognition Item  229
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre229
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare230:
+  type: Integer
+  description: Oral Reading Recognition Item  230
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre230
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare231:
+  type: Integer
+  description: Oral Reading Recognition Item  231
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre231
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare232:
+  type: Integer
+  description: Oral Reading Recognition Item  232
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre232
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare233:
+  type: Integer
+  description: Oral Reading Recognition Item  233
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre233
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare234:
+  type: Integer
+  description: Oral Reading Recognition Item  234
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre234
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare235:
+  type: Integer
+  description: Oral Reading Recognition Item  235
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre235
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare236:
+  type: Integer
+  description: Oral Reading Recognition Item  236
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre236
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare237:
+  type: Integer
+  description: Oral Reading Recognition Item  237
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre237
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare238:
+  type: Integer
+  description: Oral Reading Recognition Item  238
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre238
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare239:
+  type: Integer
+  description: Oral Reading Recognition Item  239
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre239
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare240:
+  type: Integer
+  description: Oral Reading Recognition Item  240
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre240
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare241:
+  type: Integer
+  description: Oral Reading Recognition Item  241
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre241
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare242:
+  type: Integer
+  description: Oral Reading Recognition Item  242
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre242
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare243:
+  type: Integer
+  description: Oral Reading Recognition Item  243
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre243
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare244:
+  type: Integer
+  description: Oral Reading Recognition Item  244
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre244
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare245:
+  type: Integer
+  description: Oral Reading Recognition Item  245
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre245
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare246:
+  type: Integer
+  description: Oral Reading Recognition Item  246
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre246
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare247:
+  type: Integer
+  description: Oral Reading Recognition Item  247
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre247
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare248:
+  type: Integer
+  description: Oral Reading Recognition Item  248
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre248
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare249:
+  type: Integer
+  description: Oral Reading Recognition Item  249
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre249
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare250:
+  type: Integer
+  description: Oral Reading Recognition Item  250
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre250
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare251:
+  type: Integer
+  description: Oral Reading Recognition Item  251
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre251
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare252:
+  type: Integer
+  description: Oral Reading Recognition Item  252
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre252
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare253:
+  type: Integer
+  description: Oral Reading Recognition Item  253
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre253
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare254:
+  type: Integer
+  description: Oral Reading Recognition Item  254
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre254
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare255:
+  type: Integer
+  description: Oral Reading Recognition Item  255
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre255
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare256:
+  type: Integer
+  description: Oral Reading Recognition Item  256
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre256
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare257:
+  type: Integer
+  description: Oral Reading Recognition Item  257
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre257
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare258:
+  type: Integer
+  description: Oral Reading Recognition Item  258
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre258
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare259:
+  type: Integer
+  description: Oral Reading Recognition Item  259
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre259
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare260:
+  type: Integer
+  description: Oral Reading Recognition Item  260
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre260
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare261:
+  type: Integer
+  description: Oral Reading Recognition Item  261
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre261
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare262:
+  type: Integer
+  description: Oral Reading Recognition Item  262
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre262
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare263:
+  type: Integer
+  description: Oral Reading Recognition Item  263
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre263
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare264:
+  type: Integer
+  description: Oral Reading Recognition Item  264
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre264
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare265:
+  type: Integer
+  description: Oral Reading Recognition Item  265
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre265
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare266:
+  type: Integer
+  description: Oral Reading Recognition Item  266
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre266
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare267:
+  type: Integer
+  description: Oral Reading Recognition Item  267
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre267
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare268:
+  type: Integer
+  description: Oral Reading Recognition Item  268
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre268
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare269:
+  type: Integer
+  description: Oral Reading Recognition Item  269
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre269
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare270:
+  type: Integer
+  description: Oral Reading Recognition Item  270
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre270
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare271:
+  type: Integer
+  description: Oral Reading Recognition Item  271
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre271
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare272:
+  type: Integer
+  description: Oral Reading Recognition Item  272
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre272
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare273:
+  type: Integer
+  description: Oral Reading Recognition Item  273
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre273
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare274:
+  type: Integer
+  description: Oral Reading Recognition Item  274
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre274
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare275:
+  type: Integer
+  description: Oral Reading Recognition Item  275
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre275
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare276:
+  type: Integer
+  description: Oral Reading Recognition Item  276
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre276
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare277:
+  type: Integer
+  description: Oral Reading Recognition Item  277
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre277
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare278:
+  type: Integer
+  description: Oral Reading Recognition Item  278
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre278
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare279:
+  type: Integer
+  description: Oral Reading Recognition Item  279
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre279
+  codes:
+    0: Incorrect
+    1: Correct
+
+lare280:
+  type: Integer
+  description: Oral Reading Recognition Item  280
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspre280
+  codes:
+    0: Incorrect
+    1: Correct
+
+larebr1:
+  type: Integer
+  description: Oral Reading Recognition Item  BR1
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: lasprebr1
+  codes:
+    0: Incorrect
+    1: Correct
+
+larebr2:
+  type: Integer
+  description: Oral Reading Recognition Item  BR2
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: lasprebr2
+  codes:
+    0: Incorrect
+    1: Correct
+
+larebr3:
+  type: Integer
+  description: Oral Reading Recognition Item  BR3
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: lasprebr3
+  codes:
+    0: Incorrect
+    1: Correct
+
+larebr4:
+  type: Integer
+  description: Oral Reading Recognition Item  BR4
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: lasprebr4
+  codes:
+    0: Incorrect
+    1: Correct
+
+larebr5:
+  type: Integer
+  description: Oral Reading Recognition Item  BR5
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: lasprebr5
+  codes:
+    0: Incorrect
+    1: Correct
+
+larebr6:
+  type: Integer
+  description: Oral Reading Recognition Item  BR6
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: lasprebr6
+  codes:
+    0: Incorrect
+    1: Correct
+
+larebr7:
+  type: Integer
+  description: Oral Reading Recognition Item  BR7
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: lasprebr7
+  codes:
+    0: Incorrect
+    1: Correct
+
+larepr01:
+  type: Integer
+  description: Oral Reading Recognition Item  PR01
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: lasprepr01
+  codes:
+    0: Incorrect
+    1: Correct
+
+larepr02:
+  type: Integer
+  description: Oral Reading Recognition Item  PR02
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: lasprepr02
+  codes:
+    0: Incorrect
+    1: Correct
+
+larepr03:
+  type: Integer
+  description: Oral Reading Recognition Item  PR03
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: lasprepr03
+  codes:
+    0: Incorrect
+    1: Correct
+
+larepr04:
+  type: Integer
+  description: Oral Reading Recognition Item  PR04
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: lasprepr04
+  codes:
+    0: Incorrect
+    1: Correct
+
+laresc001:
+  type: Integer
+  description: Oral Reading Recognition Item  SC001
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspresc001
+  codes:
+    0: Incorrect
+    1: Correct
+
+laresc002:
+  type: Integer
+  description: Oral Reading Recognition Item  SC002
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspresc002
+  codes:
+    0: Incorrect
+    1: Correct
+
+laresc004:
+  type: Integer
+  description: Oral Reading Recognition Item  SC004
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspresc004
+  codes:
+    0: Incorrect
+    1: Correct
+
+laresc005:
+  type: Integer
+  description: Oral Reading Recognition Item  SC005
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspresc005
+  codes:
+    0: Incorrect
+    1: Correct
+
+laresc006:
+  type: Integer
+  description: Oral Reading Recognition Item  SC006
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspresc006
+  codes:
+    0: Incorrect
+    1: Correct
+
+laresc007:
+  type: Integer
+  description: Oral Reading Recognition Item  SC007
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspresc007
+  codes:
+    0: Incorrect
+    1: Correct
+
+laresc008:
+  type: Integer
+  description: Oral Reading Recognition Item  SC008
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspresc008
+  codes:
+    0: Incorrect
+    1: Correct
+
+laresc009:
+  type: Integer
+  description: Oral Reading Recognition Item  SC009
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: laspresc009
+  codes:
+    0: Incorrect
+    1: Correct
+
+laspscr001:
+  type: Integer
+  description: Oral Reading Recognition Item  SCR001
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: larescr001
+  codes:
+    0: Incorrect
+    1: Correct
+
+laspscr002:
+  type: Integer
+  description: Oral Reading Recognition Item  SCR002
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: larescr002
+  codes:
+    0: Incorrect
+    1: Correct
+
+laspscr003:
+  type: Integer
+  description: Oral Reading Recognition Item  SCR003
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: larescr003
+  codes:
+    0: Incorrect
+    1: Correct
+
+laspscr004:
+  type: Integer
+  description: Oral Reading Recognition Item  SCR004
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: larescr004
+  codes:
+    0: Incorrect
+    1: Correct
+
+laspscr005:
+  type: Integer
+  description: Oral Reading Recognition Item  SCR005
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: larescr005
+  codes:
+    0: Incorrect
+    1: Correct
+
+laspscr006:
+  type: Integer
+  description: Oral Reading Recognition Item  SCR006
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: larescr006
+  codes:
+    0: Incorrect
+    1: Correct
+
+laspscr007:
+  type: Integer
+  description: Oral Reading Recognition Item  SCR007
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: larescr007
+  codes:
+    0: Incorrect
+    1: Correct
+
+laspscr008:
+  type: Integer
+  description: Oral Reading Recognition Item  SCR008
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: larescr008
+  codes:
+    0: Incorrect
+    1: Correct
+
+laspscr009:
+  type: Integer
+  description: Oral Reading Recognition Item  SCR009
+  range:
+  - 0
+  - 1
+  notes: 0=Incorrect; 1=Correct
+  alias: larescr009
+  codes:
+    0: Incorrect
+    1: Correct
+
+prob_admin:
+  type: Integer
+  description: Flagged for potentially problematic test administration
+  range:
+  - 1
+  notes: 1=Flagged
+  alias: flag_cognition_reading
+  codes:
+    1: Flagged
+
+nih_tlbx_theta:
+  type: Float
+  description: Theta
+  notes: 999=NA/NK/missing
+  alias: engreadtheta,nihtbx_demo_rescore_thetaengread,nihtbx_reading_theta,tcb_read_theta,theta
+  codes:
+    999: NA/NK/missing
+
+nih_tlbx_se:
+  type: Float
+  description: Standard Error
+  notes: 999=NA/NK/missing
+  alias: engreadse,nihtbx_reading_se,se,tcb_read_se
+  codes:
+    999: NA/NK/missing
+
+tlbx_readcount:
+  type: Integer
+  description: English Reading Number of items
+  alias: engreadcount,nihtbx_reading_itmcnt,tcb_read_item
+
+tlbx_readncorr:
+  type: Integer
+  description: English Reading Number Correct
+  alias: engreadncorr
+
+accult_select_language:
+  type: Integer
+  description: "Test given in Spanish? \xC2\xBFEspa\xC3\xB1ol?"
+  range:
+  - 0
+  - 1
+  notes: 0 = No; 1 = Yes
+  alias: nihtbx_reading_language
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+visit:
+  type: String
+  length: 60
+  description: Visit name
+  alias: eventname
+
+wcst_ni:
+  type: Integer
+  description: Number of Items
+  alias: itmcnt,nihtbx_reading_itmcnt
+
+tbx_comsc:
+  type: Integer
+  description: Computed score
+  alias: nihtbx_demo_rescore_computedengread,nihtbx_reading_computedscore,nihtbx_reading_cs
+
+respondent:
+  type: String
+  length: 20
+  description: Respondent
+  range:
+  - Mother
+  - Father
+  - Parent
+  - Guardian
+  - Teacher
+  - Child
+  - Self
+  - Caregiver
+  - Partner
+  - Other
+
+dode:
+  type: String
+  length: 10
+  description: Date of Data Entry
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+
+comqother:
+  type: String
+  length: 255
+  description: Respondent - Other (text)
+
+fneproc:
+  type: String
+  length: 20
+  description: name of trial procedure being run

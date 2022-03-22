@@ -54,13 +54,13 @@ lan_know:
 
 lan11:
   type: String
-  length: 25
+  length: 39
   description: 'Please list all the languages you know in order of dominance: Language
     1:'
 
 lan12:
   type: String
-  length: 30
+  length: 39
   description: 'Please list all the languages you know in order of dominance: Language
     2:'
 
@@ -84,7 +84,7 @@ lan15:
 
 lan21:
   type: String
-  length: 25
+  length: 39
   description: 'Please list all the languages you know in order of acquisition (your
     native language first): Language 1:'
 

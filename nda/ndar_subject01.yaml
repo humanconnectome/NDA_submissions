@@ -1,0 +1,1446 @@
+subjectkey:
+  type: GUID
+  required: true
+  description: The NDAR Global Unique Identifier (GUID) for research subject
+  range:
+  - NDAR*
+  alias: CandidateGUID,candidateguid,guid,nihguid,plot_ndar_guid,pseudo_guid,subject_key
+
+src_subject_id:
+  type: String
+  length: 20
+  required: true
+  description: Subject ID how it's defined in lab/project
+  alias: IBISID,child_id_full,clinical_barcode,demo_study_id,hcpa_id,ibisid,participant_id,participantid,pid,plot_id,record_id,session_id,src_subject,subject_id,subjectid,subjectnumber,subjid_display
+
+interview_date:
+  type: Date
+  required: true
+  description: Date on which the interview/genetic test/sampling/imaging/biospecimen
+    was completed. MM/DD/YYYY
+  alias: Date_taken,assessment_dt,bl_visit_date,consentdate,consented_study,datacollecteddate,date,date_demographics,date_interview_ses,date_of_interview_contact,date_taken,evaldate,interviewdate,intvdate,plot_visit1_date,pp_date,profile_date,testing_date,visit_date
+
+interview_age:
+  type: Integer
+  required: true
+  description: Age in months at the time of the interview/test/sampling/imaging.
+  range:
+  - 0::1260
+  notes: Age is rounded to chronological month. If the research participant is 15-days-old
+    at time of interview, the appropriate value would be 0 months. If the participant
+    is 16-days-old, the value would be 1 month.
+  alias: Candidate_Age_in_Months,age,age_a,age_m_consent,ageateval,ch_age,demo_age,demqage,intvage,plot_age_totalmonths,profile_age,test_age,total_age_in_months
+
+sex:
+  type: String
+  length: 20
+  required: true
+  description: Sex of subject at birth
+  range:
+  - M
+  - F
+  - O
+  - NR
+  notes: M = Male; F = Female; O=Other; NR = Not reported
+  alias: ch_sex,demo_sex,demqsex,gender,genderid,plot_child_sex,sex,sex_a
+  codes:
+    M: Male
+    F: Female
+    O: Other
+    NR: Not reported
+
+race:
+  type: String
+  length: 30
+  required: true
+  description: Race of study subject
+  range:
+  - American Indian/Alaska Native
+  - Asian
+  - Hawaiian or Pacific Islander
+  - Black or African American
+  - White
+  - More than one race
+  - Unknown or not reported
+  - Other Non-White
+  alias: demo_race,demo_white,demqrea2,race_dem,raceid
+
+ethnic_group:
+  type: String
+  length: 255
+  description: Ethnic group
+  alias: demo_ethnicity,demqrea1,ethnicity_dem,ethnicityid,hispanic
+
+phenotype:
+  type: String
+  length: 200
+  required: true
+  description: Phenotype/diagnosis for the subject
+  alias: Cohort,SubprojectID,ados_scoresumm_adosdiag,cohort,diagnosis,genderid,group,p1selectdiagnosis,project_category,race_dem,scid_diagnosis,scoresumm_overalldiag,subprojectid
+
+phenotype_description:
+  type: String
+  length: 4000
+  required: true
+  description: Description of the phenotype for the subject
+  alias: developmental_diff_sib_1,fmr1_status,p2whatisyourlevelofcertainty
+
+twins_study:
+  type: String
+  length: 100
+  required: true
+  description: Is this study of twins?
+  range:
+  - 'Yes'
+  - 'No'
+
+sibling_study:
+  type: String
+  length: 50
+  required: true
+  description: Was it sibling study? Study of sibling(s) of autistic child.
+  range:
+  - 'Yes'
+  - 'No'
+
+family_study:
+  type: String
+  length: 100
+  required: true
+  description: Was it family study? Study of biological mother, biological father
+    and/or sibling of proband.
+  range:
+  - 'Yes'
+  - 'No'
+
+family_user_def_id:
+  type: String
+  length: 20
+  required: Conditional
+  condition: family_study == 'Yes'
+  description: Family Pedigree User-Defined ID
+  alias: familyid,id
+
+subjectkey_mother:
+  type: GUID
+  description: The NDAR Global Unique Identifier (GUID) for subject's biological mother
+  range:
+  - NDAR*
+  alias: subject_key_mother
+
+src_mother_id:
+  type: String
+  length: 100
+  required: Conditional
+  condition: notNull(subjectkey_mother)
+  description: site specific mother ID
+  alias: biomother,mat_id,motherid,src_subject_id_mother
+
+subjectkey_father:
+  type: GUID
+  description: The NDAR Global Unique Identifier (GUID) for subject's biological father
+  range:
+  - NDAR*
+  alias: subject_key_father
+
+src_father_id:
+  type: String
+  length: 100
+  required: Conditional
+  condition: notNull(subjectkey_father)
+  description: site specific father ID
+  alias: fatherid,pat_id,src_subject_id_father
+
+subjectkey_sibling1:
+  type: GUID
+  description: The NDAR Global Unique Identifier (GUID) for subject's sibling
+  range:
+  - NDAR*
+  alias: ProbandGUID
+
+src_sibling1_id:
+  type: String
+  length: 100
+  required: Conditional
+  condition: notNull(subjectkey_sibling1)
+  description: site specific sibling1 ID
+  alias: probandid
+
+sibling_type1:
+  type: String
+  length: 255
+  required: Conditional
+  condition: notNull(subjectkey_sibling1)
+  description: Type of Sibling
+  range:
+  - Full Brother FB
+  - Half Mother Brother HMB
+  - Half Father Brother HFB
+  - Full Sister FS
+  - Half Mother Sister HMS
+  - Half Father Sister HFS
+  - Adopted Brother AB
+  - Adopted Sister AS
+  - Unknown
+  alias: ProbandGender,relationship_sib_1
+
+subjectkey_sibling2:
+  type: GUID
+  description: The NDAR Global Unique Identifier (GUID) for subject's sibling
+  range:
+  - NDAR*
+
+src_sibling2_id:
+  type: String
+  length: 100
+  description: site specific sibling2 ID
+
+sibling_type2:
+  type: String
+  length: 255
+  description: sibling type
+  range:
+  - Full Brother FB
+  - Half Mother Brother HMB
+  - Half Father Brother HFB
+  - Full Sister FS
+  - Half Mother Sister HMS
+  - Half Father Sister HFS
+  - Adopted Brother AB
+  - Adopted Sister AS
+  - Unknown
+
+subjectkey_sibling3:
+  type: GUID
+  description: The NDAR Global Unique Identifier (GUID) for subject's sibling
+  range:
+  - NDAR*
+
+src_sibling3_id:
+  type: String
+  length: 100
+  description: site specific sibling3 ID
+
+sibling_type3:
+  type: String
+  length: 255
+  description: sibling type
+  range:
+  - Full Brother FB
+  - Half Mother Brother HMB
+  - Half Father Brother HFB
+  - Full Sister FS
+  - Half Mother Sister HMS
+  - Half Father Sister HFS
+  - Adopted Brother AB
+  - Adopted Sister AS
+  - Unknown
+
+subjectkey_sibling4:
+  type: GUID
+  description: The NDAR Global Unique Identifier (GUID) for subject's sibling
+  range:
+  - NDAR*
+
+src_sibling4_id:
+  type: String
+  length: 100
+  description: site specific sibling4 ID
+
+sibling_type4:
+  type: String
+  length: 255
+  description: sibling type
+  range:
+  - Full Brother FB
+  - Half Mother Brother HMB
+  - Half Father Brother HFB
+  - Full Sister FS
+  - Half Mother Sister HMS
+  - Half Father Sister HFS
+  - Adopted Brother AB
+  - Adopted Sister AS
+  - Unknown
+
+zygosity:
+  type: String
+  length: 255
+  required: Conditional
+  condition: twins_study == 'Yes'
+  description: Zygosity
+  range:
+  - monozygous
+  - dizygous
+  - trizygotic
+  - 999
+  notes: 999=unknown
+  alias: multibirthtypeid
+  codes:
+    999: unknown
+
+sample_taken:
+  type: String
+  length: 50
+  required: true
+  description: Was a sample taken at this interview/during this project time
+  range:
+  - 'Yes'
+  - 'No'
+  alias: dna_sample_collected
+
+sample_id_original:
+  type: String
+  length: 100
+  required: Conditional
+  condition: sample_taken == 'Yes'
+  description: Original, user-defined Sample ID
+
+sample_description:
+  type: String
+  length: 3500
+  required: Conditional
+  condition: sample_taken == 'Yes'
+  description: 'Sample description: tissue type, i.e. blood, saliva, brain etc.'
+  range:
+  - whole blood
+  - saliva
+  - brain
+  - urine
+  - serum
+  - plasma
+  - CSF
+  - IPS
+  - Fibroblast
+  - Neuronal Progenitor
+  - skin biopsy
+  - temporal cortex
+  - lymphoblastoid cell line
+  - unknown
+  - semen
+  - frontal cortex
+  - parietal cortex
+  - basal ganglia
+  - Placenta
+  - hair
+  - occipital visual cortex
+  - cerebellum
+  - spleen
+  - stool
+  - muscle
+  - kidney
+  - liver
+  - heart
+  - cord blood
+  - nasal swab
+  - DNA
+  - RNA
+
+biorepository_name:
+  type: String
+  length: 100
+  required: Conditional
+  condition: sample_taken == 'Yes'
+  description: Biorepository where sample is stored
+  alias: subjecttype
+
+sample_id_biorepository:
+  type: String
+  length: 100
+  required: Conditional
+  condition: sample_taken == 'Yes'
+  description: Biorepository Sample ID
+  alias: biospc_rutgers_id,rucdrnum
+
+patient_id_biorepository:
+  type: String
+  length: 100
+  required: Conditional
+  condition: notNull(biorepository_name)
+  description: Biorepository Patient ID
+  alias: dxsmryid
+
+cell_id_original:
+  type: String
+  length: 100
+  description: Original, user-defined cell line ID
+
+cell_id_biorepository:
+  type: String
+  length: 100
+  description: Biorepository cell line ID
+
+agre_subject_id:
+  type: String
+  length: 100
+  description: AGRE subject ID
+
+sfari_subject_id:
+  type: String
+  length: 100
+  description: SFARI subject ID
+
+cpea_site:
+  type: String
+  length: 100
+  description: CPEA/STAART site name
+
+cpea_id:
+  type: String
+  length: 100
+  description: CPEA/STAART subject ID
+
+blood_id:
+  type: String
+  length: 100
+  description: blood ID
+  alias: dna_sample_lab_id
+
+adi_dx:
+  type: String
+  length: 15
+  description: 'ADI: Diagnosis'
+
+ados_dx:
+  type: String
+  length: 15
+  description: ADOS Diagnosis
+
+agp_family_id:
+  type: String
+  length: 100
+  description: AGP family ID
+
+agp_subject_id:
+  type: String
+  length: 100
+  description: AGP subject ID
+
+site:
+  type: String
+  length: 101
+  description: Site
+  notes: Study Site
+  alias: biorepository_site_id,fxs_site_name_other,siteid
+
+comments_misc:
+  type: String
+  length: 4000
+  description: Miscellaneous comments on study, interview, methodology relevant to
+    this form data
+  alias: demo_comments,dna_comments,fspgod,genderdescr,pi_staff
+
+week:
+  type: Float
+  description: Week in level/study
+  notes: 99=week 10-week 14
+  codes:
+    99: week 10-week 14
+
+study:
+  type: String
+  length: 100
+  description: Study; The code for each individual study
+  alias: biorepository_study_number,dna_sample_usable
+
+reg_edu:
+  type: Integer
+  description: Education
+  range:
+  - 1::34
+  - 999
+  notes: 1=None; 2=Preschool; 3=Kindergarten; 4=1st grade; 5=2nd grade;  6=3rd grade;  7=4th
+    grade;  8=5th grade;  9=6th grade;  10=7th grade;  11=8th grade;  12=9th grade;  13=10th
+    grade;  14=11th grade;  16=High School Graduate;  17=GED;  18=Some college credit
+    but less than 1 year; 19= Some college, no degree;  20=Associates degree (e.g.,
+    AA, AS);  21=Bachelor's degree (e.g., BA, AB, BS);  22=Masters degree (e.g., MA,
+    MS, MEng, MEd, MSW, MBA);  23=Professional degree (e.g., MD, DDS, DVM, LLB, JD);  24=Doctorate
+    degree (e.g., PhD, EdD);  25=One or more years of college at a 2-year program,
+    no degree;  26=One year of college at a 4-year program, no degree;  27=Two years
+    of college at a 4-year program, no degree;  28=Three years or more of college
+    at a 4-year program, no degree; 29= Trade or vocational school; 30=Eighth grade
+    or less;  999=Unknown
+  codes:
+    1: None
+    2: Preschool
+    3: Kindergarten
+    4: 1st grade
+    5: 2nd grade
+    6: 3rd grade
+    7: 4th grade
+    8: 5th grade
+    9: 6th grade
+    10: 7th grade
+    11: 8th grade
+    12: 9th grade
+    13: 10th grade
+    14: 11th grade
+    16: High School Graduate
+    17: GED
+    18: Some college credit but less than 1 year
+    19: Some college, no degree
+    20: Associates degree (e.g., AA, AS)
+    21: Bachelor's degree (e.g., BA, AB, BS)
+    22: Masters degree (e.g., MA, MS, MEng, MEd, MSW, MBA)
+    23: Professional degree (e.g., MD, DDS, DVM, LLB, JD)
+    24: Doctorate degree (e.g., PhD, EdD)
+    25: One or more years of college at a 2-year program, no degree
+    26: One year of college at a 4-year program, no degree
+    27: Two years of college at a 4-year program, no degree
+    28: Three years or more of college at a 4-year program, no degree
+    29: Trade or vocational school
+    30: Eighth grade or less
+    999: Unknown
+
+reg_mother_edu:
+  type: Integer
+  description: Mother Education
+  range:
+  - 1::33
+  - 999
+  notes: 1=None; 2=Preschool; 3=Kindergarten; 4=1st grade; 5=2nd grade; 6=3rd grade;
+    7=4th grade; 8=5th grade; 9=6th grade; 10=7th grade; 11=8th grade; 12=9th grade;
+    13=10th grade; 14=11th grade; 16=High School Graduate; 17=GED; 18=Some college
+    credit but less than 1 year; 19= Some college, no degree; 20=Associates degree
+    (e.g., AA, AS); 21=Bachelor's degree (e.g., BA, AB, BS); 22=Masters degree (e.g.,
+    MA, MS, MEng, MEd, MSW, MBA); 23=Professional degree (e.g., MD, DDS, DVM, LLB,
+    JD); 24=Doctorate degree (e.g., PhD, EdD); 25=One or more years of college at
+    a 2-year program, no degree; 26=One year of college at a 4-year program, no degree;
+    27=Two years of college at a 4-year program, no degree; 28=Three years or more
+    of college at a 4-year program, no degree; 29= Trade or vocational school; 30=Eighth
+    grade or less; 31 = Some High School (9th-11th grade); 32 = Did not complete high
+    school; 33 = Postgraduate degree (MA, MBA, PhD,  JD, MD); 999=Unknown
+  alias: demqmom2
+  codes:
+    1: None
+    2: Preschool
+    3: Kindergarten
+    4: 1st grade
+    5: 2nd grade
+    6: 3rd grade
+    7: 4th grade
+    8: 5th grade
+    9: 6th grade
+    10: 7th grade
+    11: 8th grade
+    12: 9th grade
+    13: 10th grade
+    14: 11th grade
+    16: High School Graduate
+    17: GED
+    18: Some college credit but less than 1 year
+    19: Some college, no degree
+    20: Associates degree (e.g., AA, AS)
+    21: Bachelor's degree (e.g., BA, AB, BS)
+    22: Masters degree (e.g., MA, MS, MEng, MEd, MSW, MBA)
+    23: Professional degree (e.g., MD, DDS, DVM, LLB, JD)
+    24: Doctorate degree (e.g., PhD, EdD)
+    25: One or more years of college at a 2-year program, no degree
+    26: One year of college at a 4-year program, no degree
+    27: Two years of college at a 4-year program, no degree
+    28: Three years or more of college at a 4-year program, no degree
+    29: Trade or vocational school
+    30: Eighth grade or less
+    31: Some High School (9th-11th grade)
+    32: Did not complete high school
+    33: Postgraduate degree (MA, MBA, PhD,  JD, MD)
+    999: Unknown
+
+ca243:
+  type: Integer
+  description: What handedness do you consider yourself?
+  range:
+  - 1::3
+  notes: 1=Right; 2=Left; 3=Mixed
+  alias: overall_handedness,reg_handedness
+  codes:
+    1: Right
+    2: Left
+    3: Mixed
+
+ccc2english:
+  type: Integer
+  description: Does the subject speak English as a primary language?
+  range:
+  - 0
+  - 1
+  - -9
+  notes: 0 = No; 1 = Yes; -9 = Missing value
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -9: Missing value
+
+primary_language:
+  type: String
+  length: 255
+  description: Subject's Primary Language
+  alias: demqlangchild1
+
+physiological_responses_type:
+  type: String
+  length: 100
+  description: Description of monitored physiological responses
+
+reg_father_edu:
+  type: Integer
+  description: Father Education
+  range:
+  - 1::31
+  - 999
+  notes: 1=None; 2=Preschool; 3=Kindergarten; 4=1st grade; 5=2nd grade; 6=3rd grade;
+    7=4th grade; 8=5th grade; 9=6th grade; 10=7th grade; 11=8th grade; 12=9th grade;
+    13=10th grade; 14=11th grade; 16=High School Graduate; 17=GED; 18=Some college
+    credit but less than 1 year; 19= Some college, no degree; 20=Associates degree
+    (e.g., AA, AS); 21=Bachelor's degree (e.g., BA, AB, BS); 22=Masters degree (e.g.,
+    MA, MS, MEng, MEd, MSW, MBA); 23=Professional degree (e.g., MD, DDS, DVM, LLB,
+    JD); 24=Doctorate degree (e.g., PhD, EdD); 25=One or more years of college at
+    a 2-year program, no degree; 26=One year of college at a 4-year program, no degree;
+    27=Two years of college at a 4-year program, no degree; 28=Three years or more
+    of college at a 4-year program, no degree; 29= Trade or vocational school; 30=Eighth
+    grade or less; 31 = Some High School (9th-11th grade); 999=Unknown
+  alias: demqdad2
+  codes:
+    1: None
+    2: Preschool
+    3: Kindergarten
+    4: 1st grade
+    5: 2nd grade
+    6: 3rd grade
+    7: 4th grade
+    8: 5th grade
+    9: 6th grade
+    10: 7th grade
+    11: 8th grade
+    12: 9th grade
+    13: 10th grade
+    14: 11th grade
+    16: High School Graduate
+    17: GED
+    18: Some college credit but less than 1 year
+    19: Some college, no degree
+    20: Associates degree (e.g., AA, AS)
+    21: Bachelor's degree (e.g., BA, AB, BS)
+    22: Masters degree (e.g., MA, MS, MEng, MEd, MSW, MBA)
+    23: Professional degree (e.g., MD, DDS, DVM, LLB, JD)
+    24: Doctorate degree (e.g., PhD, EdD)
+    25: One or more years of college at a 2-year program, no degree
+    26: One year of college at a 4-year program, no degree
+    27: Two years of college at a 4-year program, no degree
+    28: Three years or more of college at a 4-year program, no degree
+    29: Trade or vocational school
+    30: Eighth grade or less
+    31: Some High School (9th-11th grade)
+    999: Unknown
+
+employ_status:
+  type: Integer
+  description: Current employment status
+  range:
+  - 1::13
+  notes: 1=Unemployed; 2=Unemployed Stay-at-home parent; 3=Part-Time Student; 4=Full-Time
+    Student; 5=Disability/Unemployed; 6=Disability/Part-Time Employment; 7=Employed
+    Part Time; 8=Employed Full Time; 9=Retired/Part-Time Employment; 10=Retired/Unemployed.;
+    11 = Student; 12 = Caring for children, elders and house; 13 = Unemployed, volunteer
+    work
+  codes:
+    1: Unemployed
+    2: Unemployed Stay-at-home parent
+    3: Part-Time Student
+    4: Full-Time Student
+    5: Disability/Unemployed
+    6: Disability/Part-Time Employment
+    7: Employed Part Time
+    8: Employed Full Time
+    9: Retired/Part-Time Employment
+    10: Retired/Unemployed.
+    11: Student
+    12: Caring for children, elders and house
+    13: Unemployed, volunteer work
+
+bkgrnd_med:
+  type: String
+  length: 1020
+  description: Medication information
+  alias: medication
+
+demo_logfinc:
+  type: Float
+  description: log of family income from wave one of the study
+
+demo_wt_n_nr:
+  type: Float
+  description: sampling weights used to account for sample design and non response
+    rate
+
+demo_stratum:
+  type: Float
+  description: stratum
+
+grade:
+  type: String
+  length: 50
+  description: Current Grade
+
+service_specialed:
+  type: String
+  length: 5
+  description: Special Education
+  range:
+  - 'Yes'
+  - 'No'
+  alias: special_education
+
+asisped:
+  type: String
+  length: 200
+  description: Specify special education services
+  alias: special_education_spc
+
+brain_injury:
+  type: Integer
+  description: Brain Injury?
+  range:
+  - 1::3
+  notes: 1=Yes; 2=No; 3=NA
+  codes:
+    1: 'Yes'
+    2: 'No'
+    3: NA
+
+trt_grp:
+  type: String
+  length: 10
+  description: Treatment Group Assignment
+  range:
+  - 1
+  - 1AO
+  - 1CT
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - O
+  - P
+  - CCA
+  - GCT
+  - TCT
+  - TAU
+  notes: 1=Group 1 first 8 weeks; 1AO=Group 1 8 week add on; 1CT=Group 1 8 week cross
+    taper; 2=Group 2; 3=Group 3; 4 =active; 5=sham; 6=none; 7=ESDM High intensity;
+    8=ESDM Low intensity; 9=EIBI High intensity; 10=EIBI Low intensity; ESDM = Early
+    Start Denver Model; EIBI = Early and Intensive Behavioral Intervention; 11 = Navigator;
+    12 = Care manager; O=Oxytocin; P=Placebo; CCA=Community Control Arm; GCT=Generalized
+    Cognitive Training; TCT=Targeted Cognitive Training; TAU=Treatment as Usual
+  alias: treatment
+  codes:
+    1: Group 1 first 8 weeks
+    2: Group 2
+    3: Group 3
+    4: active
+    5: sham
+    6: none
+    7: ESDM High intensity
+    8: ESDM Low intensity
+    9: EIBI High intensity
+    10: EIBI Low intensity
+    11: Navigator
+    12: Care manager
+    O: Oxytocin
+    P: Placebo
+    CCA: Community Control Arm
+    GCT: Generalized Cognitive Training
+    TCT: Targeted Cognitive Training
+    TAU: Treatment as Usual
+
+version_form:
+  type: String
+  length: 121
+  description: Form used/assessment name
+  alias: redcap_event_name
+
+visit:
+  type: String
+  length: 60
+  description: Visit name
+  alias: eventname,visit_checklist,visits
+
+reason_nint:
+  type: Integer
+  description: Reason for not conducting interview
+  range:
+  - 0::9
+  notes: 0=Conducted interview; 1=Withdrawn by CPI; 2=Withdrawn voluntarily; 3=Incoherent
+    speech for any cause; 4=Poverty of content or too little speech; 5=Disturbance
+    of consciousness; 6=Lost to follow-up; 7=Refused; 8=Other reasons [specify...]
+  alias: reason
+  codes:
+    0: Conducted interview
+    1: Withdrawn by CPI
+    2: Withdrawn voluntarily
+    3: Incoherent speech for any cause
+    4: Poverty of content or too little speech
+    5: Disturbance of consciousness
+    6: Lost to follow-up
+    7: Refused
+    8: Other reasons [specify...]
+
+reason_nint_other:
+  type: String
+  length: 4000
+  description: Reason Other - Please specify
+  alias: reason_other
+
+liv_sit:
+  type: Integer
+  description: Living Situation
+  range:
+  - 1::3
+  - -9
+  notes: 1=Hospital inpatient; 2=Supported housing; 3=Independent; -9 = Unknown/Not
+    Reported
+  alias: living
+  codes:
+    1: Hospital inpatient
+    2: Supported housing
+    3: Independent
+    -9: Unknown/Not Reported
+
+height_met:
+  type: Float
+  description: Height - Metric Unit
+  notes: 999 = Missing
+  alias: height
+  codes:
+    999: Missing
+
+weight_met:
+  type: Float
+  description: Weight - Metric Unit
+  notes: 999 = Missing
+  alias: weight
+  codes:
+    999: Missing
+
+bmi:
+  type: Float
+  description: body mass index of subject
+  notes: -9 = Missing
+  codes:
+    -9: Missing
+
+q013:
+  type: Integer
+  description: 'Adverse Events: assessment completed?'
+  range:
+  - 0
+  - 1
+  notes: '"0=no, 1=yes"'
+  alias: adverse
+  codes:
+    0: no, 1=yes"
+
+medchng:
+  type: Integer
+  description: Changes made to meds
+  range:
+  - 0
+  - 1
+  - -7
+  notes: 0=No; 1=Yes; -7=Refused
+  alias: medication
+  codes:
+    0: 'No'
+    1: 'Yes'
+    -7: Refused
+
+capacity:
+  type: Integer
+  description: Ongoing capacity to consent
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+blood_1:
+  type: Integer
+  description: Consented to blood collection
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+blood_2:
+  type: Integer
+  description: Taken for blood collection
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+country:
+  type: Integer
+  description: Personal details. Country of origin
+  range:
+  - 1::6
+  notes: 1=UK; 2=West Indies; 3=India and Asia; 4=Africa; 5=Other European; 6=Other
+  alias: demo_5a
+  codes:
+    1: UK
+    2: West Indies
+    3: India and Asia
+    4: Africa
+    5: Other European
+    6: Other
+
+country_origin:
+  type: String
+  length: 100
+  description: Country of Origin
+  alias: demo_5b
+
+demo_6:
+  type: Integer
+  description: Are you currently employed or in school?
+  range:
+  - 0
+  - 1
+  - 9999
+  notes: 1= Yes; 0= No; 9999= no data
+  codes:
+    1: 'Yes'
+    0: 'No'
+    9999: no data
+
+year_mta:
+  type: Integer
+  description: Year in study
+  alias: "visit_year,visit_year\uFFFD"
+
+chronic_ticdisorder_motor:
+  type: Integer
+  description: DSM-IV-tr Chronic motor tic disorder
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=Unaffected; 1=Definite; 9=Unratable
+  codes:
+    0: Unaffected
+    1: Definite
+    9: Unratable
+
+chronic_ticdisorder_vocal:
+  type: Integer
+  description: DSM-IV-tr Chronic vocal tic disorder
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=Unaffected; 1=Definite; 9=Unratable
+  codes:
+    0: Unaffected
+    1: Definite
+    9: Unratable
+
+chronicticdisorder_combined:
+  type: Integer
+  description: Chronic tic disorder- combined type (one motor and one vocal tic)
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=Unaffected; 1=Definite; 9=Unratable
+  codes:
+    0: Unaffected
+    1: Definite
+    9: Unratable
+
+provisional_ticdisorder:
+  type: Integer
+  description: Provisional Tic Disorder (DSM-V)
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=Unaffected; 1=Definite; 9=Unratable
+  codes:
+    0: Unaffected
+    1: Definite
+    9: Unratable
+
+transient_ticdisorder:
+  type: Integer
+  description: DSM-IV-tr Transient Tic Disorder
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=Unaffected; 1=Definite; 9=Unratable
+  codes:
+    0: Unaffected
+    1: Definite
+    9: Unratable
+
+tic_disorder_nos:
+  type: Integer
+  description: DSM-IV-tr Tic Disorder NOS
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=Unaffected; 1=Definite; 9=Unratable
+  codes:
+    0: Unaffected
+    1: Definite
+    9: Unratable
+
+p53i3:
+  type: Integer
+  description: Transient Tic Disorder - Age at onset of first episode (months)
+  alias: ticageonset
+
+ticsxcur:
+  type: Integer
+  description: Current tic symptoms (past week)
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=No; 1=Yes; 9=Unratable
+  codes:
+    0: 'No'
+    1: 'Yes'
+    9: Unratable
+
+ticdxoverride:
+  type: Integer
+  description: Tic disorder override- clinician override of algorithm
+  range:
+  - 0
+  - 1
+  notes: 0=False=No override; 1=True=Override
+  codes:
+    0: False=No override
+    1: True=Override
+
+ocddiagnoisid:
+  type: Integer
+  description: DSM-IV-tr OC disorders
+  range:
+  - 0::3
+  - 9
+  notes: 0=No OC disorder; 1=OCD; 2=OC subclinical;  3=OC symptoms; 9=Unratable
+  codes:
+    0: No OC disorder
+    1: OCD
+    2: OC subclinical
+    3: OC symptoms
+    9: Unratable
+
+ocddiagnois:
+  type: String
+  length: 50
+  description: OC disorder descriptions
+
+hxocdage:
+  type: Integer
+  description: Onset of OCD
+  alias: ocageonset
+
+ocsxcur:
+  type: Integer
+  description: Current OC symptoms (past week)
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=No; 1=Yes; 9=Unratable
+  codes:
+    0: 'No'
+    1: 'Yes'
+    9: Unratable
+
+ocdxoverride:
+  type: Integer
+  description: OC disorder override- clinician override of algorithm
+  range:
+  - 0
+  - 1
+  notes: 0=False=No override; 1=True=Override
+  codes:
+    0: False=No override
+    1: True=Override
+
+trichid:
+  type: Integer
+  description: DSM-IV-tr Trichotillomania
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=Unaffected; 1=Definite; 9=Unratable
+  codes:
+    0: Unaffected
+    1: Definite
+    9: Unratable
+
+trichage:
+  type: Integer
+  description: Trichotillomania (hairpulling) Onset Age
+  notes: months
+  alias: trichageonset
+
+trichsxcur:
+  type: Integer
+  description: Current Trich symptoms (past week)
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=No; 1=Yes; 9=Unratable
+  codes:
+    0: 'No'
+    1: 'Yes'
+    9: Unratable
+
+adhd_combined:
+  type: Integer
+  description: 'ADHD: Combined type present in past 6 months'
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0 = No; 1 = Yes; 9=unable to rate
+  codes:
+    0: 'No'
+    1: 'Yes'
+    9: unable to rate
+
+adhd_predom_inattent:
+  type: Integer
+  description: DSM-IV-tr ADHD predominantly inattentive subtype
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=Unaffected; 1=Definite; 9=Unratable
+  codes:
+    0: Unaffected
+    1: Definite
+    9: Unratable
+
+adhd_predom_hyperimpul:
+  type: Integer
+  description: DSM-IV-tr ADHD predominantly hyperactive-Impulusive subtype
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=Unaffected; 1=Definite; 9=Unratable
+  codes:
+    0: Unaffected
+    1: Definite
+    9: Unratable
+
+grantnum:
+  type: Integer
+  description: Grant number (1st or 2nd)
+  range:
+  - 1
+  - 2
+  notes: 1=grant1 (2011); 2=grant2 (2018)
+  codes:
+    1: grant1 (2011)
+    2: grant2 (2018)
+
+adhd_subclinical:
+  type: Integer
+  description: Subclinical ADHD
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=Unaffected; 1=Definite; 9=Unratable
+  codes:
+    0: Unaffected
+    1: Definite
+    9: Unratable
+
+ksads_adhd_age:
+  type: Integer
+  description: ADHD Age of Onset, months
+  alias: adhd_ageonset
+
+adhdsxcur:
+  type: Integer
+  description: Current ADHD symptoms (past week)
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=No; 1=Yes; 9=Unratable
+  codes:
+    0: 'No'
+    1: 'Yes'
+    9: Unratable
+
+adhddxoverride:
+  type: String
+  length: 20
+  description: ADHD disorder override- clinician override of algorithm
+  range:
+  - 0
+  - 1
+  notes: 0=False=No override; 1=True=Override
+  codes:
+    0: False=No override
+    1: True=Override
+
+flag_atypical:
+  type: Integer
+  description: Flagged for Atypical presentation
+  range:
+  - 0
+  - 1
+  notes: 0=No flag; 1=Flag
+  codes:
+    0: No flag
+    1: Flag
+
+flag_psychosis:
+  type: Integer
+  description: Flagged for Psychosis
+  range:
+  - 0
+  - 1
+  notes: 0=No flag; 1=Flag
+  codes:
+    0: No flag
+    1: Flag
+
+flag_pdd_asd:
+  type: Integer
+  description: Flagged for PDD or Autism Spectrum
+  range:
+  - 0
+  - 1
+  notes: 0=No flag; 1=Flag
+  codes:
+    0: No flag
+    1: Flag
+
+flag_other_neurolog:
+  type: Integer
+  description: Flagged for Other Neurological condition
+  range:
+  - 0
+  - 1
+  notes: 0=No flag; 1=Flag
+  codes:
+    0: No flag
+    1: Flag
+
+flag_congenital_anom:
+  type: Integer
+  description: Flagged for Congenital anomalies
+  range:
+  - 0
+  - 1
+  notes: 0=No flag; 1=Flag
+  codes:
+    0: No flag
+    1: Flag
+
+flag_genetic_chromosomal:
+  type: Integer
+  description: Flagged for Genetic Syndrome/ Chromosomal abnormality
+  range:
+  - 0
+  - 1
+  notes: 0=No flag; 1=Flag
+  codes:
+    0: No flag
+    1: Flag
+
+dxsmrysubmitted:
+  type: Integer
+  description: Data submitted to coordinating center
+  range:
+  - 0
+  - 1
+  notes: 0=False=Not submitted; 1=True=Submitted
+  codes:
+    0: False=Not submitted
+    1: True=Submitted
+
+flag_other_psych:
+  type: Integer
+  description: Flagged for Other significant PSYCHIATRIC history
+  range:
+  - 0
+  - 1
+  notes: 0=No flag; 1=Flag
+  codes:
+    0: No flag
+    1: Flag
+
+flag_other_medical:
+  type: Integer
+  description: Flagged for  Other significant MEDICAL history
+  range:
+  - 0
+  - 1
+  notes: 0=No flag; 1=Flag
+  codes:
+    0: No flag
+    1: Flag
+
+flag_other_desc:
+  type: String
+  length: 100
+  description: Flagged for Other
+  alias: flagotherdescr
+
+othergeneticstudy:
+  type: Integer
+  description: If participated in another genetic study
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=No; 1=Yes; 9=Unknown
+  codes:
+    0: 'No'
+    1: 'Yes'
+    9: Unknown
+
+othergeneticstudydescr:
+  type: String
+  length: 75
+  description: Name of other genetic study
+
+subsiteid:
+  type: String
+  length: 20
+  description: Subsite ID
+
+evaluated:
+  type: Integer
+  description: Subject evaluated (Y/N)
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+evaldate:
+  type: Date
+  description: Evaluation date
+
+multibirthid:
+  type: Integer
+  description: Code for multiple birth
+  range:
+  - 0::2
+  notes: 0=No; 1=Twin; 2=Multiple (>twin)
+  codes:
+    0: 'No'
+    1: Twin
+    2: Multiple (>twin)
+
+tourettes_disorder:
+  type: Integer
+  description: DSM-IV-tr Tourette's disorder
+  range:
+  - 0
+  - 1
+  - 9
+  notes: 0=Unaffected; 1=Definite; 9=Unratable
+  codes:
+    0: Unaffected
+    1: Definite
+    9: Unratable
+
+sample:
+  type: Integer
+  description: Training or randomized case
+  range:
+  - 1::5
+  notes: 1 = randomized; 2 = training; 3=randomized-control; 4=randomized-intervention;
+    5=concurrent cohort-intervention
+  codes:
+    1: randomized
+    2: training
+    3: randomized-control
+    4: randomized-intervention
+    5: concurrent cohort-intervention
+
+race_other:
+  type: String
+  length: 100
+  description: Race of Respondent Specify
+
+respond:
+  type: Integer
+  description: Respondent
+  range:
+  - 1::7
+  - 999
+  notes: 1 = Parent; 2 = Teacher; 3=Self; 4= Other; 5= Significant other; 6 = Parent
+    1; 7 = Parent 2; 999 = Not available
+  alias: form_ext
+  codes:
+    1: Parent
+    2: Teacher
+    3: Self
+    4: Other
+    5: Significant other
+    6: Parent 1
+    7: Parent 2
+    999: Not available
+
+date_confirmed_phenotype:
+  type: Date
+  description: Date when subject was diagnosed
+
+pos_years:
+  type: Integer
+  description: Number of years at position
+  range:
+  - 0::100
+  - -9
+  - 999
+  notes: -9 = Unknown/Not Reported; 999 = N/A
+  codes:
+    -9: Unknown/Not Reported
+    999: N/A
+
+position1:
+  type: String
+  length: 150
+  description: Title of Employment Position
+  notes: -9 = Unknown/Not Reported
+  codes:
+    -9: Unknown/Not Reported
+
+timepoint_label:
+  type: String
+  length: 50
+  description: Timepoint/visit label
+
+trt_grp_desc:
+  type: String
+  length: 2000
+  description: Treatment Group Assignment - Description
+  notes: -9 = Unknown/Not Reported
+  codes:
+    -9: Unknown/Not Reported

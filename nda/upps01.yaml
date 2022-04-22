@@ -470,7 +470,7 @@ upps_p1:
   range:
   - 1::4
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
-  alias: 40800,upps-p_1
+  alias: 40800,upps-p_1,uppspum1
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -483,7 +483,7 @@ upps_p2:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40801,upps-p_2
+  alias: 40801,upps-p_2,uppspum2
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -496,7 +496,7 @@ upps_p3:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40802,upps-p_3
+  alias: 40802,upps-p_3,uppsum3
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -510,7 +510,7 @@ upps_p4:
   range:
   - 1::4
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
-  alias: 40803,upps-p_4,upps3_y
+  alias: 40803,upps-p_4,upps3_y,uppsum4
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -524,7 +524,7 @@ upps_p5:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40804,upps-p_5,upps37_y,upps5
+  alias: 40804,upps-p_5,upps37_y,upps5,uppsum5
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -537,7 +537,7 @@ upps_p6:
   range:
   - 1::4
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
-  alias: 40805,upps-p_6,upps6
+  alias: 40805,upps-p_6,upps6,uppsum6
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -550,7 +550,7 @@ upps_p7:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40806,upps-p_7,upps7
+  alias: 40806,upps-p_7,upps7,uppspum7
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -563,7 +563,7 @@ upps_p8:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40807,upps-p_8,upps8
+  alias: 40807,upps-p_8,upps8,uppspum8
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -576,7 +576,7 @@ upps_p9:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40808,upps-p_9,upps9
+  alias: 40808,upps-p_9,upps9,uppspum9
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -590,7 +590,7 @@ upps_p10:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40809,upps-p_10,upps10,upps35_y
+  alias: 40809,upps-p_10,upps10,upps35_y,uppspum10
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -603,7 +603,7 @@ upps_p11:
   range:
   - 1::4
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
-  alias: 40810,upps-p_11,upps11
+  alias: 40810,upps-p_11,upps11,uppspum11
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -616,7 +616,7 @@ upps_p12:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40811,upps-p_12,upps12
+  alias: 40811,upps-p_12,upps12,uppspum12
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -630,7 +630,7 @@ upps_p13:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40812,upps-p_13,upps13
+  alias: 40812,upps-p_13,upps13,uppspum13
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -647,7 +647,7 @@ upps_p14:
   - -9
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly; -8
     = Do not know; -9 = Refuse to answer
-  alias: 40813,upps-p_14,upps14,upps5_y
+  alias: 40813,upps-p_14,upps14,upps5_y,uppspum14
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -663,7 +663,7 @@ upps_p15:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40814,upps-p_15,upps15
+  alias: 40814,upps-p_15,upps15,uppspum15
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -677,7 +677,7 @@ upps_p16:
   range:
   - 1::4
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
-  alias: 40815,upps-p_16,upps16,upps6_y
+  alias: 40815,upps-p_16,upps16,upps6_y,uppspum16
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -691,7 +691,7 @@ upps_p17:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40816,upps-p_17,upps17,upps7_y
+  alias: 40816,upps-p_17,upps17,upps7_y,uppspum17
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -705,7 +705,7 @@ upps_p18:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40817,upps-p_18,upps18
+  alias: 40817,upps-p_18,upps18,uppspum18
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -719,7 +719,7 @@ upps_p19:
   range:
   - 1::4
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
-  alias: 40818,upps-p_19,upps19,upps9_y
+  alias: 40818,upps-p_19,upps19,upps9_y,uppspum19
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -732,7 +732,7 @@ upps_p20:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40819,losecontrol,upps-p_20,upps20,upps39_y
+  alias: 40819,losecontrol,upps-p_20,upps20,upps39_y,uppspum20
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -747,7 +747,7 @@ upps_p21:
   range:
   - 1::4
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
-  alias: 40820,upps-p_21,upps21
+  alias: 40820,upps-p_21,upps21,uppspum21
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -761,7 +761,7 @@ upps_p22:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40821,upps-p_22,upps11_y,upps22
+  alias: 40821,upps-p_22,upps11_y,upps22,uppspum22
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -778,7 +778,7 @@ upps_p23:
   - -9
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly; -8
     = Do not know; -9 = Refuse to answer
-  alias: 40822,upps-p_23,upps12_y,upps23
+  alias: 40822,upps-p_23,upps12_y,upps23,uppspum23
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -793,7 +793,7 @@ upps_p24:
   range:
   - 1::4
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
-  alias: 40823,upps-p_24,upps24
+  alias: 40823,upps-p_24,upps24,uppspum24
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -806,7 +806,7 @@ upps_p25:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40824,upps-p_25,upps25
+  alias: 40824,upps-p_25,upps25,uppspum25
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -822,7 +822,7 @@ upps_p26:
   - -9
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly; -8
     = Do not know; -9 = Refuse to answer
-  alias: 40825,upps-p_26,upps26
+  alias: 40825,upps-p_26,upps26,uppspum26
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -841,7 +841,7 @@ upps_p27:
   - -9
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly; -8
     = Do not know; -9 = Refuse to answer
-  alias: 40826,upps-p_27,upps15_y,upps27
+  alias: 40826,upps-p_27,upps15_y,upps27,uppspum27
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -857,7 +857,7 @@ upps_p28:
   range:
   - 1::4
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
-  alias: 40827,upps-p_28,upps16_y,upps28
+  alias: 40827,upps-p_28,upps16_y,upps28,uppspum28
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -870,7 +870,7 @@ upps_p29:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40828,upps-p_29,upps17_y,upps29
+  alias: 40828,upps-p_29,upps17_y,upps29,uppspum29
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -884,7 +884,7 @@ upps_p30:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40829,upps-p_30,upps30
+  alias: 40829,upps-p_30,upps30,uppspum30
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -898,7 +898,7 @@ upps_p31:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40830,upps-p_31,upps18_y,upps31
+  alias: 40830,upps-p_31,upps18_y,upps31,uppspum31
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -912,7 +912,7 @@ upps_p32:
   range:
   - 1::4
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
-  alias: 40831,upps-p_32,upps19_y,upps32
+  alias: 40831,upps-p_32,upps19_y,upps32,uppspum32
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -928,7 +928,7 @@ upps_p33:
   - -9
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly; -8
     = Do not know; -9 = Refuse to answer
-  alias: 40832,upps-p_33,upps33
+  alias: 40832,upps-p_33,upps33,uppspum33
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -946,7 +946,7 @@ upps_p34:
   - -9
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly; -8
     = Do not know; -9 = Refuse to answer
-  alias: 40833,upps-p_34,upps20_y,upps34
+  alias: 40833,upps-p_34,upps20_y,upps34,uppspum34
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -962,7 +962,7 @@ upps_p35:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40834,upps-p_35,upps35
+  alias: 40834,upps-p_35,upps35,uppspum35
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -975,7 +975,7 @@ upps_p36:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40835,upps-p_36,upps21_y,upps36
+  alias: 40835,upps-p_36,upps21_y,upps36,uppspum36
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -992,7 +992,7 @@ upps_p37:
   - -9
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly; -8
     = Do not know; -9 = Refuse to answer
-  alias: 40836,upps-p_37,upps22_y,upps37
+  alias: 40836,upps-p_37,upps22_y,upps37,uppspum37
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -1010,7 +1010,7 @@ upps_p38:
   - -9
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly; -8
     = Do not know; -9 = Refuse to answer
-  alias: 40837,upps-p_38,upps23_y,upps38
+  alias: 40837,upps-p_38,upps23_y,upps38,uppspum38
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -1028,7 +1028,7 @@ upps_p39:
   - -9
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly; -8
     = Do not know; -9 = Refuse to answer
-  alias: 40838,upps-p_39,upps39
+  alias: 40838,upps-p_39,upps39,uppspum39
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -1043,7 +1043,7 @@ upps_p40:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40839,upps-p_40,upps37_y,upps40
+  alias: 40839,upps-p_40,upps37_y,upps40,uppspum40
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -1059,7 +1059,7 @@ upps_p41:
   - -9
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly; -8
     = Do not know; -9 = Refuse to answer
-  alias: 40840,upps-p_41,upps41
+  alias: 40840,upps-p_41,upps41,uppspum41
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -1078,7 +1078,7 @@ upps_p42:
   - -9
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly; -8
     = Do not know; -9 = Refuse to answer
-  alias: 40841,upps-p_42,upps24_y,upps42
+  alias: 40841,upps-p_42,upps24_y,upps42,uppspum42
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -1095,7 +1095,7 @@ upps_p43:
   range:
   - 1::4
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
-  alias: 40842,upps-p_43,upps43
+  alias: 40842,upps-p_43,upps43,uppspum43
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -1112,7 +1112,7 @@ upps_p44:
   - -9
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly; -8
     = Do not know; -9 = Refuse to answer
-  alias: 40843,upps-p_44,upps44
+  alias: 40843,upps-p_44,upps44,uppspum44
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -1127,7 +1127,7 @@ upps_p45:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40844,upps-p_45,upps45
+  alias: 40844,upps-p_45,upps45,uppspum45
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -1144,7 +1144,7 @@ upps_p46:
   - -9
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly; -8
     = Do not know; -9 = Refuse to answer
-  alias: 40845,upps-p_46,upps27_y,upps46
+  alias: 40845,upps-p_46,upps27_y,upps46,uppspum46
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -1160,7 +1160,7 @@ upps_p47:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40846,upps-p_47,upps47
+  alias: 40846,upps-p_47,upps47,uppspum47
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -1176,7 +1176,7 @@ upps_p48:
   - -9
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly; -8
     = Do not know; -9 = Refuse to answer
-  alias: 40847,upps-p_48,upps28_y,upps48
+  alias: 40847,upps-p_48,upps28_y,upps48,uppspum48
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -1192,7 +1192,7 @@ upps_p49:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40849,upps-p_49,upps49
+  alias: 40849,upps-p_49,upps49,uppspum50
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -1205,7 +1205,7 @@ upps_p50:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40850,upps-p_50,upps50
+  alias: 40850,upps-p_50,upps50,uppspum51
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -1218,7 +1218,7 @@ upps_p51:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40851,upps-p_51,upps51
+  alias: 40851,upps-p_51,upps51,uppspum52
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -1231,7 +1231,7 @@ upps_p52:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40852,actwithoutthinkexcited,upps-p_52,upps52
+  alias: 40852,actwithoutthinkexcited,upps-p_52,upps52,uppspum53
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -1244,7 +1244,7 @@ upps_p53:
   range:
   - 1::4
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly
-  alias: 40853,upps-p_53,upps53
+  alias: 40853,upps-p_53,upps53,uppspum54
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -1258,7 +1258,7 @@ upps_p54:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40854,upps-p_54,upps54
+  alias: 40854,upps-p_54,upps54,uppspum55
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -1274,7 +1274,7 @@ upps_p55:
   - -9
   notes: 1=Agree Strongly; 2=Agree Some; 3=Disagree Some; 4=Disagree Strongly; -8
     = Do not know; -9 = Refuse to answer
-  alias: 40848,upps-p_55,upps55
+  alias: 40848,upps-p_55,upps55,uppspum49
   codes:
     1: Agree Strongly
     2: Agree Some
@@ -1289,7 +1289,7 @@ upps_p56:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40855,upps-p_56,upps56
+  alias: 40855,upps-p_56,upps56,uppspum56
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -1303,7 +1303,7 @@ upps_p57:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40856,upps-p_57,upps36_y,upps57
+  alias: 40856,upps-p_57,upps36_y,upps57,uppspum57
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -1319,7 +1319,7 @@ upps_p58:
   - -9
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly; -8
     = Do not know; -9 = Refuse to answer
-  alias: 40857,upps-p_58,upps58
+  alias: 40857,upps-p_58,upps58,uppspum58
   codes:
     4: Agree Strongly
     3: Agree Some
@@ -1334,7 +1334,7 @@ upps_p59:
   range:
   - 1::4
   notes: 4=Agree Strongly; 3=Agree Some; 2=Disagree Some; 1=Disagree Strongly
-  alias: 40858,upps-p_59,upps59
+  alias: 40858,upps-p_59,upps59,uppspum59
   codes:
     4: Agree Strongly
     3: Agree Some

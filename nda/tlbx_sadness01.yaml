@@ -491,7 +491,7 @@ pedrepdep35_se:
 
 pedrepdep36:
   type: Integer
-  description: "In the past 7 days: I felt unhappy."
+  description: "In the past 7 days:\r I felt unhappy."
   range:
   - 1::5
   notes: 1= Never, 2= Rarely, 3= Sometimes, 4= FairlyOften, 5= Very Often
@@ -513,7 +513,7 @@ pedrepdep36_se:
 
 pedrepdep37:
   type: Integer
-  description: "In the past 7 days: I felt lonely."
+  description: "In the past 7 days:\r I felt lonely."
   range:
   - 1::5
   notes: 1= Never, 2= Rarely, 3= Sometimes, 4= FairlyOften, 5= Very Often
@@ -534,7 +534,7 @@ pedrepdep37_se:
 
 pedrepdep38:
   type: Integer
-  description: "In the past 7 days: I felt sad."
+  description: "In the past 7 days:\r I felt sad."
   range:
   - 1::5
   notes: 1= Never, 2= Rarely, 3= Sometimes, 4= FairlyOften, 5= Very Often

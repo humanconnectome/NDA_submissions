@@ -2950,7 +2950,10 @@ med_5a:
 aescode:
   type: Integer
   description: Staff code number of person completing this form
+  notes: 999= Missing Data
   alias: scidmvra
+  codes:
+    999: Missing Data
 
 scidmed1:
   type: Integer

@@ -1987,7 +1987,10 @@ c_hip:
 aescode:
   type: Integer
   description: Staff code number of person completing this form
+  notes: 999= Missing Data
   alias: vitalsf_u_collected_by
+  codes:
+    999: Missing Data
 
 visualacuity:
   type: Integer
@@ -2709,3 +2712,10 @@ same_vitals7:
     1: Normal
     2: Abnormal
     3: Not done
+
+alc_dose:
+  type: Float
+  description: Alcohol dose given
+  range:
+  - 0::1.1
+  notes: alcohol dose in ml/kg

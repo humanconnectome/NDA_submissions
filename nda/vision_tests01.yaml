@@ -114,6 +114,9 @@ contrastvsn3:
 aescode:
   type: Integer
   description: Staff code number of person completing this form
+  notes: 999= Missing Data
+  codes:
+    999: Missing Data
 
 vision_correction:
   type: String

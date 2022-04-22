@@ -127,9 +127,7 @@ alc_first_use_agecoded:
     and also any other type of alcohol.  About how old were you when you first started
     drinking, not counting small tastes or sips of alcohol? PX030201_Alcohol_First_Use_Age_Coded
   range:
-  - 96
-  - 97
-  - 99
+  - 0::99
   notes: 96=Never drank; 97=Refused; 99=Don't know
   codes:
     96: Never drank
@@ -3182,3 +3180,224 @@ drinks30_num:
     wine, wine coolers, shots of liquor or mixed drinks did you have, on average,
     per day?
   notes: Number of drinks per day
+
+sub30dfreq_heroin:
+  type: Integer
+  description: 'PhenX Substance: Days Heroin (2 weeks)'
+
+sub30dfreq_opiate:
+  type: Integer
+  description: 'PhenX Substance: Days Opiates (2 weeks)'
+
+sub30dfreq_barbs:
+  type: Integer
+  description: 'PhenX Substance: Days Barbiturates (2 weeks)'
+
+sub30dfreq_sed:
+  type: Integer
+  description: 'PhenX Substance: Days Sedatives (2 weeks)'
+
+sub30dfreq_stim:
+  type: Integer
+  description: 'PhenX Substance: Days Stimulants (2 weeks)'
+
+life_alcuse:
+  type: Integer
+  description: PhenX Alcohol Lifetime Use, at least one drink of alcohol at any time
+    during lifetime
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+life_alcuse_aoo:
+  type: Integer
+  description: 'PhenX Alcohol: First Drink Age'
+
+life_alcuse_reg:
+  type: Integer
+  description: 'PhenX Alcohol: Life - One+ Drink Per Month For 12 Mon'
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+life_alcuse_regaoo:
+  type: Integer
+  description: 'NCS-R: Life - One+ Drink Per Month For 12 Mon - Age'
+
+life_alcuse_regyrs:
+  type: Integer
+  description: 'NCS-R: Life - Years One+ Drink Per Month For 12 Mon'
+
+life_alcuse_wrstfreq:
+  type: Integer
+  description: 'NCS-R: Life - How Often Drink'
+  range:
+  - 0::5
+  notes: 0=Reported no lifetime use of any substance; 1=Less than once a month; 2=1-3
+    days a month; 3=1-2 days a week; 4=3-4 days a week; 5=Every or nearly every day
+  codes:
+    0: Reported no lifetime use of any substance
+    1: Less than once a month
+    2: 1-3 days a month
+    3: 1-2 days a week
+    4: 3-4 days a week
+    5: Every or nearly every day
+
+life_alcuse_wrstquan:
+  type: Integer
+  description: 'NCS-R: Life - Number of Drinks Per Day'
+
+life_prom_alc7a_wrst_rs:
+  type: Integer
+  description: PROMIS Alcohol Use Short Form 7a, sum of 7 items
+  range:
+  - 7::35
+  notes: 7=Least consumption/cravings/difficulty controlling drinking; 35=Highest
+    consumption/cravings/difficulty constrolling drinking
+  codes:
+    7: Least consumption/cravings/difficulty controlling drinking
+    35: Highest consumption/cravings/difficulty constrolling drinking
+
+life_marijuse:
+  type: Integer
+  description: 'PhenX Substances: Life - Marijuana'
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+life_cocuse:
+  type: Integer
+  description: 'PhenX Substances: Life - Cocaine'
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+life_hallucuse:
+  type: Integer
+  description: 'PhenX Substances: Life - Hallucinogen'
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+life_heroinuse:
+  type: Integer
+  description: 'PhenX Substances: Life - Heroin'
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+life_opiateuse:
+  type: Integer
+  description: 'PhenX Substances: Life - Opiates'
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+life_barbsuse:
+  type: Integer
+  description: 'PhenX Substances: Life - Barbiturates'
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+life_seduse:
+  type: Integer
+  description: 'PhenX Substances: Life - Sedatives'
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+life_stimuse:
+  type: Integer
+  description: 'PhenX Substances: Life - Stimulants'
+  range:
+  - 0
+  - 1
+  notes: 0=No; 1=Yes
+  codes:
+    0: 'No'
+    1: 'Yes'
+
+life_subuse_aoo:
+  type: Integer
+  description: 'PhenX Substances: How Old First Used. This question is only asked
+    if the respondent answers ?yes? to one of the lifetime substance use questions. '
+
+life_subuse_yrs:
+  type: Integer
+  description: 'NCS-R: Substance Use - Num of Years'
+
+life_subuse_wrstfreq:
+  type: Integer
+  description: Based on National Epidemiologic Survey on Alcohol and Related Conditions-III
+    (NESARC-III), frequency of substance use in worst year
+  range:
+  - 1::5
+  notes: 1=Less than once a month; 2=1-3 days a month; 3=1-2 days a week; 4=3-4 days
+    a week; 5=Every or nearly every day
+  codes:
+    1: Less than once a month
+    2: 1-3 days a month
+    3: 1-2 days a week
+    4: 3-4 days a week
+    5: Every or nearly every day
+
+alc30d_freq:
+  type: Integer
+  description: 'PhenX Alcohol: Days One+ Drink (2 weeks)'
+
+alc30d_quan:
+  type: Integer
+  description: 'PhenX Alcohol: How Many Drinks per Day'
+
+alc30d_quanfreq:
+  type: Integer
+  description: 'PhenX Alcohol: Frequency x Quantity'
+
+sub30dfreq_marij:
+  type: Integer
+  description: 'PhenX Substance: Days Marijuana (2 weeks)'
+
+sub30dfreq_coc:
+  type: Integer
+  description: 'PhenX Substance: Days Cocaine, Crack (2 weeks)'
+
+sub30dfreq_halluc:
+  type: Integer
+  description: 'PhenX Substance: Days Hallucinogen (2 weeks)'

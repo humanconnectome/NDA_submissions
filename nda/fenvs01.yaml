@@ -877,6 +877,9 @@ famenv_9:
 aescode:
   type: Integer
   description: Staff code number of person completing this form
+  notes: 999= Missing Data
+  codes:
+    999: Missing Data
 
 start_time:
   type: String

@@ -247,7 +247,7 @@ pssp1_1:
   - 88
   notes: 0= Never; 1= Almost Never; 2=  Sometimes; 3= Fairly Often; 4= Very Often
     ; -99= N/A; 77= Refused ; 88= Missing
-  alias: perceivedstress1,pss10_q01,pss_cohen_01,pss_q1,pssc1_1,sc001,scpxy001m,upset
+  alias: perceivedstress1,ps1,pss10_q01,pss_cohen_01,pss_q1,pssc1_1,sc001,scpxy001m,upset
   codes:
     0: Never
     1: Almost Never
@@ -269,7 +269,7 @@ pssp1_2:
   - 88
   notes: 0= Never; 1= Almost Never; 2=  Sometimes; 3= Fairly Often; 4= Very Often
     ; -99= N/A; 77= Refused ; 88= Missing
-  alias: perceivedstress2,pss10_q02,pss1_t4,pss_cohen_02,pss_q2,pssc1_2,sc002,unable_control,unabletocontrol
+  alias: perceivedstress2,ps2,pss10_q02,pss1_t4,pss_cohen_02,pss_q2,pssc1_2,sc002,unable_control,unabletocontrol
   codes:
     0: Never
     1: Almost Never
@@ -291,7 +291,7 @@ pssp1_3:
   - 88
   notes: 0= Never; 1= Almost Never; 2=  Sometimes; 3= Fairly Often; 4= Very Often
     ; -99= N/A; 77= Refused ; 88= Missing
-  alias: nervous_stressed,perceivedstress3,pss10_q03,pss_cohen_03,pss_q3,pssc1_3,sc003,scpxy003
+  alias: nervous_stressed,perceivedstress3,ps3,pss10_q03,pss_cohen_03,pss_q3,pssc1_3,sc003,scpxy003
   codes:
     0: Never
     1: Almost Never
@@ -357,7 +357,7 @@ pssp2_1:
   - 88
   notes: 4= Never; 3= Almost Never; 2=  Sometimes; 1= Fairly Often; 0= Very Often
     ; -99= N/A; 77= Refused ; 88= Missing
-  alias: PSSc2_6,confident,perceivedstress4,pss10_q04,pss_cohen_06,pss_q4,pssp2_6,rpss2_t4,sc006,scpxy006m
+  alias: PSSc2_6,confident,perceivedstress4,ps4,pss10_q04,pss_cohen_06,pss_q4,pssp2_6,rpss2_t4,sc006,scpxy006m
   codes:
     4: Never
     3: Almost Never
@@ -379,7 +379,7 @@ pssp2_2:
   - 88
   notes: 4= Never; 3= Almost Never; 2=  Sometimes; 1= Fairly Often; 0= Very Often
     ; -99= N/A; 77= Refused ; 88= Missing
-  alias: PSSc2_7,going_your_way,perceivedstress5,pss10_q05,pss3_t4,pss_cohen_07,pss_q5,pssp2_7,rpss3_t4,sc007
+  alias: PSSc2_7,going_your_way,perceivedstress5,ps5,pss10_q05,pss3_t4,pss_cohen_07,pss_q5,pssp2_7,rpss3_t4,sc007
   codes:
     4: Never
     3: Almost Never
@@ -401,7 +401,7 @@ pssp2_3:
   - 88
   notes: 0= Never; 1= Almost Never; 2=  Sometimes; 3= Fairly Often; 4= Very Often
     ; -99= N/A; 77= Refused ; 88= Missing
-  alias: PSSc2_8,could_not_cope,perceivedstress6,pss10_q06,pss_cohen_08,pss_q6,pssp2_8,sc008,sc008m,scpxy008m
+  alias: PSSc2_8,could_not_cope,perceivedstress6,ps6,pss10_q06,pss_cohen_08,pss_q6,pssp2_8,sc008,sc008m,scpxy008m
   codes:
     0: Never
     1: Almost Never
@@ -423,7 +423,7 @@ pssp2_4:
   - 88
   notes: 4= Never; 3= Almost Never; 2=  Sometimes; 1= Fairly Often; 0= Very Often
     ; -99= N/A; 77= Refused ; 88= Missing
-  alias: PSSc2_9,control_irr,controlirritations,perceivedstress7,pss10_q07,pss_9r,pss_cohen_09,pss_q7,pssp2_9,sc009,scpxy009m
+  alias: PSSc2_9,control_irr,controlirritations,perceivedstress7,ps7,pss10_q07,pss_9r,pss_cohen_09,pss_q7,pssp2_9,sc009,scpxy009m
   codes:
     4: Never
     3: Almost Never
@@ -445,7 +445,7 @@ pssp2_5:
   - 88
   notes: 4= Never; 3= Almost Never; 2=  Sometimes; 1= Fairly Often; 0= Very Often
     ; -99= N/A; 77= Refused ; 88= Missing
-  alias: PSSc3_10,on_top,perceivedstress8,pss10_q08,pss_cohen_10,pss_q8,pssp2_10,sc010
+  alias: PSSc3_10,on_top,perceivedstress8,ps8,pss10_q08,pss_cohen_10,pss_q8,pssp2_10,sc010
   codes:
     4: Never
     3: Almost Never
@@ -467,7 +467,7 @@ pssp3_1:
   - 88
   notes: 0= Never; 1= Almost Never; 2=  Sometimes; 3= Fairly Often; 4= Very Often
     ; -99= N/A; 77= Refused ; 88= Missing
-  alias: PSSc3_11,anger,angeredoutsidecontrol,perceivedstress9,pss10_q09,pss_11,pss_cohen_11,pss_q9,pssp3_11,sc011,scpxy011m
+  alias: PSSc3_11,anger,angeredoutsidecontrol,perceivedstress9,ps9,pss10_q09,pss_11,pss_cohen_11,pss_q9,pssp3_11,sc011,scpxy011m
   codes:
     0: Never
     1: Almost Never
@@ -533,7 +533,7 @@ pssp3_4:
   - 88
   notes: 0= Never; 1= Almost Never; 2=  Sometimes; 3= Fairly Often; 4= Very Often
     ; -99= N/A; 77= Refused ; 88= Missing
-  alias: PSSc3_14,overcome,perceivedstress10,pilinguptoohigh,pss10_q10,pss4_t4,pss_14,pss_cohen_14,pss_q10,pssp3_14,sc014,scpxy014m
+  alias: PSSc3_14,overcome,perceivedstress10,pilinguptoohigh,ps10,pss10_q10,pss4_t4,pss_14,pss_cohen_14,pss_q10,pssp3_14,sc014,scpxy014m
   codes:
     0: Never
     1: Almost Never

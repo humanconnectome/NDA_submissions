@@ -1249,11 +1249,11 @@ q17_b14:
     \ with Heart /Problemas del coraz\xF3n"
   range:
   - 0::2
-  notes: 0 = No, 1 = Yes, 2 = Not sure/Now I'd like to ask you about your child's
+  notes: 0 = No, 1 = Yes, 2 = Not sure//Now I'd like to ask you about your child's
     use of health services during the past year and throughout his/her whole life.
   alias: medhx_2o
   codes:
-    0: No, 1 = Yes, 2 = Not sure/Now I'd like to ask you about your child's use of
+    0: No, 1 = Yes, 2 = Not sure//Now I'd like to ask you about your child's use of
       health services during the past year and throughout his/her whole life.
 
 seq1c_2:
@@ -1327,11 +1327,11 @@ cfmh_chd_seizure:
 wk_asthma:
   type: Integer
   description: "Has she/he ever been to a doctor for any of these things\u2026Asthma\
-    \ /Asma"
+    \ /Asma\r"
   range:
   - 0
   - 1
-  notes: No = 0; Yes = 1;Now I'd like to ask you about your child's use of health
+  notes: No = 0; Yes = 1;//Now I'd like to ask you about your child's use of health
     services during the past year and throughout his/her whole life.
   alias: medhx_2a
   codes:

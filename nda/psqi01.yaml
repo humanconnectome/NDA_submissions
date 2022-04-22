@@ -97,7 +97,7 @@ psqip4:
     child spends in bed.)     Child/Self: During the past month how many hours of
     actual sleep do you get at / night?'
   notes: ' -9=incomplete'
-  alias: psi_hours,psqi4,psqi_04,psqi_4,psqi_q04,psqic5,psqinh_04
+  alias: psi_hours,psqi4,psqi_04,psqi_4,psqi_q04,psqic5,psqinh_04,sleep4
   codes:
     -9: incomplete
 
@@ -365,7 +365,7 @@ psqpi7_1:
   - 88
   notes: 1= Not during the past month ; 2= Less than once a week ; 3= Once or twice
     a week ; 4= Three or more times a week ; -99= N/A ; 77= Refused ; 88= Missing
-  alias: psq_meds,psqi7,psqi_07,psqi_6,psqi_7,psqi_q07,psqic8,psqinh_08,psqpi7
+  alias: psq_meds,psqi7,psqi_07,psqi_6,psqi_7,psqi_q07,psqic8,psqinh_08,psqpi7,sleep6
   codes:
     1: Not during the past month
     2: Less than once a week
@@ -880,6 +880,7 @@ csq_psqi_1:
   length: 50
   description: During the past two weeks, when have you usually gone to bed at night?
   notes: Bedtime, Military Time (eg 12:30 AM = 0030)
+  alias: sleep1
   codes:
     AM: 0030)
 
@@ -888,6 +889,7 @@ csq_psqi_3:
   length: 50
   description: During the past two weeks, when have you usually gotten up in the morning?
   notes: Risetime, Military Time (eg 11:30 pm = 2330)
+  alias: sleep3
   codes:
     pm: 2330)
 
@@ -896,6 +898,7 @@ csq_psqi_2:
   length: 50
   description: During the past two weeks, how long (in minutes) has it usually taken
     you to fall asleep each night?
+  alias: sleep2
 
 csq_psqi_2_score:
   type: Integer
@@ -1370,3 +1373,98 @@ psqi__10:
     1: Partner/roommate in other room
     2: Partner in same room but not same bed
     3: Partner in same bed
+
+sleep5:
+  type: Integer
+  description: During the past month, how often have you had trouble sleeping?
+  range:
+  - 0::3
+  notes: 0= Not during the past month; 1= Less than once a week; 2= Once or twice
+    a week; 3= Three or more times a week
+  codes:
+    0: Not during the past month
+    1: Less than once a week
+    2: Once or twice a week
+    3: Three or more times a week
+
+sleep7:
+  type: Integer
+  description: During the past month, how often have you taken some other substance
+    to help you sleep (like alcohol or other drugs)?
+  range:
+  - 0::3
+  notes: 0= Not during the past month; 1= Less than once a week; 2= Once or twice
+    a week; 3= Three or more times a week
+  codes:
+    0: Not during the past month
+    1: Less than once a week
+    2: Once or twice a week
+    3: Three or more times a week
+
+sleep9:
+  type: Integer
+  description: During the past month, how often have you had trouble getting to school
+    or work on time because of oversleeping, missing appointments because you overslept,
+    or had trouble staying awake while driving or during daily activities because
+    of not getting enough sleep?
+  range:
+  - 0::3
+  notes: 0= Not during the past month; 1= Less than once a week; 2= Once or twice
+    a week; 3= Three or more times a week
+  codes:
+    0: Not during the past month
+    1: Less than once a week
+    2: Once or twice a week
+    3: Three or more times a week
+
+sleep8:
+  type: String
+  length: 500
+  description: What substances did you use to help you sleep?
+
+psqi_slpdur_rs:
+  type: Integer
+  description: Average hours of sleep per night during reference period (past 30 days
+    before trauma)
+  range:
+  - 0::24
+
+psqi_slpdur:
+  type: Integer
+  description: Quality of sleep duration
+  range:
+  - 0::3
+  notes: 0 = Good duration of sleep; 1 = Fairly good duration of sleep; 2 = Fairly
+    poor duration of sleep; 3 = Poor duration of sleep
+  codes:
+    0: Good duration of sleep
+    1: Fairly good duration of sleep
+    2: Fairly poor duration of sleep
+    3: Poor duration of sleep
+
+psqi_slpdur_rs_imputed_f1b:
+  type: Integer
+  description: Average hours of sleep per night during reference period (past 30 days
+    before trauma), fully imputed based on f1b cohort
+  range:
+  - 0::24
+
+psqi_slpdur_imputed_f1b:
+  type: Integer
+  description: Quality of sleep duration, fully imputed based on f1b cohort
+  range:
+  - 0::3
+  notes: '0 = Good duration of sleep; 1 = Fairly good duration of sleep; 2 = Fairly
+    poor duration of sleep; 3 = Poor duration of sleep: imputed values'
+  codes:
+    0: Good duration of sleep
+    1: Fairly good duration of sleep
+    2: Fairly poor duration of sleep
+    3: 'Poor duration of sleep: imputed values'
+
+psqia_panicsleep:
+  type: Integer
+  description: PSQI Addendum - Panic Attack During Sleep - Raw score
+  range:
+  - 0::4
+  notes: Higher values indicate more anxiety/panic during sleep

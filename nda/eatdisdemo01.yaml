@@ -1395,3 +1395,8 @@ qk20ons:
     had an eating binge and tried to make up for it?  AGE'
   notes: '#=AGE'
   alias: ed14_ageon
+
+timepoint_label:
+  type: String
+  length: 50
+  description: Timepoint/visit label

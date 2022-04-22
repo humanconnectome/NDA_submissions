@@ -202,7 +202,10 @@ soc271:
 aescode:
   type: Integer
   description: Staff code number of person completing this form
+  notes: 999= Missing Data
   alias: asrsra
+  codes:
+    999: Missing Data
 
 comments_misc:
   type: String

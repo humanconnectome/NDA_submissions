@@ -684,3 +684,42 @@ fneproc:
   type: String
   length: 20
   description: name of trial procedure being run
+
+prom_dep8b_t:
+  type: Float
+  description: PROMIS Depression - T-score, standardized with mean 50, SD 10
+  range:
+  - 37.1::81.1
+  notes: Higher score indicates more depressive symptoms
+
+prom_dep8b_t_imputed_f1b:
+  type: Float
+  description: PROMIS Depression - T-score, standardized with mean 50, SD 11; imputed
+    dataset for Freeze 1B cohort
+  range:
+  - 37.1::81.1
+  notes: Higher score indicates more depressive symptoms, imputed based on F1B cohort
+
+prom_dep8b:
+  type: Integer
+  description: PROMIS Depression Indicator, when the T-score greater than or equal
+    to 60
+  range:
+  - 0
+  - 1
+  notes: 0 = Indicating no symptom; 1 = indicates presence of depressive symptoms
+  codes:
+    0: Indicating no symptom
+    1: indicates presence of depressive symptoms
+
+prom_dep8b_imputed_f1b:
+  type: Integer
+  description: PROMIS Depression Indicator, when the imputed F1B T-score greater than
+    or equal to 60
+  range:
+  - 0
+  - 1
+  notes: 0 = Indicating no symptom; 1 = indicates presence of depressive symptoms
+  codes:
+    0: Indicating no symptom
+    1: indicates presence of depressive symptoms

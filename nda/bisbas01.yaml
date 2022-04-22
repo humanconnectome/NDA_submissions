@@ -1236,3 +1236,8 @@ vis_type:
     1: Phone/remote
     0: doctor's office/In person
     2: No, not phone interview
+
+timepoint_label:
+  type: String
+  length: 50
+  description: Timepoint/visit label

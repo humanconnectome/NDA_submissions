@@ -115,7 +115,7 @@ family_study:
 
 family_user_def_id:
   type: String
-  length: 20
+  length: 25
   required: Conditional
   condition: family_study == 'Yes'
   description: Family Pedigree User-Defined ID
@@ -1444,3 +1444,8 @@ trt_grp_desc:
   notes: -9 = Unknown/Not Reported
   codes:
     -9: Unknown/Not Reported
+
+longform_id:
+  type: String
+  length: 50
+  description: Long form of Subject ID

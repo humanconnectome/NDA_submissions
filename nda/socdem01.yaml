@@ -4792,7 +4792,10 @@ saps_ad10:
 aescode:
   type: Integer
   description: Staff code number of person completing this form
+  notes: 999= Missing Data
   alias: ra,rs_demo,screening_administrator_in
+  codes:
+    999: Missing Data
 
 bio_father:
   type: Integer
@@ -5750,3 +5753,8 @@ year_mta:
   type: Integer
   description: Year in study
   alias: visit_year
+
+longform_id:
+  type: String
+  length: 50
+  description: Long form of Subject ID

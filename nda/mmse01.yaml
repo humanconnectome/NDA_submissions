@@ -768,7 +768,10 @@ me2:
 aescode:
   type: Integer
   description: Staff code number of person completing this form
+  notes: 999= Missing Data
   alias: mmse_interviewer
+  codes:
+    999: Missing Data
 
 comments_misc:
   type: String

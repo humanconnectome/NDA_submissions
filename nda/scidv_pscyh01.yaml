@@ -2236,7 +2236,10 @@ q061_sipd_spec:
 aescode:
   type: Integer
   description: Staff code number of person completing this form
+  notes: 999= Missing Data
   alias: p3
+  codes:
+    999: Missing Data
 
 caarms1p1_q10:
   type: String

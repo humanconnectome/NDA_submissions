@@ -70,11 +70,12 @@ elements:
   - child
   - teen
 
-- name: bld_core_des_
-  rename: bld_core_des_
-  source:
-  - child
-  - teen
+# empty
+#- name: bld_core_des_
+#  rename: bld_core_des_
+#  source:
+#  - child
+#  - teen
 
 - name: bld_draw
   rename: ed1_blood
@@ -88,12 +89,12 @@ elements:
   - child
   - teen
 
-- name: bld_rucdr_des
-  rename: bld_rucdr_des
-  source:
-  - child
-  - teen:
-      name: bld_rucdr_des_
+#- name: bld_rucdr_des
+#  rename: bld_rucdr_des
+#  source:
+#  - child
+#  - teen:
+#      name: bld_rucdr_des_
 
 - name: hba1c
   rename: a1crs

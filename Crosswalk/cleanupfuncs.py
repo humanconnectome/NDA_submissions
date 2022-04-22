@@ -23,7 +23,6 @@ def redcleanup(structure="lbadl01", filePath="./prepped/hcd/", extraomitcol1='NO
     except:
         pass
     if 'hca' in filePath and structure=='bsc01':
-        print('study says hca- say WHAT?')
         df=df.loc[~((df.ed1_blood==0) & (df.ed1_saliva==0))]
     if extraomitcol1 and extraomitcol1 != 'NO':
         subfields.remove(extraomitcol1)

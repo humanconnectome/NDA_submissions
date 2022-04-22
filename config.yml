@@ -7,24 +7,23 @@ root:
 config_files:
   box: ./creds/BoxApp.json
 rosetta:  
-  filename: '/home/petra/CCF_QC/PreRelease/HCD_Inventory_Restricted_2022-02-04.csv'
+  #filename: '~/Behavioral/Lifespan/PreRelease/PreRelease/HCD_AllSources_04_22_2022.csv'
+  filename: '~/Behavioral/Lifespan/PreRelease/PreRelease/HCA_AllSources_04_22_2022.csv'
 Redcap:
   api_url: https://redcap.wustl.edu/redcap/srvrs/prod_v3_1_0_001/redcap/api/
   datasources:
     qint:
+      visit:
+        - 1
+        - 2
+        - 3
+        - CR
       event_names:
-          - V1
-          - V2
-          - V3
-      visit:
-        - 1
-        - 2
-        - 3
+        - V1
+        - V2
+        - V3
+        - CR
     PennCNP:
-      visit:
-        - 1
-        - 2
-        - 3
       events:
         - V1
         - V2
@@ -43,14 +42,18 @@ Redcap:
         interview_date: v1_date
         sexatbirth: gender
         sitenum: site
-    teen:
+    hcpdchild:
       events:
-        - visit_arm_1
+        - visit_1_arm_1
+        - visit_2_arm_1
+        - visit_3_arm_1
       event_names:
         - V1
+        - V2
+        - V3
       fields:
-        #eventvar: redcap_event_name
         idvar: id
+         #eventvar: redcap_event_name
         dobvar: dob
         field: subject_id
         interview_date: intake_date
@@ -67,7 +70,33 @@ Redcap:
         - V3
       fields:
         idvar: id
+         #eventvar: redcap_event_name
+        dobvar: dob
+        field: subject_id
+        interview_date: intake_date
+        sexatbirth: gender
+        sitenum: site
+    teen:
+      events:
+        - visit_arm_1
+      event_names:
+        - V1
+      fields:
         #eventvar: redcap_event_name
+        idvar: id
+        dobvar: dob
+        field: subject_id
+        interview_date: intake_date
+        sexatbirth: gender
+        sitenum: site
+    hcpd18:
+      events:
+        - visit_arm_1
+      event_names:
+        - V1
+      fields:
+        #eventvar: redcap_event_name
+        idvar: id
         dobvar: dob
         field: subject_id
         interview_date: intake_date
@@ -83,12 +112,30 @@ Redcap:
         - V2
         - V3
       fields:
+        dobvar: dob
         idvar: id
         field: parent_id
         interview_date: intake_date
         #eventvar: redcap_event_name
-        sexatbirth: gender
-        sitenum: site
+        #sexatbirth: gender
+        #sitenum: site
+    hcpdparent:
+      events:
+        - visit_1_arm_1
+        - visit_2_arm_1
+        - visit_3_arm_1
+      event_names:
+        - V1
+        - V2
+        - V3
+      fields:
+        idvar: id
+        field: parent_id
+        interview_date: intake_date
+        dobvar: dob
+        #eventvar: redcap_event_name
+        #sexatbirth: gender
+        #sitenum: site
 
   behavioral:
     hcpa:
@@ -119,6 +166,36 @@ Redcap:
         interview_date: intake_date
         sexatbirth: gender
         sitenum: site
+    hcpd18:
+      events:
+        - visit_arm_1
+      event_names:
+        - V1
+      fields:
+        #eventvar: redcap_event_name
+        idvar: id
+        dobvar: dob
+        field: subject_id
+        interview_date: intake_date
+        sexatbirth: gender
+        sitenum: site
+    hcpdchild:
+      events:
+        - visit_1_arm_1
+        - visit_2_arm_1
+        - visit_3_arm_1
+      event_names:
+        - V1
+        - V2
+        - V3
+      fields:
+        idvar: id
+         #eventvar: redcap_event_name
+        dobvar: dob
+        field: subject_id
+        interview_date: intake_date
+        sexatbirth: gender
+        sitenum: site
     child:
       events:
         - visit_1_arm_1
@@ -130,7 +207,7 @@ Redcap:
         - V3
       fields:
         idvar: id
-        #eventvar: redcap_event_name
+         #eventvar: redcap_event_name
         dobvar: dob
         field: subject_id
         interview_date: intake_date
@@ -150,6 +227,22 @@ Redcap:
         field: parent_id
         interview_date: intake_date
         #eventvar: redcap_event_name
-        sexatbirth: gender
-        sitenum: site
+        #sexatbirth: gender
+        #sitenum: site
+    hcpdparent:
+      events:
+        - visit_1_arm_1
+        - visit_2_arm_1
+        - visit_3_arm_1
+      event_names:
+        - V1
+        - V2
+        - V3
+      fields:
+        idvar: id
+        field: parent_id
+        interview_date: intake_date
+        #eventvar: redcap_event_name
+        #sexatbirth: gender
+        #sitenum: site
 

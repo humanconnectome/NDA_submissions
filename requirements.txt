@@ -5,7 +5,7 @@ boto3==1.20.28
 botocore==1.23.28
 boxsdk==2.14.0
 ccf @ git+https://github.com/humanconnectome/ccf_libs@f4e6fdda658216402c1bfb2d600b5575af031855
-certifi==2021.10.8
+certifi==2022.12.7
 cffi==1.15.0
 charset-normalizer==2.0.9
 cryptography==3.4.8

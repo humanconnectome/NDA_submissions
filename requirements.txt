@@ -8,7 +8,7 @@ ccf @ git+https://github.com/humanconnectome/ccf_libs@f4e6fdda658216402c1bfb2d60
 certifi==2021.10.8
 cffi==1.15.0
 charset-normalizer==2.0.9
-cryptography==3.4.8
+cryptography==39.0.1
 debugpy==1.5.1
 decorator==5.1.0
 entrypoints==0.3

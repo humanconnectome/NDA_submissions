@@ -43,7 +43,10 @@ class Loader:
         Manipulate the dataframe to create additional or rename existing fields.
         This is also a good place to merge additional data.
         """
+        print("you are here")
+        config = LoadSettings()
         filename = config['rosetta']['filename']
+        print(filename)
         rosetta=pd.read_csv(filename)
         rosetta = rosetta[['REDCap_id','subject', 'redcap_event','pseudo_guid', 'M/F', 'nda_interview_date', 'nda_age']]
         rosetta.columns = ['id','subject', 'redcap_event','subjectkey', 'gender', 'interview_date', 'interview_age']
@@ -74,6 +77,7 @@ class Loader:
         The main function that runs through all of the above functions in order.
         """
         additional_fields = self._fields_hook_(fields)
+        print("fields:",len(additional_fields))
         df = self._load_hook_(additional_fields)
         df = self._post_load_hook_(df)
         self._detect_missing_fields_hook_(df, fields)

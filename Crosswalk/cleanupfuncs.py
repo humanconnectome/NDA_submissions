@@ -2,7 +2,7 @@
 # Ad hoc functions to clean up empty rows for particular instruments after generated (issue for redcap data)
 import pandas as pd
 import numpy as np
-def redcleanup(structure="lbadl01", filePath="./prepped/hcd/", extraomitcol1='NO', extraomitcol2='NO',
+def redcleanup(structure="lbadl01", filePath="./prepped/hcd/", extraomitlist='NO',extraomitcol1='NO', extraomitcol2='NO',
                extraomitcol3='NO', extraomitcol4='NO', extraomitcol5='NO'):
     print(structure)
     strucroot = structure[:-2]
@@ -24,6 +24,12 @@ def redcleanup(structure="lbadl01", filePath="./prepped/hcd/", extraomitcol1='NO
         pass
     if 'hca' in filePath and structure=='bsc01':
         df=df.loc[~((df.ed1_blood==0) & (df.ed1_saliva==0))]
+    if extraomitlist and extraomitlist != 'NO':
+        for i in extraomitlist:
+            try:
+                subfields.remove(i)
+            except:
+                pass
     if extraomitcol1 and extraomitcol1 != 'NO':
         subfields.remove(extraomitcol1)
     if extraomitcol2 and extraomitcol2 != 'NO':
@@ -219,6 +225,7 @@ def integercleanup(structure='asr01', filePath="./prepped/hcd/", varlist=['a']):
     strucnum = structure[-2:]
     df = pd.read_csv(filePath + structure + ".csv", header=1)
     for v in varlist:
+        print(v)
         #df[v] = df[v].fillna(-9999).astype(int).astype(str).str.replace('-9999', '')
         df[v] = pd.to_numeric(df[v], errors='coerce').astype('Int64')
     with open(filePath + structure + ".csv", 'w') as f:

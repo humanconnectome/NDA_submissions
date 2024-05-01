@@ -23,7 +23,14 @@ class Manager:
         unique = self.transformer.get_unique_variables() #these are names (not renames) in maps
 
         # filter out the unique variables not included in the `sources`
-        unique = [x for x in unique if x[0] in sources]
+        #unique = [x for x in unique if x[0] in sources]
+
+        unique = [x for x in unique if x[0] in sources and x not in ['interview_date','interview_age','subject','subjectkey','redcap_event_name']]
+        if 'interview_date' in unique:
+            print('interview_date' in unique)
+        if 'interview_date' not in unique:
+            print('interview_date not in unique')
+        print(unique)
         self.data.preload(unique)
 
     def run(self, struct):
